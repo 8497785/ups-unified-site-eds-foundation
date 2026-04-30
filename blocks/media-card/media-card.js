@@ -12,17 +12,19 @@ export default function decorate(block) {
 
   block.textContent = '';
 
+  const imageDiv = document.createElement('div');
+  imageDiv.className = 'media-card-image';
   if (picture) {
-    block.append(picture);
+    imageDiv.append(picture);
   }
 
   const content = document.createElement('div');
-  content.className = 'hero-content';
+  content.className = 'media-card-content';
 
   if (links.length > 1) {
     const categoryLink = links[0];
     const category = document.createElement('a');
-    category.className = 'hero-category';
+    category.className = 'media-card-category';
     category.href = categoryLink.href;
     category.textContent = categoryLink.textContent;
     content.append(category);
@@ -30,18 +32,16 @@ export default function decorate(block) {
 
   if (headings.length > 0) {
     const heading = document.createElement('h2');
-    heading.className = 'hero-heading';
+    heading.className = 'media-card-heading';
     heading.textContent = headings[0].textContent;
     moveInstrumentation(headings[0], heading);
     content.append(heading);
   }
 
-  const descParagraphs = [...paragraphs].filter(
-    (p) => !p.querySelector('a') && !p.querySelector('picture') && p.textContent.trim(),
-  );
+  const descParagraphs = [...paragraphs].filter((p) => !p.querySelector('a') && !p.querySelector('picture') && p.textContent.trim());
   if (descParagraphs.length > 0) {
     const desc = document.createElement('p');
-    desc.className = 'hero-description';
+    desc.className = 'media-card-description';
     desc.textContent = descParagraphs[0].textContent;
     content.append(desc);
   }
@@ -49,12 +49,12 @@ export default function decorate(block) {
   const ctaLink = links.length > 0 ? links[links.length - 1] : null;
   if (ctaLink) {
     const cta = document.createElement('a');
-    cta.className = 'hero-cta';
+    cta.className = 'media-card-cta';
     cta.href = ctaLink.href;
-    const text = ctaLink.textContent.replace(/\s+/g, ' ').trim();
-    cta.textContent = text.startsWith('Read') ? 'Read more' : text;
+    cta.textContent = ctaLink.textContent.replace(/\s+/g, ' ').trim();
     content.append(cta);
   }
 
+  block.append(imageDiv);
   block.append(content);
 }
