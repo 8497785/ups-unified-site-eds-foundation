@@ -87,10 +87,25 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   }
 }
 
+function getLocalePrefix() {
+  const { pathname } = window.location;
+  const match = pathname.match(/^\/([a-z]{2})\/([a-z]{2})\//);
+  return match ? `/${match[1]}/${match[2]}` : '';
+}
+
+async function loadNavFragment(navMeta) {
+  if (navMeta) return loadFragment(new URL(navMeta, window.location).pathname);
+  const prefix = getLocalePrefix();
+  if (prefix) {
+    const localized = await loadFragment(`${prefix}/nav`);
+    if (localized) return localized;
+  }
+  return loadFragment('/nav');
+}
+
 export default async function decorate(block) {
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
-  const fragment = await loadFragment(navPath);
+  const fragment = await loadNavFragment(navMeta);
 
   block.textContent = '';
   const nav = document.createElement('nav');
