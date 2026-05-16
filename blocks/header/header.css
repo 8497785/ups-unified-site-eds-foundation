@@ -45,6 +45,9 @@ header nav[aria-expanded='true'] {
     gap: 0;
     max-width: 1440px;
     padding: 0 40px;
+    height: var(--nav-height);
+    min-height: 0;
+    overflow: visible;
   }
 
   header nav[aria-expanded='true'] {
@@ -101,6 +104,9 @@ header nav .nav-hamburger-icon::after {
   background: currentcolor;
 }
 
+header nav .nav-hamburger-icon,
+header nav .nav-hamburger-icon::before,
+header nav .nav-hamburger-icon::after,
 header nav[aria-expanded='false'] .nav-hamburger-icon,
 header nav[aria-expanded='false'] .nav-hamburger-icon::before,
 header nav[aria-expanded='false'] .nav-hamburger-icon::after {
@@ -109,10 +115,12 @@ header nav[aria-expanded='false'] .nav-hamburger-icon::after {
   background: currentcolor;
 }
 
+header nav .nav-hamburger-icon::before,
 header nav[aria-expanded='false'] .nav-hamburger-icon::before {
   top: -6px;
 }
 
+header nav .nav-hamburger-icon::after,
 header nav[aria-expanded='false'] .nav-hamburger-icon::after {
   top: 6px;
 }
@@ -161,7 +169,7 @@ header nav .nav-brand img {
   height: auto;
 }
 
-/* sections */
+/* sections — hidden by default (mobile collapsed state) */
 header nav .nav-sections {
   grid-area: sections;
   flex: 1 1 auto;
@@ -169,6 +177,7 @@ header nav .nav-sections {
   visibility: hidden;
 }
 
+/* mobile expanded state */
 header nav[aria-expanded='true'] .nav-sections {
   display: block;
   visibility: visible;
@@ -197,14 +206,12 @@ header nav .nav-sections ul > li > ul > li a {
   font-weight: 400;
 }
 
+/* desktop — always show sections regardless of aria-expanded */
 @media (width >= 992px) {
   header nav .nav-sections {
-    display: block;
-    visibility: visible;
+    display: block !important;
+    visibility: visible !important;
     white-space: nowrap;
-  }
-
-  header nav[aria-expanded='true'] .nav-sections {
     align-self: unset;
   }
 
@@ -245,6 +252,7 @@ header nav .nav-sections ul > li > ul > li a {
     position: relative;
   }
 
+  /* sub-menus hidden by default on desktop */
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
     display: none;
     position: relative;
@@ -345,7 +353,7 @@ header nav .nav-tools {
   }
 
   header nav .nav-tools .nav-tools-search:hover {
-    background-color: rgba(6 98 187 / 8%);
+    background-color: rgb(6 98 187 / 8%);
   }
 
   header nav .nav-tools .nav-tools-search svg {
