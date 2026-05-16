@@ -25,8 +25,8 @@ check_response() {
   local step="$2"
   if [[ "$code" -ge 200 && "$code" -lt 300 ]] || [[ "$code" == "201" ]]; then
     log "  ✅ $step (HTTP $code)"
-  elif [[ "$code" == "500" ]]; then
-    log "  ⚠️  $step (HTTP 500 — page may already exist, continuing)"
+  elif [[ "$code" == "500" ]] || [[ "$code" == "409" ]]; then
+    log "  ⚠️  $step (HTTP $code — page may already exist, continuing)"
   else
     fail "$step failed (HTTP $code)"
   fi
