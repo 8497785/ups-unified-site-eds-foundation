@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-stats",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-16T16:18:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/home.html",
+    "originPage": "About UPS homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "stats-display",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background-image + overlay-panel (stat-items-list + CTA)",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "fact sheets and statistics display sections",
+      "company metrics with background imagery",
+      "key figures and data highlights"
+    ],
+    "notSuitableFor": [
+      "story or article hero sections",
+      "text-only hero banners",
+      "sections without statistical data"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/us/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-16T16:18:00.000Z"
+  }
+}

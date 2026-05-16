@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://about.ups.com/us/en/home.html"
+      ],
+      "description": "Main landing page with hero story, story cards grid, about us band, stats section, and impact media card",
+      "blocks": [
+        {
+          "name": "hero-featured",
+          "instances": [
+            "div.upspr-heroimage:not(.vertical-hero)"
+          ]
+        },
+        {
+          "name": "cards-story",
+          "instances": [
+            "div.upspr-three-column-teaser"
+          ]
+        },
+        {
+          "name": "hero-stats",
+          "instances": [
+            "div.upspr-heroimage.vertical-hero"
+          ]
+        },
+        {
+          "name": "columns-media",
+          "instances": [
+            "div.upspr-xd-card.left"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1-tagline",
+          "name": "Tagline",
+          "selector": "div.headline:has(h1)",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "div.upspr-headline h1"
+          ]
+        },
+        {
+          "id": "section-2-featured-story-hero",
+          "name": "Featured Story Hero",
+          "selector": "div.hero:has(.upspr-heroimage:not(.vertical-hero))",
+          "style": null,
+          "blocks": [
+            "hero-featured"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3-story-cards",
+          "name": "Story Cards",
+          "selector": "div.pr04-threecolumnteaser",
+          "style": null,
+          "blocks": [
+            "cards-story"
+          ],
+          "defaultContent": [
+            "a.btn.btn-secondary[href*='all-stories']"
+          ]
+        },
+        {
+          "id": "section-4-about-us",
+          "name": "About Us Text Band",
+          "selector": "div.headline:has(h4:first-child)",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "div.upspr-headline h4",
+            "div.upspr-headline h2",
+            "div.headline-cta a.btn"
+          ]
+        },
+        {
+          "id": "section-5-stats",
+          "name": "Stats / Facts",
+          "selector": "div.hero:has(.upspr-heroimage.vertical-hero)",
+          "style": null,
+          "blocks": [
+            "hero-stats"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6-impact",
+          "name": "Impact Media Card",
+          "selector": "div.sectioncard",
+          "style": null,
+          "blocks": [
+            "columns-media"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "story-listing",
+      "urls": [
+        "https://about.ups.com/us/en/our-stories.html",
+        "https://about.ups.com/us/en/our-stories/customer-first.html",
+        "https://about.ups.com/us/en/our-stories/innovation-driven.html",
+        "https://about.ups.com/us/en/our-stories/people-led.html"
+      ],
+      "description": "Story category listing pages with hero story and filterable story card grid",
+      "blocks": []
+    },
+    {
+      "name": "story-detail",
+      "urls": [
+        "https://about.ups.com/us/en/our-stories/customer-first/how-ups-is-strengthening-supply-chains-and-accelerating-growth-a.html",
+        "https://about.ups.com/us/en/our-stories/customer-first/small-businesses-scale-from-local-favorites-to-global-brands-wit.html",
+        "https://about.ups.com/us/en/our-stories/customer-first/ups-x-fanatics-title-run-series.html",
+        "https://about.ups.com/us/en/our-stories/innovation-driven/top-6-takeaways-from-ups-s-q1-2026-earnings-announcement.html",
+        "https://about.ups.com/us/en/our-stories/customer-first/the-largest-box-free--label-free-return-network-in-the-u-s--is-b.html",
+        "https://about.ups.com/us/en/our-stories/customer-first/meet-the-finalists-of-the-ups-store-2026-small-biz-challenge.html",
+        "https://about.ups.com/us/en/our-stories/customer-first/ups-delivers-cold-chain-powered-convenience-to-mothers-with-milk.html",
+        "https://about.ups.com/us/en/our-stories/customer-first/sanmar-and-ups--an-iconic-partnership-delivering-world-class-spe.html",
+        "https://about.ups.com/us/en/our-stories/customer-first/delivering-iconic-flavors-with-ups--the-recipe-behind-goldbelly-.html",
+        "https://about.ups.com/us/en/our-stories/customer-first/new-shelves--new-customers---same-reliable-shipper.html",
+        "https://about.ups.com/us/en/our-stories/customer-first/5-things-you-didn-t-know-the-ups-store-could-do-for-your-small-b.html",
+        "https://about.ups.com/us/en/our-stories/customer-first/spanish-retailer-doubles-u-s--business-with-curated-fashion-and-.html",
+        "https://about.ups.com/us/en/our-stories/customer-first/ups-and-lfc-celebrate-the--unstoppable-spirit--of-liverpool-busi0.html",
+        "https://about.ups.com/us/en/our-stories/customer-first/ups-is-the-first-major-logistics-provider-to-broadly-roll-out-rf.html"
+      ],
+      "description": "Individual story article pages with category tag, headline, date, hero image, rich text body, social sharing, and related stories",
+      "blocks": []
+    },
+    {
+      "name": "company-page",
+      "urls": [
+        "https://about.ups.com/us/en/our-company.html",
+        "https://about.ups.com/us/en/our-company/our-strategy.html",
+        "https://about.ups.com/us/en/our-company/global-presence.html",
+        "https://about.ups.com/us/en/our-company/leadership.html",
+        "https://about.ups.com/us/en/our-company/our-history.html",
+        "https://about.ups.com/us/en/our-company/our-culture.html",
+        "https://about.ups.com/us/en/our-company/great-employer.html",
+        "https://about.ups.com/us/en/our-company/suppliers.html"
+      ],
+      "description": "Corporate information pages covering company overview, strategy, leadership, history, culture, and global presence",
+      "blocks": []
+    },
+    {
+      "name": "impact-page",
+      "urls": [
+        "https://about.ups.com/us/en/our-impact.html",
+        "https://about.ups.com/us/en/our-impact/sustainability.html",
+        "https://about.ups.com/us/en/our-impact/community.html",
+        "https://about.ups.com/us/en/our-impact/reporting.html"
+      ],
+      "description": "Social impact and sustainability pages with content sections about community programs and environmental initiatives",
+      "blocks": []
+    },
+    {
+      "name": "newsroom",
+      "urls": [
+        "https://about.ups.com/us/en/newsroom.html",
+        "https://about.ups.com/us/en/newsroom/press-releases.html",
+        "https://about.ups.com/us/en/newsroom/statements.html",
+        "https://about.ups.com/us/en/newsroom/awards-and-recognition.html"
+      ],
+      "description": "Newsroom landing and category pages for press releases, statements, and awards",
+      "blocks": []
+    },
+    {
+      "name": "press-release",
+      "urls": [
+        "https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-powers-customer-success-with-new-tech-enabled-logistics-cent.html",
+        "https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-delivers-even-faster-to-korea-with-major-expansion-of-its-in.html",
+        "https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-to-boost-global-trade-with-enhanced-operations-at-new-hub-at.html"
+      ],
+      "description": "Individual press release articles with date, headline, body text, and media contact information",
+      "blocks": []
+    },
+    {
+      "name": "all-stories",
+      "urls": [
+        "https://about.ups.com/us/en/all-stories.html"
+      ],
+      "description": "Paginated story archive with filterable card grid showing all published stories",
+      "blocks": []
+    },
+    {
+      "name": "utility-page",
+      "urls": [
+        "https://about.ups.com/us/en/thank-a-ups-hero.html"
+      ],
+      "description": "Standalone utility pages like employee recognition form",
+      "blocks": []
+    }
+  ]
+}

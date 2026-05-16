@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-story",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-16T16:18:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/home.html",
+    "originPage": "About UPS homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "story-listing",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "3-column grid (image + category-tag + heading + description per card)",
+    "buttonCount": 0,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "story and article listing grids",
+      "news card layouts with images and categories",
+      "blog post teaser collections"
+    ],
+    "notSuitableFor": [
+      "product cards with pricing",
+      "team member or profile cards",
+      "icon-based feature cards without images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/us/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-16T16:18:00.000Z"
+  }
+}

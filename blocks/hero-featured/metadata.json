@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-featured",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-16T16:18:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/home.html",
+    "originPage": "About UPS homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "featured-story",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background-image + overlay-card (eyebrow + heading + description + CTA)",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage featured story promotions",
+      "article highlight sections with background image",
+      "promotional banners with overlay content card"
+    ],
+    "notSuitableFor": [
+      "hero sections without background images",
+      "minimal text-only hero banners",
+      "stats or data display sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/us/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-16T16:18:00.000Z"
+  }
+}
