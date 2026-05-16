@@ -1,0 +1,144 @@
+/* stylelint-disable no-descending-specificity */
+.columns-media-container .columns-media-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.columns-media-container {
+  margin: 0;
+}
+
+.columns-media {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: stretch;
+  border-radius: var(--border-radius-card);
+  overflow: hidden;
+  margin: 0 var(--spacing-md);
+  background-color: var(--light-color);
+}
+
+.columns-media > div {
+  display: contents;
+}
+
+.columns-media > div > .columns-media-img-col {
+  flex: 1;
+  min-width: 0;
+  order: 0;
+}
+
+.columns-media > div > .columns-media-img-col picture {
+  display: block;
+  height: 100%;
+}
+
+.columns-media > div > .columns-media-img-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.columns-media > div > div:not(.columns-media-img-col) {
+  flex: 1;
+  min-width: 0;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  order: 1;
+}
+
+/* Category eyebrow — override EDS button styling */
+.columns-media > div > div:not(.columns-media-img-col) .button-container:first-child {
+  display: block;
+  margin: 0 0 var(--spacing-sm);
+}
+
+.columns-media > div > div:not(.columns-media-img-col) .button-container:first-child a.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-color);
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.columns-media > div > div:not(.columns-media-img-col) .button-container:first-child a.button::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 3px;
+  background-color: #4a7c3f;
+  border-radius: 2px;
+}
+
+.columns-media > div > div:not(.columns-media-img-col) .button-container:first-child a.button::after {
+  display: none;
+}
+
+.columns-media > div > div:not(.columns-media-img-col) .button-container:first-child a.button:hover {
+  background: none;
+  color: var(--text-color);
+}
+
+.columns-media h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text-color);
+  margin: 0 0 var(--spacing-sm);
+  text-align: left;
+}
+
+.columns-media > div > div:not(.columns-media-img-col) > p:not(.button-container) {
+  font-size: var(--body-font-size-s);
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0 0 var(--spacing-md);
+  font-weight: 400;
+}
+
+/* Secondary CTA */
+.columns-media > div > div:not(.columns-media-img-col) .button-container:last-child a.button {
+  background-color: transparent;
+  border: 2px solid var(--dark-color);
+  color: var(--dark-color);
+}
+
+.columns-media > div > div:not(.columns-media-img-col) .button-container:last-child a.button:hover {
+  background-color: var(--dark-color);
+  color: var(--background-color);
+}
+
+@media (width >= 992px) {
+  .columns-media {
+    margin: 0 var(--spacing-lg);
+  }
+
+  .columns-media > div {
+    display: flex;
+    flex-direction: row;
+    min-height: 500px;
+  }
+
+  .columns-media > div > .columns-media-img-col {
+    flex-basis: 50%;
+  }
+
+  .columns-media > div > div:not(.columns-media-img-col) {
+    flex-basis: 50%;
+    padding: var(--spacing-xl) var(--spacing-xxl);
+  }
+}

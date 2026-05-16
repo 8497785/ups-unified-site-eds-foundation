@@ -1,15 +1,15 @@
 {
   "definitions": [
     {
-      "title": "Stats Band",
-      "id": "stats-band",
+      "title": "Hero Stats",
+      "id": "hero-stats",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "Stats Band",
-              "model": "stats-band"
+              "name": "Hero Stats",
+              "model": "hero-stats"
             }
           }
         }
@@ -18,27 +18,27 @@
   ],
   "models": [
     {
-      "id": "stats-band",
+      "id": "hero-stats",
       "fields": [
         {
           "component": "reference",
           "valueType": "string",
           "name": "image",
-          "label": "Background Image",
+          "label": "Image",
           "multi": false
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "imageAlt",
-          "label": "Image Alt Text",
+          "label": "Alt",
           "value": ""
         },
         {
           "component": "richtext",
           "name": "text",
           "value": "",
-          "label": "Stats Content",
+          "label": "Text",
           "valueType": "string"
         }
       ]

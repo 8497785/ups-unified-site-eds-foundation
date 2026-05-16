@@ -1,0 +1,114 @@
+/* stylelint-disable no-descending-specificity */
+.hero-stats-container .hero-stats-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-stats-container {
+  margin: 0;
+}
+
+.hero-stats {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  border-radius: var(--border-radius-card);
+  margin: 0 var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.hero-stats > div:first-child {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+}
+
+.hero-stats > div:first-child > div {
+  height: 100%;
+}
+
+.hero-stats > div:first-child picture {
+  display: block;
+  height: 100%;
+}
+
+.hero-stats > div:first-child img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-stats > div:last-child {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 320px;
+}
+
+.hero-stats > div:last-child > div {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-card);
+  padding: var(--spacing-lg);
+}
+
+.hero-stats h4 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text-color);
+  text-align: center;
+  margin: 0;
+}
+
+.hero-stats > div:last-child > div h4:not(:first-child) {
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--light-color);
+}
+
+.hero-stats > div:last-child > div > p {
+  font-size: var(--body-font-size-xs);
+  color: var(--text-color);
+  line-height: 1.5;
+  text-align: center;
+  margin: 4px 0 var(--spacing-md);
+  font-weight: 400;
+}
+
+/* CTA button */
+.hero-stats .button-container:last-child {
+  text-align: center;
+  margin: 0;
+}
+
+.hero-stats .button-container:last-child a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 24px;
+  background-color: var(--ups-gold);
+  color: var(--btn-text-dark);
+  font-weight: 700;
+  font-size: var(--body-font-size-s);
+  box-sizing: border-box;
+}
+
+.hero-stats .button-container:last-child a.button:hover {
+  background-color: var(--ups-gold-hover);
+}
+
+@media (width >= 992px) {
+  .hero-stats {
+    min-height: 500px;
+    margin: 0 var(--spacing-lg);
+    padding: var(--spacing-xl);
+  }
+
+  .hero-stats > div:last-child {
+    max-width: 340px;
+  }
+}

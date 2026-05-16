@@ -1,9 +1,12 @@
+/* stylelint-disable no-descending-specificity */
+
 /* header and nav layout */
 header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
   z-index: 2;
   position: fixed;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 header nav {
@@ -13,11 +16,11 @@ header nav {
     'hamburger brand tools' var(--nav-height)
     'sections sections sections' 1fr / auto 1fr auto;
   align-items: center;
-  gap: 0 var(--spacing-md);
+  gap: 0 24px;
   margin: auto;
-  max-width: var(--container-max-width);
+  max-width: 1440px;
   height: var(--nav-height);
-  padding: 0 var(--spacing-md);
+  padding: 0 20px;
   font-family: var(--body-font-family);
 }
 
@@ -37,10 +40,14 @@ header nav[aria-expanded='true'] {
 
   header nav {
     display: flex;
-    justify-content: space-between;
-    gap: 0 var(--spacing-lg);
-    max-width: calc(var(--container-max-width) + 2 * var(--spacing-lg));
-    padding: 0 var(--spacing-lg);
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+    max-width: 1440px;
+    padding: 0 40px;
+    height: var(--nav-height);
+    min-height: 0;
+    overflow: visible;
   }
 
   header nav[aria-expanded='true'] {
@@ -97,6 +104,9 @@ header nav .nav-hamburger-icon::after {
   background: currentcolor;
 }
 
+header nav .nav-hamburger-icon,
+header nav .nav-hamburger-icon::before,
+header nav .nav-hamburger-icon::after,
 header nav[aria-expanded='false'] .nav-hamburger-icon,
 header nav[aria-expanded='false'] .nav-hamburger-icon::before,
 header nav[aria-expanded='false'] .nav-hamburger-icon::after {
@@ -105,10 +115,12 @@ header nav[aria-expanded='false'] .nav-hamburger-icon::after {
   background: currentcolor;
 }
 
+header nav .nav-hamburger-icon::before,
 header nav[aria-expanded='false'] .nav-hamburger-icon::before {
   top: -6px;
 }
 
+header nav .nav-hamburger-icon::after,
 header nav[aria-expanded='false'] .nav-hamburger-icon::after {
   top: 6px;
 }
@@ -144,10 +156,12 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
+  flex-basis: auto;
+  flex-shrink: 0;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+  margin-right: 35px;
 }
 
 header nav .nav-brand img {
@@ -155,7 +169,7 @@ header nav .nav-brand img {
   height: auto;
 }
 
-/* sections */
+/* sections — hidden by default (mobile collapsed state) */
 header nav .nav-sections {
   grid-area: sections;
   flex: 1 1 auto;
@@ -163,6 +177,7 @@ header nav .nav-sections {
   visibility: hidden;
 }
 
+/* mobile expanded state */
 header nav[aria-expanded='true'] .nav-sections {
   display: block;
   visibility: visible;
@@ -191,14 +206,12 @@ header nav .nav-sections ul > li > ul > li a {
   font-weight: 400;
 }
 
+/* desktop — always show sections regardless of aria-expanded */
 @media (width >= 992px) {
   header nav .nav-sections {
-    display: block;
-    visibility: visible;
+    display: block !important;
+    visibility: visible !important;
     white-space: nowrap;
-  }
-
-  header nav[aria-expanded='true'] .nav-sections {
     align-self: unset;
   }
 
@@ -230,7 +243,7 @@ header nav .nav-sections ul > li > ul > li a {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: var(--spacing-md);
+    gap: 30px;
     margin: 0;
   }
 
@@ -239,6 +252,7 @@ header nav .nav-sections ul > li > ul > li a {
     position: relative;
   }
 
+  /* sub-menus hidden by default on desktop */
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
     display: none;
     position: relative;
@@ -281,10 +295,71 @@ header nav .nav-sections ul > li > ul > li a {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-left: auto;
 }
 
-header nav .nav-tools a:any-link {
-  font-size: var(--body-font-size-s);
-  font-weight: 700;
-  color: var(--link-color);
+@media (width >= 992px) {
+  header nav .nav-tools {
+    flex-shrink: 0;
+  }
+
+  header nav .nav-tools a:any-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--dark-color);
+    text-decoration: none;
+    padding: 0 16px;
+    border-right: 1px solid #d9d9d9;
+    line-height: 1;
+  }
+
+  header nav .nav-tools a:any-link:last-child {
+    border-right: none;
+  }
+
+  header nav .nav-tools a:hover {
+    color: var(--link-color);
+  }
+
+  /* external link icon for ups.com */
+  header nav .nav-tools a[href*="ups.com/us/en/Home"]::after,
+  header nav .nav-tools a[href*="ups.com"]::after {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23242424' stroke-width='1.5'%3E%3Cpath d='M6 2H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3M10 2h4v4M7 9l7-7'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+  }
+
+  /* search icon */
+  header nav .nav-tools .nav-tools-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--link-color);
+    border-radius: 50%;
+    margin-left: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  header nav .nav-tools .nav-tools-search:hover {
+    background-color: rgb(6 98 187 / 8%);
+  }
+
+  header nav .nav-tools .nav-tools-search svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--link-color);
+    fill: none;
+  }
 }

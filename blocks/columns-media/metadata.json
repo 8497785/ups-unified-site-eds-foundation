@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-media",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-05-16T16:18:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/home.html",
+    "originPage": "About UPS homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "media-card",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "2-columns (image-left + eyebrow + heading + description + CTA right)",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "promotional media cards with image and text side-by-side",
+      "impact or mission statement sections",
+      "feature highlight with large image and description"
+    ],
+    "notSuitableFor": [
+      "multi-row column layouts",
+      "text-only side-by-side comparisons",
+      "3+ column layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/us/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-16T16:18:00.000Z"
+  }
+}

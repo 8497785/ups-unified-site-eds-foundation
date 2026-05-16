@@ -3,94 +3,25 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-md);
+  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  gap: 24px;
 }
 
 .cards > ul > li {
-  border: none;
+  border: 1px solid #dadada;
   background-color: var(--background-color);
-  border-radius: 0;
-  overflow: hidden;
 }
 
 .cards .cards-card-body {
-  margin: var(--spacing-sm) 0 0;
+  margin: 16px;
 }
 
 .cards .cards-card-image {
   line-height: 0;
-  border-radius: var(--border-radius-card);
-  overflow: hidden;
 }
 
 .cards > ul > li img {
   width: 100%;
-  aspect-ratio: 380 / 280;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-}
-
-@media (width >= 768px) {
-  .cards > ul {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (width >= 992px) {
-  .cards > ul {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
-  }
-}
-
-/* Story Cards Variant */
-.cards.story-cards > ul > li a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: inherit;
-}
-
-.cards.story-cards .cards-card-image img {
-  transition: transform 0.3s ease;
-}
-
-.cards.story-cards > ul > li:hover .cards-card-image img {
-  transform: scale(1.03);
-}
-
-.cards.story-cards .cards-card-body {
-  padding: 0;
-}
-
-.cards.story-cards .cards-card-body p:first-child {
-  margin-top: var(--spacing-sm);
-}
-
-.cards.story-cards .cards-card-body p:first-child a {
-  display: inline-block;
-  padding: 3px 10px;
-  border: 1px solid var(--link-color);
-  border-radius: var(--border-radius-tag);
-  color: var(--link-color);
-  font-size: var(--body-font-size-xs);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-}
-
-.cards.story-cards .cards-card-body h3 {
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  font-weight: 700;
-  line-height: 1.4;
-  margin: var(--spacing-xs) 0;
-  color: var(--text-color);
-}
-
-.cards.story-cards .cards-card-body p:last-child {
-  font-size: var(--body-font-size-s);
-  color: var(--text-color);
-  line-height: 1.5;
-  margin: var(--spacing-xs) 0 0;
-  font-weight: 400;
 }
