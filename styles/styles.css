@@ -43,8 +43,8 @@
   --heading-font-size-s: 18px;
   --heading-font-size-xs: 16px;
 
-  /* nav height */
-  --nav-height: 80px;
+  /* nav height — matches source site header at 130px */
+  --nav-height: 130px;
 
   /* spacing */
   --spacing-xs: 8px;
