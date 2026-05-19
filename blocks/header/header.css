@@ -157,12 +157,18 @@ header .nav-brand {
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
-  margin-right: 10px;
+  margin-right: 35px;
 }
 
 header nav .nav-brand img {
   width: 56px;
-  height: auto;
+  height: 67px;
+  display: block;
+}
+
+header nav .nav-brand a {
+  display: block;
+  line-height: 0;
 }
 
 /* sections — hidden by default (mobile collapsed state) */
@@ -236,7 +242,7 @@ header nav .nav-sections ul > li > ul > li a {
     display: block !important;
     visibility: visible !important;
     white-space: nowrap;
-    align-self: unset;
+    align-self: center !important;
   }
 
   header nav .nav-sections .nav-drop {
