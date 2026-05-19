@@ -272,15 +272,11 @@ header nav .nav-sections ul > li > ul > li a {
     position: static;
   }
 
-  /* active nav item gold underline */
-  header nav .nav-sections .default-content-wrapper > ul > li:hover > a::after,
-  header nav .nav-sections .default-content-wrapper > ul > li:hover > p > a::after {
-    content: '';
-    display: block;
-    height: 3px;
-    background: #ffd100;
-    margin-top: 4px;
-    border-radius: 2px;
+  /* active nav item gold underline (using border-bottom to avoid ::after conflict) */
+  header nav .nav-sections .default-content-wrapper > ul > li:hover > a,
+  header nav .nav-sections .default-content-wrapper > ul > li:hover > p > a {
+    border-bottom: 3px solid #ffd100;
+    padding-bottom: 5px;
   }
 
   /* sub-menus hidden by default on desktop */
@@ -308,16 +304,9 @@ header nav .nav-sections ul > li > ul > li a {
     z-index: 100;
   }
 
-  /* menu section title (first item text as title) */
+  /* remove the ::before pseudo from dropdown (no title needed) */
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    content: attr(data-title);
-    display: block;
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.6px;
-    color: #808080;
-    margin-bottom: 24px;
+    display: none;
   }
 
   /* sub-menu link items */
