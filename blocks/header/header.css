@@ -304,9 +304,16 @@ header nav .nav-sections ul > li > ul > li a {
     z-index: 100;
   }
 
-  /* remove the ::before pseudo from dropdown (no title needed) */
+  /* menu title in dropdown — uses data-title attribute set by JS */
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    display: none;
+    content: attr(data-title);
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    color: #808080;
+    margin-bottom: 24px;
   }
 
   /* sub-menu link items */
