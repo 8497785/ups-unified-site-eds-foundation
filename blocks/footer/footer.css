@@ -191,7 +191,7 @@ footer .footer > div > .section:last-child .default-content-wrapper > p {
     grid-row: 2;
   }
 
-  /* Column 4: Newsletter heading + subscribe */
+  /* Column 4: Newsletter heading + subscribe box */
   footer .footer > div > .section:nth-child(2) .default-content-wrapper > p:nth-of-type(4) {
     grid-column: 4;
     grid-row: 1;
@@ -200,11 +200,19 @@ footer .footer > div > .section:last-child .default-content-wrapper > p {
     text-transform: none;
     letter-spacing: normal;
     color: #fff;
+    background: rgb(255 255 255 / 8%);
+    padding: 40px 40px 0;
+    border-radius: 8px 8px 0 0;
+    margin: 0;
   }
 
   footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(4) {
     grid-column: 4;
     grid-row: 2;
+    background: rgb(255 255 255 / 8%);
+    padding: 20px 40px 40px;
+    border-radius: 0 0 8px 8px;
+    margin: 0;
   }
 
   /* Subscribe link styled as pill button in column 4 */
@@ -237,25 +245,6 @@ footer .footer > div > .section:last-child .default-content-wrapper > p {
   /* Reset top margin on grid items */
   footer .footer > div > .section:nth-child(2) .default-content-wrapper > p + ul + p {
     margin-top: 0;
-  }
-
-  /* Column 4: Newsletter subscribe box background */
-  footer .footer > div > .section:nth-child(2) .default-content-wrapper > p:nth-of-type(4),
-  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(4) {
-    background: rgb(255 255 255 / 8%);
-    padding: 40px;
-    border-radius: 8px;
-    margin: 0;
-  }
-
-  footer .footer > div > .section:nth-child(2) .default-content-wrapper > p:nth-of-type(4) {
-    padding-bottom: 0;
-    border-radius: 8px 8px 0 0;
-  }
-
-  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(4) {
-    padding-top: 20px;
-    border-radius: 0 0 8px 8px;
   }
 }
 
@@ -296,34 +285,26 @@ footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-o
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
 }
 
 /* Individual social icon masks */
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(1) a::before {
-  -webkit-mask-image: url('/icons/facebook.svg');
   mask-image: url('/icons/facebook.svg');
 }
 
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(2) a::before {
-  -webkit-mask-image: url('/icons/x.svg');
   mask-image: url('/icons/x.svg');
 }
 
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(3) a::before {
-  -webkit-mask-image: url('/icons/instagram.svg');
   mask-image: url('/icons/instagram.svg');
 }
 
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(4) a::before {
-  -webkit-mask-image: url('/icons/linkedin.svg');
   mask-image: url('/icons/linkedin.svg');
 }
 
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(5) a::before {
-  -webkit-mask-image: url('/icons/youtube.svg');
   mask-image: url('/icons/youtube.svg');
 }
 
