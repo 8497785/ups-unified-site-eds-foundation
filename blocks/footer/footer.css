@@ -1,7 +1,10 @@
+/* stylelint-disable no-descending-specificity */
+
 footer {
   background-color: var(--footer-bg);
   color: var(--footer-text);
   font-size: var(--body-font-size-m);
+  font-family: var(--body-font-family);
 }
 
 footer a:any-link {
@@ -11,13 +14,13 @@ footer a:any-link {
 }
 
 footer a:hover {
-  color: var(--footer-heading);
+  color: #fff;
 }
 
 footer .footer > div {
   margin: auto;
-  max-width: var(--content-max-width);
-  padding: var(--spacing-xl) var(--spacing-md);
+  max-width: 1440px;
+  padding: 0 20px;
 }
 
 footer .footer p {
@@ -32,12 +35,207 @@ footer .footer ul {
 }
 
 footer .footer ul li {
-  margin-bottom: 4px;
-  line-height: 1.8;
+  margin-bottom: 12px;
+  line-height: 1.5;
 }
 
+/* reset EDS button styling in footer */
+footer .footer a.button:any-link {
+  background: none;
+  border: 2px solid #c6c6c6;
+  border-radius: 80px;
+  padding: 15px 32px;
+  color: #c6c6c6;
+  font-size: 16px;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 8px;
+  white-space: nowrap;
+}
+
+footer .footer a.button:hover {
+  border-color: #fff;
+  color: #fff;
+  background: none;
+}
+
+footer .footer a.button::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid currentcolor;
+  border-top: 2px solid currentcolor;
+  transform: rotate(45deg);
+}
+
+/* ===== Section 1: Top CTA row (Newsroom / Careers) ===== */
+footer .footer > div > .section:first-child {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgb(255 255 255 / 15%);
+}
+
+/* ===== Section 2: Middle columns ===== */
+footer .footer > div > .section:nth-child(2) {
+  padding: 40px 0;
+}
+
+/* Column headings */
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > p {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  color: #fff;
+  margin-bottom: 24px;
+  margin-top: 0;
+}
+
+/* Subsequent headings need top margin on mobile */
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > p + ul + p {
+  margin-top: 40px;
+}
+
+/* Middle section links */
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul li {
+  margin-bottom: 12px;
+}
+
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul li a {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--footer-text);
+  line-height: 24px;
+}
+
+/* ===== Section 3: Bottom legal ===== */
+footer .footer > div > .section:last-child {
+  padding: 24px 0;
+  border-top: 1px solid rgb(255 255 255 / 15%);
+}
+
+footer .footer > div > .section:last-child .default-content-wrapper > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 16px;
+}
+
+footer .footer > div > .section:last-child .default-content-wrapper > ul li {
+  margin-bottom: 0;
+  padding: 0 12px;
+  border-right: 1px solid rgb(255 255 255 / 30%);
+  line-height: 1;
+}
+
+footer .footer > div > .section:last-child .default-content-wrapper > ul li:first-child {
+  padding-left: 0;
+}
+
+footer .footer > div > .section:last-child .default-content-wrapper > ul li:last-child {
+  border-right: none;
+}
+
+footer .footer > div > .section:last-child .default-content-wrapper > ul li a {
+  font-size: 13px;
+  color: var(--footer-text);
+}
+
+footer .footer > div > .section:last-child .default-content-wrapper > p {
+  font-size: 13px;
+  color: var(--footer-text);
+  margin-top: 16px;
+}
+
+/* ===== Desktop 4-column grid for middle section ===== */
 @media (width >= 992px) {
-  footer .footer > div {
-    padding: var(--spacing-xl) var(--spacing-lg);
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.2fr;
+    gap: 0 40px;
+  }
+
+  /* Column 1: This Site heading + list */
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > p:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  /* Column 2: Other UPS Sites heading + list */
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > p:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* Column 3: Connect heading + list */
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > p:nth-of-type(3) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  /* Column 4: Newsletter heading + subscribe */
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > p:nth-of-type(4) {
+    grid-column: 4;
+    grid-row: 1;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: normal;
+    color: #fff;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(4) {
+    grid-column: 4;
+    grid-row: 2;
+  }
+
+  /* Subscribe link styled as pill button in column 4 */
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(4) li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid #c6c6c6;
+    border-radius: 80px;
+    padding: 15px 32px;
+    color: #c6c6c6;
+    font-size: 16px;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(4) li a::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid currentcolor;
+    border-top: 2px solid currentcolor;
+    transform: rotate(45deg);
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(4) li a:hover {
+    border-color: #fff;
+    color: #fff;
+  }
+
+  /* Reset top margin on grid items */
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > p + ul + p {
+    margin-top: 0;
   }
 }
