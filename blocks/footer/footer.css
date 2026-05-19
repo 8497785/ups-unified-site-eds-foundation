@@ -238,4 +238,104 @@ footer .footer > div > .section:last-child .default-content-wrapper > p {
   footer .footer > div > .section:nth-child(2) .default-content-wrapper > p + ul + p {
     margin-top: 0;
   }
+
+  /* Column 4: Newsletter subscribe box background */
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > p:nth-of-type(4),
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(4) {
+    background: rgb(255 255 255 / 8%);
+    padding: 40px;
+    border-radius: 8px;
+    margin: 0;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > p:nth-of-type(4) {
+    padding-bottom: 0;
+    border-radius: 8px 8px 0 0;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(4) {
+    padding-top: 20px;
+    border-radius: 0 0 8px 8px;
+  }
+}
+
+/* ===== Social icons styling ===== */
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li {
+  margin-bottom: 0;
+}
+
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--footer-text);
+  border-radius: 50%;
+  color: var(--footer-text);
+  font-size: 0;
+}
+
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li a:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li a::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: currentcolor;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+/* Individual social icon masks */
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(1) a::before {
+  -webkit-mask-image: url('/icons/facebook.svg');
+  mask-image: url('/icons/facebook.svg');
+}
+
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(2) a::before {
+  -webkit-mask-image: url('/icons/x.svg');
+  mask-image: url('/icons/x.svg');
+}
+
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(3) a::before {
+  -webkit-mask-image: url('/icons/instagram.svg');
+  mask-image: url('/icons/instagram.svg');
+}
+
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(4) a::before {
+  -webkit-mask-image: url('/icons/linkedin.svg');
+  mask-image: url('/icons/linkedin.svg');
+}
+
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(5) a::before {
+  -webkit-mask-image: url('/icons/youtube.svg');
+  mask-image: url('/icons/youtube.svg');
+}
+
+/* External link icon for Other UPS Sites links */
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(2) li a[href^="https://"]::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: 6px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23bfb8af' stroke-width='1.5'%3E%3Cpath d='M6 2H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3M10 2h4v4M7 9l7-7'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
 }
