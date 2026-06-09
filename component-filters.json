@@ -13,8 +13,12 @@
       "button",
       "title",
       "hero",
+      "hero-featured",
+      "hero-stats",
       "cards",
+      "cards-story",
       "columns",
+      "columns-media",
       "fragment"
     ]
   },
@@ -34,15 +38,6 @@
     "id": "columns-media",
     "components": [
       "column"
-    ]
-  },
-  {
-    "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
     ]
   },
   {
