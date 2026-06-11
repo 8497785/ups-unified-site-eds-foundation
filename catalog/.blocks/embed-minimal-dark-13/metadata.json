@@ -1,0 +1,55 @@
+{
+  "variantName": "embed-minimal-dark-13",
+  "baseBlock": "embed",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.748Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/2024-jim-casey-community-service-award-winner.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "heading"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"embed\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"heading\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/2024-jim-casey-community-service-award-winner.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_2024-jim-casey-community-service-award-winner_html--d893c716/blocks/embed-1415ced2.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/customer-reviews-are-in-on-ups--read-what-they-have-to-say-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_customer-reviews-are-in-on-ups--read-what-they-have-to-say-_html--8f678efc/blocks/embed-1415ced2.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/how-we-re-making-customer-returns-easy--happy-returns-x-ups.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_how-we-re-making-customer-returns-easy--happy-returns-x-ups_html--028ec502/blocks/embed-1415ced2.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/paper-is-a-pain-for-exporters--that-s-why-ups-is-paperless.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_paper-is-a-pain-for-exporters--that-s-why-ups-is-paperless_html--b87008d9/blocks/embed-1415ced2.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-celebrates-50-years-in-canada-a-gateway-to-global-success.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-celebrates-50-years-in-canada-a-gateway-to-global-success_html--c3187df1/blocks/embed-1415ced2.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-delivers-cold-chain-powered-convenience-to-mothers-with-milk.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-delivers-cold-chain-powered-convenience-to-mothers-with-milk_html--cce4fccc/blocks/embed-1415ced2.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/welcome-to-the-next-generation-of-brokerage-services.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_welcome-to-the-next-generation-of-brokerage-services_html--be57281a/blocks/embed-1415ced2.jpg"
+      }
+    ],
+    "reuseCount": 7
+  }
+}

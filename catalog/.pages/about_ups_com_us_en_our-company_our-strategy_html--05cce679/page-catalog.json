@@ -1,0 +1,461 @@
+{
+  "url": "https://about.ups.com/us/en/our-company/our-strategy.html",
+  "timestamp": "2026-06-11T08:00:34.994Z",
+  "duration": "9.3s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/our-company/our-strategy.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 325
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 91,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 270,
+        "y": 31,
+        "width": 79,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 555,
+        "y": 128,
+        "width": 329,
+        "height": 71
+      },
+      {
+        "type": "text",
+        "x": 501,
+        "y": 212,
+        "width": 437,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 256,
+        "y": 255,
+        "width": 927,
+        "height": 65
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 87,
+        "height": 21,
+        "textLength": 11
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 275,
+        "y": 33,
+        "width": 92,
+        "height": 16,
+        "textLength": 12
+      },
+      {
+        "tag": "h1",
+        "fontSize": 64,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 243,
+        "y": 123,
+        "width": 953,
+        "height": 80,
+        "textLength": 12
+      },
+      {
+        "tag": "h4",
+        "fontSize": 13,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 243,
+        "y": 211,
+        "width": 953,
+        "height": 16,
+        "textLength": 45
+      },
+      {
+        "tag": "p",
+        "fontSize": 16,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 243,
+        "y": 251,
+        "width": 953,
+        "height": 72,
+        "textLength": 346
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 323,
+    "topSectionTitleRect": {
+      "x": 243,
+      "y": 123,
+      "width": 953,
+      "height": 80,
+      "text": "Our Strategy"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 325,
+      "width": 1440,
+      "height": 2884
+    },
+    "bodyStartY": 325,
+    "bodyPlaceholders": [
+      {
+        "type": "image",
+        "x": 130,
+        "y": 388,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 768,
+        "y": 560,
+        "width": 138,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 768,
+        "y": 648,
+        "width": 376,
+        "height": 76
+      },
+      {
+        "type": "text",
+        "x": 768,
+        "y": 745,
+        "width": 311,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 768,
+        "y": 822,
+        "width": 170,
+        "height": 51
+      },
+      {
+        "type": "text",
+        "x": 359,
+        "y": 1110,
+        "width": 722,
+        "height": 53
+      },
+      {
+        "type": "text",
+        "x": 347,
+        "y": 1193,
+        "width": 746,
+        "height": 17
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 1294,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 1294,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 1294,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1608,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1608,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 1608,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1648,
+        "width": 272,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1648,
+        "width": 298,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 1648,
+        "width": 294,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1717,
+        "width": 251,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1749,
+        "width": 287,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 1749,
+        "width": 299,
+        "height": 17
+      },
+      {
+        "type": "image",
+        "x": 720,
+        "y": 1940,
+        "width": 590,
+        "height": 548
+      },
+      {
+        "type": "text",
+        "x": 194,
+        "y": 2014,
+        "width": 112,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 194,
+        "y": 2058,
+        "width": 417,
+        "height": 53
+      },
+      {
+        "type": "text",
+        "x": 194,
+        "y": 2141,
+        "width": 457,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 228,
+        "y": 2235,
+        "width": 166,
+        "height": 22
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2495,
+        "width": 1180,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 555,
+        "y": 2553,
+        "width": 329,
+        "height": 53
+      },
+      {
+        "type": "text",
+        "x": 162,
+        "y": 2689,
+        "width": 1116,
+        "height": 384
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3153,
+        "width": 1180,
+        "height": 24
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero-363e1177",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 heading + 1 image + 1 CTA + 1 paragraph block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 1,
+        "imageCount": 1,
+        "buttonCount": 1,
+        "linkCount": 2,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + text + 1 CTAs + image"
+      },
+      "selector": "div.hero.aem-GridColumn",
+      "bounds": {
+        "x": 0,
+        "y": 519,
+        "width": 1440,
+        "height": 680
+      },
+      "screenshot": "blocks/hero-363e1177.jpg"
+    },
+    {
+      "id": "unknown-7f488514",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "12 headings + 12 images + form block",
+      "content": {
+        "headingCount": 12,
+        "paragraphCount": 0,
+        "imageCount": 12,
+        "buttonCount": 0,
+        "linkCount": 36,
+        "listCount": 0,
+        "childCount": 2,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + 12 images"
+      },
+      "selector": "div.pr04-threecolumnteaser.aem-GridColumn",
+      "bounds": {
+        "x": 0,
+        "y": 1408,
+        "width": 1440,
+        "height": 662
+      },
+      "screenshot": "blocks/unknown-7f488514.jpg"
+    },
+    {
+      "id": "unknown-6bd64f0a",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + 1 image + 1 CTA + 1 paragraph block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 1,
+        "imageCount": 1,
+        "buttonCount": 1,
+        "linkCount": 2,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + text + 1 CTAs + image"
+      },
+      "selector": "div.sectioncard.aem-GridColumn",
+      "bounds": {
+        "x": 0,
+        "y": 2070,
+        "width": 1440,
+        "height": 548
+      },
+      "screenshot": "blocks/unknown-6bd64f0a.jpg"
+    }
+  ]
+}

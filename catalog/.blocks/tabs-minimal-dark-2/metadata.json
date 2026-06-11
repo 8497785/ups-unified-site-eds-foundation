@@ -1,0 +1,31 @@
+{
+  "variantName": "tabs-minimal-dark-2",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.448Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/search.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "4 CTAs + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"tabs\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"4 CTAs + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/search.html",
+        "screenshot": ".pages/about_ups_com_us_en_search_html--b265a6a2/blocks/tabs-74a65fc8.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

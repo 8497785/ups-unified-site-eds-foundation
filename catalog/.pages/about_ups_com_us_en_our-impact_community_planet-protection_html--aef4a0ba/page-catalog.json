@@ -1,0 +1,263 @@
+{
+  "url": "https://about.ups.com/us/en/our-impact/community/planet-protection.html",
+  "timestamp": "2026-06-11T08:04:31.289Z",
+  "duration": "8.5s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/our-impact/community/planet-protection.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 200
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 73,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 252,
+        "y": 31,
+        "width": 75,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 331,
+        "y": 31,
+        "width": 107,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 555,
+        "y": 126,
+        "width": 329,
+        "height": 53
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 69,
+        "height": 21,
+        "textLength": 10
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 270,
+        "y": 31,
+        "width": 71,
+        "height": 21,
+        "textLength": 9
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 345,
+        "y": 33,
+        "width": 120,
+        "height": 16,
+        "textLength": 17
+      },
+      {
+        "tag": "h2",
+        "fontSize": 48,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 243,
+        "y": 123,
+        "width": 953,
+        "height": 58,
+        "textLength": 17
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 181,
+    "topSectionTitleRect": {
+      "x": 243,
+      "y": 123,
+      "width": 953,
+      "height": 58,
+      "text": "Planet Protection"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 200,
+      "width": 1440,
+      "height": 791
+    },
+    "bodyStartY": 200,
+    "bodyPlaceholders": [
+      {
+        "type": "image",
+        "x": 130,
+        "y": 262,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 262,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 262,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 576,
+        "width": 176,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 576,
+        "width": 176,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 576,
+        "width": 176,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 616,
+        "width": 265,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 616,
+        "width": 277,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 616,
+        "width": 244,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 685,
+        "width": 285,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 685,
+        "width": 290,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 685,
+        "width": 291,
+        "height": 41
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero-74a65fe7",
+      "type": "hero",
+      "confidence": "high",
+      "description": "3 headings + 3 images + form block",
+      "content": {
+        "headingCount": 3,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 9,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + 3 images"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(3)",
+      "bounds": {
+        "x": 0,
+        "y": 377,
+        "width": 1440,
+        "height": 738
+      },
+      "screenshot": "blocks/hero-74a65fe7.jpg"
+    }
+  ]
+}

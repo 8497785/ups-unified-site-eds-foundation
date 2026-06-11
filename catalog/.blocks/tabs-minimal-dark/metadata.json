@@ -1,0 +1,31 @@
+{
+  "variantName": "tabs-minimal-dark",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.405Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/contact-us-form.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "icon",
+    "structure": "text + 9 CTAs + 3 images + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"tabs\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"icon\",\"structure\":\"text + 9 CTAs + 3 images + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/contact-us-form.html",
+        "screenshot": ".pages/about_ups_com_us_en_contact-us-form_html--1969c00a/blocks/tabs-55909ee8.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

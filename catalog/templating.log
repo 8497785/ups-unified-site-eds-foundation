@@ -1,0 +1,402 @@
+Session: TEMPLATING -> TEMPLATING
+Checklist complete: 699 terminal entries (693 analyzed, 6 failed)
+============================================================
+PAGE TEMPLATE DISCOVERY (Histogram + Signature)
+============================================================
+Config: /backups/8497785/ups-unified-site-eds-foundation/repo/catalog/.catalog-config.json
+Policy
+  representative selection: block_cover (max 10)
+  merge phase: top-section only (body shape never used in merge gate)
+  family_body_split: True
+  body matcher: column-shape signature, smaller-side fully paired
+
+PHASE 1: Loading Fingerprints
+----------------------------------------
+Loaded 693 page fingerprints
+
+PHASE 2: URL Grouping
+----------------------------------------
+URL grouping: 70 path groups + 12 root singletons
+  Group 1 (newsroom): 6 pages
+  Group 2 (newsroom/negotiations): 7 pages
+  Group 3 (newsroom/__landing__:negotiations): 1 pages
+  Group 4 (newsroom/negotiations/__landing__:negotiations-basics): 1 pages
+  Group 5 (newsroom/negotiations/negotiations-basics): 4 pages
+  Group 6 (newsroom/press-releases): 1 pages
+  Group 7 (newsroom/press-releases/__landing__:customer-first): 1 pages
+  Group 8 (newsroom/press-releases/customer-first): 37 pages
+  Group 9 (newsroom/press-releases/financials): 73 pages
+  Group 10 (newsroom/press-releases/__landing__:financials): 1 pages
+  Group 11 (newsroom/__landing__:press-releases): 1 pages
+  Group 12 (newsroom/press-releases/innovation-driven): 6 pages
+  Group 13 (newsroom/press-releases/__landing__:innovation-driven): 1 pages
+  Group 14 (newsroom/press-releases/local-community-engagement): 8 pages
+  Group 15 (newsroom/press-releases/__landing__:local-community-engagement): 1 pages
+  Group 16 (newsroom/press-releases/our-strategy): 10 pages
+  Group 17 (newsroom/press-releases/__landing__:our-strategy): 1 pages
+  Group 18 (newsroom/press-releases/people-led): 28 pages
+  Group 19 (newsroom/press-releases/__landing__:people-led): 1 pages
+  Group 20 (newsroom/press-releases/__landing__:sustainable-services): 1 pages
+  Group 21 (newsroom/press-releases/sustainable-services): 3 pages
+  Group 22 (newsroom/statements): 14 pages
+  Group 23 (newsroom/__landing__:statements): 1 pages
+  Group 24 (our-company/global-presence): 5 pages
+  Group 25 (our-company/__landing__:global-presence): 1 pages
+  Group 26 (our-company/governance): 2 pages
+  Group 27 (our-company/__landing__:governance): 1 pages
+  Group 28 (our-company/great-employer): 57 pages
+  Group 29 (our-company/__landing__:great-employer): 1 pages
+  Group 30 (our-company/leadership): 18 pages
+  Group 31 (our-company/__landing__:leadership): 1 pages
+  Group 32 (our-company): 2 pages
+  Group 33 (our-company/our-strategy): 2 pages
+  Group 34 (our-company/__landing__:our-strategy): 1 pages
+  Group 35 (our-company/suppliers): 3 pages
+  Group 36 (our-company/__landing__:suppliers): 1 pages
+  Group 37 (our-impact/community): 4 pages
+  Group 38 (our-impact/community/__landing__:equity-and-economic-empowerment): 1 pages
+  Group 39 (our-impact/community/equity-and-economic-empowerment): 6 pages
+  Group 40 (our-impact/community/health-humanitarian-relief): 10 pages
+  Group 41 (our-impact/community/__landing__:health-humanitarian-relief): 1 pages
+  Group 42 (our-impact/__landing__:community): 1 pages
+  Group 43 (our-impact/community/local-community-engagement): 11 pages
+  Group 44 (our-impact/community/__landing__:local-community-engagement): 1 pages
+  Group 45 (our-impact/community/planet-protection): 3 pages
+  Group 46 (our-impact/community/__landing__:planet-protection): 1 pages
+  Group 47 (our-impact/community/__landing__:ups-foundation-leadership): 1 pages
+  Group 48 (our-impact/community/ups-foundation-leadership): 1 pages
+  Group 49 (our-impact/reporting): 2 pages
+  Group 50 (our-impact/__landing__:reporting): 1 pages
+  Group 51 (our-impact/sustainability): 7 pages
+  Group 52 (our-impact/sustainability/circular-economy): 2 pages
+  Group 53 (our-impact/sustainability/__landing__:circular-economy): 1 pages
+  Group 54 (our-impact/sustainability/climate): 3 pages
+  Group 55 (our-impact/sustainability/__landing__:climate): 1 pages
+  Group 56 (our-impact/__landing__:sustainability): 1 pages
+  Group 57 (our-impact/sustainability/sustainable-services): 7 pages
+  Group 58 (our-impact/sustainability/__landing__:sustainable-services): 1 pages
+  Group 59 (our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-communities): 4 pages
+  Group 60 (our-impact/ups-sustainability-and-community-impact-report/__landing__:delivering-for-our-communities): 1 pages
+  Group 61 (our-impact/ups-sustainability-and-community-impact-report): 2 pages
+  Group 62 (our-impact/__landing__:ups-sustainability-and-community-impact-report): 1 pages
+  Group 63 (our-stories/customer-first): 158 pages
+  Group 64 (our-stories/__landing__:customer-first): 1 pages
+  Group 65 (our-stories/innovation-driven): 35 pages
+  Group 66 (our-stories/__landing__:innovation-driven): 1 pages
+  Group 67 (our-stories/people-led): 103 pages
+  Group 68 (our-stories/__landing__:people-led): 1 pages
+  Group 69 (related-content): 3 pages
+  Group 70 (thank-a-ups-hero): 1 pages
+
+PHASE 3: Local Seed Validation And Split (layout partition)
+----------------------------------------
+  Seed group 1 (6p): SPLIT -> 5 groups [2, 1, 1, 1, 1]
+    reason: layout-descriptor partition
+  Seed group 2 (7p): SPLIT -> 3 groups [3, 3, 1]
+    reason: layout-descriptor partition
+  Seed group 5 (4p): SPLIT -> 2 groups [3, 1]
+    reason: layout-descriptor partition
+  Seed group 8 (37p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 9 (73p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 12 (6p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 14 (8p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 16 (10p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 18 (28p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 21 (3p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 22 (14p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 24 (5p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 26 (2p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 28 (57p): SPLIT -> 2 groups [56, 1]
+    reason: layout-descriptor partition
+  Seed group 30 (18p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 32 (2p): SPLIT -> 2 groups [1, 1]
+    reason: layout-descriptor partition
+  Seed group 33 (2p): SPLIT -> 2 groups [1, 1]
+    reason: layout-descriptor partition
+  Seed group 35 (3p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 37 (4p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 39 (6p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 40 (10p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 43 (11p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 45 (3p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 49 (2p): SPLIT -> 2 groups [1, 1]
+    reason: layout-descriptor partition
+  Seed group 51 (7p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 52 (2p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 54 (3p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 57 (7p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 59 (4p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 61 (2p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 63 (158p): SPLIT -> 2 groups [155, 3]
+    reason: layout-descriptor partition
+  Seed group 65 (35p): KEEP
+    reason: all pages share a layout descriptor
+  Seed group 67 (103p): SPLIT -> 2 groups [102, 1]
+    reason: layout-descriptor partition
+  Seed group 69 (3p): SPLIT -> 3 groups [1, 1, 1]
+    reason: layout-descriptor partition
+Layout-descriptor partition: 10 splits
+
+PHASE 4: Template Candidate Merging (top-section only)
+----------------------------------------
+Singletons before merge: 65
+
+Starting: 97 total (32 clusters, 65 singletons)
+Top-section merge gate: layout match (text=subsequence, visual=exact coverage bucket, representative-or-mode). Body split runs in Phase 5.
+
+Merging (single-loop HAC)
+  ✓ MERGE: 1 → 63  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/facebook-rules.html → https://about.ups.com/us/en/our-stories/customer-first/distributing-vaccines-in-ghana.html
+  ✓ MERGE: 8 → 63  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases/customer-first/interglobe-enterprises-and-ups-launch-movin-.html → https://about.ups.com/us/en/our-stories/customer-first/distributing-vaccines-in-ghana.html
+  ✓ MERGE: 9 → 63  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases/financials/-ups-announces-quarterly-dividend-q1-2025.html → https://about.ups.com/us/en/our-stories/customer-first/distributing-vaccines-in-ghana.html
+  ✓ MERGE: 12 → 63  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/coyote-logistics-launches-dynamic-route-optimization-to-enhance-supply-chain-efficiency.html → https://about.ups.com/us/en/our-stories/customer-first/distributing-vaccines-in-ghana.html
+  ✓ MERGE: 14 → 63  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases/local-community-engagement/allocates-15m-to-fight-against-coronavirus.html → https://about.ups.com/us/en/our-stories/customer-first/distributing-vaccines-in-ghana.html
+  ✓ MERGE: 16 → 63  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases/our-strategy/2023-ups-impact-summit.html → https://about.ups.com/us/en/our-stories/customer-first/distributing-vaccines-in-ghana.html
+  ✓ MERGE: 18 → 63  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html → https://about.ups.com/us/en/our-stories/customer-first/distributing-vaccines-in-ghana.html
+  ✓ MERGE: 21 → 63  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases/sustainable-services/news-hurricane-laura-relief-efforts-supported-by-ups-strategy-of-preparedness.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 22 → 63  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/statements/aircraft-maintenance-contract-agreement.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 26 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-company/governance/carbon-neutral-credentials.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 28 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-company/great-employer/kevin-byrnes-represents-ups-s-industry-leading-safety-.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 33 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-company/our-strategy/better-not-bigger-framework.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 35 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-company/suppliers/business-conduct-and-terms-and-conditions.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 37 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/community/big-brown-stuffs-big-yellow-buses-for-charity.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 39 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/community/equity-and-economic-empowerment/pursuing-a-more-equitable-world.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 40 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief/aid-to-ukrainian-refugees-in-poland.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 43 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/community/local-community-engagement/2024-jim-casey-community-service-award-winner.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 45 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/community/planet-protection/2000-seedlings-help-restore-redwood-habitat.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 49 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/reporting/gender-equality-index---ups-france-.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 51 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/sustainability/carol-b--tome-shares-ups-sustainability-message.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 52 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/sustainability/circular-economy/circular-solutions-for-ups-customers.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 54 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/sustainability/climate/canadian-made-garments-for-social-good.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 57 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/sustainability/sustainable-services/2022-ups-sustainability-report-.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 59 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-communities/delivering-equity---economic-empowerment.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 65 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-stories/innovation-driven/experience-ups-innovations-at-expo.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 67 → 63  [sim: 100%]
+      https://about.ups.com/us/en/our-stories/people-led/20-year-career-flourishes-with-help-of-ups-family.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 75 → 63  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/negotiations/media-fast-facts.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: 77 → 63  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics/labor-timeline.html → https://about.ups.com/us/en/newsroom/press-releases/people-led/circle-of-honor-2022-announcement.html
+  ✓ MERGE: -12 → 30  [sim: 100%]
+      https://about.ups.com/us/en/ups--training-solutions.html → https://about.ups.com/us/en/our-company/leadership/angela-hwang.html
+  ✓ MERGE: 2 → 30  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/negotiations/Facts-stats-and-media-resources.html → https://about.ups.com/us/en/our-company/leadership/angela-hwang.html
+  ✓ MERGE: 4 → 30  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html → https://about.ups.com/us/en/newsroom/negotiations/Facts-stats-and-media-resources.html
+  ✓ MERGE: 5 → 30  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics/the-bargaining-process.html → https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html
+  ✓ MERGE: 6 → 30  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases/corporate-governance.html → https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html
+  ✓ MERGE: 13 → 30  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases/innovation-driven.html → https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html
+  ✓ MERGE: 15 → 30  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases/local-community-engagement.html → https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html
+  ✓ MERGE: 19 → 30  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases/people-led.html → https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html
+  ✓ MERGE: 20 → 30  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases/sustainable-services.html → https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html
+  ✓ MERGE: 27 → 30  [sim: 100%]
+      https://about.ups.com/us/en/our-company/governance.html → https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html
+  ✓ MERGE: 46 → 30  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/community/planet-protection.html → https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html
+  ✓ MERGE: 48 → 30  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/community/ups-foundation-leadership/nikki-clifton.html → https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html
+  ✓ MERGE: 53 → 30  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/sustainability/circular-economy.html → https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html
+  ✓ MERGE: 55 → 30  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/sustainability/climate.html → https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html
+  ✓ MERGE: 56 → 30  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/sustainability.html → https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html
+  ✓ MERGE: 69 → 30  [sim: 100%]
+      https://about.ups.com/us/en/related-content/eeo-1.html → https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html
+  ✓ MERGE: 70 → 30  [sim: 100%]
+      https://about.ups.com/us/en/thank-a-ups-hero/thank-a-ups-hero---region-selection.html → https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html
+  ✓ MERGE: -9 → 24  [sim: 100%]
+      https://about.ups.com/us/en/rfid-equipment-request-confirmation.html → https://about.ups.com/us/en/our-company/global-presence/asia-pacific-region-facts.html
+  ✓ MERGE: -7 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-stories.html → https://about.ups.com/us/en/our-company/global-presence/asia-pacific-region-facts.html
+  ✓ MERGE: -6 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-impact.html → https://about.ups.com/us/en/our-company/global-presence/asia-pacific-region-facts.html
+  ✓ MERGE: -5 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-company.html → https://about.ups.com/us/en/our-impact.html
+  ✓ MERGE: -4 → 24  [sim: 100%]
+      https://about.ups.com/us/en/newsroom.html → https://about.ups.com/us/en/our-impact.html
+  ✓ MERGE: -3 → 24  [sim: 100%]
+      https://about.ups.com/us/en/home.html → https://about.ups.com/us/en/our-impact.html
+  ✓ MERGE: -1 → 24  [sim: 100%]
+      https://about.ups.com/us/en/all-stories.html → https://about.ups.com/us/en/our-impact.html
+  ✓ MERGE: 3 → 24  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/negotiations.html → https://about.ups.com/us/en/our-impact.html
+  ✓ MERGE: 7 → 24  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases/customer-first.html → https://about.ups.com/us/en/our-impact.html
+  ✓ MERGE: 10 → 24  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases/financials.html → https://about.ups.com/us/en/our-impact.html
+  ✓ MERGE: 11 → 24  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases.html → https://about.ups.com/us/en/our-impact.html
+  ✓ MERGE: 17 → 24  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/press-releases/our-strategy.html → https://about.ups.com/us/en/our-impact.html
+  ✓ MERGE: 23 → 24  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/statements.html → https://about.ups.com/us/en/our-impact.html
+  ✓ MERGE: 25 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-company/global-presence.html → https://about.ups.com/us/en/our-impact.html
+  ✓ MERGE: 29 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-company/great-employer.html → https://about.ups.com/us/en/our-impact.html
+  ✓ MERGE: 31 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-company/leadership.html → https://about.ups.com/us/en/our-impact.html
+  ✓ MERGE: 34 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-company/our-strategy.html → https://about.ups.com/us/en/our-company/leadership.html
+  ✓ MERGE: 36 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-company/suppliers.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 38 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/community/equity-and-economic-empowerment.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 41 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 42 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/community.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 44 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/community/local-community-engagement.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 47 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/community/ups-foundation-leadership.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 50 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/reporting.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 58 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/sustainability/sustainable-services.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 62 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 64 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-stories/customer-first.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 66 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-stories/innovation-driven.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 68 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-stories/people-led.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 73 → 24  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/ups-aircraft-accident.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 76 → 24  [sim: 100%]
+      https://about.ups.com/us/en/newsroom/negotiations/industry-overview.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 78 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-company/great-employer/jobs-and-opportunity-report.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 79 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-company/our-history.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 80 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-company/our-strategy/how-ups-is-creating-our-future.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 81 → 24  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/reporting/the-ups-foundations-social-impact-report.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 85 → 24  [sim: 100%]
+      https://about.ups.com/us/en/related-content/the-ups-foundation-social-impact-report.html → https://about.ups.com/us/en/our-company/our-strategy.html
+  ✓ MERGE: 60 → 61  [sim: 100%]
+      https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-communities.html → https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-people.html
+  ✓ MERGE: -2 → 72  [sim: 100%]
+      https://about.ups.com/us/en/contact-us-form.html → https://about.ups.com/us/en/newsroom/media-library.html
+  83 merges total (converged)
+  Assigning empty clusters to best top-section match
+
+==================================================
+MERGE SUMMARY
+==================================================
+Before: 97 clusters
+After:  14 clusters (6 multi-page, 8 singletons)
+Merged: 83 clusters (501 pages reassigned)
+==================================================
+
+
+PHASE 5: Family Body Split
+----------------------------------------
+  Family -11: 1p -> 1 template (pair_matches=0/0)
+  Family -10: 1p -> 1 template (pair_matches=0/0)
+  Family -8: 1p -> 1 template (pair_matches=0/0)
+  Family 24: 41p -> 2 templates [40, 1] (pair_matches=38/40)
+  Family 30: 39p -> 2 templates [20, 19] (pair_matches=37/57)
+  Family 32: 1p -> 1 template (pair_matches=0/0)
+  Family 61: 3p -> 1 template (pair_matches=2/2)
+  Family 63: 597p -> 2 templates [595, 2] (pair_matches=595/600)
+  Family 71: 1p -> 1 template (pair_matches=0/0)
+  Family 72: 2p -> 2 templates [1, 1] (pair_matches=0/1)
+  Family 74: 1p -> 1 template (pair_matches=0/0)
+  Family 82: 3p -> 1 template (pair_matches=2/2)
+  Family 83: 1p -> 1 template (pair_matches=0/0)
+  Family 84: 1p -> 1 template (pair_matches=0/0)
+
+PHASE 6: Build Template Catalog
+----------------------------------------
+  Template candidate -11: 1p
+  Template candidate -10: 1p
+  Template candidate -8: 1p
+  Template candidate 24: 40p | representatives 5
+  Template candidate 30: 20p
+  Template candidate 32: 1p
+  Template candidate 61: 3p
+  Template candidate 63: 595p | representatives 5
+  Template candidate 71: 1p
+  Template candidate 72: 1p
+  Template candidate 74: 1p
+  Template candidate 82: 3p
+  Template candidate 83: 1p
+  Template candidate 84: 1p
+  Template candidate 85: 1p
+  Template candidate 86: 19p | representatives 3
+  Template candidate 87: 2p
+  Template candidate 88: 1p
+Built 18 templates
+
+PHASE 7: Saving Results
+----------------------------------------
+Saved: /backups/8497785/ups-unified-site-eds-foundation/repo/catalog/.clusters/pages.templates.json
+Saved: /backups/8497785/ups-unified-site-eds-foundation/repo/catalog/.clusters/pages.templates.grouped.json
+Saved: /backups/8497785/ups-unified-site-eds-foundation/repo/catalog/.clusters/pages.templates.summary.json
+Saved: /backups/8497785/ups-unified-site-eds-foundation/repo/catalog/.template-catalog-scoped.json
+
+PHASE 8: Template Report & Migration Bundle
+----------------------------------------
+  Report stats: 18 templates, 693 pages, 11 singletons, biggest family=595
+  Wrote bundle: /backups/8497785/ups-unified-site-eds-foundation/repo/catalog/template-catalog-report-bundle.zip
+
+Session: AWAITING_TUNING
+
+Template discovery complete: 18 templates, 11 singletons. Ready for tuning.

@@ -1,0 +1,481 @@
+{
+  "url": "https://about.ups.com/us/en/our-company.html",
+  "timestamp": "2026-06-11T08:00:34.403Z",
+  "duration": "9.4s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/our-company.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 300
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 87,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 360,
+        "y": 128,
+        "width": 720,
+        "height": 151
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 171,
+        "y": 33,
+        "width": 100,
+        "height": 16,
+        "textLength": 11
+      },
+      {
+        "tag": "h1",
+        "fontSize": 64,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 243,
+        "y": 123,
+        "width": 953,
+        "height": 160,
+        "textLength": 45
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 283,
+    "topSectionTitleRect": {
+      "x": 243,
+      "y": 123,
+      "width": 953,
+      "height": 160,
+      "text": "Customer First, People Led, Innovation Driven"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 300,
+      "width": 1440,
+      "height": 3074
+    },
+    "bodyStartY": 300,
+    "bodyPlaceholders": [
+      {
+        "type": "image",
+        "x": 130,
+        "y": 348,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 268,
+        "y": 553,
+        "width": 138,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 268,
+        "y": 641,
+        "width": 371,
+        "height": 36
+      },
+      {
+        "type": "text",
+        "x": 268,
+        "y": 698,
+        "width": 377,
+        "height": 65
+      },
+      {
+        "type": "image",
+        "x": 267,
+        "y": 1044,
+        "width": 57,
+        "height": 57
+      },
+      {
+        "type": "image",
+        "x": 562,
+        "y": 1044,
+        "width": 57,
+        "height": 57
+      },
+      {
+        "type": "image",
+        "x": 857,
+        "y": 1044,
+        "width": 57,
+        "height": 57
+      },
+      {
+        "type": "image",
+        "x": 1154,
+        "y": 1044,
+        "width": 57,
+        "height": 57
+      },
+      {
+        "type": "text",
+        "x": 240,
+        "y": 1137,
+        "width": 111,
+        "height": 45
+      },
+      {
+        "type": "text",
+        "x": 549,
+        "y": 1137,
+        "width": 83,
+        "height": 45
+      },
+      {
+        "type": "text",
+        "x": 833,
+        "y": 1137,
+        "width": 106,
+        "height": 45
+      },
+      {
+        "type": "text",
+        "x": 1124,
+        "y": 1137,
+        "width": 117,
+        "height": 45
+      },
+      {
+        "type": "text",
+        "x": 256,
+        "y": 1207,
+        "width": 79,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 487,
+        "y": 1207,
+        "width": 207,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 797,
+        "y": 1207,
+        "width": 177,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 1130,
+        "y": 1207,
+        "width": 104,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 631,
+        "y": 1292,
+        "width": 219,
+        "height": 47
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 1491,
+        "width": 590,
+        "height": 548
+      },
+      {
+        "type": "text",
+        "x": 784,
+        "y": 1565,
+        "width": 72,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 784,
+        "y": 1609,
+        "width": 329,
+        "height": 111
+      },
+      {
+        "type": "text",
+        "x": 784,
+        "y": 1749,
+        "width": 456,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 818,
+        "y": 1867,
+        "width": 176,
+        "height": 22
+      },
+      {
+        "type": "image",
+        "x": 720,
+        "y": 2126,
+        "width": 590,
+        "height": 554
+      },
+      {
+        "type": "text",
+        "x": 194,
+        "y": 2200,
+        "width": 105,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 194,
+        "y": 2244,
+        "width": 397,
+        "height": 168
+      },
+      {
+        "type": "text",
+        "x": 194,
+        "y": 2442,
+        "width": 453,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 228,
+        "y": 2560,
+        "width": 184,
+        "height": 22
+      },
+      {
+        "type": "image",
+        "x": 874,
+        "y": 2847,
+        "width": 380,
+        "height": 380
+      },
+      {
+        "type": "text",
+        "x": 177,
+        "y": 2893,
+        "width": 634,
+        "height": 228
+      },
+      {
+        "type": "text",
+        "x": 177,
+        "y": 3151,
+        "width": 147,
+        "height": 20
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero-d13e6f2",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 heading + 1 list block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": true,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "heading + list"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)",
+      "bounds": {
+        "x": 0,
+        "y": 132,
+        "width": 1440,
+        "height": 482
+      },
+      "screenshot": "blocks/hero-d13e6f2.jpg"
+    },
+    {
+      "id": "hero-363e1177",
+      "type": "hero",
+      "confidence": "high",
+      "description": "5 headings + 5 images + 2 CTAs + 1 list block",
+      "content": {
+        "headingCount": 5,
+        "paragraphCount": 5,
+        "imageCount": 5,
+        "buttonCount": 2,
+        "linkCount": 2,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + text + 2 CTAs + 5 images + list"
+      },
+      "selector": "div.hero.aem-GridColumn",
+      "bounds": {
+        "x": 0,
+        "y": 479,
+        "width": 1440,
+        "height": 1064
+      },
+      "screenshot": "blocks/hero-363e1177.jpg"
+    },
+    {
+      "id": "unknown-6e6c0fcc",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + 1 image + 1 CTA + 1 paragraph block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 1,
+        "imageCount": 1,
+        "buttonCount": 1,
+        "linkCount": 2,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + text + 1 CTAs + image"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)",
+      "bounds": {
+        "x": 0,
+        "y": 1615,
+        "width": 1440,
+        "height": 628
+      },
+      "screenshot": "blocks/unknown-6e6c0fcc.jpg"
+    },
+    {
+      "id": "unknown-6e6c0fad",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + 1 image + 1 CTA + 1 paragraph block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 1,
+        "imageCount": 1,
+        "buttonCount": 1,
+        "linkCount": 2,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + text + 1 CTAs + image"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2)",
+      "bounds": {
+        "x": 0,
+        "y": 2243,
+        "width": 1440,
+        "height": 634
+      },
+      "screenshot": "blocks/unknown-6e6c0fad.jpg"
+    },
+    {
+      "id": "unknown-2d3b666",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.quotes.aem-GridColumn",
+      "bounds": {
+        "x": 0,
+        "y": 2877,
+        "width": 1440,
+        "height": 600
+      },
+      "screenshot": "blocks/unknown-2d3b666.jpg"
+    }
+  ]
+}

@@ -1,0 +1,483 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/new-chief-digital-and-technology-officer.html",
+  "timestamp": "2026-06-11T07:58:11.956Z",
+  "duration": "9.3s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/press-releases/innovation-driven/new-chief-digital-and-technology-officer.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 425
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 71,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 250,
+        "y": 31,
+        "width": 102,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 209,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 1048,
+        "height": 206
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 67,
+        "height": 21,
+        "textLength": 8
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 268,
+        "y": 31,
+        "width": 98,
+        "height": 21,
+        "textLength": 14
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 209,
+        "height": 15,
+        "textLength": 17
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 216,
+        "textLength": 103
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 411,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 195,
+      "width": 1180,
+      "height": 216,
+      "text": "UPS Welcomes Bala Subramanian to Newly Created Position of EVP and Chief Digital and Technology Officer"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 425,
+      "width": 1440,
+      "height": 3144
+    },
+    "bodyStartY": 425,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 447,
+        "width": 191,
+        "height": 17
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 548,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1244,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1244,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1244,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1244,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1244,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1247,
+        "width": 713,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1327,
+        "width": 717,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1431,
+        "width": 713,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1535,
+        "width": 706,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1639,
+        "width": 684,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1767,
+        "width": 690,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1919,
+        "width": 708,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2023,
+        "width": 84,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2079,
+        "width": 715,
+        "height": 185
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2303,
+        "width": 36,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2359,
+        "width": 252,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2415,
+        "width": 206,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2471,
+        "width": 198,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2524,
+        "width": 717,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 574,
+        "y": 2702,
+        "width": 292,
+        "height": 53
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 2850,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 2850,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 2850,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3164,
+        "width": 169,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 3164,
+        "width": 169,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 3164,
+        "width": 169,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3204,
+        "width": 259,
+        "height": 122
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 3204,
+        "width": 255,
+        "height": 122
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 3204,
+        "width": 290,
+        "height": 122
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3337,
+        "width": 272,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 3337,
+        "width": 291,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 3337,
+        "width": 287,
+        "height": 65
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 679,
+        "width": 1220,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-7147bf03.jpg"
+    },
+    {
+      "id": "unknown-1d621799",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA + 1 list block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 5,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs + list"
+      },
+      "selector": "div.upspr-socialmedia",
+      "bounds": {
+        "x": 937,
+        "y": 1375,
+        "width": 373,
+        "height": 54
+      },
+      "screenshot": "blocks/unknown-1d621799.jpg"
+    },
+    {
+      "id": "unknown-3cf326b7",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "6 headings + 5 images + form block",
+      "content": {
+        "headingCount": 6,
+        "paragraphCount": 0,
+        "imageCount": 5,
+        "buttonCount": 0,
+        "linkCount": 15,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + 5 images"
+      },
+      "selector": "div.pr24-background-colour.responsivegrid",
+      "bounds": {
+        "x": 0,
+        "y": 2751,
+        "width": 1440,
+        "height": 942
+      },
+      "screenshot": "blocks/unknown-3cf326b7.jpg"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "variantName": "hero-minimal-dark-withimg-4",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.475Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/home.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + text + 1 CTAs + image + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"hero\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"heading + text + 1 CTAs + image + list\"}}",
+    "{\"canonicalModel\":\"standalone\",\"type\":\"hero\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":true,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"heading + text + 1 CTAs + image + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/home.html",
+        "screenshot": ".pages/about_ups_com_us_en_home_html--25dec964/blocks/hero-14202c04.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_html--00d1eefd/blocks/hero-3796960.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/leadership/brian-dykes.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_leadership_brian-dykes_html--b02a5837/blocks/hero-74a65fe7.jpg"
+      }
+    ],
+    "reuseCount": 3
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "url": "https://about.ups.com/us/en/thank-a-ups-hero/thank-a-ups-hero---region-selection.html",
+  "timestamp": "2026-06-11T08:19:12.346Z",
+  "duration": "8.4s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/thank-a-ups-hero/thank-a-ups-hero---region-selection.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 375
+    },
+    "topSectionStrategy": "title",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 537,
+        "y": 42,
+        "width": 365,
+        "height": 53
+      },
+      {
+        "type": "text",
+        "x": 804,
+        "y": 260,
+        "width": 106,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 804,
+        "y": 304,
+        "width": 353,
+        "height": 53
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "h2",
+        "fontSize": 48,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 243,
+        "y": 40,
+        "width": 953,
+        "height": 58,
+        "textLength": 14
+      },
+      {
+        "tag": "h2",
+        "fontSize": 48,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 804,
+        "y": 301,
+        "width": 462,
+        "height": 58,
+        "textLength": 16
+      }
+    ],
+    "topSectionVisualElements": [
+      {
+        "kind": "img",
+        "x": 150,
+        "y": 186,
+        "width": 590,
+        "height": 548
+      }
+    ],
+    "topSectionCropBottomY": 359,
+    "topSectionTitleRect": {
+      "x": 804,
+      "y": 301,
+      "width": 462,
+      "height": 58,
+      "text": "Thank a UPS hero"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 375,
+      "width": 1440,
+      "height": 525
+    },
+    "bodyStartY": 375,
+    "bodyPlaceholders": [
+      {
+        "type": "image",
+        "x": 150,
+        "y": 375,
+        "width": 590,
+        "height": 359
+      },
+      {
+        "type": "text",
+        "x": 804,
+        "y": 387,
+        "width": 436,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 844,
+        "y": 467,
+        "width": 173,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 844,
+        "y": 491,
+        "width": 58,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 844,
+        "y": 515,
+        "width": 275,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 844,
+        "y": 539,
+        "width": 55,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 844,
+        "y": 563,
+        "width": 325,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 844,
+        "y": 587,
+        "width": 102,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 0,
+        "y": 765,
+        "width": 1440,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 0,
+        "y": 829,
+        "width": 1440,
+        "height": 24
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero-74a65fe7",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 heading + 1 image + 1 list + 3 paragraphs block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 3,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 6,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + text + image + list"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(3)",
+      "bounds": {
+        "x": 0,
+        "y": 294,
+        "width": 1440,
+        "height": 724
+      },
+      "screenshot": "blocks/hero-74a65fe7.jpg"
+    }
+  ]
+}

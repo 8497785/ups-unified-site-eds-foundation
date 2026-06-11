@@ -1,0 +1,764 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-releases-1q-2026-earnings.html",
+  "timestamp": "2026-06-11T07:57:56.970Z",
+  "duration": "11.0s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/press-releases/financials/ups-releases-1q-2026-earnings.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 275
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 71,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 250,
+        "y": 31,
+        "width": 102,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 356,
+        "y": 31,
+        "width": 67,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 157,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 734,
+        "height": 62
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 67,
+        "height": 21,
+        "textLength": 8
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 268,
+        "y": 31,
+        "width": 98,
+        "height": 21,
+        "textLength": 14
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 383,
+        "y": 31,
+        "width": 63,
+        "height": 21,
+        "textLength": 10
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 157,
+        "height": 15,
+        "textLength": 10
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 72,
+        "textLength": 29
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 267,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 195,
+      "width": 1180,
+      "height": 72,
+      "text": "UPS Releases 1Q 2026 Earnings"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 275,
+      "width": 1440,
+      "height": 10463
+    },
+    "bodyStartY": 275,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 154,
+        "y": 306,
+        "width": 94,
+        "height": 14
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 352,
+        "width": 649,
+        "height": 22
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 458,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1154,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1157,
+        "width": 257,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1178,
+        "width": 653,
+        "height": 44
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1229,
+        "width": 440,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1253,
+        "width": 262,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1293,
+        "width": 713,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1421,
+        "width": 716,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1501,
+        "width": 706,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1677,
+        "width": 180,
+        "height": 17
+      },
+      {
+        "type": "table",
+        "x": 130,
+        "y": 1730,
+        "width": 717,
+        "height": 268
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2041,
+        "width": 671,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2089,
+        "width": 550,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2129,
+        "width": 168,
+        "height": 17
+      },
+      {
+        "type": "table",
+        "x": 130,
+        "y": 2182,
+        "width": 717,
+        "height": 268
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2493,
+        "width": 535,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2517,
+        "width": 568,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2554,
+        "width": 186,
+        "height": 20
+      },
+      {
+        "type": "table",
+        "x": 130,
+        "y": 2610,
+        "width": 717,
+        "height": 268
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2918,
+        "width": 689,
+        "height": 44
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3001,
+        "width": 664,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3025,
+        "width": 550,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3065,
+        "width": 100,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3121,
+        "width": 708,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3249,
+        "width": 662,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3329,
+        "width": 699,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3433,
+        "width": 691,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3537,
+        "width": 68,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3593,
+        "width": 375,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3649,
+        "width": 502,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 471,
+        "y": 3705,
+        "width": 36,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3761,
+        "width": 214,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3817,
+        "width": 716,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3993,
+        "width": 84,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4049,
+        "width": 713,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4249,
+        "width": 221,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4305,
+        "width": 710,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4457,
+        "width": 716,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4657,
+        "width": 714,
+        "height": 737
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5433,
+        "width": 716,
+        "height": 209
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5681,
+        "width": 523,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5737,
+        "width": 692,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5937,
+        "width": 705,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6065,
+        "width": 412,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6121,
+        "width": 700,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6249,
+        "width": 216,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6305,
+        "width": 706,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6457,
+        "width": 695,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6585,
+        "width": 529,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6641,
+        "width": 710,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6793,
+        "width": 669,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6897,
+        "width": 713,
+        "height": 185
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7121,
+        "width": 712,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7297,
+        "width": 711,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7473,
+        "width": 703,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7625,
+        "width": 229,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7681,
+        "width": 703,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7785,
+        "width": 315,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7841,
+        "width": 712,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 8017,
+        "width": 254,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 8073,
+        "width": 711,
+        "height": 185
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 8297,
+        "width": 113,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 8353,
+        "width": 689,
+        "height": 113
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 8502,
+        "width": 717,
+        "height": 273
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 8782,
+        "width": 717,
+        "height": 295
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 9084,
+        "width": 717,
+        "height": 325
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 9416,
+        "width": 717,
+        "height": 302
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 9725,
+        "width": 717,
+        "height": 444
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 10176,
+        "width": 717,
+        "height": 243
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 10426,
+        "width": 717,
+        "height": 233
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 589,
+        "width": 1220,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-7147bf03.jpg"
+    },
+    {
+      "id": "unknown-1d621799",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA + 1 list block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 5,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs + list"
+      },
+      "selector": "div.upspr-socialmedia",
+      "bounds": {
+        "x": 937,
+        "y": 1285,
+        "width": 373,
+        "height": 54
+      },
+      "screenshot": "blocks/unknown-1d621799.jpg"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "variantName": "table-minimal-dark-1",
+  "baseBlock": "table",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.432Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-company/suppliers/what-we-buy.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "icon",
+    "structure": "text + 6 images"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"table\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"icon\",\"structure\":\"text + 6 images\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-company/suppliers/what-we-buy.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_suppliers_what-we-buy_html--efccdf0f/blocks/table-4c424489.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

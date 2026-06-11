@@ -1,0 +1,351 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-announces-quarterly-dividend-q1-2022.html",
+  "timestamp": "2026-06-11T07:55:52.922Z",
+  "duration": "8.9s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/press-releases/financials/ups-announces-quarterly-dividend-q1-2022.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 275
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 71,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 250,
+        "y": 31,
+        "width": 102,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 356,
+        "y": 31,
+        "width": 67,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 157,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 817,
+        "height": 62
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 67,
+        "height": 21,
+        "textLength": 8
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 268,
+        "y": 31,
+        "width": 98,
+        "height": 21,
+        "textLength": 14
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 383,
+        "y": 31,
+        "width": 63,
+        "height": 21,
+        "textLength": 10
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 157,
+        "height": 15,
+        "textLength": 10
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 72,
+        "textLength": 32
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 267,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 195,
+      "width": 1180,
+      "height": 72,
+      "text": "UPS Announces Quarterly Dividend"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 275,
+      "width": 1440,
+      "height": 1789
+    },
+    "bodyStartY": 275,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 303,
+        "width": 191,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 352,
+        "width": 678,
+        "height": 52
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 488,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1184,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1184,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1184,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1184,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1184,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1187,
+        "width": 673,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1267,
+        "width": 579,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1323,
+        "width": 704,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1427,
+        "width": 84,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1483,
+        "width": 715,
+        "height": 185
+      },
+      {
+        "type": "text",
+        "x": 471,
+        "y": 1707,
+        "width": 36,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1763,
+        "width": 73,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1819,
+        "width": 152,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1923,
+        "width": 175,
+        "height": 65
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 619,
+        "width": 1220,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-7147bf03.jpg"
+    },
+    {
+      "id": "unknown-72c20b8f",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA + 1 list block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 9,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 10,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "text + 1 CTAs + list"
+      },
+      "selector": "div.upspr-two-column > div:nth-child(3)",
+      "bounds": {
+        "x": 110,
+        "y": 1315,
+        "width": 1220,
+        "height": 840
+      },
+      "screenshot": "blocks/unknown-72c20b8f.jpg"
+    }
+  ]
+}

@@ -1,0 +1,583 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/statements/ups-statement-on-aircraft-accident.html",
+  "timestamp": "2026-06-11T08:00:11.735Z",
+  "duration": "9.3s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/statements/ups-statement-on-aircraft-accident.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 275
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 71,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 250,
+        "y": 31,
+        "width": 75,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 162,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 812,
+        "height": 62
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 67,
+        "height": 21,
+        "textLength": 8
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 268,
+        "y": 31,
+        "width": 71,
+        "height": 21,
+        "textLength": 10
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 162,
+        "height": 15,
+        "textLength": 10
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 72,
+        "textLength": 34
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 267,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 195,
+      "width": 1180,
+      "height": 72,
+      "text": "UPS Statement on Aircraft Accident"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 275,
+      "width": 1440,
+      "height": 4319
+    },
+    "bodyStartY": 275,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 303,
+        "width": 191,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 352,
+        "width": 601,
+        "height": 22
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 458,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1154,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1157,
+        "width": 218,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1213,
+        "width": 702,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1362,
+        "width": 717,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1421,
+        "width": 209,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1477,
+        "width": 714,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1581,
+        "width": 715,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1634,
+        "width": 717,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1693,
+        "width": 209,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1749,
+        "width": 703,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1901,
+        "width": 645,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1978,
+        "width": 717,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2037,
+        "width": 513,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2093,
+        "width": 606,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2149,
+        "width": 694,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2277,
+        "width": 672,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2357,
+        "width": 694,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2437,
+        "width": 713,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2514,
+        "width": 717,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2573,
+        "width": 200,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2629,
+        "width": 707,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2709,
+        "width": 697,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2813,
+        "width": 684,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2893,
+        "width": 376,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2949,
+        "width": 357,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3005,
+        "width": 136,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3061,
+        "width": 663,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3165,
+        "width": 670,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3269,
+        "width": 637,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3349,
+        "width": 79,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3426,
+        "width": 717,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3485,
+        "width": 200,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3541,
+        "width": 714,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3621,
+        "width": 450,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3674,
+        "width": 717,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3733,
+        "width": 200,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3789,
+        "width": 683,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3917,
+        "width": 716,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4021,
+        "width": 637,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4077,
+        "width": 450,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4130,
+        "width": 717,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4189,
+        "width": 200,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4245,
+        "width": 711,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4349,
+        "width": 705,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4477,
+        "width": 450,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4533,
+        "width": 400,
+        "height": 17
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 589,
+        "width": 1220,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-7147bf03.jpg"
+    },
+    {
+      "id": "unknown-1d621799",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA + 1 list block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 5,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs + list"
+      },
+      "selector": "div.upspr-socialmedia",
+      "bounds": {
+        "x": 937,
+        "y": 1285,
+        "width": 373,
+        "height": 54
+      },
+      "screenshot": "blocks/unknown-1d621799.jpg"
+    }
+  ]
+}

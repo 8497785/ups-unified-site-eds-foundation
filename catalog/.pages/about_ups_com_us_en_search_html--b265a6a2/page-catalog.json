@@ -1,0 +1,174 @@
+{
+  "url": "https://about.ups.com/us/en/search.html",
+  "timestamp": "2026-06-11T08:19:17.159Z",
+  "duration": "8.4s",
+  "cleanup": {
+    "elementsRemoved": 21,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/search.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 175
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 44,
+        "height": 16
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 171,
+        "y": 33,
+        "width": 57,
+        "height": 16,
+        "textLength": 6
+      },
+      {
+        "tag": "label",
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 99,
+        "width": 1,
+        "height": 1,
+        "textLength": 18
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 163,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 99,
+      "width": 1,
+      "height": 1,
+      "text": "search field input"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 175,
+      "width": 1440,
+      "height": 725
+    },
+    "bodyStartY": 175,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 255,
+        "width": 65,
+        "height": 11
+      },
+      {
+        "type": "text",
+        "x": 1118,
+        "y": 257,
+        "width": 55,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 1189,
+        "y": 257,
+        "width": 90,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 156,
+        "y": 303,
+        "width": 37,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 156,
+        "y": 377,
+        "width": 32,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 156,
+        "y": 451,
+        "width": 51,
+        "height": 24
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "tabs-74a65fc8",
+      "type": "tabs",
+      "confidence": "high",
+      "description": "4 CTAs + form + 4 lists block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 4,
+        "linkCount": 4,
+        "listCount": 4,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "4 CTAs + list"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(2)",
+      "bounds": {
+        "x": 0,
+        "y": 132,
+        "width": 1440,
+        "height": 587
+      },
+      "screenshot": "blocks/tabs-74a65fc8.jpg"
+    }
+  ]
+}

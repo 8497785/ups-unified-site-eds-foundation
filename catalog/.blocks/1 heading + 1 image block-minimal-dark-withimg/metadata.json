@@ -1,0 +1,155 @@
+{
+  "variantName": "1 heading + 1 image block-minimal-dark-withimg",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.405Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/all-stories.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + image"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"heading + image\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/all-stories.html",
+        "screenshot": ".pages/about_ups_com_us_en_all-stories_html--87115a8d/blocks/unknown-3e352e5e.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/negotiations/news-on-the-2023-ups-labor-negotiations.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_negotiations_news-on-the-2023-ups-labor-negotiations_html--48fc9154/blocks/unknown-3e352e01.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/negotiations/weekly-updates-from-the-bargaining-table.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_negotiations_weekly-updates-from-the-bargaining-table_html--7721ce72/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_html--aea0a7b7/blocks/unknown-3e352e01.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/corporate-governance.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_corporate-governance_html--d04c7a7d/blocks/unknown-3e352e5e.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/customer-first.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_customer-first_html--ffed7c56/blocks/unknown-3e352e5e.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_html--d2db432c/blocks/unknown-3e352e5e.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_innovation-driven_html--c1499769/blocks/unknown-3e352e5e.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/local-community-engagement.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_local-community-engagement_html--fa107c45/blocks/unknown-3e352e5e.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/our-strategy.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_our-strategy_html--60301551/blocks/unknown-3e352e5e.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/people-led.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_people-led_html--aee7bd6a/blocks/unknown-3e352e5e.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/statements.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_statements_html--8e9ba697/blocks/unknown-3e352e01.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/ups-aircraft-accident.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_ups-aircraft-accident_html--9d3b75d7/blocks/unknown-6b3e1cc4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_html--b78e560c/blocks/unknown-2d3b666.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/global-presence.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_global-presence_html--8412400d/blocks/unknown-3e352e01.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_html--5254d25a/blocks/unknown-2d3b666.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_html--0e644dab/blocks/unknown-3e352e01.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/equity-and-economic-empowerment.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_equity-and-economic-empowerment_html--0ef2aad4/blocks/unknown-3e352e5e.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_health-humanitarian-relief_html--66879e27/blocks/unknown-3e352e5e.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_html--0488b244/blocks/unknown-3e352e5e.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/reporting/the-ups-foundations-social-impact-report.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_reporting_the-ups-foundations-social-impact-report_html--7074f935/blocks/unknown-2d3b666.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_html--680d9553/blocks/unknown-3e352e01.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/circular-economy/circular-solutions-for-ups-customers.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_circular-economy_circular-solutions-for-ups-customers_html--fccd8290/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/circular-economy/ups-helps-nespresso-recycle.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_circular-economy_ups-helps-nespresso-recycle_html--b6ffe210/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/sustainable-services.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_sustainable-services_html--e1ce0980/blocks/unknown-3e352e5e.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_ups-sustainability-and-community-impact-report_html--cfb31695/blocks/unknown-2d3b666.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_html--2c45bdab/blocks/unknown-3e352e01.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_html--091da71d/blocks/unknown-3e352e01.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/small-gestures-toward-customer-lead-to-meaningful-friendship.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_small-gestures-toward-customer-lead-to-meaningful-friendship_html--ae2b60e1/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/innovation-driven.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_innovation-driven_html--6de8b507/blocks/unknown-3e352e01.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/innovation-driven/new-state-of-the-art-ups-facility-opens-in-tacoma-washington.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_innovation-driven_new-state-of-the-art-ups-facility-opens-in-tacoma-washington_html--d8e5bffe/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_html--f695b194/blocks/unknown-3e352e01.jpg"
+      }
+    ],
+    "reuseCount": 32
+  }
+}

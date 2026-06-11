@@ -1,0 +1,31 @@
+{
+  "variantName": "hero-minimal-dark-1",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.405Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/contact-us-form.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "icon",
+    "structure": "heading + text + image"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"hero\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"icon\",\"structure\":\"heading + text + image\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/contact-us-form.html",
+        "screenshot": ".pages/about_ups_com_us_en_contact-us-form_html--1969c00a/blocks/hero-a91fe95.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

@@ -1,0 +1,449 @@
+{
+  "url": "https://about.ups.com/us/en/our-stories/customer-first/tupss-fund-junior-achievement.html",
+  "timestamp": "2026-06-11T08:08:14.471Z",
+  "duration": "36.0s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/our-stories/customer-first/tupss-fund-junior-achievement.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 350
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 75,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 254,
+        "y": 31,
+        "width": 96,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 191,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 1115,
+        "height": 134
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 71,
+        "height": 21,
+        "textLength": 11
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 272,
+        "y": 31,
+        "width": 92,
+        "height": 21,
+        "textLength": 14
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 191,
+        "height": 15,
+        "textLength": 14
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 144,
+        "textLength": 85
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 339,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 195,
+      "width": 1180,
+      "height": 144,
+      "text": "The UPS Store teams with Junior Achievement to pay it forward for the next generation"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 350,
+      "width": 1440,
+      "height": 2432
+    },
+    "bodyStartY": 350,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 375,
+        "width": 191,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 424,
+        "width": 399,
+        "height": 22
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 530,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1226,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1229,
+        "width": 710,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1333,
+        "width": 710,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1437,
+        "width": 700,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1517,
+        "width": 713,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1621,
+        "width": 259,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1677,
+        "width": 671,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1725,
+        "width": 628,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1813,
+        "width": 499,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 574,
+        "y": 1988,
+        "width": 292,
+        "height": 53
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 2136,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 2136,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 2136,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2450,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 2450,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 2450,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2490,
+        "width": 272,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 2490,
+        "width": 298,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 2490,
+        "width": 294,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 2559,
+        "width": 251,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2591,
+        "width": 287,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 2591,
+        "width": 299,
+        "height": 17
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 661,
+        "width": 1220,
+        "height": 0
+      },
+      "screenshot": null,
+      "error": "Element not visible"
+    },
+    {
+      "id": "unknown-72c20b8f",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA + 2 lists block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 6,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 10,
+        "listCount": 2,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "text + 1 CTAs + list"
+      },
+      "selector": "div.upspr-two-column > div:nth-child(3)",
+      "bounds": {
+        "x": 110,
+        "y": 741,
+        "width": 1220,
+        "height": 640
+      },
+      "screenshot": "blocks/unknown-72c20b8f.jpg"
+    },
+    {
+      "id": "unknown-3cf326b7",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "13 headings + 12 images + form block",
+      "content": {
+        "headingCount": 13,
+        "paragraphCount": 0,
+        "imageCount": 12,
+        "buttonCount": 0,
+        "linkCount": 36,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + 12 images"
+      },
+      "selector": "div.pr24-background-colour.responsivegrid",
+      "bounds": {
+        "x": 0,
+        "y": 1421,
+        "width": 1440,
+        "height": 876
+      },
+      "screenshot": "blocks/unknown-3cf326b7.jpg"
+    }
+  ]
+}

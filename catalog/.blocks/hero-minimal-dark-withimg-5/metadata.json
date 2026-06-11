@@ -1,0 +1,31 @@
+{
+  "variantName": "hero-minimal-dark-withimg-5",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.618Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/newsroom/press-releases/sustainable-services.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + 2 CTAs + 3 images"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"hero\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"heading + 2 CTAs + 3 images\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/sustainable-services.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_sustainable-services_html--5e8953fe/blocks/hero-74a65fe7.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

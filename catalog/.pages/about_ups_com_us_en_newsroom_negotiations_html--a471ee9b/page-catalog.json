@@ -1,0 +1,442 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/negotiations.html",
+  "timestamp": "2026-06-11T07:52:52.113Z",
+  "duration": "9.0s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/negotiations.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 325
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 67,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 311,
+        "y": 128,
+        "width": 817,
+        "height": 151
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 67,
+        "height": 21,
+        "textLength": 8
+      },
+      {
+        "tag": "h1",
+        "fontSize": 64,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 243,
+        "y": 123,
+        "width": 953,
+        "height": 160,
+        "textLength": 42
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 319,
+    "topSectionTitleRect": {
+      "x": 243,
+      "y": 123,
+      "width": 953,
+      "height": 160,
+      "text": "2023 U.S. Teamsters-UPS labor negotiations"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 325,
+      "width": 1440,
+      "height": 2669
+    },
+    "bodyStartY": 325,
+    "bodyPlaceholders": [
+      {
+        "type": "image",
+        "x": 130,
+        "y": 384,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 268,
+        "y": 556,
+        "width": 216,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 268,
+        "y": 644,
+        "width": 369,
+        "height": 76
+      },
+      {
+        "type": "text",
+        "x": 268,
+        "y": 741,
+        "width": 380,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 268,
+        "y": 818,
+        "width": 238,
+        "height": 51
+      },
+      {
+        "type": "text",
+        "x": 140,
+        "y": 1064,
+        "width": 1160,
+        "height": 84
+      },
+      {
+        "type": "text",
+        "x": 626,
+        "y": 1273,
+        "width": 188,
+        "height": 53
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 1445,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 1445,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 1445,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1758,
+        "width": 205,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1758,
+        "width": 79,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 1758,
+        "width": 205,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1799,
+        "width": 267,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1799,
+        "width": 211,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 1799,
+        "width": 246,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 1868,
+        "width": 281,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1900,
+        "width": 272,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1900,
+        "width": 293,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 635,
+        "y": 2068,
+        "width": 170,
+        "height": 56
+      },
+      {
+        "type": "text",
+        "x": 261,
+        "y": 2303,
+        "width": 166,
+        "height": 26
+      },
+      {
+        "type": "text",
+        "x": 261,
+        "y": 2382,
+        "width": 317,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 844,
+        "y": 2382,
+        "width": 220,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 261,
+        "y": 2419,
+        "width": 501,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 844,
+        "y": 2419,
+        "width": 99,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 261,
+        "y": 2547,
+        "width": 495,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 261,
+        "y": 2624,
+        "width": 170,
+        "height": 53
+      },
+      {
+        "type": "text",
+        "x": 261,
+        "y": 2685,
+        "width": 153,
+        "height": 53
+      },
+      {
+        "type": "text",
+        "x": 261,
+        "y": 2746,
+        "width": 430,
+        "height": 53
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero-363e1177",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 heading + 1 image + 1 CTA + 1 paragraph block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 1,
+        "imageCount": 1,
+        "buttonCount": 1,
+        "linkCount": 2,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + text + 1 CTAs + image"
+      },
+      "selector": "div.hero.aem-GridColumn",
+      "bounds": {
+        "x": 0,
+        "y": 515,
+        "width": 1440,
+        "height": 680
+      },
+      "screenshot": "blocks/hero-363e1177.jpg"
+    },
+    {
+      "id": "unknown-10c6aa14",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs"
+      },
+      "selector": "div.navigation-tabs.aem-GridColumn",
+      "bounds": {
+        "x": 0,
+        "y": 1195,
+        "width": 1440,
+        "height": 167
+      },
+      "screenshot": "blocks/unknown-10c6aa14.jpg"
+    },
+    {
+      "id": "unknown-7f488514",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "4 headings + 4 images + 2 CTAs + form block",
+      "content": {
+        "headingCount": 4,
+        "paragraphCount": 0,
+        "imageCount": 4,
+        "buttonCount": 2,
+        "linkCount": 5,
+        "listCount": 0,
+        "childCount": 2,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + 2 CTAs + 4 images"
+      },
+      "selector": "div.pr04-threecolumnteaser.aem-GridColumn",
+      "bounds": {
+        "x": 0,
+        "y": 1560,
+        "width": 1440,
+        "height": 768
+      },
+      "screenshot": "blocks/unknown-7f488514.jpg"
+    },
+    {
+      "id": "cards-7868da83",
+      "type": "cards",
+      "confidence": "high",
+      "description": "3 headings + 1 list + 3 paragraphs block",
+      "content": {
+        "headingCount": 3,
+        "paragraphCount": 3,
+        "imageCount": 0,
+        "buttonCount": 0,
+        "linkCount": 6,
+        "listCount": 1,
+        "childCount": 2,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "heading + text + list"
+      },
+      "itemCount": 3,
+      "selector": "div.upspr-contactus_mediakit > div:nth-child(1) > div:nth-child(1)",
+      "bounds": {
+        "x": 228,
+        "y": 2376,
+        "width": 983,
+        "height": 603
+      },
+      "screenshot": "blocks/cards-7868da83.jpg"
+    }
+  ]
+}

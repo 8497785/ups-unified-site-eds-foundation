@@ -1,0 +1,454 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/press-releases/people-led/ups-to-hire-over-100-000-.html",
+  "timestamp": "2026-06-11T07:59:40.000Z",
+  "duration": "9.2s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/press-releases/people-led/ups-to-hire-over-100-000-.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 425
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 71,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 250,
+        "y": 31,
+        "width": 102,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 356,
+        "y": 31,
+        "width": 75,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 435,
+        "y": 31,
+        "width": 139,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 159,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 1078,
+        "height": 206
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 67,
+        "height": 21,
+        "textLength": 8
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 268,
+        "y": 31,
+        "width": 98,
+        "height": 21,
+        "textLength": 14
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 383,
+        "y": 31,
+        "width": 71,
+        "height": 21,
+        "textLength": 10
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 457,
+        "y": 33,
+        "width": 152,
+        "height": 16,
+        "textLength": 21
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 159,
+        "height": 15,
+        "textLength": 10
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 216,
+        "textLength": 95
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 411,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 195,
+      "width": 1180,
+      "height": 216,
+      "text": "Landing a Job at UPS Just Got Easier as the Company Begins Recruiting 100,000+ Seasonal Workers"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 425,
+      "width": 1440,
+      "height": 2447
+    },
+    "bodyStartY": 425,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 447,
+        "width": 191,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 496,
+        "width": 645,
+        "height": 52
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 632,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1328,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1328,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1328,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1328,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1328,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1331,
+        "width": 711,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 961,
+        "y": 1434,
+        "width": 81,
+        "height": 11
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1459,
+        "width": 716,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 961,
+        "y": 1471,
+        "width": 325,
+        "height": 56
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1563,
+        "width": 715,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1691,
+        "width": 708,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1819,
+        "width": 711,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1971,
+        "width": 694,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2075,
+        "width": 710,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2227,
+        "width": 712,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2307,
+        "width": 205,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2363,
+        "width": 228,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2440,
+        "width": 717,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2499,
+        "width": 84,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2555,
+        "width": 713,
+        "height": 185
+      },
+      {
+        "type": "text",
+        "x": 475,
+        "y": 2779,
+        "width": 27,
+        "height": 17
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 763,
+        "width": 1220,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-7147bf03.jpg"
+    },
+    {
+      "id": "unknown-1d621799",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA + 1 list block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 5,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs + list"
+      },
+      "selector": "div.upspr-socialmedia",
+      "bounds": {
+        "x": 937,
+        "y": 1459,
+        "width": 373,
+        "height": 54
+      },
+      "screenshot": "blocks/unknown-1d621799.jpg"
+    },
+    {
+      "id": "cards-703e1c3",
+      "type": "cards",
+      "confidence": "high",
+      "description": "1 list + 2 paragraphs block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 2,
+        "imageCount": 0,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 1,
+        "childCount": 2,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "text + list"
+      },
+      "itemCount": 2,
+      "selector": "div.upspr-xd-card.upspr-card_fact-media-download",
+      "bounds": {
+        "x": 937,
+        "y": 1539,
+        "width": 373,
+        "height": 147
+      },
+      "screenshot": "blocks/cards-703e1c3.jpg"
+    }
+  ]
+}

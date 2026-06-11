@@ -1,0 +1,31 @@
+{
+  "variantName": "embed-minimal-dark-withimg-13",
+  "baseBlock": "embed",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:42.142Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-stories/people-led/-how-ups-is-honoring-the-legacy-of-dr--martin-luther-king-jr-.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "text + 6 images"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"embed\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"text + 6 images\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/-how-ups-is-honoring-the-legacy-of-dr--martin-luther-king-jr-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_-how-ups-is-honoring-the-legacy-of-dr--martin-luther-king-jr-_html--ca1832b9/blocks/embed-1415ced2.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

@@ -1,0 +1,529 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/awards-and-recognition.html",
+  "timestamp": "2026-06-11T07:53:00.795Z",
+  "duration": "9.2s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/awards-and-recognition.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 100
+    },
+    "topSectionStrategy": "title",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 71,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 250,
+        "y": 31,
+        "width": 152,
+        "height": 16
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#f0f0f0",
+        "backgroundColor": "#303000",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#f0f0f0",
+        "backgroundColor": "#303000",
+        "x": 184,
+        "y": 31,
+        "width": 67,
+        "height": 21,
+        "textLength": 8
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#f0f0f0",
+        "backgroundColor": "#303000",
+        "x": 255,
+        "y": 33,
+        "width": 164,
+        "height": 16,
+        "textLength": 22
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 83,
+    "topSectionTitleRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 83,
+      "text": "Home Newsroom Awards and Recognition"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 100,
+      "width": 1440,
+      "height": 3377
+    },
+    "bodyStartY": 100,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 458,
+        "y": 128,
+        "width": 522,
+        "height": 71
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 261,
+        "width": 112,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 530,
+        "y": 261,
+        "width": 196,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 930,
+        "y": 261,
+        "width": 194,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 300,
+        "width": 315,
+        "height": 116
+      },
+      {
+        "type": "text",
+        "x": 530,
+        "y": 300,
+        "width": 365,
+        "height": 116
+      },
+      {
+        "type": "text",
+        "x": 930,
+        "y": 300,
+        "width": 357,
+        "height": 76
+      },
+      {
+        "type": "text",
+        "x": 431,
+        "y": 564,
+        "width": 577,
+        "height": 53
+      },
+      {
+        "type": "text",
+        "x": 616,
+        "y": 742,
+        "width": 36,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 703,
+        "y": 742,
+        "width": 36,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 790,
+        "y": 742,
+        "width": 36,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 842,
+        "width": 119,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 882,
+        "width": 391,
+        "height": 26
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 919,
+        "width": 82,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1004,
+        "width": 102,
+        "height": 37
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1109,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1149,
+        "width": 399,
+        "height": 26
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1186,
+        "width": 82,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1271,
+        "width": 102,
+        "height": 37
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1376,
+        "width": 169,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1416,
+        "width": 477,
+        "height": 26
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1453,
+        "width": 82,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1514,
+        "width": 102,
+        "height": 37
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1619,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1659,
+        "width": 655,
+        "height": 26
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1696,
+        "width": 82,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1757,
+        "width": 102,
+        "height": 37
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1862,
+        "width": 169,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1902,
+        "width": 485,
+        "height": 26
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 1939,
+        "width": 82,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2024,
+        "width": 102,
+        "height": 37
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2129,
+        "width": 169,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2169,
+        "width": 611,
+        "height": 26
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2206,
+        "width": 82,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2267,
+        "width": 102,
+        "height": 37
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2372,
+        "width": 119,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2412,
+        "width": 566,
+        "height": 26
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2449,
+        "width": 82,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2510,
+        "width": 102,
+        "height": 37
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2615,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2655,
+        "width": 644,
+        "height": 26
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2692,
+        "width": 82,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2753,
+        "width": 102,
+        "height": 37
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2858,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2898,
+        "width": 609,
+        "height": 26
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2935,
+        "width": 82,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 2996,
+        "width": 102,
+        "height": 37
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 3101,
+        "width": 119,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 3141,
+        "width": 525,
+        "height": 26
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 3178,
+        "width": 82,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 281,
+        "y": 3263,
+        "width": 102,
+        "height": 37
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero-3cf326b7",
+      "type": "hero",
+      "confidence": "high",
+      "description": "4 headings + 3 images + form + 1 list block",
+      "content": {
+        "headingCount": 4,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 11,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "icon",
+        "structure": "heading + 3 images + list"
+      },
+      "selector": "div.pr24-background-colour.responsivegrid",
+      "bounds": {
+        "x": 0,
+        "y": 132,
+        "width": 1440,
+        "height": 521
+      },
+      "screenshot": "blocks/hero-3cf326b7.jpg"
+    },
+    {
+      "id": "tabs-2f00e970",
+      "type": "tabs",
+      "confidence": "high",
+      "description": "81 headings + 1 list block",
+      "content": {
+        "headingCount": 81,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 0,
+        "linkCount": 162,
+        "listCount": 1,
+        "childCount": 7,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "moderate",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "heading + list"
+      },
+      "selector": "div.tabs.panelcontainer",
+      "bounds": {
+        "x": 0,
+        "y": 851,
+        "width": 1440,
+        "height": 2757
+      },
+      "screenshot": "blocks/tabs-2f00e970.jpg"
+    }
+  ]
+}

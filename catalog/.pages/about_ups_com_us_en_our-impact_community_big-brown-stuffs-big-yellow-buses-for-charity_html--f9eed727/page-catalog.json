@@ -1,0 +1,601 @@
+{
+  "url": "https://about.ups.com/us/en/our-impact/community/big-brown-stuffs-big-yellow-buses-for-charity.html",
+  "timestamp": "2026-06-11T08:04:42.761Z",
+  "duration": "11.9s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/our-impact/community/big-brown-stuffs-big-yellow-buses-for-charity.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 275
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 73,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 252,
+        "y": 31,
+        "width": 75,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 156,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 1024,
+        "height": 62
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 69,
+        "height": 21,
+        "textLength": 10
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 270,
+        "y": 31,
+        "width": 71,
+        "height": 21,
+        "textLength": 9
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 156,
+        "height": 15,
+        "textLength": 9
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 72,
+        "textLength": 45
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 267,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 195,
+      "width": 1180,
+      "height": 72,
+      "text": "Big Brown stuffs big yellow buses for charity"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 275,
+      "width": 1440,
+      "height": 4363
+    },
+    "bodyStartY": 275,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 303,
+        "width": 191,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 352,
+        "width": 619,
+        "height": 22
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 458,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1154,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1157,
+        "width": 708,
+        "height": 113
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 1330,
+        "width": 717,
+        "height": 403
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1799,
+        "width": 703,
+        "height": 89
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 1924,
+        "width": 717,
+        "height": 403
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2369,
+        "width": 688,
+        "height": 65
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 2470,
+        "width": 717,
+        "height": 403
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2915,
+        "width": 711,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3019,
+        "width": 705,
+        "height": 41
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 3096,
+        "width": 717,
+        "height": 403
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3541,
+        "width": 691,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3645,
+        "width": 702,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 574,
+        "y": 3844,
+        "width": 292,
+        "height": 53
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 3992,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 3992,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 3992,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 4306,
+        "width": 255,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 4306,
+        "width": 253,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 4306,
+        "width": 255,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 4346,
+        "width": 295,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 4346,
+        "width": 265,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 4346,
+        "width": 263,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 4447,
+        "width": 289,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 4447,
+        "width": 296,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 4447,
+        "width": 273,
+        "height": 41
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 589,
+        "width": 1220,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-7147bf03.jpg"
+    },
+    {
+      "id": "unknown-12633f3c",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 image block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "image"
+      },
+      "selector": "div.cmp-text.upspr-analytics > p:nth-child(2)",
+      "bounds": {
+        "x": 130,
+        "y": 1461,
+        "width": 717,
+        "height": 403
+      },
+      "screenshot": "blocks/unknown-12633f3c.jpg"
+    },
+    {
+      "id": "unknown-12633efe",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 image block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "image"
+      },
+      "selector": "div.cmp-text.upspr-analytics > p:nth-child(4)",
+      "bounds": {
+        "x": 130,
+        "y": 2048,
+        "width": 717,
+        "height": 403
+      },
+      "screenshot": "blocks/unknown-12633efe.jpg"
+    },
+    {
+      "id": "unknown-12633ec0",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 image block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "image"
+      },
+      "selector": "div.cmp-text.upspr-analytics > p:nth-child(6)",
+      "bounds": {
+        "x": 130,
+        "y": 2587,
+        "width": 717,
+        "height": 403
+      },
+      "screenshot": "blocks/unknown-12633ec0.jpg"
+    },
+    {
+      "id": "unknown-12633e63",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 image block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "image"
+      },
+      "selector": "div.cmp-text.upspr-analytics > p:nth-child(9)",
+      "bounds": {
+        "x": 130,
+        "y": 3207,
+        "width": 717,
+        "height": 403
+      },
+      "screenshot": "blocks/unknown-12633e63.jpg"
+    },
+    {
+      "id": "unknown-1d621799",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA + 1 list block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 5,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs + list"
+      },
+      "selector": "div.upspr-socialmedia",
+      "bounds": {
+        "x": 937,
+        "y": 1285,
+        "width": 373,
+        "height": 54
+      },
+      "screenshot": "blocks/unknown-1d621799.jpg"
+    },
+    {
+      "id": "unknown-3cf326b7",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "13 headings + 12 images + form block",
+      "content": {
+        "headingCount": 13,
+        "paragraphCount": 0,
+        "imageCount": 12,
+        "buttonCount": 0,
+        "linkCount": 36,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + 12 images"
+      },
+      "selector": "div.pr24-background-colour.responsivegrid",
+      "bounds": {
+        "x": 0,
+        "y": 3866,
+        "width": 1440,
+        "height": 876
+      },
+      "screenshot": "blocks/unknown-3cf326b7.jpg"
+    }
+  ]
+}

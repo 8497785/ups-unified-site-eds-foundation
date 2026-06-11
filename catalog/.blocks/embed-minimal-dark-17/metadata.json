@@ -1,0 +1,31 @@
+{
+  "variantName": "embed-minimal-dark-17",
+  "baseBlock": "embed",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:42.304Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-stories/people-led/meet-the-faces-of-upsers-appreciation-week.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "icon",
+    "structure": "1 CTAs + image"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"embed\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"icon\",\"structure\":\"1 CTAs + image\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/meet-the-faces-of-upsers-appreciation-week.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_meet-the-faces-of-upsers-appreciation-week_html--b3a9c221/blocks/embed-1415ced2.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

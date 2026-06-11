@@ -1,0 +1,526 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/negotiations/news-on-the-2023-ups-labor-negotiations.html",
+  "timestamp": "2026-06-11T07:53:22.048Z",
+  "duration": "9.1s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/negotiations/news-on-the-2023-ups-labor-negotiations.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 225
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 71,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 250,
+        "y": 31,
+        "width": 159,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 665,
+        "y": 126,
+        "width": 109,
+        "height": 53
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 67,
+        "height": 21,
+        "textLength": 8
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 255,
+        "y": 33,
+        "width": 172,
+        "height": 16,
+        "textLength": 24
+      },
+      {
+        "tag": "h2",
+        "fontSize": 48,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 243,
+        "y": 123,
+        "width": 953,
+        "height": 58,
+        "textLength": 4
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 217,
+    "topSectionTitleRect": {
+      "x": 243,
+      "y": 123,
+      "width": 953,
+      "height": 58,
+      "text": "News"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 225,
+      "width": 1440,
+      "height": 1479
+    },
+    "bodyStartY": 225,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 303,
+        "y": 328,
+        "width": 164,
+        "height": 22
+      },
+      {
+        "type": "text",
+        "x": 550,
+        "y": 328,
+        "width": 171,
+        "height": 22
+      },
+      {
+        "type": "text",
+        "x": 803,
+        "y": 328,
+        "width": 156,
+        "height": 22
+      },
+      {
+        "type": "text",
+        "x": 1042,
+        "y": 328,
+        "width": 95,
+        "height": 22
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 419,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 419,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 419,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 732,
+        "width": 205,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 732,
+        "width": 205,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 732,
+        "width": 205,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 773,
+        "width": 285,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 773,
+        "width": 211,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 773,
+        "width": 246,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 842,
+        "width": 281,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 874,
+        "width": 272,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 874,
+        "width": 293,
+        "height": 65
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 1018,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 1018,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1331,
+        "width": 116,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1331,
+        "width": 205,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1372,
+        "width": 291,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1372,
+        "width": 205,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1441,
+        "width": 300,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1441,
+        "width": 281,
+        "height": 65
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "embed-1415ced2",
+      "type": "embed",
+      "confidence": "high",
+      "description": "4 CTAs block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 4,
+        "linkCount": 4,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "4 CTAs"
+      },
+      "selector": "div.embed.aem-GridColumn",
+      "bounds": {
+        "x": 0,
+        "y": 413,
+        "width": 1440,
+        "height": 114
+      },
+      "screenshot": "blocks/embed-1415ced2.jpg"
+    },
+    {
+      "id": "unknown-3e352e01",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.upspsr-cards-data.row > div:nth-child(1)",
+      "bounds": {
+        "x": 120,
+        "y": 527,
+        "width": 400,
+        "height": 592
+      },
+      "screenshot": "blocks/unknown-3e352e01.jpg"
+    },
+    {
+      "id": "unknown-3e352e20",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.upspsr-cards-data.row > div:nth-child(2)",
+      "bounds": {
+        "x": 520,
+        "y": 527,
+        "width": 400,
+        "height": 592
+      },
+      "screenshot": "blocks/unknown-3e352e20.jpg"
+    },
+    {
+      "id": "unknown-3e352e3f",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.upspsr-cards-data.row > div:nth-child(3)",
+      "bounds": {
+        "x": 920,
+        "y": 527,
+        "width": 400,
+        "height": 592
+      },
+      "screenshot": "blocks/unknown-3e352e3f.jpg"
+    },
+    {
+      "id": "unknown-3e352e5e",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.upspsr-cards-data.row > div:nth-child(4)",
+      "bounds": {
+        "x": 120,
+        "y": 1119,
+        "width": 400,
+        "height": 582
+      },
+      "screenshot": "blocks/unknown-3e352e5e.jpg"
+    },
+    {
+      "id": "unknown-3e352e7d",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.upspsr-cards-data.row > div:nth-child(5)",
+      "bounds": {
+        "x": 520,
+        "y": 1119,
+        "width": 400,
+        "height": 582
+      },
+      "screenshot": "blocks/unknown-3e352e7d.jpg"
+    },
+    {
+      "id": "hero-11b87049",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 CTA block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs"
+      },
+      "selector": "div.text-center.load-more-cta",
+      "bounds": {
+        "x": 120,
+        "y": 1741,
+        "width": 1200,
+        "height": 0
+      },
+      "screenshot": null,
+      "error": "Element not visible"
+    }
+  ]
+}

@@ -1,0 +1,467 @@
+{
+  "url": "https://about.ups.com/us/en/thank-a-ups-hero.html",
+  "timestamp": "2026-06-11T08:19:12.732Z",
+  "duration": "9.5s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/thank-a-ups-hero.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 50,
+      "width": 1440,
+      "height": 1225
+    },
+    "topSectionStrategy": "title+placeholder",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 419,
+        "y": 65,
+        "width": 601,
+        "height": 31
+      },
+      {
+        "type": "text",
+        "x": 603,
+        "y": 107,
+        "width": 234,
+        "height": 31
+      },
+      {
+        "type": "text",
+        "x": 240,
+        "y": 174,
+        "width": 958,
+        "height": 40
+      },
+      {
+        "type": "text",
+        "x": 254,
+        "y": 252,
+        "width": 932,
+        "height": 40
+      },
+      {
+        "type": "text",
+        "x": 237,
+        "y": 330,
+        "width": 966,
+        "height": 40
+      },
+      {
+        "type": "form",
+        "x": 0,
+        "y": 406,
+        "width": 1440,
+        "height": 869
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "h3",
+        "fontSize": 28,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 228,
+        "y": 64,
+        "width": 983,
+        "height": 34,
+        "textLength": 52
+      },
+      {
+        "tag": "h3",
+        "fontSize": 28,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 228,
+        "y": 106,
+        "width": 983,
+        "height": 34,
+        "textLength": 21
+      },
+      {
+        "tag": "b",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 241,
+        "y": 173,
+        "width": 114,
+        "height": 17,
+        "textLength": 13
+      },
+      {
+        "tag": "b",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 254,
+        "y": 251,
+        "width": 471,
+        "height": 17,
+        "textLength": 61
+      },
+      {
+        "tag": "b",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 812,
+        "y": 251,
+        "width": 132,
+        "height": 17,
+        "textLength": 16
+      },
+      {
+        "tag": "b",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 658,
+        "y": 251,
+        "width": 528,
+        "height": 40,
+        "textLength": 42
+      },
+      {
+        "tag": "p",
+        "fontSize": 16,
+        "fontWeight": 400,
+        "fontFamily": "arial",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 228,
+        "y": 327,
+        "width": 983,
+        "height": 46,
+        "textLength": 178
+      },
+      {
+        "tag": "label",
+        "fontSize": 16,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 195,
+        "y": 421,
+        "width": 958,
+        "height": 24,
+        "textLength": 12
+      },
+      {
+        "tag": "label",
+        "fontSize": 16,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 195,
+        "y": 501,
+        "width": 111,
+        "height": 24,
+        "textLength": 14
+      },
+      {
+        "tag": "label",
+        "fontSize": 16,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 195,
+        "y": 583,
+        "width": 479,
+        "height": 24,
+        "textLength": 4
+      },
+      {
+        "tag": "label",
+        "fontSize": 16,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 195,
+        "y": 663,
+        "width": 80,
+        "height": 24,
+        "textLength": 11
+      },
+      {
+        "tag": "label",
+        "fontSize": 16,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 195,
+        "y": 745,
+        "width": 958,
+        "height": 24,
+        "textLength": 68
+      },
+      {
+        "tag": "b",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 182,
+        "y": 879,
+        "width": 638,
+        "height": 17,
+        "textLength": 80
+      },
+      {
+        "tag": "i",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 182,
+        "y": 942,
+        "width": 1023,
+        "height": 40,
+        "textLength": 142
+      },
+      {
+        "tag": "label",
+        "fontSize": 16,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 195,
+        "y": 1043,
+        "width": 958,
+        "height": 24,
+        "textLength": 9
+      },
+      {
+        "tag": "label",
+        "fontSize": 16,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 195,
+        "y": 1123,
+        "width": 958,
+        "height": 24,
+        "textLength": 18
+      },
+      {
+        "tag": "span",
+        "fontSize": 16,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0c000",
+        "x": 206,
+        "y": 1240,
+        "width": 46,
+        "height": 24,
+        "textLength": 6
+      }
+    ],
+    "topSectionVisualElements": [
+      {
+        "kind": "form",
+        "x": 0,
+        "y": 404,
+        "width": 1440,
+        "height": 869
+      }
+    ],
+    "topSectionCropBottomY": 1274,
+    "topSectionTitleRect": {
+      "x": 182,
+      "y": 404,
+      "width": 1076,
+      "height": 80,
+      "text": "UPSer's Name"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 1275,
+      "width": 1440,
+      "height": 726
+    },
+    "bodyStartY": 1275,
+    "bodyPlaceholders": [
+      {
+        "type": "image",
+        "x": 130,
+        "y": 1355,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 1355,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 1355,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1668,
+        "width": 222,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1668,
+        "width": 222,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 1668,
+        "width": 222,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1708,
+        "width": 283,
+        "height": 26
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1708,
+        "width": 298,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 1708,
+        "width": 285,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1745,
+        "width": 300,
+        "height": 40
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 1777,
+        "width": 270,
+        "height": 40
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1809,
+        "width": 289,
+        "height": 40
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "tabs-11146522",
+      "type": "tabs",
+      "confidence": "high",
+      "description": "3 CTAs + form + 2 lists block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 4,
+        "imageCount": 0,
+        "buttonCount": 3,
+        "linkCount": 6,
+        "listCount": 2,
+        "childCount": 5,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "moderate",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "text + 3 CTAs + list"
+      },
+      "selector": "div.aemform.aem-GridColumn",
+      "bounds": {
+        "x": 0,
+        "y": 536,
+        "width": 1440,
+        "height": 869
+      },
+      "screenshot": "blocks/tabs-11146522.jpg"
+    },
+    {
+      "id": "unknown-7f488514",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "12 headings + 12 images + form block",
+      "content": {
+        "headingCount": 12,
+        "paragraphCount": 0,
+        "imageCount": 12,
+        "buttonCount": 0,
+        "linkCount": 36,
+        "listCount": 0,
+        "childCount": 2,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + 12 images"
+      },
+      "selector": "div.pr04-threecolumnteaser.aem-GridColumn",
+      "bounds": {
+        "x": 0,
+        "y": 1470,
+        "width": 1440,
+        "height": 662
+      },
+      "screenshot": "blocks/unknown-7f488514.jpg"
+    }
+  ]
+}

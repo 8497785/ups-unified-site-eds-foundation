@@ -1,0 +1,545 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-invests--50-million-to-transform-logistics-for-north-america.html",
+  "timestamp": "2026-06-11T07:55:12.129Z",
+  "duration": "9.7s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/press-releases/customer-first/ups-invests--50-million-to-transform-logistics-for-north-america.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 500
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 71,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 250,
+        "y": 31,
+        "width": 102,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 356,
+        "y": 31,
+        "width": 96,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 191,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 1159,
+        "height": 278
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 67,
+        "height": 21,
+        "textLength": 8
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 268,
+        "y": 31,
+        "width": 98,
+        "height": 21,
+        "textLength": 14
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 383,
+        "y": 31,
+        "width": 92,
+        "height": 21,
+        "textLength": 14
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 191,
+        "height": 15,
+        "textLength": 14
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 288,
+        "textLength": 147
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 483,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 195,
+      "width": 1180,
+      "height": 288,
+      "text": "UPS Invests $50 Million to Transform Logistics for North American Automotive and Industrial Manufacturers, Launches Air Freight Expansion in Mexico"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 500,
+      "width": 1440,
+      "height": 3785
+    },
+    "bodyStartY": 500,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 519,
+        "width": 191,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 568,
+        "width": 649,
+        "height": 52
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 704,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1400,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1400,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1400,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1400,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1400,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1403,
+        "width": 713,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1579,
+        "width": 705,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1731,
+        "width": 702,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1859,
+        "width": 700,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1987,
+        "width": 502,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2043,
+        "width": 710,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2123,
+        "width": 672,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2195,
+        "width": 639,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2243,
+        "width": 670,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2291,
+        "width": 645,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2355,
+        "width": 710,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2483,
+        "width": 550,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2539,
+        "width": 698,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2643,
+        "width": 668,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2747,
+        "width": 714,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2875,
+        "width": 84,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2931,
+        "width": 713,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3107,
+        "width": 60,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3163,
+        "width": 152,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 574,
+        "y": 3362,
+        "width": 292,
+        "height": 53
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 3510,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 3510,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 3510,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3824,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 3824,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 3824,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3864,
+        "width": 279,
+        "height": 154
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 3864,
+        "width": 254,
+        "height": 186
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 3864,
+        "width": 283,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 3965,
+        "width": 300,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 4029,
+        "width": 286,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 4061,
+        "width": 300,
+        "height": 65
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 835,
+        "width": 1220,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-7147bf03.jpg"
+    },
+    {
+      "id": "unknown-1d621799",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA + 1 list block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 5,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs + list"
+      },
+      "selector": "div.upspr-socialmedia",
+      "bounds": {
+        "x": 937,
+        "y": 1531,
+        "width": 373,
+        "height": 54
+      },
+      "screenshot": "blocks/unknown-1d621799.jpg"
+    },
+    {
+      "id": "unknown-3cf326b7",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "13 headings + 12 images + form block",
+      "content": {
+        "headingCount": 13,
+        "paragraphCount": 0,
+        "imageCount": 12,
+        "buttonCount": 0,
+        "linkCount": 36,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + 12 images"
+      },
+      "selector": "div.pr24-background-colour.responsivegrid",
+      "bounds": {
+        "x": 0,
+        "y": 3411,
+        "width": 1440,
+        "height": 998
+      },
+      "screenshot": "blocks/unknown-3cf326b7.jpg"
+    }
+  ]
+}

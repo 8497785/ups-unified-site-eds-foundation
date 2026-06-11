@@ -1,0 +1,78 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/ups-brand-assets.html",
+  "timestamp": "2026-06-11T07:53:04.021Z",
+  "duration": "8.1s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/ups-brand-assets.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 500
+    },
+    "topSectionStrategy": "fallback",
+    "topSectionPlaceholders": [
+      {
+        "type": "background",
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 500
+      }
+    ],
+    "topSectionTextElements": [],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 500,
+    "topSectionTitleRect": null,
+    "bodyBounds": {
+      "x": 0,
+      "y": 500,
+      "width": 1440,
+      "height": 400
+    },
+    "bodyStartY": 500,
+    "bodyPlaceholders": []
+  },
+  "blocks": [
+    {
+      "id": "hero-6acaaa43",
+      "type": "hero",
+      "confidence": "medium",
+      "description": "form block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "content"
+      },
+      "selector": "body.ups-template-login > div:nth-child(7) > div:nth-child(1) > div:nth-child(1)",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 809
+      },
+      "screenshot": "blocks/hero-6acaaa43.jpg"
+    }
+  ]
+}

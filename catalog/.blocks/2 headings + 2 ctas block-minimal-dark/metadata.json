@@ -1,0 +1,39 @@
+{
+  "variantName": "2 headings + 2 ctas block-minimal-dark",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.475Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/home.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "heading + 2 CTAs"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"heading + 2 CTAs\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/home.html",
+        "screenshot": ".pages/about_ups_com_us_en_home_html--25dec964/blocks/unknown-14202be5.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-planet.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_ups-sustainability-and-community-impact-report_delivering-for-our-planet_html--a41b6b5f/blocks/unknown-6b3e1c86.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-survey-say-india-smbs-want-to-export.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-survey-say-india-smbs-want-to-export_html--694183b6/blocks/unknown-52fc5f9c.jpg"
+      }
+    ],
+    "reuseCount": 3
+  }
+}

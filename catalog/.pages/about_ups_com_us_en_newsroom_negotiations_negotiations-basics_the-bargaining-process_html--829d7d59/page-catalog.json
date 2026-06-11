@@ -1,0 +1,324 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics/the-bargaining-process.html",
+  "timestamp": "2026-06-11T07:53:32.509Z",
+  "duration": "8.9s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/negotiations/negotiations-basics/the-bargaining-process.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 225
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 71,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 250,
+        "y": 31,
+        "width": 127,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 381,
+        "y": 31,
+        "width": 149,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 496,
+        "y": 126,
+        "width": 447,
+        "height": 53
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 67,
+        "height": 21,
+        "textLength": 8
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 268,
+        "y": 31,
+        "width": 123,
+        "height": 21,
+        "textLength": 19
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 395,
+        "y": 33,
+        "width": 162,
+        "height": 16,
+        "textLength": 22
+      },
+      {
+        "tag": "h2",
+        "fontSize": 48,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 243,
+        "y": 123,
+        "width": 953,
+        "height": 58,
+        "textLength": 22
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 217,
+    "topSectionTitleRect": {
+      "x": 243,
+      "y": 123,
+      "width": 953,
+      "height": 58,
+      "text": "The bargaining process"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 225,
+      "width": 1440,
+      "height": 1399
+    },
+    "bodyStartY": 225,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 299,
+        "y": 335,
+        "width": 842,
+        "height": 56
+      },
+      {
+        "type": "text",
+        "x": 242,
+        "y": 447,
+        "width": 955,
+        "height": 17
+      },
+      {
+        "type": "image",
+        "x": 300,
+        "y": 556,
+        "width": 100,
+        "height": 100
+      },
+      {
+        "type": "text",
+        "x": 400,
+        "y": 559,
+        "width": 111,
+        "height": 14
+      },
+      {
+        "type": "image",
+        "x": 300,
+        "y": 712,
+        "width": 100,
+        "height": 100
+      },
+      {
+        "type": "text",
+        "x": 400,
+        "y": 715,
+        "width": 166,
+        "height": 14
+      },
+      {
+        "type": "image",
+        "x": 400,
+        "y": 844,
+        "width": 100,
+        "height": 100
+      },
+      {
+        "type": "text",
+        "x": 500,
+        "y": 847,
+        "width": 183,
+        "height": 14
+      },
+      {
+        "type": "image",
+        "x": 300,
+        "y": 1000,
+        "width": 100,
+        "height": 100
+      },
+      {
+        "type": "text",
+        "x": 400,
+        "y": 1003,
+        "width": 181,
+        "height": 14
+      },
+      {
+        "type": "image",
+        "x": 300,
+        "y": 1156,
+        "width": 100,
+        "height": 100
+      },
+      {
+        "type": "text",
+        "x": 400,
+        "y": 1159,
+        "width": 165,
+        "height": 14
+      },
+      {
+        "type": "image",
+        "x": 300,
+        "y": 1312,
+        "width": 100,
+        "height": 100
+      },
+      {
+        "type": "text",
+        "x": 400,
+        "y": 1315,
+        "width": 106,
+        "height": 14
+      },
+      {
+        "type": "image",
+        "x": 300,
+        "y": 1468,
+        "width": 100,
+        "height": 100
+      },
+      {
+        "type": "text",
+        "x": 400,
+        "y": 1471,
+        "width": 122,
+        "height": 14
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "embed-6b3e1c86",
+      "type": "embed",
+      "confidence": "high",
+      "description": "5 CTAs + 1 paragraph block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 1,
+        "imageCount": 0,
+        "buttonCount": 5,
+        "linkCount": 4,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "text + 5 CTAs"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2)",
+      "bounds": {
+        "x": 0,
+        "y": 437,
+        "width": 1440,
+        "height": 218
+      },
+      "screenshot": "blocks/embed-6b3e1c86.jpg"
+    },
+    {
+      "id": "embed-6b3e1ca5",
+      "type": "embed",
+      "confidence": "high",
+      "description": "7 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 7,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "icon",
+        "structure": "7 images"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3)",
+      "bounds": {
+        "x": 0,
+        "y": 655,
+        "width": 1440,
+        "height": 1184
+      },
+      "screenshot": "blocks/embed-6b3e1ca5.jpg"
+    }
+  ]
+}

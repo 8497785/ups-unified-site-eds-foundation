@@ -1,0 +1,63 @@
+{
+  "variantName": "video-minimal-dark",
+  "baseBlock": "video",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.680Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-company/great-employer/single-mom-katheryn-cabanillas-soars-with-ups-s-pay--benefits--o.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "icon",
+    "structure": "text + 2 CTAs + image + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"video\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"icon\",\"structure\":\"text + 2 CTAs + image + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/single-mom-katheryn-cabanillas-soars-with-ups-s-pay--benefits--o.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_single-mom-katheryn-cabanillas-soars-with-ups-s-pay--benefits--o_html--6ed82eb2/blocks/video-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/climate/smart--sustainable-solutions-help-ups-deliver.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_climate_smart--sustainable-solutions-help-ups-deliver_html--cbda5b26/blocks/video-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/small-gestures-toward-customer-lead-to-meaningful-friendship.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_small-gestures-toward-customer-lead-to-meaningful-friendship_html--ae2b60e1/blocks/video-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-helps-apotheke.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-helps-apotheke_html--8b492c19/blocks/video-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-helps-fig-small-business.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-helps-fig-small-business_html--6557fb9c/blocks/video-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/blind-since-12-super-upser-jim-holland-sees-life-differently-than-most.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_blind-since-12-super-upser-jim-holland-sees-life-differently-than-most_html--127c90bb/blocks/video-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/minnesota-duo-still-truckin-after-50-year-careers-filled-with-safety-and-service-excellence.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_minnesota-duo-still-truckin-after-50-year-careers-filled-with-safety-and-service-excellence_html--36276c7a/blocks/video-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/super-upser-hasniza-hashim-boldly-navigates-the-congested-street.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_super-upser-hasniza-hashim-boldly-navigates-the-congested-street_html--de5c1fff/blocks/video-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/this-is-dedicated-to-you.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_this-is-dedicated-to-you_html--83049125/blocks/video-72c20b8f.jpg"
+      }
+    ],
+    "reuseCount": 9
+  }
+}

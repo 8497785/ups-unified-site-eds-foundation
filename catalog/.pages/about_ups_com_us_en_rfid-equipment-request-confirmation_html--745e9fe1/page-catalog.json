@@ -1,0 +1,159 @@
+{
+  "url": "https://about.ups.com/us/en/rfid-equipment-request-confirmation.html",
+  "timestamp": "2026-06-11T08:19:23.249Z",
+  "duration": "9.3s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/rfid-equipment-request-confirmation.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 375
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 387,
+        "y": 183,
+        "width": 665,
+        "height": 151
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 20,
+        "textLength": 4
+      },
+      {
+        "tag": "h1",
+        "fontSize": 64,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 228,
+        "y": 178,
+        "width": 983,
+        "height": 160,
+        "textLength": 35
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 374,
+    "topSectionTitleRect": {
+      "x": 228,
+      "y": 178,
+      "width": 983,
+      "height": 160,
+      "text": "RFID Equipment Request Confirmation"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 375,
+      "width": 1440,
+      "height": 665
+    },
+    "bodyStartY": 375,
+    "bodyPlaceholders": [
+      {
+        "type": "form",
+        "x": 0,
+        "y": 510,
+        "width": 1440,
+        "height": 466
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero-3796960",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 heading + 1 list + 2 paragraphs block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 2,
+        "imageCount": 0,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": true,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "heading + text + list"
+      },
+      "selector": "div.upspr-section-wrapper.upspr-section-wrapper__bg-grey_25",
+      "bounds": {
+        "x": 0,
+        "y": 132,
+        "width": 1440,
+        "height": 509
+      },
+      "screenshot": "blocks/hero-3796960.jpg"
+    },
+    {
+      "id": "tabs-74a65fe7",
+      "type": "tabs",
+      "confidence": "high",
+      "description": "3 CTAs + form + 2 lists block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 4,
+        "imageCount": 0,
+        "buttonCount": 3,
+        "linkCount": 7,
+        "listCount": 2,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "text + 3 CTAs + list"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(3)",
+      "bounds": {
+        "x": 0,
+        "y": 641,
+        "width": 1440,
+        "height": 530
+      },
+      "screenshot": "blocks/tabs-74a65fe7.jpg"
+    }
+  ]
+}

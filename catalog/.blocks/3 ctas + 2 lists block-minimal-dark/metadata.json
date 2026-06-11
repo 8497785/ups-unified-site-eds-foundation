@@ -1,0 +1,47 @@
+{
+  "variantName": "3 ctas + 2 lists block-minimal-dark",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.667Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-company/great-employer/opportunity-for-a-lifetime.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "text + 3 CTAs + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"text + 3 CTAs + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/opportunity-for-a-lifetime.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_opportunity-for-a-lifetime_html--f030a288/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/real-employee-benefits.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_real-employee-benefits_html--d40586ed/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/seasonal-role-turns-into-a-career.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_seasonal-role-turns-into-a-career_html--9c719fcc/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/ups-family-of-3-focus-on-safety-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_ups-family-of-3-focus-on-safety-_html--21688cb4/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/ups-takes-care-of-employees.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_ups-takes-care-of-employees_html--51e1230b/blocks/unknown-72c20b8f.jpg"
+      }
+    ],
+    "reuseCount": 5
+  }
+}

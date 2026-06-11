@@ -1,0 +1,63 @@
+{
+  "variantName": "video-minimal-dark-2",
+  "baseBlock": "video",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.749Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-impact/community/planet-protection/planting-trees-to-improve-the-health-of-communities--.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "content"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"video\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"content\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/planet-protection/planting-trees-to-improve-the-health-of-communities--.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_planet-protection_planting-trees-to-improve-the-health-of-communities--_html--213498a3/blocks/video-12633e82.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/climate/renewed-focus-on-renewable-energy.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_climate_renewed-focus-on-renewable-energy_html--60ab06c2/blocks/video-12633edf.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/-subway-takes--creator-kareem-rahma-teams-up-with-ups-for-small-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_-subway-takes--creator-kareem-rahma-teams-up-with-ups-for-small-_html--fb8e806d/blocks/video-12633f1d.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/behind-the-scenes-with-j-balvin-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_behind-the-scenes-with-j-balvin-_html--2ca124fb/blocks/video-3a04a9ec.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/liverpool-fc-ships-exclusive-kits-and-merch-to-fans-around-the-w.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_liverpool-fc-ships-exclusive-kits-and-merch-to-fans-around-the-w_html--0d557316/blocks/video-12633e63.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/seamus-golf-swings-big-through-ups-s-ryder-cup-partnership-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_seamus-golf-swings-big-through-ups-s-ryder-cup-partnership-_html--f6ce98b5/blocks/video-12633efe.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/shea-yeleen.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_shea-yeleen_html--f6eedfd5/blocks/video-3a04aa68.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/today-show-and-more-put-ups-s-holiday-triumphs-center-stage.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_today-show-and-more-put-ups-s-holiday-triumphs-center-stage_html--ba3310e6/blocks/video-12633f1d.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-and-lfc-celebrate-the--unstoppable-spirit--of-liverpool-busi0.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-and-lfc-celebrate-the--unstoppable-spirit--of-liverpool-busi0_html--07a9b825/blocks/video-12633e63.jpg"
+      }
+    ],
+    "reuseCount": 9
+  }
+}

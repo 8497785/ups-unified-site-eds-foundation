@@ -1,0 +1,106 @@
+{
+  "url": "https://about.ups.com/us/en/related-content/eeo-1.html",
+  "timestamp": "2026-06-11T08:19:07.181Z",
+  "duration": "8.3s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/related-content/eeo-1.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 100
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 528,
+        "y": 42,
+        "width": 384,
+        "height": 53
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "h2",
+        "fontSize": 48,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 243,
+        "y": 40,
+        "width": 953,
+        "height": 58,
+        "textLength": 17
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 98,
+    "topSectionTitleRect": {
+      "x": 243,
+      "y": 40,
+      "width": 953,
+      "height": 58,
+      "text": "2020 EEO-1 Report"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 100,
+      "width": 1440,
+      "height": 891
+    },
+    "bodyStartY": 100,
+    "bodyPlaceholders": [
+      {
+        "type": "image",
+        "x": 170,
+        "y": 186,
+        "width": 1100,
+        "height": 774
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero-74a65fc8",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 heading + 1 image + 1 paragraph block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 1,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + text + image"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(2)",
+      "bounds": {
+        "x": 0,
+        "y": 132,
+        "width": 1440,
+        "height": 983
+      },
+      "screenshot": "blocks/hero-74a65fc8.jpg"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "variantName": "embed-minimal-dark-withimg-11",
+  "baseBlock": "embed",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.808Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-stories/customer-first/exclusive-artwork-for-ups-express-boxes-honors-latin-and-hispani.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "text + image"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"embed\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"text + image\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/exclusive-artwork-for-ups-express-boxes-honors-latin-and-hispani.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_exclusive-artwork-for-ups-express-boxes-honors-latin-and-hispani_html--bc72d747/blocks/embed-26dbe8dc.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-helps-make-latin-and-hispanic-owned-small-businesses-unstopp0.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-helps-make-latin-and-hispanic-owned-small-businesses-unstopp0_html--d9dd192b/blocks/embed-26dbe89e.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/key-takeaways-from-members-of-the-ups-board.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_key-takeaways-from-members-of-the-ups-board_html--927c0fa9/blocks/embed-26dbe8dc.jpg"
+      }
+    ],
+    "reuseCount": 3
+  }
+}

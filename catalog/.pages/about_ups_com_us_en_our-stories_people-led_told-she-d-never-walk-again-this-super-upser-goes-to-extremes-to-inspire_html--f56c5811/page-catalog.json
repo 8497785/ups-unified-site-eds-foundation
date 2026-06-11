@@ -1,0 +1,14 @@
+{
+  "url": "https://about.ups.com/us/en/our-stories/people-led/told-she-d-never-walk-again-this-super-upser-goes-to-extremes-to-inspire.html",
+  "timestamp": "2026-06-11T08:19:50.145Z",
+  "error": {
+    "isError": true,
+    "type": "HTTP_404",
+    "detected": "HTTP status 404",
+    "confidence": "high",
+    "message": "HTTP_404 - Page appears to be an error page (detected: \"HTTP status 404\")"
+  },
+  "cleanup": null,
+  "template": null,
+  "blocks": []
+}

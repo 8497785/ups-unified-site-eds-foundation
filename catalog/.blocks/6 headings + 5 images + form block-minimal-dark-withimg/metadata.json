@@ -1,0 +1,55 @@
+{
+  "variantName": "6 headings + 5 images + form block-minimal-dark-withimg",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.574Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/new-chief-digital-and-technology-officer.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + 5 images"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"heading + 5 images\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/new-chief-digital-and-technology-officer.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_innovation-driven_new-chief-digital-and-technology-officer_html--c69768e8/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/equity-and-economic-empowerment/insights-on-economic-empowerment-from-the-ups-impact-summit.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_equity-and-economic-empowerment_insights-on-economic-empowerment-from-the-ups-impact-summit_html--e1490384/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/equity-and-economic-empowerment/pursuing-a-more-equitable-world.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_equity-and-economic-empowerment_pursuing-a-more-equitable-world_html--8b13f61d/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/equity-and-economic-empowerment/taking-women-owned-businesses-global-in-times-of-turmoil.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_equity-and-economic-empowerment_taking-women-owned-businesses-global-in-times-of-turmoil_html--315b1d93/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/equity-and-economic-empowerment/ups-helps-educate-50-000-students-in-india-through-nearly--125k-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_equity-and-economic-empowerment_ups-helps-educate-50-000-students-in-india-through-nearly--125k-_html--112f9f36/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/equity-and-economic-empowerment/ups-impact-summit.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_equity-and-economic-empowerment_ups-impact-summit_html--80578fbb/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/equity-and-economic-empowerment/ups-recognizes-juneteenth.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_equity-and-economic-empowerment_ups-recognizes-juneteenth_html--a4152749/blocks/unknown-3cf326b7.jpg"
+      }
+    ],
+    "reuseCount": 7
+  }
+}

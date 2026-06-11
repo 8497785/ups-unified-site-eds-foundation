@@ -1,0 +1,51 @@
+{
+  "variantName": "2 ctas block-minimal-dark",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.666Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-company/great-employer/jobs-and-opportunity-report.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "2 CTAs"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"2 CTAs\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/jobs-and-opportunity-report.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_jobs-and-opportunity-report_html--796746a6/blocks/unknown-37a862a.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/part-time-progression-with-health-benefits.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_part-time-progression-with-health-benefits_html--f64d1f9d/blocks/unknown-52fc5f9c.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/texas-sized-careers.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_texas-sized-careers_html--9bce2d78/blocks/unknown-52fc5f9c.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/third-generation-ups-driver-earns-safety-award.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_third-generation-ups-driver-earns-safety-award_html--fbe3f924/blocks/unknown-52fc5f9c.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_html--5254d25a/blocks/unknown-10c6aa14.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/circle-of-honor-class-of-2021.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_circle-of-honor-class-of-2021_html--3cf79648/blocks/unknown-52fc5f9c.jpg"
+      }
+    ],
+    "reuseCount": 6
+  }
+}

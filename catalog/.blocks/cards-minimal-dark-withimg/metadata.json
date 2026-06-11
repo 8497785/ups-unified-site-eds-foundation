@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-minimal-dark-withimg",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.777Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-impact/reporting.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + 16 images + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"cards\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"heading + 16 images + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-impact/reporting.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_reporting_html--b58e008c/blocks/cards-7c92017b.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

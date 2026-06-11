@@ -1,0 +1,466 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/negotiations/industry-overview.html",
+  "timestamp": "2026-06-11T07:53:15.407Z",
+  "duration": "9.8s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/negotiations/industry-overview.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 250
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 71,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 250,
+        "y": 31,
+        "width": 112,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 260,
+        "y": 128,
+        "width": 919,
+        "height": 71
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 67,
+        "height": 21,
+        "textLength": 8
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 255,
+        "y": 33,
+        "width": 125,
+        "height": 16,
+        "textLength": 17
+      },
+      {
+        "tag": "h1",
+        "fontSize": 64,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 243,
+        "y": 123,
+        "width": 953,
+        "height": 80,
+        "textLength": 34
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 239,
+    "topSectionTitleRect": {
+      "x": 243,
+      "y": 123,
+      "width": 953,
+      "height": 80,
+      "text": "Package delivery industry overview"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 250,
+      "width": 1440,
+      "height": 2595
+    },
+    "bodyStartY": 250,
+    "bodyPlaceholders": [
+      {
+        "type": "image",
+        "x": 130,
+        "y": 304,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 268,
+        "y": 465,
+        "width": 184,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 268,
+        "y": 553,
+        "width": 372,
+        "height": 76
+      },
+      {
+        "type": "text",
+        "x": 268,
+        "y": 650,
+        "width": 374,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 140,
+        "y": 984,
+        "width": 1160,
+        "height": 84
+      },
+      {
+        "type": "text",
+        "x": 320,
+        "y": 1193,
+        "width": 798,
+        "height": 53
+      },
+      {
+        "type": "text",
+        "x": 422,
+        "y": 1276,
+        "width": 596,
+        "height": 17
+      },
+      {
+        "type": "image",
+        "x": 340,
+        "y": 1421,
+        "width": 57,
+        "height": 57
+      },
+      {
+        "type": "image",
+        "x": 700,
+        "y": 1421,
+        "width": 57,
+        "height": 57
+      },
+      {
+        "type": "image",
+        "x": 1062,
+        "y": 1421,
+        "width": 57,
+        "height": 57
+      },
+      {
+        "type": "text",
+        "x": 328,
+        "y": 1506,
+        "width": 80,
+        "height": 45
+      },
+      {
+        "type": "text",
+        "x": 688,
+        "y": 1506,
+        "width": 80,
+        "height": 45
+      },
+      {
+        "type": "text",
+        "x": 1050,
+        "y": 1506,
+        "width": 80,
+        "height": 45
+      },
+      {
+        "type": "text",
+        "x": 223,
+        "y": 1566,
+        "width": 290,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 574,
+        "y": 1566,
+        "width": 308,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 920,
+        "y": 1566,
+        "width": 340,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 270,
+        "y": 1776,
+        "width": 894,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 270,
+        "y": 1880,
+        "width": 896,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 270,
+        "y": 1960,
+        "width": 505,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 0,
+        "y": 2037,
+        "width": 1440,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 0,
+        "y": 2101,
+        "width": 1440,
+        "height": 24
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 2165,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 268,
+        "y": 2326,
+        "width": 184,
+        "height": 15
+      },
+      {
+        "type": "text",
+        "x": 268,
+        "y": 2412,
+        "width": 384,
+        "height": 80
+      },
+      {
+        "type": "text",
+        "x": 268,
+        "y": 2511,
+        "width": 374,
+        "height": 113
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero-6b3e1c67",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 heading + 1 image + 1 paragraph block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 1,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + text + image"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1)",
+      "bounds": {
+        "x": 0,
+        "y": 435,
+        "width": 1440,
+        "height": 680
+      },
+      "screenshot": "blocks/hero-6b3e1c67.jpg"
+    },
+    {
+      "id": "unknown-10c6aa14",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs"
+      },
+      "selector": "div.navigation-tabs.aem-GridColumn",
+      "bounds": {
+        "x": 0,
+        "y": 1115,
+        "width": 1440,
+        "height": 167
+      },
+      "screenshot": "blocks/unknown-10c6aa14.jpg"
+    },
+    {
+      "id": "embed-6b3e1cc4",
+      "type": "embed",
+      "confidence": "high",
+      "description": "3 headings + 3 images + 1 list + 3 paragraphs block",
+      "content": {
+        "headingCount": 3,
+        "paragraphCount": 3,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "icon",
+        "structure": "heading + text + 3 images + list"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(4)",
+      "bounds": {
+        "x": 0,
+        "y": 1528,
+        "width": 1440,
+        "height": 345
+      },
+      "screenshot": "blocks/embed-6b3e1cc4.jpg"
+    },
+    {
+      "id": "embed-6b3e1ce3",
+      "type": "embed",
+      "confidence": "high",
+      "description": "3 paragraphs block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 3,
+        "imageCount": 0,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "text"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(5)",
+      "bounds": {
+        "x": 0,
+        "y": 1873,
+        "width": 1440,
+        "height": 288
+      },
+      "screenshot": "blocks/embed-6b3e1ce3.jpg"
+    },
+    {
+      "id": "hero-6b3e1d21",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 heading + 1 image + 1 paragraph block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 1,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + text + image"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(7)",
+      "bounds": {
+        "x": 0,
+        "y": 2289,
+        "width": 1440,
+        "height": 680
+      },
+      "screenshot": "blocks/hero-6b3e1d21.jpg"
+    }
+  ]
+}

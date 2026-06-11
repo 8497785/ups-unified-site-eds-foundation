@@ -1,0 +1,223 @@
+{
+  "variantName": "form block-minimal-dark",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.490Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-announces-numerous-products-and-innovative-technology-programs-to-help-smbs-grow-and-compete.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "content"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"content\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-announces-numerous-products-and-innovative-technology-programs-to-help-smbs-grow-and-compete.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_customer-first_ups-announces-numerous-products-and-innovative-technology-programs-to-help-smbs-grow-and-compete_html--65fd86bc/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-helps-businesses-in-ciudad-ju-rez-deliver-freight-shipments-to-the-u-s-in-only-one-day.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_customer-first_ups-helps-businesses-in-ciudad-ju-rez-deliver-freight-shipments-to-the-u-s-in-only-one-day_html--bfbeb056/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-my-choice-for-business-to-deploy-in-30-additional-countries-and-territories-in-2020.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_customer-first_ups-my-choice-for-business-to-deploy-in-30-additional-countries-and-territories-in-2020_html--a1b17656/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-strengthens-its-european-network-with-new-160-million-super-hub-in-germany.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_customer-first_ups-strengthens-its-european-network-with-new-160-million-super-hub-in-germany_html--891a828d/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/customer-first/xin-ch-o-vietnam-country-welcomes-iconic-ups-browntail-for-first-time.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_customer-first_xin-ch-o-vietnam-country-welcomes-iconic-ups-browntail-for-first-time_html--7904a075/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-announces-move-to-virtual-annual-meeting-of-shareowners-for-2020.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_ups-announces-move-to-virtual-annual-meeting-of-shareowners-for-2020_html--7053b31c/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-board-increases-quarterly-dividend-1.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_ups-board-increases-quarterly-dividend-1_html--20656816/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-board-increases-quarterly-dividend.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_ups-board-increases-quarterly-dividend_html--b2864b54/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-delivers-1q-2018-eps-of-1-55-up-17-.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_ups-delivers-1q-2018-eps-of-1-55-up-17-_html--7f7a86fb/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-releases-1q-2020-earnings.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_ups-releases-1q-2020-earnings_html--4d7b120d/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-releases-2q-2020-earnings.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_ups-releases-2q-2020-earnings_html--eac958ef/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-releases-3q-2019-earnings.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_ups-releases-3q-2019-earnings_html--8f374e8f/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-releases-3q-2020-earnings.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_ups-releases-3q-2020-earnings_html--d58e6078/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-releases-4q-2019-earnings.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_ups-releases-4q-2019-earnings_html--910faefc/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-to-release-first-quarter-results-on-tuesday-april-28-2020.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_ups-to-release-first-quarter-results-on-tuesday-april-28-2020_html--925ffb9a/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-to-release-fourth-quarter-results-on-thursday-january-30-2020.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_ups-to-release-fourth-quarter-results-on-thursday-january-30-2020_html--93bea3e8/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-to-release-second-quarter-results-on-thursday-july-30-2020.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_ups-to-release-second-quarter-results-on-thursday-july-30-2020_html--5e1082bb/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/coyote-logistics-launches-dynamic-route-optimization-to-enhance-supply-chain-efficiency.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_innovation-driven_coyote-logistics-launches-dynamic-route-optimization-to-enhance-supply-chain-efficiency_html--3eaffd4e/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/ups-deploys-purpose-built-navigation-for-ups-service-personnel.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_innovation-driven_ups-deploys-purpose-built-navigation-for-ups-service-personnel_html--f35115fc/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/ups-to-test-gaussin-autonomous-enabled-ev-s-to-move-trailers-at-its-london-hub.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_innovation-driven_ups-to-test-gaussin-autonomous-enabled-ev-s-to-move-trailers-at-its-london-hub_html--020344ce/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/local-community-engagement/allocates-15m-to-fight-against-coronavirus.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_local-community-engagement_allocates-15m-to-fight-against-coronavirus_html--e4ef6c2a/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/local-community-engagement/combat-novel-coronavirus-around-the-world.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_local-community-engagement_combat-novel-coronavirus-around-the-world_html--c4856a19/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/local-community-engagement/mobilizes-global-relief-in-australia-puerto-rico-philippines.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_local-community-engagement_mobilizes-global-relief-in-australia-puerto-rico-philippines_html--4982ca80/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/local-community-engagement/never-forget-upsers-pay-tribute-to-9-11-heroes.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_local-community-engagement_never-forget-upsers-pay-tribute-to-9-11-heroes_html--31494e44/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/local-community-engagement/ups-donates-nearly-500-000-in-new-funding-to-kentucky-indiana-ohio-nonprofits-university-of-louisville-for-coronavirus-relief.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_local-community-engagement_ups-donates-nearly-500-000-in-new-funding-to-kentucky-indiana-ohio-nonprofits-university-of-louisville-for-coronavirus-relief_html--0a67666e/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/local-community-engagement/ups-expedites-global-deliveries-of-qiagen-coronavirus-testing-kits.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_local-community-engagement_ups-expedites-global-deliveries-of-qiagen-coronavirus-testing-kits_html--e8889a61/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/local-community-engagement/ups-supporting-university-of-louisville-manufacturing-of-face-shields.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_local-community-engagement_ups-supporting-university-of-louisville-manufacturing-of-face-shields_html--97de7727/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/our-strategy/ups-and-international-brotherhood-of-teamsters-reach-handshake-agreement-for-new-national-master-agreement.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_our-strategy_ups-and-international-brotherhood-of-teamsters-reach-handshake-agreement-for-new-national-master-agreement_html--bd644f72/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/our-strategy/ups-and-international-brotherhood-of-teamsters-reach-tentative-new-national-master-ups-freight-agreement.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_our-strategy_ups-and-international-brotherhood-of-teamsters-reach-tentative-new-national-master-ups-freight-agreement_html--3a54b282/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/people-led/ups-announces-changes-to-board-of-directors.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_people-led_ups-announces-changes-to-board-of-directors_html--74c4ad08/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/people-led/ups-announces-executive-leadership-team-changes.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_people-led_ups-announces-executive-leadership-team-changes_html--0432fdf7/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/people-led/ups-appoints-eva-boratto-and-wayne-hewett-to-board-of-directors.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_people-led_ups-appoints-eva-boratto-and-wayne-hewett-to-board-of-directors_html--aee41ec3/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/people-led/ups-board-appoints-carol-tom-as-ceo-david-abney-to-be-executive-chairman.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_people-led_ups-board-appoints-carol-tom-as-ceo-david-abney-to-be-executive-chairman_html--be9df067/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/people-led/ups-names-angela-hwang-to-board-of-directors.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_people-led_ups-names-angela-hwang-to-board-of-directors_html--41cc1205/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/people-led/ups-promotes-laura-lane-to-chief-corporate-affairs-and-communications-officer.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_people-led_ups-promotes-laura-lane-to-chief-corporate-affairs-and-communications-officer_html--2713a79e/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/sustainable-services/news-hurricane-laura-relief-efforts-supported-by-ups-strategy-of-preparedness.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_sustainable-services_news-hurricane-laura-relief-efforts-supported-by-ups-strategy-of-preparedness_html--b904df5d/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/sustainable-services/ups-appoints-nikki-clifton-to-lead-the-ups-foundation-announces-retirement-of-ed-martinez-after-44-years-of-distinguished-service.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_sustainable-services_ups-appoints-nikki-clifton-to-lead-the-ups-foundation-announces-retirement-of-ed-martinez-after-44-years-of-distinguished-service_html--445b879c/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/sustainable-services/ups-invests-in-arrival-accelerates-fleet-electrification-with-order-of-10-000-electric-delivery-vehicles.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_sustainable-services_ups-invests-in-arrival-accelerates-fleet-electrification-with-order-of-10-000-electric-delivery-vehicles_html--e83e1f76/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/learning-to-expect-the-unexpected-keeps-ups-drivers-safe-on-the-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_learning-to-expect-the-unexpected-keeps-ups-drivers-safe-on-the-_html--70107116/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/3-powerful-lessons-from-30-years-of-the-jim-casey-community-serv.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_3-powerful-lessons-from-30-years-of-the-jim-casey-community-serv_html--8289eda7/blocks/unknown-5ff14835.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/eco-friendly-paint-company-kalklitir-brings-color-to-the-world-w.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_eco-friendly-paint-company-kalklitir-brings-color-to-the-world-w_html--eb97f740/blocks/unknown-5ff14835.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/the-perfect-holiday-pair---honeybaked-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_the-perfect-holiday-pair---honeybaked-_html--f57855f3/blocks/unknown-5ff14835.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-delivers-cold-chain-powered-convenience-to-mothers-with-milk.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-delivers-cold-chain-powered-convenience-to-mothers-with-milk_html--cce4fccc/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/innovation-driven/renewable-natural-gas-is-an-important-part-of-ups-strategy-to-in.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_innovation-driven_renewable-natural-gas-is-an-important-part-of-ups-strategy-to-in_html--4454670b/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/a-different-type-of-mission-giving-hope-wings.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_a-different-type-of-mission-giving-hope-wings_html--c9c8e22a/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/celebrating-ups-driver-george-lodovico-for-55-years-of-safe-driv.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_celebrating-ups-driver-george-lodovico-for-55-years-of-safe-driv_html--f6526628/blocks/unknown-5ff14835.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/meet-malina-downey---a-ups-engineer-powering-holiday-operations-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_meet-malina-downey---a-ups-engineer-powering-holiday-operations-_html--83a57ce9/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/national-human-trafficking-prevention-month.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_national-human-trafficking-prevention-month_html--9402e83c/blocks/unknown-35d464b4.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/ups-ceo-asks-what-s-your-why.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_ups-ceo-asks-what-s-your-why_html--73f07b70/blocks/unknown-35d464b4.jpg"
+      }
+    ],
+    "reuseCount": 49
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "variantName": "embed-minimal-dark",
+  "baseBlock": "embed",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.419Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/newsroom/negotiations/Facts-stats-and-media-resources.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "5 CTAs"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"embed\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"5 CTAs\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/newsroom/negotiations/Facts-stats-and-media-resources.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_negotiations_Facts-stats-and-media-resources_html--1266a221/blocks/embed-6b3e1c86.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/negotiations/faq.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_negotiations_faq_html--a51ecfb0/blocks/embed-6b3e1c86.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_negotiations_negotiations-basics_html--88f5a2fa/blocks/embed-1415ced2.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics/ups-and-the-teamsters.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_negotiations_negotiations-basics_ups-and-the-teamsters_html--04c9cc70/blocks/embed-6b3e1c67.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics/working-at-ups.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_negotiations_negotiations-basics_working-at-ups_html--b30ecb07/blocks/embed-6b3e1c86.jpg"
+      }
+    ],
+    "reuseCount": 5
+  }
+}

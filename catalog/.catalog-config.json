@@ -1,0 +1,10 @@
+{
+  "inputSource": "https://about.ups.com/us/en/",
+  "createdOn": "2026-06-11T07:48:35.095Z",
+  "projectRoot": "/backups/8497785/ups-unified-site-eds-foundation/repo",
+  "catalogFolder": "/backups/8497785/ups-unified-site-eds-foundation/repo/catalog",
+  "pluginRoot": "/home/node/.excat-marketplace/excat",
+  "templatesDir": "/backups/8497785/ups-unified-site-eds-foundation/repo/catalog/.clusters",
+  "fingerprintsPath": "/backups/8497785/ups-unified-site-eds-foundation/repo/catalog/.fingerprints.json",
+  "siteUrl": "https://about.ups.com/us/en/"
+}

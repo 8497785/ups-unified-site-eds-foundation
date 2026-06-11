@@ -1,0 +1,91 @@
+{
+  "variantName": "hero-minimal-dark",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.405Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/all-stories.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "1 CTAs"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"hero\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"1 CTAs\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/all-stories.html",
+        "screenshot": ".pages/about_ups_com_us_en_all-stories_html--87115a8d/blocks/hero-11b87049.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_html--aea0a7b7/blocks/hero-11b87049.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/corporate-governance.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_corporate-governance_html--d04c7a7d/blocks/hero-11b87049.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/customer-first.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_customer-first_html--ffed7c56/blocks/hero-11b87049.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_html--d2db432c/blocks/hero-11b87049.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/our-strategy.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_our-strategy_html--60301551/blocks/hero-11b87049.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/people-led.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_people-led_html--aee7bd6a/blocks/hero-11b87049.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/statements.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_statements_html--8e9ba697/blocks/hero-11b87049.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_html--0e644dab/blocks/hero-11b87049.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_health-humanitarian-relief_html--66879e27/blocks/hero-11b87049.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_html--0488b244/blocks/hero-11b87049.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_html--680d9553/blocks/hero-11b87049.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_html--2c45bdab/blocks/hero-11b87049.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_html--091da71d/blocks/hero-11b87049.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/innovation-driven.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_innovation-driven_html--6de8b507/blocks/hero-11b87049.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_html--f695b194/blocks/hero-11b87049.jpg"
+      }
+    ],
+    "reuseCount": 16
+  }
+}

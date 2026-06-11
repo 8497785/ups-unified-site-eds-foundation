@@ -1,0 +1,31 @@
+{
+  "variantName": "embed-minimal-dark-10",
+  "baseBlock": "embed",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.476Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/newsroom/negotiations/news-on-the-2023-ups-labor-negotiations.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "4 CTAs"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"embed\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"4 CTAs\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/newsroom/negotiations/news-on-the-2023-ups-labor-negotiations.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_negotiations_news-on-the-2023-ups-labor-negotiations_html--48fc9154/blocks/embed-1415ced2.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

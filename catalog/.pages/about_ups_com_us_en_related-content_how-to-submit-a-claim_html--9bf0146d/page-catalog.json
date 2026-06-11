@@ -1,0 +1,307 @@
+{
+  "url": "https://about.ups.com/us/en/related-content/how-to-submit-a-claim.html",
+  "timestamp": "2026-06-11T08:19:02.312Z",
+  "duration": "9.2s",
+  "cleanup": {
+    "elementsRemoved": 5,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/related-content/how-to-submit-a-claim.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 225
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "background",
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 225
+      },
+      {
+        "type": "text",
+        "x": 1183,
+        "y": 0,
+        "width": 107,
+        "height": 20
+      },
+      {
+        "type": "text",
+        "x": 150,
+        "y": 147,
+        "width": 403,
+        "height": 55
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "h1",
+        "fontSize": 55,
+        "fontWeight": 200,
+        "fontFamily": "fs elliot",
+        "color": "#f0f0f0",
+        "backgroundColor": "#f0f0f0",
+        "x": 150,
+        "y": 145,
+        "width": 1140,
+        "height": 61,
+        "textLength": 15
+      },
+      {
+        "tag": "a",
+        "fontSize": 20,
+        "fontWeight": 700,
+        "fontFamily": "fs elliot",
+        "color": "#0090f0",
+        "backgroundColor": "#f0f0f0",
+        "x": 1183,
+        "y": 0,
+        "width": 107,
+        "height": 20,
+        "textLength": 10
+      }
+    ],
+    "topSectionVisualElements": [
+      {
+        "kind": "background-image",
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 350
+      }
+    ],
+    "topSectionCropBottomY": 206,
+    "topSectionTitleRect": {
+      "x": 150,
+      "y": 145,
+      "width": 1140,
+      "height": 61,
+      "text": "UPS Flight 2976"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 225,
+      "width": 1440,
+      "height": 2650
+    },
+    "bodyStartY": 225,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 190,
+        "y": 494,
+        "width": 219,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 190,
+        "y": 540,
+        "width": 1058,
+        "height": 42
+      },
+      {
+        "type": "text",
+        "x": 190,
+        "y": 611,
+        "width": 1040,
+        "height": 42
+      },
+      {
+        "type": "text",
+        "x": 230,
+        "y": 682,
+        "width": 124,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 230,
+        "y": 708,
+        "width": 156,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 230,
+        "y": 734,
+        "width": 317,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 190,
+        "y": 770,
+        "width": 1022,
+        "height": 42
+      },
+      {
+        "type": "text",
+        "x": 190,
+        "y": 841,
+        "width": 1012,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 220,
+        "y": 958,
+        "width": 193,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 220,
+        "y": 1004,
+        "width": 970,
+        "height": 67
+      },
+      {
+        "type": "text",
+        "x": 220,
+        "y": 1101,
+        "width": 997,
+        "height": 67
+      },
+      {
+        "type": "text",
+        "x": 260,
+        "y": 1198,
+        "width": 151,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 260,
+        "y": 1224,
+        "width": 161,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 260,
+        "y": 1250,
+        "width": 363,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 220,
+        "y": 1286,
+        "width": 1000,
+        "height": 67
+      },
+      {
+        "type": "text",
+        "x": 220,
+        "y": 1383,
+        "width": 944,
+        "height": 42
+      },
+      {
+        "type": "text",
+        "x": 190,
+        "y": 1542,
+        "width": 627,
+        "height": 138
+      },
+      {
+        "type": "text",
+        "x": 190,
+        "y": 1682,
+        "width": 1060,
+        "height": 26
+      },
+      {
+        "type": "text",
+        "x": 190,
+        "y": 1771,
+        "width": 260,
+        "height": 50
+      },
+      {
+        "type": "form",
+        "x": 190,
+        "y": 1844,
+        "width": 1060,
+        "height": 900
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero-1a59ed50",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 heading + 2-item layout block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 2,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "heading"
+      },
+      "selector": "section.subpage-hero.subpage-hero--style-1",
+      "bounds": {
+        "x": 0,
+        "y": 128,
+        "width": 1440,
+        "height": 350
+      },
+      "screenshot": "blocks/hero-1a59ed50.jpg"
+    },
+    {
+      "id": "form-90455c3",
+      "type": "form",
+      "confidence": "high",
+      "description": "form block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "content"
+      },
+      "selector": "div.gform-body.gform_body",
+      "bounds": {
+        "x": 190,
+        "y": 1968,
+        "width": 1060,
+        "height": 900
+      },
+      "screenshot": "blocks/form-90455c3.jpg"
+    }
+  ]
+}

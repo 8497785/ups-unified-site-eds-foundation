@@ -1,0 +1,631 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-announces-strategic-initiatives-and-three-year-financial-tar.html",
+  "timestamp": "2026-06-11T07:56:06.975Z",
+  "duration": "10.6s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/press-releases/financials/ups-announces-strategic-initiatives-and-three-year-financial-tar.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 350
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 71,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 250,
+        "y": 31,
+        "width": 102,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 356,
+        "y": 31,
+        "width": 67,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 157,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 1127,
+        "height": 134
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 67,
+        "height": 21,
+        "textLength": 8
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 268,
+        "y": 31,
+        "width": 98,
+        "height": 21,
+        "textLength": 14
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 383,
+        "y": 31,
+        "width": 63,
+        "height": 21,
+        "textLength": 10
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 157,
+        "height": 15,
+        "textLength": 10
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 144,
+        "textLength": 68
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 339,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 195,
+      "width": 1180,
+      "height": 144,
+      "text": "UPS announces strategic initiatives and three-year financial targets"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 350,
+      "width": 1440,
+      "height": 8590
+    },
+    "bodyStartY": 350,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 375,
+        "width": 199,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 424,
+        "width": 361,
+        "height": 22
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 530,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1226,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1229,
+        "width": 716,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1381,
+        "width": 710,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1485,
+        "width": 713,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1613,
+        "width": 714,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1813,
+        "width": 60,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1869,
+        "width": 170,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1925,
+        "width": 711,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2029,
+        "width": 479,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2085,
+        "width": 651,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2106,
+        "width": 376,
+        "height": 20
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2130,
+        "width": 544,
+        "height": 20
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2154,
+        "width": 588,
+        "height": 20
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2178,
+        "width": 471,
+        "height": 20
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2202,
+        "width": 380,
+        "height": 20
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2229,
+        "width": 522,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2269,
+        "width": 679,
+        "height": 20
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2325,
+        "width": 68,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2381,
+        "width": 375,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2437,
+        "width": 502,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2493,
+        "width": 36,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2549,
+        "width": 84,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2605,
+        "width": 713,
+        "height": 185
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2829,
+        "width": 221,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2885,
+        "width": 712,
+        "height": 185
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3109,
+        "width": 716,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3309,
+        "width": 716,
+        "height": 641
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3989,
+        "width": 715,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4165,
+        "width": 362,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4221,
+        "width": 681,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4301,
+        "width": 712,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4501,
+        "width": 707,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4629,
+        "width": 259,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4685,
+        "width": 691,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4789,
+        "width": 582,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4845,
+        "width": 715,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5045,
+        "width": 246,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5101,
+        "width": 711,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5301,
+        "width": 540,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5357,
+        "width": 714,
+        "height": 233
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5629,
+        "width": 113,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5685,
+        "width": 713,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5861,
+        "width": 265,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5917,
+        "width": 710,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6117,
+        "width": 276,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6173,
+        "width": 712,
+        "height": 161
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 6370,
+        "width": 700,
+        "height": 814
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 7215,
+        "width": 700,
+        "height": 256
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 7502,
+        "width": 700,
+        "height": 658
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 8191,
+        "width": 700,
+        "height": 670
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 661,
+        "width": 1220,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-7147bf03.jpg"
+    },
+    {
+      "id": "unknown-1d621799",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA + 1 list block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 5,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs + list"
+      },
+      "selector": "div.upspr-socialmedia",
+      "bounds": {
+        "x": 937,
+        "y": 1357,
+        "width": 373,
+        "height": 54
+      },
+      "screenshot": "blocks/unknown-1d621799.jpg"
+    }
+  ]
+}

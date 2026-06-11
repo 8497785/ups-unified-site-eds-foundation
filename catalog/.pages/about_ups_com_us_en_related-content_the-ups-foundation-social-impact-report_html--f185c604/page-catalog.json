@@ -1,0 +1,107 @@
+{
+  "url": "https://about.ups.com/us/en/related-content/the-ups-foundation-social-impact-report.html",
+  "timestamp": "2026-06-11T08:19:08.128Z",
+  "duration": "8.2s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/related-content/the-ups-foundation-social-impact-report.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 108
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 170,
+        "y": 4,
+        "width": 1100,
+        "height": 71
+      },
+      {
+        "type": "text",
+        "x": 576,
+        "y": 91,
+        "width": 287,
+        "height": 17
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "h1",
+        "fontSize": 64,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 0,
+        "width": 1180,
+        "height": 80,
+        "textLength": 39
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 80,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 0,
+      "width": 1180,
+      "height": 80,
+      "text": "The UPS Foundation Social Impact Report"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 108,
+      "width": 1440,
+      "height": 792
+    },
+    "bodyStartY": 108,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 691,
+        "y": 155,
+        "width": 59,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 691,
+        "y": 219,
+        "width": 58,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 689,
+        "y": 283,
+        "width": 61,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 708,
+        "y": 347,
+        "width": 23,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 0,
+        "y": 408,
+        "width": 1440,
+        "height": 24
+      }
+    ]
+  },
+  "blocks": []
+}

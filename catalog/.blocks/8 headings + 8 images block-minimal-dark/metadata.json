@@ -1,0 +1,31 @@
+{
+  "variantName": "8 headings + 8 images block-minimal-dark",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.419Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/newsroom/media-library.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "icon",
+    "structure": "heading + text + 8 images"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"icon\",\"structure\":\"heading + text + 8 images\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/newsroom/media-library.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_media-library_html--99206740/blocks/unknown-764e1e5c.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

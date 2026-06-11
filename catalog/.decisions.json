@@ -1,0 +1,95 @@
+{
+  "approved_merges": [],
+  "renames": [
+    {
+      "id": "template-24",
+      "new_name": "story-listing",
+      "description": "Category listing page with filterable story/article card grid and pagination"
+    },
+    {
+      "id": "template-72",
+      "new_name": "contact-form",
+      "description": "Contact form page with form fields and submission layout"
+    },
+    {
+      "id": "template-71",
+      "new_name": "awards-landing",
+      "description": "Awards and recognition landing page with categorized lists"
+    },
+    {
+      "id": "template-63",
+      "new_name": "article-detail",
+      "description": "Article detail page with hero image, rich text body, social sharing, and related content cards"
+    },
+    {
+      "id": "template-88",
+      "new_name": "media-library",
+      "description": "Media library page with downloadable assets grid and filtering"
+    },
+    {
+      "id": "template-86",
+      "new_name": "content-page",
+      "description": "General content page with text sections, images, accordions, and embedded media"
+    },
+    {
+      "id": "template-87",
+      "new_name": "updates-listing",
+      "description": "Chronological updates listing page with dated entries and expandable sections"
+    },
+    {
+      "id": "template-74",
+      "new_name": "brand-assets",
+      "description": "Brand assets page with downloadable logos, guidelines, and usage instructions"
+    },
+    {
+      "id": "template-30",
+      "new_name": "leadership-profile",
+      "description": "Executive leadership profile page with headshot, biography, and role details"
+    },
+    {
+      "id": "template-32",
+      "new_name": "culture-page",
+      "description": "Corporate culture page with feature sections, employee stories, and values"
+    },
+    {
+      "id": "template-85",
+      "new_name": "history-timeline",
+      "description": "Company history page with chronological timeline and milestone entries"
+    },
+    {
+      "id": "template-61",
+      "new_name": "impact-hub",
+      "description": "Impact report hub page with topic cards and navigation to sub-sections"
+    },
+    {
+      "id": "template-82",
+      "new_name": "interactive-article",
+      "description": "Interactive article with embedded voting, gallery, or dynamic content elements"
+    },
+    {
+      "id": "template-83",
+      "new_name": "video-feature",
+      "description": "Video-focused feature article with embedded video player and supporting text"
+    },
+    {
+      "id": "template-84",
+      "new_name": "utility-page",
+      "description": "Utility/informational page with instructional content and step-by-step guidance"
+    },
+    {
+      "id": "template--8",
+      "new_name": "speaker-request-form",
+      "description": "Speaker request form page with form fields for event details"
+    },
+    {
+      "id": "template--10",
+      "new_name": "search-results",
+      "description": "Site search results page with search input and paginated result cards"
+    },
+    {
+      "id": "template--11",
+      "new_name": "employee-recognition",
+      "description": "Employee recognition form page for submitting thank-you messages to UPS workers"
+    }
+  ]
+}

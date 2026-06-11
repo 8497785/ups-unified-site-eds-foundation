@@ -1,0 +1,91 @@
+{
+  "variantName": "3 headings + 2 images + form block-minimal-dark-withimg",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.432Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-company/suppliers/what-we-buy.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + 2 images"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"heading + 2 images\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_html--00d1eefd/blocks/unknown-6b3e1d02.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/suppliers/what-we-buy.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_suppliers_what-we-buy_html--efccdf0f/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/planet-protection/2000-seedlings-help-restore-redwood-habitat.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_planet-protection_2000-seedlings-help-restore-redwood-habitat_html--1a86f958/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/planet-protection/a-vision-for-a-sustainable-future.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_planet-protection_a-vision-for-a-sustainable-future_html--917903fc/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/planet-protection/planting-trees-to-improve-the-health-of-communities--.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_planet-protection_planting-trees-to-improve-the-health-of-communities--_html--213498a3/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/climate/canadian-made-garments-for-social-good.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_climate_canadian-made-garments-for-social-good_html--f54b551e/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/climate/renewed-focus-on-renewable-energy.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_climate_renewed-focus-on-renewable-energy_html--60ab06c2/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/climate/smart--sustainable-solutions-help-ups-deliver.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_climate_smart--sustainable-solutions-help-ups-deliver_html--cbda5b26/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/sustainable-services/2019-ups-esg-report-facilities-update.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_sustainable-services_2019-ups-esg-report-facilities-update_html--ba588641/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/innovation-driven/lessons-from-the-e-bike-journey-of-ups.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_innovation-driven_lessons-from-the-e-bike-journey-of-ups_html--6dca2e14/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/innovation-driven/mobile-training-academy-brings-safety-focused-driver-training-to.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_innovation-driven_mobile-training-academy-brings-safety-focused-driver-training-to_html--464671f0/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/innovation-driven/virtual-reality-helping-to-create-safety-for-ups-drivers.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_innovation-driven_virtual-reality-helping-to-create-safety-for-ups-drivers_html--b532eae0/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/super-upser-hasniza-hashim-boldly-navigates-the-congested-street.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_super-upser-hasniza-hashim-boldly-navigates-the-congested-street_html--de5c1fff/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/this-is-dedicated-to-you.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_this-is-dedicated-to-you_html--83049125/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/ups-send-25-drivers-to-ntdc.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_ups-send-25-drivers-to-ntdc_html--c0936861/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/white-house-event.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_white-house-event_html--b06fe1bc/blocks/unknown-3cf326b7.jpg"
+      }
+    ],
+    "reuseCount": 16
+  }
+}

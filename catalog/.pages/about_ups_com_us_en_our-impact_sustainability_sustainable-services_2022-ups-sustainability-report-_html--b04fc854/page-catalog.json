@@ -1,0 +1,501 @@
+{
+  "url": "https://about.ups.com/us/en/our-impact/sustainability/sustainable-services/2022-ups-sustainability-report-.html",
+  "timestamp": "2026-06-11T08:06:38.844Z",
+  "duration": "10.0s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/our-impact/sustainability/sustainable-services/2022-ups-sustainability-report-.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 400
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 73,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 252,
+        "y": 31,
+        "width": 86,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 342,
+        "y": 31,
+        "width": 135,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 236,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 726,
+        "height": 62
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 303,
+        "width": 191,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 352,
+        "width": 358,
+        "height": 22
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 69,
+        "height": 21,
+        "textLength": 10
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 270,
+        "y": 31,
+        "width": 83,
+        "height": 21,
+        "textLength": 14
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 369,
+        "y": 31,
+        "width": 131,
+        "height": 21,
+        "textLength": 20
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 236,
+        "height": 15,
+        "textLength": 20
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 72,
+        "textLength": 31
+      },
+      {
+        "tag": "span",
+        "fontSize": 12,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 305,
+        "width": 77,
+        "height": 14,
+        "textLength": 10
+      },
+      {
+        "tag": "span",
+        "fontSize": 12,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 236,
+        "y": 305,
+        "width": 85,
+        "height": 14,
+        "textLength": 10
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 377,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 347,
+      "width": 680,
+      "height": 30,
+      "text": "UPS’s releases 21st sustainability report"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 400,
+      "width": 1440,
+      "height": 2478
+    },
+    "bodyStartY": 400,
+    "bodyPlaceholders": [
+      {
+        "type": "image",
+        "x": 130,
+        "y": 458,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1154,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1154,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1157,
+        "width": 705,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1309,
+        "width": 678,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1386,
+        "width": 677,
+        "height": 72
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1458,
+        "width": 677,
+        "height": 96
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1554,
+        "width": 677,
+        "height": 72
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1626,
+        "width": 677,
+        "height": 168
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1794,
+        "width": 677,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1818,
+        "width": 677,
+        "height": 72
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1909,
+        "width": 430,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 574,
+        "y": 2084,
+        "width": 292,
+        "height": 53
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 2232,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 2232,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 2232,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2546,
+        "width": 196,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 2546,
+        "width": 196,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 2546,
+        "width": 196,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2586,
+        "width": 292,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 2586,
+        "width": 216,
+        "height": 26
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 2586,
+        "width": 295,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 2623,
+        "width": 279,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2655,
+        "width": 267,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 2655,
+        "width": 235,
+        "height": 41
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 589,
+        "width": 1220,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-7147bf03.jpg"
+    },
+    {
+      "id": "unknown-72c20b8f",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA + 2 lists block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 9,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 8,
+        "listCount": 2,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "text + 1 CTAs + list"
+      },
+      "selector": "div.upspr-two-column > div:nth-child(3)",
+      "bounds": {
+        "x": 110,
+        "y": 1285,
+        "width": 1220,
+        "height": 984
+      },
+      "screenshot": "blocks/unknown-72c20b8f.jpg"
+    },
+    {
+      "id": "unknown-3cf326b7",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "7 headings + 6 images + form block",
+      "content": {
+        "headingCount": 7,
+        "paragraphCount": 0,
+        "imageCount": 6,
+        "buttonCount": 0,
+        "linkCount": 18,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + 6 images"
+      },
+      "selector": "div.pr24-background-colour.responsivegrid",
+      "bounds": {
+        "x": 0,
+        "y": 2309,
+        "width": 1440,
+        "height": 876
+      },
+      "screenshot": "blocks/unknown-3cf326b7.jpg"
+    }
+  ]
+}

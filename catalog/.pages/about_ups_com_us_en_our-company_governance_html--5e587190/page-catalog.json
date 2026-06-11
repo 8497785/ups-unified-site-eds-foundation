@@ -1,0 +1,655 @@
+{
+  "url": "https://about.ups.com/us/en/our-company/governance.html",
+  "timestamp": "2026-06-11T08:00:33.529Z",
+  "duration": "9.5s",
+  "cleanup": {
+    "elementsRemoved": 3,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/our-company/governance.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 50,
+      "width": 1440,
+      "height": 100
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 479,
+        "y": 70,
+        "width": 483,
+        "height": 57
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "h2",
+        "fontSize": 48,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 342,
+        "y": 70,
+        "width": 757,
+        "height": 58,
+        "textLength": 20
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 128,
+    "topSectionTitleRect": {
+      "x": 342,
+      "y": 70,
+      "width": 757,
+      "height": 58,
+      "text": "Corporate Governance"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 150,
+      "width": 1440,
+      "height": 1382
+    },
+    "bodyStartY": 150,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 304,
+        "y": 192,
+        "width": 107,
+        "height": 55
+      },
+      {
+        "type": "text",
+        "x": 411,
+        "y": 192,
+        "width": 171,
+        "height": 55
+      },
+      {
+        "type": "text",
+        "x": 582,
+        "y": 192,
+        "width": 174,
+        "height": 55
+      },
+      {
+        "type": "text",
+        "x": 756,
+        "y": 192,
+        "width": 212,
+        "height": 55
+      },
+      {
+        "type": "text",
+        "x": 968,
+        "y": 192,
+        "width": 169,
+        "height": 55
+      },
+      {
+        "type": "image",
+        "x": 135,
+        "y": 387,
+        "width": 170,
+        "height": 170
+      },
+      {
+        "type": "image",
+        "x": 735,
+        "y": 387,
+        "width": 170,
+        "height": 170
+      },
+      {
+        "type": "text",
+        "x": 935,
+        "y": 421,
+        "width": 248,
+        "height": 57
+      },
+      {
+        "type": "text",
+        "x": 335,
+        "y": 435,
+        "width": 197,
+        "height": 28
+      },
+      {
+        "type": "text",
+        "x": 335,
+        "y": 486,
+        "width": 96,
+        "height": 20
+      },
+      {
+        "type": "text",
+        "x": 935,
+        "y": 501,
+        "width": 96,
+        "height": 20
+      },
+      {
+        "type": "image",
+        "x": 135,
+        "y": 589,
+        "width": 170,
+        "height": 170
+      },
+      {
+        "type": "image",
+        "x": 735,
+        "y": 589,
+        "width": 170,
+        "height": 170
+      },
+      {
+        "type": "text",
+        "x": 335,
+        "y": 623,
+        "width": 323,
+        "height": 57
+      },
+      {
+        "type": "text",
+        "x": 935,
+        "y": 637,
+        "width": 127,
+        "height": 28
+      },
+      {
+        "type": "text",
+        "x": 935,
+        "y": 688,
+        "width": 92,
+        "height": 20
+      },
+      {
+        "type": "text",
+        "x": 335,
+        "y": 703,
+        "width": 96,
+        "height": 20
+      },
+      {
+        "type": "image",
+        "x": 135,
+        "y": 791,
+        "width": 170,
+        "height": 170
+      },
+      {
+        "type": "image",
+        "x": 735,
+        "y": 791,
+        "width": 170,
+        "height": 170
+      },
+      {
+        "type": "text",
+        "x": 335,
+        "y": 839,
+        "width": 293,
+        "height": 28
+      },
+      {
+        "type": "text",
+        "x": 935,
+        "y": 839,
+        "width": 246,
+        "height": 28
+      },
+      {
+        "type": "text",
+        "x": 335,
+        "y": 890,
+        "width": 92,
+        "height": 20
+      },
+      {
+        "type": "text",
+        "x": 935,
+        "y": 890,
+        "width": 92,
+        "height": 20
+      },
+      {
+        "type": "image",
+        "x": 135,
+        "y": 993,
+        "width": 170,
+        "height": 170
+      },
+      {
+        "type": "image",
+        "x": 735,
+        "y": 993,
+        "width": 170,
+        "height": 170
+      },
+      {
+        "type": "text",
+        "x": 335,
+        "y": 1027,
+        "width": 307,
+        "height": 57
+      },
+      {
+        "type": "text",
+        "x": 935,
+        "y": 1041,
+        "width": 301,
+        "height": 28
+      },
+      {
+        "type": "text",
+        "x": 935,
+        "y": 1092,
+        "width": 96,
+        "height": 20
+      },
+      {
+        "type": "text",
+        "x": 335,
+        "y": 1107,
+        "width": 92,
+        "height": 20
+      },
+      {
+        "type": "image",
+        "x": 135,
+        "y": 1195,
+        "width": 170,
+        "height": 170
+      },
+      {
+        "type": "image",
+        "x": 735,
+        "y": 1195,
+        "width": 170,
+        "height": 170
+      },
+      {
+        "type": "text",
+        "x": 935,
+        "y": 1229,
+        "width": 320,
+        "height": 57
+      },
+      {
+        "type": "text",
+        "x": 335,
+        "y": 1243,
+        "width": 301,
+        "height": 28
+      },
+      {
+        "type": "text",
+        "x": 335,
+        "y": 1294,
+        "width": 96,
+        "height": 20
+      },
+      {
+        "type": "text",
+        "x": 935,
+        "y": 1309,
+        "width": 96,
+        "height": 20
+      },
+      {
+        "type": "text",
+        "x": 617,
+        "y": 1491,
+        "width": 112,
+        "height": 19
+      },
+      {
+        "type": "text",
+        "x": 733,
+        "y": 1491,
+        "width": 91,
+        "height": 19
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "carousel-253b5c77",
+      "type": "carousel",
+      "confidence": "high",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.vertical-teasers > div:nth-child(1) > div:nth-child(1)",
+      "bounds": {
+        "x": 120,
+        "y": 519,
+        "width": 600,
+        "height": 202
+      },
+      "screenshot": "blocks/carousel-253b5c77.jpg"
+    },
+    {
+      "id": "carousel-253b5c58",
+      "type": "carousel",
+      "confidence": "high",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.vertical-teasers > div:nth-child(1) > div:nth-child(2)",
+      "bounds": {
+        "x": 720,
+        "y": 519,
+        "width": 600,
+        "height": 202
+      },
+      "screenshot": "blocks/carousel-253b5c58.jpg"
+    },
+    {
+      "id": "carousel-253b5c39",
+      "type": "carousel",
+      "confidence": "high",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.vertical-teasers > div:nth-child(1) > div:nth-child(3)",
+      "bounds": {
+        "x": 120,
+        "y": 721,
+        "width": 600,
+        "height": 202
+      },
+      "screenshot": "blocks/carousel-253b5c39.jpg"
+    },
+    {
+      "id": "carousel-253b5c1a",
+      "type": "carousel",
+      "confidence": "high",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.vertical-teasers > div:nth-child(1) > div:nth-child(4)",
+      "bounds": {
+        "x": 720,
+        "y": 721,
+        "width": 600,
+        "height": 202
+      },
+      "screenshot": "blocks/carousel-253b5c1a.jpg"
+    },
+    {
+      "id": "carousel-253b5bfb",
+      "type": "carousel",
+      "confidence": "high",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.vertical-teasers > div:nth-child(1) > div:nth-child(5)",
+      "bounds": {
+        "x": 120,
+        "y": 923,
+        "width": 600,
+        "height": 202
+      },
+      "screenshot": "blocks/carousel-253b5bfb.jpg"
+    },
+    {
+      "id": "carousel-253b5bdc",
+      "type": "carousel",
+      "confidence": "high",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.vertical-teasers > div:nth-child(1) > div:nth-child(6)",
+      "bounds": {
+        "x": 720,
+        "y": 923,
+        "width": 600,
+        "height": 202
+      },
+      "screenshot": "blocks/carousel-253b5bdc.jpg"
+    },
+    {
+      "id": "carousel-253b5bbd",
+      "type": "carousel",
+      "confidence": "high",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.vertical-teasers > div:nth-child(1) > div:nth-child(7)",
+      "bounds": {
+        "x": 120,
+        "y": 1125,
+        "width": 600,
+        "height": 202
+      },
+      "screenshot": "blocks/carousel-253b5bbd.jpg"
+    },
+    {
+      "id": "carousel-253b5b9e",
+      "type": "carousel",
+      "confidence": "high",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.vertical-teasers > div:nth-child(1) > div:nth-child(8)",
+      "bounds": {
+        "x": 720,
+        "y": 1125,
+        "width": 600,
+        "height": 202
+      },
+      "screenshot": "blocks/carousel-253b5b9e.jpg"
+    },
+    {
+      "id": "carousel-253b5b7f",
+      "type": "carousel",
+      "confidence": "high",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.vertical-teasers > div:nth-child(1) > div:nth-child(9)",
+      "bounds": {
+        "x": 120,
+        "y": 1327,
+        "width": 600,
+        "height": 202
+      },
+      "screenshot": "blocks/carousel-253b5b7f.jpg"
+    },
+    {
+      "id": "carousel-7dcfce99",
+      "type": "carousel",
+      "confidence": "high",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.vertical-teasers > div:nth-child(1) > div:nth-child(10)",
+      "bounds": {
+        "x": 720,
+        "y": 1327,
+        "width": 600,
+        "height": 202
+      },
+      "screenshot": "blocks/carousel-7dcfce99.jpg"
+    }
+  ]
+}

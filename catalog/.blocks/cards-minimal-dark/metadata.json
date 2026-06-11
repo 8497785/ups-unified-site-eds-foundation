@@ -1,0 +1,35 @@
+{
+  "variantName": "cards-minimal-dark",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.419Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-releases-4q-2020-earnings.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "text + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"cards\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"text + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-releases-4q-2020-earnings.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_ups-releases-4q-2020-earnings_html--f1ffa87e/blocks/cards-703e1c3.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/people-led/ups-to-hire-over-100-000-.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_people-led_ups-to-hire-over-100-000-_html--bac3cc2c/blocks/cards-703e1c3.jpg"
+      }
+    ],
+    "reuseCount": 2
+  }
+}

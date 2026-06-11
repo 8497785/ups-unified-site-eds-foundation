@@ -1,0 +1,55 @@
+{
+  "variantName": "7 headings + 6 images + form block-minimal-dark-withimg",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.778Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-impact/sustainability/sustainable-services/2022-ups-sustainability-report-.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + 6 images"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"heading + 6 images\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/sustainable-services/2022-ups-sustainability-report-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_sustainable-services_2022-ups-sustainability-report-_html--b04fc854/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/sustainable-services/electric-vehicles---about-ups.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_sustainable-services_electric-vehicles---about-ups_html--a1dc3c9e/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/sustainable-services/equads-in-the-uk.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_sustainable-services_equads-in-the-uk_html--d6994009/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/sustainable-services/esg-action-plan-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_sustainable-services_esg-action-plan-_html--86358906/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/sustainable-services/sustainability-in-guangzhou-china.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_sustainable-services_sustainability-in-guangzhou-china_html--badbfe92/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/sustainable-services/ups-electrifying-its-chinese-fleet.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_sustainable-services_ups-electrifying-its-chinese-fleet_html--5132e342/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-communities/delivering-equity---economic-empowerment.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_ups-sustainability-and-community-impact-report_delivering-for-our-communities_delivering-equity---economic-empowerment_html--71bd0b1d/blocks/unknown-3cf326b7.jpg"
+      }
+    ],
+    "reuseCount": 7
+  }
+}

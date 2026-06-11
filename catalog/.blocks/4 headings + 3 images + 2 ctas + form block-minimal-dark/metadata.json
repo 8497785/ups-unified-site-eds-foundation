@@ -1,0 +1,31 @@
+{
+  "variantName": "4 headings + 3 images + 2 ctas + form block-minimal-dark",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.764Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-impact.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "icon",
+    "structure": "heading + 2 CTAs + 3 images"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"icon\",\"structure\":\"heading + 2 CTAs + 3 images\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-impact.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_html--5254d25a/blocks/unknown-6b3e1d40.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

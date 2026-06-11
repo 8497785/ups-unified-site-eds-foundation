@@ -1,0 +1,35 @@
+{
+  "variantName": "tabs-moderate-dark-1",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.434Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/request-a-speaker-form.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "moderate",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "text + 3 CTAs + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"tabs\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"moderate\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"text + 3 CTAs + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/request-a-speaker-form.html",
+        "screenshot": ".pages/about_ups_com_us_en_request-a-speaker-form_html--bb0e715b/blocks/tabs-11146522.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/thank-a-ups-hero.html",
+        "screenshot": ".pages/about_ups_com_us_en_thank-a-ups-hero_html--09f37c5c/blocks/tabs-11146522.jpg"
+      }
+    ],
+    "reuseCount": 2
+  }
+}

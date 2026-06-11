@@ -1,0 +1,561 @@
+{
+  "url": "https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief/upser-volunteers-thousands-of-hours-each-year-to-help-his-home.html",
+  "timestamp": "2026-06-11T08:05:24.310Z",
+  "duration": "12.8s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/our-impact/community/health-humanitarian-relief/upser-volunteers-thousands-of-hours-each-year-to-help-his-home.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 275
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 73,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 252,
+        "y": 31,
+        "width": 75,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 331,
+        "y": 31,
+        "width": 184,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 519,
+        "y": 31,
+        "width": 194,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 293,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 484,
+        "height": 62
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 69,
+        "height": 21,
+        "textLength": 10
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 270,
+        "y": 31,
+        "width": 71,
+        "height": 21,
+        "textLength": 9
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 358,
+        "y": 31,
+        "width": 181,
+        "height": 21,
+        "textLength": 28
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 542,
+        "y": 33,
+        "width": 203,
+        "height": 16,
+        "textLength": 30
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 293,
+        "height": 15,
+        "textLength": 28
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 72,
+        "textLength": 20
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 267,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 195,
+      "width": 1180,
+      "height": 72,
+      "text": "“We provide a hope.”"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 275,
+      "width": 1440,
+      "height": 4245
+    },
+    "bodyStartY": 275,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 303,
+        "width": 191,
+        "height": 17
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 404,
+        "width": 1180,
+        "height": 615
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1099,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1099,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1099,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1099,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1099,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1102,
+        "width": 682,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1206,
+        "width": 692,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1286,
+        "width": 702,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1414,
+        "width": 694,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1494,
+        "width": 711,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1574,
+        "width": 686,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1678,
+        "width": 482,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1734,
+        "width": 686,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1886,
+        "width": 694,
+        "height": 89
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 2011,
+        "width": 680,
+        "height": 386
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2439,
+        "width": 363,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2495,
+        "width": 707,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2647,
+        "width": 705,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2727,
+        "width": 530,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2783,
+        "width": 680,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2863,
+        "width": 662,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2943,
+        "width": 689,
+        "height": 65
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 3044,
+        "width": 717,
+        "height": 591
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3677,
+        "width": 695,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3757,
+        "width": 717,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3861,
+        "width": 532,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 162,
+        "y": 3962,
+        "width": 653,
+        "height": 144
+      },
+      {
+        "type": "text",
+        "x": 574,
+        "y": 4308,
+        "width": 292,
+        "height": 53
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 535,
+        "width": 1220,
+        "height": 615
+      },
+      "screenshot": "blocks/unknown-7147bf03.jpg"
+    },
+    {
+      "id": "unknown-3a04ab03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 image block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "image"
+      },
+      "selector": "div.cmp-text.upspr-analytics > p:nth-child(10)",
+      "bounds": {
+        "x": 130,
+        "y": 2142,
+        "width": 717,
+        "height": 386
+      },
+      "screenshot": "blocks/unknown-3a04ab03.jpg"
+    },
+    {
+      "id": "unknown-3a04aa0b",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 image block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "image"
+      },
+      "selector": "div.cmp-text.upspr-analytics > p:nth-child(18)",
+      "bounds": {
+        "x": 130,
+        "y": 3168,
+        "width": 717,
+        "height": 591
+      },
+      "screenshot": "blocks/unknown-3a04aa0b.jpg"
+    },
+    {
+      "id": "unknown-1d621799",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA + 1 list block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 5,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs + list"
+      },
+      "selector": "div.upspr-socialmedia",
+      "bounds": {
+        "x": 937,
+        "y": 1230,
+        "width": 373,
+        "height": 54
+      },
+      "screenshot": "blocks/unknown-1d621799.jpg"
+    },
+    {
+      "id": "unknown-3cf326b7",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + form block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "heading"
+      },
+      "selector": "div.pr24-background-colour.responsivegrid",
+      "bounds": {
+        "x": 0,
+        "y": 4343,
+        "width": 1440,
+        "height": 294
+      },
+      "screenshot": "blocks/unknown-3cf326b7.jpg"
+    }
+  ]
+}

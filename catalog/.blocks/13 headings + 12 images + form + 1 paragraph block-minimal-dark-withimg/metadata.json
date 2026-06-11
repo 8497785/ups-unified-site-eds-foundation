@@ -1,0 +1,31 @@
+{
+  "variantName": "13 headings + 12 images + form + 1 paragraph block-minimal-dark-withimg",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:42.007Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-stories/customer-first/shipping-tips-to-get-the-most-out-of-your-holiday-sales.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + text + 12 images"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"heading + text + 12 images\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/shipping-tips-to-get-the-most-out-of-your-holiday-sales.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_shipping-tips-to-get-the-most-out-of-your-holiday-sales_html--9f62d317/blocks/unknown-3cf326b7.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

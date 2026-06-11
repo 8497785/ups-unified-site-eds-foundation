@@ -1,0 +1,340 @@
+{
+  "url": "https://about.ups.com/us/en/our-company/leadership/angela-hwang.html",
+  "timestamp": "2026-06-11T08:03:24.628Z",
+  "duration": "10.6s",
+  "cleanup": {
+    "elementsRemoved": 17,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/our-company/leadership/angela-hwang.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 200
+    },
+    "topSectionStrategy": "title",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 91,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 270,
+        "y": 31,
+        "width": 73,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 347,
+        "y": 31,
+        "width": 91,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 129,
+        "width": 289,
+        "height": 53
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 87,
+        "height": 21,
+        "textLength": 11
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 288,
+        "y": 31,
+        "width": 69,
+        "height": 21,
+        "textLength": 10
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 361,
+        "y": 33,
+        "width": 103,
+        "height": 16,
+        "textLength": 12
+      },
+      {
+        "tag": "h1",
+        "fontSize": 48,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 123,
+        "width": 676,
+        "height": 64,
+        "textLength": 12
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 187,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 123,
+      "width": 676,
+      "height": 64,
+      "text": "Angela Hwang"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 200,
+      "width": 1440,
+      "height": 1318
+    },
+    "bodyStartY": 200,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 200,
+        "width": 604,
+        "height": 57
+      },
+      {
+        "type": "image",
+        "x": 937,
+        "y": 211,
+        "width": 373,
+        "height": 373
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 319,
+        "width": 236,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 375,
+        "width": 142,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 431,
+        "width": 36,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 471,
+        "width": 225,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 527,
+        "width": 627,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 671,
+        "width": 632,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 831,
+        "width": 179,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 887,
+        "width": 401,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 943,
+        "width": 194,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 967,
+        "width": 549,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1031,
+        "width": 508,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1087,
+        "width": 614,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1111,
+        "width": 292,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1135,
+        "width": 433,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1159,
+        "width": 326,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1183,
+        "width": 353,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1207,
+        "width": 297,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1231,
+        "width": 393,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1271,
+        "width": 192,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1327,
+        "width": 292,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1351,
+        "width": 407,
+        "height": 17
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero-f4f03da",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 image + 1 CTA block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 1,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 2,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "1 CTAs + image"
+      },
+      "selector": "div.upspr-bio-image",
+      "bounds": {
+        "x": 937,
+        "y": 342,
+        "width": 373,
+        "height": 373
+      },
+      "screenshot": "blocks/hero-f4f03da.jpg"
+    }
+  ]
+}

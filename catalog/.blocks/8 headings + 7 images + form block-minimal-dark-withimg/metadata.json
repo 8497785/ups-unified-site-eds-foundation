@@ -1,0 +1,39 @@
+{
+  "variantName": "8 headings + 7 images + form block-minimal-dark-withimg",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.419Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/newsroom/facebook-rules.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + 7 images"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"heading + 7 images\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/newsroom/facebook-rules.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_facebook-rules_html--3dcde3e2/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/ugc-terms.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_ugc-terms_html--e855032c/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/governance/carbon-neutral-credentials.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_governance_carbon-neutral-credentials_html--55207803/blocks/unknown-3cf326b7.jpg"
+      }
+    ],
+    "reuseCount": 3
+  }
+}

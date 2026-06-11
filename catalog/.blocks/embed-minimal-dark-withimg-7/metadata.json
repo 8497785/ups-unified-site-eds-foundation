@@ -1,0 +1,35 @@
+{
+  "variantName": "embed-minimal-dark-withimg-7",
+  "baseBlock": "embed",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.652Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-company/great-employer/here-are-5-ups-part-timers-you-should-know.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "text + 5 images"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"embed\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"text + 5 images\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/here-are-5-ups-part-timers-you-should-know.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_here-are-5-ups-part-timers-you-should-know_html--953c4a3e/blocks/embed-1415ced2.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/meet-5-of-ups-s-safest-drivers.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_meet-5-of-ups-s-safest-drivers_html--4ae3fd01/blocks/embed-1415ced2.jpg"
+      }
+    ],
+    "reuseCount": 2
+  }
+}

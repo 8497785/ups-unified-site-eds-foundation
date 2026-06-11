@@ -1,0 +1,35 @@
+{
+  "variantName": "1 image block-minimal-dark",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.652Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-company/great-employer/5-ways-ups-is-improving-heat-safety-for-employees.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "icon",
+    "structure": "image"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"icon\",\"structure\":\"image\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/5-ways-ups-is-improving-heat-safety-for-employees.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_5-ways-ups-is-improving-heat-safety-for-employees_html--fd05acca/blocks/unknown-12633f5b.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/innovation-driven/ups-takes-center-stage-at-google-cloud-next--24-and-rfid-journal.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_innovation-driven_ups-takes-center-stage-at-google-cloud-next--24-and-rfid-journal_html--c2c0b433/blocks/unknown-12633f5b.jpg"
+      }
+    ],
+    "reuseCount": 2
+  }
+}

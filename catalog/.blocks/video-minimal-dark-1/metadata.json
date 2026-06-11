@@ -1,0 +1,59 @@
+{
+  "variantName": "video-minimal-dark-1",
+  "baseBlock": "video",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.735Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief/delivering-what-matters--equitable-vaccine-access-globally.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "icon",
+    "structure": "1 CTAs + image"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"video\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"icon\",\"structure\":\"1 CTAs + image\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief/delivering-what-matters--equitable-vaccine-access-globally.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_health-humanitarian-relief_delivering-what-matters--equitable-vaccine-access-globally_html--cf86b1e2/blocks/video-13e05889.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/ups-community-service-award-winner.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_ups-community-service-award-winner_html--82a5f1d4/blocks/video-13e05889.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/climate/canadian-made-garments-for-social-good.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_climate_canadian-made-garments-for-social-good_html--f54b551e/blocks/video-13e05889.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability/sustainable-services/sustainability-in-guangzhou-china.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_sustainable-services_sustainability-in-guangzhou-china_html--badbfe92/blocks/video-13e05889.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/the-ups-store-helps-small-businesses-get-their-own-3d-billboard-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_the-ups-store-helps-small-businesses-get-their-own-3d-billboard-_html--cf3d514a/blocks/video-7993d0f0.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-purpose-taps-into-the-very-heart-of-our-dna.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-purpose-taps-into-the-very-heart-of-our-dna_html--d4b79917/blocks/video-13e05889.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/innovation-driven/new-state-of-the-art-ups-facility-opens-in-tacoma-washington.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_innovation-driven_new-state-of-the-art-ups-facility-opens-in-tacoma-washington_html--d8e5bffe/blocks/video-13e05889.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/a-different-type-of-mission-giving-hope-wings.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_a-different-type-of-mission-giving-hope-wings_html--c9c8e22a/blocks/video-13e05889.jpg"
+      }
+    ],
+    "reuseCount": 8
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "variantName": "hero-minimal-dark-withimg-3",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.420Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-company/leadership/angela-hwang.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "1 CTAs + image"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"hero\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"1 CTAs + image\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-company/leadership/angela-hwang.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_leadership_angela-hwang_html--68aff75a/blocks/hero-f4f03da.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/leadership/carol-tome.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_leadership_carol-tome_html--a1386e6b/blocks/hero-f4f03da.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/leadership/christiana-smith-shi.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_leadership_christiana-smith-shi_html--328a76c9/blocks/hero-f4f03da.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/leadership/eva-boratto.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_leadership_eva-boratto_html--1941b182/blocks/hero-f4f03da.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/leadership/franck-moison.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_leadership_franck-moison_html--0f6ceb6d/blocks/hero-f4f03da.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/leadership/john-morikis.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_leadership_john-morikis_html--0d31264c/blocks/hero-f4f03da.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/leadership/kevin-clark---about-ups.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_leadership_kevin-clark---about-ups_html--66562179/blocks/hero-f4f03da.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/leadership/rodney-c-adkins.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_leadership_rodney-c-adkins_html--e689e5f5/blocks/hero-f4f03da.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/leadership/russell-stokes.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_leadership_russell-stokes_html--1710e61e/blocks/hero-f4f03da.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/leadership/wayne-hewett.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_leadership_wayne-hewett_html--7d2a0b83/blocks/hero-f4f03da.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/leadership/william-r--johnson.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_leadership_william-r--johnson_html--872a6487/blocks/hero-f4f03da.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/ups-foundation-leadership/nikki-clifton.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_ups-foundation-leadership_nikki-clifton_html--c34e738d/blocks/hero-f4f03da.jpg"
+      }
+    ],
+    "reuseCount": 12
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "variantName": "2 ctas + 2 lists block-minimal-dark",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.666Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-company/great-employer/one-mom-s-amazing-journey-at-ups.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "text + 2 CTAs + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"text + 2 CTAs + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/one-mom-s-amazing-journey-at-ups.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_one-mom-s-amazing-journey-at-ups_html--6a243c06/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/3-reasons-ups-is-going-big-on-returns.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_3-reasons-ups-is-going-big-on-returns_html--fd9b267f/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/enjoy-these-ups-delivered-fall-must-haves.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_enjoy-these-ups-delivered-fall-must-haves_html--14cb3ca6/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/flux-asks-ups-for-exporting-help.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_flux-asks-ups-for-exporting-help_html--97f3874f/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/for-edel-optics--ups-returns-are-just-as-important-as-deliveries.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_for-edel-optics--ups-returns-are-just-as-important-as-deliveries_html--2f747ea1/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/helping-smbs-succeed-through-ignite.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_helping-smbs-succeed-through-ignite_html--2d7085bc/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/how-audien-hearing-built-a-more-resilient-supply-chain-with-ups.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_how-audien-hearing-built-a-more-resilient-supply-chain-with-ups_html--25f41ed4/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/my-home-nature-smb-story.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_my-home-nature-smb-story_html--0df99039/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/new-ad-highlights-ups-s-industry-leading-service-and-customer-fi.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_new-ad-highlights-ups-s-industry-leading-service-and-customer-fi_html--d16c7f68/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/pinko-expands-globally-with-ups.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_pinko-expands-globally-with-ups_html--19979d0e/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-and-cvs-partner-for-driver-health.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-and-cvs-partner-for-driver-health_html--f6e62706/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-helps-export-made-in-italy.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-helps-export-made-in-italy_html--38b055d6/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-leads-on-time-delivery.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-leads-on-time-delivery_html--cc47d230/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-teaches-smb-how-to-exporter.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-teaches-smb-how-to-exporter_html--978e6130/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/innovation-driven/ups-cambridge-cycle-hub-paves-the-way-for-sustainable-city-deliv.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_innovation-driven_ups-cambridge-cycle-hub-paves-the-way-for-sustainable-city-deliv_html--ebfbb53f/blocks/unknown-72c20b8f.jpg"
+      }
+    ],
+    "reuseCount": 15
+  }
+}

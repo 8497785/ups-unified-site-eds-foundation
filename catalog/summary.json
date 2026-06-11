@@ -1,0 +1,33 @@
+{
+  "analysis-summary": {
+    "status": "complete",
+    "metadata": {
+      "siteUrl": "https://about.ups.com/us/en/",
+      "siteName": "about.ups.com",
+      "analysisDate": "2026-06-11"
+    },
+    "metrics": {
+      "urlDiscoveryMethod": "https://about.ups.com/content/aboutus-seo/sitemaps/us_sitemap.xml,/content/aboutus-seo/sitemaps/vn_sitemap.xml,/content/aboutus-seo/sitemaps/ae_sitemap.xml,/content/aboutus-seo/sitemaps/br_sitemap.xml,/content/aboutus-seo/sitemaps/ca_sitemap.xml,/content/aboutus-seo/sitemaps/cn_sitemap.xml,/content/aboutus-seo/sitemaps/de_sitemap.xml,/content/aboutus-seo/sitemaps/es_sitemap.xml,/content/aboutus-seo/sitemaps/fr_sitemap.xml,/content/aboutus-seo/sitemaps/hk_sitemap.xml,/content/aboutus-seo/sitemaps/it_sitemap.xml,/content/aboutus-seo/sitemaps/jp_sitemap.xml,/content/aboutus-seo/sitemaps/mx_sitemap.xml,/content/aboutus-seo/sitemaps/nl_sitemap.xml,/content/aboutus-seo/sitemaps/pl_sitemap.xml,/content/aboutus-seo/sitemaps/pt_sitemap.xml,/content/aboutus-seo/sitemaps/sg_sitemap.xml,/content/aboutus-seo/sitemaps/tr_sitemap.xml,/content/aboutus-seo/sitemaps/tw_sitemap.xml,/content/aboutus-seo/sitemaps/sa_sitemap.xml,/content/aboutus-seo/sitemaps/gb_sitemap.xml,/content/aboutus-seo/sitemaps/cz_sitemap.xml,/content/aboutus-seo/sitemaps/se_sitemap.xml,/content/aboutus-seo/sitemaps/kr_sitemap.xml,/content/aboutus-seo/sitemaps/th_sitemap.xml",
+      "totalPages": 699,
+      "localeCount": 1,
+      "locales": [
+        {
+          "locale": "en",
+          "pages": 699
+        }
+      ],
+      "totalTemplates": 18,
+      "totalBlockTypes": 123,
+      "unknownBlockVariants": 39,
+      "edsBlockVariants": 84,
+      "pagesAnalyzed": 693,
+      "percentAnalyzed": 99,
+      "pagesPending": 0,
+      "pagesFailed": 6,
+      "blockDetectionCrashes": 0
+    },
+    "errors": {
+      "totalCount": 79
+    }
+  }
+}

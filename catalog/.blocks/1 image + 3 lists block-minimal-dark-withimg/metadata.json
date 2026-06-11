@@ -1,0 +1,48 @@
+{
+  "variantName": "1 image + 3 lists block-minimal-dark-withimg",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.749Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/3-powerful-lessons-from-30-years-of-the-jim-casey-community-serv.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "text + image + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"text + 1 CTAs + image + list\"}}",
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"text + image + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/3-powerful-lessons-from-30-years-of-the-jim-casey-community-serv.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_3-powerful-lessons-from-30-years-of-the-jim-casey-community-serv_html--8289eda7/blocks/unknown-4b5ece7d.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/santa--swap-your-sleigh-for-ups---a-leader-in-on-time-holiday-de.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_santa--swap-your-sleigh-for-ups---a-leader-in-on-time-holiday-de_html--d347e292/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-makes-waves-in-bali-for-small-businesses.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-makes-waves-in-bali-for-small-businesses_html--67285ec3/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/ups-updates-policy-for-deaf-and-hard-of-hearing-delivery-drivers.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_ups-updates-policy-for-deaf-and-hard-of-hearing-delivery-drivers_html--2b42d3b1/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/upss-holiday-hiring-spree.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_upss-holiday-hiring-spree_html--fcd6d8c7/blocks/unknown-72c20b8f.jpg"
+      }
+    ],
+    "reuseCount": 5
+  }
+}

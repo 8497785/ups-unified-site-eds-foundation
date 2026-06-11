@@ -1,0 +1,47 @@
+{
+  "variantName": "cards-minimal-light-1",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.419Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-company/global-presence/corporate-facts.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "heading + text"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"cards\",\"visualChars\":{\"colorScheme\":\"light\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"heading + text\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-company/global-presence/asia-pacific-region-facts.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_global-presence_asia-pacific-region-facts_html--1a2d67d8/blocks/cards-424dcef6.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/global-presence/canada-facts.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_global-presence_canada-facts_html--bbd20523/blocks/cards-424dcef6.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/global-presence/corporate-facts.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_global-presence_corporate-facts_html--f31a04fa/blocks/cards-424dcef6.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/global-presence/europe-region-facts.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_global-presence_europe-region-facts_html--e30692d7/blocks/cards-424dcef6.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/global-presence/latin-america-and-the-caribbean-facts.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_global-presence_latin-america-and-the-caribbean-facts_html--7e4216f5/blocks/cards-424dcef6.jpg"
+      }
+    ],
+    "reuseCount": 5
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "variantName": "video-minimal-dark-3",
+  "baseBlock": "video",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.888Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-stories/customer-first/loxone-and-ups-grow-exports-with-reliability-as-the-cornerstone.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "text + 1 CTAs + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"video\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"text + 1 CTAs + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/loxone-and-ups-grow-exports-with-reliability-as-the-cornerstone.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_loxone-and-ups-grow-exports-with-reliability-as-the-cornerstone_html--df699591/blocks/video-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/unstoppable-together-ups-delivers-trust-and-reliability.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_unstoppable-together-ups-delivers-trust-and-reliability_html--b9b24729/blocks/video-72c20b8f.jpg"
+      }
+    ],
+    "reuseCount": 2
+  }
+}

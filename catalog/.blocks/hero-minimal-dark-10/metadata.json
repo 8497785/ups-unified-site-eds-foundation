@@ -1,0 +1,31 @@
+{
+  "variantName": "hero-minimal-dark-10",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.777Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-impact/sustainability.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "icon",
+    "structure": "heading + text + 2 CTAs + 5 images + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"hero\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"icon\",\"structure\":\"heading + text + 2 CTAs + 5 images + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_html--680d9553/blocks/hero-6b3e1ca5.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

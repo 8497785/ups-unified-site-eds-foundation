@@ -1,0 +1,855 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-releases-4q-2023-earnings.html",
+  "timestamp": "2026-06-11T07:57:06.384Z",
+  "duration": "12.3s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/press-releases/financials/ups-releases-4q-2023-earnings.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 275
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 71,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 250,
+        "y": 31,
+        "width": 102,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 356,
+        "y": 31,
+        "width": 67,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 157,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 734,
+        "height": 62
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 67,
+        "height": 21,
+        "textLength": 8
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 268,
+        "y": 31,
+        "width": 98,
+        "height": 21,
+        "textLength": 14
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 383,
+        "y": 31,
+        "width": 63,
+        "height": 21,
+        "textLength": 10
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 157,
+        "height": 15,
+        "textLength": 10
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 72,
+        "textLength": 29
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 267,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 195,
+      "width": 1180,
+      "height": 72,
+      "text": "UPS Releases 4Q 2023 Earnings"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 275,
+      "width": 1440,
+      "height": 14010
+    },
+    "bodyStartY": 275,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 303,
+        "width": 199,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 352,
+        "width": 660,
+        "height": 52
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 488,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1184,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1184,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1184,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1184,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1184,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1187,
+        "width": 496,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1208,
+        "width": 643,
+        "height": 44
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1259,
+        "width": 581,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1283,
+        "width": 503,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1323,
+        "width": 698,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1475,
+        "width": 695,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1603,
+        "width": 712,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1731,
+        "width": 180,
+        "height": 17
+      },
+      {
+        "type": "table",
+        "x": 130,
+        "y": 1784,
+        "width": 717,
+        "height": 276
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2103,
+        "width": 559,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2127,
+        "width": 470,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2164,
+        "width": 717,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2223,
+        "width": 168,
+        "height": 17
+      },
+      {
+        "type": "table",
+        "x": 130,
+        "y": 2276,
+        "width": 717,
+        "height": 276
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2595,
+        "width": 660,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2643,
+        "width": 487,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2680,
+        "width": 717,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2736,
+        "width": 186,
+        "height": 20
+      },
+      {
+        "type": "table",
+        "x": 130,
+        "y": 2792,
+        "width": 717,
+        "height": 276
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3116,
+        "width": 691,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3167,
+        "width": 674,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3215,
+        "width": 470,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3255,
+        "width": 276,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3311,
+        "width": 338,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3335,
+        "width": 590,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3359,
+        "width": 487,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3383,
+        "width": 407,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3407,
+        "width": 333,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3431,
+        "width": 528,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3471,
+        "width": 699,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3551,
+        "width": 159,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3607,
+        "width": 699,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3735,
+        "width": 100,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3791,
+        "width": 710,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3895,
+        "width": 716,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3975,
+        "width": 709,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4055,
+        "width": 683,
+        "height": 44
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4135,
+        "width": 68,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4191,
+        "width": 375,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4247,
+        "width": 502,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4303,
+        "width": 36,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4359,
+        "width": 214,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4415,
+        "width": 712,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4591,
+        "width": 84,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4647,
+        "width": 713,
+        "height": 185
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4871,
+        "width": 221,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4927,
+        "width": 712,
+        "height": 185
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5151,
+        "width": 716,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5351,
+        "width": 716,
+        "height": 665
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6055,
+        "width": 715,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6231,
+        "width": 451,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6287,
+        "width": 666,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6367,
+        "width": 690,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6495,
+        "width": 259,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6551,
+        "width": 691,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6655,
+        "width": 493,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6711,
+        "width": 713,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6887,
+        "width": 715,
+        "height": 209
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7135,
+        "width": 360,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7191,
+        "width": 710,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7391,
+        "width": 373,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7447,
+        "width": 709,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7623,
+        "width": 582,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7679,
+        "width": 715,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7879,
+        "width": 246,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7935,
+        "width": 711,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 8135,
+        "width": 540,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 8191,
+        "width": 714,
+        "height": 233
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 8463,
+        "width": 113,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 8519,
+        "width": 689,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 8671,
+        "width": 256,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 8727,
+        "width": 710,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 8927,
+        "width": 276,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 8983,
+        "width": 704,
+        "height": 161
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 9180,
+        "width": 777,
+        "height": 823
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 10010,
+        "width": 777,
+        "height": 857
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 10874,
+        "width": 777,
+        "height": 814
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 11695,
+        "width": 777,
+        "height": 823
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 12525,
+        "width": 777,
+        "height": 265
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 12797,
+        "width": 777,
+        "height": 707
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 13511,
+        "width": 777,
+        "height": 727
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 619,
+        "width": 1220,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-7147bf03.jpg"
+    },
+    {
+      "id": "unknown-1d621799",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA + 1 list block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 5,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs + list"
+      },
+      "selector": "div.upspr-socialmedia",
+      "bounds": {
+        "x": 937,
+        "y": 1315,
+        "width": 373,
+        "height": 54
+      },
+      "screenshot": "blocks/unknown-1d621799.jpg"
+    }
+  ]
+}

@@ -1,0 +1,735 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/press-releases/customer-first.html",
+  "timestamp": "2026-06-11T07:53:39.572Z",
+  "duration": "10.2s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/press-releases/customer-first.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 225
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 71,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 250,
+        "y": 31,
+        "width": 102,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 356,
+        "y": 31,
+        "width": 92,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 529,
+        "y": 128,
+        "width": 382,
+        "height": 71
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 67,
+        "height": 21,
+        "textLength": 8
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 268,
+        "y": 31,
+        "width": 98,
+        "height": 21,
+        "textLength": 14
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 370,
+        "y": 33,
+        "width": 105,
+        "height": 16,
+        "textLength": 14
+      },
+      {
+        "tag": "h1",
+        "fontSize": 64,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 243,
+        "y": 123,
+        "width": 953,
+        "height": 80,
+        "textLength": 14
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 203,
+    "topSectionTitleRect": {
+      "x": 243,
+      "y": 123,
+      "width": 953,
+      "height": 80,
+      "text": "Customer First"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 225,
+      "width": 1440,
+      "height": 2208
+    },
+    "bodyStartY": 225,
+    "bodyPlaceholders": [
+      {
+        "type": "image",
+        "x": 130,
+        "y": 284,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 284,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 284,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 598,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 598,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 598,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 638,
+        "width": 290,
+        "height": 186
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 638,
+        "width": 279,
+        "height": 154
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 638,
+        "width": 254,
+        "height": 186
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 803,
+        "width": 286,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 835,
+        "width": 286,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 835,
+        "width": 300,
+        "height": 65
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 995,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 995,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 995,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1309,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1309,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 1309,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1349,
+        "width": 283,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1349,
+        "width": 269,
+        "height": 122
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 1349,
+        "width": 258,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1450,
+        "width": 300,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 1450,
+        "width": 299,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1482,
+        "width": 283,
+        "height": 41
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 1618,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 1618,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 1618,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1932,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1932,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 1932,
+        "width": 151,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1972,
+        "width": 296,
+        "height": 122
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 1972,
+        "width": 295,
+        "height": 122
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 1972,
+        "width": 287,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 2041,
+        "width": 296,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2105,
+        "width": 296,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 2105,
+        "width": 295,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 636,
+        "y": 2297,
+        "width": 169,
+        "height": 56
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero-3e352e01",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 3,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.upspsr-cards-data.row > div:nth-child(1)",
+      "bounds": {
+        "x": 120,
+        "y": 399,
+        "width": 400,
+        "height": 704
+      },
+      "screenshot": "blocks/hero-3e352e01.jpg"
+    },
+    {
+      "id": "hero-3e352e20",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 3,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.upspsr-cards-data.row > div:nth-child(2)",
+      "bounds": {
+        "x": 520,
+        "y": 399,
+        "width": 400,
+        "height": 704
+      },
+      "screenshot": "blocks/hero-3e352e20.jpg"
+    },
+    {
+      "id": "hero-3e352e3f",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 3,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.upspsr-cards-data.row > div:nth-child(3)",
+      "bounds": {
+        "x": 920,
+        "y": 399,
+        "width": 400,
+        "height": 704
+      },
+      "screenshot": "blocks/hero-3e352e3f.jpg"
+    },
+    {
+      "id": "unknown-3e352e5e",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 3,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.upspsr-cards-data.row > div:nth-child(4)",
+      "bounds": {
+        "x": 120,
+        "y": 1103,
+        "width": 400,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-3e352e5e.jpg"
+    },
+    {
+      "id": "unknown-3e352e7d",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 3,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.upspsr-cards-data.row > div:nth-child(5)",
+      "bounds": {
+        "x": 520,
+        "y": 1103,
+        "width": 400,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-3e352e7d.jpg"
+    },
+    {
+      "id": "unknown-3e352e9c",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 3,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.upspsr-cards-data.row > div:nth-child(6)",
+      "bounds": {
+        "x": 920,
+        "y": 1103,
+        "width": 400,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-3e352e9c.jpg"
+    },
+    {
+      "id": "unknown-3e352ebb",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 3,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.upspsr-cards-data.row > div:nth-child(7)",
+      "bounds": {
+        "x": 120,
+        "y": 1719,
+        "width": 400,
+        "height": 648
+      },
+      "screenshot": "blocks/unknown-3e352ebb.jpg"
+    },
+    {
+      "id": "unknown-3e352eda",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 3,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.upspsr-cards-data.row > div:nth-child(8)",
+      "bounds": {
+        "x": 520,
+        "y": 1719,
+        "width": 400,
+        "height": 648
+      },
+      "screenshot": "blocks/unknown-3e352eda.jpg"
+    },
+    {
+      "id": "unknown-3e352ef9",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 heading + 1 image block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 3,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + image"
+      },
+      "selector": "div.upspsr-cards-data.row > div:nth-child(9)",
+      "bounds": {
+        "x": 920,
+        "y": 1719,
+        "width": 400,
+        "height": 648
+      },
+      "screenshot": "blocks/unknown-3e352ef9.jpg"
+    },
+    {
+      "id": "hero-11b87049",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 CTA block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 1,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs"
+      },
+      "selector": "div.text-center.load-more-cta",
+      "bounds": {
+        "x": 120,
+        "y": 2407,
+        "width": 1200,
+        "height": 56
+      },
+      "screenshot": "blocks/hero-11b87049.jpg"
+    }
+  ]
+}

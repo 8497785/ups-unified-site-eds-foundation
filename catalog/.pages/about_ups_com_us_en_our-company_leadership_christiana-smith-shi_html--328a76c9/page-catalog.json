@@ -1,0 +1,347 @@
+{
+  "url": "https://about.ups.com/us/en/our-company/leadership/christiana-smith-shi.html",
+  "timestamp": "2026-06-11T08:03:35.108Z",
+  "duration": "8.8s",
+  "cleanup": {
+    "elementsRemoved": 17,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/our-company/leadership/christiana-smith-shi.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 200
+    },
+    "topSectionStrategy": "title",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 91,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 270,
+        "y": 31,
+        "width": 73,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 347,
+        "y": 31,
+        "width": 127,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 129,
+        "width": 400,
+        "height": 53
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 87,
+        "height": 21,
+        "textLength": 11
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 288,
+        "y": 31,
+        "width": 69,
+        "height": 21,
+        "textLength": 10
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 361,
+        "y": 33,
+        "width": 140,
+        "height": 16,
+        "textLength": 20
+      },
+      {
+        "tag": "h1",
+        "fontSize": 48,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 123,
+        "width": 676,
+        "height": 64,
+        "textLength": 20
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 187,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 123,
+      "width": 676,
+      "height": 64,
+      "text": "Christiana Smith Shi"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 200,
+      "width": 1440,
+      "height": 1526
+    },
+    "bodyStartY": 200,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 200,
+        "width": 478,
+        "height": 25
+      },
+      {
+        "type": "image",
+        "x": 937,
+        "y": 211,
+        "width": 373,
+        "height": 373
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 287,
+        "width": 236,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 343,
+        "width": 142,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 399,
+        "width": 298,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 423,
+        "width": 31,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 463,
+        "width": 225,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 519,
+        "width": 631,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 663,
+        "width": 624,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 783,
+        "width": 634,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 967,
+        "width": 179,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1023,
+        "width": 583,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1103,
+        "width": 249,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1143,
+        "width": 509,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1199,
+        "width": 308,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1223,
+        "width": 540,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1247,
+        "width": 384,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1287,
+        "width": 437,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1343,
+        "width": 286,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1367,
+        "width": 519,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1407,
+        "width": 491,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1463,
+        "width": 627,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1503,
+        "width": 206,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1559,
+        "width": 318,
+        "height": 17
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero-f4f03da",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 image + 1 CTA block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 1,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 2,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "1 CTAs + image"
+      },
+      "selector": "div.upspr-bio-image",
+      "bounds": {
+        "x": 937,
+        "y": 342,
+        "width": 373,
+        "height": 373
+      },
+      "screenshot": "blocks/hero-f4f03da.jpg"
+    }
+  ]
+}

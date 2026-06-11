@@ -1,0 +1,35 @@
+{
+  "variantName": "hero-minimal-dark-8",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.665Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-company/great-employer/jobs-and-opportunity-report.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "heading + 2 CTAs + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"hero\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"heading + 2 CTAs + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/jobs-and-opportunity-report.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_jobs-and-opportunity-report_html--796746a6/blocks/hero-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/reporting/the-ups-foundations-social-impact-report.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_reporting_the-ups-foundations-social-impact-report_html--7074f935/blocks/hero-3cf326b7.jpg"
+      }
+    ],
+    "reuseCount": 2
+  }
+}

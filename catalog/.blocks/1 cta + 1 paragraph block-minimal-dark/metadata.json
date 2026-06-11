@@ -1,0 +1,35 @@
+{
+  "variantName": "1 cta + 1 paragraph block-minimal-dark",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.821Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-stories/customer-first/how-ups-helped-weathertech-bring-predictability-to-shipping.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "text + 1 CTAs"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"text + 1 CTAs\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/how-ups-helped-weathertech-bring-predictability-to-shipping.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_how-ups-helped-weathertech-bring-predictability-to-shipping_html--3809a219/blocks/unknown-3821209e.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/the-largest-box-free--label-free-return-network-in-the-u-s--is-b.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_the-largest-box-free--label-free-return-network-in-the-u-s--is-b_html--dcf62588/blocks/unknown-332be7f8.jpg"
+      }
+    ],
+    "reuseCount": 2
+  }
+}

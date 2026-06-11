@@ -1,0 +1,444 @@
+{
+  "url": "https://about.ups.com/us/en/our-company/our-culture.html",
+  "timestamp": "2026-06-11T08:00:44.112Z",
+  "duration": "9.0s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/our-company/our-culture.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 500
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 91,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 270,
+        "y": 31,
+        "width": 72,
+        "height": 16
+      },
+      {
+        "type": "image",
+        "x": 903,
+        "y": 108,
+        "width": 407,
+        "height": 382
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 132,
+        "width": 308,
+        "height": 71
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 219,
+        "width": 722,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 299,
+        "width": 226,
+        "height": 17
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 87,
+        "height": 21,
+        "textLength": 11
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 275,
+        "y": 33,
+        "width": 85,
+        "height": 16,
+        "textLength": 11
+      },
+      {
+        "tag": "h1",
+        "fontSize": 64,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 127,
+        "width": 733,
+        "height": 80,
+        "textLength": 11
+      },
+      {
+        "tag": "b",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 219,
+        "y": 218,
+        "width": 63,
+        "height": 17,
+        "textLength": 7
+      },
+      {
+        "tag": "b",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 371,
+        "y": 218,
+        "width": 62,
+        "height": 17,
+        "textLength": 8
+      },
+      {
+        "tag": "b",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 552,
+        "y": 218,
+        "width": 53,
+        "height": 17,
+        "textLength": 7
+      },
+      {
+        "tag": "b",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 798,
+        "y": 218,
+        "width": 50,
+        "height": 17,
+        "textLength": 6
+      },
+      {
+        "tag": "b",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 242,
+        "width": 89,
+        "height": 17,
+        "textLength": 11
+      },
+      {
+        "tag": "b",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 255,
+        "y": 242,
+        "width": 136,
+        "height": 17,
+        "textLength": 16
+      },
+      {
+        "tag": "b",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 670,
+        "y": 242,
+        "width": 99,
+        "height": 17,
+        "textLength": 12
+      },
+      {
+        "tag": "p",
+        "fontSize": 16,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 295,
+        "width": 733,
+        "height": 24,
+        "textLength": 33
+      }
+    ],
+    "topSectionVisualElements": [
+      {
+        "kind": "img",
+        "x": 903,
+        "y": 107,
+        "width": 407,
+        "height": 382
+      }
+    ],
+    "topSectionCropBottomY": 489,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 127,
+      "width": 733,
+      "height": 80,
+      "text": "Our Culture"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 500,
+      "width": 1440,
+      "height": 1127
+    },
+    "bodyStartY": 500,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 405,
+        "y": 591,
+        "width": 398,
+        "height": 36
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 593,
+        "width": 275,
+        "height": 275
+      },
+      {
+        "type": "text",
+        "x": 405,
+        "y": 644,
+        "width": 886,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 445,
+        "y": 724,
+        "width": 831,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 445,
+        "y": 772,
+        "width": 830,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 445,
+        "y": 820,
+        "width": 827,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 445,
+        "y": 868,
+        "width": 822,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 405,
+        "y": 961,
+        "width": 503,
+        "height": 36
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 963,
+        "width": 275,
+        "height": 275
+      },
+      {
+        "type": "text",
+        "x": 405,
+        "y": 1014,
+        "width": 717,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 405,
+        "y": 1070,
+        "width": 901,
+        "height": 113
+      },
+      {
+        "type": "text",
+        "x": 405,
+        "y": 1285,
+        "width": 535,
+        "height": 36
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 1287,
+        "width": 275,
+        "height": 275
+      },
+      {
+        "type": "text",
+        "x": 405,
+        "y": 1338,
+        "width": 896,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 445,
+        "y": 1418,
+        "width": 428,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 445,
+        "y": 1442,
+        "width": 293,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 445,
+        "y": 1466,
+        "width": 294,
+        "height": 17
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero-3cf326b7",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 heading + 1 image + 1 list + 2 paragraphs block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 2,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 2,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + text + image + list"
+      },
+      "selector": "div.pr24-background-colour.responsivegrid",
+      "bounds": {
+        "x": 0,
+        "y": 132,
+        "width": 1440,
+        "height": 553
+      },
+      "screenshot": "blocks/hero-3cf326b7.jpg"
+    },
+    {
+      "id": "embed-6b3e1c67",
+      "type": "embed",
+      "confidence": "high",
+      "description": "3 images + 2 lists block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 4,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 2,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "text + 3 images + list"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1)",
+      "bounds": {
+        "x": 0,
+        "y": 685,
+        "width": 1440,
+        "height": 1052
+      },
+      "screenshot": "blocks/embed-6b3e1c67.jpg"
+    }
+  ]
+}

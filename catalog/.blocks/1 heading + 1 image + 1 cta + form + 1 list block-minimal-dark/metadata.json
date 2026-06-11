@@ -1,0 +1,44 @@
+{
+  "variantName": "1 heading + 1 image + 1 cta + form + 1 list block-minimal-dark",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.548Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-to-release-second-quarter-results-on-thursday-july-30-2020.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "icon",
+    "structure": "heading + text + 1 CTAs + image + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"icon\",\"structure\":\"heading + text + 1 CTAs + image + list\"}}",
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"icon\",\"structure\":\"text + 1 CTAs + image + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-to-release-second-quarter-results-on-thursday-july-30-2020.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_financials_ups-to-release-second-quarter-results-on-thursday-july-30-2020_html--5e1082bb/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/local-community-engagement/never-forget-upsers-pay-tribute-to-9-11-heroes.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_local-community-engagement_never-forget-upsers-pay-tribute-to-9-11-heroes_html--31494e44/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/5-things-you-didn-t-know-the-ups-store-could-do-for-your-small-b.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_5-things-you-didn-t-know-the-ups-store-could-do-for-your-small-b_html--606d8732/blocks/unknown-72c20b8f.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/keeping-seasonal-workers-safe.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_keeping-seasonal-workers-safe_html--339eb698/blocks/unknown-72c20b8f.jpg"
+      }
+    ],
+    "reuseCount": 4
+  }
+}

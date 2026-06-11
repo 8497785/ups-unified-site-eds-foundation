@@ -1,0 +1,79 @@
+{
+  "variantName": "hero-minimal-dark-4",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.420Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-company/leadership.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": true,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "heading + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"hero\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":true,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"heading + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/newsroom.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_html--dbfafbb7/blocks/hero-d13e6f2.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_html--aea0a7b7/blocks/hero-3796960.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/statements.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_statements_html--8e9ba697/blocks/hero-3796960.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_html--b78e560c/blocks/hero-d13e6f2.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/global-presence.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_global-presence_html--8412400d/blocks/hero-3796960.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/leadership.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_leadership_html--78a1b6fa/blocks/hero-3796960.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/our-history.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_our-history_html--54e73a8b/blocks/hero-3796960.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_html--0e644dab/blocks/hero-3796960.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/sustainability.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_sustainability_html--680d9553/blocks/hero-3796960.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_html--2c45bdab/blocks/hero-3796960.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_html--091da71d/blocks/hero-3796960.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/innovation-driven.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_innovation-driven_html--6de8b507/blocks/hero-3796960.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_html--f695b194/blocks/hero-3796960.jpg"
+      }
+    ],
+    "reuseCount": 13
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "variantName": "form-minimal-dark",
+  "baseBlock": "form",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.434Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/related-content/how-to-submit-a-claim.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "content"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"form\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"content\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/related-content/how-to-submit-a-claim.html",
+        "screenshot": ".pages/about_ups_com_us_en_related-content_how-to-submit-a-claim_html--9bf0146d/blocks/form-90455c3.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

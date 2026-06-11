@@ -1,0 +1,87 @@
+{
+  "variantName": "1 cta block-minimal-dark",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.419Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/newsroom/negotiations/industry-overview.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "1 CTAs"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"1 CTAs\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/newsroom/negotiations.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_negotiations_html--a471ee9b/blocks/unknown-10c6aa14.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/negotiations/industry-overview.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_negotiations_industry-overview_html--154df457/blocks/unknown-10c6aa14.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/drive-full-time-with-ups-and-see-the-sights.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_drive-full-time-with-ups-and-see-the-sights_html--6dc34f12/blocks/unknown-4ad1cff9.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/top-5-things-you-don-t-know-about-part-time-at-ups.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_top-5-things-you-don-t-know-about-part-time-at-ups_html--7c31b999/blocks/unknown-5be14231.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/5-tips-for-an-easy-holiday-win-2023.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_5-tips-for-an-easy-holiday-win-2023_html--10c029c9/blocks/unknown-52fc5f9c.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/australian-clothing-brand-leans-on-ups-for-sustainable-shipping-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_australian-clothing-brand-leans-on-ups-for-sustainable-shipping-_html--5eb155cb/blocks/unknown-12633e63.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/how-ups-is-helping-four-aapi-owned-small-businesses-thrive.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_how-ups-is-helping-four-aapi-owned-small-businesses-thrive_html--ef62e421/blocks/unknown-52fc5f9c.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/let-ups-help-you-get-ready-for-football-season-with-these-tailga.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_let-ups-help-you-get-ready-for-football-season-with-these-tailga_html--24c565f7/blocks/unknown-52fc5f9c.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/new-ups-x-tones-of-melanin-apparel-just-dropped-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_new-ups-x-tones-of-melanin-apparel-just-dropped-_html--1b69f9b1/blocks/unknown-12633f1d.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/small-business-big-growth.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_small-business-big-growth_html--90d7c401/blocks/unknown-3a04a343.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/the-ups-store-helps-small-businesses-get-their-own-3d-billboard-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_the-ups-store-helps-small-businesses-get-their-own-3d-billboard-_html--cf3d514a/blocks/unknown-1e36d97d.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-breaks-ground-on-louisville-expansions.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-breaks-ground-on-louisville-expansions_html--fa7421fe/blocks/unknown-52fc5f9c.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-celebrates-50-years-in-canada-a-gateway-to-global-success.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-celebrates-50-years-in-canada-a-gateway-to-global-success_html--c3187df1/blocks/unknown-12633e63.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-surveys-4700-smbs-in-12-countries.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-surveys-4700-smbs-in-12-countries_html--25020ee2/blocks/unknown-52fc5f9c.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-unlocks--1-2m-in-savings-for-canadian-customer-by-reimaginin.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-unlocks--1-2m-in-savings-for-canadian-customer-by-reimaginin_html--05cc15c2/blocks/unknown-12633e63.jpg"
+      }
+    ],
+    "reuseCount": 15
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "variantName": "video-minimal-dark-4",
+  "baseBlock": "video",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:42.115Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-stories/customer-first/ups-x-fanatics-title-run-series.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "heading + text"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"video\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"heading + text\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-stories/customer-first/ups-x-fanatics-title-run-series.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_customer-first_ups-x-fanatics-title-run-series_html--a09667b3/blocks/video-44267c2.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

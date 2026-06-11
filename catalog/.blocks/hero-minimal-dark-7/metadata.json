@@ -1,0 +1,40 @@
+{
+  "variantName": "hero-minimal-dark-7",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.448Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/rfid-equipment-request-confirmation.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": true,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "heading + text + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"hero\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"heading + text + list\"}}",
+    "{\"canonicalModel\":\"standalone\",\"type\":\"hero\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":true,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"heading + text + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/newsroom.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_html--dbfafbb7/blocks/hero-511f5a33.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/reporting.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_reporting_html--b58e008c/blocks/hero-3796960.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/rfid-equipment-request-confirmation.html",
+        "screenshot": ".pages/about_ups_com_us_en_rfid-equipment-request-confirmation_html--745e9fe1/blocks/hero-3796960.jpg"
+      }
+    ],
+    "reuseCount": 3
+  }
+}

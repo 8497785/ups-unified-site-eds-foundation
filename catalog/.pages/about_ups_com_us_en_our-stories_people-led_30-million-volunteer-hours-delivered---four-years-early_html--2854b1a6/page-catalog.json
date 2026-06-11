@@ -1,0 +1,671 @@
+{
+  "url": "https://about.ups.com/us/en/our-stories/people-led/30-million-volunteer-hours-delivered---four-years-early.html",
+  "timestamp": "2026-06-11T08:18:46.132Z",
+  "duration": "11.7s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/our-stories/people-led/30-million-volunteer-hours-delivered---four-years-early.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 350
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 75,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 254,
+        "y": 31,
+        "width": 159,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 262,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 1100,
+        "height": 134
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 71,
+        "height": 21,
+        "textLength": 11
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 272,
+        "y": 31,
+        "width": 155,
+        "height": 21,
+        "textLength": 22
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 262,
+        "height": 15,
+        "textLength": 22
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 144,
+        "textLength": 55
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 339,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 195,
+      "width": 1180,
+      "height": 144,
+      "text": "30 million volunteer hours delivered – four years early"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 350,
+      "width": 1440,
+      "height": 3924
+    },
+    "bodyStartY": 350,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 375,
+        "width": 191,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 424,
+        "width": 534,
+        "height": 22
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 530,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1226,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1229,
+        "width": 710,
+        "height": 65
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 1330,
+        "width": 717,
+        "height": 261
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1633,
+        "width": 628,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1713,
+        "width": 713,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1841,
+        "width": 690,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1969,
+        "width": 714,
+        "height": 17
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 2022,
+        "width": 190,
+        "height": 190
+      },
+      {
+        "type": "text",
+        "x": 320,
+        "y": 2046,
+        "width": 515,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 320,
+        "y": 2190,
+        "width": 501,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2297,
+        "width": 707,
+        "height": 65
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 2398,
+        "width": 190,
+        "height": 190
+      },
+      {
+        "type": "text",
+        "x": 320,
+        "y": 2422,
+        "width": 474,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 508,
+        "y": 2542,
+        "width": 296,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2601,
+        "width": 711,
+        "height": 65
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 2702,
+        "width": 190,
+        "height": 190
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2905,
+        "width": 709,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3033,
+        "width": 710,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3113,
+        "width": 242,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3169,
+        "width": 307,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3225,
+        "width": 262,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3281,
+        "width": 710,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 574,
+        "y": 3480,
+        "width": 292,
+        "height": 53
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 3628,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 3628,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 3628,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3942,
+        "width": 222,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 3942,
+        "width": 222,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 3942,
+        "width": 222,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3982,
+        "width": 283,
+        "height": 26
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 3982,
+        "width": 298,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 3982,
+        "width": 285,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 4019,
+        "width": 300,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 4051,
+        "width": 270,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 4083,
+        "width": 289,
+        "height": 41
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 661,
+        "width": 1220,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-7147bf03.jpg"
+    },
+    {
+      "id": "unknown-12633f3c",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 image block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "image"
+      },
+      "selector": "div.cmp-text.upspr-analytics > p:nth-child(2)",
+      "bounds": {
+        "x": 130,
+        "y": 1461,
+        "width": 717,
+        "height": 261
+      },
+      "screenshot": "blocks/unknown-12633f3c.jpg"
+    },
+    {
+      "id": "unknown-12633ea1",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 image block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 3,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "image"
+      },
+      "selector": "div.cmp-text.upspr-analytics > p:nth-child(7)",
+      "bounds": {
+        "x": 130,
+        "y": 2146,
+        "width": 717,
+        "height": 144
+      },
+      "screenshot": "blocks/unknown-12633ea1.jpg"
+    },
+    {
+      "id": "unknown-12633e63",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 image block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 3,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "image"
+      },
+      "selector": "div.cmp-text.upspr-analytics > p:nth-child(9)",
+      "bounds": {
+        "x": 130,
+        "y": 2426,
+        "width": 717,
+        "height": 144
+      },
+      "screenshot": "blocks/unknown-12633e63.jpg"
+    },
+    {
+      "id": "unknown-3a04aae4",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 image block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "image"
+      },
+      "selector": "div.cmp-text.upspr-analytics > p:nth-child(11)",
+      "bounds": {
+        "x": 130,
+        "y": 2706,
+        "width": 717,
+        "height": 120
+      },
+      "screenshot": "blocks/unknown-3a04aae4.jpg"
+    },
+    {
+      "id": "unknown-1d621799",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA + 1 list block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 5,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs + list"
+      },
+      "selector": "div.upspr-socialmedia",
+      "bounds": {
+        "x": 937,
+        "y": 1357,
+        "width": 373,
+        "height": 54
+      },
+      "screenshot": "blocks/unknown-1d621799.jpg"
+    },
+    {
+      "id": "unknown-3cf326b7",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "13 headings + 12 images + form block",
+      "content": {
+        "headingCount": 13,
+        "paragraphCount": 0,
+        "imageCount": 12,
+        "buttonCount": 0,
+        "linkCount": 36,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + 12 images"
+      },
+      "selector": "div.pr24-background-colour.responsivegrid",
+      "bounds": {
+        "x": 0,
+        "y": 3354,
+        "width": 1440,
+        "height": 876
+      },
+      "screenshot": "blocks/unknown-3cf326b7.jpg"
+    }
+  ]
+}

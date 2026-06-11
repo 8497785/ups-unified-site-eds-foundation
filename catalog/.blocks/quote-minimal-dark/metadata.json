@@ -1,0 +1,31 @@
+{
+  "variantName": "quote-minimal-dark",
+  "baseBlock": "quote",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.432Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/jim-casey-service-award-winner-continues-her-family-legacy-of-gi.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "text + 1 CTAs + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"quote\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"text + 1 CTAs + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/jim-casey-service-award-winner-continues-her-family-legacy-of-gi.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_jim-casey-service-award-winner-continues-her-family-legacy-of-gi_html--aaf8ec2e/blocks/quote-72c20b8f.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

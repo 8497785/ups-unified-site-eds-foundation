@@ -1,0 +1,67 @@
+{
+  "variantName": "10 headings + 9 images + form block-minimal-dark-withimg",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.589Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/newsroom/press-releases/our-strategy/ups-acquires-andlauer-healthcare-group-for--1-6-billion--acceler.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + 9 images"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"heading + 9 images\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/our-strategy/ups-acquires-andlauer-healthcare-group-for--1-6-billion--acceler.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_press-releases_our-strategy_ups-acquires-andlauer-healthcare-group-for--1-6-billion--acceler_html--0c65bd2c/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief/aid-to-ukrainian-refugees-in-poland.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_health-humanitarian-relief_aid-to-ukrainian-refugees-in-poland_html--c26b4224/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief/delivering-what-matters--equitable-vaccine-access-globally.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_health-humanitarian-relief_delivering-what-matters--equitable-vaccine-access-globally_html--cf86b1e2/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief/how-the-ups-foundation-delivered-hope-after-natural-disasters-in.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_health-humanitarian-relief_how-the-ups-foundation-delivered-hope-after-natural-disasters-in_html--e4501d05/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief/prevention-of-human-trafficking-2022.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_health-humanitarian-relief_prevention-of-human-trafficking-2022_html--27d94b7d/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief/putting-the-brakes-on-human-trafficking.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_health-humanitarian-relief_putting-the-brakes-on-human-trafficking_html--7c9f0059/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief/ups-delivers-humanitarian-aid-for-earthquake-relief.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_health-humanitarian-relief_ups-delivers-humanitarian-aid-for-earthquake-relief_html--641dccb1/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief/ups-joins-philippines-flood-relief-effort-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_health-humanitarian-relief_ups-joins-philippines-flood-relief-effort-_html--40637abc/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief/ups-repurposes-shipping-containers-as-mobile-health-clinics.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_health-humanitarian-relief_ups-repurposes-shipping-containers-as-mobile-health-clinics_html--bdb87e63/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief/ups-response-on-the-crisis-in-ukraine.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_health-humanitarian-relief_ups-response-on-the-crisis-in-ukraine_html--febd27f9/blocks/unknown-3cf326b7.jpg"
+      }
+    ],
+    "reuseCount": 10
+  }
+}

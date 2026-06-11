@@ -1,0 +1,857 @@
+{
+  "url": "https://about.ups.com/us/en/newsroom/press-releases/financials/ups-delivers-1q-2018-eps-of-1-55-up-17-.html",
+  "timestamp": "2026-06-11T07:56:17.428Z",
+  "duration": "11.4s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/newsroom/press-releases/financials/ups-delivers-1q-2018-eps-of-1-55-up-17-.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 275
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 71,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 250,
+        "y": 31,
+        "width": 102,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 356,
+        "y": 31,
+        "width": 67,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 427,
+        "y": 31,
+        "width": 207,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 157,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 1052,
+        "height": 62
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 67,
+        "height": 21,
+        "textLength": 8
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 268,
+        "y": 31,
+        "width": 98,
+        "height": 21,
+        "textLength": 14
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 383,
+        "y": 31,
+        "width": 63,
+        "height": 21,
+        "textLength": 10
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 450,
+        "y": 33,
+        "width": 216,
+        "height": 16,
+        "textLength": 31
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 157,
+        "height": 15,
+        "textLength": 10
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 72,
+        "textLength": 41
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 267,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 195,
+      "width": 1180,
+      "height": 72,
+      "text": "UPS Delivers 1Q 2018 EPS Of $1.55, Up 17%"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 275,
+      "width": 1440,
+      "height": 11542
+    },
+    "bodyStartY": 275,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 303,
+        "width": 199,
+        "height": 17
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 404,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1100,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1100,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1100,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1100,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1100,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1103,
+        "width": 82,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1159,
+        "width": 412,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1183,
+        "width": 535,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1207,
+        "width": 556,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1231,
+        "width": 454,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1255,
+        "width": 487,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1279,
+        "width": 521,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1303,
+        "width": 372,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1343,
+        "width": 716,
+        "height": 137
+      },
+      {
+        "type": "table",
+        "x": 130,
+        "y": 1508,
+        "width": 717,
+        "height": 349
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1900,
+        "width": 242,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1956,
+        "width": 584,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1980,
+        "width": 604,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2004,
+        "width": 647,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2052,
+        "width": 621,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2076,
+        "width": 650,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2124,
+        "width": 671,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2188,
+        "width": 180,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2244,
+        "width": 716,
+        "height": 65
+      },
+      {
+        "type": "table",
+        "x": 130,
+        "y": 2345,
+        "width": 717,
+        "height": 276
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2664,
+        "width": 310,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2720,
+        "width": 630,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2768,
+        "width": 631,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2816,
+        "width": 623,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2880,
+        "width": 168,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2936,
+        "width": 708,
+        "height": 65
+      },
+      {
+        "type": "table",
+        "x": 130,
+        "y": 3037,
+        "width": 717,
+        "height": 276
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3356,
+        "width": 296,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3412,
+        "width": 633,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3460,
+        "width": 607,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3484,
+        "width": 676,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3532,
+        "width": 592,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3556,
+        "width": 659,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3620,
+        "width": 266,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 3676,
+        "width": 678,
+        "height": 65
+      },
+      {
+        "type": "table",
+        "x": 130,
+        "y": 3777,
+        "width": 717,
+        "height": 276
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4096,
+        "width": 389,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 4152,
+        "width": 661,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 4200,
+        "width": 634,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 4248,
+        "width": 649,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 4296,
+        "width": 519,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4336,
+        "width": 60,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4392,
+        "width": 710,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4520,
+        "width": 693,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 4648,
+        "width": 632,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 4672,
+        "width": 519,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 4696,
+        "width": 617,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 4720,
+        "width": 541,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4760,
+        "width": 214,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4816,
+        "width": 716,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4920,
+        "width": 84,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 4976,
+        "width": 714,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5152,
+        "width": 565,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5208,
+        "width": 205,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5264,
+        "width": 712,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5440,
+        "width": 713,
+        "height": 185
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5664,
+        "width": 421,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5720,
+        "width": 712,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 5920,
+        "width": 716,
+        "height": 185
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6144,
+        "width": 712,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6344,
+        "width": 707,
+        "height": 89
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6472,
+        "width": 483,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6528,
+        "width": 712,
+        "height": 137
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6704,
+        "width": 708,
+        "height": 209
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 6952,
+        "width": 113,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 7008,
+        "width": 716,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 149,
+        "y": 7208,
+        "width": 680,
+        "height": 41
+      },
+      {
+        "type": "table",
+        "x": 130,
+        "y": 7285,
+        "width": 717,
+        "height": 1558
+      },
+      {
+        "type": "text",
+        "x": 218,
+        "y": 10484,
+        "width": 541,
+        "height": 17
+      },
+      {
+        "type": "table",
+        "x": 130,
+        "y": 10537,
+        "width": 717,
+        "height": 1120
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 535,
+        "width": 1220,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-7147bf03.jpg"
+    },
+    {
+      "id": "unknown-1d621799",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA + 1 list block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 5,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs + list"
+      },
+      "selector": "div.upspr-socialmedia",
+      "bounds": {
+        "x": 937,
+        "y": 1231,
+        "width": 373,
+        "height": 54
+      },
+      "screenshot": "blocks/unknown-1d621799.jpg"
+    },
+    {
+      "id": "unknown-35d464b4",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "form block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 2,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "content"
+      },
+      "selector": "div.relatedSidePanel.pr04-threecolumnteaser",
+      "bounds": {
+        "x": 937,
+        "y": 1311,
+        "width": 373,
+        "height": 80
+      },
+      "screenshot": "blocks/unknown-35d464b4.jpg"
+    },
+    {
+      "id": "unknown-3cf326b7",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "form block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "content"
+      },
+      "selector": "div.pr24-background-colour.responsivegrid",
+      "bounds": {
+        "x": 0,
+        "y": 10270,
+        "width": 1440,
+        "height": 80
+      },
+      "screenshot": "blocks/unknown-3cf326b7.jpg"
+    }
+  ]
+}

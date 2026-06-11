@@ -1,0 +1,31 @@
+{
+  "variantName": "embed-minimal-dark-withimg-6",
+  "baseBlock": "embed",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.652Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-company/great-employer/5-inspiring-career-stories-to-motivate-your-next-move.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "text + 4 images"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"embed\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"text + 4 images\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer/5-inspiring-career-stories-to-motivate-your-next-move.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_5-inspiring-career-stories-to-motivate-your-next-move_html--391c43a1/blocks/embed-1415ced2.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

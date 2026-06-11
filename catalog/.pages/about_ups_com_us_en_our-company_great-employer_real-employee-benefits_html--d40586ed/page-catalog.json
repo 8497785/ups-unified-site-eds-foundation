@@ -1,0 +1,497 @@
+{
+  "url": "https://about.ups.com/us/en/our-company/great-employer/real-employee-benefits.html",
+  "timestamp": "2026-06-11T08:02:23.102Z",
+  "duration": "9.9s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/our-company/great-employer/real-employee-benefits.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 350
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 91,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 270,
+        "y": 31,
+        "width": 102,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 196,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 1095,
+        "height": 134
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 87,
+        "height": 21,
+        "textLength": 11
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 288,
+        "y": 31,
+        "width": 98,
+        "height": 21,
+        "textLength": 14
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 196,
+        "height": 15,
+        "textLength": 14
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 144,
+        "textLength": 87
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 339,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 195,
+      "width": 1180,
+      "height": 144,
+      "text": "What do industry-leading benefits mean for UPS employees? A great job and peace of mind"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 350,
+      "width": 1440,
+      "height": 2655
+    },
+    "bodyStartY": 350,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 375,
+        "width": 263,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 424,
+        "width": 466,
+        "height": 22
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 530,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1226,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1229,
+        "width": 730,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 254,
+        "y": 1322,
+        "width": 529,
+        "height": 47
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1396,
+        "width": 194,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1452,
+        "width": 708,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1516,
+        "width": 153,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1572,
+        "width": 412,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1596,
+        "width": 695,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1660,
+        "width": 84,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1716,
+        "width": 693,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1780,
+        "width": 97,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1836,
+        "width": 686,
+        "height": 65
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1924,
+        "width": 752,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 1977,
+        "width": 737,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2001,
+        "width": 737,
+        "height": 48
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2049,
+        "width": 737,
+        "height": 24
+      },
+      {
+        "type": "text",
+        "x": 574,
+        "y": 2211,
+        "width": 292,
+        "height": 53
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 2359,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 2359,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 2359,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2673,
+        "width": 156,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 2673,
+        "width": 156,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 2673,
+        "width": 156,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2713,
+        "width": 291,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 2713,
+        "width": 277,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 2713,
+        "width": 290,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 2782,
+        "width": 300,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 2814,
+        "width": 297,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 2814,
+        "width": 283,
+        "height": 41
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 661,
+        "width": 1220,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-7147bf03.jpg"
+    },
+    {
+      "id": "unknown-72c20b8f",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 CTAs + 6 lists block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 8,
+        "imageCount": 0,
+        "buttonCount": 3,
+        "linkCount": 7,
+        "listCount": 6,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "text + 3 CTAs + list"
+      },
+      "selector": "div.upspr-two-column > div:nth-child(3)",
+      "bounds": {
+        "x": 110,
+        "y": 1357,
+        "width": 1220,
+        "height": 943
+      },
+      "screenshot": "blocks/unknown-72c20b8f.jpg"
+    },
+    {
+      "id": "unknown-3cf326b7",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "13 headings + 12 images + form block",
+      "content": {
+        "headingCount": 13,
+        "paragraphCount": 0,
+        "imageCount": 12,
+        "buttonCount": 0,
+        "linkCount": 36,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + 12 images"
+      },
+      "selector": "div.pr24-background-colour.responsivegrid",
+      "bounds": {
+        "x": 0,
+        "y": 2340,
+        "width": 1440,
+        "height": 876
+      },
+      "screenshot": "blocks/unknown-3cf326b7.jpg"
+    }
+  ]
+}

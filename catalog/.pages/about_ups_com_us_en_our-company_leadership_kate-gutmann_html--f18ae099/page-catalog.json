@@ -1,0 +1,221 @@
+{
+  "url": "https://about.ups.com/us/en/our-company/leadership/kate-gutmann.html",
+  "timestamp": "2026-06-11T08:03:35.024Z",
+  "duration": "8.8s",
+  "cleanup": {
+    "elementsRemoved": 17,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/our-company/leadership/kate-gutmann.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 200
+    },
+    "topSectionStrategy": "title",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 91,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 270,
+        "y": 31,
+        "width": 73,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 347,
+        "y": 31,
+        "width": 90,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 129,
+        "width": 281,
+        "height": 53
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 87,
+        "height": 21,
+        "textLength": 11
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 288,
+        "y": 31,
+        "width": 69,
+        "height": 21,
+        "textLength": 10
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 361,
+        "y": 33,
+        "width": 103,
+        "height": 16,
+        "textLength": 12
+      },
+      {
+        "tag": "h1",
+        "fontSize": 48,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 123,
+        "width": 676,
+        "height": 64,
+        "textLength": 12
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 187,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 123,
+      "width": 676,
+      "height": 64,
+      "text": "Kate Gutmann"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 200,
+      "width": 1440,
+      "height": 854
+    },
+    "bodyStartY": 200,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 200,
+        "width": 587,
+        "height": 57
+      },
+      {
+        "type": "image",
+        "x": 937,
+        "y": 211,
+        "width": 373,
+        "height": 373
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 319,
+        "width": 672,
+        "height": 161
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 519,
+        "width": 666,
+        "height": 185
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 743,
+        "width": 623,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 823,
+        "width": 655,
+        "height": 65
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero-74a65fe7",
+      "type": "hero",
+      "confidence": "high",
+      "description": "1 heading + 1 image + 1 CTA block",
+      "content": {
+        "headingCount": 1,
+        "paragraphCount": 5,
+        "imageCount": 1,
+        "buttonCount": 1,
+        "linkCount": 2,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + text + 1 CTAs + image"
+      },
+      "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(3)",
+      "bounds": {
+        "x": 0,
+        "y": 215,
+        "width": 1440,
+        "height": 970
+      },
+      "screenshot": "blocks/hero-74a65fe7.jpg"
+    }
+  ]
+}

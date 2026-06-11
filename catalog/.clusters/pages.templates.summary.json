@@ -1,0 +1,286 @@
+{
+  "total_pages": 693,
+  "valid_clusters": 18,
+  "initial_singletons": 65,
+  "singleton_count": 11,
+  "singletons_merged": 54,
+  "merges": {
+    "1": 63,
+    "8": 63,
+    "9": 63,
+    "12": 63,
+    "14": 63,
+    "16": 63,
+    "18": 63,
+    "21": 63,
+    "22": 63,
+    "26": 63,
+    "28": 63,
+    "33": 63,
+    "35": 63,
+    "37": 63,
+    "39": 63,
+    "40": 63,
+    "43": 63,
+    "45": 63,
+    "49": 63,
+    "51": 63,
+    "52": 63,
+    "54": 63,
+    "57": 63,
+    "59": 63,
+    "65": 63,
+    "67": 63,
+    "75": 63,
+    "77": 63,
+    "-12": 30,
+    "2": 30,
+    "4": 30,
+    "5": 30,
+    "6": 30,
+    "13": 30,
+    "15": 30,
+    "19": 30,
+    "20": 30,
+    "27": 30,
+    "46": 30,
+    "48": 30,
+    "53": 30,
+    "55": 30,
+    "56": 30,
+    "69": 30,
+    "70": 30,
+    "-9": 24,
+    "-7": 24,
+    "-6": 24,
+    "-5": 24,
+    "-4": 24,
+    "-3": 24,
+    "-1": 24,
+    "3": 24,
+    "7": 24,
+    "10": 24,
+    "11": 24,
+    "17": 24,
+    "23": 24,
+    "25": 24,
+    "29": 24,
+    "31": 24,
+    "34": 24,
+    "36": 24,
+    "38": 24,
+    "41": 24,
+    "42": 24,
+    "44": 24,
+    "47": 24,
+    "50": 24,
+    "58": 24,
+    "62": 24,
+    "64": 24,
+    "66": 24,
+    "68": 24,
+    "73": 24,
+    "76": 24,
+    "78": 24,
+    "79": 24,
+    "80": 24,
+    "81": 24,
+    "85": 24,
+    "60": 61,
+    "-2": 72
+  },
+  "seed_quality": {
+    "initial_url_group_count": 70,
+    "stable_group_count": 72,
+    "split_group_count": 10,
+    "unclear_group_count": 0
+  },
+  "policy": {
+    "representative_selection": "block_cover",
+    "representative_max_count": 10,
+    "merge_phase": "top_section_only",
+    "family_body_split": true,
+    "body_matcher": "column_shape_smaller_side_paired"
+  },
+  "families": {
+    "count": 14,
+    "split_count": 4,
+    "families": [
+      {
+        "family_id": -11,
+        "page_count": 1,
+        "template_count": 1,
+        "templates": [
+          {
+            "cluster_id": -11,
+            "size": 1
+          }
+        ]
+      },
+      {
+        "family_id": -10,
+        "page_count": 1,
+        "template_count": 1,
+        "templates": [
+          {
+            "cluster_id": -10,
+            "size": 1
+          }
+        ]
+      },
+      {
+        "family_id": -8,
+        "page_count": 1,
+        "template_count": 1,
+        "templates": [
+          {
+            "cluster_id": -8,
+            "size": 1
+          }
+        ]
+      },
+      {
+        "family_id": 24,
+        "page_count": 41,
+        "template_count": 2,
+        "templates": [
+          {
+            "cluster_id": 24,
+            "size": 40
+          },
+          {
+            "cluster_id": 85,
+            "size": 1
+          }
+        ]
+      },
+      {
+        "family_id": 30,
+        "page_count": 39,
+        "template_count": 2,
+        "templates": [
+          {
+            "cluster_id": 30,
+            "size": 20
+          },
+          {
+            "cluster_id": 86,
+            "size": 19
+          }
+        ]
+      },
+      {
+        "family_id": 32,
+        "page_count": 1,
+        "template_count": 1,
+        "templates": [
+          {
+            "cluster_id": 32,
+            "size": 1
+          }
+        ]
+      },
+      {
+        "family_id": 61,
+        "page_count": 3,
+        "template_count": 1,
+        "templates": [
+          {
+            "cluster_id": 61,
+            "size": 3
+          }
+        ]
+      },
+      {
+        "family_id": 63,
+        "page_count": 597,
+        "template_count": 2,
+        "templates": [
+          {
+            "cluster_id": 63,
+            "size": 595
+          },
+          {
+            "cluster_id": 87,
+            "size": 2
+          }
+        ]
+      },
+      {
+        "family_id": 71,
+        "page_count": 1,
+        "template_count": 1,
+        "templates": [
+          {
+            "cluster_id": 71,
+            "size": 1
+          }
+        ]
+      },
+      {
+        "family_id": 72,
+        "page_count": 2,
+        "template_count": 2,
+        "templates": [
+          {
+            "cluster_id": 72,
+            "size": 1
+          },
+          {
+            "cluster_id": 88,
+            "size": 1
+          }
+        ]
+      },
+      {
+        "family_id": 74,
+        "page_count": 1,
+        "template_count": 1,
+        "templates": [
+          {
+            "cluster_id": 74,
+            "size": 1
+          }
+        ]
+      },
+      {
+        "family_id": 82,
+        "page_count": 3,
+        "template_count": 1,
+        "templates": [
+          {
+            "cluster_id": 82,
+            "size": 3
+          }
+        ]
+      },
+      {
+        "family_id": 83,
+        "page_count": 1,
+        "template_count": 1,
+        "templates": [
+          {
+            "cluster_id": 83,
+            "size": 1
+          }
+        ]
+      },
+      {
+        "family_id": 84,
+        "page_count": 1,
+        "template_count": 1,
+        "templates": [
+          {
+            "cluster_id": 84,
+            "size": 1
+          }
+        ]
+      }
+    ]
+  },
+  "family_split": {
+    "families": 14,
+    "sub_templates": 18,
+    "splits": 4
+  }
+}

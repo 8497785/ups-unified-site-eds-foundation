@@ -1,0 +1,47 @@
+{
+  "variantName": "embed-minimal-dark-4",
+  "baseBlock": "embed",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.433Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-communities.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "heading + text + list"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"embed\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"noimg\",\"structure\":\"heading + text + list\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/newsroom/negotiations/negotiations-basics/ups-and-the-teamsters.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_negotiations_negotiations-basics_ups-and-the-teamsters_html--04c9cc70/blocks/embed-6b3e1ca5.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_html--00d1eefd/blocks/embed-6b3e1c86.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-communities.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_ups-sustainability-and-community-impact-report_delivering-for-our-communities_html--86c31363/blocks/embed-6b3e1ca5.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-people.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_ups-sustainability-and-community-impact-report_delivering-for-our-people_html--abbeffc1/blocks/embed-14202c04.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-planet.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_ups-sustainability-and-community-impact-report_delivering-for-our-planet_html--a41b6b5f/blocks/embed-6b3e1cc4.jpg"
+      }
+    ],
+    "reuseCount": 5
+  }
+}

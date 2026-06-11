@@ -1,0 +1,75 @@
+{
+  "variantName": "3 headings + 3 images + form block-minimal-dark-withimg",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.433Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-communities.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + 3 images"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"heading + 3 images\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/newsroom/negotiations/media-fast-facts.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_negotiations_media-fast-facts_html--c5ef499c/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/newsroom/ups-aircraft-accident.html",
+        "screenshot": ".pages/about_ups_com_us_en_newsroom_ups-aircraft-accident_html--9d3b75d7/blocks/unknown-6b3e1d02.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/great-employer.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_great-employer_html--00d1eefd/blocks/unknown-6b3e1ca5.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-company/our-strategy/how-ups-is-creating-our-future.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-company_our-strategy_how-ups-is-creating-our-future_html--2d629ed2/blocks/unknown-7f488514.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/the-ups-foundation-mission-and-purpose.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_the-ups-foundation-mission-and-purpose_html--f9514dc1/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-communities.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_ups-sustainability-and-community-impact-report_delivering-for-our-communities_html--86c31363/blocks/unknown-7f488514.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-communities/delivering-health---humanitarian-relief.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_ups-sustainability-and-community-impact-report_delivering-for-our-communities_delivering-health---humanitarian-relief_html--0025c72b/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-communities/delivering-planet-protection.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_ups-sustainability-and-community-impact-report_delivering-for-our-communities_delivering-planet-protection_html--cf1549e0/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-people.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_ups-sustainability-and-community-impact-report_delivering-for-our-people_html--abbeffc1/blocks/unknown-7f488514.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/ups-sustainability-and-community-impact-report/delivering-for-our-planet.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_ups-sustainability-and-community-impact-report_delivering-for-our-planet_html--a41b6b5f/blocks/unknown-7f488514.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/blind-since-12-super-upser-jim-holland-sees-life-differently-than-most.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_blind-since-12-super-upser-jim-holland-sees-life-differently-than-most_html--127c90bb/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-stories/people-led/minnesota-duo-still-truckin-after-50-year-careers-filled-with-safety-and-service-excellence.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-stories_people-led_minnesota-duo-still-truckin-after-50-year-careers-filled-with-safety-and-service-excellence_html--36276c7a/blocks/unknown-3cf326b7.jpg"
+      }
+    ],
+    "reuseCount": 12
+  }
+}

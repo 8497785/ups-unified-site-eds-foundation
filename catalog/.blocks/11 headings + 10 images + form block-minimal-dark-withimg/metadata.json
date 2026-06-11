@@ -1,0 +1,67 @@
+{
+  "variantName": "11 headings + 10 images + form block-minimal-dark-withimg",
+  "baseBlock": "unknown",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-06-11T08:23:41.748Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/2024-jim-casey-community-service-award-winner.html",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + 10 images"
+  },
+  "knownSignatures": [
+    "{\"canonicalModel\":\"standalone\",\"type\":\"unknown\",\"visualChars\":{\"colorScheme\":\"dark\",\"density\":\"minimal\",\"hasBackgroundImage\":false,\"hasGrid\":false,\"imagePattern\":\"large\",\"structure\":\"heading + 10 images\"}}"
+  ],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/2024-jim-casey-community-service-award-winner.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_2024-jim-casey-community-service-award-winner_html--d893c716/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/3-powerful-lessons-from-30-years-of-the-jim-casey-community-serv.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_3-powerful-lessons-from-30-years-of-the-jim-casey-community-serv_html--8289eda7/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/celebrating-a-milestone--1-million-volunteer-hours-dedicated-to-.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_celebrating-a-milestone--1-million-volunteer-hours-dedicated-to-_html--646795bb/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/celebrating-the-power-of-global-volunteerism-at-ups.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_celebrating-the-power-of-global-volunteerism-at-ups_html--3100a0d7/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/empowering-dreams--one-ups-employee-s-inspiring-journey-of-sacri.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_empowering-dreams--one-ups-employee-s-inspiring-journey-of-sacri_html--7cd06a91/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/fueling-hope--a-upser-s-mission-to-deliver-comfort-and-care.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_fueling-hope--a-upser-s-mission-to-deliver-comfort-and-care_html--34e94063/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/global-volunteer-month-at-ups.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_global-volunteer-month-at-ups_html--25029975/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/purpose-and-expertise-drive-ups-s-response-in-times-of-need.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_purpose-and-expertise-drive-ups-s-response-in-times-of-need_html--6c6bb143/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/the-ups-foundation-awards-atlanta-botanical-garden--5-million.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_the-ups-foundation-awards-atlanta-botanical-garden--5-million_html--96c79981/blocks/unknown-3cf326b7.jpg"
+      },
+      {
+        "url": "https://about.ups.com/us/en/our-impact/community/local-community-engagement/ups-and-the-high-museum-renew-second-sundays-partnership.html",
+        "screenshot": ".pages/about_ups_com_us_en_our-impact_community_local-community-engagement_ups-and-the-high-museum-renew-second-sundays-partnership_html--e78c5a09/blocks/unknown-3cf326b7.jpg"
+      }
+    ],
+    "reuseCount": 10
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "variantName": "footer-global",
+  "baseBlock": "footer",
+  "canonicalModel": "configuration",
+  "version": "1.0.0",
+  "created": "2026-06-11T07:52:50.074Z",
+  "sourceContext": {
+    "originUrl": "https://about.ups.com/us/en/home.html",
+    "discoveredDuring": "global-footer-capture"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "mixed",
+    "complexity": "moderate",
+    "density": "moderate"
+  },
+  "knownSignatures": [],
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://about.ups.com/us/en/home.html",
+        "screenshot": ".pages/_global/footer.jpg"
+      }
+    ],
+    "reuseCount": 1
+  }
+}

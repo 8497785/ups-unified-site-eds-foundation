@@ -1,0 +1,568 @@
+{
+  "url": "https://about.ups.com/us/en/our-impact/community/health-humanitarian-relief/delivering-what-matters--equitable-vaccine-access-globally.html",
+  "timestamp": "2026-06-11T08:05:04.638Z",
+  "duration": "10.1s",
+  "cleanup": {
+    "elementsRemoved": 16,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false
+  },
+  "fingerprints": {
+    "urlPattern": "/us/en/our-impact/community/health-humanitarian-relief/delivering-what-matters--equitable-vaccine-access-globally.html",
+    "topSectionBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 350
+    },
+    "topSectionStrategy": "title+container",
+    "topSectionPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 31,
+        "width": 41,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 175,
+        "y": 31,
+        "width": 73,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 252,
+        "y": 31,
+        "width": 75,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 331,
+        "y": 31,
+        "width": 184,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 519,
+        "y": 31,
+        "width": 166,
+        "height": 16
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 167,
+        "width": 293,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 201,
+        "width": 1127,
+        "height": 134
+      }
+    ],
+    "topSectionTextElements": [
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 31,
+        "width": 37,
+        "height": 21,
+        "textLength": 4
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 184,
+        "y": 31,
+        "width": 69,
+        "height": 21,
+        "textLength": 10
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 270,
+        "y": 31,
+        "width": 71,
+        "height": 21,
+        "textLength": 9
+      },
+      {
+        "tag": "a",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 358,
+        "y": 31,
+        "width": 181,
+        "height": 21,
+        "textLength": 28
+      },
+      {
+        "tag": "li",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "fontFamily": "roboto",
+        "color": "#606060",
+        "backgroundColor": "#f0f0f0",
+        "x": 542,
+        "y": 33,
+        "width": 175,
+        "height": 16,
+        "textLength": 28
+      },
+      {
+        "tag": "span",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "fontFamily": "roboto",
+        "color": "#000000",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 169,
+        "width": 293,
+        "height": 15,
+        "textLength": 28
+      },
+      {
+        "tag": "h1",
+        "fontSize": 56,
+        "fontWeight": 500,
+        "fontFamily": "roboto",
+        "color": "#303030",
+        "backgroundColor": "#f0f0f0",
+        "x": 130,
+        "y": 195,
+        "width": 1180,
+        "height": 144,
+        "textLength": 58
+      }
+    ],
+    "topSectionVisualElements": [],
+    "topSectionCropBottomY": 339,
+    "topSectionTitleRect": {
+      "x": 130,
+      "y": 195,
+      "width": 1180,
+      "height": 144,
+      "text": "Delivering what matters: Equitable vaccine access globally"
+    },
+    "bodyBounds": {
+      "x": 0,
+      "y": 350,
+      "width": 1440,
+      "height": 3185
+    },
+    "bodyStartY": 350,
+    "bodyPlaceholders": [
+      {
+        "type": "text",
+        "x": 130,
+        "y": 375,
+        "width": 263,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 424,
+        "width": 640,
+        "height": 22
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 530,
+        "width": 1180,
+        "height": 616
+      },
+      {
+        "type": "text",
+        "x": 937,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 977,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1017,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1057,
+        "y": 1226,
+        "width": 40,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 1097,
+        "y": 1226,
+        "width": 38,
+        "height": 54
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1229,
+        "width": 659,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1309,
+        "width": 705,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1389,
+        "width": 677,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1469,
+        "width": 177,
+        "height": 17
+      },
+      {
+        "type": "embed",
+        "x": 130,
+        "y": 1522,
+        "width": 777,
+        "height": 436
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 1968,
+        "width": 758,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2048,
+        "width": 766,
+        "height": 89
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 2173,
+        "width": 355,
+        "height": 225
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2440,
+        "width": 738,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 130,
+        "y": 2520,
+        "width": 722,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 525,
+        "y": 2721,
+        "width": 389,
+        "height": 71
+      },
+      {
+        "type": "image",
+        "x": 130,
+        "y": 2889,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 530,
+        "y": 2889,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "image",
+        "x": 930,
+        "y": 2889,
+        "width": 380,
+        "height": 280
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3203,
+        "width": 253,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 3203,
+        "width": 253,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 3203,
+        "width": 253,
+        "height": 17
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3243,
+        "width": 265,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 3243,
+        "width": 262,
+        "height": 90
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 3243,
+        "width": 274,
+        "height": 58
+      },
+      {
+        "type": "text",
+        "x": 970,
+        "y": 3312,
+        "width": 271,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 170,
+        "y": 3344,
+        "width": 296,
+        "height": 41
+      },
+      {
+        "type": "text",
+        "x": 570,
+        "y": 3344,
+        "width": 234,
+        "height": 41
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "unknown-7147bf03",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "3 images block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 3,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "3 images"
+      },
+      "selector": "div.upspr-two-column_image.upspr-container",
+      "bounds": {
+        "x": 110,
+        "y": 661,
+        "width": 1220,
+        "height": 616
+      },
+      "screenshot": "blocks/unknown-7147bf03.jpg"
+    },
+    {
+      "id": "video-13e05889",
+      "type": "video",
+      "confidence": "high",
+      "description": "1 image + 1 CTA + video block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 1,
+        "buttonCount": 1,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": true
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "icon",
+        "structure": "1 CTAs + image"
+      },
+      "selector": "div.col-lg-8 > div:nth-child(2)",
+      "bounds": {
+        "x": 130,
+        "y": 1653,
+        "width": 777,
+        "height": 443
+      },
+      "screenshot": "blocks/video-13e05889.jpg"
+    },
+    {
+      "id": "unknown-13e058a8",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 image block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 5,
+        "imageCount": 1,
+        "buttonCount": 0,
+        "linkCount": 0,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "text + image"
+      },
+      "selector": "div.col-lg-8 > div:nth-child(3)",
+      "bounds": {
+        "x": 130,
+        "y": 2096,
+        "width": 777,
+        "height": 593
+      },
+      "screenshot": "blocks/unknown-13e058a8.jpg"
+    },
+    {
+      "id": "unknown-1d621799",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "1 CTA + 1 list block",
+      "content": {
+        "headingCount": 0,
+        "paragraphCount": 0,
+        "imageCount": 0,
+        "buttonCount": 1,
+        "linkCount": 5,
+        "listCount": 1,
+        "childCount": 1,
+        "hasForm": false,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "noimg",
+        "structure": "1 CTAs + list"
+      },
+      "selector": "div.upspr-socialmedia",
+      "bounds": {
+        "x": 937,
+        "y": 1357,
+        "width": 373,
+        "height": 54
+      },
+      "screenshot": "blocks/unknown-1d621799.jpg"
+    },
+    {
+      "id": "unknown-3cf326b7",
+      "type": "unknown",
+      "confidence": "low",
+      "description": "10 headings + 9 images + form block",
+      "content": {
+        "headingCount": 10,
+        "paragraphCount": 0,
+        "imageCount": 9,
+        "buttonCount": 0,
+        "linkCount": 27,
+        "listCount": 0,
+        "childCount": 1,
+        "hasForm": true,
+        "hasVideo": false
+      },
+      "visualChars": {
+        "colorScheme": "dark",
+        "density": "minimal",
+        "hasBackgroundImage": false,
+        "hasGrid": false,
+        "imagePattern": "large",
+        "structure": "heading + 9 images"
+      },
+      "selector": "div.pr24-background-colour.responsivegrid",
+      "bounds": {
+        "x": 0,
+        "y": 2761,
+        "width": 1440,
+        "height": 898
+      },
+      "screenshot": "blocks/unknown-3cf326b7.jpg"
+    }
+  ]
+}
