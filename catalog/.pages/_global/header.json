@@ -1,0 +1,20 @@
+{
+  "detected": true,
+  "selector": "div.root.responsivegrid > div:nth-child(1) > div:nth-child(1)",
+  "bounds": {
+    "x": 0,
+    "y": 0,
+    "width": 1440,
+    "height": 132
+  },
+  "complexity": "advanced",
+  "effort": "very-high",
+  "estimatedHours": "16-32",
+  "features": [
+    "dropdowns",
+    "mega-menu",
+    "search",
+    "mobile-toggle"
+  ],
+  "linkCount": 37
+}

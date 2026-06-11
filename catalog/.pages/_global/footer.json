@@ -1,0 +1,20 @@
+{
+  "detected": true,
+  "selector": "footer.upspr-footer.upspr-funnel_margin",
+  "bounds": {
+    "x": 0,
+    "y": 3716,
+    "width": 1440,
+    "height": 622
+  },
+  "complexity": "moderate",
+  "effort": "medium",
+  "estimatedHours": "2-4",
+  "features": [
+    "newsletter-form",
+    "social-icons",
+    "legal-section"
+  ],
+  "columnCount": 4,
+  "linkCount": 25
+}
