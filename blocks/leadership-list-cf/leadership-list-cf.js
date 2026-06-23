@@ -84,11 +84,17 @@ export default async function decorate(block) {
   const configRows = rows.slice(0, CONFIG_ROW_COUNT);
   const itemRows = rows.slice(CONFIG_ROW_COUNT);
 
+  const titleText = configRows[0] ? configRows[0].textContent.trim() : '';
   const elementsText = configRows[1] ? configRows[1].textContent.trim() : '';
   const selectedElements = elementsText
     ? ALL_ELEMENTS.filter((el) => elementsText.toLowerCase().includes(el.toLowerCase()))
     : ALL_ELEMENTS;
   const elements = selectedElements.length ? selectedElements : ALL_ELEMENTS;
+
+  const heading = document.createElement('h2');
+  heading.className = 'leadership-list-title';
+  if (configRows[0]) moveInstrumentation(configRows[0], heading);
+  heading.textContent = titleText;
 
   const ul = document.createElement('ul');
 
@@ -105,7 +111,8 @@ export default async function decorate(block) {
     return { li, fragmentPath, explicitLink };
   });
 
-  block.replaceChildren(ul);
+  if (titleText) block.replaceChildren(heading, ul);
+  else block.replaceChildren(ul);
 
   // Populate each card asynchronously; failures keep the placeholder.
   await Promise.all(lis.map(async ({ li, fragmentPath, explicitLink }) => {
