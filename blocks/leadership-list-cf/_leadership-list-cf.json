@@ -9,6 +9,7 @@
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
               "name": "Leadership List CF",
+              "model": "leadership-list-cf",
               "filter": "leadership-list-cf"
             }
           }
