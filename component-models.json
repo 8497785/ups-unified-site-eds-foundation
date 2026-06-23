@@ -285,5 +285,75 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "leadership-details",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "fragment",
+        "label": "Content Fragment"
+      }
+    ]
+  },
+  {
+    "id": "leadership-list-cf",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "multiselect",
+        "name": "elements",
+        "label": "Elements",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "First name",
+            "value": "firstName"
+          },
+          {
+            "name": "Last name",
+            "value": "lastName"
+          },
+          {
+            "name": "Title",
+            "value": "subtitle"
+          },
+          {
+            "name": "Bio detail",
+            "value": "bioDetail"
+          },
+          {
+            "name": "Headshot",
+            "value": "headshot"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "id",
+        "label": "ID"
+      }
+    ]
+  },
+  {
+    "id": "leadership-list-item",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "fragment",
+        "label": "Content Fragment"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Bio Detail Page (optional)"
+      }
+    ]
   }
 ]

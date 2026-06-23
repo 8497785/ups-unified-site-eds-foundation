@@ -54,5 +54,11 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id": "leadership-list-cf",
+    "components": [
+      "leadership-list-item"
+    ]
   }
 ]
