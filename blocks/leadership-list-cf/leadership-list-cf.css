@@ -51,13 +51,20 @@
   padding: 12px 32px;
 }
 
-.leadership-list-cf .leadership-card-body::before {
+.leadership-list-cf .leadership-card-body:not(.leadership-card-placeholder)::before {
   content: '';
   display: block;
   width: 32px;
   height: 3px;
   background-color: var(--ups-gold);
   margin-bottom: 16px;
+}
+
+.leadership-list-cf .leadership-card-placeholder {
+  min-height: 96px;
+  align-items: center;
+  color: #767676;
+  font-style: italic;
 }
 
 .leadership-list-cf .leadership-card-body h3 {

@@ -2,11 +2,9 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 const ALL_ELEMENTS = ['firstName', 'lastName', 'subtitle', 'bioDetail', 'headshot'];
+// Container model fields, in order: title, elements, id.
+const CONFIG_ROW_COUNT = 3;
 
-/**
- * Build the master.json URL for a Content Fragment reference path.
- * Accepts a fragment path like /content/dam/.../leadership-bios/01-a-carol-tome
- */
 function toMasterJsonUrl(fragmentPath) {
   const clean = fragmentPath.replace(/\/$/, '').replace(/\.html$/, '');
   return `${clean}/jcr:content/data/master.json`;
@@ -32,12 +30,10 @@ async function fetchFragment(fragmentPath) {
   return null;
 }
 
-function buildCard(data, bioLink, elements) {
-  const li = document.createElement('li');
-
+function renderCard(li, data, bioLink, elements) {
   const anchor = document.createElement('a');
   anchor.className = 'leadership-card-link';
-  anchor.href = bioLink;
+  anchor.href = bioLink || '#';
 
   const imageWrap = document.createElement('div');
   imageWrap.className = 'leadership-card-image';
@@ -66,18 +62,28 @@ function buildCard(data, bioLink, elements) {
   }
 
   anchor.append(imageWrap, body);
-  li.append(anchor);
-  return li;
+  li.replaceChildren(anchor);
+}
+
+function renderPlaceholder(li, fragmentPath) {
+  const body = document.createElement('div');
+  body.className = 'leadership-card-body leadership-card-placeholder';
+  const p = document.createElement('p');
+  p.textContent = fragmentPath
+    ? fragmentPath.split('/').pop()
+    : 'Select a Content Fragment';
+  body.append(p);
+  li.replaceChildren(body);
 }
 
 export default async function decorate(block) {
   const rows = [...block.children];
 
-  // Item rows contain a CF reference anchor; config rows (title/elements/id) do not.
-  const itemRows = rows.filter((row) => row.querySelector('a'));
-  const configRows = rows.filter((row) => !row.querySelector('a'));
+  // First rows are the container model fields (title, elements, id);
+  // every row after that is a Leadership List Item.
+  const configRows = rows.slice(0, CONFIG_ROW_COUNT);
+  const itemRows = rows.slice(CONFIG_ROW_COUNT);
 
-  // Container config in model order: title, elements, id.
   const elementsText = configRows[1] ? configRows[1].textContent.trim() : '';
   const selectedElements = elementsText
     ? ALL_ELEMENTS.filter((el) => elementsText.toLowerCase().includes(el.toLowerCase()))
@@ -86,21 +92,27 @@ export default async function decorate(block) {
 
   const ul = document.createElement('ul');
 
-  const items = await Promise.all(itemRows.map(async (row) => {
+  // Create an instrumented <li> per item up-front so Universal Editor keeps
+  // each item selectable/editable regardless of whether the CF fetch resolves.
+  const lis = itemRows.map((row) => {
+    const li = document.createElement('li');
+    moveInstrumentation(row, li);
     const anchors = [...row.querySelectorAll('a')];
     const fragmentPath = anchors[0] ? anchors[0].getAttribute('href') : null;
     const explicitLink = anchors[1] ? anchors[1].getAttribute('href') : null;
-    if (!fragmentPath) return null;
+    renderPlaceholder(li, fragmentPath);
+    ul.append(li);
+    return { li, fragmentPath, explicitLink };
+  });
 
-    const data = await fetchFragment(fragmentPath);
-    if (!data) return null;
-
-    const bioLink = explicitLink || deriveBioLink(fragmentPath);
-    const li = buildCard(data, bioLink, elements);
-    moveInstrumentation(row, li);
-    return li;
-  }));
-
-  items.filter(Boolean).forEach((li) => ul.append(li));
   block.replaceChildren(ul);
+
+  // Populate each card asynchronously; failures keep the placeholder.
+  await Promise.all(lis.map(async ({ li, fragmentPath, explicitLink }) => {
+    if (!fragmentPath) return;
+    const data = await fetchFragment(fragmentPath);
+    if (!data) return;
+    const bioLink = explicitLink || deriveBioLink(fragmentPath);
+    renderCard(li, data, bioLink, elements);
+  }));
 }
