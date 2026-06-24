@@ -1,12 +1,16 @@
 {
   "type": "xwalk",
-  "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json",
-  "contentHostUrl": "author-p55671-e392471.adobeaemcloud.com",
-  "previewOrg": "8497785",
-  "previewSite": "ups-unified-site-eds-foundation",
-  "aemSitePath": "/content/about-ups-eds",
-  "aemAssetsFolderPath": "/content/dam/about-ups-eds",
-  "aemSiteName": "about-ups-eds",
-  "aemSiteTitle": "About UPS EDS",
-  "baseUrl": "https://about.ups.com"
+  "sites": {
+    "ups-unified-site-eds-foundation": {
+      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json",
+      "contentHostUrl": "author-p55671-e392471.adobeaemcloud.com",
+      "previewOrg": "8497785",
+      "previewSite": "ups-unified-site-eds-foundation",
+      "aemSitePath": "/content/about-ups-eds",
+      "aemAssetsFolderPath": "/content/dam/about-ups-eds",
+      "aemSiteName": "about-ups-eds",
+      "aemSiteTitle": "About UPS EDS",
+      "baseUrl": "https://about.ups.com"
+    }
+  }
 }
