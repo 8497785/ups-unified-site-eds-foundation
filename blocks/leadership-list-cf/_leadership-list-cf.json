@@ -43,6 +43,17 @@
           "label": "Title"
         },
         {
+          "component": "text",
+          "valueType": "string",
+          "name": "ctaText",
+          "label": "CTA Text"
+        },
+        {
+          "component": "aem-content",
+          "name": "ctaLink",
+          "label": "CTA Link"
+        },
+        {
           "component": "multiselect",
           "name": "elements",
           "label": "Elements",

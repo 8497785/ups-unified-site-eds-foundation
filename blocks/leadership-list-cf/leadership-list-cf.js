@@ -2,8 +2,8 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 const ALL_ELEMENTS = ['firstName', 'lastName', 'subtitle', 'bioDetail', 'headshot'];
-// Container model fields, in order: title, elements, id.
-const CONFIG_ROW_COUNT = 3;
+// Container model fields, in order: title, ctaText, ctaLink, elements, id.
+const CONFIG_ROW_COUNT = 5;
 
 function toMasterJsonUrl(fragmentPath) {
   const clean = fragmentPath.replace(/\/$/, '').replace(/\.html$/, '');
@@ -85,16 +85,35 @@ export default async function decorate(block) {
   const itemRows = rows.slice(CONFIG_ROW_COUNT);
 
   const titleText = configRows[0] ? configRows[0].textContent.trim() : '';
-  const elementsText = configRows[1] ? configRows[1].textContent.trim() : '';
+  const ctaText = configRows[1] ? configRows[1].textContent.trim() : '';
+  const ctaLinkEl = configRows[2] ? configRows[2].querySelector('a') : null;
+  let ctaHref = '';
+  if (ctaLinkEl) ctaHref = ctaLinkEl.getAttribute('href');
+  else if (configRows[2]) ctaHref = configRows[2].textContent.trim();
+  const elementsText = configRows[3] ? configRows[3].textContent.trim() : '';
   const selectedElements = elementsText
     ? ALL_ELEMENTS.filter((el) => elementsText.toLowerCase().includes(el.toLowerCase()))
     : ALL_ELEMENTS;
   const elements = selectedElements.length ? selectedElements : ALL_ELEMENTS;
 
+  const headerRow = document.createElement('div');
+  headerRow.className = 'leadership-list-header';
+
   const heading = document.createElement('h2');
   heading.className = 'leadership-list-title';
   if (configRows[0]) moveInstrumentation(configRows[0], heading);
   heading.textContent = titleText;
+  headerRow.append(heading);
+
+  if (ctaText && ctaHref) {
+    const cta = document.createElement('a');
+    cta.className = 'leadership-list-cta';
+    cta.href = ctaHref;
+    cta.textContent = ctaText;
+    headerRow.append(cta);
+  }
+
+  const hasHeader = titleText || (ctaText && ctaHref);
 
   const ul = document.createElement('ul');
 
@@ -111,7 +130,7 @@ export default async function decorate(block) {
     return { li, fragmentPath, explicitLink };
   });
 
-  if (titleText) block.replaceChildren(heading, ul);
+  if (hasHeader) block.replaceChildren(headerRow, ul);
   else block.replaceChildren(ul);
 
   // Populate each card asynchronously; failures keep the placeholder.

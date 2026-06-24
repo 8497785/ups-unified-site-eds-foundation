@@ -1,9 +1,46 @@
+.leadership-list-cf .leadership-list-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
 .leadership-list-cf .leadership-list-title {
-  margin: 0 0 16px;
+  margin: 0;
   font-size: 24px;
   font-weight: 500;
   line-height: 32px;
   color: var(--text-color);
+}
+
+.leadership-list-cf .leadership-list-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #242424;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.leadership-list-cf .leadership-list-cta::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid currentcolor;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23242424" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+}
+
+.leadership-list-cf .leadership-list-cta:hover {
+  text-decoration: underline;
 }
 
 .leadership-list-cf ul {
