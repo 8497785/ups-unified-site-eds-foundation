@@ -136,8 +136,24 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Arc Background",
+            "value": "arc-background"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "breadcrumb",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "homeLabel",
+        "label": "Home Label",
+        "value": "Home"
       }
     ]
   },
@@ -205,6 +221,17 @@
         "component": "aem-content",
         "name": "reference",
         "label": "Reference"
+      }
+    ]
+  },
+  {
+    "id": "headline",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
       }
     ]
   },
@@ -306,15 +333,15 @@
         "label": "Title"
       },
       {
+        "component": "aem-content",
+        "name": "cta",
+        "label": "CTA Link"
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "ctaText",
         "label": "CTA Text"
-      },
-      {
-        "component": "aem-content",
-        "name": "ctaLink",
-        "label": "CTA Link"
       },
       {
         "component": "multiselect",

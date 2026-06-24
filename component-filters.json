@@ -21,7 +21,9 @@
       "columns-media",
       "fragment",
       "leadership-list-cf",
-      "leadership-details"
+      "leadership-details",
+      "headline",
+      "breadcrumb"
     ]
   },
   {

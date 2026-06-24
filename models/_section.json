@@ -33,6 +33,10 @@
             {
               "name": "Highlight",
               "value": "highlight"
+            },
+            {
+              "name": "Arc Background",
+              "value": "arc-background"
             }
           ]
         }
@@ -56,7 +60,9 @@
         "columns-media",
         "fragment",
         "leadership-list-cf",
-        "leadership-details"
+        "leadership-details",
+        "headline",
+        "breadcrumb"
       ]
     }
   ]

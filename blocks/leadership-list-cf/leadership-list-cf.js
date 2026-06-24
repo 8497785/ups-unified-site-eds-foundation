@@ -2,8 +2,9 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 const ALL_ELEMENTS = ['firstName', 'lastName', 'subtitle', 'bioDetail', 'headshot'];
-// Container model fields, in order: title, ctaText, ctaLink, elements, id.
-const CONFIG_ROW_COUNT = 5;
+// Container model fields. The grouped cta link + ctaText collapse into one
+// cell, so config rows are: title, cta(anchor), elements, id.
+const CONFIG_ROW_COUNT = 4;
 
 function toMasterJsonUrl(fragmentPath) {
   const clean = fragmentPath.replace(/\/$/, '').replace(/\.html$/, '');
@@ -85,12 +86,10 @@ export default async function decorate(block) {
   const itemRows = rows.slice(CONFIG_ROW_COUNT);
 
   const titleText = configRows[0] ? configRows[0].textContent.trim() : '';
-  const ctaText = configRows[1] ? configRows[1].textContent.trim() : '';
-  const ctaLinkEl = configRows[2] ? configRows[2].querySelector('a') : null;
-  let ctaHref = '';
-  if (ctaLinkEl) ctaHref = ctaLinkEl.getAttribute('href');
-  else if (configRows[2]) ctaHref = configRows[2].textContent.trim();
-  const elementsText = configRows[3] ? configRows[3].textContent.trim() : '';
+  const ctaLinkEl = configRows[1] ? configRows[1].querySelector('a') : null;
+  const ctaHref = ctaLinkEl ? ctaLinkEl.getAttribute('href') : '';
+  const ctaText = ctaLinkEl ? ctaLinkEl.textContent.trim() : '';
+  const elementsText = configRows[2] ? configRows[2].textContent.trim() : '';
   const selectedElements = elementsText
     ? ALL_ELEMENTS.filter((el) => elementsText.toLowerCase().includes(el.toLowerCase()))
     : ALL_ELEMENTS;
