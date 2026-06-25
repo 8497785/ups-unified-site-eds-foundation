@@ -293,6 +293,15 @@ main > .section:first-of-type {
   padding-top: var(--spacing-xl);
 }
 
+/* spacing toggles (Styles tab) — default keeps both margins */
+main > .section.no-top-spacing {
+  margin-top: 0;
+}
+
+main > .section.no-bottom-spacing {
+  margin-bottom: 0;
+}
+
 @media (width >= 992px) {
   main > .section > div {
     padding: 0 var(--spacing-lg);

@@ -129,9 +129,14 @@
         "description": "The label shown for this section in the Content Tree"
       },
       {
+        "component": "tab",
+        "name": "styles",
+        "label": "Styles"
+      },
+      {
         "component": "multiselect",
         "name": "style",
-        "label": "Style",
+        "label": "Spacing & Style",
         "options": [
           {
             "name": "Highlight",
@@ -140,6 +145,14 @@
           {
             "name": "Arc Background",
             "value": "arc-background"
+          },
+          {
+            "name": "No Top Spacing",
+            "value": "no-top-spacing"
+          },
+          {
+            "name": "No Bottom Spacing",
+            "value": "no-bottom-spacing"
           }
         ]
       }
