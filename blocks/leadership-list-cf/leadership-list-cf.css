@@ -33,12 +33,17 @@
   font-weight: normal;
   font-style: normal;
   line-height: 1;
+  margin-left: 8px;
   background: radial-gradient(#0662bb 50%, rgb(6 98 187 / 60%) 50%);
   background-clip: text;
   /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: transform 0.5s;
+}
+
+.leadership-list-cf .leadership-list-cta:hover {
+  color: #6e6e6e;
 }
 
 .leadership-list-cf .leadership-list-cta:hover::after {
