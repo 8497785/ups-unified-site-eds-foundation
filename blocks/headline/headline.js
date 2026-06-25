@@ -9,15 +9,13 @@ export default function decorate(block) {
     moveInstrumentation(row, wrap);
     // Promote authored text to an h1 if it isn't already a heading.
     const heading = row.querySelector('h1, h2, h3, h4, h5, h6');
-    if (heading) {
-      const h1 = document.createElement('h1');
-      h1.innerHTML = heading.innerHTML;
-      wrap.append(h1);
-    } else {
-      const h1 = document.createElement('h1');
-      h1.innerHTML = row.innerHTML;
-      wrap.append(h1);
-    }
+    const h1 = document.createElement('h1');
+    h1.innerHTML = (heading || row).innerHTML;
+    // Unwrap any strong/b tags — weight comes from the block CSS (500).
+    h1.querySelectorAll('strong, b').forEach((el) => {
+      el.replaceWith(...el.childNodes);
+    });
+    wrap.append(h1);
   }
 
   block.replaceChildren(wrap);
