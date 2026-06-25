@@ -388,3 +388,59 @@ main > .section.arc-background::after {
   background-color: transparent;
   z-index: -1;
 }
+
+/* upspricons icon font — matches the source site icon set */
+.upspr,
+[class^="upspr-icon-"],
+[class*=" upspr-icon-"] {
+  font-family: upspricons, tahoma, helvetica, arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  speak: never;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.upspr-icon-next-circle::before { content: "\e600"; }
+.upspr-icon-prev-circle::before { content: "\e601"; }
+.upspr-icon-arrowleft-circle::before { content: "\e602"; }
+.upspr-icon-arrowright-circle::before { content: "\e603"; }
+.upspr-icon-facebook::before { content: "\e604"; }
+.upspr-icon-linkedin::before { content: "\e605"; }
+.upspr-icon-twitter::before { content: "\e606"; }
+.upspr-icon-youtube::before { content: "\e607"; }
+.upspr-icon-facebook-circle::before { content: "\e608"; }
+.upspr-icon-linkedin-circle::before { content: "\e609"; }
+.upspr-icon-twitter-circle::before { content: "\e900"; }
+.upspr-icon-youtube-circle::before { content: "\e60b"; }
+.upspr-icon-chevrondown::before { content: "\e60c"; }
+.upspr-icon-chevronleft::before { content: "\e60d"; }
+.upspr-icon-chevronleft-thin::before { content: "\e60e"; }
+.upspr-icon-chevronright::before { content: "\e60f"; }
+.upspr-icon-chevronright-thin::before { content: "\e610"; }
+.upspr-icon-chevronup::before { content: "\e611"; }
+.upspr-icon-dot::before { content: "\e612"; }
+.upspr-icon-globe::before { content: "\e613"; }
+.upspr-icon-globe2::before { content: "\e614"; }
+.upspr-icon-menu::before { content: "\e615"; }
+.upspr-icon-minus::before { content: "\e616"; }
+.upspr-icon-newwindow::before { content: "\e617"; }
+.upspr-icon-x::before { content: "\e618"; }
+.upspr-icon-x-circle::before { content: "\e619"; }
+.upspr-icon-x-circle-solid::before { content: "\e61a"; }
+.upspr-icon-global-search::before { content: "\e61b"; }
+.upspr-icon-mail-circle::before { content: "\e61c"; }
+.upspr-icon-phone::before { content: "\e61d"; }
+.upspr-icon-van::before { content: "\e61e"; }
+.upspr-icon-openbox::before { content: "\e61f"; }
+.upspr-icon-deliveryperson::before { content: "\e620"; }
+.upspr-icon-globe-big::before { content: "\e621"; }
+.upspr-icon-download::before { content: "\e622"; }
+.upspr-icon-exclamationcircle::before { content: "\e6cb"; }
+.upspr-icon-print::before { content: "\e624"; }
+.upspr-icon-checkcircle-solid::before { content: "\e625"; }
+.upspr-icon-instagram-circle::before { content: "\e626"; }
+.upspr-icon-warning::before { content: "\e627"; }

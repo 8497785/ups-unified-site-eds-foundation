@@ -28,15 +28,12 @@
 }
 
 .leadership-list-cf .leadership-list-cta::after {
-  content: '';
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid currentcolor;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23242424" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 12px;
+  content: "\e603";
+  font-family: upspricons, tahoma, helvetica, arial, sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
 }
 
 .leadership-list-cf .leadership-list-cta:hover {

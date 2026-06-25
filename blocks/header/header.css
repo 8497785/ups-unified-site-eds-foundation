@@ -410,10 +410,8 @@ header nav .nav-tools {
     background-color: rgb(6 98 187 / 8%);
   }
 
-  header nav .nav-tools .nav-tools-search svg {
-    width: 16px;
-    height: 16px;
-    stroke: var(--link-color);
-    fill: none;
+  header nav .nav-tools .nav-tools-search .upspr {
+    font-size: 18px;
+    color: var(--link-color);
   }
 }

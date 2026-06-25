@@ -277,46 +277,45 @@ footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-o
 }
 
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li a::before {
-  content: '';
   display: block;
-  width: 20px;
-  height: 20px;
-  background: currentcolor;
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
+  font-family: upspricons, tahoma, helvetica, arial, sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  color: currentcolor;
 }
 
-/* Individual social icon masks */
+/* Individual social glyphs (circular variants, matching source) */
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(1) a::before {
-  mask-image: url('/icons/facebook.svg');
+  content: "\e608";
 }
 
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(2) a::before {
-  mask-image: url('/icons/x.svg');
+  content: "\e900";
 }
 
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(3) a::before {
-  mask-image: url('/icons/instagram.svg');
+  content: "\e626";
 }
 
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(4) a::before {
-  mask-image: url('/icons/linkedin.svg');
+  content: "\e609";
 }
 
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(5) a::before {
-  mask-image: url('/icons/youtube.svg');
+  content: "\e60b";
 }
 
 /* External link icon for Other UPS Sites links */
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(2) li a[href^="https://"]::after {
-  content: '';
+  content: "\e617";
   display: inline-block;
-  width: 14px;
-  height: 14px;
   margin-left: 6px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23bfb8af' stroke-width='1.5'%3E%3Cpath d='M6 2H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3M10 2h4v4M7 9l7-7'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
+  font-family: upspricons, tahoma, helvetica, arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
   vertical-align: middle;
 }
