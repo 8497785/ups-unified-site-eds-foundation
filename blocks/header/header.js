@@ -119,10 +119,29 @@ export default async function decorate(block) {
   });
 
   const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
-  if (brandLink) {
-    brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
+  if (navBrand) {
+    const brandButton = navBrand.querySelector('.button');
+    if (brandButton) {
+      brandButton.className = '';
+      const container = brandButton.closest('.button-container');
+      if (container) container.className = '';
+    }
+
+    // Ensure the brand always shows the logo and links to the homepage,
+    // even if the authored content left the brand link empty.
+    const brandLink = navBrand.querySelector('a');
+    if (brandLink) {
+      if (!brandLink.getAttribute('href')) brandLink.setAttribute('href', '/');
+      if (!brandLink.querySelector('img, picture, svg')) {
+        const logo = document.createElement('img');
+        logo.src = `${window.hlx.codeBasePath}/icons/ups-logo.svg`;
+        logo.alt = brandLink.textContent.trim() || 'UPS';
+        logo.width = 56;
+        logo.height = 67;
+        brandLink.textContent = '';
+        brandLink.append(logo);
+      }
+    }
   }
 
   const navSections = nav.querySelector('.nav-sections');
