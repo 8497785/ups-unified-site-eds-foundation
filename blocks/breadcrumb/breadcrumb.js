@@ -1,3 +1,26 @@
+// Path prefixes mapped away by paths.json. Stripping them turns the JCR
+// authoring path (/content/about-ups-eds/us/en/our-company/leadership) — or the
+// locale-prefixed path (/us/en/our-company/leadership) — into the clean delivery
+// path (/our-company/leadership) used for crumbs in all contexts.
+const PATH_PREFIXES = [
+  '/content/about-ups-eds/us/en',
+  '/us/en',
+];
+
+/**
+ * Normalize a raw pathname to the clean delivery path:
+ * strips a known content/locale prefix, the .html suffix, and a leading "home".
+ */
+function normalizePath(pathname) {
+  let path = pathname.replace(/\.html$/, '');
+  const prefix = PATH_PREFIXES.find((p) => path === p || path.startsWith(`${p}/`));
+  if (prefix) path = path.slice(prefix.length);
+  if (!path.startsWith('/')) path = `/${path}`;
+  // Drop a leading "home" segment — Home is always the first crumb.
+  path = path.replace(/^\/home(\/|$)/, '/');
+  return path;
+}
+
 /**
  * Title-case a URL slug, e.g. "our-company" -> "Our Company".
  */
@@ -36,8 +59,7 @@ async function resolveLabel(path, slug) {
 export default async function decorate(block) {
   const homeLabel = block.textContent.trim() || 'Home';
 
-  const segments = window.location.pathname
-    .replace(/\.html$/, '')
+  const segments = normalizePath(window.location.pathname)
     .split('/')
     .filter(Boolean);
 
