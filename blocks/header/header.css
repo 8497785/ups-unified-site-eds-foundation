@@ -18,7 +18,7 @@ header nav {
   align-items: center;
   gap: 0 24px;
   margin: auto;
-  max-width: 1440px;
+  max-width: var(--content-max-width);
   height: var(--nav-height);
   padding: 0 20px;
   font-family: var(--body-font-family);
@@ -39,7 +39,7 @@ header nav[aria-expanded='true'] {
     align-items: center;
     justify-content: flex-start;
     gap: 0;
-    max-width: 1440px;
+    max-width: var(--content-max-width);
     padding: 0 20px;
     height: var(--nav-height);
     min-height: 0;
