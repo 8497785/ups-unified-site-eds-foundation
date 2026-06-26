@@ -21,6 +21,11 @@
       "id": "breadcrumb",
       "fields": [
         {
+          "component": "tab",
+          "name": "properties",
+          "label": "Properties"
+        },
+        {
           "component": "text",
           "valueType": "string",
           "name": "homeLabel",

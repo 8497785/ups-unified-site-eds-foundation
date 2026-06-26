@@ -37,6 +37,11 @@
       "id": "leadership-list-cf",
       "fields": [
         {
+          "component": "tab",
+          "name": "properties",
+          "label": "Properties"
+        },
+        {
           "component": "text",
           "valueType": "string",
           "name": "title",
@@ -77,6 +82,11 @@
     {
       "id": "leadership-list-item",
       "fields": [
+        {
+          "component": "tab",
+          "name": "properties",
+          "label": "Properties"
+        },
         {
           "component": "aem-content",
           "name": "fragment",

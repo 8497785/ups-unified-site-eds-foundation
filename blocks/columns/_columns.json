@@ -21,6 +21,11 @@
       "id": "columns",
       "fields": [
         {
+          "component": "tab",
+          "name": "properties",
+          "label": "Properties"
+        },
+        {
           "component": "text",
           "valueType": "number",
           "name": "columns",

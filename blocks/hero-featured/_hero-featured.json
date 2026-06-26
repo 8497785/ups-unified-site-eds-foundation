@@ -21,6 +21,11 @@
       "id": "hero-featured",
       "fields": [
         {
+          "component": "tab",
+          "name": "properties",
+          "label": "Properties"
+        },
+        {
           "component": "reference",
           "valueType": "string",
           "name": "image",

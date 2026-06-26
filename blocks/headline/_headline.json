@@ -21,6 +21,11 @@
       "id": "headline",
       "fields": [
         {
+          "component": "tab",
+          "name": "properties",
+          "label": "Properties"
+        },
+        {
           "component": "richtext",
           "valueType": "string",
           "name": "title",

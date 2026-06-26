@@ -21,6 +21,11 @@
       "id": "fragment",
       "fields": [
         {
+          "component": "tab",
+          "name": "properties",
+          "label": "Properties"
+        },
+        {
           "component": "aem-content",
           "name": "reference",
           "label": "Reference"
