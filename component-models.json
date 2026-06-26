@@ -167,11 +167,6 @@
     "id": "breadcrumb",
     "fields": [
       {
-        "component": "tab",
-        "name": "properties",
-        "label": "Properties"
-      },
-      {
         "component": "text",
         "valueType": "string",
         "name": "homeLabel",
@@ -183,11 +178,6 @@
   {
     "id": "card",
     "fields": [
-      {
-        "component": "tab",
-        "name": "properties",
-        "label": "Properties"
-      },
       {
         "component": "reference",
         "valueType": "string",
@@ -208,11 +198,6 @@
     "id": "columns-media",
     "fields": [
       {
-        "component": "tab",
-        "name": "properties",
-        "label": "Properties"
-      },
-      {
         "component": "text",
         "valueType": "number",
         "name": "columns",
@@ -231,11 +216,6 @@
   {
     "id": "columns",
     "fields": [
-      {
-        "component": "tab",
-        "name": "properties",
-        "label": "Properties"
-      },
       {
         "component": "text",
         "valueType": "number",
@@ -256,11 +236,6 @@
     "id": "fragment",
     "fields": [
       {
-        "component": "tab",
-        "name": "properties",
-        "label": "Properties"
-      },
-      {
         "component": "aem-content",
         "name": "reference",
         "label": "Reference"
@@ -270,11 +245,6 @@
   {
     "id": "headline",
     "fields": [
-      {
-        "component": "tab",
-        "name": "properties",
-        "label": "Properties"
-      },
       {
         "component": "richtext",
         "valueType": "string",
@@ -286,11 +256,6 @@
   {
     "id": "hero-featured",
     "fields": [
-      {
-        "component": "tab",
-        "name": "properties",
-        "label": "Properties"
-      },
       {
         "component": "reference",
         "valueType": "string",
@@ -318,11 +283,6 @@
     "id": "hero-stats",
     "fields": [
       {
-        "component": "tab",
-        "name": "properties",
-        "label": "Properties"
-      },
-      {
         "component": "reference",
         "valueType": "string",
         "name": "image",
@@ -348,11 +308,6 @@
   {
     "id": "hero",
     "fields": [
-      {
-        "component": "tab",
-        "name": "properties",
-        "label": "Properties"
-      },
       {
         "component": "reference",
         "valueType": "string",
@@ -380,11 +335,6 @@
     "id": "leadership-details",
     "fields": [
       {
-        "component": "tab",
-        "name": "properties",
-        "label": "Properties"
-      },
-      {
         "component": "aem-content",
         "name": "fragment",
         "label": "Content Fragment"
@@ -394,11 +344,6 @@
   {
     "id": "leadership-list-cf",
     "fields": [
-      {
-        "component": "tab",
-        "name": "properties",
-        "label": "Properties"
-      },
       {
         "component": "text",
         "valueType": "string",
@@ -455,11 +400,6 @@
   {
     "id": "leadership-list-item",
     "fields": [
-      {
-        "component": "tab",
-        "name": "properties",
-        "label": "Properties"
-      },
       {
         "component": "aem-content",
         "name": "fragment",

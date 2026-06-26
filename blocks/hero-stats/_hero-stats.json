@@ -21,11 +21,6 @@
       "id": "hero-stats",
       "fields": [
         {
-          "component": "tab",
-          "name": "properties",
-          "label": "Properties"
-        },
-        {
           "component": "reference",
           "valueType": "string",
           "name": "image",

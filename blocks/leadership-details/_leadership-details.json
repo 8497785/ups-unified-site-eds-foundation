@@ -21,11 +21,6 @@
       "id": "leadership-details",
       "fields": [
         {
-          "component": "tab",
-          "name": "properties",
-          "label": "Properties"
-        },
-        {
           "component": "aem-content",
           "name": "fragment",
           "label": "Content Fragment"
