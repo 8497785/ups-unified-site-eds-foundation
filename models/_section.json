@@ -20,6 +20,11 @@
       "id": "section",
       "fields": [
         {
+          "component": "tab",
+          "name": "properties",
+          "label": "Properties"
+        },
+        {
           "component": "text",
           "name": "name",
           "label": "Section Name",
