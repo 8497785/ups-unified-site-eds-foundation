@@ -13,7 +13,7 @@ const DEFAULT_QUERY = 'leadership-list';
 function deriveBioLink(cfPath) {
   const slug = cfPath.replace(/\/$/, '').split('/').pop();
   const name = slug.replace(/^\d+-[a-z]-/, '').replace(/^\d+-/, '');
-  return `/us/en/our-company/leadership/${name}`;
+  return `/us/en/our-company/leadership/${name}.html`;
 }
 
 /**
