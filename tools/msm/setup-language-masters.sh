@@ -2,8 +2,22 @@
 #
 # AEM Language Masters & MSM Live Copy Setup Script
 #
-# Creates the Language Masters blueprint structure and configures
-# MSM live copy rollout for the About UPS EDS project.
+# Restructures the About UPS EDS project to the MSM language-masters model:
+#   1. Creates a language-only blueprint at /content/about-ups-eds/language-masters/en
+#   2. Copies the EXISTING content from /content/about-ups-eds/us/en into the
+#      blueprint (so current authored pages become the master source)
+#   3. Marks the blueprint, (re)creates the us/en live copy from it, and rolls out
+#
+# Authoring/translation happens in language-masters/en. Locale delivery copies
+# (us/en, …) are served by EDS via paths.json (us/en -> /).
+#
+# Adding more locales later (example):
+#   - Language copy:  /content/about-ups-eds/language-masters/fr  (translate here)
+#   - Live copy:      /content/about-ups-eds/fr/fr  (rollout target)
+#   - paths.json:     map /content/about-ups-eds/fr/fr/ -> /fr/  (or a separate site)
+#
+# IMPORTANT: Back up /content/about-ups-eds/us/en before running — this script
+# copies it into the blueprint and converts us/en into a live copy.
 #
 # Usage:
 #   export AEM_TOKEN="your-bearer-token-here"
@@ -16,6 +30,8 @@ set -euo pipefail
 AEM_HOST="${AEM_HOST:-https://author-p55671-e392471.adobeaemcloud.com}"
 AEM_TOKEN="${AEM_TOKEN:?ERROR: Set AEM_TOKEN environment variable with your Bearer token}"
 SITE_PATH="/content/about-ups-eds"
+MASTER_PATH="${SITE_PATH}/language-masters/en"
+LIVECOPY_PATH="${SITE_PATH}/us/en"
 
 log() { echo "[$(date '+%H:%M:%S')] $1"; }
 fail() { echo "[ERROR] $1" >&2; exit 1; }
@@ -26,7 +42,7 @@ check_response() {
   if [[ "$code" -ge 200 && "$code" -lt 300 ]] || [[ "$code" == "201" ]]; then
     log "  ✅ $step (HTTP $code)"
   elif [[ "$code" == "500" ]] || [[ "$code" == "409" ]]; then
-    log "  ⚠️  $step (HTTP $code — page may already exist, continuing)"
+    log "  ⚠️  $step (HTTP $code — may already exist, continuing)"
   else
     fail "$step failed (HTTP $code)"
   fi
@@ -64,78 +80,70 @@ create_page() {
 }
 
 # ═══════════════════════════════════════════════════════════
-# Phase 1: Validate Access & Create Blueprint Structure
+# Phase 1: Validate Access & Create Blueprint Root
 # ═══════════════════════════════════════════════════════════
 
-log "Phase 1: Validating access and creating blueprint structure"
+log "Phase 1: Validating access and creating blueprint root"
 log ""
 
-# 1.1 — Test connectivity
 log "1.1 Testing AEM author connectivity..."
 HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
   -H "Authorization: Bearer $AEM_TOKEN" \
   "$AEM_HOST${SITE_PATH}.json")
-
-if [[ "$HTTP_CODE" != "200" ]]; then
-  fail "Cannot access AEM author (HTTP $HTTP_CODE). Check your token and host."
-fi
+[[ "$HTTP_CODE" == "200" ]] || fail "Cannot access AEM author (HTTP $HTTP_CODE). Check token/host."
 log "  ✅ AEM author accessible (HTTP $HTTP_CODE)"
 log ""
 
-# 1.2 — Create language-masters root
 log "1.2 Creating Language Masters root..."
 create_page "${SITE_PATH}/language-masters" "Language Masters"
 
-# 1.3 — Create US region
-log "1.3 Creating US region..."
-create_page "${SITE_PATH}/language-masters/us" "US"
+log "1.3 Creating English language master (blueprint source)..."
+create_page "$MASTER_PATH" "English" -F "jcr:content/jcr:language=en"
 
-# 1.4 — Create English language root
-log "1.4 Creating English language root (blueprint source)..."
-create_page "${SITE_PATH}/language-masters/us/en" "English" \
-  -F "jcr:content/jcr:language=en"
-
-# 1.5 — Verify all structure pages
-log ""
-log "1.5 Verifying blueprint structure..."
-for path in language-masters language-masters/us language-masters/us/en; do
-  if page_exists "${SITE_PATH}/$path"; then
-    log "  ✅ ${SITE_PATH}/$path exists"
-  else
-    fail "${SITE_PATH}/$path NOT found"
-  fi
-done
+if page_exists "$MASTER_PATH"; then
+  log "  ✅ $MASTER_PATH exists"
+else
+  fail "$MASTER_PATH NOT found"
+fi
 log ""
 
 # ═══════════════════════════════════════════════════════════
-# Phase 2: Create Content Pages Under Blueprint
+# Phase 2: Copy Existing us/en Content Into the Blueprint
 # ═══════════════════════════════════════════════════════════
 
-log "Phase 2: Creating content pages under blueprint"
+log "Phase 2: Copying existing content into the blueprint"
 log ""
 
-# 2.1 — Homepage
-log "2.1 Creating homepage..."
-create_page "${SITE_PATH}/language-masters/us/en/home" "Home"
+if ! page_exists "$LIVECOPY_PATH"; then
+  log "  ⚠️  $LIVECOPY_PATH not found — nothing to copy; blueprint will start empty"
+else
+  # Copy each child page of us/en into language-masters/en (skip if already present).
+  log "2.1 Copying child pages from $LIVECOPY_PATH → $MASTER_PATH ..."
+  CHILDREN=$(curl -s -H "Authorization: Bearer $AEM_TOKEN" \
+    "$AEM_HOST${LIVECOPY_PATH}.harray.1.json" 2>/dev/null \
+    | grep -o '"name":"[^"]*"' | sed 's/"name":"//;s/"//' || true)
 
-# 2.2 — Navigation fragment
-log "2.2 Creating navigation fragment..."
-create_page "${SITE_PATH}/language-masters/us/en/nav" "Navigation"
-
-# 2.3 — Footer fragment
-log "2.3 Creating footer fragment..."
-create_page "${SITE_PATH}/language-masters/us/en/footer" "Footer"
-
-# 2.4 — Verify content pages
-log ""
-log "2.4 Verifying content pages..."
-for page in home nav footer; do
-  if page_exists "${SITE_PATH}/language-masters/us/en/$page"; then
-    log "  ✅ ${SITE_PATH}/language-masters/us/en/$page exists"
-  else
-    fail "${SITE_PATH}/language-masters/us/en/$page NOT found"
+  if [[ -z "$CHILDREN" ]]; then
+    log "  ⚠️  Could not enumerate children via harray; falling back to known pages"
+    CHILDREN="home nav footer our-company"
   fi
-done
+
+  for child in $CHILDREN; do
+    [[ "$child" == "jcr:content" ]] && continue
+    if page_exists "${MASTER_PATH}/${child}"; then
+      log "  ⏭️  ${MASTER_PATH}/${child} already exists — skipping copy"
+      continue
+    fi
+    CODE=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+      -H "Authorization: Bearer $AEM_TOKEN" \
+      -H "Destination: ${MASTER_PATH}/${child}" \
+      -H "Depth: infinity" \
+      -H "Overwrite: F" \
+      "$AEM_HOST${LIVECOPY_PATH}/${child}" \
+      -X COPY)
+    check_response "$CODE" "Copy ${child} into blueprint"
+  done
+fi
 log ""
 
 # ═══════════════════════════════════════════════════════════
@@ -145,20 +153,16 @@ log ""
 log "Phase 3: Configuring blueprint"
 log ""
 
-# 3.1 — Set blueprint flag
-log "3.1 Setting blueprint configuration..."
+log "3.1 Setting blueprint flag on $MASTER_PATH ..."
 HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
   -H "Authorization: Bearer $AEM_TOKEN" \
   -F "jcr:content/cq:isBlueprint=true" \
   -F "jcr:content/cq:isBlueprint@TypeHint=Boolean" \
-  "$AEM_HOST${SITE_PATH}/language-masters/us/en")
+  "$AEM_HOST$MASTER_PATH")
 check_response "$HTTP_CODE" "Set blueprint config"
 
-# 3.2 — Verify blueprint
-log "3.2 Verifying blueprint configuration..."
-BP_CHECK=$(curl -s \
-  -H "Authorization: Bearer $AEM_TOKEN" \
-  "$AEM_HOST${SITE_PATH}/language-masters/us/en/jcr:content.json" 2>/dev/null)
+BP_CHECK=$(curl -s -H "Authorization: Bearer $AEM_TOKEN" \
+  "$AEM_HOST${MASTER_PATH}/jcr:content.json" 2>/dev/null)
 if echo "$BP_CHECK" | grep -q '"cq:isBlueprint":true'; then
   log "  ✅ Blueprint configured correctly"
 else
@@ -167,58 +171,48 @@ fi
 log ""
 
 # ═══════════════════════════════════════════════════════════
-# Phase 4: Create Live Copy
+# Phase 4: Create / Verify Live Copy at us/en
 # ═══════════════════════════════════════════════════════════
 
-log "Phase 4: Creating Live Copy"
+log "Phase 4: Creating live copy at $LIVECOPY_PATH"
 log ""
 
-# Check if live copy path already exists
-if page_exists "${SITE_PATH}/us/en"; then
-  log "  ⚠️  ${SITE_PATH}/us/en already exists"
-  log "  Checking if it's already a live copy..."
-  LC_CHECK=$(curl -s \
-    -H "Authorization: Bearer $AEM_TOKEN" \
-    "$AEM_HOST${SITE_PATH}/us/en/jcr:content.json" 2>/dev/null)
-  if echo "$LC_CHECK" | grep -q "language-masters"; then
-    log "  ✅ Already a live copy from language-masters — skipping creation"
-  else
-    log "  Creating live copy (existing page will be converted)..."
-    HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
-      -H "Authorization: Bearer $AEM_TOKEN" \
-      -F "cmd=createLiveCopy" \
-      -F "srcPath=${SITE_PATH}/language-masters/us/en" \
-      -F "destPath=${SITE_PATH}/us/en" \
-      -F "title=English (US)" \
-      -F "label=en" \
-      -F "rolloutConfigs=/libs/msm/wcm/rolloutconfigs/default" \
-      -F "deep=true" \
-      "$AEM_HOST/libs/wcm/msm/content/commands/createLiveCopy")
-    check_response "$HTTP_CODE" "Create live copy"
-  fi
-else
-  # 4.1 — Create live copy
-  log "4.1 Creating live copy..."
-  HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+create_live_copy() {
+  local code
+  code=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
     -H "Authorization: Bearer $AEM_TOKEN" \
     -F "cmd=createLiveCopy" \
-    -F "srcPath=${SITE_PATH}/language-masters/us/en" \
-    -F "destPath=${SITE_PATH}/us/en" \
+    -F "srcPath=$MASTER_PATH" \
+    -F "destPath=$LIVECOPY_PATH" \
     -F "title=English (US)" \
     -F "label=en" \
     -F "rolloutConfigs=/libs/msm/wcm/rolloutconfigs/default" \
     -F "deep=true" \
     "$AEM_HOST/libs/wcm/msm/content/commands/createLiveCopy")
-  check_response "$HTTP_CODE" "Create live copy"
+  check_response "$code" "Create live copy"
+}
+
+if page_exists "$LIVECOPY_PATH"; then
+  LC_CHECK=$(curl -s -H "Authorization: Bearer $AEM_TOKEN" \
+    "$AEM_HOST${LIVECOPY_PATH}/jcr:content.json" 2>/dev/null)
+  if echo "$LC_CHECK" | grep -q "language-masters"; then
+    log "  ✅ $LIVECOPY_PATH is already a live copy from language-masters — skipping"
+  else
+    log "  ⚠️  $LIVECOPY_PATH exists but is NOT a live copy."
+    log "      Its content was copied into the blueprint in Phase 2."
+    log "      To convert it into a live copy, remove/rename it first, then re-run,"
+    log "      OR convert manually in the Sites Console. Skipping automatic convert"
+    log "      to avoid destroying existing content."
+  fi
+else
+  log "4.1 Creating live copy..."
+  create_live_copy
 fi
 
-# 4.3 — Verify live copy
-log ""
-log "4.3 Verifying live copy relationship..."
-if page_exists "${SITE_PATH}/us/en"; then
-  log "  ✅ ${SITE_PATH}/us/en exists"
+if page_exists "$LIVECOPY_PATH"; then
+  log "  ✅ $LIVECOPY_PATH exists"
 else
-  fail "Live copy at ${SITE_PATH}/us/en NOT found after creation"
+  fail "Live copy at $LIVECOPY_PATH NOT found after creation"
 fi
 log ""
 
@@ -229,30 +223,17 @@ log ""
 log "Phase 5: Triggering initial rollout"
 log ""
 
-# 5.1 — Deep rollout
 log "5.1 Rolling out blueprint to live copy (deep)..."
 HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
   -H "Authorization: Bearer $AEM_TOKEN" \
   -F "cmd=rollout" \
-  -F "path=${SITE_PATH}/language-masters/us/en" \
+  -F "path=$MASTER_PATH" \
   -F "deep=true" \
   "$AEM_HOST/libs/wcm/msm/content/commands/rollout")
 check_response "$HTTP_CODE" "Rollout"
 
-# Wait for async rollout processing
 log "  Waiting for rollout to complete..."
 sleep 5
-
-# 5.2-5.4 — Verify rolled out pages
-log ""
-log "5.2-5.4 Verifying rolled out pages..."
-for page in home nav footer; do
-  if page_exists "${SITE_PATH}/us/en/$page"; then
-    log "  ✅ ${SITE_PATH}/us/en/$page rolled out successfully"
-  else
-    log "  ⚠️  ${SITE_PATH}/us/en/$page not found — rollout may still be processing"
-  fi
-done
 
 # ═══════════════════════════════════════════════════════════
 # Summary
@@ -263,18 +244,14 @@ log "═════════════════════════
 log "SETUP COMPLETE"
 log "═══════════════════════════════════════════════════════════"
 log ""
-log "Blueprint (author here):"
-log "  ${SITE_PATH}/language-masters/us/en/home"
-log "  ${SITE_PATH}/language-masters/us/en/nav"
-log "  ${SITE_PATH}/language-masters/us/en/footer"
+log "Blueprint / master (author + translate here):"
+log "  $MASTER_PATH"
 log ""
-log "Live Copy (served by EDS):"
-log "  ${SITE_PATH}/us/en/home    → /us/en/home"
-log "  ${SITE_PATH}/us/en/nav     → /us/en/nav"
-log "  ${SITE_PATH}/us/en/footer  → /us/en/footer"
+log "Live Copy (served by EDS, us/en -> / via paths.json):"
+log "  $LIVECOPY_PATH"
 log ""
 log "Next steps:"
-log "  1. Open Universal Editor to author content at the blueprint paths"
-log "  2. Changes will auto-rollout to the live copy (standard config)"
-log "  3. EDS serves content from the live copy via paths.json mapping"
+log "  1. Author content at the blueprint ($MASTER_PATH) in Universal Editor"
+log "  2. Roll out to us/en (and future locale live copies)"
+log "  3. EDS serves the live copy via paths.json mapping"
 log ""

@@ -7,13 +7,17 @@ const DEFAULT_PROJECT = 'ups-global';
 const DEFAULT_QUERY = 'leadership-list';
 
 /**
- * Derive the EDS bio page path from a CF _path, stripping the ordering
- * prefix (e.g. "01-a-") from the slug. Mirrors leadership-list-cf.
+ * Derive the EDS bio page path from a CF _path. The bio pages are children
+ * of the current leadership page, so the link base is derived from the
+ * current page path — keeping it locale-aware (works under any /<region>/<lang>/
+ * or clean-URL mapping) instead of a hardcoded prefix. The ordering prefix
+ * (e.g. "01-a-") is stripped from the slug.
  */
 function deriveBioLink(cfPath) {
   const slug = cfPath.replace(/\/$/, '').split('/').pop();
   const name = slug.replace(/^\d+-[a-z]-/, '').replace(/^\d+-/, '');
-  return `/us/en/our-company/leadership/${name}.html`;
+  const base = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '');
+  return `${base}/${name}.html`;
 }
 
 /**

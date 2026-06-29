@@ -13,12 +13,15 @@ function toMasterJsonUrl(fragmentPath) {
 
 /**
  * Derive the EDS bio page path from a CF fragment path when no explicit
- * link is authored. Strips the ordering prefix (e.g. "01-a-") from the slug.
+ * link is authored. Bio pages are children of the current leadership page,
+ * so the base is derived from the current page path — keeping it locale-aware
+ * instead of a hardcoded prefix. Strips the ordering prefix (e.g. "01-a-").
  */
 function deriveBioLink(fragmentPath) {
   const slug = fragmentPath.replace(/\/$/, '').split('/').pop();
   const name = slug.replace(/^\d+-[a-z]-/, '').replace(/^\d+-/, '');
-  return `/us/en/our-company/leadership/${name}`;
+  const base = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '');
+  return `${base}/${name}.html`;
 }
 
 async function fetchFragment(fragmentPath) {
