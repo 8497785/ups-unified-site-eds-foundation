@@ -88,8 +88,17 @@ export default async function decorate(block) {
   let rootPath = '';
   if (rootPathLink) rootPath = rootPathLink.getAttribute('href');
   else if (rootPathRow) rootPath = rootPathRow.textContent.trim();
-  const tagsText = tagsRow ? tagsRow.textContent.trim() : '';
-  const tags = tagsText ? tagsText.split(',').map((t) => t.trim()).filter(Boolean) : [];
+  // Tags may render as multiple child elements (string[]) or as a single
+  // comma/whitespace-separated text value — handle both.
+  let tags = [];
+  if (tagsRow) {
+    const tagEls = [...tagsRow.querySelectorAll('li, p, span, a')];
+    if (tagEls.length) {
+      tags = tagEls.map((el) => el.textContent.trim()).filter(Boolean);
+    } else {
+      tags = tagsRow.textContent.split(/[,\s]+/).map((t) => t.trim()).filter(Boolean);
+    }
+  }
   const project = DEFAULT_PROJECT;
   const queryName = DEFAULT_QUERY;
 
