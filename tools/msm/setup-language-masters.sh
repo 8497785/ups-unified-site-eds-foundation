@@ -118,13 +118,18 @@ if ! page_exists "$LIVECOPY_PATH"; then
   log "  ⚠️  $LIVECOPY_PATH not found — nothing to copy; blueprint will start empty"
 else
   # Copy each child page of us/en into language-masters/en (skip if already present).
+  # AEM Cloud rejects WebDAV COPY (405); use the Sling POST servlet copy operation.
   log "2.1 Copying child pages from $LIVECOPY_PATH → $MASTER_PATH ..."
-  CHILDREN=$(curl -s -H "Authorization: Bearer $AEM_TOKEN" \
-    "$AEM_HOST${LIVECOPY_PATH}.harray.1.json" 2>/dev/null \
-    | grep -o '"name":"[^"]*"' | sed 's/"name":"//;s/"//' || true)
+
+  # Enumerate immediate children (depth 1). Page child nodes are cq:Page.
+  CHILD_JSON=$(curl -s -H "Authorization: Bearer $AEM_TOKEN" \
+    "$AEM_HOST${LIVECOPY_PATH}.1.json" 2>/dev/null || true)
+  CHILDREN=$(echo "$CHILD_JSON" \
+    | grep -o '"[^"]*":{"jcr:primaryType":"cq:Page"' \
+    | sed 's/":{.*//;s/"//g' || true)
 
   if [[ -z "$CHILDREN" ]]; then
-    log "  ⚠️  Could not enumerate children via harray; falling back to known pages"
+    log "  ⚠️  Could not enumerate children; falling back to known pages"
     CHILDREN="home nav footer our-company"
   fi
 
@@ -134,13 +139,16 @@ else
       log "  ⏭️  ${MASTER_PATH}/${child} already exists — skipping copy"
       continue
     fi
+    if ! page_exists "${LIVECOPY_PATH}/${child}"; then
+      log "  ⏭️  ${LIVECOPY_PATH}/${child} not a page — skipping"
+      continue
+    fi
+    # Sling copy: POST to the source with :operation=copy and :dest=<target path>.
     CODE=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
       -H "Authorization: Bearer $AEM_TOKEN" \
-      -H "Destination: ${MASTER_PATH}/${child}" \
-      -H "Depth: infinity" \
-      -H "Overwrite: F" \
-      "$AEM_HOST${LIVECOPY_PATH}/${child}" \
-      -X COPY)
+      -F ":operation=copy" \
+      -F ":dest=${MASTER_PATH}/${child}" \
+      "$AEM_HOST${LIVECOPY_PATH}/${child}")
     check_response "$CODE" "Copy ${child} into blueprint"
   done
 fi
