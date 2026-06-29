@@ -1,4 +1,5 @@
 /* eslint-disable no-underscore-dangle */
+/* Leadership Listing block — renders leadership profiles from AEM GraphQL. */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
