@@ -89,11 +89,12 @@ function renderCard(item) {
 }
 
 export default async function decorate(block) {
-  // Container model fields, in order: title, rootPath, tags, id.
+  // Container model fields, in order: title, rootPath, tags, cta(anchor).
   const rows = [...block.children];
   const titleRow = rows[0];
   const rootPathRow = rows[1];
   const tagsRow = rows[2];
+  const ctaRow = rows[3];
 
   const titleText = titleRow ? titleRow.textContent.trim() : '';
   const rootPathLink = rootPathRow ? rootPathRow.querySelector('a') : null;
@@ -111,21 +112,35 @@ export default async function decorate(block) {
       tags = tagsRow.textContent.split(/[,\s]+/).map((t) => t.trim()).filter(Boolean);
     }
   }
+  const ctaLinkEl = ctaRow ? ctaRow.querySelector('a') : null;
+  const ctaHref = ctaLinkEl ? ctaLinkEl.getAttribute('href') : '';
+  const ctaText = ctaLinkEl ? ctaLinkEl.textContent.trim() : '';
   const project = DEFAULT_PROJECT;
   const queryName = DEFAULT_QUERY;
 
-  // Header (title) — mirrors leadership-list-cf structure.
+  // Header (title + optional CTA) — mirrors leadership-list-cf structure.
   const headerRow = document.createElement('div');
   headerRow.className = 'leadership-list-header';
+
   const heading = document.createElement('h2');
   heading.className = 'leadership-list-title';
   if (titleRow) moveInstrumentation(titleRow, heading);
   heading.textContent = titleText;
   headerRow.append(heading);
 
+  if (ctaText && ctaHref) {
+    const cta = document.createElement('a');
+    cta.className = 'leadership-list-cta';
+    cta.href = ctaHref;
+    cta.textContent = ctaText;
+    headerRow.append(cta);
+  }
+
+  const hasHeader = titleText || (ctaText && ctaHref);
+
   const ul = document.createElement('ul');
 
-  if (titleText) block.replaceChildren(headerRow, ul);
+  if (hasHeader) block.replaceChildren(headerRow, ul);
   else block.replaceChildren(ul);
 
   const url = buildQueryUrl(project, queryName, rootPath, tags);

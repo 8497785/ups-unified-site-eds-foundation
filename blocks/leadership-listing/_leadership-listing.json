@@ -40,10 +40,15 @@
           "label": "Tags"
         },
         {
+          "component": "aem-content",
+          "name": "cta",
+          "label": "CTA Link"
+        },
+        {
           "component": "text",
           "valueType": "string",
-          "name": "id",
-          "label": "ID"
+          "name": "ctaText",
+          "label": "CTA Text"
         }
       ]
     }

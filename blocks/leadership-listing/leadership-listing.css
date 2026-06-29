@@ -15,6 +15,44 @@
   color: var(--text-color);
 }
 
+.leadership-listing .leadership-list-cta {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #242424;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.leadership-listing .leadership-list-cta::after {
+  content: "\e603";
+  font-family: upspricons, tahoma, helvetica, arial, sans-serif;
+  font-size: 33px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  margin-left: 8px;
+  background: radial-gradient(#0662bb 50%, rgb(6 98 187 / 60%) 50%);
+  background-clip: text;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.5s;
+}
+
+.leadership-listing .leadership-list-cta:hover {
+  color: #6e6e6e;
+}
+
+.leadership-listing .leadership-list-cta:hover::after {
+  background: none;
+  -webkit-text-fill-color: initial;
+  color: #0662bb;
+  transform: translateX(10px);
+}
+
 .leadership-listing ul {
   list-style: none;
   margin: 0;
