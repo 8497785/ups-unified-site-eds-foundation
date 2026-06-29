@@ -1,0 +1,113 @@
+/* eslint-disable no-underscore-dangle */
+import { createOptimizedPicture } from '../../scripts/aem.js';
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
+const DEFAULT_PROJECT = 'ups-global';
+const DEFAULT_QUERY = 'leadership-list';
+
+/**
+ * Derive the EDS bio page path from a CF _path, stripping the ordering
+ * prefix (e.g. "01-a-") from the slug. Mirrors leadership-list-cf.
+ */
+function deriveBioLink(cfPath) {
+  const slug = cfPath.replace(/\/$/, '').split('/').pop();
+  const name = slug.replace(/^\d+-[a-z]-/, '').replace(/^\d+-/, '');
+  return `/us/en/our-company/leadership/${name}`;
+}
+
+/**
+ * Build the AEM GraphQL persisted-query URL with semicolon-encoded params.
+ * Same-origin (author tier): /graphql/execute.json/{project}/{query};rootPath=..;tag=..
+ */
+function buildQueryUrl(project, queryName, rootPath, tags) {
+  let url = `/graphql/execute.json/${project}/${queryName}`;
+  if (rootPath) url += `;rootPath=${encodeURIComponent(rootPath)}`;
+  if (tags && tags.length) url += `;tag=${encodeURIComponent(tags.join('/'))}`;
+  return url;
+}
+
+async function fetchLeaders(url) {
+  try {
+    const resp = await fetch(url);
+    if (resp.ok) {
+      const json = await resp.json();
+      return json?.data?.leaderships?.list || [];
+    }
+  } catch (e) {
+    // network/auth/CORS failure — fall through to empty
+  }
+  return [];
+}
+
+function renderCard(item) {
+  const li = document.createElement('li');
+
+  const anchor = document.createElement('a');
+  anchor.className = 'leadership-card-link';
+  anchor.href = item._path ? deriveBioLink(item._path) : '#';
+
+  const imageWrap = document.createElement('div');
+  imageWrap.className = 'leadership-card-image';
+  const headshot = item.headshot && item.headshot._path;
+  const altName = [item.firstName, item.lastName].filter(Boolean).join(' ');
+  if (headshot) {
+    const pic = createOptimizedPicture(headshot, altName, false, [{ width: '400' }]);
+    imageWrap.append(pic);
+  }
+
+  const body = document.createElement('div');
+  body.className = 'leadership-card-body';
+
+  const name = [item.firstName, item.lastName].filter(Boolean).join(' ');
+  if (name) {
+    const h3 = document.createElement('h3');
+    h3.textContent = name;
+    body.append(h3);
+  }
+
+  if (item.subtitle) {
+    const role = document.createElement('p');
+    role.textContent = item.subtitle;
+    body.append(role);
+  }
+
+  anchor.append(imageWrap, body);
+  li.append(anchor);
+  return li;
+}
+
+export default async function decorate(block) {
+  // Container model fields, in order: title, rootPath, tags, id.
+  const rows = [...block.children];
+  const titleRow = rows[0];
+  const rootPathRow = rows[1];
+  const tagsRow = rows[2];
+
+  const titleText = titleRow ? titleRow.textContent.trim() : '';
+  const rootPathLink = rootPathRow ? rootPathRow.querySelector('a') : null;
+  let rootPath = '';
+  if (rootPathLink) rootPath = rootPathLink.getAttribute('href');
+  else if (rootPathRow) rootPath = rootPathRow.textContent.trim();
+  const tagsText = tagsRow ? tagsRow.textContent.trim() : '';
+  const tags = tagsText ? tagsText.split(',').map((t) => t.trim()).filter(Boolean) : [];
+  const project = DEFAULT_PROJECT;
+  const queryName = DEFAULT_QUERY;
+
+  // Header (title) — mirrors leadership-list-cf structure.
+  const headerRow = document.createElement('div');
+  headerRow.className = 'leadership-list-header';
+  const heading = document.createElement('h2');
+  heading.className = 'leadership-list-title';
+  if (titleRow) moveInstrumentation(titleRow, heading);
+  heading.textContent = titleText;
+  headerRow.append(heading);
+
+  const ul = document.createElement('ul');
+
+  if (titleText) block.replaceChildren(headerRow, ul);
+  else block.replaceChildren(ul);
+
+  const url = buildQueryUrl(project, queryName, rootPath, tags);
+  const leaders = await fetchLeaders(url);
+  leaders.forEach((item) => ul.append(renderCard(item)));
+}
