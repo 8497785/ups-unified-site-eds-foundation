@@ -196,19 +196,36 @@ log ""
 log "Phase 4: Creating live copy at $LIVECOPY_PATH"
 log ""
 
+# Create the live copy, retrying while the destination is still being released
+# (AEM Cloud delete is async, so a 409 right after delete is transient).
 create_live_copy() {
+  local attempt=1
+  local max=6
   local code
-  code=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
-    -H "Authorization: Bearer $AEM_TOKEN" \
-    -F "cmd=createLiveCopy" \
-    -F "srcPath=$MASTER_PATH" \
-    -F "destPath=$LIVECOPY_PATH" \
-    -F "title=English (US)" \
-    -F "label=en" \
-    -F "rolloutConfigs=/libs/msm/wcm/rolloutconfigs/default" \
-    -F "deep=true" \
-    "$AEM_HOST/libs/wcm/msm/content/commands/createLiveCopy")
-  check_response "$code" "Create live copy"
+  while [[ $attempt -le $max ]]; do
+    code=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+      -H "Authorization: Bearer $AEM_TOKEN" \
+      -F "cmd=createLiveCopy" \
+      -F "srcPath=$MASTER_PATH" \
+      -F "destPath=$LIVECOPY_PATH" \
+      -F "title=English (US)" \
+      -F "label=en" \
+      -F "rolloutConfigs=/libs/msm/wcm/rolloutconfigs/default" \
+      -F "deep=true" \
+      "$AEM_HOST/libs/wcm/msm/content/commands/createLiveCopy")
+    if [[ "$code" -ge 200 && "$code" -lt 300 ]]; then
+      log "  ✅ Create live copy (HTTP $code)"
+      return 0
+    fi
+    if [[ "$code" == "409" ]]; then
+      log "  ⏳ Destination still present (HTTP 409), waiting (attempt $attempt/$max)..."
+      sleep 5
+      attempt=$((attempt + 1))
+      continue
+    fi
+    fail "Create live copy failed (HTTP $code)"
+  done
+  fail "Create live copy still conflicting after $max attempts (HTTP 409)"
 }
 
 delete_path() {
@@ -221,6 +238,21 @@ delete_path() {
   check_response "$code" "Delete $path"
 }
 
+# Poll until a path is gone (AEM Cloud delete is asynchronous).
+wait_until_gone() {
+  local path="$1"
+  local attempt=1
+  local max=12
+  while [[ $attempt -le $max ]]; do
+    if ! page_exists "$path"; then
+      return 0
+    fi
+    sleep 3
+    attempt=$((attempt + 1))
+  done
+  return 1
+}
+
 if page_exists "$LIVECOPY_PATH"; then
   if is_live_copy "$LIVECOPY_PATH"; then
     log "  ✅ $LIVECOPY_PATH is already a live copy from language-masters — skipping create"
@@ -229,7 +261,12 @@ if page_exists "$LIVECOPY_PATH"; then
     log "      Its content was copied into the blueprint in Phase 2."
     log "  4.1 Deleting existing $LIVECOPY_PATH (back up done by you) ..."
     delete_path "$LIVECOPY_PATH"
-    sleep 2
+    log "  Waiting for delete to fully propagate (async)..."
+    if wait_until_gone "$LIVECOPY_PATH"; then
+      log "  ✅ $LIVECOPY_PATH removed"
+    else
+      log "  ⚠️  $LIVECOPY_PATH still present after wait; create may retry on 409"
+    fi
     log "  4.2 Recreating $LIVECOPY_PATH as a live copy of the blueprint ..."
     create_live_copy
   else
