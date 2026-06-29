@@ -17,13 +17,24 @@ function deriveBioLink(cfPath) {
 }
 
 /**
- * Build the AEM GraphQL persisted-query URL with semicolon-encoded params.
+ * Normalize a Content Fragment root path: drop the .html suffix the
+ * aem-content picker appends and any trailing slash.
+ */
+function normalizeRootPath(path) {
+  return (path || '').replace(/\.html$/, '').replace(/\/$/, '');
+}
+
+/**
+ * Build the AEM GraphQL persisted-query URL with raw (unencoded) semicolon
+ * params — the persisted query parses the literal path/tag values, so
+ * encoding the slashes/colons would break the `tag` variable.
  * Same-origin (author tier): /graphql/execute.json/{project}/{query};rootPath=..;tag=..
  */
 function buildQueryUrl(project, queryName, rootPath, tags) {
   let url = `/graphql/execute.json/${project}/${queryName}`;
-  if (rootPath) url += `;rootPath=${encodeURIComponent(rootPath)}`;
-  if (tags && tags.length) url += `;tag=${encodeURIComponent(tags.join('/'))}`;
+  const cleanRoot = normalizeRootPath(rootPath);
+  if (cleanRoot) url += `;rootPath=${cleanRoot}`;
+  if (tags && tags.length) url += `;tag=${tags.join('/')}`;
   return url;
 }
 

@@ -425,7 +425,8 @@
         "component": "aem-content",
         "name": "rootPath",
         "label": "Content Fragment Root Path",
-        "rootPath": "/content/dam"
+        "rootPath": "/content/dam",
+        "filter": "folderOrFragment"
       },
       {
         "component": "aem-tag",
