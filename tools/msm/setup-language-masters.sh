@@ -196,6 +196,12 @@ log ""
 log "Phase 4: Creating live copy at $LIVECOPY_PATH"
 log ""
 
+# createLiveCopy needs the destination's PARENT (the region node, e.g. us) to
+# exist. If the whole us node was deleted, recreate it first.
+PARENT_PATH="$(dirname "$LIVECOPY_PATH")"
+log "4.0 Ensuring parent region exists ($PARENT_PATH)..."
+create_page "$PARENT_PATH" "US"
+
 # Create the live copy, retrying while the destination is still being released
 # (AEM Cloud delete is async, so a 409 right after delete is transient).
 create_live_copy() {
