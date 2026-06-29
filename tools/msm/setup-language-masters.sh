@@ -1,12 +1,12 @@
 #!/bin/bash
 #
-# AEM Language Masters & MSM Live Copy Setup Script
+# AEM Language Masters & MSM Live Copy Setup Script (AEM Cloud Service)
 #
 # Restructures the About UPS EDS project to the MSM language-masters model:
 #   1. Creates a language-only blueprint at /content/about-ups-eds/language-masters/en
 #   2. Copies the EXISTING content from /content/about-ups-eds/us/en into the
-#      blueprint (so current authored pages become the master source)
-#   3. Marks the blueprint, (re)creates the us/en live copy from it, and rolls out
+#      blueprint (current authored pages become the master source)
+#   3. Marks the blueprint, converts us/en into a live copy of it, and rolls out
 #
 # Authoring/translation happens in language-masters/en. Locale delivery copies
 # (us/en, …) are served by EDS via paths.json (us/en -> /).
@@ -16,8 +16,9 @@
 #   - Live copy:      /content/about-ups-eds/fr/fr  (rollout target)
 #   - paths.json:     map /content/about-ups-eds/fr/fr/ -> /fr/  (or a separate site)
 #
-# IMPORTANT: Back up /content/about-ups-eds/us/en before running — this script
-# copies it into the blueprint and converts us/en into a live copy.
+# ⚠️  DESTRUCTIVE: Phase 4 DELETES the existing /content/about-ups-eds/us/en and
+#     recreates it as a live copy of the blueprint. BACK UP us/en before running.
+#     Set CONVERT_LIVECOPY=false to skip the destructive convert (manual instead).
 #
 # Usage:
 #   export AEM_TOKEN="your-bearer-token-here"
@@ -32,6 +33,8 @@ AEM_TOKEN="${AEM_TOKEN:?ERROR: Set AEM_TOKEN environment variable with your Bear
 SITE_PATH="/content/about-ups-eds"
 MASTER_PATH="${SITE_PATH}/language-masters/en"
 LIVECOPY_PATH="${SITE_PATH}/us/en"
+# Set to "false" to skip the destructive delete+recreate of us/en as a live copy.
+CONVERT_LIVECOPY="${CONVERT_LIVECOPY:-true}"
 
 log() { echo "[$(date '+%H:%M:%S')] $1"; }
 fail() { echo "[ERROR] $1" >&2; exit 1; }
@@ -55,6 +58,14 @@ page_exists() {
     -H "Authorization: Bearer $AEM_TOKEN" \
     "$AEM_HOST${path}.json")
   [[ "$code" == "200" ]]
+}
+
+is_live_copy() {
+  local path="$1"
+  local body
+  body=$(curl -s -H "Authorization: Bearer $AEM_TOKEN" \
+    "$AEM_HOST${path}/jcr:content.json" 2>/dev/null || true)
+  echo "$body" | grep -q "cq:LiveSyncConfig\|cq:master\|language-masters"
 }
 
 create_page() {
@@ -179,7 +190,7 @@ fi
 log ""
 
 # ═══════════════════════════════════════════════════════════
-# Phase 4: Create / Verify Live Copy at us/en
+# Phase 4: Create / Convert Live Copy at us/en
 # ═══════════════════════════════════════════════════════════
 
 log "Phase 4: Creating live copy at $LIVECOPY_PATH"
@@ -200,17 +211,31 @@ create_live_copy() {
   check_response "$code" "Create live copy"
 }
 
+delete_path() {
+  local path="$1"
+  local code
+  code=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+    -H "Authorization: Bearer $AEM_TOKEN" \
+    -F ":operation=delete" \
+    "$AEM_HOST$path")
+  check_response "$code" "Delete $path"
+}
+
 if page_exists "$LIVECOPY_PATH"; then
-  LC_CHECK=$(curl -s -H "Authorization: Bearer $AEM_TOKEN" \
-    "$AEM_HOST${LIVECOPY_PATH}/jcr:content.json" 2>/dev/null)
-  if echo "$LC_CHECK" | grep -q "language-masters"; then
-    log "  ✅ $LIVECOPY_PATH is already a live copy from language-masters — skipping"
-  else
+  if is_live_copy "$LIVECOPY_PATH"; then
+    log "  ✅ $LIVECOPY_PATH is already a live copy from language-masters — skipping create"
+  elif [[ "$CONVERT_LIVECOPY" == "true" ]]; then
     log "  ⚠️  $LIVECOPY_PATH exists but is NOT a live copy."
     log "      Its content was copied into the blueprint in Phase 2."
-    log "      To convert it into a live copy, remove/rename it first, then re-run,"
-    log "      OR convert manually in the Sites Console. Skipping automatic convert"
-    log "      to avoid destroying existing content."
+    log "  4.1 Deleting existing $LIVECOPY_PATH (back up done by you) ..."
+    delete_path "$LIVECOPY_PATH"
+    sleep 2
+    log "  4.2 Recreating $LIVECOPY_PATH as a live copy of the blueprint ..."
+    create_live_copy
+  else
+    log "  ⚠️  $LIVECOPY_PATH exists and is not a live copy; CONVERT_LIVECOPY=false."
+    log "      Skipping destructive convert. Convert manually in the Sites Console,"
+    log "      or re-run with CONVERT_LIVECOPY=true."
   fi
 else
   log "4.1 Creating live copy..."
@@ -260,6 +285,6 @@ log "  $LIVECOPY_PATH"
 log ""
 log "Next steps:"
 log "  1. Author content at the blueprint ($MASTER_PATH) in Universal Editor"
-log "  2. Roll out to us/en (and future locale live copies)"
+log "  2. Edits roll out to us/en (and future locale live copies)"
 log "  3. EDS serves the live copy via paths.json mapping"
 log ""
