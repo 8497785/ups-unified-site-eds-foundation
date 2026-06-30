@@ -202,11 +202,10 @@ PARENT_PATH="$(dirname "$LIVECOPY_PATH")"
 log "4.0 Ensuring parent region exists ($PARENT_PATH)..."
 create_page "$PARENT_PATH" "US"
 
-# Create the live copy, retrying while the destination is still being released
-# (AEM Cloud delete is async, so a 409 right after delete is transient).
+# Create the live copy via the canonical WCM command endpoint (/bin/wcmcommand).
+# destPath is the FULL destination page path; do NOT also pass `label` (that is
+# what produces the "repository state conflicting" 409 alongside a full destPath).
 create_live_copy() {
-  # Capture both the response body and the HTTP status so AEM's actual error
-  # message is visible (the status code alone doesn't explain the 409).
   local resp body code
   resp=$(curl -s -w $'\n%{http_code}' -X POST \
     -H "Authorization: Bearer $AEM_TOKEN" \
@@ -214,10 +213,10 @@ create_live_copy() {
     -F "srcPath=$MASTER_PATH" \
     -F "destPath=$LIVECOPY_PATH" \
     -F "title=English (US)" \
-    -F "label=en" \
+    -F "_charset_=utf-8" \
     -F "rolloutConfigs=/libs/msm/wcm/rolloutconfigs/default" \
     -F "deep=true" \
-    "$AEM_HOST/libs/wcm/msm/content/commands/createLiveCopy")
+    "$AEM_HOST/bin/wcmcommand")
   code=$(echo "$resp" | tail -n1)
   body=$(echo "$resp" | sed '$d')
   if [[ "$code" -ge 200 && "$code" -lt 300 ]]; then
@@ -297,12 +296,15 @@ log "Phase 5: Triggering initial rollout"
 log ""
 
 log "5.1 Rolling out blueprint to live copy (deep)..."
+# Target the live copy as the rollout path on the canonical command endpoint.
 HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
   -H "Authorization: Bearer $AEM_TOKEN" \
   -F "cmd=rollout" \
-  -F "path=$MASTER_PATH" \
-  -F "deep=true" \
-  "$AEM_HOST/libs/wcm/msm/content/commands/rollout")
+  -F "path=$LIVECOPY_PATH" \
+  -F "type=deep" \
+  -F "reset=false" \
+  -F "useBackgroundJob=false" \
+  "$AEM_HOST/bin/wcmcommand")
 check_response "$HTTP_CODE" "Rollout"
 
 log "  Waiting for rollout to complete..."
