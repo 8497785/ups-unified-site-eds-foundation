@@ -205,33 +205,30 @@ create_page "$PARENT_PATH" "US"
 # Create the live copy, retrying while the destination is still being released
 # (AEM Cloud delete is async, so a 409 right after delete is transient).
 create_live_copy() {
-  local attempt=1
-  local max=6
-  local code
-  while [[ $attempt -le $max ]]; do
-    code=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
-      -H "Authorization: Bearer $AEM_TOKEN" \
-      -F "cmd=createLiveCopy" \
-      -F "srcPath=$MASTER_PATH" \
-      -F "destPath=$LIVECOPY_PATH" \
-      -F "title=English (US)" \
-      -F "label=en" \
-      -F "rolloutConfigs=/libs/msm/wcm/rolloutconfigs/default" \
-      -F "deep=true" \
-      "$AEM_HOST/libs/wcm/msm/content/commands/createLiveCopy")
-    if [[ "$code" -ge 200 && "$code" -lt 300 ]]; then
-      log "  ✅ Create live copy (HTTP $code)"
-      return 0
-    fi
-    if [[ "$code" == "409" ]]; then
-      log "  ⏳ Destination still present (HTTP 409), waiting (attempt $attempt/$max)..."
-      sleep 5
-      attempt=$((attempt + 1))
-      continue
-    fi
-    fail "Create live copy failed (HTTP $code)"
-  done
-  fail "Create live copy still conflicting after $max attempts (HTTP 409)"
+  # Capture both the response body and the HTTP status so AEM's actual error
+  # message is visible (the status code alone doesn't explain the 409).
+  local resp body code
+  resp=$(curl -s -w $'\n%{http_code}' -X POST \
+    -H "Authorization: Bearer $AEM_TOKEN" \
+    -F "cmd=createLiveCopy" \
+    -F "srcPath=$MASTER_PATH" \
+    -F "destPath=$LIVECOPY_PATH" \
+    -F "title=English (US)" \
+    -F "label=en" \
+    -F "rolloutConfigs=/libs/msm/wcm/rolloutconfigs/default" \
+    -F "deep=true" \
+    "$AEM_HOST/libs/wcm/msm/content/commands/createLiveCopy")
+  code=$(echo "$resp" | tail -n1)
+  body=$(echo "$resp" | sed '$d')
+  if [[ "$code" -ge 200 && "$code" -lt 300 ]]; then
+    log "  ✅ Create live copy (HTTP $code)"
+    return 0
+  fi
+  log "  ❌ Create live copy failed (HTTP $code)"
+  log "  --- AEM response body ---"
+  echo "$body" | head -40
+  log "  -------------------------"
+  fail "Create live copy failed (HTTP $code) — see response body above"
 }
 
 delete_path() {
