@@ -2,9 +2,8 @@
 /* Leadership Listing block — renders leadership profiles from AEM GraphQL. */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
-import { AEM_GRAPHQL_HOST } from '../../scripts/config.js';
+import { getGraphQLUrl } from '../../scripts/config.js';
 
-const DEFAULT_PROJECT = 'ups-global';
 const DEFAULT_QUERY = 'leadership-list';
 
 /**
@@ -27,21 +26,6 @@ function deriveBioLink(cfPath) {
  */
 function normalizeRootPath(path) {
   return (path || '').replace(/\.html$/, '').replace(/\/$/, '');
-}
-
-/**
- * Build the AEM GraphQL persisted-query URL with raw (unencoded) semicolon
- * params — the persisted query parses the literal path/tag values, so
- * encoding the slashes/colons would break the `tag` variable.
- * Same-origin (author tier): /graphql/execute.json/{project}/{query};rootPath=..;tag=..
- */
-function buildQueryUrl(project, queryName, rootPath, tags) {
-  const base = AEM_GRAPHQL_HOST || '';
-  let url = `${base}/graphql/execute.json/${project}/${queryName}`;
-  const cleanRoot = normalizeRootPath(rootPath);
-  if (cleanRoot) url += `;rootPath=${cleanRoot}`;
-  if (tags && tags.length) url += `;tag=${tags.join('/')}`;
-  return url;
 }
 
 async function fetchLeaders(url) {
@@ -121,8 +105,6 @@ export default async function decorate(block) {
   const ctaLinkEl = ctaRow ? ctaRow.querySelector('a') : null;
   const ctaHref = ctaLinkEl ? ctaLinkEl.getAttribute('href') : '';
   const ctaText = ctaLinkEl ? ctaLinkEl.textContent.trim() : '';
-  const project = DEFAULT_PROJECT;
-  const queryName = DEFAULT_QUERY;
 
   // Header (title + optional CTA) — mirrors leadership-list-cf structure.
   const headerRow = document.createElement('div');
@@ -149,7 +131,10 @@ export default async function decorate(block) {
   if (hasHeader) block.replaceChildren(headerRow, ul);
   else block.replaceChildren(ul);
 
-  const url = buildQueryUrl(project, queryName, rootPath, tags);
+  const url = getGraphQLUrl(DEFAULT_QUERY, {
+    rootPath: normalizeRootPath(rootPath),
+    tag: tags.join('/'),
+  });
   const leaders = await fetchLeaders(url);
   leaders.forEach((item) => ul.append(renderCard(item)));
 }

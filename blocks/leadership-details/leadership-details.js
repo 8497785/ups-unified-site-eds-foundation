@@ -1,8 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { AEM_GRAPHQL_HOST } from '../../scripts/config.js';
+import { getGraphQLUrl } from '../../scripts/config.js';
 
-const DEFAULT_PROJECT = 'ups-global';
 const DEFAULT_QUERY = 'leadership-details';
 
 /**
@@ -11,16 +10,6 @@ const DEFAULT_QUERY = 'leadership-details';
  */
 function normalizeCfPath(path) {
   return (path || '').replace(/\.html$/, '').replace(/\/$/, '');
-}
-
-/**
- * Build the AEM GraphQL persisted-query URL with a raw (unencoded) semicolon
- * param — the persisted query parses the literal path, so encoding the
- * slashes/colons would break it. Same-origin (author tier).
- */
-function buildQueryUrl(project, queryName, cfPath) {
-  const base = AEM_GRAPHQL_HOST || '';
-  return `${base}/graphql/execute.json/${project}/${queryName};path=${cfPath}`;
 }
 
 async function fetchLeader(url) {
@@ -59,7 +48,7 @@ export default async function decorate(block) {
     return;
   }
 
-  const data = await fetchLeader(buildQueryUrl(DEFAULT_PROJECT, DEFAULT_QUERY, cfPath));
+  const data = await fetchLeader(getGraphQLUrl(DEFAULT_QUERY, { path: cfPath }));
   if (!data) {
     // Runtime fetch unavailable (e.g. off-AEM origin or unauthenticated); render nothing.
     block.replaceChildren();

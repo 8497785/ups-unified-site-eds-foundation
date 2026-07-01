@@ -7,6 +7,7 @@
  */
 
 const PUBLISH_GRAPHQL_HOST = 'https://publish-p55671-e392471.adobeaemcloud.com';
+const GRAPHQL_PROJECT = 'ups-global';
 
 /**
  * Use the absolute publish host ONLY on the EDS delivery tiers
@@ -20,5 +21,26 @@ function resolveGraphqlHost() {
   return isDeliveryTier ? PUBLISH_GRAPHQL_HOST.replace(/\/$/, '') : '';
 }
 
-// eslint-disable-next-line import/prefer-default-export
 export const AEM_GRAPHQL_HOST = resolveGraphqlHost();
+
+/**
+ * Build an AEM GraphQL persisted-query URL for the project.
+ *
+ * Params are appended as RAW (unencoded) `;key=value` segments — the persisted
+ * query parses the literal path/tag values, so encoding the slashes/colons
+ * would break the query (the `tag` variable coerces to Null). Empty/undefined
+ * values are skipped.
+ *
+ * @param {string} queryName persisted query name (e.g. 'leadership-list')
+ * @param {Object} [params] ordered semicolon params (e.g. { rootPath, tag })
+ * @returns {string} the full persisted-query URL
+ */
+export function getGraphQLUrl(queryName, params = {}) {
+  let url = `${AEM_GRAPHQL_HOST}/graphql/execute.json/${GRAPHQL_PROJECT}/${queryName}`;
+  Object.entries(params).forEach(([key, value]) => {
+    if (value !== undefined && value !== null && value !== '') {
+      url += `;${key}=${value}`;
+    }
+  });
+  return url;
+}
