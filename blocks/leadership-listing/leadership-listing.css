@@ -143,3 +143,29 @@
   line-height: 21px;
   color: #767676;
 }
+
+/* skeleton placeholder card — matches the real card footprint */
+.leadership-listing li.leadership-card-skeleton .leadership-card-image {
+  width: 180px;
+  min-height: 180px;
+  border-radius: 8px 0 0 8px;
+}
+
+@media (width <= 1023px) {
+  .leadership-listing li.leadership-card-skeleton .leadership-card-image {
+    width: 103px;
+  }
+}
+
+.leadership-listing .leadership-skeleton-bar {
+  display: block;
+  width: 70%;
+  height: 24px;
+  margin-bottom: 12px;
+}
+
+.leadership-listing .leadership-skeleton-line {
+  display: block;
+  width: 40%;
+  height: 13px;
+}

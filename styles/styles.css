@@ -281,6 +281,31 @@ main img {
   width: 100%;
 }
 
+/* skeleton loading placeholder */
+@keyframes ups-skeleton-shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.ups-skeleton {
+  background: #ececec;
+  background-image: linear-gradient(90deg, #ececec 0, #f5f5f5 40px, #ececec 80px);
+  background-size: 600px 100%;
+  border-radius: 4px;
+  animation: ups-skeleton-shimmer 1.4s ease infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ups-skeleton {
+    animation: none;
+  }
+}
+
 /* sections */
 main > .section {
   margin: var(--spacing-xl) 0;
