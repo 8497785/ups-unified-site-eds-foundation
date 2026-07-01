@@ -139,18 +139,7 @@ function loadDelayed() {
   // load anything that can be postponed to the latest here
 }
 
-// Root '/' has no mapped content (home lives at /us/en/home); send visitors there.
-function redirectRoot() {
-  const { pathname } = window.location;
-  if (pathname === '/' || pathname === '/index.html') {
-    window.location.replace('/us/en/home');
-    return true;
-  }
-  return false;
-}
-
 async function loadPage() {
-  if (redirectRoot()) return;
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
