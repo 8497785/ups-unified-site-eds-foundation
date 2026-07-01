@@ -1,4 +1,4 @@
-import { getMetadata } from '../../scripts/aem.js';
+import { getMetadata, createOptimizedPicture } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 const isDesktop = window.matchMedia('(min-width: 992px)');
@@ -133,13 +133,15 @@ export default async function decorate(block) {
     if (brandLink) {
       if (!brandLink.getAttribute('href')) brandLink.setAttribute('href', '/');
       if (!brandLink.querySelector('img, picture, svg')) {
-        const logo = document.createElement('img');
-        logo.src = '/assets/ups-logo.svg';
-        logo.alt = brandLink.textContent.trim() || 'UPS';
-        logo.width = 56;
-        logo.height = 67;
+        const alt = brandLink.textContent.trim() || 'UPS';
+        const pic = createOptimizedPicture('/assets/ups-logo.svg', alt, true, [{ width: '56' }]);
+        const logo = pic.querySelector('img');
+        if (logo) {
+          logo.width = 56;
+          logo.height = 67;
+        }
         brandLink.textContent = '';
-        brandLink.append(logo);
+        brandLink.append(pic);
       }
     }
   }
