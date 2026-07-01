@@ -300,10 +300,12 @@ main > .section:first-of-type {
 /* spacing toggles (Styles tab) — default keeps both margins */
 main > .section.no-top-spacing {
   margin-top: 0;
+  padding-top: 0;
 }
 
 main > .section.no-bottom-spacing {
   margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /* stepped content width matching the source .upspr-container */
