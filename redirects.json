@@ -5,7 +5,7 @@
   "data": [
     {
       "Source": "/",
-      "Destination": "/home",
+      "Destination": "/us/en/home",
       "Code": "302"
     }
   ],
