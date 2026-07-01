@@ -134,7 +134,7 @@ export default async function decorate(block) {
       if (!brandLink.getAttribute('href')) brandLink.setAttribute('href', '/');
       if (!brandLink.querySelector('img, picture, svg')) {
         const logo = document.createElement('img');
-        logo.src = '/content/dam/upsstories/images/logo/ups-logo-wo-text.svg';
+        logo.src = '/assets/ups-logo.svg';
         logo.alt = brandLink.textContent.trim() || 'UPS';
         logo.width = 56;
         logo.height = 67;
