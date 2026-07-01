@@ -338,6 +338,32 @@
         "component": "aem-content",
         "name": "fragment",
         "label": "Content Fragment"
+      },
+      {
+        "component": "multiselect",
+        "name": "buttons",
+        "label": "Buttons",
+        "valueType": "string[]",
+        "options": [
+          {
+            "name": "Print",
+            "value": "print"
+          },
+          {
+            "name": "Download",
+            "value": "download"
+          }
+        ]
+      },
+      {
+        "component": "aem-content",
+        "name": "highRes",
+        "label": "High Res Image (optional)"
+      },
+      {
+        "component": "aem-content",
+        "name": "lowRes",
+        "label": "Low Res Image (optional)"
       }
     ]
   },

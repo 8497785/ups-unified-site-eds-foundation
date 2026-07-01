@@ -1,3 +1,5 @@
+/* stylelint-disable selector-class-pattern -- AEM source class names (upspr-*_*, camelCase) kept for parity */
+
 .leadership-details {
   display: flex;
   flex-direction: column-reverse;
@@ -85,15 +87,147 @@
   }
 }
 
-.leadership-details .leadership-bio-image {
+.leadership-details .upspr-bio-image {
   position: relative;
 }
 
-.leadership-details .leadership-bio-image img {
+.leadership-details .upspr-bio-image img {
   width: 100%;
   height: auto;
   border-radius: 8px;
   display: block;
+}
+
+/* Download trigger button (bottom-left over the portrait) */
+.leadership-details .upspr-bio-image_download-btn {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+}
+
+.leadership-details .upspr-bio-image_download-btn button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: var(--link-color);
+  color: #fff;
+  cursor: pointer;
+}
+
+.leadership-details .upspr-bio-image_download-btn .upspr {
+  font-family: upspricons, tahoma, helvetica, arial, sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  color: #fff;
+}
+
+.leadership-details .upspr-readerTxt {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Download overlay (hidden until the trigger opens it) */
+.leadership-details .upspr-bio-image-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgb(36 36 36 / 90%);
+  display: none;
+}
+
+.leadership-details .upspr-bio-image-overlay .upspr-icon-x {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  font-family: upspricons, tahoma, helvetica, arial, sans-serif;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.leadership-details .upspr-bio-download {
+  position: absolute;
+  bottom: 0;
+  padding: 16px;
+}
+
+.leadership-details .upspr-bio-download .upspr-eyebrow-head {
+  color: #c6c6c6;
+}
+
+.leadership-details .upspr-bio-download .upspr-eyebrow-text::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 3px;
+  margin-bottom: 8px;
+  background-color: #ffd100;
+}
+
+.leadership-details .upspr-bio-download ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+
+.leadership-details .upspr-bio-download ul li:last-child {
+  padding-left: 24px;
+}
+
+.leadership-details .upspr-bio-download a {
+  margin-top: 25px;
+  display: inline-block;
+  position: relative;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.leadership-details .upspr-bio-download a .upspr-icon-container {
+  display: inline-block;
+  transition: transform 0.5s;
+}
+
+.leadership-details .upspr-bio-download a:hover .upspr-icon-container {
+  transform: translateY(5px);
+}
+
+.leadership-details .upspr-bio-download .upspr {
+  font-family: upspricons, tahoma, helvetica, arial, sans-serif;
+}
+
+.leadership-details .upspr-bio-download .upspr-icon-download {
+  position: relative;
+  font-size: 24px;
+  z-index: 1;
+  vertical-align: middle;
+}
+
+.leadership-details .upspr-bio-download .upspr-icon-dot {
+  position: absolute;
+  left: -0.5px;
+  top: -0.5px;
+  font-size: 18px;
+  z-index: 0;
+  border: 3px solid rgb(6 98 187 / 60%);
+  border-radius: 50%;
+}
+
+.leadership-details .upspr-download-label {
+  font-size: 12px;
 }
 
 /* Print icon above the portrait, right-aligned (desktop) — mirrors .upspr-bio-print */

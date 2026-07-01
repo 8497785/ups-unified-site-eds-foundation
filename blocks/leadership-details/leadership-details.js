@@ -34,10 +34,29 @@ async function fetchLeader(url) {
   return null;
 }
 
+// Read a row's link href, falling back to its trimmed text (aem-content).
+function readPath(row) {
+  if (!row) return '';
+  const a = row.querySelector('a');
+  return (a ? a.getAttribute('href') : row.textContent.trim()) || '';
+}
+
 export default async function decorate(block) {
-  const link = block.querySelector('a');
-  const rawPath = link ? link.getAttribute('href') : block.textContent.trim();
-  const cfPath = normalizeCfPath(rawPath);
+  // Fields in model order: fragment, buttons, highRes, lowRes.
+  const rows = [...block.children];
+  const fragmentRow = rows[0];
+  const buttonsRow = rows[1];
+
+  // "buttons" multiselect: which affordances to show. Empty = show both.
+  const buttonsText = buttonsRow ? buttonsRow.textContent.trim().toLowerCase() : '';
+  const showPrint = !buttonsText || buttonsText.includes('print');
+  const showDownload = !buttonsText || buttonsText.includes('download');
+
+  // Optional custom download image paths; fall back to the headshot later.
+  const customHighRes = normalizeCfPath(readPath(rows[2]));
+  const customLowRes = normalizeCfPath(readPath(rows[3]));
+
+  const cfPath = normalizeCfPath(readPath(fragmentRow) || block.textContent.trim());
 
   if (!cfPath) {
     block.replaceChildren();
@@ -83,24 +102,66 @@ export default async function decorate(block) {
   const media = document.createElement('div');
   media.className = 'leadership-bio-media';
 
-  const print = document.createElement('div');
-  print.className = 'upspr-print upspr-bio-print';
-  const printLink = document.createElement('a');
-  printLink.href = '#';
-  printLink.className = 'onclick-print';
-  printLink.setAttribute('role', 'button');
-  printLink.setAttribute('aria-label', `Print profile ${displayName}`);
-  printLink.innerHTML = '<i class="upspr upspr-icon-print"></i>';
-  printLink.addEventListener('click', (e) => { e.preventDefault(); window.print(); });
-  print.append(printLink);
-  media.append(print);
+  if (showPrint) {
+    const print = document.createElement('div');
+    print.className = 'upspr-print upspr-bio-print';
+    const printLink = document.createElement('a');
+    printLink.href = '#';
+    printLink.className = 'onclick-print';
+    printLink.setAttribute('role', 'button');
+    printLink.setAttribute('aria-label', `Print profile ${displayName}`);
+    printLink.innerHTML = '<i class="upspr upspr-icon-print"></i>';
+    printLink.addEventListener('click', (e) => { e.preventDefault(); window.print(); });
+    print.append(printLink);
+    media.append(print);
+  }
 
   const headshot = data.headshot && data.headshot._path;
   if (headshot) {
     const imageWrap = document.createElement('div');
-    imageWrap.className = 'leadership-bio-image';
+    imageWrap.className = 'upspr-bio-image';
     const pic = createOptimizedPicture(headshot, displayName, true, [{ width: '750' }]);
     imageWrap.append(pic);
+
+    if (showDownload) {
+      // Download trigger button
+      const dlBtn = document.createElement('div');
+      dlBtn.className = 'upspr-bio-image_download-btn upspr-image_download-btn';
+      dlBtn.innerHTML = '<button type="button"><i class="upspr upspr-icon-download"></i>'
+        + '<span class="upspr-readerTxt">Open Download Image Section</span></button>';
+
+      // Download overlay (High Res / Low Res). Use author-provided paths when
+      // set, otherwise default both to the headshot image.
+      const highResUrl = customHighRes || headshot;
+      const lowResUrl = customLowRes || headshot;
+      const overlay = document.createElement('div');
+      overlay.className = 'upspr-bio-image-overlay upspr-image-overlay';
+      overlay.innerHTML = `
+        <i class="upspr upspr-icon-x" role="button" tabindex="0" aria-label="close"></i>
+        <div class="upspr-bio-download">
+          <div class="upspr-eyebrow-head"><span class="upspr-eyebrow-text">DOWNLOAD</span></div>
+          <ul>
+            <li><a href="${highResUrl}" download class="upspr-story-download" aria-label="download High Res image">
+              <div class="upspr-icon-container"><i class="upspr upspr-icon-dot"></i><i class="upspr upspr-icon-download"></i></div>
+              <span class="upspr-download-label" aria-hidden="true">High Res</span>
+            </a></li>
+            <li><a href="${lowResUrl}" download class="upspr-story-download" aria-label="download Low Res image">
+              <div class="upspr-icon-container"><i class="upspr upspr-icon-dot"></i><i class="upspr upspr-icon-download"></i></div>
+              <span class="upspr-download-label" aria-hidden="true">Low Res</span>
+            </a></li>
+          </ul>
+        </div>`;
+
+      dlBtn.querySelector('button').addEventListener('click', () => {
+        overlay.style.display = 'block';
+      });
+      overlay.querySelector('.upspr-icon-x').addEventListener('click', () => {
+        overlay.style.display = 'none';
+      });
+
+      imageWrap.append(dlBtn, overlay);
+    }
+
     media.append(imageWrap);
   }
 
