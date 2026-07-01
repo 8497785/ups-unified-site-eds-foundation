@@ -83,12 +83,16 @@ export default async function decorate(block) {
   const media = document.createElement('div');
   media.className = 'leadership-bio-media';
 
-  const print = document.createElement('button');
-  print.type = 'button';
-  print.className = 'leadership-bio-print';
-  print.setAttribute('aria-label', `Print profile ${displayName}`);
-  print.innerHTML = '<span class="upspr upspr-icon-print" aria-hidden="true"></span>';
-  print.addEventListener('click', () => window.print());
+  const print = document.createElement('div');
+  print.className = 'upspr-print upspr-bio-print';
+  const printLink = document.createElement('a');
+  printLink.href = '#';
+  printLink.className = 'onclick-print';
+  printLink.setAttribute('role', 'button');
+  printLink.setAttribute('aria-label', `Print profile ${displayName}`);
+  printLink.innerHTML = '<i class="upspr upspr-icon-print"></i>';
+  printLink.addEventListener('click', (e) => { e.preventDefault(); window.print(); });
+  print.append(printLink);
   media.append(print);
 
   const headshot = data.headshot && data.headshot._path;

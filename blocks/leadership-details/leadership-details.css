@@ -96,32 +96,37 @@
   display: block;
 }
 
-/* Print icon, top-right above the portrait (desktop) */
-.leadership-details .leadership-bio-print {
-  position: absolute;
-  top: -48px;
+/* Print icon above the portrait, right-aligned (desktop) — mirrors .upspr-bio-print */
+.leadership-details .upspr-bio-print {
+  text-align: right;
+  padding-bottom: 24px;
+  position: relative;
+  display: block;
   right: 0;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid var(--link-color);
-  border-radius: 50%;
-  background: none;
-  cursor: pointer;
-  padding: 0;
 }
 
-.leadership-details .leadership-bio-print .upspr {
+.leadership-details .upspr-bio-print a {
+  font-size: 40px;
+  text-decoration: none;
+}
+
+.leadership-details .upspr-bio-print i {
   font-family: upspricons, tahoma, helvetica, arial, sans-serif;
-  font-size: 18px;
-  line-height: 1;
-  color: var(--link-color);
+  background: radial-gradient(#0662bb 50%, rgb(6 98 187 / 60%) 50%);
+  background-clip: text;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (width <= 991px) {
+  .leadership-details .upspr-bio-print {
+    padding-bottom: 14px;
+  }
 }
 
 @media (width <= 767px) {
-  .leadership-details .leadership-bio-print {
+  .leadership-details .upspr-bio-print {
     display: none;
   }
 }
