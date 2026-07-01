@@ -1,19 +1,23 @@
 .leadership-details {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 32px;
+  margin-top: 40px;
+  margin-bottom: 130px;
 }
 
 @media (width >= 768px) {
   .leadership-details {
     flex-direction: row;
     align-items: flex-start;
-    gap: 40px;
+    gap: 0;
   }
 }
 
+/* Left column: text */
 .leadership-details .leadership-bio-content {
   flex: 1 1 auto;
+  text-align: left;
 }
 
 @media (width >= 768px) {
@@ -23,48 +27,101 @@
   }
 }
 
-.leadership-details .leadership-bio-content h1 {
-  margin: 0 0 8px;
-  font-size: 48px;
+.leadership-details .leadership-bio-name {
+  margin: 0;
+  font-size: 40px;
+  line-height: 56px;
   font-weight: 500;
-  line-height: 1.1;
   color: var(--text-color);
+  text-align: left;
+}
+
+@media (width >= 1024px) {
+  .leadership-details .leadership-bio-name {
+    font-size: 48px;
+    line-height: 64px;
+  }
 }
 
 .leadership-details .leadership-bio-title {
   margin: 0 0 32px;
-  font-size: 24px;
+  font-size: 16px;
+  line-height: 24px;
   font-weight: 500;
   color: #767676;
+  text-align: left;
 }
 
-.leadership-details .leadership-bio-content p {
+@media (width >= 1024px) {
+  .leadership-details .leadership-bio-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.leadership-details .leadership-bio-body p {
   margin: 0 0 32px;
   font-size: 16px;
   line-height: 24px;
   color: var(--text-color);
 }
 
-.leadership-details .leadership-bio-content p b,
-.leadership-details .leadership-bio-content p strong {
+.leadership-details .leadership-bio-body p b,
+.leadership-details .leadership-bio-body p strong {
   font-weight: 700;
 }
 
+/* Right column: portrait + print */
 .leadership-details .leadership-bio-media {
+  position: relative;
   flex: 0 0 auto;
 }
 
 @media (width >= 768px) {
   .leadership-details .leadership-bio-media {
-    flex: 0 0 33%;
+    flex: 0 0 33.3333%;
     max-width: 380px;
+    margin-left: 8.3333%;
   }
 }
 
-.leadership-details .leadership-bio-media img {
+.leadership-details .leadership-bio-image {
+  position: relative;
+}
+
+.leadership-details .leadership-bio-image img {
   width: 100%;
-  max-width: 380px;
   height: auto;
-  border-radius: var(--border-radius-card);
+  border-radius: 8px;
   display: block;
+}
+
+/* Print icon, top-right above the portrait (desktop) */
+.leadership-details .leadership-bio-print {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--link-color);
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.leadership-details .leadership-bio-print .upspr {
+  font-family: upspricons, tahoma, helvetica, arial, sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--link-color);
+}
+
+@media (width <= 767px) {
+  .leadership-details .leadership-bio-print {
+    display: none;
+  }
 }

@@ -59,6 +59,7 @@ export default async function decorate(block) {
 
   if (displayName) {
     const h1 = document.createElement('h1');
+    h1.className = 'leadership-bio-name';
     h1.textContent = displayName;
     content.append(h1);
   }
@@ -78,13 +79,25 @@ export default async function decorate(block) {
     content.append(bio);
   }
 
-  // Right column: portrait.
+  // Right column: portrait + print affordance (top-right).
   const media = document.createElement('div');
   media.className = 'leadership-bio-media';
+
+  const print = document.createElement('button');
+  print.type = 'button';
+  print.className = 'leadership-bio-print';
+  print.setAttribute('aria-label', `Print profile ${displayName}`);
+  print.innerHTML = '<span class="upspr upspr-icon-print" aria-hidden="true"></span>';
+  print.addEventListener('click', () => window.print());
+  media.append(print);
+
   const headshot = data.headshot && data.headshot._path;
   if (headshot) {
+    const imageWrap = document.createElement('div');
+    imageWrap.className = 'leadership-bio-image';
     const pic = createOptimizedPicture(headshot, displayName, true, [{ width: '750' }]);
-    media.append(pic);
+    imageWrap.append(pic);
+    media.append(imageWrap);
   }
 
   block.replaceChildren(content, media);
