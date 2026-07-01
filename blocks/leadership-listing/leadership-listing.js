@@ -5,7 +5,6 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 import { getGraphQLUrl } from '../../scripts/config.js';
 
 const DEFAULT_QUERY = 'leadership-list';
-const SKELETON_COUNT = 6;
 
 /**
  * Derive the EDS bio page path from a CF _path. The bio pages are children
@@ -79,29 +78,6 @@ function renderCard(item) {
   return li;
 }
 
-// Placeholder card shown while the GraphQL fetch is in flight; mirrors the
-// real card's image + body layout so the swap causes no layout shift.
-function renderSkeletonCard() {
-  const li = document.createElement('li');
-  li.className = 'leadership-card-skeleton';
-  li.setAttribute('aria-hidden', 'true');
-
-  const imageWrap = document.createElement('div');
-  imageWrap.className = 'leadership-card-image ups-skeleton';
-
-  const body = document.createElement('div');
-  body.className = 'leadership-card-body';
-
-  const bar = document.createElement('span');
-  bar.className = 'leadership-skeleton-bar ups-skeleton';
-  const line = document.createElement('span');
-  line.className = 'leadership-skeleton-line ups-skeleton';
-
-  body.append(bar, line);
-  li.append(imageWrap, body);
-  return li;
-}
-
 export default async function decorate(block) {
   // Container model fields, in order: title, rootPath, tags, cta(anchor).
   const rows = [...block.children];
@@ -155,14 +131,10 @@ export default async function decorate(block) {
   if (hasHeader) block.replaceChildren(headerRow, ul);
   else block.replaceChildren(ul);
 
-  // Paint skeleton cards synchronously so the grid reserves space before fetch.
-  for (let i = 0; i < SKELETON_COUNT; i += 1) ul.append(renderSkeletonCard());
-
   const url = getGraphQLUrl(DEFAULT_QUERY, {
     rootPath: normalizeRootPath(rootPath),
     tag: tags.join('/'),
   });
   const leaders = await fetchLeaders(url);
-  ul.replaceChildren();
   leaders.forEach((item) => ul.append(renderCard(item)));
 }

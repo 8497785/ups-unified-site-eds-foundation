@@ -32,40 +32,6 @@ function readPath(row) {
   return (a ? a.getAttribute('href') : row.textContent.trim()) || '';
 }
 
-// Two-column placeholder matching the real bio layout; painted before fetch so
-// the portrait (LCP element) and text reserve space and don't shift on swap.
-function renderSkeleton() {
-  const frag = document.createDocumentFragment();
-
-  const content = document.createElement('div');
-  content.className = 'leadership-bio-content';
-  content.setAttribute('aria-hidden', 'true');
-
-  const name = document.createElement('span');
-  name.className = 'leadership-bio-skeleton-name ups-skeleton';
-  const title = document.createElement('span');
-  title.className = 'leadership-bio-skeleton-title ups-skeleton';
-  content.append(name, title);
-
-  const widths = ['100%', '96%', '90%', '98%', '70%'];
-  widths.forEach((w) => {
-    const line = document.createElement('span');
-    line.className = 'leadership-bio-skeleton-line ups-skeleton';
-    line.style.width = w;
-    content.append(line);
-  });
-
-  const media = document.createElement('div');
-  media.className = 'leadership-bio-media';
-  media.setAttribute('aria-hidden', 'true');
-  const portrait = document.createElement('div');
-  portrait.className = 'leadership-bio-skeleton-portrait ups-skeleton';
-  media.append(portrait);
-
-  frag.append(content, media);
-  return frag;
-}
-
 export default async function decorate(block) {
   // Fields in model order: fragment, highRes, lowRes.
   const rows = [...block.children];
@@ -81,9 +47,6 @@ export default async function decorate(block) {
     block.replaceChildren();
     return;
   }
-
-  // Paint skeleton synchronously before awaiting the fetch.
-  block.replaceChildren(renderSkeleton());
 
   const data = await fetchLeader(getGraphQLUrl(DEFAULT_QUERY, { path: cfPath }));
   if (!data) {
