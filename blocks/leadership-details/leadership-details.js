@@ -1,14 +1,33 @@
+/* eslint-disable no-underscore-dangle */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
-function toMasterJsonUrl(fragmentPath) {
-  const clean = fragmentPath.replace(/\/$/, '').replace(/\.html$/, '');
-  return `${clean}/jcr:content/data/master.json`;
+const DEFAULT_PROJECT = 'ups-global';
+const DEFAULT_QUERY = 'leadership-details';
+
+/**
+ * Normalize a Content Fragment path: drop the .html suffix the aem-content
+ * picker appends and any trailing slash.
+ */
+function normalizeCfPath(path) {
+  return (path || '').replace(/\.html$/, '').replace(/\/$/, '');
 }
 
-async function fetchFragment(fragmentPath) {
+/**
+ * Build the AEM GraphQL persisted-query URL with a raw (unencoded) semicolon
+ * param — the persisted query parses the literal path, so encoding the
+ * slashes/colons would break it. Same-origin (author tier).
+ */
+function buildQueryUrl(project, queryName, cfPath) {
+  return `/graphql/execute.json/${project}/${queryName};path=${cfPath}`;
+}
+
+async function fetchLeader(url) {
   try {
-    const resp = await fetch(toMasterJsonUrl(fragmentPath));
-    if (resp.ok) return resp.json();
+    const resp = await fetch(url);
+    if (resp.ok) {
+      const json = await resp.json();
+      return json?.data?.leaderships?.list || null;
+    }
   } catch (e) {
     // network/auth/CORS failure — fall through to null
   }
@@ -17,27 +36,27 @@ async function fetchFragment(fragmentPath) {
 
 export default async function decorate(block) {
   const link = block.querySelector('a');
-  const fragmentPath = link
-    ? link.getAttribute('href')
-    : block.textContent.trim();
+  const rawPath = link ? link.getAttribute('href') : block.textContent.trim();
+  const cfPath = normalizeCfPath(rawPath);
 
-  if (!fragmentPath) {
+  if (!cfPath) {
     block.replaceChildren();
     return;
   }
 
-  const data = await fetchFragment(fragmentPath);
+  const data = await fetchLeader(buildQueryUrl(DEFAULT_PROJECT, DEFAULT_QUERY, cfPath));
   if (!data) {
-    // Runtime fetch unavailable (e.g. unauthenticated context); render nothing.
+    // Runtime fetch unavailable (e.g. off-AEM origin or unauthenticated); render nothing.
     block.replaceChildren();
     return;
   }
 
+  const displayName = [data.firstName, data.lastName].filter(Boolean).join(' ');
+
+  // Left column: name, subtitle, bio.
   const content = document.createElement('div');
   content.className = 'leadership-bio-content';
 
-  const displayName = data.title
-    || [data.firstName, data.lastName].filter(Boolean).join(' ');
   if (displayName) {
     const h1 = document.createElement('h1');
     h1.textContent = displayName;
@@ -51,17 +70,20 @@ export default async function decorate(block) {
     content.append(role);
   }
 
-  if (data.bio) {
+  const details = data.bio && data.bio.details;
+  if (details) {
     const bio = document.createElement('div');
     bio.className = 'leadership-bio-body';
-    bio.innerHTML = data.bio;
+    bio.innerHTML = details;
     content.append(bio);
   }
 
+  // Right column: portrait.
   const media = document.createElement('div');
   media.className = 'leadership-bio-media';
-  if (data.headshot) {
-    const pic = createOptimizedPicture(data.headshot, displayName, true, [{ width: '750' }]);
+  const headshot = data.headshot && data.headshot._path;
+  if (headshot) {
+    const pic = createOptimizedPicture(headshot, displayName, true, [{ width: '750' }]);
     media.append(pic);
   }
 

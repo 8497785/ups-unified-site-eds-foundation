@@ -1,6 +1,6 @@
 .leadership-details {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 32px;
 }
 
