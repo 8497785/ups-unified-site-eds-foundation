@@ -1,4 +1,5 @@
 /* stylelint-disable selector-class-pattern -- AEM source class names (upspr-*_*, camelCase) kept for parity */
+/* stylelint-disable no-descending-specificity */
 
 .leadership-details {
   display: flex;
@@ -98,31 +99,57 @@
   display: block;
 }
 
-/* Download trigger button (bottom-left over the portrait) */
-.leadership-details .upspr-bio-image_download-btn {
+/* Download trigger button (bottom-left over the portrait) — mirrors source */
+.leadership-details .upspr-image_download-btn {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
+  bottom: 24px;
+  left: 24px;
 }
 
-.leadership-details .upspr-bio-image_download-btn button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (width <= 991px) {
+  .leadership-details .upspr-image_download-btn {
+    bottom: 10px;
+    left: 20px;
+  }
+}
+
+@media (width <= 767px) {
+  .leadership-details .upspr-image_download-btn {
+    bottom: 20px;
+    left: 24px;
+  }
+}
+
+.leadership-details .upspr-image_download-btn button {
+  display: block;
+  position: relative;
   width: 40px;
   height: 40px;
-  padding: 0;
-  border: none;
+  border: 0;
   border-radius: 8px;
-  background: var(--link-color);
-  color: #fff;
+  background-color: #0662bb;
   cursor: pointer;
 }
 
-.leadership-details .upspr-bio-image_download-btn .upspr {
+.leadership-details .upspr-image_download-btn i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
   font-family: upspricons, tahoma, helvetica, arial, sans-serif;
   font-size: 20px;
   line-height: 1;
+  background: radial-gradient(#fff 50%, rgb(255 255 255 / 50%) 50%);
+  background-clip: text;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.leadership-details .upspr-image_download-btn i:hover {
+  background: none;
+  -webkit-text-fill-color: initial;
   color: #fff;
 }
 
