@@ -131,7 +131,7 @@ export default async function decorate(block) {
     // even if the authored content left the brand link empty.
     const brandLink = navBrand.querySelector('a');
     if (brandLink) {
-      brandLink.setAttribute('href', '');
+      brandLink.setAttribute('href', '/us/en/home');
       if (!brandLink.querySelector('img, picture, svg')) {
         const alt = brandLink.textContent.trim() || 'UPS';
         const pic = createOptimizedPicture('/assets/ups-logo.svg', alt, true, [{ width: '56' }]);
