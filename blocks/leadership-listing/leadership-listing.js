@@ -2,6 +2,7 @@
 /* Leadership Listing block — renders leadership profiles from AEM GraphQL. */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
+import { AEM_GRAPHQL_HOST } from '../../scripts/config.js';
 
 const DEFAULT_PROJECT = 'ups-global';
 const DEFAULT_QUERY = 'leadership-list';
@@ -35,7 +36,8 @@ function normalizeRootPath(path) {
  * Same-origin (author tier): /graphql/execute.json/{project}/{query};rootPath=..;tag=..
  */
 function buildQueryUrl(project, queryName, rootPath, tags) {
-  let url = `/graphql/execute.json/${project}/${queryName}`;
+  const base = AEM_GRAPHQL_HOST || '';
+  let url = `${base}/graphql/execute.json/${project}/${queryName}`;
   const cleanRoot = normalizeRootPath(rootPath);
   if (cleanRoot) url += `;rootPath=${cleanRoot}`;
   if (tags && tags.length) url += `;tag=${tags.join('/')}`;

@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import { createOptimizedPicture } from '../../scripts/aem.js';
+import { AEM_GRAPHQL_HOST } from '../../scripts/config.js';
 
 const DEFAULT_PROJECT = 'ups-global';
 const DEFAULT_QUERY = 'leadership-details';
@@ -18,7 +19,8 @@ function normalizeCfPath(path) {
  * slashes/colons would break it. Same-origin (author tier).
  */
 function buildQueryUrl(project, queryName, cfPath) {
-  return `/graphql/execute.json/${project}/${queryName};path=${cfPath}`;
+  const base = AEM_GRAPHQL_HOST || '';
+  return `${base}/graphql/execute.json/${project}/${queryName};path=${cfPath}`;
 }
 
 async function fetchLeader(url) {
