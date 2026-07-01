@@ -1,6 +1,6 @@
 {
   "mappings": [
-    "/content/about-ups-eds/:/"
+    "/content/about-ups-eds/us/en/:/us/en/"
   ],
   "includes": [
     "/content/about-ups-eds/us/en/"
