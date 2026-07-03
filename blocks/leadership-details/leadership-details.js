@@ -98,7 +98,7 @@ export default async function decorate(block) {
   print.append(printLink);
   media.append(print);
 
-  const headshot = data.headshot && data.headshot.path;
+  const headshot = data.headshot && data.headshot._path;
   if (headshot) {
     const imageWrap = document.createElement('div');
     imageWrap.className = 'upspr-bio-image';

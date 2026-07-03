@@ -49,7 +49,7 @@ function renderCard(item) {
 
   const imageWrap = document.createElement('div');
   imageWrap.className = 'leadership-card-image';
-  const headshot = item.headshot && item.headshot.path;
+  const headshot = item.headshot && item.headshot._path;
   const altName = [item.firstName, item.lastName].filter(Boolean).join(' ');
   if (headshot) {
     // _path is already a Dynamic Media delivery URL — use it directly.
