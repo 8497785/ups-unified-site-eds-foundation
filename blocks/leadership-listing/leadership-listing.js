@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 /* Leadership Listing block — renders leadership profiles from AEM GraphQL. */
 import { moveInstrumentation } from '../../scripts/scripts.js';
-import { getGraphQLUrl } from '../../scripts/config.js';
+import { getGraphQLUrl, getDynamicMediaUrl } from '../../scripts/config.js';
 
 const DEFAULT_QUERY = 'leadership-list';
 
@@ -49,12 +49,12 @@ function renderCard(item) {
 
   const imageWrap = document.createElement('div');
   imageWrap.className = 'leadership-card-image';
-  const headshot = item.headshot && item.headshot._path;
+  const headshot = item.headshot && (item.headshot._dynamicUrl || item.headshot._path);
   const altName = [item.firstName, item.lastName].filter(Boolean).join(' ');
   if (headshot) {
-    // _path is already a Dynamic Media delivery URL — use it directly.
+    // _dynamicUrl is the Dynamic Media delivery path; add render params for cards.
     const img = document.createElement('img');
-    img.src = headshot;
+    img.src = getDynamicMediaUrl(headshot, { width: 400 });
     img.alt = altName;
     img.loading = 'lazy';
     imageWrap.append(img);

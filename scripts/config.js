@@ -44,3 +44,21 @@ export function getGraphQLUrl(queryName, params = {}) {
   });
   return url;
 }
+
+const DM_IMAGE_QUALITY = '85';
+
+/**
+ * Append Dynamic Media delivery params to a GraphQL headshot `_dynamicUrl`
+ * (already in `/adobe/dynamicmedia/deliver/dm-aid--<uuid>/<file>.jpg` form),
+ * mirroring the image block: quality=85&width=<w>&preferwebp=true.
+ *
+ * @param {string} dynamicUrl the headshot `_dynamicUrl` value
+ * @param {Object} [opts]
+ * @param {number} [opts.width=1280] target render width
+ * @returns {string} the delivery URL with params, or '' when input is empty
+ */
+export function getDynamicMediaUrl(dynamicUrl, { width = 1280 } = {}) {
+  if (!dynamicUrl) return '';
+  const sep = dynamicUrl.includes('?') ? '&' : '?';
+  return `${dynamicUrl}${sep}quality=${DM_IMAGE_QUALITY}&width=${width}&preferwebp=true`;
+}

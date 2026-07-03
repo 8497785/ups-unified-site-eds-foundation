@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import { getGraphQLUrl } from '../../scripts/config.js';
+import { getGraphQLUrl, getDynamicMediaUrl } from '../../scripts/config.js';
 
 const DEFAULT_QUERY = 'leadership-details';
 
@@ -98,13 +98,13 @@ export default async function decorate(block) {
   print.append(printLink);
   media.append(print);
 
-  const headshot = data.headshot && data.headshot._path;
+  const headshot = data.headshot && (data.headshot._dynamicUrl || data.headshot._path);
   if (headshot) {
     const imageWrap = document.createElement('div');
     imageWrap.className = 'upspr-bio-image';
-    // _path is already a Dynamic Media delivery URL — use it directly.
+    // _dynamicUrl is the Dynamic Media delivery path; add render params for the portrait.
     const pic = document.createElement('img');
-    pic.src = headshot;
+    pic.src = getDynamicMediaUrl(headshot, { width: 1280 });
     pic.alt = displayName;
     imageWrap.append(pic);
 
