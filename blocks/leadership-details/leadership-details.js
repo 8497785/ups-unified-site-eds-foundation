@@ -1,5 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-import { createOptimizedPicture } from '../../scripts/aem.js';
 import { getGraphQLUrl } from '../../scripts/config.js';
 
 const DEFAULT_QUERY = 'leadership-details';
@@ -103,7 +102,10 @@ export default async function decorate(block) {
   if (headshot) {
     const imageWrap = document.createElement('div');
     imageWrap.className = 'upspr-bio-image';
-    const pic = createOptimizedPicture(headshot, displayName, true, [{ width: '750' }]);
+    // _path is already a Dynamic Media delivery URL — use it directly.
+    const pic = document.createElement('img');
+    pic.src = headshot;
+    pic.alt = displayName;
     imageWrap.append(pic);
 
     // Download trigger button

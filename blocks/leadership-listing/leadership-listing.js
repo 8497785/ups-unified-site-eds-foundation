@@ -1,6 +1,5 @@
 /* eslint-disable no-underscore-dangle */
 /* Leadership Listing block — renders leadership profiles from AEM GraphQL. */
-import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 import { getGraphQLUrl } from '../../scripts/config.js';
 
@@ -53,8 +52,12 @@ function renderCard(item) {
   const headshot = item.headshot && item.headshot._path;
   const altName = [item.firstName, item.lastName].filter(Boolean).join(' ');
   if (headshot) {
-    const pic = createOptimizedPicture(headshot, altName, false, [{ width: '400' }]);
-    imageWrap.append(pic);
+    // _path is already a Dynamic Media delivery URL — use it directly.
+    const img = document.createElement('img');
+    img.src = headshot;
+    img.alt = altName;
+    img.loading = 'lazy';
+    imageWrap.append(img);
   }
 
   const body = document.createElement('div');
