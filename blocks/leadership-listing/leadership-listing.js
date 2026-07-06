@@ -6,17 +6,15 @@ import { getGraphQLUrl, getDynamicMediaUrl } from '../../scripts/config.js';
 const DEFAULT_QUERY = 'leadership-list';
 
 /**
- * Derive the EDS bio page path from a CF _path. The bio pages are children
- * of the current leadership page, so the link base is derived from the
- * current page path — keeping it locale-aware (works under any /<region>/<lang>/
- * or clean-URL mapping) instead of a hardcoded prefix. The ordering prefix
- * (e.g. "01-a-") is stripped from the slug.
+ * Derive the EDS bio page path from a CF _path. The bio pages are children of
+ * the current leadership page, so the link is the current page path plus the
+ * last segment of the CF _path (e.g. ".../our-leadership/carol-tome" →
+ * "<current-path>/carol-tome").
  */
 function deriveBioLink(cfPath) {
   const slug = cfPath.replace(/\/$/, '').split('/').pop();
-  const name = slug.replace(/^\d+-[a-z]-/, '').replace(/^\d+-/, '');
-  const base = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '');
-  return `${base}/${name}.html`;
+  const base = window.location.pathname.replace(/\/$/, '');
+  return `${base}/${slug}`;
 }
 
 /**
