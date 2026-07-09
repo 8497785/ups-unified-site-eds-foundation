@@ -77,6 +77,26 @@
             "value": "h6"
           }
         ]
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "align-center",
+        "label": "Alignment",
+        "options": [
+          {
+            "name": "Left",
+            "value": "align-left"
+          },
+          {
+            "name": "Center",
+            "value": "align-center"
+          },
+          {
+            "name": "Right",
+            "value": "align-right"
+          }
+        ]
       }
     ]
   },
@@ -240,12 +260,6 @@
   {
     "id": "column-control",
     "fields": [
-      {
-        "component": "text",
-        "name": "name",
-        "label": "Name",
-        "description": "The label shown for this Column Control in the Content Tree (authoring only; not rendered on the page)."
-      },
       {
         "component": "select",
         "valueType": "number",

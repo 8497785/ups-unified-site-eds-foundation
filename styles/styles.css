@@ -126,6 +126,11 @@ h6 {
   scroll-margin: 40px;
 }
 
+/* Title component alignment (set via the Title "Alignment" dropdown -> classes). */
+.align-left { text-align: left; }
+.align-center { text-align: center; }
+.align-right { text-align: right; }
+
 h1 {
   font-size: var(--heading-font-size-xxl);
   line-height: 1.2;
