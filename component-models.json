@@ -317,11 +317,26 @@
     "id": "grid-layout-container",
     "fields": [
       {
+        "component": "text",
+        "valueType": "number",
+        "name": "columns",
+        "value": "",
+        "label": "Number of Columns",
+        "description": "How many column cells to create in the row."
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "rows",
+        "value": "",
+        "label": "Rows"
+      },
+      {
         "component": "select",
         "name": "classes",
         "value": "layout-12",
         "label": "Layout",
-        "description": "Column widths on a 12-unit grid. Add one Grid Column child per width value (e.g. Two 8/4 = add 2 columns).",
+        "description": "Column widths on a 12-unit grid. Should match the number of columns (e.g. 8/4 = 2 columns).",
         "options": [
           {
             "name": "Single — 12",
@@ -406,10 +421,6 @@
         ]
       }
     ]
-  },
-  {
-    "id": "grid-column",
-    "fields": []
   },
   {
     "id": "headline",

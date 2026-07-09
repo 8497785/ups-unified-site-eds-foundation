@@ -244,24 +244,8 @@
                   "name": "Grid Layout Container",
                   "model": "grid-layout-container",
                   "filter": "grid-layout-container",
-                  "columns": "1",
+                  "columns": "2",
                   "rows": "1"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Grid Column",
-          "id": "grid-column",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/columns/v1/column",
-                "template": {
-                  "name": "Grid Column",
-                  "model": "grid-column",
-                  "filter": "grid-column"
                 }
               }
             }

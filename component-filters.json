@@ -60,27 +60,6 @@
       "text",
       "image",
       "button",
-      "title"
-    ]
-  },
-  {
-    "id": "downloads",
-    "components": [
-      "download-item"
-    ]
-  },
-  {
-    "id": "grid-layout-container",
-    "components": [
-      "grid-column"
-    ]
-  },
-  {
-    "id": "grid-column",
-    "components": [
-      "text",
-      "image",
-      "button",
       "title",
       "hero",
       "hero-featured",
@@ -97,6 +76,18 @@
       "article-header",
       "social-share",
       "downloads"
+    ]
+  },
+  {
+    "id": "downloads",
+    "components": [
+      "download-item"
+    ]
+  },
+  {
+    "id": "grid-layout-container",
+    "components": [
+      "column"
     ]
   },
   {

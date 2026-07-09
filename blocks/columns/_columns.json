@@ -50,7 +50,22 @@
         "text",
         "image",
         "button",
-        "title"
+        "title",
+        "hero",
+        "hero-featured",
+        "hero-stats",
+        "cards",
+        "cards-story",
+        "columns-media",
+        "fragment",
+        "leadership-list-cf",
+        "leadership-details",
+        "leadership-listing",
+        "headline",
+        "breadcrumb",
+        "article-header",
+        "social-share",
+        "downloads"
       ]
     }
   ]

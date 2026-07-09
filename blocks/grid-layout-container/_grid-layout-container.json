@@ -11,24 +11,8 @@
               "name": "Grid Layout Container",
               "model": "grid-layout-container",
               "filter": "grid-layout-container",
-              "columns": "1",
+              "columns": "2",
               "rows": "1"
-            }
-          }
-        }
-      }
-    },
-    {
-      "title": "Grid Column",
-      "id": "grid-column",
-      "plugins": {
-        "xwalk": {
-          "page": {
-            "resourceType": "core/franklin/components/columns/v1/column",
-            "template": {
-              "name": "Grid Column",
-              "model": "grid-column",
-              "filter": "grid-column"
             }
           }
         }
@@ -40,11 +24,26 @@
       "id": "grid-layout-container",
       "fields": [
         {
+          "component": "text",
+          "valueType": "number",
+          "name": "columns",
+          "value": "",
+          "label": "Number of Columns",
+          "description": "How many column cells to create in the row."
+        },
+        {
+          "component": "text",
+          "valueType": "number",
+          "name": "rows",
+          "value": "",
+          "label": "Rows"
+        },
+        {
           "component": "select",
           "name": "classes",
           "value": "layout-12",
           "label": "Layout",
-          "description": "Column widths on a 12-unit grid. Add one Grid Column child per width value (e.g. Two 8/4 = add 2 columns).",
+          "description": "Column widths on a 12-unit grid. Should match the number of columns (e.g. 8/4 = 2 columns).",
           "options": [
             { "name": "Single — 12", "value": "layout-12" },
             { "name": "Two — 6 / 6", "value": "layout-6-6" },
@@ -69,41 +68,13 @@
           ]
         }
       ]
-    },
-    {
-      "id": "grid-column",
-      "fields": []
     }
   ],
   "filters": [
     {
       "id": "grid-layout-container",
       "components": [
-        "grid-column"
-      ]
-    },
-    {
-      "id": "grid-column",
-      "components": [
-        "text",
-        "image",
-        "button",
-        "title",
-        "hero",
-        "hero-featured",
-        "hero-stats",
-        "cards",
-        "cards-story",
-        "columns-media",
-        "fragment",
-        "leadership-list-cf",
-        "leadership-details",
-        "leadership-listing",
-        "headline",
-        "breadcrumb",
-        "article-header",
-        "social-share",
-        "downloads"
+        "column"
       ]
     }
   ]
