@@ -24,19 +24,18 @@
       "id": "grid-layout-container",
       "fields": [
         {
-          "component": "text",
+          "component": "number",
           "valueType": "number",
           "name": "columns",
-          "value": "",
+          "value": "2",
           "label": "Number of Columns",
-          "description": "How many column cells to create in the row."
-        },
-        {
-          "component": "text",
-          "valueType": "number",
-          "name": "rows",
-          "value": "",
-          "label": "Rows"
+          "description": "How many columns to create (1–4).",
+          "required": true,
+          "validation": {
+            "numberMin": 1,
+            "numberMax": 4,
+            "customErrorMsg": "Number of Columns must be between 1 and 4."
+          }
         },
         {
           "component": "select",
