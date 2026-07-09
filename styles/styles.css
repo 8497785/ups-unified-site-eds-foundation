@@ -126,10 +126,32 @@ h6 {
   scroll-margin: 40px;
 }
 
-/* Title component alignment (set via the Title "Alignment" dropdown -> classes). */
-.align-left { text-align: left; }
-.align-center { text-align: center; }
-.align-right { text-align: right; }
+/* Title component alignment (set via the Title "Alignment" dropdown -> classes).
+   The classes land on the title's wrapper, so also target the heading inside it
+   to override the default `h1/h2… { text-align: center }` rules. */
+.align-left,
+.align-left h1,
+.align-left h2,
+.align-left h3,
+.align-left h4,
+.align-left h5,
+.align-left h6 { text-align: left; }
+
+.align-center,
+.align-center h1,
+.align-center h2,
+.align-center h3,
+.align-center h4,
+.align-center h5,
+.align-center h6 { text-align: center; }
+
+.align-right,
+.align-right h1,
+.align-right h2,
+.align-right h3,
+.align-right h4,
+.align-right h5,
+.align-right h6 { text-align: right; }
 
 h1 {
   font-size: var(--heading-font-size-xxl);
