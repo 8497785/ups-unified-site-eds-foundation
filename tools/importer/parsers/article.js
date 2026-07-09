@@ -123,12 +123,11 @@ export default function parse(element, { document }) {
   rightCol.appendChild(socialBlock);
 
   // ---- Grid Layout Container (8/4) ----
-  // The container-level `cols-8-4` class carries the layout through the importer
-  // (per-column width classes can't travel via the block table); the block JS
-  // reads it to render an 8/4 grid. In the authored JCR, each Grid Column also
-  // gets its own width-8 / width-4 class.
+  // The layout travels as the container's `classes` value (block-option in the
+  // name parenthetical -> `layout-8-4` class). Grid Column cells are content
+  // drop-zones; the block JS reads the layout preset to size them 8/4.
   const gridBlock = WebImporter.Blocks.createBlock(document, {
-    name: 'Grid Layout Container (cols-8-4)',
+    name: 'Grid Layout Container (layout-8-4)',
     cells: [[leftCol, rightCol]],
   });
 

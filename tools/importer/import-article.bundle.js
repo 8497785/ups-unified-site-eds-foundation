@@ -123,7 +123,7 @@ var CustomImportScript = (() => {
     const rightCol = document.createElement("div");
     rightCol.appendChild(socialBlock);
     const gridBlock = WebImporter.Blocks.createBlock(document, {
-      name: "Grid Layout Container (cols-8-4)",
+      name: "Grid Layout Container (layout-8-4)",
       cells: [[leftCol, rightCol]]
     });
     const container = document.createElement("div");

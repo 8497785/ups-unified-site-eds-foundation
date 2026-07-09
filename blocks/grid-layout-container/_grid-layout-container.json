@@ -6,10 +6,13 @@
       "plugins": {
         "xwalk": {
           "page": {
-            "resourceType": "core/franklin/components/block/v1/block",
+            "resourceType": "core/franklin/components/columns/v1/columns",
             "template": {
               "name": "Grid Layout Container",
-              "filter": "grid-layout-container"
+              "model": "grid-layout-container",
+              "filter": "grid-layout-container",
+              "columns": "1",
+              "rows": "1"
             }
           }
         }
@@ -21,7 +24,7 @@
       "plugins": {
         "xwalk": {
           "page": {
-            "resourceType": "core/franklin/components/block/v1/block/item",
+            "resourceType": "core/franklin/components/columns/v1/column",
             "template": {
               "name": "Grid Column",
               "model": "grid-column",
@@ -34,31 +37,42 @@
   ],
   "models": [
     {
-      "id": "grid-column",
+      "id": "grid-layout-container",
       "fields": [
         {
           "component": "select",
           "name": "classes",
-          "value": "width-auto",
-          "label": "Width",
-          "description": "Column width on a 12-unit grid. Auto shares the row equally. Explicit widths across the row should total 12.",
+          "value": "layout-12",
+          "label": "Layout",
+          "description": "Column widths on a 12-unit grid. Add one Grid Column child per width value (e.g. Two 8/4 = add 2 columns).",
           "options": [
-            { "name": "Auto", "value": "width-auto" },
-            { "name": "1", "value": "width-1" },
-            { "name": "2", "value": "width-2" },
-            { "name": "3", "value": "width-3" },
-            { "name": "4", "value": "width-4" },
-            { "name": "5", "value": "width-5" },
-            { "name": "6", "value": "width-6" },
-            { "name": "7", "value": "width-7" },
-            { "name": "8", "value": "width-8" },
-            { "name": "9", "value": "width-9" },
-            { "name": "10", "value": "width-10" },
-            { "name": "11", "value": "width-11" },
-            { "name": "12", "value": "width-12" }
+            { "name": "Single — 12", "value": "layout-12" },
+            { "name": "Two — 6 / 6", "value": "layout-6-6" },
+            { "name": "Two — 4 / 8", "value": "layout-4-8" },
+            { "name": "Two — 8 / 4", "value": "layout-8-4" },
+            { "name": "Two — 3 / 9", "value": "layout-3-9" },
+            { "name": "Two — 9 / 3", "value": "layout-9-3" },
+            { "name": "Two — 5 / 7", "value": "layout-5-7" },
+            { "name": "Two — 7 / 5", "value": "layout-7-5" },
+            { "name": "Two — 2 / 10", "value": "layout-2-10" },
+            { "name": "Two — 10 / 2", "value": "layout-10-2" },
+            { "name": "Three — 4 / 4 / 4", "value": "layout-4-4-4" },
+            { "name": "Three — 3 / 3 / 6", "value": "layout-3-3-6" },
+            { "name": "Three — 6 / 3 / 3", "value": "layout-6-3-3" },
+            { "name": "Three — 3 / 6 / 3", "value": "layout-3-6-3" },
+            { "name": "Three — 2 / 5 / 5", "value": "layout-2-5-5" },
+            { "name": "Three — 5 / 2 / 5", "value": "layout-5-2-5" },
+            { "name": "Three — 5 / 5 / 2", "value": "layout-5-5-2" },
+            { "name": "Four — 3 / 3 / 3 / 3", "value": "layout-3-3-3-3" },
+            { "name": "Four — 2 / 4 / 4 / 2", "value": "layout-2-4-4-2" },
+            { "name": "Four — 4 / 2 / 2 / 4", "value": "layout-4-2-2-4" }
           ]
         }
       ]
+    },
+    {
+      "id": "grid-column",
+      "fields": []
     }
   ],
   "filters": [
