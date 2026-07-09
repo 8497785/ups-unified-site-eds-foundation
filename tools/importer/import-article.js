@@ -15,7 +15,7 @@ const parsers = {
 // PAGE TEMPLATE CONFIGURATION
 const PAGE_TEMPLATE = {
   name: 'article',
-  description: 'Press-release / article detail page: article-header, hero image, and a Grid Layout Container (8/4) with body rich text and a social-share block',
+  description: 'Press-release / article detail page: article-header, hero image, and a Column Control (8/4) with body rich text and a social-share block',
   urls: [
     'https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-extends-complex-healthcare-logistics-lead-with--48-million-i.html',
   ],

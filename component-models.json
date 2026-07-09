@@ -238,84 +238,14 @@
     ]
   },
   {
-    "id": "columns-media",
+    "id": "column-control",
     "fields": [
       {
         "component": "text",
-        "valueType": "number",
-        "name": "columns",
-        "value": "",
-        "label": "Columns"
+        "name": "name",
+        "label": "Name",
+        "description": "The label shown for this Column Control in the Content Tree (authoring only; not rendered on the page)."
       },
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "rows",
-        "value": "",
-        "label": "Rows"
-      }
-    ]
-  },
-  {
-    "id": "columns",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "columns",
-        "value": "",
-        "label": "Columns"
-      },
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "rows",
-        "value": "",
-        "label": "Rows"
-      }
-    ]
-  },
-  {
-    "id": "downloads",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Section Title",
-        "value": "Downloads"
-      }
-    ]
-  },
-  {
-    "id": "download-item",
-    "fields": [
-      {
-        "component": "aem-content",
-        "name": "asset",
-        "label": "File / Asset"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "assetText",
-        "label": "Link Label"
-      }
-    ]
-  },
-  {
-    "id": "fragment",
-    "fields": [
-      {
-        "component": "aem-content",
-        "name": "reference",
-        "label": "Reference"
-      }
-    ]
-  },
-  {
-    "id": "grid-layout-container",
-    "fields": [
       {
         "component": "select",
         "valueType": "number",
@@ -430,6 +360,82 @@
             "value": "layout-4-2-2-4"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "columns-media",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "columns",
+        "value": "",
+        "label": "Columns"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "rows",
+        "value": "",
+        "label": "Rows"
+      }
+    ]
+  },
+  {
+    "id": "columns",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "columns",
+        "value": "",
+        "label": "Columns"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "rows",
+        "value": "",
+        "label": "Rows"
+      }
+    ]
+  },
+  {
+    "id": "downloads",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Section Title",
+        "value": "Downloads"
+      }
+    ]
+  },
+  {
+    "id": "download-item",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "asset",
+        "label": "File / Asset"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "assetText",
+        "label": "Link Label"
+      }
+    ]
+  },
+  {
+    "id": "fragment",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "reference",
+        "label": "Reference"
       }
     ]
   },

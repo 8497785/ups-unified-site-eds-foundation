@@ -123,7 +123,7 @@ var CustomImportScript = (() => {
     const rightCol = document.createElement("div");
     rightCol.appendChild(socialBlock);
     const gridBlock = WebImporter.Blocks.createBlock(document, {
-      name: "Grid Layout Container (layout-8-4)",
+      name: "Column Control (layout-8-4)",
       cells: [[leftCol, rightCol]]
     });
     const container = document.createElement("div");
@@ -175,7 +175,7 @@ var CustomImportScript = (() => {
   };
   var PAGE_TEMPLATE = {
     name: "article",
-    description: "Press-release / article detail page: article-header, hero image, and a Grid Layout Container (8/4) with body rich text and a social-share block",
+    description: "Press-release / article detail page: article-header, hero image, and a Column Control (8/4) with body rich text and a social-share block",
     urls: [
       "https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-extends-complex-healthcare-logistics-lead-with--48-million-i.html"
     ],

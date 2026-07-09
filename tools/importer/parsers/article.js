@@ -9,7 +9,7 @@
  * Produces, in order, within a single container:
  *   1. article-header block (eyebrow, eyebrowLink, title, description, articleDate, hideReadTime)
  *   2. hero image (default content <picture>)
- *   3. Grid Layout Container (8/4):
+ *   3. Column Control (8/4):
  *        left  (width 8) = body rich text
  *        right (width 4) = social-share block
  *
@@ -122,12 +122,12 @@ export default function parse(element, { document }) {
   const rightCol = document.createElement('div');
   rightCol.appendChild(socialBlock);
 
-  // ---- Grid Layout Container (8/4) ----
+  // ---- Column Control (8/4) ----
   // The layout travels as the container's `classes` value (block-option in the
-  // name parenthetical -> `layout-8-4` class). Grid Column cells are content
+  // name parenthetical -> `layout-8-4` class). Column cells are content
   // drop-zones; the block JS reads the layout preset to size them 8/4.
   const gridBlock = WebImporter.Blocks.createBlock(document, {
-    name: 'Grid Layout Container (layout-8-4)',
+    name: 'Column Control (layout-8-4)',
     cells: [[leftCol, rightCol]],
   });
 

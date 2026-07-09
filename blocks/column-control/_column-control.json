@@ -1,16 +1,16 @@
 {
   "definitions": [
     {
-      "title": "Grid Layout Container",
-      "id": "grid-layout-container",
+      "title": "Column Control",
+      "id": "column-control",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/columns/v1/columns",
             "template": {
-              "name": "Grid Layout Container",
-              "model": "grid-layout-container",
-              "filter": "grid-layout-container",
+              "name": "Column Control",
+              "model": "column-control",
+              "filter": "column-control",
               "columns": "2",
               "rows": "1"
             }
@@ -21,8 +21,14 @@
   ],
   "models": [
     {
-      "id": "grid-layout-container",
+      "id": "column-control",
       "fields": [
+        {
+          "component": "text",
+          "name": "name",
+          "label": "Name",
+          "description": "The label shown for this Column Control in the Content Tree (authoring only; not rendered on the page)."
+        },
         {
           "component": "select",
           "valueType": "number",
@@ -71,7 +77,7 @@
   ],
   "filters": [
     {
-      "id": "grid-layout-container",
+      "id": "column-control",
       "components": [
         "column"
       ]

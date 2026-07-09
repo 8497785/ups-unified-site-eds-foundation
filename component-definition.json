@@ -158,6 +158,24 @@
           }
         },
         {
+          "title": "Column Control",
+          "id": "column-control",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/columns",
+                "template": {
+                  "name": "Column Control",
+                  "model": "column-control",
+                  "filter": "column-control",
+                  "columns": "2",
+                  "rows": "1"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Columns Media",
           "id": "columns-media",
           "plugins": {
@@ -228,24 +246,6 @@
                 "template": {
                   "name": "Fragment",
                   "model": "fragment"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Grid Layout Container",
-          "id": "grid-layout-container",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/columns/v1/columns",
-                "template": {
-                  "name": "Grid Layout Container",
-                  "model": "grid-layout-container",
-                  "filter": "grid-layout-container",
-                  "columns": "2",
-                  "rows": "1"
                 }
               }
             }

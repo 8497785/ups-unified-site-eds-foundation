@@ -60,7 +60,7 @@ function tableToBlock(table) {
 // Decorate + load any blocks authored inside the columns (EDS only auto-decorates
 // top-level section blocks), handling raw <table> markup too. Each nested block
 // is wrapped in its own <div> so the EDS-added `<name>-wrapper` class lands on
-// that wrapper, not on the `.grid-column`.
+// that wrapper, not on the `.grid-column` cell.
 async function loadNestedBlocks(columns) {
   columns.forEach((col) => {
     col.querySelectorAll(':scope table').forEach((table) => tableToBlock(table));

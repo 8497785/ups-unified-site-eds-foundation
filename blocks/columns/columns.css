@@ -32,7 +32,7 @@
   }
 }
 
-/* Layout-preset columns (Grid Layout Container): a `layout-N-N` class assigns
+/* Layout-preset columns (Column Control): a `layout-N-N` class assigns
    col-lg-* spans on each cell (see columns.js). Use CSS Grid on the row so the
    12-unit widths are honored. Scoped to .columns[class*="layout-"] so regular
    columns blocks are unaffected. Media queries don't add specificity, so the
