@@ -244,8 +244,66 @@
                   "name": "Grid Layout Container",
                   "model": "grid-layout-container",
                   "filter": "grid-layout-container",
+                  "columns": "1",
+                  "rows": "1",
+                  "classes": "layout-12"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Grid Layout Container (2 columns)",
+          "id": "grid-layout-container-2",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/columns",
+                "template": {
+                  "name": "Grid Layout Container",
+                  "model": "grid-layout-container-2",
+                  "filter": "grid-layout-container",
                   "columns": "2",
-                  "rows": "1"
+                  "rows": "1",
+                  "classes": "layout-6-6"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Grid Layout Container (3 columns)",
+          "id": "grid-layout-container-3",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/columns",
+                "template": {
+                  "name": "Grid Layout Container",
+                  "model": "grid-layout-container-3",
+                  "filter": "grid-layout-container",
+                  "columns": "3",
+                  "rows": "1",
+                  "classes": "layout-4-4-4"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Grid Layout Container (4 columns)",
+          "id": "grid-layout-container-4",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/columns",
+                "template": {
+                  "name": "Grid Layout Container",
+                  "model": "grid-layout-container-4",
+                  "filter": "grid-layout-container",
+                  "columns": "4",
+                  "rows": "1",
+                  "classes": "layout-3-3-3-3"
                 }
               }
             }
