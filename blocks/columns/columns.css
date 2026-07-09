@@ -31,3 +31,43 @@
     order: unset;
   }
 }
+
+/* Layout-preset columns (Grid Layout Container): a `layout-N-N` class assigns
+   col-lg-* spans on each cell (see columns.js). Use CSS Grid on the row so the
+   12-unit widths are honored. Scoped to .columns[class*="layout-"] so regular
+   columns blocks are unaffected. Media queries don't add specificity, so the
+   desktop overrides reuse the same selector depth as the mobile-first rule. */
+.columns[class*="layout-"] > div {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* Mobile-first: every column full width and stacked. */
+.columns[class*="layout-"] > div > div[class*="col-lg-"] {
+  grid-column: span 12;
+}
+
+/* Tablet: two per row. */
+@media (width >= 768px) and (width < 992px) {
+  .columns[class*="layout-"] > div > div[class*="col-lg-"] {
+    grid-column: span 6;
+  }
+}
+
+/* Desktop: honor the configured 12-unit spans. */
+@media (width >= 992px) {
+  .columns[class*="layout-"] > div > div.col-lg-1 { grid-column: span 1; }
+  .columns[class*="layout-"] > div > div.col-lg-2 { grid-column: span 2; }
+  .columns[class*="layout-"] > div > div.col-lg-3 { grid-column: span 3; }
+  .columns[class*="layout-"] > div > div.col-lg-4 { grid-column: span 4; }
+  .columns[class*="layout-"] > div > div.col-lg-5 { grid-column: span 5; }
+  .columns[class*="layout-"] > div > div.col-lg-6 { grid-column: span 6; }
+  .columns[class*="layout-"] > div > div.col-lg-7 { grid-column: span 7; }
+  .columns[class*="layout-"] > div > div.col-lg-8 { grid-column: span 8; }
+  .columns[class*="layout-"] > div > div.col-lg-9 { grid-column: span 9; }
+  .columns[class*="layout-"] > div > div.col-lg-10 { grid-column: span 10; }
+  .columns[class*="layout-"] > div > div.col-lg-11 { grid-column: span 11; }
+  .columns[class*="layout-"] > div > div.col-lg-12 { grid-column: span 12; }
+}
