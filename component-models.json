@@ -317,41 +317,42 @@
     "id": "grid-layout-container",
     "fields": [
       {
+        "component": "text",
+        "valueType": "number",
+        "name": "columns",
+        "value": "",
+        "label": "Number of Columns",
+        "description": "How many column cells to create in the row."
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "rows",
+        "value": "",
+        "label": "Rows"
+      },
+      {
         "component": "select",
         "name": "classes",
         "value": "layout-12",
         "label": "Layout",
-        "description": "Single full-width column.",
+        "description": "Column widths on a 12-unit grid. Should match the number of columns (e.g. 8/4 = 2 columns).",
         "options": [
           {
             "name": "Single — 12",
             "value": "layout-12"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "grid-layout-container-2",
-    "fields": [
-      {
-        "component": "select",
-        "name": "classes",
-        "value": "layout-6-6",
-        "label": "Layout",
-        "description": "Two-column width split (totals 12).",
-        "options": [
+          },
           {
             "name": "Two — 6 / 6",
             "value": "layout-6-6"
           },
           {
-            "name": "Two — 8 / 4",
-            "value": "layout-8-4"
-          },
-          {
             "name": "Two — 4 / 8",
             "value": "layout-4-8"
+          },
+          {
+            "name": "Two — 8 / 4",
+            "value": "layout-8-4"
           },
           {
             "name": "Two — 3 / 9",
@@ -362,27 +363,21 @@
             "value": "layout-9-3"
           },
           {
+            "name": "Two — 5 / 7",
+            "value": "layout-5-7"
+          },
+          {
+            "name": "Two — 7 / 5",
+            "value": "layout-7-5"
+          },
+          {
             "name": "Two — 2 / 10",
             "value": "layout-2-10"
           },
           {
             "name": "Two — 10 / 2",
             "value": "layout-10-2"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "grid-layout-container-3",
-    "fields": [
-      {
-        "component": "select",
-        "name": "classes",
-        "value": "layout-4-4-4",
-        "label": "Layout",
-        "description": "Three-column width split (totals 12).",
-        "options": [
+          },
           {
             "name": "Three — 4 / 4 / 4",
             "value": "layout-4-4-4"
@@ -398,21 +393,19 @@
           {
             "name": "Three — 3 / 6 / 3",
             "value": "layout-3-6-3"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "grid-layout-container-4",
-    "fields": [
-      {
-        "component": "select",
-        "name": "classes",
-        "value": "layout-3-3-3-3",
-        "label": "Layout",
-        "description": "Four-column width split (totals 12).",
-        "options": [
+          },
+          {
+            "name": "Three — 2 / 5 / 5",
+            "value": "layout-2-5-5"
+          },
+          {
+            "name": "Three — 5 / 2 / 5",
+            "value": "layout-5-2-5"
+          },
+          {
+            "name": "Three — 5 / 5 / 2",
+            "value": "layout-5-5-2"
+          },
           {
             "name": "Four — 3 / 3 / 3 / 3",
             "value": "layout-3-3-3-3"
