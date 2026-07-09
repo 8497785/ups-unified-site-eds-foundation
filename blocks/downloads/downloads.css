@@ -1,0 +1,33 @@
+.downloads .downloads-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.downloads .downloads-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #33230f;
+}
+
+.downloads .downloads-list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.downloads .downloads-link {
+  color: var(--link-color, #0662bb);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.downloads .downloads-link:hover {
+  text-decoration: underline;
+}

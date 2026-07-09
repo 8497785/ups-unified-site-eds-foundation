@@ -1,0 +1,65 @@
+{
+  "definitions": [
+    {
+      "title": "Article Header",
+      "id": "article-header",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Article Header",
+              "model": "article-header"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "article-header",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "eyebrow",
+          "label": "Eyebrow Text",
+          "value": ""
+        },
+        {
+          "component": "aem-content",
+          "name": "eyebrowLink",
+          "label": "Eyebrow Link"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "title",
+          "label": "Article Title"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Short Description",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "articleDate",
+          "label": "Article Date",
+          "description": "Any date the browser can parse (e.g. 2026-06-22 or June 22, 2026)."
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "hideReadTime",
+          "label": "Hide Read Time"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

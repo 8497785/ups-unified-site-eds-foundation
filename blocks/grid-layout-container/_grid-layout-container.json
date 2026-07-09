@@ -1,0 +1,117 @@
+{
+  "definitions": [
+    {
+      "title": "Grid Layout Container",
+      "id": "grid-layout-container",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/columns/v1/columns",
+            "template": {
+              "name": "Grid Layout Container",
+              "model": "grid-layout-container",
+              "filter": "grid-layout-container",
+              "columns": "1",
+              "rows": "1"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Grid Column",
+      "id": "grid-column",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/columns/v1/column",
+            "template": {
+              "name": "Grid Column",
+              "model": "grid-column",
+              "filter": "grid-column"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "grid-layout-container",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes",
+          "value": "grid-cols-1",
+          "label": "Number of Columns",
+          "description": "Choose the column count, then add that many Grid Column children.",
+          "options": [
+            { "name": "1", "value": "grid-cols-1" },
+            { "name": "2", "value": "grid-cols-2" },
+            { "name": "3", "value": "grid-cols-3" },
+            { "name": "4", "value": "grid-cols-4" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grid-column",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes",
+          "value": "width-auto",
+          "label": "Width",
+          "description": "Column width on a 12-unit grid. Auto shares the row equally. Explicit widths across the row should total 12.",
+          "options": [
+            { "name": "Auto", "value": "width-auto" },
+            { "name": "1", "value": "width-1" },
+            { "name": "2", "value": "width-2" },
+            { "name": "3", "value": "width-3" },
+            { "name": "4", "value": "width-4" },
+            { "name": "5", "value": "width-5" },
+            { "name": "6", "value": "width-6" },
+            { "name": "7", "value": "width-7" },
+            { "name": "8", "value": "width-8" },
+            { "name": "9", "value": "width-9" },
+            { "name": "10", "value": "width-10" },
+            { "name": "11", "value": "width-11" },
+            { "name": "12", "value": "width-12" }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "grid-layout-container",
+      "components": [
+        "grid-column"
+      ]
+    },
+    {
+      "id": "grid-column",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title",
+        "hero",
+        "hero-featured",
+        "hero-stats",
+        "cards",
+        "cards-story",
+        "columns-media",
+        "fragment",
+        "leadership-list-cf",
+        "leadership-details",
+        "leadership-listing",
+        "headline",
+        "breadcrumb",
+        "article-header",
+        "social-share",
+        "downloads"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+/* eslint-disable */
+/* global WebImporter */
+
+/**
+ * Parser: article  →  emits DECOMPOSED blocks
+ * Source: https://about.ups.com/us/en/newsroom/press-releases/customer-first/...
+ * Selector: div.upspr-two-column
+ *
+ * Produces, in order, within a single container:
+ *   1. article-header block (eyebrow, eyebrowLink, title, description, articleDate, hideReadTime)
+ *   2. hero image (default content <picture>)
+ *   3. Grid Layout Container (8/4):
+ *        left  (width 8) = body rich text
+ *        right (width 4) = social-share block
+ *
+ * "Related Stories" lives outside div.upspr-two-column and is excluded.
+ *
+ * Validated selectors against source HTML:
+ *   .upspr-two-column_eyebrow a.upspr-eyebrow-link -> eyebrow link ("Customer First")
+ *   .upspr-eyebrow-text                            -> eyebrow label text
+ *   .upspr-two-column_title h1                     -> article title
+ *   .upspr-byline .upspr-story-date                -> article date ("06-22-2026")
+ *   .upspr-two-column_subtext                      -> description
+ *   .upspr-heroimage img                           -> hero image (src attribute)
+ *   .cmp-text                                      -> body rich text paragraphs
+ */
+export default function parse(element, { document }) {
+  const cellComment = (name) => document.createComment(` field:${name} `);
+
+  // ---- article-header block ----
+  const eyebrowLink = element.querySelector('.upspr-two-column_eyebrow a.upspr-eyebrow-link, .upspr-two-column_eyebrow a');
+  const eyebrowTextEl = element.querySelector('.upspr-two-column_eyebrow .upspr-eyebrow-text');
+  const eyebrowText = eyebrowTextEl
+    ? eyebrowTextEl.textContent.trim()
+    : (eyebrowLink ? eyebrowLink.textContent.trim() : '');
+
+  const eyebrowCell = document.createDocumentFragment();
+  eyebrowCell.appendChild(cellComment('eyebrow'));
+  if (eyebrowText) eyebrowCell.appendChild(document.createTextNode(eyebrowText));
+
+  const eyebrowLinkCell = document.createDocumentFragment();
+  eyebrowLinkCell.appendChild(cellComment('eyebrowLink'));
+  if (eyebrowLink && eyebrowLink.getAttribute('href')) {
+    const a = document.createElement('a');
+    a.href = eyebrowLink.getAttribute('href');
+    a.textContent = eyebrowText || eyebrowLink.getAttribute('href');
+    eyebrowLinkCell.appendChild(a);
+  }
+
+  const titleCell = document.createDocumentFragment();
+  titleCell.appendChild(cellComment('title'));
+  const h1 = element.querySelector('.upspr-two-column_title h1, h1');
+  if (h1) {
+    const h = document.createElement('h1');
+    h.textContent = h1.textContent.trim();
+    titleCell.appendChild(h);
+  }
+
+  const descCell = document.createDocumentFragment();
+  descCell.appendChild(cellComment('description'));
+  const descEl = element.querySelector('.upspr-two-column_subtext');
+  if (descEl && descEl.textContent.trim()) {
+    const p = document.createElement('p');
+    p.textContent = descEl.textContent.trim();
+    descCell.appendChild(p);
+  }
+
+  const dateEl = element.querySelector('.upspr-byline .upspr-story-date, .upspr-story-date');
+  const dateCell = document.createDocumentFragment();
+  dateCell.appendChild(cellComment('articleDate'));
+  if (dateEl) dateCell.appendChild(document.createTextNode(dateEl.textContent.trim()));
+
+  const hideReadTimeCell = document.createDocumentFragment();
+  hideReadTimeCell.appendChild(cellComment('hideReadTime'));
+  hideReadTimeCell.appendChild(document.createTextNode('false'));
+
+  const headerBlock = WebImporter.Blocks.createBlock(document, {
+    name: 'article-header',
+    cells: [
+      [eyebrowCell],
+      [eyebrowLinkCell],
+      [titleCell],
+      [descCell],
+      [dateCell],
+      [hideReadTimeCell],
+    ],
+  });
+
+  // ---- hero image (default content) ----
+  let heroPicture = null;
+  const heroImg = element.querySelector('.upspr-heroimage img, img.upspr-heroimage_img');
+  if (heroImg) {
+    const src = heroImg.getAttribute('src') || heroImg.getAttribute('data-src');
+    if (src) {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = heroImg.getAttribute('alt') || '';
+      const p = document.createElement('p');
+      p.appendChild(img);
+      heroPicture = p;
+    }
+  }
+
+  // ---- body (rich text) for the left column (width 8) ----
+  const bodyFrag = document.createElement('div');
+  const body = element.querySelector('.cmp-text');
+  if (body) {
+    body.querySelectorAll(':scope > p, :scope > ul, :scope > ol, :scope > h2, :scope > h3').forEach((node) => {
+      bodyFrag.appendChild(node.cloneNode(true));
+    });
+  }
+  const leftCol = document.createElement('div');
+  leftCol.appendChild(bodyFrag);
+
+  // ---- social-share block for the right column (width 4) ----
+  const shareLabelCell = document.createDocumentFragment();
+  shareLabelCell.appendChild(cellComment('label'));
+  const socialBlock = WebImporter.Blocks.createBlock(document, {
+    name: 'social-share',
+    cells: [[shareLabelCell]],
+  });
+  const rightCol = document.createElement('div');
+  rightCol.appendChild(socialBlock);
+
+  // ---- Grid Layout Container (8/4) ----
+  // The container-level `cols-8-4` class carries the layout through the importer
+  // (per-column width classes can't travel via the block table); the block JS
+  // reads it to render an 8/4 grid. In the authored JCR, each Grid Column also
+  // gets its own width-8 / width-4 class.
+  const gridBlock = WebImporter.Blocks.createBlock(document, {
+    name: 'Grid Layout Container (cols-8-4)',
+    cells: [[leftCol, rightCol]],
+  });
+
+  // Assemble the container that replaces the source region.
+  const container = document.createElement('div');
+  container.setAttribute('data-article-root', 'true');
+  container.appendChild(headerBlock);
+  if (heroPicture) container.appendChild(heroPicture);
+  container.appendChild(gridBlock);
+  element.replaceWith(container);
+}

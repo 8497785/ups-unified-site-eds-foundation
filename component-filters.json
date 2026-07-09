@@ -19,12 +19,15 @@
       "cards-story",
       "columns",
       "columns-media",
+      "grid-layout-container",
       "fragment",
       "leadership-list-cf",
       "leadership-details",
       "leadership-listing",
       "headline",
-      "breadcrumb"
+      "breadcrumb",
+      "article-header",
+      "downloads"
     ]
   },
   {
@@ -58,6 +61,42 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "downloads",
+    "components": [
+      "download-item"
+    ]
+  },
+  {
+    "id": "grid-layout-container",
+    "components": [
+      "grid-column"
+    ]
+  },
+  {
+    "id": "grid-column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero",
+      "hero-featured",
+      "hero-stats",
+      "cards",
+      "cards-story",
+      "columns-media",
+      "fragment",
+      "leadership-list-cf",
+      "leadership-details",
+      "leadership-listing",
+      "headline",
+      "breadcrumb",
+      "article-header",
+      "social-share",
+      "downloads"
     ]
   },
   {

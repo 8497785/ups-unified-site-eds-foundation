@@ -1,0 +1,40 @@
+.social-share .upspr-social-share {
+  margin-bottom: 26px;
+}
+
+.social-share .upspr-social-share ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social-share .upspr-social-share li {
+  margin-right: 8px;
+}
+
+.social-share .upspr-social-share a {
+  line-height: 0;
+  text-decoration: none;
+}
+
+.social-share .upspr-social-share i {
+  font-size: 44px;
+  color: var(--link-color);
+}
+
+.social-share .upspr-social-share svg {
+  width: 44px;
+  height: 44px;
+  color: var(--link-color);
+  display: block;
+}
+
+.social-share .upspr-social-share a:hover svg,
+.social-share .upspr-social-share a:hover i {
+  color: #044a8f;
+}
+
+.social-share .upspr-social-share i.upspr-icon-print {
+  font-size: 38px;
+}

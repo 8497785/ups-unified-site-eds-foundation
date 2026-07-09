@@ -196,6 +196,21 @@
       ],
       "description": "Standalone utility pages like employee recognition form",
       "blocks": []
+    },
+    {
+      "name": "article",
+      "urls": [
+        "https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-extends-complex-healthcare-logistics-lead-with--48-million-i.html"
+      ],
+      "description": "Press-release / article detail page: article-header, hero image, and a Grid Layout Container (8/4) with body rich text (width 8) and a social-share block (width 4). Output under /content/language-masters/en/.",
+      "blocks": [
+        {
+          "name": "article",
+          "instances": [
+            "div.upspr-two-column"
+          ]
+        }
+      ]
     }
   ]
 }

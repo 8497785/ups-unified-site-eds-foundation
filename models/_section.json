@@ -76,12 +76,15 @@
         "cards-story",
         "columns",
         "columns-media",
+        "grid-layout-container",
         "fragment",
         "leadership-list-cf",
         "leadership-details",
         "leadership-listing",
         "headline",
-        "breadcrumb"
+        "breadcrumb",
+        "article-header",
+        "downloads"
       ]
     }
   ]
