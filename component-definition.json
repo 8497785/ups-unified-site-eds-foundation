@@ -239,13 +239,10 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/columns/v1/columns",
+                "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Grid Layout Container",
-                  "model": "grid-layout-container",
-                  "filter": "grid-layout-container",
-                  "columns": "1",
-                  "rows": "1"
+                  "filter": "grid-layout-container"
                 }
               }
             }
@@ -257,7 +254,7 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/columns/v1/column",
+                "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Grid Column",
                   "model": "grid-column",

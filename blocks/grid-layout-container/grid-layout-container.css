@@ -8,6 +8,7 @@
    desktop overrides must match the base selector's specificity. Every rule below
    uses the `.grid-layout-container .grid-column...` shape for that reason. */
 
+.grid-layout-container.row,
 .grid-layout-container .row {
   --grid-gap: 24px;
 

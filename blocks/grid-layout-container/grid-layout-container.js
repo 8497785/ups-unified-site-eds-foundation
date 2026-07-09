@@ -102,16 +102,28 @@ async function loadNestedBlocks(columns) {
 }
 
 export default function decorate(block) {
-  // The columns container usually delivers its cells inside a single row <div>.
+  // Two possible delivery shapes:
+  //  A) container + items (block/v1/block): each Grid Column is a direct child
+  //     row of the block, its width class on that row, its content one level in.
+  //  B) columns cells: a single intermediate row div whose children are the cells.
   const rows = [...block.children];
   let row;
   let columns;
   if (rows.length === 1 && rows[0].children.length > 1) {
+    // Shape B: one intermediate row whose cells are the columns.
     [row] = rows;
     columns = [...row.children];
   } else {
+    // Shape A: the block itself is the row; each child is a column.
     row = block;
     columns = rows;
+    // Each item wraps its content in a single cell <div>; unwrap it so the
+    // column holds its content directly (matching shape B).
+    columns.forEach((col) => {
+      if (col.children.length === 1 && col.firstElementChild.tagName === 'DIV') {
+        col.firstElementChild.replaceWith(...col.firstElementChild.childNodes);
+      }
+    });
   }
 
   row.classList.add('row');
