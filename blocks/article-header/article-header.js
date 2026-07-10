@@ -1,6 +1,14 @@
 // Article Header — eyebrow (with optional link), title, description, date, read time.
 // Cell order matches the model: eyebrow, eyebrowLink, title, description,
 // articleDate, hideReadTime.
+//
+// Eyebrow Title and Eyebrow Link are optional: when left blank they derive
+// automatically from the current page path (the eyebrow points at the parent
+// "category" listing page, whose title is read from the site query index). This
+// keeps the eyebrow correct on any locale root (/us/en, /language-masters/en)
+// without manual authoring.
+
+import { getMetadata } from '../../scripts/aem.js';
 
 const WORDS_PER_MINUTE = 200;
 
@@ -14,12 +22,55 @@ function estimateReadTime() {
   return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 }
 
-export default function decorate(block) {
+// The parent "category" path: current page path minus the article slug, with any
+// .html stripped. Root-preserving, so /us/en/... yields a /us/en/... category
+// and /language-masters/en/... yields its own root.
+function parentCategoryPath() {
+  const clean = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '');
+  const parent = clean.split('/').slice(0, -1).join('/');
+  return parent || '/';
+}
+
+// Turn a path segment into a readable title (fallback of last resort).
+function humanize(path) {
+  const seg = path.split('/').filter(Boolean).pop() || '';
+  return seg.replace(/[-_]+/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+// Resolve the eyebrow (category) title for a parent path from the site query
+// index. Returns '' when the index or a matching row isn't available, so the
+// caller can fall back.
+async function categoryTitleFromIndex(parentPath) {
+  try {
+    const resp = await fetch('/query-index.json');
+    if (!resp.ok) return '';
+    const { data = [] } = await resp.json();
+    const row = data.find((r) => (r.path || '').replace(/\.html$/, '').replace(/\/$/, '') === parentPath);
+    return row ? (row.title || row.category || '') : '';
+  } catch (e) {
+    return '';
+  }
+}
+
+export default async function decorate(block) {
   const rows = [...block.children];
   const [eyebrowRow, eyebrowLinkRow, titleRow, descRow, dateRow, hideReadRow] = rows;
 
-  const eyebrowText = cellText(eyebrowRow);
-  const eyebrowHref = eyebrowLinkRow?.querySelector('a')?.getAttribute('href') || '';
+  const categoryPath = parentCategoryPath();
+
+  // Eyebrow Link: authored value wins; otherwise the derived parent category path.
+  const eyebrowHref = eyebrowLinkRow?.querySelector('a')?.getAttribute('href')
+    || cellText(eyebrowLinkRow)
+    || categoryPath;
+
+  // Eyebrow Title: authored value wins; otherwise index lookup, then the
+  // migration-emitted category metadata, then a humanized path segment.
+  let eyebrowText = cellText(eyebrowRow);
+  if (!eyebrowText) {
+    eyebrowText = await categoryTitleFromIndex(categoryPath)
+      || getMetadata('categorytitle')
+      || humanize(categoryPath);
+  }
   const titleEl = titleRow?.querySelector('h1, h2, h3') || titleRow;
   const descEl = descRow?.querySelector('p') || descRow;
   const dateText = cellText(dateRow);

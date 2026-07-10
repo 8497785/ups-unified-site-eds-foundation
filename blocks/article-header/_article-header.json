@@ -25,12 +25,14 @@
           "valueType": "string",
           "name": "eyebrow",
           "label": "Eyebrow Text",
+          "description": "Optional. Leave blank to auto-derive from the parent category page title.",
           "value": ""
         },
         {
           "component": "aem-content",
           "name": "eyebrowLink",
-          "label": "Eyebrow Link"
+          "label": "Eyebrow Link",
+          "description": "Optional. Leave blank to auto-derive the parent category path from the current page URL (without .html)."
         },
         {
           "component": "richtext",
