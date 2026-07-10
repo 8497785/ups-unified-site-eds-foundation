@@ -317,6 +317,10 @@
     ]
   },
   {
+    "id": "column",
+    "fields": []
+  },
+  {
     "id": "columns-media",
     "fields": [
       {

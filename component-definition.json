@@ -162,6 +162,21 @@
           }
         },
         {
+          "title": "Column",
+          "id": "column",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/column",
+                "template": {
+                  "name": "Column",
+                  "model": "column"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Columns Media",
           "id": "columns-media",
           "plugins": {
