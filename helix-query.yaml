@@ -31,12 +31,15 @@ indices:
       image:
         select: head > meta[property="og:image"]
         value: attribute(el, "content")
-      articleDate:
-        select: main .article-header .article-header-date
-        value: textContent(el)
-      eyebrow:
-        select: main .article-header .article-header-eyebrow
-        value: textContent(el)
+      published:
+        select: head > meta[name="publishdate"]
+        value: attribute(el, "content")
+      category:
+        select: head > meta[name="categorytitle"]
+        value: attribute(el, "content")
+      categoryUrl:
+        select: head > meta[name="categoryurl"]
+        value: attribute(el, "content")
       lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
