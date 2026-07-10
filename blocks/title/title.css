@@ -1,0 +1,11 @@
+/* Title block — a heading with author-selectable level and alignment.
+   The block renders with the class `title` (from the "Title" template name).
+   Alignment classes are applied directly to the heading by title.js, so these
+   rules win over the global h1-h6 defaults. */
+.title .title-heading {
+  margin: 0;
+}
+
+.title .title-heading.align-left { text-align: left; }
+.title .title-heading.align-center { text-align: center; }
+.title .title-heading.align-right { text-align: right; }
