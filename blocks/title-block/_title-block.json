@@ -21,7 +21,7 @@
       "id": "title-block",
       "fields": [
         {
-          "component": "richtext",
+          "component": "text",
           "valueType": "string",
           "name": "title",
           "label": "Title"
