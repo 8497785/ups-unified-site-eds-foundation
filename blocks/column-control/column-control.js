@@ -65,9 +65,13 @@ async function loadNestedBlocks(columns) {
   columns.forEach((col) => {
     col.querySelectorAll(':scope table').forEach((table) => tableToBlock(table));
   });
+  // Find nested block divs anywhere inside a column (not just direct children):
+  // the EDS pipeline can wrap a nested block in a <p>/<div>, so a `:scope > div`
+  // selector would miss it. A block is a div whose first class is a known block
+  // name and that hasn't been decorated yet.
   const nested = columns.flatMap((col) => [
-    ...col.querySelectorAll(':scope > div[class]:not([data-block-status])'),
-  ]);
+    ...col.querySelectorAll('div[class]:not([data-block-status])'),
+  ].filter((el) => el.classList.length && !el.classList.contains('grid-column')));
   await Promise.all(nested.map(async (el) => {
     const wrapper = document.createElement('div');
     el.replaceWith(wrapper);
