@@ -54,26 +54,6 @@
               "value": "h6"
             }
           ]
-        },
-        {
-          "component": "select",
-          "name": "classes",
-          "value": "align-center",
-          "label": "Alignment",
-          "options": [
-            {
-              "name": "Left",
-              "value": "align-left"
-            },
-            {
-              "name": "Center",
-              "value": "align-center"
-            },
-            {
-              "name": "Right",
-              "value": "align-right"
-            }
-          ]
         }
       ]
     }

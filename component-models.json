@@ -77,26 +77,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "select",
-        "name": "classes",
-        "value": "align-center",
-        "label": "Alignment",
-        "options": [
-          {
-            "name": "Left",
-            "value": "align-left"
-          },
-          {
-            "name": "Center",
-            "value": "align-center"
-          },
-          {
-            "name": "Right",
-            "value": "align-right"
-          }
-        ]
       }
     ]
   },
@@ -677,6 +657,69 @@
         "name": "label",
         "label": "Accessible Label (optional)",
         "value": ""
+      }
+    ]
+  },
+  {
+    "id": "title-block",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "value": "h2",
+        "label": "Title Type",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          },
+          {
+            "name": "H6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "alignment",
+        "value": "align-center",
+        "label": "Alignment",
+        "options": [
+          {
+            "name": "Left",
+            "value": "align-left"
+          },
+          {
+            "name": "Center",
+            "value": "align-center"
+          },
+          {
+            "name": "Right",
+            "value": "align-right"
+          }
+        ]
       }
     ]
   }

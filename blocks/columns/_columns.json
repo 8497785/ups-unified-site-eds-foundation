@@ -51,6 +51,7 @@
         "image",
         "button",
         "title",
+        "title-block",
         "hero",
         "hero-featured",
         "hero-stats",
