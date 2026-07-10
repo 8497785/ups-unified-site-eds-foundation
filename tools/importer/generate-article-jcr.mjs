@@ -130,8 +130,6 @@ async function buildLeaf(relPath) {
   });
 
   const eyebrow = text(byField.eyebrow);
-  const eyebrowLinkEl = new JSDOM(`<div>${byField.eyebrowLink || ''}</div>`).window.document.querySelector('a');
-  const eyebrowLink = eyebrowLinkEl ? eyebrowLinkEl.getAttribute('href') : '';
   const title = (byField.title || '').trim(); // contains <h1>...</h1>
   const pageTitle = text(title) || 'Article'; // plain-text headline -> jcr:title
   const description = (byField.description || '').trim(); // contains <p>...</p>
@@ -163,7 +161,7 @@ async function buildLeaf(relPath) {
   <jcr:content cq:template="/libs/core/franklin/templates/page" sling:resourceType="core/franklin/components/page/v1/page" jcr:primaryType="cq:PageContent" jcr:title="${attr(pageTitle)}" jcr:description="${attr(description.replace(/<\/?p>/g, ''))}" publishdate="${attr(publishDate)}" categorytitle="${attr(categoryTitle)}" categoryurl="${attr(categoryHref)}" modelFields="[jcr:title,jcr:description,keywords,publishdate,categorytitle,categoryurl]">
     <root jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/root/v1/root">
       <section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
-        <block sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="article-header" articleDate="${attr(articleDate)}" description="${attr(description)}" eyebrow="${attr(eyebrow)}" eyebrowLink="${attr(eyebrowLink)}" hideReadTime="${attr(hideReadTime)}" model="article-header" modelFields="[eyebrow,eyebrowLink,title,description,articleDate,hideReadTime]" name="Article Header" title="${attr(`<p>${title}</p>`)}"/>
+        <block sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="article-header" articleDate="${attr(articleDate)}" description="${attr(description)}" hideReadTime="${attr(hideReadTime)}" model="article-header" modelFields="[eyebrow,eyebrowLink,title,description,articleDate,hideReadTime]" name="Article Header" title="${attr(`<p>${title}</p>`)}"/>
         <image sling:resourceType="core/franklin/components/image/v1/image" jcr:primaryType="nt:unstructured" aueComponentId="image" image="${attr(heroImg)}" imageAlt="${attr(heroAlt)}"/>
         <block_1 sling:resourceType="core/franklin/components/columns/v1/columns" jcr:primaryType="nt:unstructured" aueComponentId="column-control" rows="1" columns="2" model="column-control" modelFields="[columns,classes]" name="Column Control" classes="layout-8-4">
           <row1 jcr:primaryType="nt:unstructured">
