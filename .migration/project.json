@@ -7,7 +7,7 @@
       "previewOrg": "8497785",
       "previewSite": "ups-unified-site-eds-foundation",
       "aemSitePath": "/content/about-ups-eds",
-      "aemAssetsFolderPath": "/content/dam/about-ups-eds",
+      "aemAssetsFolderPath": "/content/dam",
       "aemSiteName": "about-ups-eds",
       "aemSiteTitle": "About UPS EDS",
       "baseUrl": "https://about.ups.com"

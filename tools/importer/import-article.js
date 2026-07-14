@@ -17,7 +17,7 @@ const PAGE_TEMPLATE = {
   name: 'article',
   description: 'Press-release / article detail page: article-header, hero image, and a Column Control (8/4) with body rich text and a social-share block',
   urls: [
-    'https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-extends-complex-healthcare-logistics-lead-with--48-million-i.html',
+    'https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-invests--50-million-to-transform-logistics-for-north-america.html',
   ],
   blocks: [
     {
@@ -98,8 +98,14 @@ export default {
       main.appendChild(articleRoot);
     }
 
-    // 5. WebImporter built-in rules (force page title to "Article")
-    try { document.title = 'Article'; } catch (e) { /* noop */ }
+    // 5. WebImporter built-in rules. Use the article headline (the parsed H1)
+    // as the page title so the imported metadata + JCR jcr:title reflect the
+    // real story title rather than a generic placeholder.
+    try {
+      const h1 = main.querySelector('h1');
+      const headline = h1 && h1.textContent.trim();
+      if (headline) document.title = headline;
+    } catch (e) { /* noop */ }
     WebImporter.rules.createMetadata(main, document);
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);

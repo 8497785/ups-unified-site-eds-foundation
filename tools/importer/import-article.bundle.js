@@ -177,7 +177,7 @@ var CustomImportScript = (() => {
     name: "article",
     description: "Press-release / article detail page: article-header, hero image, and a Column Control (8/4) with body rich text and a social-share block",
     urls: [
-      "https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-extends-complex-healthcare-logistics-lead-with--48-million-i.html"
+      "https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-invests--50-million-to-transform-logistics-for-north-america.html"
     ],
     blocks: [
       {
@@ -241,7 +241,9 @@ var CustomImportScript = (() => {
         main.appendChild(articleRoot);
       }
       try {
-        document.title = "Article";
+        const h1 = main.querySelector("h1");
+        const headline = h1 && h1.textContent.trim();
+        if (headline) document.title = headline;
       } catch (e) {
       }
       WebImporter.rules.createMetadata(main, document);
