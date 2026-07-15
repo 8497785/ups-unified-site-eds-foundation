@@ -33,6 +33,23 @@ indices:
         select: head > meta[name="robots"]
         value: attribute(el, "content")
 
+  us-en:
+    include:
+      - '/us/en/**'
+    exclude:
+      - '/**.json'
+    target: /us/en/query-index.json
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+      robots:
+        select: head > meta[name="robots"]
+        value: attribute(el, "content")
+
   press-releases:
     include:
       - '/us/en/newsroom/press-releases/**'
