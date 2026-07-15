@@ -5,6 +5,24 @@
 
 const MAX_CRUMBS = 4;
 
+// Content-source prefixes that appear in author/preview URLs but not on the
+// clean delivery path. Stripping them turns
+// /content/about-ups-eds/us/en/newsroom/... into /us/en/newsroom/... so the
+// locale root (/us/en) is detected correctly and the crumbs don't include the
+// content/site segments.
+const PATH_PREFIXES = [
+  '/content/about-ups-eds',
+];
+
+// Normalize a raw pathname: strip a known content-source prefix and .html so
+// crumb logic always works on the clean /us/en/... delivery path.
+function normalizePath(pathname) {
+  let path = pathname.replace(/\.html$/, '');
+  const prefix = PATH_PREFIXES.find((p) => path === p || path.startsWith(`${p}/`));
+  if (prefix) path = path.slice(prefix.length) || '/';
+  return path;
+}
+
 let pageMapPromise;
 
 // Fetch the locale query index once and expose it as a path -> title Map.
@@ -41,7 +59,7 @@ async function createBreadcrumb(homeLabel) {
   const ul = document.createElement('ul');
   nav.append(ul);
 
-  const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '');
+  const currentPath = normalizePath(window.location.pathname).replace(/\/$/, '');
   const parts = currentPath.split('/').filter(Boolean);
   // Locale root is the first two segments, e.g. /us/en.
   const localeRoot = `/${parts.slice(0, 2).join('/')}`;
