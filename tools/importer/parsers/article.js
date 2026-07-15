@@ -131,9 +131,18 @@ export default function parse(element, { document }) {
     cells: [[leftCol, rightCol]],
   });
 
+  // ---- breadcrumb block (crumbs built dynamically from the page path) ----
+  const breadcrumbCell = document.createDocumentFragment();
+  breadcrumbCell.appendChild(document.createTextNode('Home'));
+  const breadcrumbBlock = WebImporter.Blocks.createBlock(document, {
+    name: 'Breadcrumb',
+    cells: [[breadcrumbCell]],
+  });
+
   // Assemble the container that replaces the source region.
   const container = document.createElement('div');
   container.setAttribute('data-article-root', 'true');
+  container.appendChild(breadcrumbBlock);
   container.appendChild(headerBlock);
   if (heroPicture) container.appendChild(heroPicture);
   container.appendChild(gridBlock);

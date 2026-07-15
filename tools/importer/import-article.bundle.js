@@ -126,8 +126,15 @@ var CustomImportScript = (() => {
       name: "Column Control (layout-8-4)",
       cells: [[leftCol, rightCol]]
     });
+    const breadcrumbCell = document.createDocumentFragment();
+    breadcrumbCell.appendChild(document.createTextNode("Home"));
+    const breadcrumbBlock = WebImporter.Blocks.createBlock(document, {
+      name: "Breadcrumb",
+      cells: [[breadcrumbCell]]
+    });
     const container = document.createElement("div");
     container.setAttribute("data-article-root", "true");
+    container.appendChild(breadcrumbBlock);
     container.appendChild(headerBlock);
     if (heroPicture) container.appendChild(heroPicture);
     container.appendChild(gridBlock);
