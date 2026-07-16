@@ -24,19 +24,20 @@
   }
 }
 
+/* Card container — source site: .upspr-card + .upspr-card_rounded. */
 .content-list .content-list-card {
   display: flex;
   flex-direction: column;
-  background-color: var(--background-color);
-  border-radius: var(--border-radius-card);
-  box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgb(0 0 0 / 16%);
   overflow: hidden;
 }
 
-/* Uniform image crop so cards align on a clean grid.
-   Corners are clipped by the card's own border-radius + overflow. */
+/* Image — source: .upspr-content-tile__image img (rounded top, 280px, cover). */
 .content-list .content-list-card-image {
   line-height: 0;
+  overflow: hidden;
 }
 
 .content-list .content-list-card-image a {
@@ -48,8 +49,9 @@
 .content-list .content-list-card-image img {
   display: block;
   width: 100%;
-  aspect-ratio: 380 / 280;
+  height: 280px;
   object-fit: cover;
+  border-radius: 8px 8px 0 0;
   transition: transform 0.3s ease;
 }
 
@@ -57,53 +59,63 @@
   transform: scale(1.03);
 }
 
+/* Details — source: .upspr-content-tile__details (padding 24px 24px 40px). */
 .content-list .content-list-card-body {
   margin: 0;
-  padding: var(--spacing-md);
-  background-color: var(--background-color);
+  padding: 24px 24px 40px;
+  background-color: #fff;
+  text-align: left;
+  color: #242424;
   flex: 1 1 auto;
 }
 
-/* Category tag — uppercase label with a gold dash, matching cards-story. */
+/* Category tag — source: .upspr-eyebrow-head span.upspr-eyebrow-text
+   (uppercase, 10px, letter-spacing 1.6px, gold dash before via padding-left). */
 .content-list .content-list-card-category {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin: 0 0 var(--spacing-xs);
-  font-size: var(--body-font-size-xs);
+  display: inline-block;
+  position: relative;
+  margin: 0 0 16px;
+  padding-left: 40px;
+  font-size: 10px;
   font-weight: 700;
+  line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
-  color: var(--text-color);
+  letter-spacing: 1.6px;
+  color: #242424;
 }
 
 .content-list .content-list-card-category::before {
   content: '';
-  display: inline-block;
-  width: 24px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -1.5px;
+  width: 32px;
   height: 3px;
-  background-color: var(--ups-gold);
-  border-radius: 2px;
+  border-radius: 5px;
+  background-color: #ffd100;
 }
 
+/* Date — source: .upspr-content-tile__details .upspr-story-date (#5f5753). */
 .content-list .content-list-card-date {
   margin: 0 0 var(--spacing-xs);
-  font-size: var(--body-font-size-s);
+  font-size: 13px;
   line-height: 1.5;
-  color: var(--text-color);
+  color: #5f5753;
 }
 
+/* Title — source: .upspr-content-tile__details h3 (24px / 32px). */
 .content-list .content-list-card-title {
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
+  font-family: var(--serif, var(--body-font-family));
+  font-size: 24px;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 32px;
   margin: 0 0 var(--spacing-xs);
-  color: var(--text-color);
+  color: #242424;
 }
 
 .content-list .content-list-card-title a {
-  color: var(--text-color);
+  color: #242424;
   text-decoration: none;
   font-weight: 700;
 }
@@ -112,12 +124,13 @@
   text-decoration: underline;
 }
 
+/* Description — source: .upspr-content-tile__details .upspr-description (#242424). */
 .content-list .content-list-card-description {
   margin: 0;
-  font-size: var(--body-font-size-s);
-  line-height: 1.5;
+  font-size: var(--body-font-size-m);
+  line-height: 24px;
   font-weight: 400;
-  color: var(--text-color);
+  color: #242424;
 
   /* Clamp to keep card bodies even. */
   display: -webkit-box;
@@ -162,7 +175,7 @@
 }
 
 .content-list .content-list-card-skeleton .content-list-card-image {
-  aspect-ratio: 380 / 280;
+  height: 280px;
 }
 
 .content-list .content-list-card-skeleton .content-list-card-category::before {
@@ -172,6 +185,7 @@
 .content-list .content-list-card-skeleton .content-list-card-category {
   height: 12px;
   width: 30%;
+  padding-left: 0;
 }
 
 .content-list .content-list-card-skeleton .content-list-card-date {
