@@ -656,6 +656,41 @@
     ]
   },
   {
+    "id": "related-articles",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Heading",
+        "value": "Related Articles"
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "articleCount",
+        "label": "Number of Articles",
+        "description": "How many related articles to show (siblings under the same parent, newest first, excluding the current page).",
+        "value": 3
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "indexPath",
+        "label": "Query Index Path",
+        "description": "The query-index.json to read siblings from. Defaults to the press-releases section index.",
+        "value": "/us/en/newsroom/press-releases/query-index.json"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "showDate",
+        "label": "Show Date",
+        "description": "Show the published date on each card. Off by default."
+      }
+    ]
+  },
+  {
     "id": "social-share",
     "fields": [
       {
