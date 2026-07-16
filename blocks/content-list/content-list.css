@@ -28,14 +28,15 @@
   display: flex;
   flex-direction: column;
   background-color: var(--background-color);
+  border-radius: var(--border-radius-card);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
   overflow: hidden;
 }
 
-/* Uniform image crop so cards align on a clean grid. */
+/* Uniform image crop so cards align on a clean grid.
+   Corners are clipped by the card's own border-radius + overflow. */
 .content-list .content-list-card-image {
   line-height: 0;
-  border-radius: var(--border-radius-card);
-  overflow: hidden;
 }
 
 .content-list .content-list-card-image a {
@@ -57,7 +58,10 @@
 }
 
 .content-list .content-list-card-body {
-  margin: var(--spacing-sm) 0 0;
+  margin: 0;
+  padding: var(--spacing-md);
+  background-color: var(--background-color);
+  flex: 1 1 auto;
 }
 
 /* Category tag — uppercase label with a gold dash, matching cards-story. */
