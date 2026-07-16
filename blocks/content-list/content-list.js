@@ -70,6 +70,13 @@ function buildCard(entry) {
   const body = document.createElement('div');
   body.className = 'content-list-card-body';
 
+  // Category tag. Placeholder "Category" for now; will later read entry.category
+  // from the query index.
+  const category = document.createElement('p');
+  category.className = 'content-list-card-category';
+  category.textContent = 'Category';
+  body.append(category);
+
   const date = formatDate(entry.published);
   if (date) {
     const dateEl = document.createElement('p');
@@ -116,6 +123,7 @@ function renderPlaceholder(block, pageSize) {
     li.className = 'content-list-card content-list-card-skeleton';
     li.innerHTML = '<div class="content-list-card-image"></div>'
       + '<div class="content-list-card-body">'
+      + '<p class="content-list-card-category"></p>'
       + '<p class="content-list-card-date"></p>'
       + '<h3 class="content-list-card-title"></h3>'
       + '<p class="content-list-card-description"></p></div>';

@@ -1,4 +1,6 @@
-/* Content List — responsive card grid driven by a query index. */
+/* Content List — responsive card grid driven by a query index.
+   Styling mirrors the site's cards-story block (tokens, category tag,
+   title, description). */
 
 .content-list .content-list-grid {
   list-style: none;
@@ -6,10 +8,10 @@
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: var(--spacing-md);
 }
 
-@media (width >= 600px) {
+@media (width >= 768px) {
   .content-list .content-list-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -18,48 +20,88 @@
 @media (width >= 992px) {
   .content-list .content-list-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
   }
 }
 
 .content-list .content-list-card {
   display: flex;
   flex-direction: column;
+  background-color: var(--background-color);
+  overflow: hidden;
 }
 
-/* Uniform 16:9 image crop so cards align on a clean grid. */
+/* Uniform image crop so cards align on a clean grid. */
 .content-list .content-list-card-image {
-  margin-bottom: 16px;
+  line-height: 0;
+  border-radius: var(--border-radius-card);
+  overflow: hidden;
 }
 
 .content-list .content-list-card-image a {
   display: block;
+  line-height: 0;
 }
 
 .content-list .content-list-card-image picture,
 .content-list .content-list-card-image img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 380 / 280;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.content-list .content-list-card:hover .content-list-card-image img {
+  transform: scale(1.03);
+}
+
+.content-list .content-list-card-body {
+  margin: var(--spacing-sm) 0 0;
+}
+
+/* Category tag — uppercase label with a gold dash, matching cards-story. */
+.content-list .content-list-card-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 var(--spacing-xs);
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--text-color);
+}
+
+.content-list .content-list-card-category::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 3px;
+  background-color: var(--ups-gold);
+  border-radius: 2px;
 }
 
 .content-list .content-list-card-date {
-  margin: 0 0 8px;
-  font-size: 14px;
-  line-height: 21px;
-  color: #5f5753;
+  margin: 0 0 var(--spacing-xs);
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+  color: var(--text-color);
 }
 
 .content-list .content-list-card-title {
-  margin: 0 0 8px;
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 500;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 var(--spacing-xs);
+  color: var(--text-color);
 }
 
 .content-list .content-list-card-title a {
-  color: inherit;
+  color: var(--text-color);
   text-decoration: none;
+  font-weight: 700;
 }
 
 .content-list .content-list-card-title a:hover {
@@ -68,9 +110,10 @@
 
 .content-list .content-list-card-description {
   margin: 0;
-  font-size: 16px;
-  line-height: 24px;
-  color: #5f5753;
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-color);
 
   /* Clamp to keep card bodies even. */
   display: -webkit-box;
@@ -82,14 +125,15 @@
 
 .content-list .content-list-more {
   display: block;
-  margin: 40px auto 0;
+  margin: var(--spacing-lg) auto 0;
   padding: 12px 32px;
-  font-size: 16px;
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
   cursor: pointer;
-  background: #ffc400;
+  background: var(--ups-gold);
   border: none;
   border-radius: 4px;
-  color: #121212;
+  color: var(--text-color);
 }
 
 .content-list .content-list-more:hover {
@@ -98,13 +142,14 @@
 
 .content-list .content-list-empty,
 .content-list .content-list-notice {
-  margin: 0 0 24px;
-  font-size: 16px;
-  color: #5f5753;
+  margin: 0 0 var(--spacing-md);
+  font-size: var(--body-font-size-m);
+  color: var(--text-color);
 }
 
 /* Author placeholder skeleton. */
 .content-list .content-list-card-skeleton .content-list-card-image,
+.content-list .content-list-card-skeleton .content-list-card-category,
 .content-list .content-list-card-skeleton .content-list-card-date,
 .content-list .content-list-card-skeleton .content-list-card-title,
 .content-list .content-list-card-skeleton .content-list-card-description {
@@ -113,8 +158,16 @@
 }
 
 .content-list .content-list-card-skeleton .content-list-card-image {
-  aspect-ratio: 16 / 9;
-  margin-bottom: 16px;
+  aspect-ratio: 380 / 280;
+}
+
+.content-list .content-list-card-skeleton .content-list-card-category::before {
+  display: none;
+}
+
+.content-list .content-list-card-skeleton .content-list-card-category {
+  height: 12px;
+  width: 30%;
 }
 
 .content-list .content-list-card-skeleton .content-list-card-date {
@@ -123,9 +176,8 @@
 }
 
 .content-list .content-list-card-skeleton .content-list-card-title {
-  height: 24px;
+  height: 22px;
   width: 80%;
-  margin: 8px 0;
 }
 
 .content-list .content-list-card-skeleton .content-list-card-description {
