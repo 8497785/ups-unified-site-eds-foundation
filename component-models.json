@@ -361,6 +361,41 @@
     ]
   },
   {
+    "id": "content-list",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "indexPath",
+        "label": "Query Index Path",
+        "description": "The query-index.json URL to list from (e.g. /us/en/newsroom/press-releases/query-index.json).",
+        "value": "/us/en/newsroom/press-releases/query-index.json"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "filterPrefix",
+        "label": "Path Filter Prefix",
+        "description": "Optional. Only list entries whose path starts with this prefix. Leave blank to list everything in the index."
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "pageSize",
+        "label": "Items Per Page",
+        "description": "How many items to show initially and per 'Load more' click.",
+        "value": 12
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "loadMoreLabel",
+        "label": "Load More Label",
+        "value": "Load more"
+      }
+    ]
+  },
+  {
     "id": "downloads",
     "fields": [
       {

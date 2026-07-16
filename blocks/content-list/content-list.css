@@ -1,0 +1,134 @@
+/* Content List — responsive card grid driven by a query index. */
+
+.content-list .content-list-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (width >= 600px) {
+  .content-list .content-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 992px) {
+  .content-list .content-list-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.content-list .content-list-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Uniform 16:9 image crop so cards align on a clean grid. */
+.content-list .content-list-card-image {
+  margin-bottom: 16px;
+}
+
+.content-list .content-list-card-image a {
+  display: block;
+}
+
+.content-list .content-list-card-image picture,
+.content-list .content-list-card-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.content-list .content-list-card-date {
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 21px;
+  color: #5f5753;
+}
+
+.content-list .content-list-card-title {
+  margin: 0 0 8px;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.content-list .content-list-card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.content-list .content-list-card-title a:hover {
+  text-decoration: underline;
+}
+
+.content-list .content-list-card-description {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: #5f5753;
+
+  /* Clamp to keep card bodies even. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+.content-list .content-list-more {
+  display: block;
+  margin: 40px auto 0;
+  padding: 12px 32px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #ffc400;
+  border: none;
+  border-radius: 4px;
+  color: #121212;
+}
+
+.content-list .content-list-more:hover {
+  background: #e6b000;
+}
+
+.content-list .content-list-empty,
+.content-list .content-list-notice {
+  margin: 0 0 24px;
+  font-size: 16px;
+  color: #5f5753;
+}
+
+/* Author placeholder skeleton. */
+.content-list .content-list-card-skeleton .content-list-card-image,
+.content-list .content-list-card-skeleton .content-list-card-date,
+.content-list .content-list-card-skeleton .content-list-card-title,
+.content-list .content-list-card-skeleton .content-list-card-description {
+  background: #eceae8;
+  border-radius: 4px;
+}
+
+.content-list .content-list-card-skeleton .content-list-card-image {
+  aspect-ratio: 16 / 9;
+  margin-bottom: 16px;
+}
+
+.content-list .content-list-card-skeleton .content-list-card-date {
+  height: 14px;
+  width: 40%;
+}
+
+.content-list .content-list-card-skeleton .content-list-card-title {
+  height: 24px;
+  width: 80%;
+  margin: 8px 0;
+}
+
+.content-list .content-list-card-skeleton .content-list-card-description {
+  height: 60px;
+  width: 100%;
+}
