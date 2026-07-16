@@ -108,7 +108,7 @@
 .content-list .content-list-card-title {
   font-family: var(--serif, var(--body-font-family));
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 32px;
   margin: 0 0 var(--spacing-xs);
   color: #242424;
@@ -117,7 +117,7 @@
 .content-list .content-list-card-title a {
   color: #242424;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .content-list .content-list-card-title a:hover {

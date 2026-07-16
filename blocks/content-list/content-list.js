@@ -22,7 +22,8 @@ function isAuthorEnvironment() {
 }
 
 // Read the block's authored cells in model order:
-// indexPath, filterPrefix, pageSize, loadMoreLabel. Blanks fall back to defaults.
+// indexPath, filterPrefix, pageSize, loadMoreLabel, showDate.
+// Blanks fall back to defaults; showDate defaults to false (date hidden).
 function readConfig(block) {
   const rows = [...block.children];
   const cell = (i) => rows[i]?.textContent.trim() || '';
@@ -30,8 +31,9 @@ function readConfig(block) {
   const filterPrefix = cell(1) || DEFAULTS.filterPrefix;
   const pageSize = parseInt(cell(2), 10) || DEFAULTS.pageSize;
   const loadMoreLabel = cell(3) || DEFAULTS.loadMoreLabel;
+  const showDate = /^(true|yes|on)$/i.test(cell(4));
   return {
-    indexPath, filterPrefix, pageSize, loadMoreLabel,
+    indexPath, filterPrefix, pageSize, loadMoreLabel, showDate,
   };
 }
 
@@ -52,7 +54,7 @@ function byPublishedDesc(a, b) {
   return vb - va;
 }
 
-function buildCard(entry) {
+function buildCard(entry, showDate) {
   const li = document.createElement('li');
   li.className = 'content-list-card';
 
@@ -77,7 +79,7 @@ function buildCard(entry) {
   category.textContent = 'Category';
   body.append(category);
 
-  const date = formatDate(entry.published);
+  const date = showDate ? formatDate(entry.published) : '';
   if (date) {
     const dateEl = document.createElement('p');
     dateEl.className = 'content-list-card-date';
@@ -135,7 +137,7 @@ function renderPlaceholder(block, pageSize) {
 
 export default async function decorate(block) {
   const {
-    indexPath, filterPrefix, pageSize, loadMoreLabel,
+    indexPath, filterPrefix, pageSize, loadMoreLabel, showDate,
   } = readConfig(block);
 
   // The query index isn't served in the author environment — show a placeholder.
@@ -179,7 +181,8 @@ export default async function decorate(block) {
 
   let shown = 0;
   const renderNext = () => {
-    entries.slice(shown, shown + pageSize).forEach((entry) => ul.append(buildCard(entry)));
+    entries.slice(shown, shown + pageSize)
+      .forEach((entry) => ul.append(buildCard(entry, showDate)));
     shown += pageSize;
   };
 

@@ -392,6 +392,13 @@
         "name": "loadMoreLabel",
         "label": "Load More Label",
         "value": "Load more"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "showDate",
+        "label": "Show Date",
+        "description": "Show the published date on each card. Off by default."
       }
     ]
   },
