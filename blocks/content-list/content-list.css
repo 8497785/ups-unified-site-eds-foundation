@@ -121,7 +121,7 @@
 }
 
 .content-list .content-list-card-title a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Description — source: .upspr-content-tile__details .upspr-description (#242424). */
