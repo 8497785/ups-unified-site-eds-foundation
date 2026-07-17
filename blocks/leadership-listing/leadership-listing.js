@@ -10,11 +10,19 @@ const DEFAULT_QUERY = 'leadership-list';
  * the current leadership page, so the link is the current page path plus the
  * last segment of the CF _path (e.g. ".../our-leadership/carol-tome" →
  * "<current-path>/carol-tome").
+ *
+ * The current page path may carry a .html suffix (author/preview URLs, e.g.
+ * ".../leadership.html"). Strip it off the base before appending the slug so
+ * the child page nests correctly (".../leadership/<slug>"), then re-apply the
+ * .html suffix when the current page used one — keeping author links valid and
+ * delivery links clean.
  */
 function deriveBioLink(cfPath) {
   const slug = cfPath.replace(/\/$/, '').split('/').pop();
-  const base = window.location.pathname.replace(/\/$/, '');
-  return `${base}/${slug}`;
+  const pathname = window.location.pathname.replace(/\/$/, '');
+  const hasHtml = /\.html$/.test(pathname);
+  const base = pathname.replace(/\.html$/, '');
+  return `${base}/${slug}${hasHtml ? '.html' : ''}`;
 }
 
 /**
