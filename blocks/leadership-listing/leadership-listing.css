@@ -143,3 +143,80 @@
   line-height: 21px;
   color: #767676;
 }
+
+/* Placeholder skeleton — shown when no root Content Fragment is selected.
+   Reuses the same grid/card shell as the real listing. */
+.leadership-listing ul.leadership-listing-skeleton {
+  list-style: none;
+  margin: 0;
+  padding: 16px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (width >= 768px) {
+  .leadership-listing ul.leadership-listing-skeleton {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.leadership-listing .leadership-listing-skeleton li {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-card);
+  box-shadow: 0 4px 24px 0 rgb(0 0 0 / 16%);
+  overflow: hidden;
+}
+
+.leadership-listing .leadership-listing-skeleton .leadership-card-link {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 100%;
+}
+
+.leadership-listing .leadership-listing-skeleton .skeleton-box {
+  flex: 0 0 auto;
+  width: 180px;
+  min-height: 167px;
+  background: #eceae8;
+}
+
+@media (width <= 1023px) {
+  .leadership-listing .leadership-listing-skeleton .skeleton-box {
+    width: 103px;
+  }
+}
+
+.leadership-listing .leadership-listing-skeleton .leadership-card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px 32px;
+}
+
+.leadership-listing .leadership-listing-skeleton .leadership-card-body::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 3px;
+  background-color: var(--ups-gold);
+  margin-bottom: 16px;
+}
+
+.leadership-listing .leadership-listing-skeleton .skeleton-line {
+  background: #eceae8;
+  border-radius: 4px;
+}
+
+.leadership-listing .leadership-listing-skeleton .skeleton-name {
+  height: 24px;
+  width: 70%;
+  margin-bottom: 12px;
+}
+
+.leadership-listing .leadership-listing-skeleton .skeleton-role {
+  height: 14px;
+  width: 45%;
+}

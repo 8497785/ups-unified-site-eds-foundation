@@ -38,6 +38,23 @@ async function fetchLeaders(url) {
   return [];
 }
 
+// Placeholder skeleton shown when no root Content Fragment is selected, so
+// authors see the block's card layout instead of an empty region.
+function renderSkeleton(block, count = 4) {
+  const ul = document.createElement('ul');
+  ul.className = 'leadership-listing-skeleton';
+  for (let i = 0; i < count; i += 1) {
+    const li = document.createElement('li');
+    li.innerHTML = '<div class="leadership-card-link">'
+      + '<div class="leadership-card-image skeleton-box"></div>'
+      + '<div class="leadership-card-body">'
+      + '<div class="skeleton-line skeleton-name"></div>'
+      + '<div class="skeleton-line skeleton-role"></div></div></div>';
+    ul.append(li);
+  }
+  block.replaceChildren(ul);
+}
+
 function renderCard(item) {
   const li = document.createElement('li');
 
@@ -106,6 +123,12 @@ export default async function decorate(block) {
   const ctaLinkEl = ctaRow ? ctaRow.querySelector('a') : null;
   const ctaHref = ctaLinkEl ? ctaLinkEl.getAttribute('href') : '';
   const ctaText = ctaLinkEl ? ctaLinkEl.textContent.trim() : '';
+
+  // No root Content Fragment selected — show a placeholder skeleton.
+  if (!normalizeRootPath(rootPath)) {
+    renderSkeleton(block);
+    return;
+  }
 
   // Header (title + optional CTA) — mirrors leadership-list-cf structure.
   const headerRow = document.createElement('div');

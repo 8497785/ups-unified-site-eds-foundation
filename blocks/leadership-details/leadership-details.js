@@ -31,6 +31,25 @@ function readPath(row) {
   return (a ? a.getAttribute('href') : row.textContent.trim()) || '';
 }
 
+// Placeholder skeleton shown when no Content Fragment is selected, so authors
+// see the block's layout instead of an empty region.
+function renderSkeleton(block) {
+  const wrap = document.createElement('div');
+  wrap.className = 'leadership-details-skeleton';
+  wrap.innerHTML = `
+    <div class="leadership-bio-content">
+      <div class="skeleton-line skeleton-name"></div>
+      <div class="skeleton-line skeleton-title"></div>
+      <div class="skeleton-line skeleton-body"></div>
+      <div class="skeleton-line skeleton-body"></div>
+      <div class="skeleton-line skeleton-body skeleton-body-short"></div>
+    </div>
+    <div class="leadership-bio-media">
+      <div class="skeleton-image"></div>
+    </div>`;
+  block.replaceChildren(wrap);
+}
+
 export default async function decorate(block) {
   // Fields in model order: fragment, highRes, lowRes.
   const rows = [...block.children];
@@ -43,7 +62,8 @@ export default async function decorate(block) {
   const cfPath = normalizeCfPath(readPath(fragmentRow) || block.textContent.trim());
 
   if (!cfPath) {
-    block.replaceChildren();
+    // No Content Fragment selected — show a placeholder skeleton.
+    renderSkeleton(block);
     return;
   }
 
