@@ -293,6 +293,12 @@
 }
 
 /* Placeholder skeleton — shown when no Content Fragment is selected. */
+.leadership-details .leadership-placeholder-notice {
+  margin: 0 0 var(--spacing-md);
+  font-size: var(--body-font-size-m);
+  color: #767676;
+}
+
 .leadership-details .leadership-details-skeleton {
   display: flex;
   flex-direction: column-reverse;

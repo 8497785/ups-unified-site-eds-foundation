@@ -146,6 +146,12 @@
 
 /* Placeholder skeleton — shown when no root Content Fragment is selected.
    Reuses the same grid/card shell as the real listing. */
+.leadership-listing .leadership-placeholder-notice {
+  margin: 0;
+  font-size: var(--body-font-size-m);
+  color: #767676;
+}
+
 .leadership-listing ul.leadership-listing-skeleton {
   list-style: none;
   margin: 0;

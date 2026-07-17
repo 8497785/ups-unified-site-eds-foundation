@@ -41,6 +41,10 @@ async function fetchLeaders(url) {
 // Placeholder skeleton shown when no root Content Fragment is selected, so
 // authors see the block's card layout instead of an empty region.
 function renderSkeleton(block, count = 4) {
+  const notice = document.createElement('p');
+  notice.className = 'leadership-placeholder-notice';
+  notice.textContent = 'Select a leadership root Content Fragment to see the listing.';
+
   const ul = document.createElement('ul');
   ul.className = 'leadership-listing-skeleton';
   for (let i = 0; i < count; i += 1) {
@@ -52,7 +56,7 @@ function renderSkeleton(block, count = 4) {
       + '<div class="skeleton-line skeleton-role"></div></div></div>';
     ul.append(li);
   }
-  block.replaceChildren(ul);
+  block.replaceChildren(notice, ul);
 }
 
 function renderCard(item) {

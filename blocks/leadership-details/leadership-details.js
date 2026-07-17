@@ -34,6 +34,10 @@ function readPath(row) {
 // Placeholder skeleton shown when no Content Fragment is selected, so authors
 // see the block's layout instead of an empty region.
 function renderSkeleton(block) {
+  const notice = document.createElement('p');
+  notice.className = 'leadership-placeholder-notice';
+  notice.textContent = 'Select a leadership Content Fragment to see the bio.';
+
   const wrap = document.createElement('div');
   wrap.className = 'leadership-details-skeleton';
   wrap.innerHTML = `
@@ -47,7 +51,7 @@ function renderSkeleton(block) {
     <div class="leadership-bio-media">
       <div class="skeleton-image"></div>
     </div>`;
-  block.replaceChildren(wrap);
+  block.replaceChildren(notice, wrap);
 }
 
 export default async function decorate(block) {
