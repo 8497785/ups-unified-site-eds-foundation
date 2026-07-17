@@ -292,7 +292,13 @@
   }
 }
 
-/* Placeholder skeleton — shown when no Content Fragment is selected. */
+/* Placeholder skeleton — shown when no Content Fragment is selected.
+   Override the block's flex row so the notice stacks full-width on top. */
+.leadership-details:has(.leadership-details-skeleton) {
+  display: block;
+  flex-direction: initial;
+}
+
 .leadership-details .leadership-placeholder-notice {
   margin: 0 0 var(--spacing-md);
   font-size: var(--body-font-size-m);
