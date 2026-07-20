@@ -2,15 +2,13 @@
 // Cell order matches the model: eyebrow, eyebrowLink, title, description,
 // articleDate, hideReadTime.
 //
-// Eyebrow Title and Eyebrow Link are optional: when left blank they derive
-// automatically from the current page path (the eyebrow points at the parent
-// "category" listing page, whose title is read from the site query index). This
-// keeps the eyebrow correct on any locale root (/us/en, /language-masters/en)
-// without manual authoring.
-
-import { getMetadata } from '../../scripts/aem.js';
+// Eyebrow Title and Eyebrow Link are authored: the label is the eyebrow text and
+// the link is an aem-content reference to the parent "category" page. The link
+// is delivered as a raw /content/about-ups-eds/... JCR path, so it is normalized
+// to a clean served URL at render time.
 
 const WORDS_PER_MINUTE = 200;
+const CONTENT_PREFIX = '/content/about-ups-eds';
 
 function cellText(row) {
   return row ? row.textContent.trim() : '';
@@ -22,55 +20,25 @@ function estimateReadTime() {
   return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 }
 
-// The parent "category" path: current page path minus the article slug, with any
-// .html stripped. Root-preserving, so /us/en/... yields a /us/en/... category
-// and /language-masters/en/... yields its own root.
-function parentCategoryPath() {
-  const clean = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '');
-  const parent = clean.split('/').slice(0, -1).join('/');
-  return parent || '/';
+// Normalize an authored aem-content link to a clean served URL: strip the
+// content-source prefix and any .html suffix. Idempotent and safe for links
+// that are already clean.
+function normalizeLink(href) {
+  if (!href) return href;
+  return href.replace(new RegExp(`^${CONTENT_PREFIX}`), '').replace(/\.html$/, '');
 }
 
-// Turn a path segment into a readable title (fallback of last resort).
-function humanize(path) {
-  const seg = path.split('/').filter(Boolean).pop() || '';
-  return seg.replace(/[-_]+/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-}
-
-// Resolve the eyebrow (category) title for a parent path from the site query
-// index. Returns '' when the index or a matching row isn't available, so the
-// caller can fall back.
-async function categoryTitleFromIndex(parentPath) {
-  try {
-    const resp = await fetch('/query-index.json');
-    if (!resp.ok) return '';
-    const { data = [] } = await resp.json();
-    const row = data.find((r) => (r.path || '').replace(/\.html$/, '').replace(/\/$/, '') === parentPath);
-    return row ? (row.title || row.category || '') : '';
-  } catch (e) {
-    return '';
-  }
-}
-
-export default async function decorate(block) {
+export default function decorate(block) {
   const rows = [...block.children];
   const [eyebrowRow, eyebrowLinkRow, titleRow, descRow, dateRow, hideReadRow] = rows;
 
-  const categoryPath = parentCategoryPath();
+  // Eyebrow Link + Title: authored. Link is an aem-content ref, normalized to
+  // the clean served path.
+  const eyebrowHref = normalizeLink(
+    eyebrowLinkRow?.querySelector('a')?.getAttribute('href') || cellText(eyebrowLinkRow),
+  );
+  const eyebrowText = cellText(eyebrowRow);
 
-  // Eyebrow Link: authored value wins; otherwise the derived parent category path.
-  const eyebrowHref = eyebrowLinkRow?.querySelector('a')?.getAttribute('href')
-    || cellText(eyebrowLinkRow)
-    || categoryPath;
-
-  // Eyebrow Title: authored value wins; otherwise index lookup, then the
-  // migration-emitted category metadata, then a humanized path segment.
-  let eyebrowText = cellText(eyebrowRow);
-  if (!eyebrowText) {
-    eyebrowText = await categoryTitleFromIndex(categoryPath)
-      || getMetadata('categorytitle')
-      || humanize(categoryPath);
-  }
   const titleEl = titleRow?.querySelector('h1, h2, h3') || titleRow;
   const descEl = descRow?.querySelector('p') || descRow;
   const dateText = cellText(dateRow);

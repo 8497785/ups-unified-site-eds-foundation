@@ -108,6 +108,12 @@ const isoDate = (raw) => {
 //   -> /language-masters/en/newsroom/press-releases/customer-first
 const categoryUrl = (relPath) => `/${relPath.split('/').slice(0, -1).join('/')}`;
 
+// Category as a full AEM content reference (for the authorable eyebrowLink,
+// an aem-content field). This is the real JCR path of the parent category page,
+// which MSM rewrites (language-masters/en -> us/en) on rollout.
+// e.g. -> /content/about-ups-eds/language-masters/en/newsroom/press-releases/customer-first
+const categoryContentPath = (relPath) => `/content/${SITE}${categoryUrl(relPath)}`;
+
 // A minimal titled cq:Page node (parent pages). jcr:title lives on jcr:content.
 const parentXml = (title) => `<?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" jcr:primaryType="cq:Page">
@@ -142,6 +148,7 @@ async function buildLeaf(relPath) {
   const publishDate = isoDate(articleDate) || new Date().toISOString().slice(0, 10);
   const categoryTitle = eyebrow; // Category Title = eyebrow text
   const categoryHref = categoryUrl(relPath); // parent path, relative, no .html
+  const eyebrowLink = categoryContentPath(relPath); // authorable aem-content ref
 
   // ---- hero image (first top-level <p><picture><img>) ----
   const heroImgEl = document.querySelector('p img');
@@ -162,7 +169,7 @@ async function buildLeaf(relPath) {
     <root jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/root/v1/root">
       <section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
         <block_breadcrumb sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="breadcrumb" homeLabel="Home" model="breadcrumb" modelFields="[homeLabel]" name="Breadcrumb"/>
-        <block sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="article-header" articleDate="${attr(articleDate)}" description="${attr(description)}" hideReadTime="${attr(hideReadTime)}" model="article-header" modelFields="[eyebrow,eyebrowLink,title,description,articleDate,hideReadTime]" name="Article Header" title="${attr(`<p>${title}</p>`)}"/>
+        <block sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="article-header" articleDate="${attr(articleDate)}" description="${attr(description)}" eyebrow="${attr(eyebrow)}" eyebrowLink="${attr(eyebrowLink)}" hideReadTime="${attr(hideReadTime)}" model="article-header" modelFields="[eyebrow,eyebrowLink,title,description,articleDate,hideReadTime]" name="Article Header" title="${attr(`<p>${title}</p>`)}"/>
         <image sling:resourceType="core/franklin/components/image/v1/image" jcr:primaryType="nt:unstructured" aueComponentId="image" image="${attr(heroImg)}" imageAlt="${attr(heroAlt)}"/>
         <block_1 sling:resourceType="core/franklin/components/columns/v1/columns" jcr:primaryType="nt:unstructured" aueComponentId="column-control" rows="1" columns="2" model="column-control" modelFields="[columns,classes]" name="Column Control" classes="layout-8-4">
           <row1 jcr:primaryType="nt:unstructured">
