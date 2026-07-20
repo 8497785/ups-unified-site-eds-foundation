@@ -4,11 +4,10 @@
 //
 // Eyebrow Title and Eyebrow Link are authored: the label is the eyebrow text and
 // the link is an aem-content reference to the parent "category" page. The link
-// is delivered as a raw /content/about-ups-eds/... JCR path, so it is normalized
-// to a clean served URL at render time.
+// is rendered exactly as authored — no rewriting — so the author-selected path
+// (and its MSM-rewritten locale after rollout) is preserved verbatim.
 
 const WORDS_PER_MINUTE = 200;
-const CONTENT_PREFIX = '/content/about-ups-eds';
 
 function cellText(row) {
   return row ? row.textContent.trim() : '';
@@ -20,23 +19,14 @@ function estimateReadTime() {
   return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 }
 
-// Normalize an authored aem-content link to a clean served URL: strip the
-// content-source prefix and any .html suffix. Idempotent and safe for links
-// that are already clean.
-function normalizeLink(href) {
-  if (!href) return href;
-  return href.replace(new RegExp(`^${CONTENT_PREFIX}`), '').replace(/\.html$/, '');
-}
-
 export default function decorate(block) {
   const rows = [...block.children];
   const [eyebrowRow, eyebrowLinkRow, titleRow, descRow, dateRow, hideReadRow] = rows;
 
-  // Eyebrow Link + Title: authored. Link is an aem-content ref, normalized to
-  // the clean served path.
-  const eyebrowHref = normalizeLink(
-    eyebrowLinkRow?.querySelector('a')?.getAttribute('href') || cellText(eyebrowLinkRow),
-  );
+  // Eyebrow Link + Title: authored. Link is the author-selected aem-content
+  // path, used exactly as-is (no rewrite).
+  const eyebrowHref = eyebrowLinkRow?.querySelector('a')?.getAttribute('href')
+    || cellText(eyebrowLinkRow);
   const eyebrowText = cellText(eyebrowRow);
 
   const titleEl = titleRow?.querySelector('h1, h2, h3') || titleRow;

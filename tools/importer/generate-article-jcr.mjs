@@ -62,11 +62,14 @@ const META_DIR = `${PKG_BASE}/jcr/META-INF/vault`;
 const CONTENT_PATH = `/content/${SITE}`; // AEM path prefix
 
 // Intermediate parent pages -> jcr:title. language-masters / en are structural.
+// NOTE: the press-releases listing page is intentionally EXCLUDED — it is
+// authored/maintained directly in AEM (Breadcrumb + Headline + Content List),
+// so the generator must never write its .content.xml or a filter that covers
+// it, otherwise installing the package would overwrite those author edits.
 const PARENTS = [
   ['language-masters', 'Language Masters'],
   ['language-masters/en', 'English'],
   ['language-masters/en/newsroom', 'Newsroom'],
-  ['language-masters/en/newsroom/press-releases', 'Press Releases'],
   ['language-masters/en/newsroom/press-releases/customer-first', 'Customer First'],
 ];
 
