@@ -157,11 +157,13 @@
         "value": ""
       },
       {
-        "component": "text",
-        "valueType": "string",
+        "component": "date-time",
+        "valueType": "date",
         "name": "articleDate",
         "label": "Article Date",
-        "description": "Any date the browser can parse (e.g. 2026-06-22 or June 22, 2026)."
+        "displayFormat": "YYYY-MM-DD",
+        "valueFormat": "YYYY-MM-DD",
+        "description": "Select the article date."
       },
       {
         "component": "boolean",

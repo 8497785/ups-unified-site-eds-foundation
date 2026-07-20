@@ -19,6 +19,23 @@ function estimateReadTime() {
   return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 }
 
+// Render the article date as MM-DD-YYYY, handling both the new date-time picker
+// values (ISO, e.g. 2026-07-20 or 2026-07-20T00:00:00.000Z) and the legacy
+// migrated plain-text dates (already MM-DD-YYYY). Uses UTC parts to avoid a
+// timezone off-by-one. Returns '' for blank/unparseable input.
+function formatArticleDate(raw) {
+  const s = (raw || '').trim();
+  if (!s) return '';
+  if (/^\d{1,2}-\d{1,2}-\d{4}$/.test(s)) return s; // legacy MM-DD-YYYY, keep as-is
+  const iso = s.match(/^(\d{4})-(\d{2})-(\d{2})/); // ISO date or datetime
+  if (iso) { const [, y, m, d] = iso; return `${m}-${d}-${y}`; }
+  const dt = new Date(s);
+  if (Number.isNaN(dt.getTime())) return '';
+  const mm = String(dt.getUTCMonth() + 1).padStart(2, '0');
+  const dd = String(dt.getUTCDate()).padStart(2, '0');
+  return `${mm}-${dd}-${dt.getUTCFullYear()}`;
+}
+
 export default function decorate(block) {
   const rows = [...block.children];
   const [eyebrowRow, eyebrowLinkRow, titleRow, descRow, dateRow, hideReadRow] = rows;
@@ -31,7 +48,7 @@ export default function decorate(block) {
 
   const titleEl = titleRow?.querySelector('h1, h2, h3') || titleRow;
   const descEl = descRow?.querySelector('p') || descRow;
-  const dateText = cellText(dateRow);
+  const dateText = formatArticleDate(cellText(dateRow));
   const hideReadTime = /^(true|yes|on)$/i.test(cellText(hideReadRow));
 
   const header = document.createElement('div');
