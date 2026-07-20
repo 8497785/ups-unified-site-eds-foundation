@@ -20,6 +20,32 @@
         "name": "keywords",
         "multi": true,
         "label": "Keywords"
+      },
+      {
+        "component": "date-time",
+        "valueType": "date",
+        "name": "publishdate",
+        "label": "Publish Date",
+        "displayFormat": "YYYY-MM-DD",
+        "valueFormat": "YYYY-MM-DD",
+        "description": "Article publish date. Used by listing/related blocks and SEO."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "categorytitle",
+        "label": "Category Title",
+        "description": "Category label for listings (e.g. Customer First)."
+      },
+      {
+        "component": "aem-content",
+        "name": "categoryurl",
+        "label": "Category URL",
+        "rootPath": "/content/about-ups-eds",
+        "validation": {
+          "rootPath": "/content/about-ups-eds"
+        },
+        "description": "Select the category page. Used as the category link in listings."
       }
     ]
   },
