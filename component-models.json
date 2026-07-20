@@ -138,7 +138,10 @@
         "name": "eyebrowLink",
         "label": "Eyebrow Link",
         "rootPath": "/content/about-ups-eds",
-        "description": "Select the parent category page. The picker browses/searches under /content/about-ups-eds."
+        "validation": {
+          "rootPath": "/content/about-ups-eds"
+        },
+        "description": "Select the parent category page. The picker opens under /content/about-ups-eds."
       },
       {
         "component": "richtext",
