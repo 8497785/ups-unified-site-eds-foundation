@@ -24,7 +24,6 @@
         },
         {
           "component": "reference",
-          "valueType": "string",
           "name": "image",
           "label": "Featured Image",
           "multi": false,
