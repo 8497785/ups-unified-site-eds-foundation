@@ -18,14 +18,14 @@ indices:
         select: head > meta[property="og:image"]
         value: attribute(el, "content")
       published:
-        select: head > meta[name="publishdate"]
-        value: attribute(el, "content")
+        select: main .article-header > div:nth-child(5)
+        value: textContent(el)
       category:
-        select: head > meta[name="categorytitle"]
-        value: attribute(el, "content")
+        select: main .article-header > div:nth-child(1)
+        value: textContent(el)
       categoryUrl:
-        select: head > meta[name="categoryurl"]
-        value: attribute(el, "content")
+        select: main .article-header > div:nth-child(2) a
+        value: attribute(el, "href")
       lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
@@ -67,14 +67,14 @@ indices:
         select: head > meta[property="og:image"]
         value: attribute(el, "content")
       published:
-        select: head > meta[name="publishdate"]
-        value: attribute(el, "content")
+        select: main .article-header > div:nth-child(5)
+        value: textContent(el)
       category:
-        select: head > meta[name="categorytitle"]
-        value: attribute(el, "content")
+        select: main .article-header > div:nth-child(1)
+        value: textContent(el)
       categoryUrl:
-        select: head > meta[name="categoryurl"]
-        value: attribute(el, "content")
+        select: main .article-header > div:nth-child(2) a
+        value: attribute(el, "href")
       lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
