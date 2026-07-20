@@ -137,7 +137,8 @@
         "component": "aem-content",
         "name": "eyebrowLink",
         "label": "Eyebrow Link",
-        "description": "Optional. Leave blank to auto-derive the parent category path from the current page URL (without .html)."
+        "rootPath": "/content/about-ups-eds",
+        "description": "Select the parent category page. The picker browses/searches under /content/about-ups-eds."
       },
       {
         "component": "richtext",
