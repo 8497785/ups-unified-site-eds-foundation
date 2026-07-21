@@ -84,6 +84,12 @@
   color: #242424;
 }
 
+.content-list .content-list-card-category a {
+  color: #242424;
+  font-weight: 700;
+  text-decoration: none;
+}
+
 .content-list .content-list-card-category::before {
   content: '';
   position: absolute;
