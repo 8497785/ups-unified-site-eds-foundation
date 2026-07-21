@@ -72,12 +72,20 @@ function buildCard(entry, showDate) {
   const body = document.createElement('div');
   body.className = 'content-list-card-body';
 
-  // Category tag. Placeholder "Category" for now; will later read entry.category
-  // from the query index.
-  const category = document.createElement('p');
-  category.className = 'content-list-card-category';
-  category.textContent = 'Category';
-  body.append(category);
+  // Category tag from the query index (title + optional link).
+  if (entry.category) {
+    const category = document.createElement('p');
+    category.className = 'content-list-card-category';
+    if (entry.categoryUrl) {
+      const a = document.createElement('a');
+      a.href = entry.categoryUrl;
+      a.textContent = entry.category;
+      category.append(a);
+    } else {
+      category.textContent = entry.category;
+    }
+    body.append(category);
+  }
 
   const date = showDate ? formatDate(entry.published) : '';
   if (date) {
