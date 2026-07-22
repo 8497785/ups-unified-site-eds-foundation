@@ -10,10 +10,12 @@
 // fetching, and real cards appear on the published/preview site.
 
 import { createOptimizedPicture } from '../../scripts/aem.js';
+import { createButton } from '../button/button.js';
 
 const DEFAULTS = {
   pageSize: 12,
   loadMoreLabel: 'Load More',
+  loadMoreStyle: 'primary',
 };
 
 function isAuthorEnvironment() {
@@ -68,6 +70,7 @@ function readConfig(block) {
       filterPrefix,
       pageSize: parseInt(cell(2), 10) || DEFAULTS.pageSize,
       loadMoreLabel: cell(3) || DEFAULTS.loadMoreLabel,
+      loadMoreStyle: DEFAULTS.loadMoreStyle,
       showDate: /^(true|yes|on)$/i.test(cell(4)),
       sortBy: 'newest',
       maxItems: 0,
@@ -79,9 +82,10 @@ function readConfig(block) {
     filterPrefix,
     pageSize: parseInt(cell(1), 10) || DEFAULTS.pageSize,
     loadMoreLabel: cell(2) || DEFAULTS.loadMoreLabel,
-    showDate: /^(true|yes|on)$/i.test(cell(3)),
-    sortBy: cell(4) || 'newest',
-    maxItems: parseInt(cell(5), 10) || 0,
+    loadMoreStyle: cell(3) || DEFAULTS.loadMoreStyle,
+    showDate: /^(true|yes|on)$/i.test(cell(4)),
+    sortBy: cell(5) || 'newest',
+    maxItems: parseInt(cell(6), 10) || 0,
   };
 }
 
@@ -200,7 +204,8 @@ function renderPlaceholder(block, pageSize) {
 
 export default async function decorate(block) {
   const {
-    indexPath, filterPrefix, pageSize, loadMoreLabel, showDate, sortBy, maxItems,
+    indexPath, filterPrefix, pageSize, loadMoreLabel, loadMoreStyle,
+    showDate, sortBy, maxItems,
   } = readConfig(block);
 
   // The query index isn't served in the author environment — show a placeholder.
@@ -258,10 +263,8 @@ export default async function decorate(block) {
     shown += pageSize;
   };
 
-  const moreBtn = document.createElement('button');
-  moreBtn.type = 'button';
-  moreBtn.className = 'content-list-more';
-  moreBtn.textContent = loadMoreLabel;
+  const moreBtn = createButton({ label: loadMoreLabel, style: loadMoreStyle });
+  moreBtn.classList.add('content-list-more');
   moreBtn.addEventListener('click', () => {
     renderNext();
     if (shown >= entries.length) moreBtn.remove();

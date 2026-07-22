@@ -146,21 +146,10 @@
   overflow: hidden;
 }
 
+/* Load More reuses the button block's cmp-button styles; only its layout
+   (centered, spaced above the grid) is set here. */
 .content-list .content-list-more {
-  display: block;
   margin: var(--spacing-lg) auto 0;
-  padding: 12px 32px;
-  font-size: var(--body-font-size-m);
-  font-weight: 700;
-  cursor: pointer;
-  background: var(--ups-gold);
-  border: none;
-  border-radius: 4px;
-  color: var(--text-color);
-}
-
-.content-list .content-list-more:hover {
-  background: #e6b000;
 }
 
 .content-list .content-list-empty,

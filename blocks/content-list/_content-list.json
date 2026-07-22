@@ -48,6 +48,18 @@
           "value": "Load More"
         },
         {
+          "component": "select",
+          "valueType": "string",
+          "name": "loadMoreStyle",
+          "label": "Load More Button Style",
+          "value": "primary",
+          "options": [
+            { "name": "Primary", "value": "primary" },
+            { "name": "Secondary", "value": "secondary" },
+            { "name": "Tertiary", "value": "tertiary" }
+          ]
+        },
+        {
           "component": "boolean",
           "valueType": "boolean",
           "name": "showDate",

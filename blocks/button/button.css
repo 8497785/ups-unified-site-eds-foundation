@@ -1,0 +1,195 @@
+/* stylelint-disable selector-class-pattern -- cmp-button--* modifier names kept from the source design system */
+
+/* Button block — primary / secondary / tertiary CTA styles.
+   Adapted from the source site's .cmp-button component. Button-specific tokens
+   live here; brand colors reuse the globals in styles/styles.css where present. */
+
+.button,
+.content-list {
+  /* Button palette (source: cmp-button variables). */
+  --ups-black: #121212;
+  --ups-blue: #0662bb;
+  --ups-gray-1: #5f5753;
+  --ups-gray-3: #bfb8af;
+  --ups-gray-5: #f2f1ef;
+  --ups-light-blue: #e6eff8;
+  --yellow: #ffd64c;
+  --havelock-blue: #418ed9;
+  --primary-button-background: var(--ups-gold);
+  --primary-button-background-hover: var(--yellow);
+  --primary-button-color: var(--ups-black);
+  --secondary-button-color: var(--ups-blue);
+  --secondary-button-border: var(--ups-blue);
+  --tertiary-button-color: var(--ups-blue);
+  --font-size-cta: 1rem;
+  --line-height-cta: 1.5;
+  --button-font-weight: 500;
+}
+
+/* Base */
+.cmp-button {
+  font-family: var(--body-font-family);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.cmp-button__text {
+  display: inline;
+}
+
+.cmp-button:focus {
+  outline: none;
+}
+
+.cmp-button:focus-visible {
+  outline: 1px solid var(--ups-gray-1);
+  outline-offset: 2px;
+}
+
+/* Primary */
+.cmp-button.cmp-button--primary {
+  padding: 1rem 2.4rem;
+  background-color: var(--primary-button-background);
+  border-radius: 3.2rem;
+  color: var(--primary-button-color);
+  font-size: var(--font-size-cta);
+  line-height: var(--line-height-cta);
+  font-weight: var(--button-font-weight);
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+@media (width >= 768px) {
+  .cmp-button.cmp-button--primary {
+    width: auto;
+  }
+}
+
+.cmp-button.cmp-button--primary:hover {
+  border-radius: 3.6rem;
+  background-color: var(--primary-button-background-hover);
+  text-decoration: none;
+  box-shadow:
+    0 2px 6px rgb(0 0 0 / 6%),
+    0 4px 12px -2px rgb(0 0 0 / 8%),
+    0 15px 32px -3px rgb(0 0 0 / 8%);
+}
+
+.cmp-button.cmp-button--primary:focus-visible {
+  border-radius: 3.6rem;
+  box-shadow: none;
+  outline: 1px solid var(--ups-gray-1);
+  outline-offset: 6px;
+}
+
+.cmp-button.cmp-button--primary:active {
+  border-radius: 3.6rem;
+  background-color: var(--primary-button-background);
+}
+
+.cmp-button.cmp-button--primary.disabled,
+.cmp-button.cmp-button--primary:disabled {
+  border-radius: 3.6rem;
+  background-color: var(--ups-gray-5);
+  pointer-events: none;
+  color: var(--ups-gray-3);
+}
+
+/* Secondary */
+.cmp-button.cmp-button--secondary {
+  padding: 0.8rem 2.2rem;
+  background-color: transparent;
+  border-radius: 4rem;
+  color: var(--secondary-button-color);
+  border: 2px solid var(--secondary-button-border);
+  font-size: var(--font-size-cta);
+  line-height: var(--line-height-cta);
+  font-weight: var(--button-font-weight);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+@media (width >= 768px) {
+  .cmp-button.cmp-button--secondary {
+    width: auto;
+  }
+}
+
+.cmp-button.cmp-button--secondary:hover {
+  background-color: var(--ups-light-blue);
+  text-decoration: none;
+  box-shadow:
+    0 2px 6px rgb(0 0 0 / 6%),
+    0 4px 12px -2px rgb(0 0 0 / 8%),
+    0 15px 32px -3px rgb(0 0 0 / 8%);
+}
+
+.cmp-button.cmp-button--secondary:focus-visible {
+  background-color: rgb(255 255 255 / 0.01%);
+  box-shadow: none;
+  outline: 1px solid var(--ups-gray-1);
+  outline-offset: 6px;
+}
+
+.cmp-button.cmp-button--secondary:active {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.cmp-button.cmp-button--secondary.disabled,
+.cmp-button.cmp-button--secondary:disabled {
+  background-color: var(--ups-gray-5);
+  pointer-events: none;
+  color: var(--ups-gray-3);
+}
+
+/* Tertiary */
+.cmp-button.cmp-button--tertiary {
+  color: var(--tertiary-button-color);
+  font-size: var(--font-size-cta);
+  line-height: var(--line-height-cta);
+  font-weight: var(--button-font-weight);
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.cmp-button.cmp-button--tertiary:hover {
+  color: var(--havelock-blue);
+  text-decoration: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.cmp-button.cmp-button--tertiary:focus-visible {
+  border-radius: 0.4rem;
+  outline: 1px solid var(--ups-gray-1);
+  outline-offset: 2px;
+}
+
+.cmp-button.cmp-button--tertiary:active {
+  color: var(--ups-blue);
+}
+
+.cmp-button.cmp-button--tertiary.disabled,
+.cmp-button.cmp-button--tertiary:disabled {
+  pointer-events: none;
+  color: var(--ups-gray-3);
+}

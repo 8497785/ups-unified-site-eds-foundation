@@ -1,0 +1,59 @@
+{
+  "definitions": [
+    {
+      "title": "Button",
+      "id": "button",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Button",
+              "model": "button"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "button",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "label",
+          "label": "Button Label",
+          "description": "The text shown on the button."
+        },
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link",
+          "description": "Optional. If set, the button renders as a link (anchor)."
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "customClass",
+          "label": "Custom Class",
+          "description": "Optional. Extra CSS class(es) to add to the button."
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "style",
+          "label": "Style",
+          "value": "primary",
+          "options": [
+            { "name": "Primary", "value": "primary" },
+            { "name": "Secondary", "value": "secondary" },
+            { "name": "Tertiary", "value": "tertiary" }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
