@@ -1,8 +1,9 @@
-// Content List — a generic, query-index-driven listing.
+// Content List — a category-driven listing.
 //
-// The author points the block at a query-index.json (indexPath) and optionally
-// scopes it to a path prefix (filterPrefix). Entries are shown newest-first as
-// cards (image, date, linked title, description) with a "Load more" button.
+// The author selects a Category page; the block derives the section's
+// query-index.json and uses the category path as the filter prefix, so all
+// implementation details (index path, prefix) stay hidden. Entries render as
+// cards (image, date, linked title, description) with a "Load More" button.
 //
 // The query index is a delivery-tier artifact (served on *.aem.page / *.aem.live),
 // not on the AEM author host — so in author we render a placeholder instead of
@@ -11,29 +12,76 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 const DEFAULTS = {
-  indexPath: '/us/en/newsroom/press-releases/query-index.json',
-  filterPrefix: '',
   pageSize: 12,
-  loadMoreLabel: 'Load more',
+  loadMoreLabel: 'Load More',
 };
 
 function isAuthorEnvironment() {
   return window.location.hostname.endsWith('.adobeaemcloud.com');
 }
 
-// Read the block's authored cells in model order:
-// indexPath, filterPrefix, pageSize, loadMoreLabel, showDate.
-// Blanks fall back to defaults; showDate defaults to false (date hidden).
+// Normalize an authored category reference to a delivery path:
+// drop the .html suffix, any trailing slash, and a leading /content/<site>
+// segment pair (present on author-env aem-content refs). Delivery hrefs are
+// already public (e.g. /us/en/newsroom/press-releases/customer-first).
+function normalizeCategoryPath(raw) {
+  let p = (raw || '').trim().replace(/\.html$/, '').replace(/\/$/, '');
+  if (p.startsWith('/content/')) p = `/${p.split('/').slice(3).join('/')}`;
+  return p;
+}
+
+// Candidate query-index.json locations at or above a path, nearest first, e.g.
+// /a/b/c -> [/a/b/c/query-index.json, /a/b/query-index.json, /a/query-index.json].
+// The block probes these in order and uses the first that resolves, so a single
+// query-index.json per major section is found automatically for any category
+// beneath it (and for the section landing page itself).
+function candidateIndexPaths(prefix) {
+  const segments = prefix.split('/').filter(Boolean);
+  const paths = [];
+  for (let i = segments.length; i >= 1; i -= 1) {
+    paths.push(`/${segments.slice(0, i).join('/')}/query-index.json`);
+  }
+  return paths;
+}
+
+// Read the block's authored cells. Two authoring shapes are supported:
+//
+// New (category-driven): category, pageSize, loadMoreLabel, showDate,
+//   sortBy, maxItems. The selected category (aem-content) is the filter
+//   prefix; the query index is derived automatically (candidateIndexPaths),
+//   hiding those details from authors.
+//
+// Legacy (explicit): indexPath, filterPrefix, pageSize, loadMoreLabel,
+//   showDate. Detected when the first cell resolves to a query-index.json.
+//   Kept so pages authored before the simplification keep working.
 function readConfig(block) {
   const rows = [...block.children];
   const cell = (i) => rows[i]?.textContent.trim() || '';
-  const indexPath = cell(0) || DEFAULTS.indexPath;
-  const filterPrefix = cell(1) || DEFAULTS.filterPrefix;
-  const pageSize = parseInt(cell(2), 10) || DEFAULTS.pageSize;
-  const loadMoreLabel = cell(3) || DEFAULTS.loadMoreLabel;
-  const showDate = /^(true|yes|on)$/i.test(cell(4));
+  const firstLink = rows[0]?.querySelector('a');
+  const firstRaw = firstLink ? firstLink.getAttribute('href') : cell(0);
+
+  if (/query-index\.json$/.test(firstRaw)) {
+    const indexPath = firstRaw.trim();
+    const filterPrefix = cell(1);
+    return {
+      indexPath,
+      filterPrefix,
+      pageSize: parseInt(cell(2), 10) || DEFAULTS.pageSize,
+      loadMoreLabel: cell(3) || DEFAULTS.loadMoreLabel,
+      showDate: /^(true|yes|on)$/i.test(cell(4)),
+      sortBy: 'newest',
+      maxItems: 0,
+    };
+  }
+
+  const filterPrefix = normalizeCategoryPath(firstRaw);
   return {
-    indexPath, filterPrefix, pageSize, loadMoreLabel, showDate,
+    filterPrefix,
+    pageSize: parseInt(cell(1), 10) || DEFAULTS.pageSize,
+    loadMoreLabel: cell(2) || DEFAULTS.loadMoreLabel,
+    showDate: /^(true|yes|on)$/i.test(cell(3)),
+    sortBy: cell(4) || 'newest',
+    maxItems: parseInt(cell(5), 10) || 0,
   };
 }
 
@@ -45,13 +93,20 @@ function formatDate(iso) {
   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 }
 
-// Newest first; entries without a valid published date sort last.
-function byPublishedDesc(a, b) {
-  const ta = Date.parse(a.published || '');
-  const tb = Date.parse(b.published || '');
-  const va = Number.isNaN(ta) ? -Infinity : ta;
-  const vb = Number.isNaN(tb) ? -Infinity : tb;
-  return vb - va;
+// Return a comparator for the selected sort. Entries without a valid published
+// date sort last for date-based orders.
+function comparatorFor(sortBy) {
+  if (sortBy === 'title') {
+    return (a, b) => (a.title || '').localeCompare(b.title || '');
+  }
+  const dir = sortBy === 'oldest' ? -1 : 1;
+  return (a, b) => {
+    const ta = Date.parse(a.published || '');
+    const tb = Date.parse(b.published || '');
+    const va = Number.isNaN(ta) ? -Infinity : ta;
+    const vb = Number.isNaN(tb) ? -Infinity : tb;
+    return (vb - va) * dir;
+  };
 }
 
 function buildCard(entry, showDate) {
@@ -145,7 +200,7 @@ function renderPlaceholder(block, pageSize) {
 
 export default async function decorate(block) {
   const {
-    indexPath, filterPrefix, pageSize, loadMoreLabel, showDate,
+    indexPath, filterPrefix, pageSize, loadMoreLabel, showDate, sortBy, maxItems,
   } = readConfig(block);
 
   // The query index isn't served in the author environment — show a placeholder.
@@ -154,15 +209,23 @@ export default async function decorate(block) {
     return;
   }
 
+  // Resolve the index: explicit (legacy) path, else probe the derived
+  // candidates at/above the category and use the first that resolves.
+  const candidates = indexPath ? [indexPath] : candidateIndexPaths(filterPrefix);
   let entries = [];
-  try {
-    const resp = await fetch(indexPath);
-    if (resp.ok) {
-      const json = await resp.json();
-      entries = json.data || [];
+  for (let i = 0; i < candidates.length; i += 1) {
+    try {
+      // eslint-disable-next-line no-await-in-loop
+      const resp = await fetch(candidates[i]);
+      if (resp.ok) {
+        // eslint-disable-next-line no-await-in-loop
+        const json = await resp.json();
+        entries = json.data || [];
+        break;
+      }
+    } catch (e) {
+      // try the next candidate
     }
-  } catch (e) {
-    entries = [];
   }
 
   if (filterPrefix) {
@@ -171,7 +234,8 @@ export default async function decorate(block) {
   // Only list article/story entries: section landing and category pages appear
   // in the index without a published date — exclude them from the listing.
   entries = entries.filter((e) => e.published);
-  entries.sort(byPublishedDesc);
+  entries.sort(comparatorFor(sortBy));
+  if (maxItems > 0) entries = entries.slice(0, maxItems);
 
   const wrap = document.createElement('div');
   const ul = document.createElement('ul');

@@ -21,26 +21,23 @@
       "id": "content-list",
       "fields": [
         {
-          "component": "text",
-          "valueType": "string",
-          "name": "indexPath",
-          "label": "Query Index Path",
-          "description": "The query-index.json URL to list from (e.g. /us/en/newsroom/press-releases/query-index.json).",
-          "value": "/us/en/newsroom/press-releases/query-index.json"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "filterPrefix",
-          "label": "Path Filter Prefix",
-          "description": "Optional. Only list entries whose path starts with this prefix. Leave blank to list everything in the index."
+          "component": "aem-content",
+          "name": "category",
+          "label": "Category",
+          "required": true,
+          "rootPath": "/content/about-ups-eds",
+          "validation": {
+            "required": true,
+            "rootPath": "/content/about-ups-eds"
+          },
+          "description": "Select the category page to list content from. Articles under this page are listed automatically."
         },
         {
           "component": "number",
           "valueType": "number",
           "name": "pageSize",
           "label": "Items Per Page",
-          "description": "How many items to show initially and per 'Load more' click.",
+          "description": "How many items to show initially and per 'Load More' click.",
           "value": 12
         },
         {
@@ -48,7 +45,7 @@
           "valueType": "string",
           "name": "loadMoreLabel",
           "label": "Load More Label",
-          "value": "Load more"
+          "value": "Load More"
         },
         {
           "component": "boolean",
@@ -56,6 +53,25 @@
           "name": "showDate",
           "label": "Show Date",
           "description": "Show the published date on each card. Off by default."
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "sortBy",
+          "label": "Sort By",
+          "description": "Optional. Defaults to newest first.",
+          "options": [
+            { "name": "Newest first", "value": "newest" },
+            { "name": "Oldest first", "value": "oldest" },
+            { "name": "Title (A–Z)", "value": "title" }
+          ]
+        },
+        {
+          "component": "number",
+          "valueType": "number",
+          "name": "maxItems",
+          "label": "Max Items",
+          "description": "Optional. Maximum total items to list. Leave blank for no limit."
         }
       ]
     }
