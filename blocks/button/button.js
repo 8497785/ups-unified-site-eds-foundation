@@ -9,16 +9,24 @@ const STYLE_CLASS = {
   secondary: 'cmp-button--secondary',
 };
 
+const ALIGN_CLASS = {
+  left: 'cmp-button--align-left',
+  center: 'cmp-button--align-center',
+  right: 'cmp-button--align-right',
+};
+
 // Build the CTA element (shared with other blocks, e.g. content-list Load More).
 // Returns an <a> when href is set, else a <button>. Applies the cmp-button
-// base class, the style variant, and any extra classes.
+// base class, the style variant, alignment, and any extra classes.
 export function createButton({
-  label, href, style, customClass, type = 'button',
+  label, href, style, alignment, customClass, type = 'button',
 } = {}) {
   const el = href ? document.createElement('a') : document.createElement('button');
   el.classList.add('cmp-button');
   const variant = STYLE_CLASS[(style || '').toLowerCase()];
   if (variant) el.classList.add(variant);
+  const align = ALIGN_CLASS[(alignment || '').toLowerCase()];
+  if (align) el.classList.add(align);
   if (customClass) el.classList.add(...customClass.split(/\s+/).filter(Boolean));
 
   if (href) {
@@ -49,9 +57,10 @@ export default function decorate(block) {
   const href = link ? link.getAttribute('href') : cellText(rows[1]);
   const customClass = cellText(rows[2]);
   const style = cellText(rows[3]) || 'primary';
+  const alignment = cellText(rows[4]) || 'left';
 
   const el = createButton({
-    label, href, style, customClass,
+    label, href, style, alignment, customClass,
   });
   block.replaceChildren(el);
 }

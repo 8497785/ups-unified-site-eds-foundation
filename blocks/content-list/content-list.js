@@ -21,6 +21,7 @@ const DEFAULTS = {
   pageSize: 12,
   loadMoreLabel: 'Load More',
   loadMoreStyle: 'primary',
+  loadMoreAlignment: 'center',
 };
 
 function isAuthorEnvironment() {
@@ -76,6 +77,7 @@ function readConfig(block) {
       pageSize: parseInt(cell(2), 10) || DEFAULTS.pageSize,
       loadMoreLabel: cell(3) || DEFAULTS.loadMoreLabel,
       loadMoreStyle: DEFAULTS.loadMoreStyle,
+      loadMoreAlignment: DEFAULTS.loadMoreAlignment,
       showDate: /^(true|yes|on)$/i.test(cell(4)),
       sortBy: 'newest',
       maxItems: 0,
@@ -88,9 +90,10 @@ function readConfig(block) {
     pageSize: parseInt(cell(1), 10) || DEFAULTS.pageSize,
     loadMoreLabel: cell(2) || DEFAULTS.loadMoreLabel,
     loadMoreStyle: cell(3) || DEFAULTS.loadMoreStyle,
-    showDate: /^(true|yes|on)$/i.test(cell(4)),
-    sortBy: cell(5) || 'newest',
-    maxItems: parseInt(cell(6), 10) || 0,
+    loadMoreAlignment: cell(4) || DEFAULTS.loadMoreAlignment,
+    showDate: /^(true|yes|on)$/i.test(cell(5)),
+    sortBy: cell(6) || 'newest',
+    maxItems: parseInt(cell(7), 10) || 0,
   };
 }
 
@@ -210,7 +213,7 @@ function renderPlaceholder(block, pageSize) {
 export default async function decorate(block) {
   const {
     indexPath, filterPrefix, pageSize, loadMoreLabel, loadMoreStyle,
-    showDate, sortBy, maxItems,
+    loadMoreAlignment, showDate, sortBy, maxItems,
   } = readConfig(block);
 
   // The query index isn't served in the author environment — show a placeholder.
@@ -268,7 +271,9 @@ export default async function decorate(block) {
     shown += pageSize;
   };
 
-  const moreBtn = createButton({ label: loadMoreLabel, style: loadMoreStyle });
+  const moreBtn = createButton({
+    label: loadMoreLabel, style: loadMoreStyle, alignment: loadMoreAlignment,
+  });
   moreBtn.classList.add('content-list-more');
   moreBtn.addEventListener('click', () => {
     renderNext();

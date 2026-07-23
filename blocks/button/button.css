@@ -171,3 +171,28 @@
   pointer-events: none;
   color: var(--ups-gray-3);
 }
+
+/* Alignment — position the button within its container on desktop (where the
+   button is auto-width). Placed last so it wins the source-order tie against
+   the .cmp-button--primary/secondary width rules. On mobile the button spans
+   full width, so alignment is a no-op there. */
+@media (width >= 768px) {
+  .cmp-button.cmp-button--align-left {
+    display: flex;
+    width: fit-content;
+    margin-right: auto;
+  }
+
+  .cmp-button.cmp-button--align-center {
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cmp-button.cmp-button--align-right {
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+  }
+}

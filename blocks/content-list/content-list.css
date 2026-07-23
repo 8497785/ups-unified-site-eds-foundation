@@ -146,10 +146,11 @@
   overflow: hidden;
 }
 
-/* Load More reuses the button block's cmp-button styles; only its layout
-   (centered, spaced above the grid) is set here. */
+/* Load More reuses the button block's cmp-button styles; spacing above the
+   grid is set here. Horizontal placement comes from the alignment class
+   (cmp-button--align-*) applied by createButton. */
 .content-list .content-list-more {
-  margin: var(--spacing-lg) auto 0;
+  margin-top: var(--spacing-lg);
 }
 
 .content-list .content-list-empty,
