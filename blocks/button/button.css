@@ -18,12 +18,22 @@
   --primary-button-background: var(--ups-gold);
   --primary-button-background-hover: var(--yellow);
   --primary-button-color: var(--ups-black);
+  --primary-button-disabled-background: var(--ups-gray-5);
+  --primary-button-disabled-color: var(--ups-gray-1);
   --secondary-button-color: var(--ups-blue);
   --secondary-button-border: var(--ups-blue);
   --tertiary-button-color: var(--ups-blue);
   --font-size-cta: 1rem;
   --line-height-cta: 1.5;
   --button-font-weight: 500;
+
+  /* Primary action area geometry (source spec). */
+  --primary-button-radius: 32px;
+  --primary-button-min-width: 100px;
+
+  /* Elevations: level 4 (hover), level 2 (pressed). */
+  --elevation-4: 0 6px 10px 0 rgb(0 0 0 / 10%);
+  --elevation-2: 0 2px 6px 0 rgb(0 0 0 / 10%);
 }
 
 /* Base */
@@ -47,11 +57,15 @@
   outline-offset: 2px;
 }
 
-/* Primary */
+/* Primary — source spec: 44px action area, 10px/24px padding, 32px radius,
+   100px min-width, 8px label-to-chevron gap. */
 .cmp-button.cmp-button--primary {
-  padding: 1rem 2.4rem;
+  min-height: 44px;
+  min-width: var(--primary-button-min-width);
+  padding: 10px 24px;
+  gap: 8px;
   background-color: var(--primary-button-background);
-  border-radius: 3.2rem;
+  border-radius: var(--primary-button-radius);
   color: var(--primary-button-color);
   font-size: var(--font-size-cta);
   line-height: var(--line-height-cta);
@@ -72,34 +86,34 @@
   }
 }
 
+/* Hovered — gold hover fill + elevation level 4. Radius stays 32px. */
 .cmp-button.cmp-button--primary:hover {
-  border-radius: 3.6rem;
   background-color: var(--primary-button-background-hover);
   text-decoration: none;
-  box-shadow:
-    0 2px 6px rgb(0 0 0 / 6%),
-    0 4px 12px -2px rgb(0 0 0 / 8%),
-    0 15px 32px -3px rgb(0 0 0 / 8%);
+  box-shadow: var(--elevation-4);
 }
 
+/* Focused — 1px outline, 4px offset, 32px radius. */
 .cmp-button.cmp-button--primary:focus-visible {
-  border-radius: 3.6rem;
   box-shadow: none;
-  outline: 1px solid var(--ups-gray-1);
-  outline-offset: 6px;
+  outline: 1px solid var(--ups-black);
+  outline-offset: 4px;
+  border-radius: var(--primary-button-radius);
 }
 
+/* Pressed — gold fill + elevation level 2. */
 .cmp-button.cmp-button--primary:active {
-  border-radius: 3.6rem;
   background-color: var(--primary-button-background);
+  box-shadow: var(--elevation-2);
 }
 
+/* Disabled — UPS Gray 5 fill, UPS Gray 1 label. */
 .cmp-button.cmp-button--primary.disabled,
 .cmp-button.cmp-button--primary:disabled {
-  border-radius: 3.6rem;
-  background-color: var(--ups-gray-5);
+  background-color: var(--primary-button-disabled-background);
   pointer-events: none;
-  color: var(--ups-gray-3);
+  color: var(--primary-button-disabled-color);
+  box-shadow: none;
 }
 
 /* Secondary */
