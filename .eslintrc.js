@@ -20,8 +20,8 @@ module.exports = {
     'no-param-reassign': [2, { props: false }], // allow modifying properties of param
     // Raise the cell limit for blocks with more authorable fields than the
     // default of 4. article-header has 6 (eyebrow, eyebrowLink, title,
-    // description, articleDate, hideReadTime); content-list has 5 (indexPath,
-    // filterPrefix, pageSize, loadMoreLabel, showDate).
-    'xwalk/max-cells': ['error', { 'article-header': 6, 'content-list': 6 }],
+    // description, articleDate, hideReadTime); content-list has 7 (category,
+    // pageSize, loadMoreLabel, loadMoreStyle, showDate, sortBy, maxItems).
+    'xwalk/max-cells': ['error', { 'article-header': 6, 'content-list': 7 }],
   },
 };
