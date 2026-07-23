@@ -38,15 +38,16 @@ function normalizeCategoryPath(raw) {
   return p;
 }
 
-// Candidate query-index.json locations at or above a path, nearest first, e.g.
-// /a/b/c -> [/a/b/c/query-index.json, /a/b/query-index.json, /a/query-index.json].
-// The block probes these in order and uses the first that resolves, so a single
-// query-index.json per major section is found automatically for any category
-// beneath it (and for the section landing page itself).
+// Candidate query-index.json locations for a selected category, nearest first.
+// A category never owns an index — its parent section does — so the walk-up
+// starts at the category's PARENT and continues to the root, e.g.
+// /a/b/c -> [/a/b/query-index.json, /a/query-index.json]. This makes the very
+// first probe the correct section index (no spurious 404 at the category path).
+// The block uses the first candidate that resolves.
 function candidateIndexPaths(prefix) {
   const segments = prefix.split('/').filter(Boolean);
   const paths = [];
-  for (let i = segments.length; i >= 1; i -= 1) {
+  for (let i = segments.length - 1; i >= 1; i -= 1) {
     paths.push(`/${segments.slice(0, i).join('/')}/query-index.json`);
   }
   return paths;
