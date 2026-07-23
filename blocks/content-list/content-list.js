@@ -9,8 +9,13 @@
 // not on the AEM author host — so in author we render a placeholder instead of
 // fetching, and real cards appear on the published/preview site.
 
-import { createOptimizedPicture } from '../../scripts/aem.js';
+import { createOptimizedPicture, loadCSS } from '../../scripts/aem.js';
 import { createButton } from '../button/button.js';
+
+// The Load More button reuses the button block's cmp-button styles. EDS only
+// auto-loads a block's CSS when that block is on the page, so load button.css
+// explicitly here (loadCSS is idempotent — no-op if already present).
+loadCSS(`${window.hlx.codeBasePath}/blocks/button/button.css`);
 
 const DEFAULTS = {
   pageSize: 12,
