@@ -30,7 +30,11 @@ export function createButton({
   const text = document.createElement('span');
   text.className = 'cmp-button__text';
   text.textContent = label || '';
-  el.append(text);
+
+  const icon = document.createElement('span');
+  icon.className = 'upspr upspr-icon-chevronright';
+
+  el.append(text, icon);
   return el;
 }
 
