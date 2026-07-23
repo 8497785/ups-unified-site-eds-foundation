@@ -46,6 +46,11 @@
   display: inline;
 }
 
+/* Trailing chevron icon. */
+.cmp-button .upspr-icon-chevronright {
+  font-size: 12px;
+}
+
 .cmp-button:focus {
   outline: none;
 }
