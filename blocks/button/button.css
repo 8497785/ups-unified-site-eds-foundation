@@ -1,6 +1,6 @@
 /* stylelint-disable selector-class-pattern -- cmp-button--* modifier names kept from the source design system */
 
-/* Button block — primary / secondary / tertiary CTA styles.
+/* Button block — primary / secondary CTA styles.
    Adapted from the source site's .cmp-button component. Button-specific tokens
    live here; brand colors reuse the globals in styles/styles.css where present. */
 
@@ -14,7 +14,6 @@
   --ups-gray-5: #f2f1ef;
   --ups-light-blue: #e6eff8;
   --yellow: #ffd64c;
-  --havelock-blue: #418ed9;
   --primary-button-background: var(--ups-gold);
   --primary-button-background-hover: var(--yellow);
   --primary-button-color: var(--ups-black);
@@ -22,7 +21,6 @@
   --primary-button-disabled-color: var(--ups-gray-1);
   --secondary-button-color: var(--ups-blue);
   --secondary-button-border: var(--ups-blue);
-  --tertiary-button-color: var(--ups-blue);
   --font-size-cta: 1rem;
   --line-height-cta: 1.5;
   --button-font-weight: 500;
@@ -165,45 +163,6 @@
 .cmp-button.cmp-button--secondary.disabled,
 .cmp-button.cmp-button--secondary:disabled {
   background-color: var(--ups-gray-5);
-  pointer-events: none;
-  color: var(--ups-gray-3);
-}
-
-/* Tertiary */
-.cmp-button.cmp-button--tertiary {
-  color: var(--tertiary-button-color);
-  font-size: var(--font-size-cta);
-  line-height: var(--line-height-cta);
-  font-weight: var(--button-font-weight);
-  display: inline-flex;
-  align-items: center;
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-}
-
-.cmp-button.cmp-button--tertiary:hover {
-  color: var(--havelock-blue);
-  text-decoration: none;
-  background-color: transparent;
-  box-shadow: none;
-}
-
-.cmp-button.cmp-button--tertiary:focus-visible {
-  border-radius: 0.4rem;
-  outline: 1px solid var(--ups-gray-1);
-  outline-offset: 2px;
-}
-
-.cmp-button.cmp-button--tertiary:active {
-  color: var(--ups-blue);
-}
-
-.cmp-button.cmp-button--tertiary.disabled,
-.cmp-button.cmp-button--tertiary:disabled {
   pointer-events: none;
   color: var(--ups-gray-3);
 }

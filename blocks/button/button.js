@@ -1,13 +1,12 @@
 // Button — renders an authored label as a styled CTA. When a link is provided
-// it renders as an anchor; otherwise as a <button>. Style (primary / secondary
-// / tertiary) and an optional custom class control appearance.
+// it renders as an anchor; otherwise as a <button>. Style (primary / secondary)
+// and an optional custom class control appearance.
 //
 // Authored cells, in model order: label, link, customClass, style.
 
 const STYLE_CLASS = {
   primary: 'cmp-button--primary',
   secondary: 'cmp-button--secondary',
-  tertiary: 'cmp-button--tertiary',
 };
 
 // Build the CTA element (shared with other blocks, e.g. content-list Load More).
