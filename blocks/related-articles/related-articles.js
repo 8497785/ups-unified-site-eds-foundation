@@ -44,18 +44,26 @@ function cellPath(row) {
   return normalizePath(a ? a.getAttribute('href') : row.textContent.trim());
 }
 
-// Read the block's authored cells in model order:
+// Read the block's authored cells, in model order from the Mode cell onward:
 // mode, category, articleCount, path1, path2, path3, showDate.
+//
+// The Mode cell is located by value (dynamic|static) rather than by a fixed
+// index, so pages authored before the Heading field was removed — which still
+// deliver a leading heading cell — keep working without re-authoring.
 function readConfig(block) {
   const rows = [...block.children];
-  const cell = (i) => rows[i]?.textContent.trim() || '';
-  const mode = (cell(0) || DEFAULTS.mode).toLowerCase();
-  const category = cellPath(rows[1]);
-  const articleCount = parseInt(cell(2), 10) || DEFAULTS.articleCount;
-  const paths = [cellPath(rows[3]), cellPath(rows[4]), cellPath(rows[5])]
+  const cell = (r) => (r?.textContent || '').trim();
+  const start = rows.findIndex((r) => /^(dynamic|static)$/i.test(cell(r)));
+  const base = start === -1 ? 0 : start;
+  const at = (offset) => rows[base + offset];
+
+  const mode = (cell(at(0)) || DEFAULTS.mode).toLowerCase();
+  const category = cellPath(at(1));
+  const articleCount = parseInt(cell(at(2)), 10) || DEFAULTS.articleCount;
+  const paths = [cellPath(at(3)), cellPath(at(4)), cellPath(at(5))]
     .filter(Boolean)
     .slice(0, MAX_STATIC);
-  const showDate = /^(true|yes|on)$/i.test(cell(6));
+  const showDate = /^(true|yes|on)$/i.test(cell(at(6)));
   return {
     mode, category, articleCount, paths, showDate,
   };
