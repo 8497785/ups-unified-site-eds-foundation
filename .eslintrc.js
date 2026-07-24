@@ -19,11 +19,14 @@ module.exports = {
     'linebreak-style': ['error', 'unix'], // enforce unix linebreaks
     'no-param-reassign': [2, { props: false }], // allow modifying properties of param
     // Raise the cell limit for blocks with more authorable fields than the
-    // default of 4. article-header has 6 (eyebrow, eyebrowLink, title,
-    // description, articleDate, hideReadTime); content-list has 8 (category,
-    // pageSize, loadMoreLabel, loadMoreStyle, loadMoreAlignment, showDate,
-    // sortBy, maxItems); related-articles has 8 (heading, mode, category,
-    // articleCount, path1, path2, path3, showDate).
-    'xwalk/max-cells': ['error', { 'article-header': 6, 'content-list': 8, 'related-articles': 8 }],
+    // default of 4. button has 5 (label, link, customClass, style, alignment);
+    // article-header has 6 (eyebrow, eyebrowLink, title, description,
+    // articleDate, hideReadTime); content-list has 8 (category, pageSize,
+    // loadMoreLabel, loadMoreStyle, loadMoreAlignment, showDate, sortBy,
+    // maxItems); related-articles has 7 (mode, category, articleCount, path1,
+    // path2, path3, showDate).
+    'xwalk/max-cells': ['error', {
+      button: 5, 'article-header': 6, 'content-list': 8, 'related-articles': 8,
+    }],
   },
 };
