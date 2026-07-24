@@ -9,7 +9,12 @@
 // The query index is a delivery-tier artifact (served on *.aem.page/.aem.live),
 // not on the AEM author host — so in author we render a placeholder.
 
-import { createOptimizedPicture } from '../../scripts/aem.js';
+import { createOptimizedPicture, loadCSS } from '../../scripts/aem.js';
+
+// Reuse the content-list card styles (grid, card, skeleton) rather than
+// duplicating them. EDS only auto-loads a block's own CSS, so load the shared
+// content-list stylesheet here (loadCSS is idempotent — no-op if present).
+loadCSS(`${window.hlx.codeBasePath}/blocks/content-list/content-list.css`);
 
 const DEFAULTS = {
   mode: 'dynamic',
