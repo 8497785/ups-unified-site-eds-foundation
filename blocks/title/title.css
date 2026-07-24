@@ -10,18 +10,7 @@
 
 .title .title-heading {
   margin-top: 0;
-  margin-bottom: var(--spacing-md);
-}
-
-.title .title-heading:is(h1) { margin-bottom: var(--spacing-md); }
-.title .title-heading:is(h2, h3, h4) { margin-bottom: var(--spacing-sm); }
-.title .title-heading:is(h5, h6) { margin-bottom: var(--spacing-xs); }
-
-/* Desktop (>= 992px): larger headings get proportionally more space below. */
-@media (width >= 992px) {
-  .title .title-heading:is(h1) { margin-bottom: var(--spacing-lg); }
-  .title .title-heading:is(h2) { margin-bottom: var(--spacing-md); }
-  .title .title-heading:is(h3, h4) { margin-bottom: var(--spacing-sm); }
+  margin-bottom: 40px;
 }
 
 .title .title-heading.align-left { text-align: left; }
