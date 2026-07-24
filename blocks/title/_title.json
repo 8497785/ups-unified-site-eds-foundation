@@ -50,6 +50,13 @@
             { "name": "Center", "value": "align-center" },
             { "name": "Right", "value": "align-right" }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "showEyebrow",
+          "label": "Show Eyebrow Line",
+          "description": "Show a short gold accent line below the title."
         }
       ]
     }

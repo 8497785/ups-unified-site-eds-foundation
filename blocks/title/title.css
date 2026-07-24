@@ -27,3 +27,43 @@
 .title .title-heading.align-left { text-align: left; }
 .title .title-heading.align-center { text-align: center; }
 .title .title-heading.align-right { text-align: right; }
+
+/* When the eyebrow is shown, spacing below the heading is owned by the
+   eyebrow's margin-top, so drop the heading's own bottom margin. */
+.title .title-heading:has(+ .title-eyebrow) {
+  margin-bottom: 0;
+}
+
+/* Eyebrow accent line below the title (source: .upspr-under-eyebrow). A short
+   gold bar; horizontal position follows the title alignment. Fades/rises in on
+   load to match the source animation. */
+.title .title-eyebrow {
+  width: 80px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: #ffdc40;
+  margin-top: var(--spacing-lg);
+  animation: title-eyebrow-fade-in-up 1s both;
+  animation-delay: 1s;
+}
+
+.title .title-eyebrow.align-left { margin-right: auto; }
+
+.title .title-eyebrow.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title .title-eyebrow.align-right { margin-left: auto; }
+
+@keyframes title-eyebrow-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
