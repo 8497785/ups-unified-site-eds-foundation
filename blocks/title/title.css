@@ -8,8 +8,9 @@
    shared --spacing-* tokens, growing at the 992px breakpoint where heading
    sizes increase. Responsive across all viewports. */
 
-/* Block wrapper spacing below the title. */
-.title-wrapper {
+/* Block wrapper spacing below the title. Scoped to .section so it outranks
+   the section layout rule (main > .section > div { margin: auto }). */
+.section .title-wrapper {
   margin-bottom: 40px;
 }
 
