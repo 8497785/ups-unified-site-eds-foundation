@@ -1,6 +1,7 @@
 /* Title block — a heading with author-selectable level and alignment.
    The block renders with the class `title` (from the "Title" template name).
    Alignment classes are applied directly to the heading by title.js.
+   Note: .title-wrapper spacing is scoped to .section to beat the section grid.
 
    Vertical rhythm: the heading is the sole child of its block, so spacing is
    driven by margin-bottom (a single-direction model that avoids double gaps and
