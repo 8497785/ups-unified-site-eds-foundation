@@ -759,13 +759,6 @@
     "id": "related-articles",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "heading",
-        "label": "Heading",
-        "value": "Related Articles"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "mode",

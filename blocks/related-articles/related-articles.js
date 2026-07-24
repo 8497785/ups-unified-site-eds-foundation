@@ -12,7 +12,6 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 const DEFAULTS = {
-  heading: 'Related Articles',
   mode: 'dynamic',
   articleCount: 3,
   showDate: false,
@@ -41,20 +40,19 @@ function cellPath(row) {
 }
 
 // Read the block's authored cells in model order:
-// heading, mode, category, articleCount, path1, path2, path3, showDate.
+// mode, category, articleCount, path1, path2, path3, showDate.
 function readConfig(block) {
   const rows = [...block.children];
   const cell = (i) => rows[i]?.textContent.trim() || '';
-  const heading = cell(0) || DEFAULTS.heading;
-  const mode = (cell(1) || DEFAULTS.mode).toLowerCase();
-  const category = cellPath(rows[2]);
-  const articleCount = parseInt(cell(3), 10) || DEFAULTS.articleCount;
-  const paths = [cellPath(rows[4]), cellPath(rows[5]), cellPath(rows[6])]
+  const mode = (cell(0) || DEFAULTS.mode).toLowerCase();
+  const category = cellPath(rows[1]);
+  const articleCount = parseInt(cell(2), 10) || DEFAULTS.articleCount;
+  const paths = [cellPath(rows[3]), cellPath(rows[4]), cellPath(rows[5])]
     .filter(Boolean)
     .slice(0, MAX_STATIC);
-  const showDate = /^(true|yes|on)$/i.test(cell(7));
+  const showDate = /^(true|yes|on)$/i.test(cell(6));
   return {
-    heading, mode, category, articleCount, paths, showDate,
+    mode, category, articleCount, paths, showDate,
   };
 }
 
@@ -190,14 +188,9 @@ function buildCard(entry, showDate) {
   return li;
 }
 
-function renderPlaceholder(block, heading, count) {
+function renderPlaceholder(block, count) {
   const wrap = document.createElement('div');
   wrap.className = 'related-articles-placeholder';
-
-  const h = document.createElement('h2');
-  h.className = 'related-articles-heading';
-  h.textContent = heading;
-  wrap.append(h);
 
   const notice = document.createElement('p');
   notice.className = 'content-list-notice';
@@ -250,11 +243,11 @@ async function selectStatic(paths) {
 
 export default async function decorate(block) {
   const {
-    heading, mode, category, articleCount, paths, showDate,
+    mode, category, articleCount, paths, showDate,
   } = readConfig(block);
 
   if (isAuthorEnvironment()) {
-    renderPlaceholder(block, heading, mode === 'static' ? Math.max(paths.length, 1) : articleCount);
+    renderPlaceholder(block, mode === 'static' ? Math.max(paths.length, 1) : articleCount);
     return;
   }
 
@@ -262,22 +255,14 @@ export default async function decorate(block) {
     ? await selectStatic(paths)
     : await selectDynamic(category, articleCount);
 
-  const wrap = document.createElement('div');
-
-  const h = document.createElement('h2');
-  h.className = 'related-articles-heading';
-  h.textContent = heading;
-  wrap.append(h);
-
   if (selected.length === 0) {
-    block.replaceChildren(wrap);
+    block.replaceChildren();
     return;
   }
 
   const ul = document.createElement('ul');
   ul.className = 'content-list-grid';
   selected.forEach((entry) => ul.append(buildCard(entry, showDate)));
-  wrap.append(ul);
 
-  block.replaceChildren(wrap);
+  block.replaceChildren(ul);
 }

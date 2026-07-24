@@ -2,15 +2,6 @@
    Reuses the content-list card markup/classes; card visuals mirror the
    site's card treatment (shadow, rounded image, category tag, title). */
 
-.related-articles .related-articles-heading {
-  font-family: var(--serif, var(--body-font-family));
-  font-size: 28px;
-  line-height: 36px;
-  font-weight: 500;
-  color: #242424;
-  margin: 0 0 var(--spacing-md);
-}
-
 .related-articles .content-list-grid {
   list-style: none;
   margin: 0;
