@@ -22,7 +22,8 @@ module.exports = {
     // default of 4. article-header has 6 (eyebrow, eyebrowLink, title,
     // description, articleDate, hideReadTime); content-list has 8 (category,
     // pageSize, loadMoreLabel, loadMoreStyle, loadMoreAlignment, showDate,
-    // sortBy, maxItems).
-    'xwalk/max-cells': ['error', { 'article-header': 6, 'content-list': 8 }],
+    // sortBy, maxItems); related-articles has 8 (heading, mode, category,
+    // articleCount, path1, path2, path3, showDate).
+    'xwalk/max-cells': ['error', { 'article-header': 6, 'content-list': 8, 'related-articles': 8 }],
   },
 };

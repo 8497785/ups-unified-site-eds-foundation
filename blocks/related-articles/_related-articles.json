@@ -28,20 +28,64 @@
           "value": "Related Articles"
         },
         {
+          "component": "select",
+          "valueType": "string",
+          "name": "mode",
+          "label": "Mode",
+          "value": "dynamic",
+          "description": "Dynamic lists articles automatically; Static shows the specific articles you choose.",
+          "options": [
+            { "name": "Dynamic", "value": "dynamic" },
+            { "name": "Static", "value": "static" }
+          ]
+        },
+        {
+          "component": "aem-content",
+          "name": "category",
+          "label": "Category (Dynamic)",
+          "rootPath": "/content/about-ups-eds",
+          "validation": {
+            "rootPath": "/content/about-ups-eds"
+          },
+          "description": "Dynamic mode. Select the category to list articles from. Leave blank to use siblings under the current page's parent."
+        },
+        {
           "component": "number",
           "valueType": "number",
           "name": "articleCount",
-          "label": "Number of Articles",
-          "description": "How many related articles to show (siblings under the same parent, newest first, excluding the current page).",
+          "label": "Number of Articles (Dynamic)",
+          "description": "Dynamic mode. How many articles to show, newest first, excluding the current page.",
           "value": 3
         },
         {
-          "component": "text",
-          "valueType": "string",
-          "name": "indexPath",
-          "label": "Query Index Path",
-          "description": "The query-index.json to read siblings from. Defaults to the press-releases section index.",
-          "value": "/us/en/newsroom/press-releases/query-index.json"
+          "component": "aem-content",
+          "name": "path1",
+          "label": "Article 1 (Static)",
+          "rootPath": "/content/about-ups-eds",
+          "validation": {
+            "rootPath": "/content/about-ups-eds"
+          },
+          "description": "Static mode. Select the first article to feature."
+        },
+        {
+          "component": "aem-content",
+          "name": "path2",
+          "label": "Article 2 (Static)",
+          "rootPath": "/content/about-ups-eds",
+          "validation": {
+            "rootPath": "/content/about-ups-eds"
+          },
+          "description": "Static mode. Optional second article."
+        },
+        {
+          "component": "aem-content",
+          "name": "path3",
+          "label": "Article 3 (Static)",
+          "rootPath": "/content/about-ups-eds",
+          "validation": {
+            "rootPath": "/content/about-ups-eds"
+          },
+          "description": "Static mode. Optional third article."
         },
         {
           "component": "boolean",

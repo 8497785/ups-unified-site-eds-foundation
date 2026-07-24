@@ -1,9 +1,10 @@
-// Related Articles — sibling articles under the same parent, newest first.
+// Related Articles — two modes:
 //
-// Reads the section query index, keeps entries that are direct children of the
-// CURRENT page's parent (i.e. its siblings), excludes the current page itself,
-// sorts by published date descending, and shows the first N (author-set).
-// Example: on page2, the related list is page1, page3, page4 (page2 skipped).
+// Dynamic: list articles automatically. If a Category is selected, list
+//   articles under that category (newest first); otherwise fall back to
+//   siblings under the CURRENT page's parent. Limited by "Number of Articles".
+// Static: the author picks up to 3 specific article paths; each card's
+//   content is pulled from that page's <head> meta (title, image, description).
 //
 // The query index is a delivery-tier artifact (served on *.aem.page/.aem.live),
 // not on the AEM author host — so in author we render a placeholder.
@@ -12,30 +13,19 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 
 const DEFAULTS = {
   heading: 'Related Articles',
+  mode: 'dynamic',
   articleCount: 3,
-  indexPath: '/us/en/newsroom/press-releases/query-index.json',
   showDate: false,
 };
+
+const MAX_STATIC = 3;
 
 function isAuthorEnvironment() {
   return window.location.hostname.endsWith('.adobeaemcloud.com');
 }
 
-// Read the block's authored cells in model order:
-// heading, articleCount, indexPath, showDate. Blanks fall back to defaults.
-function readConfig(block) {
-  const rows = [...block.children];
-  const cell = (i) => rows[i]?.textContent.trim() || '';
-  const heading = cell(0) || DEFAULTS.heading;
-  const articleCount = parseInt(cell(1), 10) || DEFAULTS.articleCount;
-  const indexPath = cell(2) || DEFAULTS.indexPath;
-  const showDate = /^(true|yes|on)$/i.test(cell(3));
-  return {
-    heading, articleCount, indexPath, showDate,
-  };
-}
-
-// Normalize a path for comparison: strip content-source prefix + .html + trailing slash.
+// Normalize a path for comparison/fetch: strip content-source prefix,
+// .html suffix, and trailing slash. Delivery paths are public (/us/en/...).
 function normalizePath(p) {
   return (p || '')
     .replace(/^\/content\/about-ups-eds/, '')
@@ -43,10 +33,61 @@ function normalizePath(p) {
     .replace(/\/$/, '');
 }
 
-// The parent path of the current page (drop the last/leaf segment).
-function currentParentPath() {
-  const path = normalizePath(window.location.pathname);
-  return path.split('/').slice(0, -1).join('/');
+// Read an authored aem-content cell: prefer the anchor href, else text.
+function cellPath(row) {
+  if (!row) return '';
+  const a = row.querySelector('a');
+  return normalizePath(a ? a.getAttribute('href') : row.textContent.trim());
+}
+
+// Read the block's authored cells in model order:
+// heading, mode, category, articleCount, path1, path2, path3, showDate.
+function readConfig(block) {
+  const rows = [...block.children];
+  const cell = (i) => rows[i]?.textContent.trim() || '';
+  const heading = cell(0) || DEFAULTS.heading;
+  const mode = (cell(1) || DEFAULTS.mode).toLowerCase();
+  const category = cellPath(rows[2]);
+  const articleCount = parseInt(cell(3), 10) || DEFAULTS.articleCount;
+  const paths = [cellPath(rows[4]), cellPath(rows[5]), cellPath(rows[6])]
+    .filter(Boolean)
+    .slice(0, MAX_STATIC);
+  const showDate = /^(true|yes|on)$/i.test(cell(7));
+  return {
+    heading, mode, category, articleCount, paths, showDate,
+  };
+}
+
+// Candidate query-index.json locations for a path, nearest section first. A
+// category never owns an index — its parent section does — so the walk-up
+// starts at the path's PARENT and continues to the root.
+function candidateIndexPaths(prefix) {
+  const segments = prefix.split('/').filter(Boolean);
+  const paths = [];
+  for (let i = segments.length - 1; i >= 1; i -= 1) {
+    paths.push(`/${segments.slice(0, i).join('/')}/query-index.json`);
+  }
+  return paths;
+}
+
+// Fetch and return the section query index entries for a given base path,
+// probing candidate index locations and using the first that resolves.
+async function fetchIndex(basePath) {
+  const candidates = candidateIndexPaths(basePath);
+  for (let i = 0; i < candidates.length; i += 1) {
+    try {
+      // eslint-disable-next-line no-await-in-loop
+      const resp = await fetch(candidates[i]);
+      if (resp.ok) {
+        // eslint-disable-next-line no-await-in-loop
+        const json = await resp.json();
+        return json.data || [];
+      }
+    } catch (e) {
+      // try the next candidate
+    }
+  }
+  return [];
 }
 
 function formatDate(iso) {
@@ -62,6 +103,30 @@ function byPublishedDesc(a, b) {
   const va = Number.isNaN(ta) ? -Infinity : ta;
   const vb = Number.isNaN(tb) ? -Infinity : tb;
   return vb - va;
+}
+
+// Fetch a page and read its <head> meta into a card entry. Used by static mode
+// so any page can be featured, not just indexed articles.
+async function fetchPageEntry(path) {
+  try {
+    const resp = await fetch(path);
+    if (!resp.ok) return null;
+    const html = await resp.text();
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const meta = (sel) => doc.querySelector(sel)?.getAttribute('content') || '';
+    const title = meta('meta[property="og:title"]') || doc.querySelector('title')?.textContent || '';
+    return {
+      path,
+      title: title.trim(),
+      description: meta('meta[name="description"]'),
+      image: meta('meta[property="og:image"]'),
+      category: meta('meta[name="categorytitle"]'),
+      categoryUrl: meta('meta[name="categoryurl"]'),
+      published: meta('meta[name="publishdate"]'),
+    };
+  } catch (e) {
+    return null;
+  }
 }
 
 function buildCard(entry, showDate) {
@@ -82,10 +147,19 @@ function buildCard(entry, showDate) {
   const body = document.createElement('div');
   body.className = 'content-list-card-body';
 
-  const category = document.createElement('p');
-  category.className = 'content-list-card-category';
-  category.textContent = 'Category';
-  body.append(category);
+  if (entry.category) {
+    const category = document.createElement('p');
+    category.className = 'content-list-card-category';
+    if (entry.categoryUrl) {
+      const a = document.createElement('a');
+      a.href = entry.categoryUrl;
+      a.textContent = entry.category;
+      category.append(a);
+    } else {
+      category.textContent = entry.category;
+    }
+    body.append(category);
+  }
 
   const date = showDate ? formatDate(entry.published) : '';
   if (date) {
@@ -147,44 +221,46 @@ function renderPlaceholder(block, heading, count) {
   block.replaceChildren(wrap);
 }
 
+// Dynamic: category articles if a category is set, else siblings of the
+// current page. Newest first, current page excluded, limited by count.
+async function selectDynamic(category, articleCount) {
+  const currentPath = normalizePath(window.location.pathname);
+  // Listing scope: the selected category, or the current page's parent
+  // (siblings) when no category is set.
+  const scope = category || currentPath.split('/').slice(0, -1).join('/');
+  const entries = await fetchIndex(scope);
+
+  return entries
+    .filter((e) => {
+      const p = normalizePath(e.path);
+      return p.startsWith(`${scope}/`)
+        && p.slice(scope.length + 1).indexOf('/') === -1;
+    })
+    .filter((e) => e.published)
+    .filter((e) => normalizePath(e.path) !== currentPath)
+    .sort(byPublishedDesc)
+    .slice(0, articleCount);
+}
+
+// Static: fetch each authored path's page meta, preserving author order.
+async function selectStatic(paths) {
+  const entries = await Promise.all(paths.map((p) => fetchPageEntry(p)));
+  return entries.filter(Boolean);
+}
+
 export default async function decorate(block) {
   const {
-    heading, articleCount, indexPath, showDate,
+    heading, mode, category, articleCount, paths, showDate,
   } = readConfig(block);
 
   if (isAuthorEnvironment()) {
-    renderPlaceholder(block, heading, articleCount);
+    renderPlaceholder(block, heading, mode === 'static' ? Math.max(paths.length, 1) : articleCount);
     return;
   }
 
-  let entries = [];
-  try {
-    const resp = await fetch(indexPath);
-    if (resp.ok) {
-      const json = await resp.json();
-      entries = json.data || [];
-    }
-  } catch (e) {
-    entries = [];
-  }
-
-  const parentPath = currentParentPath();
-  const currentPath = normalizePath(window.location.pathname);
-
-  entries = entries
-    // Siblings: direct children of the current page's parent.
-    .filter((e) => {
-      const p = normalizePath(e.path);
-      return p.startsWith(`${parentPath}/`)
-        && p.slice(parentPath.length + 1).indexOf('/') === -1;
-    })
-    // Real articles only (listing/category pages have no published date).
-    .filter((e) => e.published)
-    // Exclude the current page.
-    .filter((e) => normalizePath(e.path) !== currentPath);
-
-  entries.sort(byPublishedDesc);
-  const selected = entries.slice(0, articleCount);
+  const selected = mode === 'static'
+    ? await selectStatic(paths)
+    : await selectDynamic(category, articleCount);
 
   const wrap = document.createElement('div');
 
