@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/* eslint-disable no-console, import/no-dynamic-require, global-require, no-nested-ternary, max-len, object-property-newline, no-restricted-syntax, no-continue */
 /**
  * Build an Excel critique report for all migrated press-release pages.
  *

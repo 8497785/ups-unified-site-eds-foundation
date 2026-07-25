@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/* eslint-disable no-console, max-len, no-unused-vars, object-curly-newline */
 /**
  * Generates a Word document describing the Leadership Listing page:
  *   - authoring steps (how to build the page in Universal Editor)

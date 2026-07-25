@@ -1,4 +1,4 @@
-/* eslint-disable no-console, no-await-in-loop */
+/* eslint-disable no-console, no-await-in-loop, no-continue, no-restricted-syntax */
 /**
  * Extract each Customer First press-release page's "Related Stories" cards from
  * the LIVE source site and write tools/importer/related-stories.json:

@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/* eslint-disable no-console, no-restricted-syntax, no-await-in-loop */
 /**
  * Extract content/structural fidelity fields from each migrated .plain.html so
  * they can be compared against the original source page (extracted separately
@@ -40,7 +40,6 @@ for (const cat of CATS) {
       const m = c.innerHTML.match(/<!--\s*field:(\w+)\s*-->/);
       if (m) byField[m[1]] = c;
     });
-    const colBody = document.querySelector('.column-control .cmp-text, .column-control');
     // body text is the first column's text node in the column-control
     let bodyText = '';
     let bodyParas = 0;
