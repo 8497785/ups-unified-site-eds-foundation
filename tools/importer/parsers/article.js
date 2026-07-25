@@ -105,7 +105,7 @@ export default function parse(element, { document }) {
   const bodyFrag = document.createElement('div');
   const body = element.querySelector('.cmp-text');
   if (body) {
-    body.querySelectorAll(':scope > p, :scope > ul, :scope > ol, :scope > h2, :scope > h3').forEach((node) => {
+    body.querySelectorAll(':scope > p, :scope > ul, :scope > ol, :scope > h2, :scope > h3, :scope > table').forEach((node) => {
       bodyFrag.appendChild(node.cloneNode(true));
     });
   }

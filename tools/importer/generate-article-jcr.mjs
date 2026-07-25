@@ -50,16 +50,69 @@ const archiver = (await import(`${SKILL}/archiver/index.js`)).default;
 
 // ---- constants -------------------------------------------------------------
 const SITE = 'about-ups-eds';
+
+// Selected-pages mode: `node generate-article-jcr.mjs <slug> [<slug> ...]`
+// builds a package for exactly those leaves (filter scoped to each page only —
+// no parents, no other siblings), so installing it can never touch any other
+// page. The special first arg `--rest` selects every imported page EXCEPT the
+// one already delivered (interglobe). Without args, all pages are built
+// (parents included) as before.
+//
+// `--category=<name>` selects which press-releases sub-folder to package
+// (default: customer-first). e.g. --category=financials.
+const RAW_ARGS = process.argv.slice(2);
+const CATEGORY = (RAW_ARGS.find((a) => a.startsWith('--category=')) || '').split('=')[1]
+  || 'customer-first';
+const ARGS = RAW_ARGS.filter((a) => !a.startsWith('--category='));
+const REST_MODE = ARGS[0] === '--rest';
+const ALL_MODE = ARGS[0] === '--all'; // every page, leaves-only, no parents
+const ONLY_SLUGS = (REST_MODE || ALL_MODE) ? [] : ARGS;
+const SINGLE = REST_MODE || ALL_MODE || ONLY_SLUGS.length > 0;
+const ALREADY_DELIVERED = ['interglobe-enterprises-and-ups-launch-movin'];
+
 // All article pages live under this folder. The generator discovers every
 // imported *.plain.html here and packages each as its own leaf page, so one
 // zip can carry any number of pages (re-running is idempotent per page).
-const ARTICLES_DIR = 'language-masters/en/newsroom/press-releases/customer-first';
+const ARTICLES_DIR = `language-masters/en/newsroom/press-releases/${CATEGORY}`;
 
-const PKG_BASE = 'migration-work/packages';
+const PKG_BASE = SINGLE ? 'migration-work/packages-single' : 'migration-work/packages';
 const JCR_ROOT = `${PKG_BASE}/jcr/jcr_root`;
 const CONTENT_BASE = `${JCR_ROOT}/content/${SITE}`;
 const META_DIR = `${PKG_BASE}/jcr/META-INF/vault`;
 const CONTENT_PATH = `/content/${SITE}`; // AEM path prefix
+
+// Load a per-category JSON map, falling back to {} if the file doesn't exist.
+async function loadMap(name) {
+  try {
+    return JSON.parse(await readFile(new URL(`./${name}`, import.meta.url), 'utf8'));
+  } catch (e) {
+    return {};
+  }
+}
+
+// Related Stories map: { <leaf-slug>: [<related-slug>, ...] }, populated from
+// the live source site (visible Related Stories cards). A page listed here with
+// >=1 slug gets Section 3; absent/empty -> no Related Stories section.
+// Per-category (related-stories-<category>.json), falling back to the legacy
+// customer-first file (related-stories.json).
+const RELATED = {
+  ...(CATEGORY === 'customer-first' ? await loadMap('related-stories.json') : {}),
+  ...await loadMap(`related-stories-${CATEGORY}.json`),
+};
+
+// Keywords map: { <leaf-slug>: ["kw", ...] } from each source page's
+// <meta name="keywords">. Per-category (keywords-<category>.json), falling back
+// to the legacy customer-first file (keywords.json).
+const KEYWORDS = {
+  ...(CATEGORY === 'customer-first' ? await loadMap('keywords.json') : {}),
+  ...await loadMap(`keywords-${CATEGORY}.json`),
+};
+
+// Authoring-locale content path for a category article slug (language-masters/
+// en), used for the static related-articles paths and category. MSM rewrites
+// language-masters/en -> us/en on rollout.
+const CF_CATEGORY = `/content/${SITE}/language-masters/en/newsroom/press-releases/${CATEGORY}`;
+const relatedContentPath = (slug) => `${CF_CATEGORY}/${slug}`;
 
 // Intermediate parent pages -> jcr:title. language-masters / en are structural.
 // NOTE: the press-releases listing page is intentionally EXCLUDED — it is
@@ -165,13 +218,45 @@ async function buildLeaf(relPath) {
   const [col1El] = [...row.children];
   const bodyHtml = col1El.innerHTML.trim();
 
+  // ---- related stories (Section 3) ----
+  // Derived from the live source site (see related-stories.json). Present only
+  // when the source page has a visible Related Stories section. Static mode:
+  // the extracted card destinations become path1..3 (delivery-locale us/en).
+  const leafSlug = relPath.split('/').pop();
+
+  // ---- keywords (page-metadata string[]) ----
+  // From the source page's <meta name="keywords"> (see keywords.json). JCR
+  // multi-value string arrays are written as [a,b,c]; commas inside a single
+  // value are escaped as \, so they aren't read as separators.
+  const keywords = KEYWORDS[leafSlug] || [];
+  const keywordsAttr = keywords.length
+    ? ` keywords="[${keywords.map((k) => attr(k).replace(/,/g, '\\,')).join(',')}]"`
+    : '';
+
+  const relatedSlugs = (RELATED[leafSlug] || []).slice(0, 3);
+  const relatedPathAttrs = relatedSlugs
+    .map((slug, i) => `path${i + 1}="${attr(relatedContentPath(slug))}"`)
+    .join(' ');
+
+  const relatedSectionXml = relatedSlugs.length ? `
+      <section_related sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]" style="[highlight]">
+        <title_block sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="title-block" model="title-block" modelFields="[title,titleType,alignment,showEyebrow]" name="Title" title="Related Stories" titleType="h2" alignment="align-center" showEyebrow="true"/>
+        <related_articles sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="related-articles" model="related-articles" modelFields="[mode,category,articleCount,path1,path2,path3,showDate]" name="Related Articles" mode="static" category="" articleCount="3" ${relatedPathAttrs}/>
+      </section_related>` : '';
+
   // ---- leaf .content.xml -------------------------------------------------
+  // Three sibling sections per the target structure:
+  //   section_breadcrumb (no-top-spacing) -> Breadcrumb
+  //   section (article)                   -> Article Header, Image, Column Control
+  //   section_related (highlight)         -> Title + Related Articles (if any)
   const leafXml = `<?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" jcr:primaryType="cq:Page">
-  <jcr:content cq:template="/libs/core/franklin/templates/page" sling:resourceType="core/franklin/components/page/v1/page" jcr:primaryType="cq:PageContent" jcr:title="${attr(pageTitle)}" jcr:description="${attr(description.replace(/<\/?p>/g, ''))}" publishdate="${attr(publishDate)}" categorytitle="${attr(categoryTitle)}" categoryurl="${attr(categoryHref)}" modelFields="[jcr:title,jcr:description,keywords,publishdate,categorytitle,categoryurl]">
+  <jcr:content cq:template="/libs/core/franklin/templates/page" sling:resourceType="core/franklin/components/page/v1/page" jcr:primaryType="cq:PageContent" jcr:title="${attr(pageTitle)}" jcr:description="${attr(description.replace(/<\/?p>/g, ''))}"${keywordsAttr} image="${attr(heroImg)}" publishdate="${attr(publishDate)}" categorytitle="${attr(categoryTitle)}" categoryurl="${attr(categoryHref)}" modelFields="[jcr:title,jcr:description,keywords,image,publishdate,categorytitle,categoryurl]">
     <root jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/root/v1/root">
-      <section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+      <section_breadcrumb sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]" style="[no-top-spacing]">
         <block_breadcrumb sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="breadcrumb" homeLabel="Home" model="breadcrumb" modelFields="[homeLabel]" name="Breadcrumb"/>
+      </section_breadcrumb>
+      <section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
         <block sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="article-header" articleDate="${attr(articleDate)}" description="${attr(description)}" eyebrow="${attr(eyebrow)}" eyebrowLink="${attr(eyebrowLink)}" hideReadTime="${attr(hideReadTime)}" model="article-header" modelFields="[eyebrow,eyebrowLink,title,description,articleDate,hideReadTime]" name="Article Header" title="${attr(`<p>${title}</p>`)}"/>
         <image sling:resourceType="core/franklin/components/image/v1/image" jcr:primaryType="nt:unstructured" aueComponentId="image" image="${attr(heroImg)}" imageAlt="${attr(heroAlt)}"/>
         <block_1 sling:resourceType="core/franklin/components/columns/v1/columns" jcr:primaryType="nt:unstructured" aueComponentId="column-control" rows="1" columns="2" model="column-control" modelFields="[columns,classes]" name="Column Control" classes="layout-8-4">
@@ -184,7 +269,7 @@ async function buildLeaf(relPath) {
             </col2>
           </row1>
         </block_1>
-      </section>
+      </section>${relatedSectionXml}
     </root>
   </jcr:content>
 </jcr:root>
@@ -212,10 +297,21 @@ async function buildLeaf(relPath) {
 async function main() {
   // Discover every imported article page (one .plain.html per page).
   const dirEntries = await readdir(`content/${ARTICLES_DIR}`);
-  const relPaths = dirEntries
+  let relPaths = dirEntries
     .filter((f) => f.endsWith('.plain.html'))
     .map((f) => `${ARTICLES_DIR}/${f.replace(/\.plain\.html$/, '')}`)
     .sort();
+
+  // Selected-pages mode: keep only the requested slugs, or (with --rest) every
+  // page except the ones already delivered.
+  if (REST_MODE) {
+    relPaths = relPaths.filter((p) => !ALREADY_DELIVERED.includes(p.split('/').pop()));
+  } else if (ONLY_SLUGS.length) {
+    relPaths = relPaths.filter((p) => ONLY_SLUGS.includes(p.split('/').pop()));
+    if (relPaths.length === 0) {
+      throw new Error(`Selected-pages mode: no imported page matches ${JSON.stringify(ONLY_SLUGS)}`);
+    }
+  }
 
   if (relPaths.length === 0) throw new Error(`No .plain.html pages found in content/${ARTICLES_DIR}`);
 
@@ -224,16 +320,20 @@ async function main() {
 
   const leaves = await Promise.all(relPaths.map((relPath) => buildLeaf(relPath)));
 
-  await Promise.all(PARENTS.map(async ([rel, ptitle]) => {
-    const f = `${CONTENT_BASE}/${rel}/.content.xml`;
-    await mkdir(dirname(f), { recursive: true });
-    await writeFile(f, parentXml(ptitle), 'utf8');
-  }));
+  // Parents are written/filtered only in full mode. In single-page mode the
+  // package must contain ONLY the one leaf — no parent nodes, no other pages.
+  if (!SINGLE) {
+    await Promise.all(PARENTS.map(async ([rel, ptitle]) => {
+      const f = `${CONTENT_BASE}/${rel}/.content.xml`;
+      await mkdir(dirname(f), { recursive: true });
+      await writeFile(f, parentXml(ptitle), 'utf8');
+    }));
+  }
 
   // ---- META-INF: filter.xml + properties.xml -----------------------------
   // Parents: scope the filter to jcr:content so only the title updates and the
   // parent's other child pages are preserved (not deleted by a full replace).
-  const parentFilters = PARENTS.map(([rel]) => {
+  const parentFilters = SINGLE ? '' : PARENTS.map(([rel]) => {
     const p = `${CONTENT_PATH}/${rel}`;
     return `  <filter root="${p}">
     <include pattern="${p}/jcr:content"/>
@@ -243,17 +343,21 @@ async function main() {
   const leafFilters = leaves.map((l) => `  <filter root="${l.leafRoot}"/>`).join('\n');
   const filterXml = `<?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-${parentFilters}
-${leafFilters}
+${[parentFilters, leafFilters].filter(Boolean).join('\n')}
 </workspaceFilter>
 `;
   await mkdir(META_DIR, { recursive: true });
   await writeFile(join(META_DIR, 'filter.xml'), filterXml, 'utf8');
 
+  let pkgName = `${SITE}-article`;
+  if (ALL_MODE) pkgName = `${CATEGORY}-all`;
+  else if (REST_MODE) pkgName = `${CATEGORY}-remaining`;
+  else if (ONLY_SLUGS.length === 1) [pkgName] = ONLY_SLUGS;
+  else if (ONLY_SLUGS.length > 1) pkgName = 'customer-first-selected';
   const propsXml = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-  <entry key="name">${SITE}-article</entry>
+  <entry key="name">${pkgName}</entry>
   <entry key="group">excat-migration</entry>
   <entry key="version">1.0</entry>
 </properties>
@@ -275,7 +379,7 @@ ${leafFilters}
   await writeFile(`${PKG_BASE}/asset-mapping.json`, '{}\n', 'utf8');
 
   // ---- zip the jcr tree (jcr_root/ + META-INF/) --------------------------
-  const zipPath = `${PKG_BASE}/${SITE}.zip`;
+  const zipPath = `${PKG_BASE}/${pkgName}.zip`;
   await new Promise((resolve, reject) => {
     const output = createWriteStream(zipPath);
     const zip = archiver('zip', { zlib: { level: 9 } });
