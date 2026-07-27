@@ -6,6 +6,50 @@
     ]
   },
   {
+    "id": "text",
+    "rte": {
+      "toolbar": {
+        "format": [
+          "bold",
+          "italic",
+          "underline",
+          "strike"
+        ],
+        "blocks": [
+          "paragraph",
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6"
+        ],
+        "list": [
+          "bullet_list",
+          "ordered_list"
+        ],
+        "insert": [
+          "link",
+          "unlink",
+          "table"
+        ],
+        "sr_script": [
+          "superscript",
+          "subscript"
+        ],
+        "editor": [
+          "removeformat"
+        ]
+      },
+      "actions": {
+        "table": {
+          "wrapInParagraphs": false,
+          "label": "Insert Table"
+        }
+      }
+    }
+  },
+  {
     "id": "section",
     "components": [
       "text",
