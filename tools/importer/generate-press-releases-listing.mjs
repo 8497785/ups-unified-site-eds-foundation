@@ -38,7 +38,9 @@ const attr = (s) => String(s)
   .replace(/"/g, '&quot;');
 
 const PAGE_TITLE = 'Press Releases';
-const INDEX_PATH = '/us/en/newsroom/press-releases/query-index.json';
+// Category-driven: list every article under the press-releases root from the
+// shared locale query index (/us/en/query-index.json).
+const CATEGORY_PATH = '/content/about-ups-eds/us/en/newsroom/press-releases';
 
 async function main() {
   // Listing page .content.xml: a real Franklin page with a section holding
@@ -50,7 +52,7 @@ async function main() {
       <section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
         <block sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="breadcrumb" homeLabel="Home" model="breadcrumb" modelFields="[homeLabel]" name="Breadcrumb"/>
         <block_1 sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="headline" model="headline" modelFields="[title]" name="Headline" title="${attr(`<h1>${PAGE_TITLE}</h1>`)}"/>
-        <block_2 sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="content-list" indexPath="${attr(INDEX_PATH)}" loadMoreLabel="Load more" model="content-list" modelFields="[indexPath,filterPrefix,pageSize,loadMoreLabel,showDate]" name="Content List" pageSize="12"/>
+        <block_2 sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="content-list" category="${attr(CATEGORY_PATH)}" loadMoreLabel="Load more" model="content-list" modelFields="[category,pageSize,loadMoreLabel,showDate]" name="Content List" pageSize="12"/>
       </section>
     </root>
   </jcr:content>

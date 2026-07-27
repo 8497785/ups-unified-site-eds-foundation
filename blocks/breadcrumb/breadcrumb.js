@@ -1,7 +1,10 @@
 // Breadcrumb — builds the trail from the current page path, labeling each crumb
-// from the locale query index (/us/en/query-index.json) with a title-cased slug
-// fallback for any ancestor not present in the index. One memoized index fetch
-// serves every crumb.
+// from the shared locale query index with a title-cased slug fallback for any
+// ancestor not present in the index. The index is loaded via the shared
+// query-index service, so it is fetched once per page load and reused by every
+// block on the page.
+
+import { loadQueryIndex } from '../../scripts/query-index.js';
 
 const MAX_CRUMBS = 4;
 
@@ -23,25 +26,12 @@ function normalizePath(pathname) {
   return path;
 }
 
-let pageMapPromise;
-
-// Fetch the locale query index once and expose it as a path -> title Map.
-// On failure the cached promise is cleared so a later render can retry, and an
-// empty Map is returned so crumbs fall back to slugs (never throws / never blank).
-async function fetchPageMap(localeRoot) {
-  if (!pageMapPromise) {
-    pageMapPromise = fetch(`${localeRoot}/query-index.json`)
-      .then((resp) => {
-        if (!resp.ok) throw new Error(`query-index ${resp.status}`);
-        return resp.json();
-      })
-      .then(({ data = [] }) => new Map(data.map((p) => [p.path, p.title])))
-      .catch(() => {
-        pageMapPromise = null; // don't cache the failure
-        return new Map();
-      });
-  }
-  return pageMapPromise;
+// Expose the shared locale query index as a path -> title Map. Backed by the
+// query-index service, so the index is fetched once per page load and reused;
+// on failure the service returns an empty list and crumbs fall back to slugs.
+async function fetchPageMap() {
+  const entries = await loadQueryIndex();
+  return new Map(entries.map((p) => [p.path, p.title]));
 }
 
 // Title-case a URL slug, e.g. "press-releases" -> "Press Releases".
@@ -63,7 +53,7 @@ async function createBreadcrumb(homeLabel) {
   const parts = currentPath.split('/').filter(Boolean);
   // Locale root is the first two segments, e.g. /us/en.
   const localeRoot = `/${parts.slice(0, 2).join('/')}`;
-  const pageMap = await fetchPageMap(localeRoot);
+  const pageMap = await fetchPageMap();
 
   const crumbs = [];
 

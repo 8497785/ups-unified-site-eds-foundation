@@ -10,6 +10,7 @@
 // not on the AEM author host — so in author we render a placeholder.
 
 import { createOptimizedPicture, loadCSS } from '../../scripts/aem.js';
+import { getEntries } from '../../scripts/query-index.js';
 
 // Reuse the content-list card styles (grid, card, skeleton) rather than
 // duplicating them. EDS only auto-loads a block's own CSS, so load the shared
@@ -69,51 +70,11 @@ function readConfig(block) {
   };
 }
 
-// Candidate query-index.json locations for a path, nearest section first. A
-// category never owns an index — its parent section does — so the walk-up
-// starts at the path's PARENT and continues to the root.
-function candidateIndexPaths(prefix) {
-  const segments = prefix.split('/').filter(Boolean);
-  const paths = [];
-  for (let i = segments.length - 1; i >= 1; i -= 1) {
-    paths.push(`/${segments.slice(0, i).join('/')}/query-index.json`);
-  }
-  return paths;
-}
-
-// Fetch and return the section query index entries for a given base path,
-// probing candidate index locations and using the first that resolves.
-async function fetchIndex(basePath) {
-  const candidates = candidateIndexPaths(basePath);
-  for (let i = 0; i < candidates.length; i += 1) {
-    try {
-      // eslint-disable-next-line no-await-in-loop
-      const resp = await fetch(candidates[i]);
-      if (resp.ok) {
-        // eslint-disable-next-line no-await-in-loop
-        const json = await resp.json();
-        return json.data || [];
-      }
-    } catch (e) {
-      // try the next candidate
-    }
-  }
-  return [];
-}
-
 function formatDate(iso) {
   if (!iso) return '';
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return '';
   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-}
-
-function byPublishedDesc(a, b) {
-  const ta = Date.parse(a.published || '');
-  const tb = Date.parse(b.published || '');
-  const va = Number.isNaN(ta) ? -Infinity : ta;
-  const vb = Number.isNaN(tb) ? -Infinity : tb;
-  return vb - va;
 }
 
 // Fetch a page and read its <head> meta into a card entry. Used by static mode
@@ -228,24 +189,23 @@ function renderPlaceholder(block, count) {
 }
 
 // Dynamic: category articles if a category is set, else siblings of the
-// current page. Newest first, current page excluded, limited by count.
+// current page. Reads the shared locale query index (fetched once per page
+// load), keeps direct children of the scope, excludes the current page, newest
+// first, limited by count.
 async function selectDynamic(category, articleCount) {
   const currentPath = normalizePath(window.location.pathname);
   // Listing scope: the selected category, or the current page's parent
   // (siblings) when no category is set.
   const scope = category || currentPath.split('/').slice(0, -1).join('/');
-  const entries = await fetchIndex(scope);
 
-  return entries
-    .filter((e) => {
-      const p = normalizePath(e.path);
-      return p.startsWith(`${scope}/`)
-        && p.slice(scope.length + 1).indexOf('/') === -1;
-    })
-    .filter((e) => e.published)
-    .filter((e) => normalizePath(e.path) !== currentPath)
-    .sort(byPublishedDesc)
-    .slice(0, articleCount);
+  return getEntries({
+    pathPrefix: scope,
+    directChildren: true,
+    publishedOnly: true,
+    excludePath: currentPath,
+    sort: 'newest',
+    limit: articleCount,
+  });
 }
 
 // Static: fetch each authored path's page meta, preserving author order.

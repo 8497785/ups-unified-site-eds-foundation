@@ -43,23 +43,6 @@ indices:
       title:
         select: head > meta[property="og:title"]
         value: attribute(el, "content")
-      lastModified:
-        select: none
-        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
-      robots:
-        select: head > meta[name="robots"]
-        value: attribute(el, "content")
-
-  press-releases:
-    include:
-      - '/us/en/newsroom/press-releases/**'
-    exclude:
-      - '/**.json'
-    target: /us/en/newsroom/press-releases/query-index.json
-    properties:
-      title:
-        select: head > meta[property="og:title"]
-        value: attribute(el, "content")
       description:
         select: head > meta[name="description"]
         value: attribute(el, "content")

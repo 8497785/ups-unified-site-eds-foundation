@@ -1,15 +1,16 @@
 // Content List — a category-driven listing.
 //
-// The author selects a Category page; the block derives the section's
-// query-index.json and uses the category path as the filter prefix, so all
-// implementation details (index path, prefix) stay hidden. Entries render as
-// cards (image, date, linked title, description) with a "Load More" button.
+// The author selects a Category page; the block uses the category path as the
+// filter prefix against the shared locale query index, so all implementation
+// details stay hidden. Entries render as cards (image, date, linked title,
+// description) with a "Load More" button.
 //
 // The query index is a delivery-tier artifact (served on *.aem.page / *.aem.live),
 // not on the AEM author host — so in author we render a placeholder instead of
 // fetching, and real cards appear on the published/preview site.
 
 import { createOptimizedPicture, loadCSS } from '../../scripts/aem.js';
+import { getEntries, normalizePath } from '../../scripts/query-index.js';
 import { createButton } from '../button/button.js';
 
 // The Load More button reuses the button block's cmp-button styles. EDS only
@@ -28,41 +29,16 @@ function isAuthorEnvironment() {
   return window.location.hostname.endsWith('.adobeaemcloud.com');
 }
 
-// Normalize an authored category reference to a delivery path:
-// drop the .html suffix, any trailing slash, and a leading /content/<site>
-// segment pair (present on author-env aem-content refs). Delivery hrefs are
-// already public (e.g. /us/en/newsroom/press-releases/customer-first).
-function normalizeCategoryPath(raw) {
-  let p = (raw || '').trim().replace(/\.html$/, '').replace(/\/$/, '');
-  if (p.startsWith('/content/')) p = `/${p.split('/').slice(3).join('/')}`;
-  return p;
-}
-
-// Candidate query-index.json locations for a selected category, nearest first.
-// A category never owns an index — its parent section does — so the walk-up
-// starts at the category's PARENT and continues to the root, e.g.
-// /a/b/c -> [/a/b/query-index.json, /a/query-index.json]. This makes the very
-// first probe the correct section index (no spurious 404 at the category path).
-// The block uses the first candidate that resolves.
-function candidateIndexPaths(prefix) {
-  const segments = prefix.split('/').filter(Boolean);
-  const paths = [];
-  for (let i = segments.length - 1; i >= 1; i -= 1) {
-    paths.push(`/${segments.slice(0, i).join('/')}/query-index.json`);
-  }
-  return paths;
-}
-
 // Read the block's authored cells. Two authoring shapes are supported:
 //
 // New (category-driven): category, pageSize, loadMoreLabel, showDate,
 //   sortBy, maxItems. The selected category (aem-content) is the filter
-//   prefix; the query index is derived automatically (candidateIndexPaths),
-//   hiding those details from authors.
+//   prefix against the shared locale query index.
 //
 // Legacy (explicit): indexPath, filterPrefix, pageSize, loadMoreLabel,
 //   showDate. Detected when the first cell resolves to a query-index.json.
-//   Kept so pages authored before the simplification keep working.
+//   The explicit index path is ignored (all lookups use the shared locale
+//   index); only the filterPrefix is honored so legacy pages keep working.
 function readConfig(block) {
   const rows = [...block.children];
   const cell = (i) => rows[i]?.textContent.trim() || '';
@@ -70,10 +46,8 @@ function readConfig(block) {
   const firstRaw = firstLink ? firstLink.getAttribute('href') : cell(0);
 
   if (/query-index\.json$/.test(firstRaw)) {
-    const indexPath = firstRaw.trim();
-    const filterPrefix = cell(1);
+    const filterPrefix = normalizePath(cell(1));
     return {
-      indexPath,
       filterPrefix,
       pageSize: parseInt(cell(2), 10) || DEFAULTS.pageSize,
       loadMoreLabel: cell(3) || DEFAULTS.loadMoreLabel,
@@ -85,7 +59,7 @@ function readConfig(block) {
     };
   }
 
-  const filterPrefix = normalizeCategoryPath(firstRaw);
+  const filterPrefix = normalizePath(firstRaw);
   return {
     filterPrefix,
     pageSize: parseInt(cell(1), 10) || DEFAULTS.pageSize,
@@ -104,22 +78,6 @@ function formatDate(iso) {
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return '';
   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-}
-
-// Return a comparator for the selected sort. Entries without a valid published
-// date sort last for date-based orders.
-function comparatorFor(sortBy) {
-  if (sortBy === 'title') {
-    return (a, b) => (a.title || '').localeCompare(b.title || '');
-  }
-  const dir = sortBy === 'oldest' ? -1 : 1;
-  return (a, b) => {
-    const ta = Date.parse(a.published || '');
-    const tb = Date.parse(b.published || '');
-    const va = Number.isNaN(ta) ? -Infinity : ta;
-    const vb = Number.isNaN(tb) ? -Infinity : tb;
-    return (vb - va) * dir;
-  };
 }
 
 function buildCard(entry, showDate) {
@@ -213,7 +171,7 @@ function renderPlaceholder(block, pageSize) {
 
 export default async function decorate(block) {
   const {
-    indexPath, filterPrefix, pageSize, loadMoreLabel, loadMoreStyle,
+    filterPrefix, pageSize, loadMoreLabel, loadMoreStyle,
     loadMoreAlignment, showDate, sortBy, maxItems,
   } = readConfig(block);
 
@@ -223,33 +181,15 @@ export default async function decorate(block) {
     return;
   }
 
-  // Resolve the index: explicit (legacy) path, else probe the derived
-  // candidates at/above the category and use the first that resolves.
-  const candidates = indexPath ? [indexPath] : candidateIndexPaths(filterPrefix);
-  let entries = [];
-  for (let i = 0; i < candidates.length; i += 1) {
-    try {
-      // eslint-disable-next-line no-await-in-loop
-      const resp = await fetch(candidates[i]);
-      if (resp.ok) {
-        // eslint-disable-next-line no-await-in-loop
-        const json = await resp.json();
-        entries = json.data || [];
-        break;
-      }
-    } catch (e) {
-      // try the next candidate
-    }
-  }
-
-  if (filterPrefix) {
-    entries = entries.filter((e) => (e.path || '').startsWith(filterPrefix));
-  }
-  // Only list article/story entries: section landing and category pages appear
-  // in the index without a published date — exclude them from the listing.
-  entries = entries.filter((e) => e.published);
-  entries.sort(comparatorFor(sortBy));
-  if (maxItems > 0) entries = entries.slice(0, maxItems);
+  // Read from the shared locale query index (fetched once per page load) and
+  // filter by the category prefix. publishedOnly excludes section landing and
+  // category pages (which have no published date).
+  const entries = await getEntries({
+    pathPrefix: filterPrefix,
+    publishedOnly: true,
+    sort: sortBy,
+    limit: maxItems,
+  });
 
   const wrap = document.createElement('div');
   const ul = document.createElement('ul');
