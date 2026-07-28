@@ -474,3 +474,49 @@ main > .section.arc-background::after {
 .upspr-icon-checkcircle-solid::before { content: "\e625"; }
 .upspr-icon-instagram-circle::before { content: "\e626"; }
 .upspr-icon-warning::before { content: "\e627"; }
+
+/* Rich-text (RTE) tables authored in body content */
+main table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  padding: 0;
+  border: 0;
+  margin-bottom: 40px;
+}
+
+main table tbody {
+  width: 100%;
+  display: inline-table;
+}
+
+main table th,
+main table td {
+  padding: 8px;
+  text-align: left;
+  white-space: nowrap;
+  border: 1px solid #242424;
+}
+
+main table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+main table.table-no-border tr:nth-child(even) {
+  background-color: #fff;
+}
+
+main table.table-no-border th,
+main table.table-no-border td {
+  padding: 8px 16px 8px 0;
+  text-align: left;
+  white-space: normal;
+  border: 0;
+}
+
+main table.table-no-border th p,
+main table.table-no-border td p {
+  margin-bottom: 18px;
+}
