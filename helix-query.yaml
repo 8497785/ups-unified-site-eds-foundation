@@ -1,43 +1,14 @@
 version: 1
 
 indices:
-  pages:
-    include:
-      - '/**'
-    exclude:
-      - '/**.json'
-    target: /query-index.json
-    properties:
-      title:
-        select: head > meta[property="og:title"]
-        value: attribute(el, "content")
-      description:
-        select: head > meta[name="description"]
-        value: attribute(el, "content")
-      image:
-        select: head > meta[property="og:image"]
-        value: attribute(el, "content")
-      published:
-        select: main .article-header > div:nth-child(5)
-        value: textContent(el)
-      category:
-        select: main .article-header > div:nth-child(1)
-        value: textContent(el)
-      categoryUrl:
-        select: main .article-header > div:nth-child(2) a
-        value: attribute(el, "href")
-      lastModified:
-        select: none
-        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
-      robots:
-        select: head > meta[name="robots"]
-        value: attribute(el, "content")
-
   us-en:
     include:
       - '/us/en/**'
     exclude:
       - '/**.json'
+      - '/**/nav'
+      - '/**/footer'
+      - '/**/header'
     target: /us/en/query-index.json
     properties:
       title:
