@@ -63,7 +63,12 @@ const SITE = 'about-ups-eds';
 const RAW_ARGS = process.argv.slice(2);
 const CATEGORY = (RAW_ARGS.find((a) => a.startsWith('--category=')) || '').split('=')[1]
   || 'customer-first';
-const ARGS = RAW_ARGS.filter((a) => !a.startsWith('--category='));
+// `--dir=<relpath>` overrides the folder scanned for imported *.plain.html
+// (relative to content/), for article-structured pages that live outside the
+// press-releases/<category> tree (e.g. language-masters/en/newsroom for the
+// Facebook Rules page). Defaults to the press-releases/<category> folder.
+const DIR_OVERRIDE = (RAW_ARGS.find((a) => a.startsWith('--dir=')) || '').split('=')[1] || '';
+const ARGS = RAW_ARGS.filter((a) => !a.startsWith('--category=') && !a.startsWith('--dir='));
 const REST_MODE = ARGS[0] === '--rest';
 const ALL_MODE = ARGS[0] === '--all'; // every page, leaves-only, no parents
 const ONLY_SLUGS = (REST_MODE || ALL_MODE) ? [] : ARGS;
@@ -73,7 +78,7 @@ const ALREADY_DELIVERED = ['interglobe-enterprises-and-ups-launch-movin'];
 // All article pages live under this folder. The generator discovers every
 // imported *.plain.html here and packages each as its own leaf page, so one
 // zip can carry any number of pages (re-running is idempotent per page).
-const ARTICLES_DIR = `language-masters/en/newsroom/press-releases/${CATEGORY}`;
+const ARTICLES_DIR = DIR_OVERRIDE || `language-masters/en/newsroom/press-releases/${CATEGORY}`;
 
 const PKG_BASE = SINGLE ? 'migration-work/packages-single' : 'migration-work/packages';
 const JCR_ROOT = `${PKG_BASE}/jcr/jcr_root`;
@@ -194,9 +199,19 @@ async function buildLeaf(relPath) {
   const eyebrow = text(byField.eyebrow);
   const title = (byField.title || '').trim(); // contains <h1>...</h1>
   const pageTitle = text(title) || 'Article'; // plain-text headline -> jcr:title
-  const description = (byField.description || '').trim(); // contains <p>...</p>
+  const description = (byField.description || '').trim(); // contains <p>...</p> (on-page subtext)
   const articleDate = text(byField.articleDate);
   const hideReadTime = text(byField.hideReadTime) || 'false';
+
+  // ---- SEO description (jcr:description) ----
+  // The on-page subtext (article-header description) is often empty; the page's
+  // meta description lives in the importer's .metadata block (Description row).
+  // Prefer the subtext when present, else fall back to the metadata block so the
+  // jcr:description / og:description is populated from the source page.
+  const metaRows = [...document.querySelectorAll('.metadata > div')];
+  const metaDescRow = metaRows.find((r) => (r.firstElementChild?.textContent || '').trim().toLowerCase() === 'description');
+  const metaDescription = metaDescRow ? (metaDescRow.children[1]?.textContent || '').trim() : '';
+  const seoDescription = text(description) || metaDescription;
 
   // ---- auto-generated page metadata (rendered to <head> meta tags) ----
   // publishDate: original article date (ISO) if present, else the page publish
@@ -251,7 +266,7 @@ async function buildLeaf(relPath) {
   //   section_related (highlight)         -> Title + Related Articles (if any)
   const leafXml = `<?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" jcr:primaryType="cq:Page">
-  <jcr:content cq:template="/libs/core/franklin/templates/page" sling:resourceType="core/franklin/components/page/v1/page" jcr:primaryType="cq:PageContent" jcr:title="${attr(pageTitle)}" jcr:description="${attr(description.replace(/<\/?p>/g, ''))}"${keywordsAttr} image="${attr(heroImg)}" publishdate="${attr(publishDate)}" categorytitle="${attr(categoryTitle)}" categoryurl="${attr(categoryHref)}" modelFields="[jcr:title,jcr:description,keywords,image,publishdate,categorytitle,categoryurl]">
+  <jcr:content cq:template="/libs/core/franklin/templates/page" sling:resourceType="core/franklin/components/page/v1/page" jcr:primaryType="cq:PageContent" jcr:title="${attr(pageTitle)}" jcr:description="${attr(seoDescription.replace(/<\/?p>/g, ''))}"${keywordsAttr} image="${attr(heroImg)}" publishdate="${attr(publishDate)}" categorytitle="${attr(categoryTitle)}" categoryurl="${attr(categoryHref)}" modelFields="[jcr:title,jcr:description,keywords,image,publishdate,categorytitle,categoryurl]">
     <root jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/root/v1/root">
       <section_breadcrumb sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]" style="[no-top-spacing]">
         <block_breadcrumb sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="breadcrumb" homeLabel="Home" model="breadcrumb" modelFields="[homeLabel]" name="Breadcrumb"/>
