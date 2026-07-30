@@ -68,7 +68,10 @@ const CATEGORY = (RAW_ARGS.find((a) => a.startsWith('--category=')) || '').split
 // press-releases/<category> tree (e.g. language-masters/en/newsroom for the
 // Facebook Rules page). Defaults to the press-releases/<category> folder.
 const DIR_OVERRIDE = (RAW_ARGS.find((a) => a.startsWith('--dir=')) || '').split('=')[1] || '';
-const ARGS = RAW_ARGS.filter((a) => !a.startsWith('--category=') && !a.startsWith('--dir='));
+// `--name=<pkgname>` overrides the output package (zip + properties) name,
+// useful for a combined multi-folder build (e.g. --name=newsroom-statements).
+const NAME_OVERRIDE = (RAW_ARGS.find((a) => a.startsWith('--name=')) || '').split('=')[1] || '';
+const ARGS = RAW_ARGS.filter((a) => !a.startsWith('--category=') && !a.startsWith('--dir=') && !a.startsWith('--name='));
 const REST_MODE = ARGS[0] === '--rest';
 const ALL_MODE = ARGS[0] === '--all'; // every page, leaves-only, no parents
 const ONLY_SLUGS = (REST_MODE || ALL_MODE) ? [] : ARGS;
@@ -78,7 +81,10 @@ const ALREADY_DELIVERED = ['interglobe-enterprises-and-ups-launch-movin'];
 // All article pages live under this folder. The generator discovers every
 // imported *.plain.html here and packages each as its own leaf page, so one
 // zip can carry any number of pages (re-running is idempotent per page).
-const ARTICLES_DIR = DIR_OVERRIDE || `language-masters/en/newsroom/press-releases/${CATEGORY}`;
+// One or more folders (comma-separated in --dir=) scanned for imported pages.
+const ARTICLES_DIRS = (DIR_OVERRIDE
+  || `language-masters/en/newsroom/press-releases/${CATEGORY}`)
+  .split(',').map((d) => d.trim()).filter(Boolean);
 
 const PKG_BASE = SINGLE ? 'migration-work/packages-single' : 'migration-work/packages';
 const JCR_ROOT = `${PKG_BASE}/jcr/jcr_root`;
@@ -310,12 +316,15 @@ async function buildLeaf(relPath) {
 }
 
 async function main() {
-  // Discover every imported article page (one .plain.html per page).
-  const dirEntries = await readdir(`content/${ARTICLES_DIR}`);
-  let relPaths = dirEntries
-    .filter((f) => f.endsWith('.plain.html'))
-    .map((f) => `${ARTICLES_DIR}/${f.replace(/\.plain\.html$/, '')}`)
-    .sort();
+  // Discover every imported article page (one .plain.html per page) across all
+  // requested folders.
+  const perDir = await Promise.all(ARTICLES_DIRS.map(async (dir) => {
+    const dirEntries = await readdir(`content/${dir}`);
+    return dirEntries
+      .filter((f) => f.endsWith('.plain.html'))
+      .map((f) => `${dir}/${f.replace(/\.plain\.html$/, '')}`);
+  }));
+  let relPaths = perDir.flat().sort();
 
   // Selected-pages mode: keep only the requested slugs, or (with --rest) every
   // page except the ones already delivered.
@@ -328,7 +337,7 @@ async function main() {
     }
   }
 
-  if (relPaths.length === 0) throw new Error(`No .plain.html pages found in content/${ARTICLES_DIR}`);
+  if (relPaths.length === 0) throw new Error(`No .plain.html pages found in content/{${ARTICLES_DIRS.join(',')}}`);
 
   // ---- write JCR tree (fresh) -------------------------------------------
   await rm(PKG_BASE, { recursive: true, force: true });
@@ -365,7 +374,8 @@ ${[parentFilters, leafFilters].filter(Boolean).join('\n')}
   await writeFile(join(META_DIR, 'filter.xml'), filterXml, 'utf8');
 
   let pkgName = `${SITE}-article`;
-  if (ALL_MODE) pkgName = `${CATEGORY}-all`;
+  if (NAME_OVERRIDE) pkgName = NAME_OVERRIDE;
+  else if (ALL_MODE) pkgName = `${CATEGORY}-all`;
   else if (REST_MODE) pkgName = `${CATEGORY}-remaining`;
   else if (ONLY_SLUGS.length === 1) [pkgName] = ONLY_SLUGS;
   else if (ONLY_SLUGS.length > 1) pkgName = 'customer-first-selected';
