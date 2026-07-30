@@ -201,7 +201,21 @@
       "name": "article",
       "urls": [
         "https://about.ups.com/us/en/newsroom/press-releases/customer-first/ups-extends-complex-healthcare-logistics-lead-with--48-million-i.html",
-        "https://about.ups.com/us/en/newsroom/facebook-rules.html"
+        "https://about.ups.com/us/en/newsroom/facebook-rules.html",
+        "https://about.ups.com/us/en/newsroom/negotiations/ups-teamsters-vote-to-overwhelming-ratify-national-master-agreem.html",
+        "https://about.ups.com/us/en/newsroom/statements/aircraft-maintenance-contract-agreement.html",
+        "https://about.ups.com/us/en/newsroom/statements/an-update-on-changes-to-our-u-s--network-operations-.html",
+        "https://about.ups.com/us/en/newsroom/statements/statement-from-carol-tome-on-kevin-warsh-nomination.html",
+        "https://about.ups.com/us/en/newsroom/statements/statement-from-ups-on-the-passing-of-president-jimmy-carter.html",
+        "https://about.ups.com/us/en/newsroom/statements/ups-announces-u-s--driver-voluntary-program.html",
+        "https://about.ups.com/us/en/newsroom/statements/ups-reaches-agreement-with-teamsters-on-driver-choice-program.html",
+        "https://about.ups.com/us/en/newsroom/statements/ups-statement-in-memory-of-fredrick-w--smith-.html",
+        "https://about.ups.com/us/en/newsroom/statements/ups-statement-on-aircraft-accident.html",
+        "https://about.ups.com/us/en/newsroom/statements/ups-statement-on-md-11-fleet.html",
+        "https://about.ups.com/us/en/newsroom/statements/ups-statement-on-new-people-investments.html",
+        "https://about.ups.com/us/en/newsroom/statements/ups-statement-on-the-passing-of-first-lady-rosalynn-carter.html",
+        "https://about.ups.com/us/en/newsroom/statements/ups-statement-on-u-s--driver-voluntary-program.html",
+        "https://about.ups.com/us/en/newsroom/statements/ups-statement-on-u-s--network-optimization.html"
       ],
       "description": "Press-release / article detail page: article-header, hero image, and a Column Control (8/4) with body rich text (width 8) and a social-share block (width 4). Output under /content/language-masters/en/.",
       "blocks": [

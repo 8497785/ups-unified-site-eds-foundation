@@ -111,6 +111,11 @@ var CustomImportScript = (() => {
       body.querySelectorAll(":scope > p, :scope > ul, :scope > ol, :scope > h2, :scope > h3, :scope > table").forEach((node) => {
         bodyFrag.appendChild(node.cloneNode(true));
       });
+      if (!bodyFrag.childNodes.length && body.textContent.trim()) {
+        const p = document.createElement("p");
+        p.innerHTML = body.innerHTML.trim();
+        bodyFrag.appendChild(p);
+      }
     }
     const leftCol = document.createElement("div");
     leftCol.appendChild(bodyFrag);
