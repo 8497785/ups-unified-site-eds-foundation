@@ -58,6 +58,16 @@ export default function transform(hookName, element, payload) {
     // Remove script tags that may remain
     WebImporter.DOMUtils.remove(element, ['script']);
 
+    // Unwrap web.archive.org links back to their original destination.
+    // Source pages sometimes carry Wayback-wrapped hrefs of the form
+    // http://web.archive.org/web/<timestamp>/<original-url>. Restore the
+    // original URL so links point at the live destination, not the archive.
+    element.querySelectorAll('a[href*="web.archive.org/web/"]').forEach((a) => {
+      const href = a.getAttribute('href') || '';
+      const m = href.match(/web\.archive\.org\/web\/[^/]+\/(https?:\/\/.+)$/);
+      if (m && m[1]) a.setAttribute('href', m[1]);
+    });
+
     // Clean up analytics data attributes from remaining content elements
     // Found on many elements: data-link-name, data-link-type, data-toggle, data-target, data-attribute
     element.querySelectorAll('[data-link-name]').forEach((el) => {

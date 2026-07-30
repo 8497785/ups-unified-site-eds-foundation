@@ -158,6 +158,11 @@ var CustomImportScript = (() => {
       WebImporter.DOMUtils.remove(element, ["#uspsr-navContainer"]);
       WebImporter.DOMUtils.remove(element, ["noscript", "iframe", "link"]);
       WebImporter.DOMUtils.remove(element, ["script"]);
+      element.querySelectorAll('a[href*="web.archive.org/web/"]').forEach((a) => {
+        const href = a.getAttribute("href") || "";
+        const m = href.match(/web\.archive\.org\/web\/[^/]+\/(https?:\/\/.+)$/);
+        if (m && m[1]) a.setAttribute("href", m[1]);
+      });
       element.querySelectorAll("[data-link-name]").forEach((el) => {
         el.removeAttribute("data-link-name");
       });
