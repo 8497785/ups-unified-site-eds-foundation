@@ -6,8 +6,6 @@
 
 import { loadQueryIndex } from '../../scripts/query-index.js';
 
-const MAX_CRUMBS = 4;
-
 // Content-source prefixes that appear in author/preview URLs but not on the
 // clean delivery path. Stripping them turns
 // /content/about-ups-eds/us/en/newsroom/... into /us/en/newsroom/... so the
@@ -69,10 +67,11 @@ async function createBreadcrumb(homeLabel) {
     crumbs.push({ path, label });
   }
 
-  const visible = crumbs.slice(0, MAX_CRUMBS);
-  visible.forEach((crumb, i) => {
+  // Show every level of the trail (no length cap). The last crumb is the
+  // current page and is rendered as plain text (no link); all ancestors link.
+  crumbs.forEach((crumb, i) => {
     const li = document.createElement('li');
-    const isLast = i === visible.length - 1;
+    const isLast = i === crumbs.length - 1;
     if (isLast) {
       li.className = 'active';
       li.textContent = crumb.label;
