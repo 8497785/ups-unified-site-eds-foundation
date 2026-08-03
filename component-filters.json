@@ -31,7 +31,8 @@
         "insert": [
           "link",
           "unlink",
-          "table"
+          "table",
+          "image"
         ],
         "sr_script": [
           "superscript",
@@ -45,6 +46,10 @@
         "table": {
           "wrapInParagraphs": false,
           "label": "Insert Table"
+        },
+        "image": {
+          "wrapInPicture": false,
+          "label": "Insert Image"
         }
       }
     }

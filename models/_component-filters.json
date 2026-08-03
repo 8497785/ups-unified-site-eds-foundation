@@ -12,7 +12,7 @@
         "format": ["bold", "italic", "underline", "strike"],
         "blocks": ["paragraph", "h1", "h2", "h3", "h4", "h5", "h6"],
         "list": ["bullet_list", "ordered_list"],
-        "insert": ["link", "unlink", "table"],
+        "insert": ["link", "unlink", "table", "image"],
         "sr_script": ["superscript", "subscript"],
         "editor": ["removeformat"]
       },
@@ -20,6 +20,10 @@
         "table": {
           "wrapInParagraphs": false,
           "label": "Insert Table"
+        },
+        "image": {
+          "wrapInPicture": false,
+          "label": "Insert Image"
         }
       }
     }
