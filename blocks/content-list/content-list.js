@@ -126,7 +126,6 @@ function buildCard(entry, showDate) {
   // eyebrow/category keeps its separate link).
   if (entry.title || entry.description) {
     const a = document.createElement('a');
-    a.className = 'content-list-card-link';
     a.href = entry.path;
 
     if (entry.title) {

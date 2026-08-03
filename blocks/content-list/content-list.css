@@ -125,14 +125,15 @@
   color: #242424;
 }
 
-/* Title + description share one anchor to the article; keep it looking like
-   the surrounding text (no default link color/underline). */
-.content-list-card-link {
+/* Title + description share one anchor to the article (the direct child <a>
+   of the card body). Keep it looking like the surrounding text — no default
+   link color/underline. The category link is inside a <p>, so it's unaffected. */
+.content-list-card-body > a {
   color: inherit;
   text-decoration: none;
 }
 
-.content-list-card-link:hover {
+.content-list-card-body > a:hover {
   text-decoration: none;
 }
 
