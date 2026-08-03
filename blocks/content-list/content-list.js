@@ -121,24 +121,29 @@ function buildCard(entry, showDate) {
     body.append(dateEl);
   }
 
-  if (entry.title) {
-    const h = document.createElement('h3');
-    h.className = 'content-list-card-title';
+  // Title + description share a single anchor to the article, so the whole
+  // text block is one clickable link (the image keeps its own anchor; the
+  // eyebrow/category keeps its separate link).
+  if (entry.title || entry.description) {
     const a = document.createElement('a');
+    a.className = 'content-list-card-link';
     a.href = entry.path;
-    a.textContent = entry.title;
-    h.append(a);
-    body.append(h);
-  }
 
-  if (entry.description) {
-    const desc = document.createElement('p');
-    desc.className = 'content-list-card-description';
-    const a = document.createElement('a');
-    a.href = entry.path;
-    a.textContent = entry.description;
-    desc.append(a);
-    body.append(desc);
+    if (entry.title) {
+      const h = document.createElement('h3');
+      h.className = 'content-list-card-title';
+      h.textContent = entry.title;
+      a.append(h);
+    }
+
+    if (entry.description) {
+      const desc = document.createElement('p');
+      desc.className = 'content-list-card-description';
+      desc.textContent = entry.description;
+      a.append(desc);
+    }
+
+    body.append(a);
   }
 
   li.append(body);
