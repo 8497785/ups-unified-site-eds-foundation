@@ -215,9 +215,18 @@ async function selectDynamic(category, articleCount) {
   });
 }
 
-// Static: fetch each authored path's page meta, preserving author order.
+// Static: resolve each authored path, preserving author order. Prefer the
+// query-index entry (authoritative delivery values — notably categoryUrl is the
+// served /us/en path, whereas the page's categoryurl <head> meta holds the
+// authoring /language-masters path). Fall back to fetching the page's meta only
+// for pages not present in the index, so any page can still be featured.
 async function selectStatic(paths) {
-  const entries = await Promise.all(paths.map((p) => fetchPageEntry(p)));
+  const indexed = await getEntries({ paths });
+  const byPath = new Map(indexed.map((e) => [normalizePath(e.path), e]));
+  const entries = await Promise.all(paths.map((p) => {
+    const hit = byPath.get(normalizePath(p));
+    return hit || fetchPageEntry(p);
+  }));
   return entries.filter(Boolean);
 }
 
