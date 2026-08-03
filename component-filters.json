@@ -15,6 +15,20 @@
           "underline",
           "strike"
         ],
+        "alignment": [
+          "left",
+          "center",
+          "right",
+          "justify"
+        ],
+        "direction": [
+          "rtl",
+          "ltr"
+        ],
+        "indentation": [
+          "indent",
+          "outdent"
+        ],
         "blocks": [
           "paragraph",
           "h1",
@@ -22,7 +36,8 @@
           "h3",
           "h4",
           "h5",
-          "h6"
+          "h6",
+          "code_block"
         ],
         "list": [
           "bullet_list",
@@ -31,15 +46,17 @@
         "insert": [
           "link",
           "unlink",
-          "table",
-          "image"
+          "image",
+          "special_characters",
+          "table"
         ],
         "sr_script": [
           "superscript",
           "subscript"
         ],
         "editor": [
-          "removeformat"
+          "removeformat",
+          "paste_text"
         ]
       },
       "actions": {
