@@ -134,27 +134,14 @@ function buildCard(entry, showDate) {
   if (entry.description) {
     const desc = document.createElement('p');
     desc.className = 'content-list-card-description';
-    desc.textContent = entry.description;
+    const a = document.createElement('a');
+    a.href = entry.path;
+    a.textContent = entry.description;
+    desc.append(a);
     body.append(desc);
   }
 
   li.append(body);
-
-  // Make the whole card clickable → the article. The title and image keep
-  // their own anchors (accessibility/SEO); this handler covers the rest of the
-  // card. Clicks on any anchor inside the card (e.g. the eyebrow/category link)
-  // are ignored so those links keep their own destination. Modifier/middle
-  // clicks fall through to default behavior.
-  if (entry.path) {
-    li.classList.add('content-list-card-clickable');
-    li.addEventListener('click', (e) => {
-      if (e.target.closest('a')) return;
-      if (e.defaultPrevented || e.button !== 0) return;
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      window.location.assign(entry.path);
-    });
-  }
-
   return li;
 }
 
