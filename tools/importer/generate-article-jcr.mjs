@@ -276,7 +276,7 @@ async function buildLeaf(relPath) {
               <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" aueComponentId="text" text="${attr(bodyHtml)}"/>
             </col1>
             <col2 jcr:primaryType="nt:unstructured">
-              <social_share sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="social-share" model="social-share" modelFields="[label@text]" name="Social Share"/>
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" aueComponentId="text" text="${attr('<table><thead><tr><th>Social Share</th></tr></thead><tbody><tr><td>Share</td></tr></tbody></table>')}"/>
             </col2>
           </row1>
         </block_1>
