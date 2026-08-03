@@ -21,15 +21,30 @@ function applyLayout(cols, layout) {
   cols.forEach((col, i) => col.classList.add(`col-lg-${widths[i]}`));
 }
 
-// Convert a nested block authored as a raw <table> (delivered inside a column —
-// the EDS pipeline only converts top-level block tables) into standard block
-// DOM: <div class="<name> block"> rows/cells </div>.
+// Convert a nested block authored as a raw <table> into standard EDS block DOM:
+// <div class="<name> block"> rows/cells </div>.
+//
+// WHY tables: a block nested in a column is NOT a top-level section block, and
+// the crosswalk -> helix-md2jcr delivery pipeline only converts top-level block
+// tables. A nested block *node* is flattened on delivery to a classless <div>
+// (its block identity is lost), so it can't be reconstructed client-side. The
+// durable carrier for a nested block is therefore a table whose header cell
+// names the block; it survives md2jcr intact and we rebuild the block DOM from
+// it here at runtime.
+//
+// The header cell may carry a variant, e.g. "Cards (logos)" -> classes
+// ["cards", "logos"]; the first token is the block name.
 function tableToBlock(table) {
   const headerText = table.querySelector('thead th, thead td')?.textContent.trim() || '';
   if (!headerText) return;
-  const name = toClassName(headerText);
+  const classes = headerText
+    .split(/[(),]/) // "Name (variant)" -> ["Name ", " variant", ""]
+    .map((s) => toClassName(s.trim()))
+    .filter(Boolean);
+  if (!classes.length) return;
+  const [name] = classes;
   const wrapper = document.createElement('div');
-  wrapper.className = `${name} block`;
+  wrapper.className = `${classes.join(' ')} block`;
   wrapper.dataset.blockName = name;
   table.querySelectorAll('tbody tr').forEach((tr) => {
     const rowDiv = document.createElement('div');
@@ -45,15 +60,25 @@ function tableToBlock(table) {
 
 // Decorate + load any blocks authored inside the column cells. EDS only auto-
 // decorates top-level section blocks, so a block nested in a column (e.g. Title,
-// Social Share) would otherwise render its raw cells. Handle raw <table> markup
-// too, and search at any depth (the pipeline may wrap a block in a <p>/<div>).
+// Social Share) would otherwise render its raw cells.
+//
+// Detection is CLASS-based, not attribute-based: on the published .page a nested
+// block is delivered as a table carrier (rebuilt to a classed block div by
+// tableToBlock above), and UE-only `data-aue-*` attributes are stripped — so a
+// `data-aue-component`/`data-block-name` selector matches nothing on delivery
+// (this was the bug: nested blocks stayed plain HTML on .page). Search
+// descendants (the pipeline may wrap a nested block in a <p>/<div>), take
+// undecorated classed divs, and exclude the column cells themselves and the
+// picture-column wrapper.
 async function loadNestedBlocks(cols) {
   cols.forEach((col) => {
     col.querySelectorAll(':scope table').forEach((table) => tableToBlock(table));
   });
   const nested = cols.flatMap((col) => [
-    ...col.querySelectorAll('div[data-aue-component]:not([data-block-status]), div[data-block-name]:not([data-block-status])'),
-  ]);
+    ...col.querySelectorAll('div[class]:not([data-block-status])'),
+  ].filter((el) => el.classList.length
+    && !el.classList.contains('columns-img-col')
+    && !cols.includes(el)));
   await Promise.all(nested.map(async (el) => {
     const wrapper = document.createElement('div');
     el.replaceWith(wrapper);
