@@ -39,6 +39,11 @@
   overflow: hidden;
 }
 
+/* Whole card is clickable (JS-driven); nested anchors keep their own links. */
+.content-list-card-clickable {
+  cursor: pointer;
+}
+
 /* Image — source: .upspr-content-tile__image img (rounded top, 280px, cover). */
 .content-list-card-image {
   line-height: 0;
