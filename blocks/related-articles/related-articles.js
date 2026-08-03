@@ -4,7 +4,8 @@
 //   articles under that category (newest first); otherwise fall back to
 //   siblings under the CURRENT page's parent. Limited by "Number of Articles".
 // Static: the author picks up to 3 specific article paths; each card's
-//   content is pulled from that page's <head> meta (title, image, description).
+//   content is read from the shared query index (title, image, category,
+//   categoryUrl, published) — a picked path not in the index is skipped.
 //
 // The query index is a delivery-tier artifact (served on *.aem.page/.aem.live),
 // not on the AEM author host — so in author we render a placeholder.
@@ -75,30 +76,6 @@ function formatDate(iso) {
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return '';
   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-}
-
-// Fetch a page and read its <head> meta into a card entry. Used by static mode
-// so any page can be featured, not just indexed articles.
-async function fetchPageEntry(path) {
-  try {
-    const resp = await fetch(path);
-    if (!resp.ok) return null;
-    const html = await resp.text();
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-    const meta = (sel) => doc.querySelector(sel)?.getAttribute('content') || '';
-    const title = meta('meta[property="og:title"]') || doc.querySelector('title')?.textContent || '';
-    return {
-      path,
-      title: title.trim(),
-      description: meta('meta[name="description"]'),
-      image: meta('meta[property="og:image"]'),
-      category: meta('meta[name="categorytitle"]'),
-      categoryUrl: meta('meta[name="categoryurl"]'),
-      published: meta('meta[name="publishdate"]'),
-    };
-  } catch (e) {
-    return null;
-  }
 }
 
 function buildCard(entry, showDate) {
@@ -215,19 +192,12 @@ async function selectDynamic(category, articleCount) {
   });
 }
 
-// Static: resolve each authored path, preserving author order. Prefer the
-// query-index entry (authoritative delivery values — notably categoryUrl is the
-// served /us/en path, whereas the page's categoryurl <head> meta holds the
-// authoring /language-masters path). Fall back to fetching the page's meta only
-// for pages not present in the index, so any page can still be featured.
+// Static: resolve each authored path from the shared query index, preserving
+// author order. The index is the single source (title, image, category,
+// categoryUrl, published) — no per-page fetch. A picked path that isn't in the
+// index is skipped.
 async function selectStatic(paths) {
-  const indexed = await getEntries({ paths });
-  const byPath = new Map(indexed.map((e) => [normalizePath(e.path), e]));
-  const entries = await Promise.all(paths.map((p) => {
-    const hit = byPath.get(normalizePath(p));
-    return hit || fetchPageEntry(p);
-  }));
-  return entries.filter(Boolean);
+  return getEntries({ paths });
 }
 
 export default async function decorate(block) {
