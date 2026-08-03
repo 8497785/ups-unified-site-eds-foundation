@@ -154,21 +154,6 @@ const damPath = (src) => (src || '')
 const text = (htmlFragment) => new JSDOM(`<div>${htmlFragment || ''}</div>`)
   .window.document.body.textContent.trim();
 
-// Normalize an authored article date to ISO 8601 (YYYY-MM-DD). Source dates are
-// MM-DD-YYYY (e.g. "11-02-2021"). Returns '' when the input is missing or not a
-// recognizable date, so callers can fall back to the page publish date.
-const isoDate = (raw) => {
-  const s = (raw || '').trim();
-  if (!s) return '';
-  const m = s.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/); // MM-DD-YYYY
-  if (m) {
-    const [, mm, dd, yyyy] = m;
-    return `${yyyy}-${mm.padStart(2, '0')}-${dd.padStart(2, '0')}`;
-  }
-  const d = new Date(s);
-  return Number.isNaN(d.getTime()) ? '' : d.toISOString().slice(0, 10);
-};
-
 // Category URL = the leaf page's parent path (drop the article slug), kept
 // relative with the leading /<locale> root intact and no .html extension.
 // e.g. language-masters/en/newsroom/press-releases/customer-first/<slug>
@@ -219,13 +204,11 @@ async function buildLeaf(relPath) {
   const metaDescription = metaDescRow ? (metaDescRow.children[1]?.textContent || '').trim() : '';
   const seoDescription = text(description) || metaDescription;
 
-  // ---- auto-generated page metadata (rendered to <head> meta tags) ----
-  // publishDate: original article date (ISO) if present, else the page publish
-  // date at delivery time (today, ISO) as a fallback.
-  const publishDate = isoDate(articleDate) || new Date().toISOString().slice(0, 10);
-  const categoryTitle = eyebrow; // Category Title = eyebrow text
-  const categoryHref = categoryUrl(relPath); // parent path, relative, no .html
-  const eyebrowLink = categoryContentPath(relPath); // authorable aem-content ref
+  // Category link for the article-header eyebrow (authorable aem-content ref).
+  // Category title/URL and publish date are NOT written as page metadata — the
+  // query index reads category/published from the article-header block cells,
+  // and the featured image lives in the image node below.
+  const eyebrowLink = categoryContentPath(relPath);
 
   // ---- hero image (first top-level <p><picture><img>) ----
   const heroImgEl = document.querySelector('p img');
@@ -237,6 +220,12 @@ async function buildLeaf(relPath) {
   const colBlock = document.querySelector('.column-control');
   const row = colBlock.firstElementChild;
   const [col1El] = [...row.children];
+  // Relativize any DAM image src inside the body rich text: strip the host and
+  // any about-ups-eds segment so it becomes /content/dam/... (absolute
+  // about.ups.com paths don't load in preview). Mirrors damPath() for the hero.
+  col1El.querySelectorAll('img[src]').forEach((img) => {
+    img.setAttribute('src', damPath(img.getAttribute('src')));
+  });
   const bodyHtml = col1El.innerHTML.trim();
 
   // ---- related stories (Section 3) ----
@@ -272,7 +261,8 @@ async function buildLeaf(relPath) {
   //   section_related (highlight)         -> Title + Related Articles (if any)
   const leafXml = `<?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" jcr:primaryType="cq:Page">
-  <jcr:content cq:template="/libs/core/franklin/templates/page" sling:resourceType="core/franklin/components/page/v1/page" jcr:primaryType="cq:PageContent" jcr:title="${attr(pageTitle)}" jcr:description="${attr(seoDescription.replace(/<\/?p>/g, ''))}"${keywordsAttr} image="${attr(heroImg)}" publishdate="${attr(publishDate)}" categorytitle="${attr(categoryTitle)}" categoryurl="${attr(categoryHref)}" modelFields="[jcr:title,jcr:description,keywords,image,publishdate,categorytitle,categoryurl]">
+  <jcr:content cq:template="/libs/core/franklin/templates/page" sling:resourceType="core/franklin/components/page/v1/page" jcr:primaryType="cq:PageContent" jcr:title="${attr(pageTitle)}" jcr:description="${attr(seoDescription.replace(/<\/?p>/g, ''))}"${keywordsAttr} modelFields="[jcr:title,jcr:description,keywords]">
+    <image jcr:primaryType="nt:unstructured" fileReference="${attr(heroImg)}"/>
     <root jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/root/v1/root">
       <section_breadcrumb sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]" style="[no-top-spacing]">
         <block_breadcrumb sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="breadcrumb" homeLabel="Home" model="breadcrumb" modelFields="[homeLabel]" name="Breadcrumb"/>
@@ -286,7 +276,7 @@ async function buildLeaf(relPath) {
               <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" aueComponentId="text" text="${attr(bodyHtml)}"/>
             </col1>
             <col2 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" aueComponentId="text" text="${attr('<table><thead><tr><th>Social Share</th></tr></thead><tbody><tr><td>Share</td></tr></tbody></table>')}"/>
+              <social_share sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="social-share" model="social-share" modelFields="[label@text]" name="Social Share"/>
             </col2>
           </row1>
         </block_1>
