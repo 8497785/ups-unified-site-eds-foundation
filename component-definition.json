@@ -47,6 +47,23 @@
               }
             }
           }
+        },
+        {
+          "title": "Column Section",
+          "id": "column-section",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "name": "Column",
+                  "model": "column-section",
+                  "filter": "column-section",
+                  "style_sectiontype": "column"
+                }
+              }
+            }
+          }
         }
       ]
     },

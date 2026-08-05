@@ -72,6 +72,42 @@ function buildAutoBlocks() {
 }
 
 /**
+ * Groups consecutive top-level column sections into a flex wrapper.
+ *
+ * A column section is an ordinary top-level section carrying the `column`
+ * style class (see the `column-section` model). Runs of adjacent column
+ * sections are moved into a shared `.column-sections-wrapper` div so
+ * styles/styles.css can lay them out side by side on desktop. Because each
+ * column is a real section, any block authored inside it is a normal
+ * top-level section block — no nested-block table carrier is needed.
+ *
+ * MUST run after decorateSections(): that helper selects sections via
+ * `:scope > div` (direct children of main). Wrapping a section demotes it to a
+ * grandchild of main, so wrapping first would prevent it from being decorated
+ * as a section. loadSections()/decorateBlocks() use descendant selectors, so
+ * they still find the wrapped sections and their blocks.
+ * @param {Element} main The main element
+ */
+function addColumnSectionsWrapper(main) {
+  let wrapper = null;
+  let section = main.firstElementChild;
+  while (section) {
+    const next = section.nextElementSibling;
+    if (section.classList.contains('section') && section.classList.contains('column')) {
+      if (!wrapper) {
+        wrapper = document.createElement('div');
+        wrapper.classList.add('column-sections-wrapper');
+        section.replaceWith(wrapper);
+      }
+      wrapper.append(section);
+    } else if (wrapper) {
+      wrapper = null;
+    }
+    section = next;
+  }
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -82,6 +118,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  addColumnSectionsWrapper(main);
   decorateBlocks(main);
 }
 

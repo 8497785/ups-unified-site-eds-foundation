@@ -394,6 +394,72 @@ main > .section > .metadata-wrapper {
   display: none;
 }
 
+/* Column sections — consecutive `.section.column` sections are grouped by
+   scripts.js into a `.column-sections-wrapper`. Mobile stacks (each column is a
+   full-width section); desktop lays them out side by side. Widths come from the
+   authored `width-*` class; "Remaining Space" (width-100) grows to fill. */
+main > .column-sections-wrapper {
+  margin: var(--spacing-xl) 0;
+}
+
+main > .column-sections-wrapper > .section.column {
+  margin: 0;
+}
+
+@media (width >= 992px) {
+  main > .column-sections-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    gap: var(--grid-gap, 24px);
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+  }
+
+  main > .column-sections-wrapper > .section.column {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  main > .column-sections-wrapper > .section.column.width-10 { flex-basis: 10%; }
+  main > .column-sections-wrapper > .section.column.width-20 { flex-basis: 20%; }
+  main > .column-sections-wrapper > .section.column.width-30 { flex-basis: 30%; }
+  main > .column-sections-wrapper > .section.column.width-40 { flex-basis: 40%; }
+  main > .column-sections-wrapper > .section.column.width-50 { flex-basis: 50%; }
+  main > .column-sections-wrapper > .section.column.width-60 { flex-basis: 60%; }
+  main > .column-sections-wrapper > .section.column.width-70 { flex-basis: 70%; }
+  main > .column-sections-wrapper > .section.column.width-80 { flex-basis: 80%; }
+  main > .column-sections-wrapper > .section.column.width-90 { flex-basis: 90%; }
+
+  main > .column-sections-wrapper > .section.column.width-100 {
+    flex: 1 1 0;
+  }
+}
+
+/* Optional background colors, mapped to the site palette. Padding is added so
+   the tint reads as a filled column rather than sitting flush to the text. */
+main > .column-sections-wrapper > .section.column[class*="background-"] {
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-card);
+}
+
+main > .column-sections-wrapper > .section.column.background-white {
+  background-color: var(--background-color);
+}
+
+main > .column-sections-wrapper > .section.column.background-light {
+  background-color: var(--light-color);
+}
+
+main > .column-sections-wrapper > .section.column.background-gold {
+  background-color: var(--ups-gold);
+}
+
+main > .column-sections-wrapper > .section.column.background-dark {
+  background-color: var(--dark-color);
+  color: var(--background-color);
+}
+
 /* arc background section — grey gradient with curved white arc at bottom edge */
 main > .section.arc-background {
   position: relative;

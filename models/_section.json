@@ -13,6 +13,23 @@
           }
         }
       }
+    },
+    {
+      "title": "Column Section",
+      "id": "column-section",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "name": "Column",
+              "model": "column-section",
+              "filter": "column-section",
+              "style_sectiontype": "column"
+            }
+          }
+        }
+      }
     }
   ],
   "models": [
@@ -59,6 +76,96 @@
           ]
         }
       ]
+    },
+    {
+      "id": "column-section",
+      "fields": [
+        {
+          "component": "select",
+          "name": "style_width",
+          "label": "Column Width",
+          "description": "Width of this column on desktop. Sibling column sections authored next to each other are laid out side by side.",
+          "value": "width-100",
+          "options": [
+            {
+              "name": "10%",
+              "value": "width-10"
+            },
+            {
+              "name": "20%",
+              "value": "width-20"
+            },
+            {
+              "name": "30%",
+              "value": "width-30"
+            },
+            {
+              "name": "40%",
+              "value": "width-40"
+            },
+            {
+              "name": "50%",
+              "value": "width-50"
+            },
+            {
+              "name": "60%",
+              "value": "width-60"
+            },
+            {
+              "name": "70%",
+              "value": "width-70"
+            },
+            {
+              "name": "80%",
+              "value": "width-80"
+            },
+            {
+              "name": "90%",
+              "value": "width-90"
+            },
+            {
+              "name": "Remaining Space",
+              "value": "width-100"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "style_background",
+          "label": "Background Color",
+          "description": "Optional background color for this column, using the site palette.",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "White",
+              "value": "background-white"
+            },
+            {
+              "name": "Light Grey",
+              "value": "background-light"
+            },
+            {
+              "name": "Gold",
+              "value": "background-gold"
+            },
+            {
+              "name": "Dark",
+              "value": "background-dark"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "style_sectiontype",
+          "value": "column",
+          "hidden": true,
+          "description": "Fixed marker class that identifies this section as a column."
+        }
+      ]
     }
   ],
   "filters": [
@@ -87,6 +194,17 @@
         "downloads",
         "content-list",
         "related-articles"
+      ]
+    },
+    {
+      "id": "column-section",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title-block",
+        "social-share",
+        "fragment"
       ]
     }
   ]

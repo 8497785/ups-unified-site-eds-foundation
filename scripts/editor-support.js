@@ -13,6 +13,35 @@ import { decorateMain } from './scripts.js';
 
 let promiseChanges$ = Promise.resolve();
 
+// Column width values (from the `column-section` model's style_width field)
+// mapped to a human-readable label shown in the Universal Editor.
+const COLUMN_WIDTH_LABELS = {
+  'width-10': '10%',
+  'width-20': '20%',
+  'width-30': '30%',
+  'width-40': '40%',
+  'width-50': '50%',
+  'width-60': '60%',
+  'width-70': '70%',
+  'width-80': '80%',
+  'width-90': '90%',
+  'width-100': 'remaining space',
+};
+
+/**
+ * Labels each column section in the Universal Editor with its configured width,
+ * e.g. "Column (40%)", so authors can tell the columns apart in the content
+ * tree. No-op outside UE (where data-aue-label is ignored).
+ * @param {Element} main The main element
+ */
+function showPercentage(main) {
+  if (!main) return;
+  main.querySelectorAll('div.section.column').forEach((section) => {
+    const widthClass = [...section.classList].find((c) => COLUMN_WIDTH_LABELS[c]);
+    section.dataset.aueLabel = `Column (${widthClass ? COLUMN_WIDTH_LABELS[widthClass] : 'remaining space'})`;
+  });
+}
+
 async function applyChanges(event) {
   await promiseChanges$;
 
@@ -110,11 +139,15 @@ function attachEventListeners(main) {
     event.stopPropagation();
     promiseChanges$ = applyChanges(event);
     const applied = await promiseChanges$;
-    if (!applied) window.location.reload();
+    if (applied) showPercentage(document.querySelector('main'));
+    else window.location.reload();
   }));
 }
 
 attachEventListeners(document.querySelector('main'));
+
+// label column sections with their configured width in the editor
+showPercentage(document.querySelector('main'));
 
 // decorate rich text
 // this has to happen after decorateMain(), and everythime decorateBlocks() is called
