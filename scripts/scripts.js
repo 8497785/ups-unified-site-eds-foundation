@@ -81,11 +81,13 @@ function buildAutoBlocks() {
  * column is a real section, any block authored inside it is a normal
  * top-level section block — no nested-block table carrier is needed.
  *
- * MUST run after decorateSections(): that helper selects sections via
- * `:scope > div` (direct children of main). Wrapping a section demotes it to a
- * grandchild of main, so wrapping first would prevent it from being decorated
- * as a section. loadSections()/decorateBlocks() use descendant selectors, so
- * they still find the wrapped sections and their blocks.
+ * MUST run after decorateSections() (and, matching PR #72, after
+ * decorateBlocks()): decorateSections() selects sections via `:scope > div`
+ * (direct children of main), so wrapping first would demote a section to a
+ * grandchild of main and stop it being decorated as a section.
+ * decorateBlocks()/loadSections() use descendant selectors, so they still find
+ * the wrapped sections and their blocks regardless — the wrapper only inserts
+ * an intermediate div between main and the section.
  * @param {Element} main The main element
  */
 function addColumnSectionsWrapper(main) {
@@ -118,8 +120,9 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
-  addColumnSectionsWrapper(main);
   decorateBlocks(main);
+  // group consecutive column sections into a flex wrapper (matches PR #72 order)
+  addColumnSectionsWrapper(main);
 }
 
 /**
@@ -133,7 +136,10 @@ async function loadEager(doc) {
   if (main) {
     decorateMain(main);
     document.body.classList.add('appear');
-    await loadSection(main.querySelector('.section'), waitForFirstImage);
+    // Guard: an empty page (e.g. a freshly created page in Universal Editor)
+    // has no `.section` yet; loadSection() would throw on a null section.
+    const firstSection = main.querySelector('.section');
+    if (firstSection) await loadSection(firstSection, waitForFirstImage);
   }
 
   try {
