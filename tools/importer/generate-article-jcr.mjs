@@ -285,7 +285,7 @@ async function buildLeaf(relPath) {
         <block sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="article-header" articleDate="${attr(articleDate)}" description="${attr(description)}" eyebrow="${attr(eyebrow)}" eyebrowLink="${attr(eyebrowLink)}" hideReadTime="${attr(hideReadTime)}" model="article-header" modelFields="[eyebrow,eyebrowLink,title,description,articleDate,hideReadTime]" name="Article Header" title="${attr(`<p>${title}</p>`)}"/>
         <image sling:resourceType="core/franklin/components/image/v1/image" jcr:primaryType="nt:unstructured" aueComponentId="image" image="${attr(heroImg)}" imageAlt="${attr(heroAlt)}"/>
       </section>
-      <column_section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" aueComponentId="column-section" model="column-section" filter="column-section" name="Column" ${columnFields} style_sectiontype="column" style_width="width-70">
+      <column_section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" aueComponentId="column-section" model="column-section" filter="column-section" name="Column" ${columnFields} style_sectiontype="column" style_width="width-60">
         <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" aueComponentId="text" text="${attr(bodyHtml)}"/>
       </column_section>
       <column_section_1 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" aueComponentId="column-section" model="column-section" filter="column-section" name="Column" ${columnFields} style_sectiontype="column" style_width="width-100">
