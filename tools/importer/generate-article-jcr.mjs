@@ -216,7 +216,11 @@ async function buildLeaf(relPath) {
   const heroImg = damPath(heroSrcAbs);
   const heroAlt = heroImgEl?.getAttribute('alt') || '';
 
-  // ---- column control: col1 = body rich text, col2 = social-share ----
+  // ---- article body rich text ----
+  // The imported .plain.html carries the body in a .column-control > row > col1
+  // cell (col2 was the social-share carrier). Read that first column as the body;
+  // it now becomes the `column_section` text node in the JCR (social share is its
+  // own sibling column section).
   const colBlock = document.querySelector('.column-control');
   const row = colBlock.firstElementChild;
   const [col1El] = [...row.children];
@@ -255,10 +259,20 @@ async function buildLeaf(relPath) {
       </section_related>` : '';
 
   // ---- leaf .content.xml -------------------------------------------------
-  // Three sibling sections per the target structure:
-  //   section_breadcrumb (no-top-spacing) -> Breadcrumb
-  //   section (article)                   -> Article Header, Image, Column Control
-  //   section_related (highlight)         -> Title + Related Articles (if any)
+  // Sibling sections per the target structure:
+  //   section_breadcrumb (no-top-spacing)  -> Breadcrumb
+  //   section (article)                    -> Article Header, hero Image
+  //   column_section (width-70)            -> body rich text
+  //   column_section_1 (remaining)         -> Social Share block
+  //   section_related (highlight)          -> Title + Related Articles (if any)
+  //
+  // The two column_section sections are real top-level sections (not a columns
+  // block). scripts.js addColumnSectionsWrapper() groups adjacent `.section.column`
+  // into a flex wrapper on both author and delivery — so the social-share block
+  // is an ordinary top-level section block that md2jcr delivers natively (no
+  // table-carrier hack needed, and it can't flatten the way a nested block node
+  // did inside column-control).
+  const columnFields = 'modelFields="[style_width@select,style_background@select,style_sectiontype@text]"';
   const leafXml = `<?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" jcr:primaryType="cq:Page">
   <jcr:content cq:template="/libs/core/franklin/templates/page" sling:resourceType="core/franklin/components/page/v1/page" jcr:primaryType="cq:PageContent" jcr:title="${attr(pageTitle)}" jcr:description="${attr(seoDescription.replace(/<\/?p>/g, ''))}"${keywordsAttr} modelFields="[jcr:title,jcr:description,keywords]">
@@ -270,17 +284,13 @@ async function buildLeaf(relPath) {
       <section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
         <block sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="article-header" articleDate="${attr(articleDate)}" description="${attr(description)}" eyebrow="${attr(eyebrow)}" eyebrowLink="${attr(eyebrowLink)}" hideReadTime="${attr(hideReadTime)}" model="article-header" modelFields="[eyebrow,eyebrowLink,title,description,articleDate,hideReadTime]" name="Article Header" title="${attr(`<p>${title}</p>`)}"/>
         <image sling:resourceType="core/franklin/components/image/v1/image" jcr:primaryType="nt:unstructured" aueComponentId="image" image="${attr(heroImg)}" imageAlt="${attr(heroAlt)}"/>
-        <block_1 sling:resourceType="core/franklin/components/columns/v1/columns" jcr:primaryType="nt:unstructured" aueComponentId="column-control" rows="1" columns="2" model="column-control" modelFields="[columns,classes]" name="Column Control" classes="layout-8-4">
-          <row1 jcr:primaryType="nt:unstructured">
-            <col1 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" aueComponentId="text" text="${attr(bodyHtml)}"/>
-            </col1>
-            <col2 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" aueComponentId="text" text="${attr('<table><thead><tr><th>Social Share</th></tr></thead><tbody><tr><td>Share</td></tr></tbody></table>')}"/>
-            </col2>
-          </row1>
-        </block_1>
-      </section>${relatedSectionXml}
+      </section>
+      <column_section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" aueComponentId="column-section" model="column-section" filter="column-section" name="Column" ${columnFields} style_sectiontype="column" style_width="width-70">
+        <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" aueComponentId="text" text="${attr(bodyHtml)}"/>
+      </column_section>
+      <column_section_1 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" aueComponentId="column-section" model="column-section" filter="column-section" name="Column" ${columnFields} style_sectiontype="column" style_width="width-100">
+        <social_share sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="social-share" model="social-share" modelFields="[label@text]" name="Social Share"/>
+      </column_section_1>${relatedSectionXml}
     </root>
   </jcr:content>
 </jcr:root>
