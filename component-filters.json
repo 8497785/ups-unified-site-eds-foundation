@@ -96,7 +96,8 @@
       "article-header",
       "downloads",
       "content-list",
-      "related-articles"
+      "related-articles",
+      "table"
     ]
   },
   {
@@ -107,7 +108,8 @@
       "button",
       "title-block",
       "social-share",
-      "fragment"
+      "fragment",
+      "table"
     ]
   },
   {
@@ -174,6 +176,12 @@
     "id": "leadership-list-cf",
     "components": [
       "leadership-list-item"
+    ]
+  },
+  {
+    "id": "table",
+    "components": [
+      "table-row"
     ]
   }
 ]

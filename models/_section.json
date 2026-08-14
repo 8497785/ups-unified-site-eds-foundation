@@ -193,7 +193,8 @@
         "article-header",
         "downloads",
         "content-list",
-        "related-articles"
+        "related-articles",
+        "table"
       ]
     },
     {
@@ -204,7 +205,8 @@
         "button",
         "title-block",
         "social-share",
-        "fragment"
+        "fragment",
+        "table"
       ]
     }
   ]

@@ -929,6 +929,40 @@
     ]
   },
   {
+    "id": "table",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Style",
+        "value": "",
+        "description": "Optional table style variant.",
+        "options": [
+          {
+            "name": "Bordered (default)",
+            "value": ""
+          },
+          {
+            "name": "No border",
+            "value": "no-border"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table-row",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "cells",
+        "label": "Row Cells",
+        "description": "The cell content for this row."
+      }
+    ]
+  },
+  {
     "id": "title-block",
     "fields": [
       {

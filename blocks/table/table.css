@@ -1,0 +1,59 @@
+/* Table block — bordered, zebra-striped data table with horizontal scroll.
+   Mirrors the RTE-table styling in styles.css so a block table and an inline
+   body table look identical. */
+
+.table.block {
+  margin-bottom: 40px;
+}
+
+.table.block .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table.block table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 0;
+  margin: 0;
+}
+
+.table.block th,
+.table.block td {
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  white-space: nowrap;
+  border: 1px solid #242424;
+}
+
+.table.block th {
+  font-weight: 700;
+}
+
+.table.block tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table.block th p,
+.table.block td p {
+  margin: 0 0 8px;
+}
+
+.table.block th p:last-child,
+.table.block td p:last-child {
+  margin-bottom: 0;
+}
+
+/* No-border variant (matches styles.css .table-no-border). */
+.table.no-border th,
+.table.no-border td {
+  padding: 8px 16px 8px 0;
+  white-space: normal;
+  border: 0;
+}
+
+.table.no-border tbody tr:nth-child(even) {
+  background-color: #fff;
+}
