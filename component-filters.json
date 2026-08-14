@@ -188,6 +188,7 @@
           "italic",
           "underline"
         ],
+        "blocks": [],
         "insert": [
           "link",
           "unlink",
