@@ -45,15 +45,3 @@
 .table.block td p:last-child {
   margin-bottom: 0;
 }
-
-/* No-border variant (matches styles.css .table-no-border). */
-.table.no-border th,
-.table.no-border td {
-  padding: 8px 16px 8px 0;
-  white-space: normal;
-  border: 0;
-}
-
-.table.no-border tbody tr:nth-child(even) {
-  background-color: #fff;
-}

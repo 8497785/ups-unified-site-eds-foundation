@@ -932,33 +932,11 @@
     "id": "table",
     "fields": [
       {
-        "component": "select",
-        "name": "classes",
-        "label": "Style",
-        "value": "",
-        "description": "Optional table style variant.",
-        "options": [
-          {
-            "name": "Bordered (default)",
-            "value": ""
-          },
-          {
-            "name": "No border",
-            "value": "no-border"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "table-row",
-    "fields": [
-      {
         "component": "richtext",
         "valueType": "string",
-        "name": "cells",
-        "label": "Row Cells",
-        "description": "The cell content for this row."
+        "name": "table",
+        "label": "Table",
+        "description": "Use the Insert Table button in the toolbar to add a table, then add rows/columns and type in the cells."
       }
     ]
   },

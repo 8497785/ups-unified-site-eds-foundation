@@ -180,8 +180,32 @@
   },
   {
     "id": "table",
-    "components": [
-      "table-row"
-    ]
+    "components": [],
+    "rte": {
+      "toolbar": {
+        "format": [
+          "bold",
+          "italic",
+          "underline"
+        ],
+        "blocks": [
+          "paragraph"
+        ],
+        "insert": [
+          "link",
+          "unlink",
+          "table"
+        ],
+        "editor": [
+          "removeformat"
+        ]
+      },
+      "actions": {
+        "table": {
+          "wrapInParagraphs": false,
+          "label": "Insert Table"
+        }
+      }
+    }
   }
 ]
