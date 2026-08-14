@@ -38,7 +38,6 @@
       "rte": {
         "toolbar": {
           "format": ["bold", "italic", "underline"],
-          "blocks": ["paragraph"],
           "insert": ["link", "unlink", "table"],
           "editor": ["removeformat"]
         },
