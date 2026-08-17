@@ -48,8 +48,7 @@
           "link",
           "unlink",
           "image",
-          "special_characters",
-          "table"
+          "special_characters"
         ],
         "sr_script": [
           "superscript",
@@ -61,10 +60,6 @@
         ]
       },
       "actions": {
-        "table": {
-          "wrapInParagraphs": false,
-          "label": "Insert Table"
-        },
         "image": {
           "wrapInPicture": false,
           "label": "Insert Image"

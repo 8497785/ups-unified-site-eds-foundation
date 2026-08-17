@@ -16,15 +16,11 @@
         "indentation": ["indent", "outdent"],
         "blocks": ["paragraph", "h1", "h2", "h3", "h4", "h5", "h6", "code_block"],
         "list": ["bullet_list", "ordered_list"],
-        "insert": ["link", "unlink", "image", "special_characters", "table"],
+        "insert": ["link", "unlink", "image", "special_characters"],
         "sr_script": ["superscript", "subscript"],
         "editor": ["removeformat", "paste_text"]
       },
       "actions": {
-        "table": {
-          "wrapInParagraphs": false,
-          "label": "Insert Table"
-        },
         "image": {
           "wrapInPicture": false,
           "label": "Insert Image"
