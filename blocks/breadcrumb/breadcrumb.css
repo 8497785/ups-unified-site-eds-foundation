@@ -40,3 +40,13 @@
 .breadcrumb nav li.active {
   color: #5f5753;
 }
+
+/* Hide the breadcrumb on smaller devices, matching the source site
+   (.upspr-breadcrumb-container display:none below 1024px). The breadcrumb sits
+   in its own section (`.breadcrumb-container`), so hide that whole section to
+   avoid leaving an empty spacer. */
+@media (width <= 1023px) {
+  main > .section.breadcrumb-container {
+    display: none;
+  }
+}
