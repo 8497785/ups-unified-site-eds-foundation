@@ -406,6 +406,16 @@ main > .column-sections-wrapper > .section.column {
   margin: 0;
 }
 
+/* A column section is a grandchild of main, so the `main > .section > div`
+   content-width rule doesn't reach it. Mirror that rule here so each column's
+   inner content wrapper gets the same max-width + gutters and aligns with the
+   rest of the page (fixes full-bleed content below the desktop breakpoint). */
+main > .column-sections-wrapper > .section.column > div {
+  max-width: var(--content-max-width);
+  margin: auto;
+  padding: 0 20px;
+}
+
 @media (width >= 992px) {
   main > .column-sections-wrapper {
     display: flex;
