@@ -406,10 +406,13 @@ main > .column-sections-wrapper > .section.column {
   margin: 0;
 }
 
-/* A column section is a grandchild of main, so the `main > .section > div`
-   content-width rule doesn't reach it. Mirror that rule here so each column's
-   inner content wrapper gets the same max-width + gutters and aligns with the
-   rest of the page (fixes full-bleed content below the desktop breakpoint). */
+/* Each column section is a grandchild of main, so the `main > .section > div`
+   content-width rule doesn't reach it. Mirror that rule so a column's inner
+   content wrapper matches a normal section: capped at --content-max-width,
+   centered, with 20px gutters. This governs the stacked (mobile/tablet) layout;
+   at desktop the wrapper becomes the content-width box and the columns lay out
+   inside it (the max-width/margin below are neutralized so the gutters aren't
+   doubled). */
 main > .column-sections-wrapper > .section.column > div {
   max-width: var(--content-max-width);
   margin: auto;
@@ -429,6 +432,16 @@ main > .column-sections-wrapper > .section.column > div {
   main > .column-sections-wrapper > .section.column {
     flex: 0 1 auto;
     min-width: 0;
+  }
+
+  /* Desktop: the wrapper already provides the content-width box + outer 20px
+     gutters (via the columns' edges), so the inner content wrappers must not
+     re-cap the width or re-apply the horizontal gutter — that was pushing the
+     column content ~20px inward vs. normal sections. Keep vertical rhythm only. */
+  main > .column-sections-wrapper > .section.column > div {
+    max-width: none;
+    margin: 0;
+    padding: 0;
   }
 
   main > .column-sections-wrapper > .section.column.width-10 { flex-basis: 10%; }
