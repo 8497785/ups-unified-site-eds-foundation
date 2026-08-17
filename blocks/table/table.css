@@ -2,7 +2,13 @@
    Mirrors the RTE-table styling in styles.css so a block table and an inline
    body table look identical. */
 
-.table.block {
+/* Vertical spacing is author-controlled via the Spacing multiselect (mapped to
+   margin-top / margin-bottom classes). Bottom margin is the default selection. */
+.table.block.margin-top {
+  margin-top: 40px;
+}
+
+.table.block.margin-bottom {
   margin-bottom: 40px;
 }
 
@@ -17,6 +23,12 @@
   width: 100%;
   border: 0;
   margin: 0;
+}
+
+/* border-box so cell borders count within the width and don't trigger an
+   unwanted horizontal scrollbar in the wrapper. */
+.table.block tbody {
+  box-sizing: border-box;
 }
 
 .table.block th,

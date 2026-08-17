@@ -937,6 +937,23 @@
         "name": "table",
         "label": "Table",
         "description": "Use the Insert Table button in the toolbar to add a table, then add rows/columns and type in the cells."
+      },
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Spacing",
+        "value": "margin-bottom",
+        "description": "Vertical spacing around the table. Bottom margin is applied by default.",
+        "options": [
+          {
+            "name": "Apply Margin top",
+            "value": "margin-top"
+          },
+          {
+            "name": "Apply margin bottom",
+            "value": "margin-bottom"
+          }
+        ]
       }
     ]
   },
