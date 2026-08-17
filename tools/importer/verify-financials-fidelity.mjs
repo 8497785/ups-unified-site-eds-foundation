@@ -160,7 +160,7 @@ async function main() {
     }
     const s = score(mig, src);
     rows.push({ slug, url, mig, src, s });
-    console.log(`${s.score}  ${slug}${s.notes.length ? '  (' + s.notes.join('; ') + ')' : ''}`);
+    console.log(`${s.score}  ${slug}${s.notes.length ? `  (${s.notes.join('; ')})` : ''}`);
     await page.waitForTimeout(400);
   }
   await browser.close();
