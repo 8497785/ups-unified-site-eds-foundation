@@ -5,7 +5,7 @@
 /* Vertical spacing is author-controlled via the Spacing multiselect (mapped to
    margin-top / margin-bottom classes). Bottom margin is the default selection. */
 .table.block.margin-top {
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 .table.block.margin-bottom {
