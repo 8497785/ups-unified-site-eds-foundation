@@ -230,7 +230,44 @@ async function buildLeaf(relPath) {
   col1El.querySelectorAll('img[src]').forEach((img) => {
     img.setAttribute('src', damPath(img.getAttribute('src')));
   });
-  const bodyHtml = col1El.innerHTML.trim();
+
+  // Split the body into ordered segments so each <table> becomes its own Table
+  // block and the surrounding prose stays as text nodes. Tables authored in a
+  // plain section rich-text node are destroyed on delivery (the section GFM
+  // round-trip drops rows); a Table block delivers the table verbatim.
+  //
+  // Each segment -> a child of the body column_section, IN ORDER:
+  //   prose run  -> <text> node (rich text)
+  //   <table>    -> <table_N> block (Table, classes: margin-top margin-bottom)
+  const bodySegments = [];
+  let proseBuf = [];
+  const flushProse = () => {
+    const proseHtml = proseBuf.join('').trim();
+    if (proseHtml) bodySegments.push({ type: 'text', html: proseHtml });
+    proseBuf = [];
+  };
+  [...col1El.children].forEach((child) => {
+    if (child.tagName === 'TABLE') {
+      flushProse();
+      bodySegments.push({ type: 'table', html: child.outerHTML.trim() });
+    } else {
+      proseBuf.push(child.outerHTML);
+    }
+  });
+  flushProse();
+  // Fallback: if the body had no element children at all, keep the raw HTML.
+  if (!bodySegments.length && col1El.innerHTML.trim()) {
+    bodySegments.push({ type: 'text', html: col1El.innerHTML.trim() });
+  }
+
+  // Build the ordered child XML for the body column_section. Table blocks carry
+  // both margin classes (margin-top + margin-bottom) per the migration spec.
+  const bodyChildrenXml = bodySegments.map((seg, i) => {
+    if (seg.type === 'table') {
+      return `        <table_${i} sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="table" model="table" filter="table" name="Table" modelFields="[table,classes]" classes="margin-top,margin-bottom" table="${attr(seg.html)}"/>`;
+    }
+    return `        <text_${i} sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" aueComponentId="text" text="${attr(seg.html)}"/>`;
+  }).join('\n');
 
   // ---- related stories (Section 3) ----
   // Derived from the live source site (see related-stories.json). Present only
@@ -286,7 +323,7 @@ async function buildLeaf(relPath) {
         <image sling:resourceType="core/franklin/components/image/v1/image" jcr:primaryType="nt:unstructured" aueComponentId="image" image="${attr(heroImg)}" imageAlt="${attr(heroAlt)}"/>
       </section>
       <column_section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" aueComponentId="column-section" model="column-section" filter="column-section" name="Column" ${columnFields} style_sectiontype="column" style_width="width-60">
-        <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" aueComponentId="text" text="${attr(bodyHtml)}"/>
+${bodyChildrenXml}
       </column_section>
       <column_section_1 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" aueComponentId="column-section" model="column-section" filter="column-section" name="Column" ${columnFields} style_sectiontype="column" style_width="width-100">
         <social_share sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="social-share" model="social-share" modelFields="[label@text]" name="Social Share"/>
