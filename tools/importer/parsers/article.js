@@ -104,14 +104,33 @@ export default function parse(element, { document }) {
   // ---- body (rich text) for the left column (width 8) ----
   const bodyFrag = document.createElement('div');
   const body = element.querySelector('.cmp-text');
+  const BLOCK_SEL = 'p, ul, ol, h2, h3, h4, h5, h6, table';
   if (body) {
-    body.querySelectorAll(':scope > p, :scope > ul, :scope > ol, :scope > h2, :scope > h3, :scope > table').forEach((node) => {
-      bodyFrag.appendChild(node.cloneNode(true));
+    // Collect body block nodes in document order. Some pages wrap tables (and
+    // other content) in intermediate <div>s, so a `:scope > table` selector
+    // misses them (e.g. the 1Q-2018 earnings page had 3 segment tables nested
+    // one level deep). Walk the direct children: keep recognized block nodes
+    // as-is; for a wrapper element, pull out its block descendants (tables
+    // included) in order so nothing is dropped.
+    [...body.children].forEach((child) => {
+      const tag = child.tagName.toLowerCase();
+      if (child.matches(BLOCK_SEL)) {
+        bodyFrag.appendChild(child.cloneNode(true));
+      } else if (tag !== 'style' && tag !== 'script') {
+        const inner = child.querySelectorAll(BLOCK_SEL);
+        if (inner.length) {
+          inner.forEach((n) => bodyFrag.appendChild(n.cloneNode(true)));
+        } else if (child.textContent.trim()) {
+          // wrapper with only inline text -> preserve as a paragraph
+          const p = document.createElement('p');
+          p.innerHTML = child.innerHTML.trim();
+          bodyFrag.appendChild(p);
+        }
+      }
     });
     // Fallback: some pages put the body as bare text / inline nodes directly in
-    // .cmp-text (no block wrappers), so the block-child selector above finds
-    // nothing. Wrap the whole .cmp-text content in a paragraph so the body
-    // survives instead of importing empty.
+    // .cmp-text (no block wrappers), so the walk above finds nothing. Wrap the
+    // whole .cmp-text content in a paragraph so the body survives.
     if (!bodyFrag.childNodes.length && body.textContent.trim()) {
       const p = document.createElement('p');
       p.innerHTML = body.innerHTML.trim();

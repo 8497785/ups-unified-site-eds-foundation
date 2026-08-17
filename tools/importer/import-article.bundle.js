@@ -107,9 +107,22 @@ var CustomImportScript = (() => {
     }
     const bodyFrag = document.createElement("div");
     const body = element.querySelector(".cmp-text");
+    const BLOCK_SEL = "p, ul, ol, h2, h3, h4, h5, h6, table";
     if (body) {
-      body.querySelectorAll(":scope > p, :scope > ul, :scope > ol, :scope > h2, :scope > h3, :scope > table").forEach((node) => {
-        bodyFrag.appendChild(node.cloneNode(true));
+      [...body.children].forEach((child) => {
+        const tag = child.tagName.toLowerCase();
+        if (child.matches(BLOCK_SEL)) {
+          bodyFrag.appendChild(child.cloneNode(true));
+        } else if (tag !== "style" && tag !== "script") {
+          const inner = child.querySelectorAll(BLOCK_SEL);
+          if (inner.length) {
+            inner.forEach((n) => bodyFrag.appendChild(n.cloneNode(true)));
+          } else if (child.textContent.trim()) {
+            const p = document.createElement("p");
+            p.innerHTML = child.innerHTML.trim();
+            bodyFrag.appendChild(p);
+          }
+        }
       });
       if (!bodyFrag.childNodes.length && body.textContent.trim()) {
         const p = document.createElement("p");
