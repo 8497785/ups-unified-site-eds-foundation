@@ -18,6 +18,15 @@
   max-width: 100%;
 }
 
+/* Empty state: neutral grey box shown until a video source is selected. */
+.video .video-empty-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #e6e6e6;
+  border: 1px dashed #b3b3b3;
+  border-radius: 4px;
+}
+
 /* Scene7 / Dynamic Media HTML5 VideoViewer container. The viewer sizes itself
    to fill this box; reserve a 16:9 responsive area to match the native/YouTube
    embeds and avoid layout shift while the viewer initializes. */

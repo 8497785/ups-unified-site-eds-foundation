@@ -190,10 +190,24 @@ function resolveLink(block) {
   return match ? match[0] : '';
 }
 
+// Empty-state shown in the editor before a video is selected, so authors see a
+// neutral grey placeholder box instead of the raw field values / a blank block.
+function renderEmptyState(block) {
+  block.textContent = '';
+  block.classList.add('video-empty');
+  const empty = document.createElement('div');
+  empty.className = 'video-empty-placeholder';
+  block.append(empty);
+}
+
 export default async function decorate(block) {
   const placeholder = block.querySelector('picture');
   const link = resolveLink(block);
-  if (!link) return; // nothing to play
+  if (!link) {
+    renderEmptyState(block);
+    return;
+  }
+  block.classList.remove('video-empty');
   block.textContent = '';
   block.dataset.embedLoaded = false;
 
