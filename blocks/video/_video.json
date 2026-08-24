@@ -43,11 +43,11 @@
           "label": "DAM Video Asset",
           "description": "Select a video asset from the DAM (e.g. an MP4 or a Dynamic Media video).",
           "validation": {
-            "rootPath": "/content/dam"
+            "rootPath": "/content/dam/upsstories",
+            "mimeTypes": [
+              "video/*"
+            ]
           },
-          "mimeTypes": [
-            "video/*"
-          ],
           "condition": {
             "===": [
               {
