@@ -20,6 +20,13 @@
         "name": "keywords",
         "multi": true,
         "label": "Keywords"
+      },
+      {
+        "component": "aem-tag",
+        "label": "AEM Tag Picker",
+        "description": "Select an AEM tag",
+        "name": "cq:tags",
+        "valueType": "string"
       }
     ]
   },
