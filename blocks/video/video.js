@@ -179,11 +179,21 @@ async function loadVideoEmbed(block, link, autoplay, background) {
   }
 }
 
+// Resolve the video link. A DAM asset is delivered as an anchor (<a href>);
+// an external URL is authored in a plain text field and delivered as text.
+// Prefer the anchor; otherwise pull the first URL-looking token from the text.
+function resolveLink(block) {
+  const anchor = block.querySelector('a');
+  if (anchor && anchor.href) return anchor.href;
+  const text = block.textContent.trim();
+  const match = text.match(/https?:\/\/\S+/);
+  return match ? match[0] : '';
+}
+
 export default async function decorate(block) {
   const placeholder = block.querySelector('picture');
-  const anchor = block.querySelector('a');
-  if (!anchor) return; // nothing to play
-  const link = anchor.href;
+  const link = resolveLink(block);
+  if (!link) return; // nothing to play
   block.textContent = '';
   block.dataset.embedLoaded = false;
 

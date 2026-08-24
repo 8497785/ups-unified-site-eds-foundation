@@ -1038,30 +1038,94 @@
     "id": "video",
     "fields": [
       {
+        "component": "select",
+        "name": "videoType",
+        "label": "Video Type",
+        "value": "dam",
+        "description": "Choose where the video comes from.",
+        "options": [
+          {
+            "name": "AEM DAM",
+            "value": "dam"
+          },
+          {
+            "name": "External Video",
+            "value": "external"
+          }
+        ]
+      },
+      {
         "component": "aem-content",
         "name": "link",
-        "label": "Video Source",
-        "description": "Paste a YouTube URL (youtube.com / youtu.be) or select a video asset from the DAM (e.g. an MP4 or a Dynamic Media video)."
+        "label": "DAM Video Asset",
+        "description": "Select a video asset from the DAM (e.g. an MP4 or a Dynamic Media video).",
+        "condition": {
+          "===": [
+            {
+              "var": "videoType"
+            },
+            "dam"
+          ]
+        }
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "linkText",
-        "label": "Video Label",
-        "description": "Optional. Accessible label / link text for the video."
+        "name": "externalUrl",
+        "label": "External Video URL",
+        "description": "Paste a YouTube URL (youtube.com / youtu.be).",
+        "condition": {
+          "===": [
+            {
+              "var": "videoType"
+            },
+            "external"
+          ]
+        }
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "enablePlaceholderImage",
+        "label": "Enable Placeholder Image",
+        "value": false,
+        "description": "Show a poster image with a play button; the video loads on click."
       },
       {
         "component": "reference",
         "name": "image",
         "label": "Placeholder Image",
         "multi": false,
-        "description": "Optional. Poster image shown with a play button; the video loads on click."
+        "condition": {
+          "===": [
+            {
+              "var": "enablePlaceholderImage"
+            },
+            true
+          ]
+        }
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "enablePlaceholderText",
+        "label": "Enable Placeholder Alt Text",
+        "value": false,
+        "description": "Add accessible alt text for the placeholder image."
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Placeholder Alt Text"
+        "label": "Placeholder Alt Text",
+        "condition": {
+          "===": [
+            {
+              "var": "enablePlaceholderText"
+            },
+            true
+          ]
+        }
       }
     ]
   }
