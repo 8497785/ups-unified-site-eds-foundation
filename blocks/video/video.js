@@ -2,10 +2,11 @@
  * Video Block — shows a video referenced by a link.
  * Adapted from the AEM Block Collection video block
  * (https://github.com/adobe/aem-block-collection/blob/main/blocks/video/video.js),
- * trimmed to the two sources this project uses:
+ * trimmed to the sources this project uses:
  *   - YouTube (youtube.com / youtu.be) -> embedded iframe
- *   - Direct video files, incl. AEM DAM assets (/content/dam/... .mp4) and
- *     Dynamic Media video delivery URLs -> native <video> element
+ *   - DAM video assets (/content/dam/... .mp4/...) that are published to
+ *     Dynamic Media -> Scene7 HTML5 VideoViewer (mirrors the AEM HTL component)
+ *   - Any other direct video file / URL -> native <video> element (fallback)
  * Vimeo support has been removed.
  *
  * An optional placeholder image (a <picture> in the block) shows a play button;
@@ -13,16 +14,79 @@
  * autoplay is set. Honors prefers-reduced-motion for autoplay.
  */
 
+import { SCENE7, getScene7VideoConfig } from '../../scripts/config.js';
+
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-// 'youtube' for YouTube links, else 'video' (direct file / DAM / Dynamic Media).
+const VIDEO_EXT_RE = /\.(mp4|webm|ogv|ogg|mov|m4v|m3u8)(?:$|\?)/i;
+
+// Monotonic id for Scene7 viewer containers (the viewer needs a unique DOM id).
+let s7ContainerSeq = 0;
+
+// Load Adobe's s7viewers VideoViewer.js once; resolves when window.s7viewers
+// is available. Subsequent calls reuse the same in-flight/loaded promise.
+let s7ViewerPromise;
+function loadScene7Viewer() {
+  if (window.s7viewers) return Promise.resolve(window.s7viewers);
+  if (s7ViewerPromise) return s7ViewerPromise;
+  s7ViewerPromise = new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = SCENE7.viewerScript;
+    script.async = true;
+    script.addEventListener('load', () => resolve(window.s7viewers));
+    script.addEventListener('error', reject);
+    document.head.append(script);
+  });
+  return s7ViewerPromise;
+}
+
+// 'youtube' for YouTube links; 'dm' for DAM video assets served via Dynamic
+// Media (Scene7 viewer); else 'video' (direct file / URL -> native <video>).
 function getVideoSource(link) {
   if (link.includes('youtube') || link.includes('youtu.be')) return 'youtube';
+  if (link.includes('/content/dam/') && VIDEO_EXT_RE.test(link)) return 'dm';
   return 'video';
 }
 
 function getVideoTypeLabel(source) {
-  return source === 'youtube' ? 'YouTube video' : 'video';
+  if (source === 'youtube') return 'YouTube video';
+  return 'video';
+}
+
+// Render an Adobe Scene7 HTML5 VideoViewer for a DAM asset published to
+// Dynamic Media. Mirrors the AEM HTL component: derive the asset id from the
+// file name and init s7viewers.VideoViewer with the configured server URLs.
+async function embedDynamicMedia(block, link) {
+  const cfg = getScene7VideoConfig(link);
+  if (!cfg) return false;
+
+  s7ContainerSeq += 1;
+  const containerId = `video-s7-${s7ContainerSeq}`;
+  const container = document.createElement('div');
+  container.id = containerId;
+  container.className = 'video-dm-viewer';
+  block.append(container);
+
+  try {
+    const s7viewers = await loadScene7Viewer();
+    if (!s7viewers || !s7viewers.VideoViewer) return false;
+    const viewer = new s7viewers.VideoViewer({
+      containerId,
+      params: {
+        asset: cfg.asset,
+        serverurl: cfg.serverurl,
+        videoserverurl: cfg.videoserverurl,
+        contenturl: cfg.contenturl,
+      },
+    });
+    viewer.init();
+    block.dataset.embedLoaded = true;
+    return true;
+  } catch (e) {
+    // Viewer library failed to load/init — let caller fall back to native.
+    container.remove();
+    return false;
+  }
 }
 
 function embedYoutube(url, autoplay, background) {
@@ -86,7 +150,15 @@ function getVideoElement(source, autoplay, background) {
   return video;
 }
 
-function loadVideoEmbed(block, link, autoplay, background) {
+function embedNativeVideo(block, link, autoplay, background) {
+  const videoEl = getVideoElement(link, autoplay, background);
+  block.append(videoEl);
+  videoEl.addEventListener('canplay', () => {
+    block.dataset.embedLoaded = true;
+  });
+}
+
+async function loadVideoEmbed(block, link, autoplay, background) {
   if (block.dataset.embedLoaded === 'true') return;
 
   const source = getVideoSource(link);
@@ -97,12 +169,13 @@ function loadVideoEmbed(block, link, autoplay, background) {
     embedWrapper.querySelector('iframe').addEventListener('load', () => {
       block.dataset.embedLoaded = true;
     });
+  } else if (source === 'dm') {
+    // Dynamic Media: render the Scene7 viewer; fall back to native <video>
+    // (using the raw DAM path) if the viewer can't load/init.
+    const ok = await embedDynamicMedia(block, link);
+    if (!ok) embedNativeVideo(block, link, autoplay, background);
   } else {
-    const videoEl = getVideoElement(link, autoplay, background);
-    block.append(videoEl);
-    videoEl.addEventListener('canplay', () => {
-      block.dataset.embedLoaded = true;
-    });
+    embedNativeVideo(block, link, autoplay, background);
   }
 }
 

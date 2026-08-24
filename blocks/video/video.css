@@ -18,6 +18,20 @@
   max-width: 100%;
 }
 
+/* Scene7 / Dynamic Media HTML5 VideoViewer container. The viewer sizes itself
+   to fill this box; reserve a 16:9 responsive area to match the native/YouTube
+   embeds and avoid layout shift while the viewer initializes. */
+.video .video-dm-viewer {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video .video-dm-viewer .s7videoviewer {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .video .video-placeholder {
   width: 100%;
   aspect-ratio: 16 / 9;
