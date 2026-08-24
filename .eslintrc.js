@@ -24,9 +24,10 @@ module.exports = {
     // articleDate, hideReadTime); content-list has 8 (category, pageSize,
     // loadMoreLabel, loadMoreStyle, loadMoreAlignment, showDate, sortBy,
     // maxItems); related-articles has 7 (mode, category, articleCount, path1,
-    // path2, path3, showDate).
+    // path2, path3, showDate); video has 6 (videoSource, link, externalUrl,
+    // enablePlaceholderImage, image, imageAlt).
     'xwalk/max-cells': ['error', {
-      button: 5, 'article-header': 6, 'content-list': 8, 'related-articles': 8,
+      button: 5, 'article-header': 6, 'content-list': 8, 'related-articles': 8, video: 6,
     }],
   },
 };

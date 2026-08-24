@@ -22,7 +22,7 @@
       "fields": [
         {
           "component": "select",
-          "name": "videoType",
+          "name": "videoSource",
           "label": "Video Type",
           "value": "dam",
           "description": "Choose where the video comes from.",
@@ -43,15 +43,12 @@
           "label": "DAM Video Asset",
           "description": "Select a video asset from the DAM (e.g. an MP4 or a Dynamic Media video).",
           "validation": {
-            "rootPath": "/content/dam/upsstories",
-            "mimeTypes": [
-              "video/*"
-            ]
+            "rootPath": "/content/dam/upsstories"
           },
           "condition": {
             "===": [
               {
-                "var": "videoType"
+                "var": "videoSource"
               },
               "dam"
             ]
@@ -66,7 +63,7 @@
           "condition": {
             "===": [
               {
-                "var": "videoType"
+                "var": "videoSource"
               },
               "external"
             ]
