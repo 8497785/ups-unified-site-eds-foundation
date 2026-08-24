@@ -179,15 +179,26 @@ async function loadVideoEmbed(block, link, autoplay, background) {
   }
 }
 
-// Resolve the video link. A DAM asset is delivered as an anchor (<a href>);
-// an external URL is authored in a plain text field and delivered as text.
-// Prefer the anchor; otherwise pull the first URL-looking token from the text.
+// Resolve the video link according to the author-selected Video Type. The
+// block's first row holds videoSource ('dam' | 'external'). Switching the type
+// in the editor hides the other field but keeps its stored value, so the block
+// can carry BOTH a DAM anchor and an external URL — we must honor the selected
+// type rather than picking whichever appears first.
+//   - 'dam'      -> the DAM asset anchor (<a href>)
+//   - 'external' -> the pasted URL, delivered as plain text
 function resolveLink(block) {
-  const anchor = block.querySelector('a');
-  if (anchor && anchor.href) return anchor.href;
-  const text = block.textContent.trim();
-  const match = text.match(/https?:\/\/\S+/);
-  return match ? match[0] : '';
+  const rows = [...block.children];
+  const videoSource = rows[0] ? rows[0].textContent.trim().toLowerCase() : '';
+
+  const anchor = block.querySelector('a[href]');
+  const damHref = anchor ? anchor.href : '';
+  const textMatch = block.textContent.match(/https?:\/\/\S+/);
+  const externalUrl = textMatch ? textMatch[0] : '';
+
+  if (videoSource === 'external') return externalUrl;
+  if (videoSource === 'dam') return damHref;
+  // Unknown/absent type — fall back to anchor, then any text URL.
+  return damHref || externalUrl;
 }
 
 // Empty-state shown in the editor before a video is selected, so authors see a
