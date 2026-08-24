@@ -1059,7 +1059,9 @@
         "name": "link",
         "label": "DAM Video Asset",
         "description": "Select a video asset from the DAM (e.g. an MP4 or a Dynamic Media video).",
-        "rootPath": "/content/dam",
+        "validation": {
+          "rootPath": "/content/dam"
+        },
         "mimeTypes": [
           "video/*"
         ],
