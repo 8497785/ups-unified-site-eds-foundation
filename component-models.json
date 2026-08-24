@@ -1059,6 +1059,9 @@
         "name": "link",
         "label": "DAM Video Asset",
         "description": "Select a video asset from the DAM (e.g. an MP4 or a Dynamic Media video).",
+        "mimeTypes": [
+          "video/*"
+        ],
         "condition": {
           "===": [
             {
@@ -1106,22 +1109,15 @@
         }
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "enablePlaceholderText",
-        "label": "Enable Placeholder Alt Text",
-        "value": false,
-        "description": "Add accessible alt text for the placeholder image."
-      },
-      {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
         "label": "Placeholder Alt Text",
+        "description": "Accessible alt text for the placeholder image.",
         "condition": {
           "===": [
             {
-              "var": "enablePlaceholderText"
+              "var": "enablePlaceholderImage"
             },
             true
           ]
