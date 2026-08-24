@@ -1033,5 +1033,36 @@
         "description": "Show a short gold accent line below the title."
       }
     ]
+  },
+  {
+    "id": "video",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Video Source",
+        "description": "Paste a YouTube URL (youtube.com / youtu.be) or select a video asset from the DAM (e.g. an MP4 or a Dynamic Media video)."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "Video Label",
+        "description": "Optional. Accessible label / link text for the video."
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Placeholder Image",
+        "multi": false,
+        "description": "Optional. Poster image shown with a play button; the video loads on click."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Placeholder Alt Text"
+      }
+    ]
   }
 ]

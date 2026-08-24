@@ -194,7 +194,8 @@
         "downloads",
         "content-list",
         "related-articles",
-        "table"
+        "table",
+        "video"
       ]
     },
     {
@@ -206,7 +207,8 @@
         "title-block",
         "social-share",
         "fragment",
-        "table"
+        "table",
+        "video"
       ]
     }
   ]
