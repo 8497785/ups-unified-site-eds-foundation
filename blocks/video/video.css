@@ -22,8 +22,7 @@
 .video .video-empty-placeholder {
   width: 100%;
   aspect-ratio: 16 / 9;
-  background-color: #e6e6e6;
-  border: 1px dashed #b3b3b3;
+  background-color: #eceae8;
   border-radius: 4px;
 }
 
