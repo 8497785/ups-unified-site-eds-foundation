@@ -1038,52 +1038,12 @@
     "id": "video",
     "fields": [
       {
-        "component": "select",
-        "name": "videoSource",
-        "label": "Video Type",
-        "value": "dam",
-        "description": "Choose where the video comes from.",
-        "options": [
-          {
-            "name": "AEM DAM",
-            "value": "dam"
-          },
-          {
-            "name": "External Video",
-            "value": "external"
-          }
-        ]
-      },
-      {
         "component": "aem-content",
         "name": "link",
-        "label": "DAM Video Asset",
-        "description": "Select a video asset from the DAM (e.g. an MP4 or a Dynamic Media video).",
+        "label": "Video Source",
+        "description": "Paste a YouTube URL (youtube.com / youtu.be) or select a video asset from the DAM (e.g. an MP4 or a Dynamic Media video).",
         "validation": {
           "rootPath": "/content/dam/upsstories"
-        },
-        "condition": {
-          "===": [
-            {
-              "var": "videoSource"
-            },
-            "dam"
-          ]
-        }
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "externalUrl",
-        "label": "External Video URL",
-        "description": "Paste a YouTube URL (youtube.com / youtu.be).",
-        "condition": {
-          "===": [
-            {
-              "var": "videoSource"
-            },
-            "external"
-          ]
         }
       },
       {

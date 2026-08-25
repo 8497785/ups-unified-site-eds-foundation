@@ -179,26 +179,29 @@ async function loadVideoEmbed(block, link, autoplay, background) {
   }
 }
 
-// Resolve the video link according to the author-selected Video Type. The
-// block's first row holds videoSource ('dam' | 'external'). Switching the type
-// in the editor hides the other field but keeps its stored value, so the block
-// can carry BOTH a DAM anchor and an external URL — we must honor the selected
-// type rather than picking whichever appears first.
-//   - 'dam'      -> the DAM asset anchor (<a href>)
-//   - 'external' -> the pasted URL, delivered as plain text
-function resolveLink(block) {
-  const rows = [...block.children];
-  const videoSource = rows[0] ? rows[0].textContent.trim().toLowerCase() : '';
+// Field rows delivered in model order:
+//   [0] link (Video Source)      — DAM anchor or a YouTube URL
+//   [1] enablePlaceholderImage   — 'true' / 'false'
+//   [2] image (Placeholder Image)— a <picture> when set
+//   [3] imageAlt                 — alt text
+//
+// Resolve the video link. A DAM asset is delivered as an anchor (<a href>);
+// a YouTube URL may arrive as an anchor or as plain text. Prefer the anchor,
+// then fall back to the first URL in the row's text.
+function resolveLink(rows) {
+  const linkRow = rows[0];
+  if (!linkRow) return '';
+  const anchor = linkRow.querySelector('a[href]');
+  if (anchor && anchor.href) return anchor.href;
+  const match = linkRow.textContent.match(/https?:\/\/\S+/);
+  return match ? match[0] : '';
+}
 
-  const anchor = block.querySelector('a[href]');
-  const damHref = anchor ? anchor.href : '';
-  const textMatch = block.textContent.match(/https?:\/\/\S+/);
-  const externalUrl = textMatch ? textMatch[0] : '';
-
-  if (videoSource === 'external') return externalUrl;
-  if (videoSource === 'dam') return damHref;
-  // Unknown/absent type — fall back to anchor, then any text URL.
-  return damHref || externalUrl;
+// Whether the author enabled the placeholder image. Disabling the toggle in the
+// editor keeps the previously-picked image node in the delivered markup, so we
+// must honor this flag and ignore the image when it reads false.
+function placeholderEnabled(rows) {
+  return /^(true|yes|on)$/i.test((rows[1]?.textContent || '').trim());
 }
 
 // Empty-state shown in the editor before a video is selected, so authors see a
@@ -212,8 +215,11 @@ function renderEmptyState(block) {
 }
 
 export default async function decorate(block) {
-  const placeholder = block.querySelector('picture');
-  const link = resolveLink(block);
+  const rows = [...block.children];
+  const link = resolveLink(rows);
+  // Only honor the placeholder image when the author has enabled it; disabling
+  // the toggle leaves the <picture> node in the markup otherwise.
+  const placeholder = placeholderEnabled(rows) ? block.querySelector('picture') : null;
   if (!link) {
     renderEmptyState(block);
     return;
