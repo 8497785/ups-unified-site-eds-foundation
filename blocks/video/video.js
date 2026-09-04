@@ -56,7 +56,10 @@ function getVideoTypeLabel(source) {
 // Render an Adobe Scene7 HTML5 VideoViewer for a DAM asset published to
 // Dynamic Media. Mirrors the AEM HTL component: derive the asset id from the
 // file name and init s7viewers.VideoViewer with the configured server URLs.
-async function embedDynamicMedia(block, link) {
+// When `autoplay` is set (e.g. the author-facing placeholder play button was
+// clicked), start playback immediately so the viewer's own poster/play button
+// doesn't appear as a second click target.
+async function embedDynamicMedia(block, link, autoplay) {
   const cfg = getScene7VideoConfig(link);
   if (!cfg) return false;
 
@@ -70,15 +73,20 @@ async function embedDynamicMedia(block, link) {
   try {
     const s7viewers = await loadScene7Viewer();
     if (!s7viewers || !s7viewers.VideoViewer) return false;
-    const viewer = new s7viewers.VideoViewer({
-      containerId,
-      params: {
-        asset: cfg.asset,
-        serverurl: cfg.serverurl,
-        videoserverurl: cfg.videoserverurl,
-        contenturl: cfg.contenturl,
-      },
-    });
+    const params = {
+      asset: cfg.asset,
+      serverurl: cfg.serverurl,
+      videoserverurl: cfg.videoserverurl,
+      contenturl: cfg.contenturl,
+    };
+    if (autoplay) {
+      // Scene7 VideoViewer: autoplay the video player component. Autoplay
+      // policies require muted playback for a reliable start.
+      params.autoplay = '1';
+      params['VideoPlayer.autoplay'] = '1';
+      params['VideoPlayer.mutehtml5'] = '1';
+    }
+    const viewer = new s7viewers.VideoViewer({ containerId, params });
     viewer.init();
     block.dataset.embedLoaded = true;
     return true;
@@ -172,7 +180,7 @@ async function loadVideoEmbed(block, link, autoplay, background) {
   } else if (source === 'dm') {
     // Dynamic Media: render the Scene7 viewer; fall back to native <video>
     // (using the raw DAM path) if the viewer can't load/init.
-    const ok = await embedDynamicMedia(block, link);
+    const ok = await embedDynamicMedia(block, link, autoplay);
     if (!ok) embedNativeVideo(block, link, autoplay, background);
   } else {
     embedNativeVideo(block, link, autoplay, background);
