@@ -109,6 +109,43 @@ function addColumnSectionsWrapper(main) {
   }
 }
 
+// Hosts that are "internal" for link purposes: the current host plus the EDS
+// author/preview/live and production domains. Links to any other host open in
+// a new tab.
+const INTERNAL_HOST_SUFFIXES = ['.aem.page', '.aem.live', '.adobeaemcloud.com', 'about.ups.com'];
+
+function isExternalLink(anchor) {
+  const href = anchor.getAttribute('href') || '';
+  // Only real cross-origin web links; skip anchors, mailto:, tel:, relative, etc.
+  if (!/^https?:\/\//i.test(href)) return false;
+  let url;
+  try {
+    url = new URL(href, window.location.href);
+  } catch (e) {
+    return false;
+  }
+  if (url.hostname === window.location.hostname) return false;
+  return !INTERNAL_HOST_SUFFIXES.some(
+    (s) => url.hostname === s || url.hostname.endsWith(s),
+  );
+}
+
+/**
+ * Open external links in a new tab and add rel="noopener noreferrer".
+ * Covers all copy in main, including the core text component.
+ * @param {Element} main The main element
+ */
+function decorateExternalLinks(main) {
+  main.querySelectorAll('a[href]').forEach((a) => {
+    if (!isExternalLink(a)) return;
+    a.setAttribute('target', '_blank');
+    const rel = new Set((a.getAttribute('rel') || '').split(' ').filter(Boolean));
+    rel.add('noopener');
+    rel.add('noreferrer');
+    a.setAttribute('rel', [...rel].join(' '));
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -123,6 +160,8 @@ export function decorateMain(main) {
   decorateBlocks(main);
   // group consecutive column sections into a flex wrapper (matches PR #72 order)
   addColumnSectionsWrapper(main);
+  // external links open in a new tab with safe rel
+  decorateExternalLinks(main);
 }
 
 /**
