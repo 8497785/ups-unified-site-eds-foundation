@@ -1,8 +1,10 @@
 {
   "mappings": [
-    "/content/about-ups-eds/us/en/:/us/en/"
+    "/content/about-ups-eds/us/en/:/us/en/",
+    "/content/about-ups-eds/redirects:/redirects"
   ],
   "includes": [
-    "/content/about-ups-eds/us/en/"
+    "/content/about-ups-eds/us/en/",
+    "/content/about-ups-eds/redirects"
   ]
 }
