@@ -308,7 +308,7 @@ async function buildLeaf(relPath) {
   // Derived from the live source site (see related-stories.json). Present only
   // when the source page has a visible Related Stories section. Static mode:
   // the extracted card destinations become path1..3 (delivery-locale us/en).
-  const leafSlug = relPath.split('/').pop();
+  const leafSlug = slug;
 
   // ---- keywords (page-metadata string[]) ----
   // From the source page's <meta name="keywords"> (see keywords.json). JCR
@@ -321,7 +321,7 @@ async function buildLeaf(relPath) {
 
   const relatedSlugs = (RELATED[leafSlug] || []).slice(0, 3);
   const relatedPathAttrs = relatedSlugs
-    .map((slug, i) => `path${i + 1}="${attr(relatedContentPath(slug))}"`)
+    .map((relSlug, i) => `path${i + 1}="${attr(relatedContentPath(relSlug))}"`)
     .join(' ');
 
   const relatedSectionXml = relatedSlugs.length ? `
