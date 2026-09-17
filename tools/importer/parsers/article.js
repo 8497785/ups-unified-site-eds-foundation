@@ -103,15 +103,21 @@ export default function parse(element, { document }) {
 
   // ---- body (rich text) for the left column (width 8) ----
   const bodyFrag = document.createElement('div');
-  const body = element.querySelector('.cmp-text');
   const BLOCK_SEL = 'p, ul, ol, h2, h3, h4, h5, h6, table';
-  if (body) {
+  // The body can be split across MORE THAN ONE .cmp-text block: e.g. pages with
+  // an inline video have the intro prose in one .cmp-text and the "About UPS" /
+  // Contact boilerplate in a SECOND .cmp-text after the video. Reading only the
+  // first (querySelector) dropped everything after the video. Walk every
+  // .cmp-text in document order so all body copy is captured.
+  const bodies = [...element.querySelectorAll('.cmp-text')];
+  bodies.forEach((body) => {
     // Collect body block nodes in document order. Some pages wrap tables (and
     // other content) in intermediate <div>s, so a `:scope > table` selector
     // misses them (e.g. the 1Q-2018 earnings page had 3 segment tables nested
     // one level deep). Walk the direct children: keep recognized block nodes
     // as-is; for a wrapper element, pull out its block descendants (tables
     // included) in order so nothing is dropped.
+    const before = bodyFrag.childNodes.length;
     [...body.children].forEach((child) => {
       const tag = child.tagName.toLowerCase();
       if (child.matches(BLOCK_SEL)) {
@@ -129,14 +135,14 @@ export default function parse(element, { document }) {
       }
     });
     // Fallback: some pages put the body as bare text / inline nodes directly in
-    // .cmp-text (no block wrappers), so the walk above finds nothing. Wrap the
-    // whole .cmp-text content in a paragraph so the body survives.
-    if (!bodyFrag.childNodes.length && body.textContent.trim()) {
+    // .cmp-text (no block wrappers), so the walk above finds nothing for this
+    // block. Wrap this .cmp-text's content in a paragraph so it survives.
+    if (bodyFrag.childNodes.length === before && body.textContent.trim()) {
       const p = document.createElement('p');
       p.innerHTML = body.innerHTML.trim();
       bodyFrag.appendChild(p);
     }
-  }
+  });
   const leftCol = document.createElement('div');
   leftCol.appendChild(bodyFrag);
 
