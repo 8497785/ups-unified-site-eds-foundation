@@ -246,14 +246,31 @@ async function buildLeaf(relPath) {
   // Each segment -> a child of the body column_section, IN ORDER:
   //   prose run  -> <text> node (rich text)
   //   <table>    -> <table_N> block (Table, classes: margin-top margin-bottom)
+  // Video config for this page (see VIDEOS map). `beforeText` inserts the Video
+  // block right before the first body paragraph whose text starts with that
+  // string (e.g. "About UPS"), matching the source layout; otherwise position
+  // 'start'/'end' places it at the body edges.
+  const slug = relPath.split('/').pop();
+  const video = VIDEOS[slug];
+
   const bodySegments = [];
   let proseBuf = [];
+  let videoInserted = false;
   const flushProse = () => {
     const proseHtml = proseBuf.join('').trim();
     if (proseHtml) bodySegments.push({ type: 'text', html: proseHtml });
     proseBuf = [];
   };
+  const videoSegment = () => ({ type: 'video', link: video.link });
   [...col1El.children].forEach((child) => {
+    // Insert the video before the marker paragraph (flush prose so the video
+    // lands between the preceding and following text).
+    if (video && video.link && video.beforeText && !videoInserted
+      && child.textContent.trim().startsWith(video.beforeText)) {
+      flushProse();
+      bodySegments.push(videoSegment());
+      videoInserted = true;
+    }
     if (child.tagName === 'TABLE') {
       flushProse();
       bodySegments.push({ type: 'table', html: child.outerHTML.trim() });
@@ -266,29 +283,26 @@ async function buildLeaf(relPath) {
   if (!bodySegments.length && col1El.innerHTML.trim()) {
     bodySegments.push({ type: 'text', html: col1El.innerHTML.trim() });
   }
+  // Video not yet placed (no beforeText, or marker not found): honor start/end.
+  if (video && video.link && !videoInserted) {
+    if (video.position === 'start') bodySegments.unshift(videoSegment());
+    else bodySegments.push(videoSegment());
+  }
 
   // Build the ordered child XML for the body column_section. Table blocks carry
   // both margin classes (margin-top + margin-bottom) per the migration spec.
-  const bodyBlocksXml = bodySegments.map((seg, i) => {
+  // The original import strips the source Scene7/Dynamic Media video, so it is
+  // re-added as a Video block segment (link = DAM video path; the block derives
+  // the Scene7 asset id from the file name).
+  const bodyChildrenXml = bodySegments.map((seg, i) => {
     if (seg.type === 'table') {
       return `        <table_${i} sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="table" model="table" filter="table" name="Table" modelFields="[table,classes]" classes="margin-top,margin-bottom" table="${attr(seg.html)}"/>`;
     }
+    if (seg.type === 'video') {
+      return `        <video_${i} sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="video" model="video" name="Video" modelFields="[link,enablePlaceholderImage,image,imageAlt]" link="${attr(seg.link)}"/>`;
+    }
     return `        <text_${i} sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" aueComponentId="text" text="${attr(seg.html)}"/>`;
-  });
-
-  // Video block: the original import strips the source Scene7/Dynamic Media
-  // video, so re-add it here as a Video block (link = DAM video path; the block
-  // derives the Scene7 asset id from the file name). Placed at the end of the
-  // body by default, or the start when position: 'start'.
-  const slug = relPath.split('/').pop();
-  const video = VIDEOS[slug];
-  if (video && video.link) {
-    const vi = bodySegments.length; // unique node index after the prose/tables
-    const videoXml = `        <video_${vi} sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="video" model="video" name="Video" modelFields="[link,enablePlaceholderImage,image,imageAlt]" link="${attr(video.link)}"/>`;
-    if (video.position === 'start') bodyBlocksXml.unshift(videoXml);
-    else bodyBlocksXml.push(videoXml);
-  }
-  const bodyChildrenXml = bodyBlocksXml.join('\n');
+  }).join('\n');
 
   // ---- related stories (Section 3) ----
   // Derived from the live source site (see related-stories.json). Present only
