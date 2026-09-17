@@ -119,6 +119,13 @@ const KEYWORDS = {
   ...await loadMap(`keywords-${CATEGORY}.json`),
 };
 
+// Videos map: { <leaf-slug>: { link, position } }. The original import strips
+// the source Scene7/Dynamic Media video, so it is re-added here as a Video
+// block in the body column_section. `link` is the DAM video path (the Video
+// block derives the Scene7 asset id from it). `position` = 'end' appends the
+// Video block after the body prose (default); 'start' prepends it.
+const VIDEOS = await loadMap('videos.json');
+
 // Authoring-locale content path for a category article slug (language-masters/
 // en), used for the static related-articles paths and category. MSM rewrites
 // language-masters/en -> us/en on rollout.
@@ -262,12 +269,26 @@ async function buildLeaf(relPath) {
 
   // Build the ordered child XML for the body column_section. Table blocks carry
   // both margin classes (margin-top + margin-bottom) per the migration spec.
-  const bodyChildrenXml = bodySegments.map((seg, i) => {
+  const bodyBlocksXml = bodySegments.map((seg, i) => {
     if (seg.type === 'table') {
       return `        <table_${i} sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="table" model="table" filter="table" name="Table" modelFields="[table,classes]" classes="margin-top,margin-bottom" table="${attr(seg.html)}"/>`;
     }
     return `        <text_${i} sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" aueComponentId="text" text="${attr(seg.html)}"/>`;
-  }).join('\n');
+  });
+
+  // Video block: the original import strips the source Scene7/Dynamic Media
+  // video, so re-add it here as a Video block (link = DAM video path; the block
+  // derives the Scene7 asset id from the file name). Placed at the end of the
+  // body by default, or the start when position: 'start'.
+  const slug = relPath.split('/').pop();
+  const video = VIDEOS[slug];
+  if (video && video.link) {
+    const vi = bodySegments.length; // unique node index after the prose/tables
+    const videoXml = `        <video_${vi} sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" aueComponentId="video" model="video" name="Video" modelFields="[link,enablePlaceholderImage,image,imageAlt]" link="${attr(video.link)}"/>`;
+    if (video.position === 'start') bodyBlocksXml.unshift(videoXml);
+    else bodyBlocksXml.push(videoXml);
+  }
+  const bodyChildrenXml = bodyBlocksXml.join('\n');
 
   // ---- related stories (Section 3) ----
   // Derived from the live source site (see related-stories.json). Present only
