@@ -103,7 +103,20 @@ export default function parse(element, { document }) {
 
   // ---- body (rich text) for the left column (width 8) ----
   const bodyFrag = document.createElement('div');
-  const BLOCK_SEL = 'p, ul, ol, h2, h3, h4, h5, h6, table';
+  // `img` is included so schedule/earnings images placed directly in .cmp-text
+  // (e.g. financials earnings tables rendered as PNGs) are not dropped.
+  const BLOCK_SEL = 'p, ul, ol, h2, h3, h4, h5, h6, table, img';
+  // Append a block node to the body, wrapping a bare <img> in a <p> so it stays
+  // a valid block-level element in the imported markdown.
+  const appendBlock = (node) => {
+    if (node.tagName && node.tagName.toLowerCase() === 'img') {
+      const p = document.createElement('p');
+      p.appendChild(node.cloneNode(true));
+      bodyFrag.appendChild(p);
+    } else {
+      bodyFrag.appendChild(node.cloneNode(true));
+    }
+  };
   // The body can be split across MORE THAN ONE .cmp-text block: e.g. pages with
   // an inline video have the intro prose in one .cmp-text and the "About UPS" /
   // Contact boilerplate in a SECOND .cmp-text after the video. Reading only the
@@ -121,11 +134,14 @@ export default function parse(element, { document }) {
     [...body.children].forEach((child) => {
       const tag = child.tagName.toLowerCase();
       if (child.matches(BLOCK_SEL)) {
-        bodyFrag.appendChild(child.cloneNode(true));
+        appendBlock(child);
       } else if (tag !== 'style' && tag !== 'script') {
-        const inner = child.querySelectorAll(BLOCK_SEL);
+        const inner = [...child.querySelectorAll(BLOCK_SEL)]
+          // Skip an <img> already contained in another captured block (e.g. a
+          // <p><img></p>), so it isn't emitted twice.
+          .filter((n) => !(n.tagName.toLowerCase() === 'img' && n.closest('p, li, td, th, table')));
         if (inner.length) {
-          inner.forEach((n) => bodyFrag.appendChild(n.cloneNode(true)));
+          inner.forEach((n) => appendBlock(n));
         } else if (child.textContent.trim()) {
           // wrapper with only inline text -> preserve as a paragraph
           const p = document.createElement('p');

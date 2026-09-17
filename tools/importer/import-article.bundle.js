@@ -89,18 +89,27 @@ var CustomImportScript = (() => {
       }
     }
     const bodyFrag = document.createElement("div");
-    const BLOCK_SEL = "p, ul, ol, h2, h3, h4, h5, h6, table";
+    const BLOCK_SEL = "p, ul, ol, h2, h3, h4, h5, h6, table, img";
+    const appendBlock = (node) => {
+      if (node.tagName && node.tagName.toLowerCase() === "img") {
+        const p = document.createElement("p");
+        p.appendChild(node.cloneNode(true));
+        bodyFrag.appendChild(p);
+      } else {
+        bodyFrag.appendChild(node.cloneNode(true));
+      }
+    };
     const bodies = [...element.querySelectorAll(".cmp-text")];
     bodies.forEach((body) => {
       const before = bodyFrag.childNodes.length;
       [...body.children].forEach((child) => {
         const tag = child.tagName.toLowerCase();
         if (child.matches(BLOCK_SEL)) {
-          bodyFrag.appendChild(child.cloneNode(true));
+          appendBlock(child);
         } else if (tag !== "style" && tag !== "script") {
-          const inner = child.querySelectorAll(BLOCK_SEL);
+          const inner = [...child.querySelectorAll(BLOCK_SEL)].filter((n) => !(n.tagName.toLowerCase() === "img" && n.closest("p, li, td, th, table")));
           if (inner.length) {
-            inner.forEach((n) => bodyFrag.appendChild(n.cloneNode(true)));
+            inner.forEach((n) => appendBlock(n));
           } else if (child.textContent.trim()) {
             const p = document.createElement("p");
             p.innerHTML = child.innerHTML.trim();
