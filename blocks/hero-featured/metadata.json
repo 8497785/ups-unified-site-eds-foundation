@@ -1,7 +1,7 @@
 {
   "variantName": "hero-featured",
   "baseBlock": "hero",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "created": "2026-05-16T16:18:00.000Z",
   "sourceContext": {
     "originUrl": "https://about.ups.com/us/en/home.html",
@@ -19,11 +19,22 @@
     "buttonCount": 1,
     "imageCount": 1
   },
+  "capabilities": {
+    "variants": ["full-width", "align-left", "align-right", "eyebrow-dynamic"],
+    "eyebrow": {
+      "modes": ["static", "dynamic"],
+      "static": "eyebrow authored inline as the first link in the Text field (default)",
+      "dynamic": "eyebrow-dynamic variant class; topic text and link resolved from page metadata (topic / topic-link) with graceful fallback to no eyebrow"
+    },
+    "notes": "hero 3-row convention (image + text); presentation and eyebrow mode are variant classes, not content rows. Single-image cards view only; carousel/facts views are not supported"
+  },
   "reuseGuidance": {
     "suitableFor": [
       "homepage featured story promotions",
       "article highlight sections with background image",
-      "promotional banners with overlay content card"
+      "promotional banners with overlay content card",
+      "full-bleed featured banners (full-width variant)",
+      "left- or right-aligned overlay content cards (align-left / align-right)"
     ],
     "notSuitableFor": [
       "hero sections without background images",
@@ -32,8 +43,8 @@
     ]
   },
   "usage": {
-    "pagesUsing": ["/us/en/home"],
-    "reuseCount": 1,
-    "lastUsed": "2026-05-16T16:18:00.000Z"
+    "pagesUsing": ["/us/en/home", "/us/en/newsroom/negotiations"],
+    "reuseCount": 2,
+    "lastUsed": "2026-09-16T00:00:00.000Z"
   }
 }

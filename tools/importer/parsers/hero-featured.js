@@ -11,9 +11,13 @@
  * Extracts a full-width background image with overlaid content card
  * containing category tag link, heading, description, and CTA button.
  *
- * UE Model fields:
- *   - image (reference) — background image (imageAlt collapsed)
- *   - text (richtext) — category tag + heading + description + CTA
+ * Hero convention: the block table has exactly 3 rows and never more —
+ *   Row 1: block name (+ optional variants)
+ *   Row 2: background image (field: image; imageAlt collapses into <img alt>)
+ *   Row 3: rich text (field: text) — eyebrow link, heading, description, CTA
+ * The eyebrow (static) is authored inline as the first link in the text cell.
+ * Dynamic eyebrow and layout (full-width / align-left / align-right) are variant
+ * classes, not content rows — so they are never emitted here.
  *
  * Validated selectors against source HTML:
  *   picture                                  -> <picture> with responsive sources and img
@@ -23,7 +27,7 @@
  *   .upspr-heroimage_msg > p               -> description paragraph
  *   .upspr-read-the-story a.btn            -> CTA button link ("Read more")
  *
- * Target table (from block library):
+ * Target table (matches hero block model — 2 content rows):
  *   | hero-featured |
  *   |---|
  *   | <!-- field:image --> <picture> ... </picture> |
@@ -42,7 +46,7 @@ export default function parse(element, { document }) {
   // --- Row 2: Rich text content (field: text) ---
   const textFrag = document.createDocumentFragment();
 
-  // Category tag (eyebrow link)
+  // Category tag (eyebrow link) — authored inline as the first link.
   const eyebrowLink = element.querySelector('a.upspr-eyebrow-link');
   if (eyebrowLink) {
     const cleanLink = document.createElement('a');
@@ -95,7 +99,7 @@ export default function parse(element, { document }) {
   textCell.appendChild(document.createComment(' field:text '));
   textCell.appendChild(textFrag);
 
-  // Build cells matching block library: Row 1 = image, Row 2 = text
+  // Build cells matching hero convention: Row 1 = image, Row 2 = text
   const cells = [];
   cells.push([imgFrag]);
   cells.push([textCell]);

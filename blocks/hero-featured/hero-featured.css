@@ -126,10 +126,30 @@
   background-color: var(--text-color);
 }
 
+/* Full-width variant — full-bleed, no rounded container (maps isFullWidth) */
+.hero-featured.full-width {
+  border-radius: 0;
+  margin: 0;
+}
+
+/* Card alignment (maps alignCard). The card sits in a flex-column overlay;
+   align-items controls its horizontal side. Default (no modifier) = left. */
+.hero-featured.align-left > div:last-child {
+  align-items: flex-start;
+}
+
+.hero-featured.align-right > div:last-child {
+  align-items: flex-end;
+}
+
 @media (width >= 992px) {
   .hero-featured {
     min-height: 520px;
     margin: 0 var(--spacing-lg);
+  }
+
+  .hero-featured.full-width {
+    margin: 0;
   }
 
   .hero-featured > div:last-child {
