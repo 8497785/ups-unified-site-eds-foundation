@@ -1,9 +1,9 @@
 import { getMetadata } from '../../scripts/aem.js';
 
-// Hero v1 — single-image "cards" view: a background image with an overlaid
+// Hero Featured — single-image "cards" view: a background image with an overlaid
 // content card (eyebrow, title, description, CTA).
 //
-// Authoring model (see _hero-v1.json) keeps the hero 3-row convention:
+// Authoring model (see _hero-featured.json) keeps the hero 3-row convention:
 //   Row 1: image  (imageAlt collapses into <img alt>)
 //   Row 2: text   (richtext card: eyebrow link, title, description, CTA)
 // Presentation options are variant classes (never content rows):

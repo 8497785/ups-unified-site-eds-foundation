@@ -2,7 +2,7 @@
 /* global WebImporter */
 
 /**
- * Parser: hero-v1
+ * Parser: hero-featured
  * Base block: hero
  * Source: https://about.ups.com/us/en/home.html
  * Selector: div.upspr-heroimage:not(.vertical-hero)
@@ -28,7 +28,7 @@
  *   .upspr-read-the-story a.btn            -> CTA button link ("Read more")
  *
  * Target table (matches hero block model — 2 content rows):
- *   | hero-v1 |
+ *   | hero-featured |
  *   |---|
  *   | <!-- field:image --> <picture> ... </picture> |
  *   | <!-- field:text --> <p><a>tag</a></p><h4>heading</h4><p>desc</p><p><a>CTA</a></p> |
@@ -104,6 +104,6 @@ export default function parse(element, { document }) {
   cells.push([imgFrag]);
   cells.push([textCell]);
 
-  const block = WebImporter.Blocks.createBlock(document, { name: 'hero-v1', cells });
+  const block = WebImporter.Blocks.createBlock(document, { name: 'hero-featured', cells });
   element.replaceWith(block);
 }

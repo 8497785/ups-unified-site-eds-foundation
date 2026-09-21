@@ -41,7 +41,7 @@ var CustomImportScript = (() => {
     default: () => import_homepage_default
   });
 
-  // tools/importer/parsers/hero-v1.js
+  // tools/importer/parsers/hero-featured.js
   function parse(element, { document }) {
     const picture = element.querySelector("picture");
     const imgFrag = document.createDocumentFragment();
@@ -93,7 +93,7 @@ var CustomImportScript = (() => {
     const cells = [];
     cells.push([imgFrag]);
     cells.push([textCell]);
-    const block = WebImporter.Blocks.createBlock(document, { name: "hero-v1", cells });
+    const block = WebImporter.Blocks.createBlock(document, { name: "hero-featured", cells });
     element.replaceWith(block);
   }
 
@@ -348,7 +348,7 @@ var CustomImportScript = (() => {
 
   // tools/importer/import-homepage.js
   var parsers = {
-    "hero-v1": parse,
+    "hero-featured": parse,
     "cards-story": parse2,
     "hero-stats": parse3,
     "columns-media": parse4
@@ -361,7 +361,7 @@ var CustomImportScript = (() => {
     ],
     blocks: [
       {
-        name: "hero-v1",
+        name: "hero-featured",
         instances: ["div.upspr-heroimage:not(.vertical-hero)"]
       },
       {
@@ -391,7 +391,7 @@ var CustomImportScript = (() => {
         name: "Featured Story Hero",
         selector: "div.hero:has(.upspr-heroimage:not(.vertical-hero))",
         style: null,
-        blocks: ["hero-v1"],
+        blocks: ["hero-featured"],
         defaultContent: []
       },
       {
