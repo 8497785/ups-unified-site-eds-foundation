@@ -11,7 +11,7 @@
       "description": "Main landing page with hero story, story cards grid, about us band, stats section, and impact media card",
       "blocks": [
         {
-          "name": "hero-featured",
+          "name": "hero-v1",
           "instances": [
             "div.upspr-heroimage:not(.vertical-hero)"
           ]
@@ -52,7 +52,7 @@
           "selector": "div.hero:has(.upspr-heroimage:not(.vertical-hero))",
           "style": null,
           "blocks": [
-            "hero-featured"
+            "hero-v1"
           ],
           "defaultContent": []
         },

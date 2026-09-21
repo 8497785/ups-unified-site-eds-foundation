@@ -1,15 +1,15 @@
 {
   "definitions": [
     {
-      "title": "Hero Featured",
-      "id": "hero-featured",
+      "title": "Hero v1",
+      "id": "hero-v1",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "Hero Featured",
-              "model": "hero-featured"
+              "name": "Hero v1",
+              "model": "hero-v1"
             }
           }
         }
@@ -18,7 +18,7 @@
   ],
   "models": [
     {
-      "id": "hero-featured",
+      "id": "hero-v1",
       "fields": [
         {
           "component": "reference",

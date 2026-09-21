@@ -301,21 +301,6 @@
           }
         },
         {
-          "title": "Hero Featured",
-          "id": "hero-featured",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Hero Featured",
-                  "model": "hero-featured"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Hero Stats",
           "id": "hero-stats",
           "plugins": {
@@ -325,6 +310,21 @@
                 "template": {
                   "name": "Hero Stats",
                   "model": "hero-stats"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Hero v1",
+          "id": "hero-v1",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Hero v1",
+                  "model": "hero-v1"
                 }
               }
             }

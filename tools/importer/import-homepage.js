@@ -2,7 +2,7 @@
 /* global WebImporter */
 
 // PARSER IMPORTS
-import heroFeaturedParser from './parsers/hero-featured.js';
+import heroFeaturedParser from './parsers/hero-v1.js';
 import cardsStoryParser from './parsers/cards-story.js';
 import heroStatsParser from './parsers/hero-stats.js';
 import columnsMediaParser from './parsers/columns-media.js';
@@ -13,7 +13,7 @@ import upsSectionsTransformer from './transformers/ups-sections.js';
 
 // PARSER REGISTRY
 const parsers = {
-  'hero-featured': heroFeaturedParser,
+  'hero-v1': heroFeaturedParser,
   'cards-story': cardsStoryParser,
   'hero-stats': heroStatsParser,
   'columns-media': columnsMediaParser,
@@ -28,7 +28,7 @@ const PAGE_TEMPLATE = {
   ],
   blocks: [
     {
-      name: 'hero-featured',
+      name: 'hero-v1',
       instances: ['div.upspr-heroimage:not(.vertical-hero)'],
     },
     {
@@ -58,7 +58,7 @@ const PAGE_TEMPLATE = {
       name: 'Featured Story Hero',
       selector: 'div.hero:has(.upspr-heroimage:not(.vertical-hero))',
       style: null,
-      blocks: ['hero-featured'],
+      blocks: ['hero-v1'],
       defaultContent: [],
     },
     {
