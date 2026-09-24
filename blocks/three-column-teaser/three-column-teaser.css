@@ -17,9 +17,22 @@
 }
 
 /* Eyebrow — matches source .upspr-eyebrow-head structure: a span with the text,
-   preceded by a gold accent line to its LEFT (::before, vertically centered). */
+   preceded by a gold accent line to its LEFT (::before, vertically centered).
+   Margins match the source .upspr-content-tile__topic (topic = eyebrow). */
 .three-column-teaser .upspr-eyebrow-head {
-  margin: 0 0 8px;
+  margin: 0 24px 16px;
+}
+
+@media (width <= 1023px) {
+  .three-column-teaser .upspr-eyebrow-head {
+    margin-left: 0;
+  }
+}
+
+@media (width >= 768px) {
+  .three-column-teaser .upspr-eyebrow-head {
+    margin: 0 0 16px;
+  }
 }
 
 .three-column-teaser .upspr-eyebrow-head span.upspr-eyebrow-text {
