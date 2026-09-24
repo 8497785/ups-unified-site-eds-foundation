@@ -40,3 +40,13 @@
 .breadcrumb nav li.active {
   color: #5f5753;
 }
+
+/* On a UPS Brown highlight section, the active (current) crumb and the "/"
+   separators render white for contrast against the dark band. */
+.section.highlight-brown .breadcrumb nav li.active {
+  color: #fff;
+}
+
+.section.highlight-brown .breadcrumb nav li:not(:first-child)::before {
+  color: #fff;
+}
