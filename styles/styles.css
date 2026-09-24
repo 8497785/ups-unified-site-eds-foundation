@@ -325,17 +325,6 @@ main > .section:first-of-type {
   padding-top: var(--spacing-xl);
 }
 
-/* spacing toggles (Styles tab) — default keeps both margins */
-main > .section.no-top-spacing {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-main > .section.no-bottom-spacing {
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
 /* stepped content width matching the source .upspr-container */
 @media (width >= 768px) {
   :root {
@@ -367,6 +356,21 @@ main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: var(--spacing-xl) 0;
+}
+
+/* Spacing toggles (Styles tab) — default keeps both margins. Placed AFTER the
+   highlight/light rules (which use padding for their spacing) and matching
+   their specificity, so the toggles win regardless of other section styles and
+   zero out both margin and padding. The `main .section` prefix (no direct-child
+   combinator) also covers column sections nested in `.column-sections-wrapper`. */
+main .section.no-top-spacing {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+main .section.no-bottom-spacing {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /* centered section — used for "About Us" text band */
