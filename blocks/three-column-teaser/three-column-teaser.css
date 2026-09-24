@@ -16,10 +16,16 @@
   flex-direction: column;
 }
 
-/* Eyebrow — matches source .upspr-eyebrow-text: 10px / 700 / line-height 15px /
-   letter-spacing 1.6px / uppercase, with a gold accent line above the text. */
-.three-column-teaser .teaser-column-eyebrow {
+/* Eyebrow — matches source .upspr-eyebrow-head structure: a span with the text,
+   preceded by a gold accent line to its LEFT (::before, vertically centered). */
+.three-column-teaser .upspr-eyebrow-head {
   margin: 0 0 8px;
+}
+
+.three-column-teaser .upspr-eyebrow-head span.upspr-eyebrow-text {
+  position: relative;
+  display: inline-block;
+  padding-left: 40px;
   font-size: 10px;
   font-weight: 700;
   line-height: 15px;
@@ -27,12 +33,16 @@
   text-transform: uppercase;
 }
 
-.three-column-teaser .teaser-column-eyebrow::before {
+.three-column-teaser .upspr-eyebrow-head span.upspr-eyebrow-text::before {
   content: '';
-  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -1.5px;
   width: 32px;
   height: 3px;
-  margin-bottom: 12px;
+  border-radius: 5px;
+  display: block;
   background-color: #ffd100;
 }
 
@@ -47,7 +57,7 @@
 
 /* When the section is UPS Brown highlight, teaser text is white (source uses
    white on the brown band); the gold accent line stays gold. */
-.section.highlight-brown .three-column-teaser .teaser-column-eyebrow,
+.section.highlight-brown .three-column-teaser .upspr-eyebrow-text,
 .section.highlight-brown .three-column-teaser .teaser-column-title {
   color: #fff;
 }

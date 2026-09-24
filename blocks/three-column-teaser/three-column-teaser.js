@@ -11,9 +11,19 @@ export default function decorate(block) {
     row.classList.add('teaser-column');
     const [eyebrowCell, titleCell] = [...row.children];
     if (eyebrowCell) {
-      eyebrowCell.className = 'teaser-column-eyebrow';
-      // drop an empty eyebrow cell so it doesn't reserve space
-      if (!eyebrowCell.textContent.trim()) eyebrowCell.remove();
+      const eyebrowText = eyebrowCell.textContent.trim();
+      if (!eyebrowText) {
+        // drop an empty eyebrow cell so it doesn't reserve space
+        eyebrowCell.remove();
+      } else {
+        // Match the source markup:
+        // <div class="upspr-eyebrow-head"><span class="upspr-eyebrow-text">…</span></div>
+        eyebrowCell.className = 'upspr-eyebrow-head teaser-column-eyebrow';
+        const span = document.createElement('span');
+        span.className = 'upspr-eyebrow-text';
+        span.textContent = eyebrowText;
+        eyebrowCell.replaceChildren(span);
+      }
     }
     if (titleCell) {
       // Render the title as an <h3> (matches the source teaser markup). Unwrap a
