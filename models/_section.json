@@ -62,6 +62,10 @@
               "value": "highlight"
             },
             {
+              "name": "Highlight (UPS Brown)",
+              "value": "highlight-brown"
+            },
+            {
               "name": "Arc Background",
               "value": "arc-background"
             },
