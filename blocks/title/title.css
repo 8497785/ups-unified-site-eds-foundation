@@ -28,6 +28,11 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* The title h1 is 64px on all devices (desktop, tablet, mobile). */
+.title .title-heading:is(h1) {
+  font-size: 64px;
+}
+
 .title .title-heading:is(h1) { margin-bottom: var(--spacing-md); }
 .title .title-heading:is(h2, h3, h4) { margin-bottom: var(--spacing-sm); }
 .title .title-heading:is(h5, h6) { margin-bottom: var(--spacing-xs); }
