@@ -9,10 +9,18 @@
    shared --spacing-* tokens, growing at the 992px breakpoint where heading
    sizes increase. Responsive across all viewports. */
 
-/* Block wrapper spacing below the title. Scoped to .section so it outranks
-   the section layout rule (main > .section > div { margin: auto }). */
+/* Block wrapper spacing. Margins match the source .upspr-headline (margins
+   only). Scoped to .section so it outranks the section layout rule
+   (main > .section > div { margin: auto }). */
 .section .title-wrapper {
-  margin-bottom: 40px;
+  margin: 64px auto;
+}
+
+@media (width >= 1200px) {
+  .section .title-wrapper {
+    margin-top: 40px;
+    margin-bottom: 64px;
+  }
 }
 
 .title .title-heading {
