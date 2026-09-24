@@ -4,7 +4,8 @@
   gap: 24px;
 }
 
-@media (width >= 768px) {
+/* Three across only on desktop; tablet and below show one full-width column. */
+@media (width >= 992px) {
   .three-column-teaser {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -15,8 +16,8 @@
   flex-direction: column;
 }
 
-/* Eyebrow — matches source .upspr-eyebrow-text:
-   10px / 700 / line-height 15px / letter-spacing 1.6px / uppercase. */
+/* Eyebrow — matches source .upspr-eyebrow-text: 10px / 700 / line-height 15px /
+   letter-spacing 1.6px / uppercase, with a gold accent line above the text. */
 .three-column-teaser .teaser-column-eyebrow {
   margin: 0 0 8px;
   font-size: 10px;
@@ -26,16 +27,25 @@
   text-transform: uppercase;
 }
 
-/* Title — matches source h3: 24px / 500 / line-height 32px / margin-bottom 40px. */
-.three-column-teaser .teaser-column-title {
+.three-column-teaser .teaser-column-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 3px;
+  margin-bottom: 12px;
+  background-color: #ffd100;
+}
+
+/* Title — <h3>, 32px / 500 / line-height 32px / margin-bottom 40px. */
+.three-column-teaser h3.teaser-column-title {
   margin: 0 0 40px;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 500;
   line-height: 32px;
 }
 
 /* When the section is UPS Brown highlight, teaser text is white (source uses
-   white on the brown band). */
+   white on the brown band); the gold accent line stays gold. */
 .section.highlight-brown .three-column-teaser .teaser-column-eyebrow,
 .section.highlight-brown .three-column-teaser .teaser-column-title {
   color: #fff;

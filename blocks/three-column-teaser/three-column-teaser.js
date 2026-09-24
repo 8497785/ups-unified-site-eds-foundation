@@ -15,6 +15,12 @@ export default function decorate(block) {
       // drop an empty eyebrow cell so it doesn't reserve space
       if (!eyebrowCell.textContent.trim()) eyebrowCell.remove();
     }
-    if (titleCell) titleCell.className = 'teaser-column-title';
+    if (titleCell) {
+      // Render the title as an <h3> (matches the source teaser markup).
+      const h3 = document.createElement('h3');
+      h3.className = 'teaser-column-title';
+      h3.innerHTML = titleCell.innerHTML;
+      titleCell.replaceWith(h3);
+    }
   });
 }
