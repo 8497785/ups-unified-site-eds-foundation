@@ -36,7 +36,8 @@
   background-color: #ffd100;
 }
 
-/* Title — <h3>, 32px / 500 / line-height 32px / margin-bottom 40px. */
+/* Title — <h3>, 32px / 500 / line-height 32px / margin-bottom 40px. The block
+   JS unwraps the source <p> so the text sits directly in the h3. */
 .three-column-teaser h3.teaser-column-title {
   margin: 0 0 40px;
   font-size: 32px;

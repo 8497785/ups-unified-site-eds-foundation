@@ -16,10 +16,13 @@ export default function decorate(block) {
       if (!eyebrowCell.textContent.trim()) eyebrowCell.remove();
     }
     if (titleCell) {
-      // Render the title as an <h3> (matches the source teaser markup).
+      // Render the title as an <h3> (matches the source teaser markup). Unwrap a
+      // single <p> so the text sits directly in the h3 (as on the source) and
+      // isn't affected by section paragraph margins.
       const h3 = document.createElement('h3');
       h3.className = 'teaser-column-title';
-      h3.innerHTML = titleCell.innerHTML;
+      const soleP = titleCell.children.length === 1 && titleCell.querySelector(':scope > p');
+      h3.innerHTML = soleP ? soleP.innerHTML : titleCell.innerHTML;
       titleCell.replaceWith(h3);
     }
   });
