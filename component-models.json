@@ -657,14 +657,29 @@
         "value": "",
         "label": "Text",
         "valueType": "string",
-        "description": "Content card: eyebrow (first link: its text is the topic, its URL the topic link), title, description, and CTA. If the topic text is left blank, or 'Dynamic eyebrow' is selected under Presentation, the parent page name is shown instead."
+        "description": "Content card: title, description, and CTA. The eyebrow comes from the Topic link and Topic fields below."
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "topicLink",
+        "label": "Topic link",
+        "description": "Page the eyebrow links to. Its title is shown when Topic is blank or Dynamic eyebrow is selected."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "topicLinkText",
+        "label": "Topic",
+        "value": "",
+        "description": "Eyebrow text. Leave blank to use the title of the Topic link page."
       },
       {
         "component": "multiselect",
         "name": "classes",
         "label": "Presentation",
         "value": "",
-        "description": "Optional modifiers. Full width removes the rounded container; alignment controls which side the content card sits on; Dynamic eyebrow ignores the topic and shows the parent page name.",
+        "description": "Optional modifiers. Full width removes the rounded container; alignment controls which side the content card sits on; Dynamic eyebrow ignores Topic and shows the title of the Topic link page.",
         "options": [
           {
             "name": "Full width",

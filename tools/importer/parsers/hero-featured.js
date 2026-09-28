@@ -11,11 +11,11 @@
  * Extracts a full-width background image with overlaid content card
  * containing category tag link, heading, description, and CTA button.
  *
- * Hero convention: the block table has exactly 3 rows and never more —
+ * Block table rows:
  *   Row 1: block name (+ optional variants)
  *   Row 2: background image (field: image; imageAlt collapses into <img alt>)
- *   Row 3: rich text (field: text) — eyebrow link, heading, description, CTA
- * The eyebrow (static) is authored inline as the first link in the text cell.
+ *   Row 3: rich text (field: text) — heading, description, CTA
+ *   Row 4: eyebrow (field: topicLink; topicLinkText collapses into the link text)
  * Dynamic eyebrow and layout (full-width / align-left / align-right) are variant
  * classes, not content rows — so they are never emitted here.
  *
@@ -27,11 +27,12 @@
  *   .upspr-heroimage_msg > p               -> description paragraph
  *   .upspr-read-the-story a.btn            -> CTA button link ("Read more")
  *
- * Target table (matches hero block model — 2 content rows):
+ * Target table (matches hero-featured block model — 3 content rows):
  *   | hero-featured |
  *   |---|
  *   | <!-- field:image --> <picture> ... </picture> |
- *   | <!-- field:text --> <p><a>tag</a></p><h4>heading</h4><p>desc</p><p><a>CTA</a></p> |
+ *   | <!-- field:text --> <h4>heading</h4><p>desc</p><p><a>CTA</a></p> |
+ *   | <!-- field:topicLink --> <a href="topic page">tag</a> |
  */
 export default function parse(element, { document }) {
   // --- Row 1: Background image (field: image) ---
@@ -43,10 +44,9 @@ export default function parse(element, { document }) {
     imgFrag.appendChild(picture);
   }
 
-  // --- Row 2: Rich text content (field: text) ---
-  const textFrag = document.createDocumentFragment();
-
-  // Category tag (eyebrow link) — authored inline as the first link.
+  // --- Row 3: Category tag / eyebrow (field: topicLink + topicLinkText) ---
+  const topicFrag = document.createDocumentFragment();
+  topicFrag.appendChild(document.createComment(' field:topicLink '));
   const eyebrowLink = element.querySelector('a.upspr-eyebrow-link');
   if (eyebrowLink) {
     const cleanLink = document.createElement('a');
@@ -55,10 +55,11 @@ export default function parse(element, { document }) {
     cleanLink.textContent = eyebrowText
       ? eyebrowText.textContent.trim()
       : eyebrowLink.textContent.trim();
-    const p = document.createElement('p');
-    p.appendChild(cleanLink);
-    textFrag.appendChild(p);
+    topicFrag.appendChild(cleanLink);
   }
+
+  // --- Row 2: Rich text content (field: text) ---
+  const textFrag = document.createDocumentFragment();
 
   // Heading
   const heading = element.querySelector('h4.upspr-heroimage_msg--title, h3.upspr-heroimage_msg--title, h2.upspr-heroimage_msg--title');
@@ -99,10 +100,11 @@ export default function parse(element, { document }) {
   textCell.appendChild(document.createComment(' field:text '));
   textCell.appendChild(textFrag);
 
-  // Build cells matching hero convention: Row 1 = image, Row 2 = text
+  // Build cells matching the block model: image, text, topic
   const cells = [];
   cells.push([imgFrag]);
   cells.push([textCell]);
+  cells.push([topicFrag]);
 
   const block = WebImporter.Blocks.createBlock(document, { name: 'hero-featured', cells });
   element.replaceWith(block);

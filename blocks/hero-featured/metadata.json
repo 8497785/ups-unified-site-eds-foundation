@@ -23,10 +23,10 @@
     "variants": ["full-width", "align-left", "align-right", "eyebrow-dynamic"],
     "eyebrow": {
       "modes": ["static", "dynamic"],
-      "static": "eyebrow authored inline as the first link in the Text field (default)",
-      "dynamic": "eyebrow-dynamic variant class (dynamicTopic); topic ignored, parent page name shown, linked to the authored topic link or the parent page. A blank topic in static mode also falls back to the parent page name"
+      "static": "eyebrow authored in the Topic link (page) and Topic (text) fields; legacy content with the eyebrow as the first link of the Text field is still supported",
+      "dynamic": "eyebrow-dynamic variant class (dynamicTopic); topic ignored, eyebrow shows the title of the authored Topic link page. A blank topic in static mode also uses that page title"
     },
-    "notes": "hero 3-row convention (image + text); presentation and eyebrow mode are variant classes, not content rows. Single-image cards view only; carousel/facts views are not supported"
+    "notes": "content rows: image, text, topic (topicLink + topicLinkText); the topic row is merged into the card at render time. Presentation and eyebrow mode are variant classes, not content rows. Single-image cards view only; carousel/facts views are not supported"
   },
   "reuseGuidance": {
     "suitableFor": [
