@@ -49,9 +49,12 @@
   padding: var(--spacing-lg);
 }
 
+/* Card text always reads left; align-left/right only move the card (and must
+   not pick up the global .align-* text-align utilities). */
 .hero-featured > div:last-child > div {
   max-width: 420px;
   padding: var(--spacing-lg);
+  text-align: left;
   background-color: var(--background-color);
   border-radius: var(--border-radius-card);
 }
