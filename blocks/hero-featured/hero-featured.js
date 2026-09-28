@@ -9,23 +9,25 @@
 //   Row 5: link       (ctaLink page picker; ctaLinkText collapses into the link text)
 // Block options (classes group, never content rows):
 //   classes          full-width / align-left / align-right  -> layout (see CSS)
-//   classes_eyebrow  eyebrow-dynamic / eyebrow-static        -> eyebrow mode
+//   classes_eyebrow  eyebrow-dynamic / eyebrow-static /      -> eyebrow mode
+//                    eyebrow-none
 //
-// CTA: links to ctaLink; text is ctaLinkText, or "Read more" when blank.
+// CTA: links to ctaLink with the text ctaLinkText. It renders only when both are
+// authored; there is no default text, so translated pages never show a
+// hardcoded label.
 // Eyebrow:
 //   - Dynamic (default): links to the parent page of ctaLink and shows that
 //     parent page's name. Topic fields are ignored.
 //   - Static: shows the authored topic and links to the authored topicLink.
 //     A blank topic shows the name of the linked page; a blank topicLink falls
 //     back to the parent page of ctaLink.
+//   - None: no eyebrow (a legacy inline eyebrow in the text cell is removed too).
 //   Content without a saved mode (e.g. imported) is static when a topic or
 //   topicLink is present, otherwise dynamic.
 // The field rows are merged into the card so the block keeps its image + card DOM.
 //
 // Legacy content (no field rows; eyebrow and CTA authored inline as the first
 // and last links of the text cell) renders as authored.
-
-const DEFAULT_CTA_TEXT = 'Read more';
 
 // "/us/en/newsroom/negotiations/story.html" -> "/us/en/newsroom/negotiations.html"
 // (absolute URLs keep their origin). Returns null at the site root.
@@ -131,10 +133,12 @@ export default async function decorate(block) {
   fieldRows.forEach((row) => row.remove());
 
   const has = (cls) => block.classList.contains(cls);
+  const noEyebrow = has('eyebrow-none');
+  if (noEyebrow) inlineEyebrow?.remove();
 
   if (!ctaAnchor && !topicAnchor && !topic) {
     // Legacy: keep the inline links as authored.
-    const link = inlineEyebrow?.querySelector('a');
+    const link = !noEyebrow && inlineEyebrow?.querySelector('a');
     if (link && (has('eyebrow-dynamic') || !authoredText(link))) {
       link.textContent = await resolvePageTitle(link.getAttribute('href'));
     }
@@ -153,14 +157,13 @@ export default async function decorate(block) {
     eyebrowAnchor.href = parent;
   }
 
-  // CTA: the authored link.
-  if (ctaAnchor) {
-    ctaAnchor.textContent = authoredText(ctaAnchor) || DEFAULT_CTA_TEXT;
+  // CTA: the authored link, only when both link and text are authored.
+  if (ctaAnchor && authoredText(ctaAnchor)) {
     place(card, toButton(ctaAnchor), inlineCta, 'append');
   }
 
-  if (!eyebrowAnchor) {
-    inlineEyebrow?.remove(); // nothing to link the eyebrow to
+  if (noEyebrow || !eyebrowAnchor) {
+    inlineEyebrow?.remove(); // eyebrow turned off, or nothing to link it to
     return;
   }
   eyebrowAnchor.textContent = isStatic && topic

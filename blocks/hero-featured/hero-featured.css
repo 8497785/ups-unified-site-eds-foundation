@@ -86,7 +86,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: var(--body-font-size-xs);
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -117,16 +117,19 @@
   color: var(--text-color);
 }
 
-/* CTA button */
+/* CTA button — source .btn.btn-primary: gold, dark text, no border */
 .hero-featured .button-container:last-child a.button {
-  background-color: var(--dark-color);
-  color: var(--background-color);
+  background-color: var(--ups-gold);
+  color: var(--btn-text-dark);
+  border: none;
   padding: 10px 24px;
   font-size: var(--body-font-size-s);
 }
 
-.hero-featured .button-container:last-child a.button:hover {
-  background-color: var(--text-color);
+.hero-featured .button-container:last-child a.button:hover,
+.hero-featured .button-container:last-child a.button:focus {
+  background-color: var(--ups-gold-hover);
+  color: var(--btn-text-dark);
 }
 
 /* Full-width variant — full-bleed, no rounded container (maps isFullWidth) */

@@ -38,7 +38,7 @@
  *   | <!-- field:text --> <h4>heading</h4><p>desc</p> |
  *   | <!-- field:topic --> tag |
  *   | <!-- field:topicLink --> <a href="topic page">topic page</a> |
- *   | <!-- field:ctaLink --> <a href="story page">Read more</a> |
+ *   | <!-- field:ctaLink --> <a href="story page">CTA text</a> |
  */
 export default function parse(element, { document }) {
   // --- Row 1: Background image (field: image) ---

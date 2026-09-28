@@ -48,10 +48,11 @@
           "name": "classes_eyebrow",
           "label": "Eyebrow",
           "value": "eyebrow-dynamic",
-          "description": "Dynamic shows the name of the Link's parent page and links to it. Static uses the Eyebrow text and Eyebrow link below.",
+          "description": "Dynamic shows the name of the Link's parent page and links to it. Static uses the Eyebrow text and Eyebrow link below. None hides the eyebrow.",
           "options": [
             { "name": "Dynamic (parent page of Link)", "value": "eyebrow-dynamic" },
-            { "name": "Static (authored)", "value": "eyebrow-static" }
+            { "name": "Static (authored)", "value": "eyebrow-static" },
+            { "name": "None (no eyebrow)", "value": "eyebrow-none" }
           ]
         },
         {
@@ -62,12 +63,17 @@
           "value": "",
           "description": "Leave blank to show the name of the Eyebrow link page.",
           "condition": {
-            "!==": [
-              {
-                "var": "classes_eyebrow"
-              },
-              "eyebrow-dynamic"
-            ]
+            "!": {
+              "in": [
+                {
+                  "var": "classes_eyebrow"
+                },
+                [
+                  "eyebrow-dynamic",
+                  "eyebrow-none"
+                ]
+              ]
+            }
           }
         },
         {
@@ -77,12 +83,17 @@
           "label": "Eyebrow link",
           "description": "Page the eyebrow links to. Leave blank to use the parent page of Link.",
           "condition": {
-            "!==": [
-              {
-                "var": "classes_eyebrow"
-              },
-              "eyebrow-dynamic"
-            ]
+            "!": {
+              "in": [
+                {
+                  "var": "classes_eyebrow"
+                },
+                [
+                  "eyebrow-dynamic",
+                  "eyebrow-none"
+                ]
+              ]
+            }
           }
         },
         {
@@ -98,7 +109,7 @@
           "name": "ctaLinkText",
           "label": "CTA text",
           "value": "",
-          "description": "CTA button text. Leave blank to show \"Read more\"."
+          "description": "CTA button text. The button is shown only when both Link and CTA text are filled in."
         },
         {
           "component": "multiselect",
