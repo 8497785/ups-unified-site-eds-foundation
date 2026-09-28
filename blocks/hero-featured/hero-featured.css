@@ -1,9 +1,6 @@
 /* stylelint-disable no-descending-specificity */
-.hero-featured-container .hero-featured-wrapper {
-  max-width: unset;
-  padding: 0;
-}
 
+/* The hero sits in the normal section content width (main > .section > div). */
 .hero-featured-container {
   margin: 0;
 }
@@ -14,8 +11,6 @@
   display: flex;
   align-items: stretch;
   overflow: hidden;
-  border-radius: var(--border-radius-card);
-  margin: 0 var(--spacing-md);
 }
 
 .hero-featured > div:first-child {
@@ -132,10 +127,9 @@
   color: var(--btn-text-dark);
 }
 
-/* Full-width variant — full-bleed, no rounded container (maps isFullWidth) */
-.hero-featured.full-width {
-  border-radius: 0;
-  margin: 0;
+/* Rounded-corners option — square corners by default */
+.hero-featured.rounded-corners {
+  border-radius: var(--border-radius-card);
 }
 
 /* Card alignment (maps alignCard). The card sits in a flex-column overlay;
@@ -151,11 +145,6 @@
 @media (width >= 992px) {
   .hero-featured {
     min-height: 520px;
-    margin: 0 var(--spacing-lg);
-  }
-
-  .hero-featured.full-width {
-    margin: 0;
   }
 
   .hero-featured > div:last-child {

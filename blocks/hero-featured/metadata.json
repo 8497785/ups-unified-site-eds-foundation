@@ -20,7 +20,7 @@
     "imageCount": 1
   },
   "capabilities": {
-    "variants": ["full-width", "align-left", "align-right", "eyebrow-dynamic", "eyebrow-static", "eyebrow-none"],
+    "variants": ["rounded-corners", "align-left", "align-right", "eyebrow-dynamic", "eyebrow-static", "eyebrow-none"],
     "eyebrow": {
       "modes": ["static", "dynamic", "none"],
       "static": "Eyebrow set to Static (eyebrow-static): Eyebrow text and Eyebrow link authored (topic / topicLink); blank text shows the linked page name, blank link falls back to the parent page of Link. Content without a saved mode is static when topic/topicLink is present",
@@ -34,7 +34,7 @@
       "homepage featured story promotions",
       "article highlight sections with background image",
       "promotional banners with overlay content card",
-      "full-bleed featured banners (full-width variant)",
+      "featured banners with rounded corners (rounded-corners variant)",
       "left- or right-aligned overlay content cards (align-left / align-right)"
     ],
     "notSuitableFor": [

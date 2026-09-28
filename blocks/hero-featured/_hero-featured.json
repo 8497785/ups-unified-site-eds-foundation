@@ -116,9 +116,9 @@
           "name": "classes",
           "label": "Presentation",
           "value": "",
-          "description": "Optional modifiers. Full width removes the rounded container; alignment controls which side the content card sits on.",
+          "description": "Optional modifiers. Rounded corners rounds the hero's corners (square by default); alignment controls which side the content card sits on.",
           "options": [
-            { "name": "Full width", "value": "full-width" },
+            { "name": "Rounded corners", "value": "rounded-corners" },
             { "name": "Align card left", "value": "align-left" },
             { "name": "Align card right", "value": "align-right" }
           ]

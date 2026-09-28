@@ -8,7 +8,7 @@
 //   Row 4: topicLink  (static eyebrow link)
 //   Row 5: link       (ctaLink page picker; ctaLinkText collapses into the link text)
 // Block options (classes group, never content rows):
-//   classes          full-width / align-left / align-right  -> layout (see CSS)
+//   classes          rounded-corners / align-left / align-right -> layout (see CSS)
 //   classes_eyebrow  eyebrow-dynamic / eyebrow-static /      -> eyebrow mode
 //                    eyebrow-none
 //
