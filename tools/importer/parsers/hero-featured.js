@@ -14,8 +14,11 @@
  * Block table rows:
  *   Row 1: block name (+ optional variants)
  *   Row 2: background image (field: image; imageAlt collapses into <img alt>)
- *   Row 3: rich text (field: text) — heading, description, CTA
- *   Row 4: eyebrow (field: topicLink; topicLinkText collapses into the link text)
+ *   Row 3: rich text (field: text) — heading, description
+ *   Row 4: eyebrow text (field: topic)
+ *   Row 5: CTA (field: ctaLink; ctaLinkText collapses into the link text)
+ * The block links the eyebrow to the parent page of ctaLink, so the source
+ * eyebrow's own href is not imported.
  * Dynamic eyebrow and layout (full-width / align-left / align-right) are variant
  * classes, not content rows — so they are never emitted here.
  *
@@ -27,12 +30,13 @@
  *   .upspr-heroimage_msg > p               -> description paragraph
  *   .upspr-read-the-story a.btn            -> CTA button link ("Read more")
  *
- * Target table (matches hero-featured block model — 3 content rows):
+ * Target table (matches hero-featured block model — 4 content rows):
  *   | hero-featured |
  *   |---|
  *   | <!-- field:image --> <picture> ... </picture> |
- *   | <!-- field:text --> <h4>heading</h4><p>desc</p><p><a>CTA</a></p> |
- *   | <!-- field:topicLink --> <a href="topic page">tag</a> |
+ *   | <!-- field:text --> <h4>heading</h4><p>desc</p> |
+ *   | <!-- field:topic --> tag |
+ *   | <!-- field:ctaLink --> <a href="story page">Read more</a> |
  */
 export default function parse(element, { document }) {
   // --- Row 1: Background image (field: image) ---
@@ -44,18 +48,13 @@ export default function parse(element, { document }) {
     imgFrag.appendChild(picture);
   }
 
-  // --- Row 3: Category tag / eyebrow (field: topicLink + topicLinkText) ---
+  // --- Row 3: Category tag / eyebrow text (field: topic) ---
   const topicFrag = document.createDocumentFragment();
-  topicFrag.appendChild(document.createComment(' field:topicLink '));
-  const eyebrowLink = element.querySelector('a.upspr-eyebrow-link');
-  if (eyebrowLink) {
-    const cleanLink = document.createElement('a');
-    cleanLink.href = eyebrowLink.href;
-    const eyebrowText = element.querySelector('.upspr-eyebrow-text');
-    cleanLink.textContent = eyebrowText
-      ? eyebrowText.textContent.trim()
-      : eyebrowLink.textContent.trim();
-    topicFrag.appendChild(cleanLink);
+  topicFrag.appendChild(document.createComment(' field:topic '));
+  const eyebrowText = element.querySelector('.upspr-eyebrow-text')
+    || element.querySelector('a.upspr-eyebrow-link');
+  if (eyebrowText && eyebrowText.textContent.trim()) {
+    topicFrag.appendChild(document.createTextNode(eyebrowText.textContent.trim()));
   }
 
   // --- Row 2: Rich text content (field: text) ---
@@ -77,7 +76,9 @@ export default function parse(element, { document }) {
     textFrag.appendChild(p);
   }
 
-  // CTA button link
+  // --- Row 4: CTA button (field: ctaLink + ctaLinkText) ---
+  const ctaFrag = document.createDocumentFragment();
+  ctaFrag.appendChild(document.createComment(' field:ctaLink '));
   const ctaLink = element.querySelector('.upspr-read-the-story a.btn, .upspr-read-the-story a');
   if (ctaLink) {
     const cleanCta = document.createElement('a');
@@ -90,9 +91,7 @@ export default function parse(element, { document }) {
       }
     });
     cleanCta.textContent = ctaText.trim() || ctaLink.textContent.trim();
-    const p = document.createElement('p');
-    p.appendChild(cleanCta);
-    textFrag.appendChild(p);
+    ctaFrag.appendChild(cleanCta);
   }
 
   // Wrap text content with field hint
@@ -100,11 +99,12 @@ export default function parse(element, { document }) {
   textCell.appendChild(document.createComment(' field:text '));
   textCell.appendChild(textFrag);
 
-  // Build cells matching the block model: image, text, topic
+  // Build cells matching the block model: image, text, topic, CTA
   const cells = [];
   cells.push([imgFrag]);
   cells.push([textCell]);
   cells.push([topicFrag]);
+  cells.push([ctaFrag]);
 
   const block = WebImporter.Blocks.createBlock(document, { name: 'hero-featured', cells });
   element.replaceWith(block);

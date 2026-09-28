@@ -657,29 +657,37 @@
         "value": "",
         "label": "Text",
         "valueType": "string",
-        "description": "Content card: title, description, and CTA. The eyebrow comes from the Topic link and Topic fields below."
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "topicLink",
-        "label": "Topic link",
-        "description": "Page the eyebrow links to. Its title is shown when Topic is blank or Dynamic eyebrow is selected."
+        "description": "Content card: title and description. The eyebrow and the CTA button come from the Topic and Link fields below."
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "topicLinkText",
+        "name": "topic",
         "label": "Topic",
         "value": "",
-        "description": "Eyebrow text. Leave blank to use the title of the Topic link page."
+        "description": "Eyebrow text. The eyebrow links to the parent page of Link. Leave blank to show that parent page's name."
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "ctaLink",
+        "label": "Link",
+        "description": "Page the CTA button links to. The eyebrow links to this page's parent."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaLinkText",
+        "label": "CTA text",
+        "value": "",
+        "description": "CTA button text. Leave blank to show \"Read more\"."
       },
       {
         "component": "multiselect",
         "name": "classes",
         "label": "Presentation",
         "value": "",
-        "description": "Optional modifiers. Full width removes the rounded container; alignment controls which side the content card sits on; Dynamic eyebrow ignores Topic and shows the title of the Topic link page.",
+        "description": "Optional modifiers. Full width removes the rounded container; alignment controls which side the content card sits on; Dynamic eyebrow ignores Topic and shows the name of the Link's parent page.",
         "options": [
           {
             "name": "Full width",

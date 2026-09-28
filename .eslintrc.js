@@ -25,9 +25,15 @@ module.exports = {
     // loadMoreLabel, loadMoreStyle, loadMoreAlignment, showDate, sortBy,
     // maxItems); related-articles has 7 (mode, category, articleCount, path1,
     // path2, path3, showDate); video has 6 (videoSource, link, externalUrl,
-    // enablePlaceholderImage, image, imageAlt).
+    // enablePlaceholderImage, image, imageAlt); hero-featured has 5 (image,
+    // text, topic, ctaLink, classes — classes is a variant, so 4 rows render).
     'xwalk/max-cells': ['error', {
-      button: 5, 'article-header': 6, 'content-list': 8, 'related-articles': 8, video: 6,
+      button: 5,
+      'article-header': 6,
+      'content-list': 8,
+      'related-articles': 8,
+      video: 6,
+      'hero-featured': 5,
     }],
   },
 };
