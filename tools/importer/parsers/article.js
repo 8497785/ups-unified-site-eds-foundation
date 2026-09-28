@@ -106,6 +106,8 @@ export default function parse(element, { document }) {
   // `img` is included so schedule/earnings images placed directly in .cmp-text
   // (e.g. financials earnings tables rendered as PNGs) are not dropped.
   const BLOCK_SEL = 'p, ul, ol, h2, h3, h4, h5, h6, table, img';
+  // Inline elements that belong in the same paragraph as surrounding bare text.
+  const INLINE_TAGS = ['a', 'strong', 'b', 'em', 'i', 'u', 'span', 'sup', 'sub', 'br', 'small', 'code', 'mark', 'abbr', 'font'];
   // Append a block node to the body, wrapping a bare <img> in a <p> so it stays
   // a valid block-level element in the imported markdown.
   const appendBlock = (node) => {
@@ -130,9 +132,25 @@ export default function parse(element, { document }) {
     // one level deep). Walk the direct children: keep recognized block nodes
     // as-is; for a wrapper element, pull out its block descendants (tables
     // included) in order so nothing is dropped.
+    //
+    // Loose text and inline elements sitting directly in .cmp-text (e.g.
+    // `Additional information is available on <a>updates.ups.com</a>.`) are
+    // grouped, in order, into one <p> — walking only element children dropped
+    // the bare text and turned the link into plain text.
     const before = bodyFrag.childNodes.length;
-    [...body.children].forEach((child) => {
+    let inlineRun = [];
+    const flushInline = () => {
+      const p = document.createElement('p');
+      inlineRun.forEach((n) => p.appendChild(n.cloneNode(true)));
+      if (p.textContent.trim()) bodyFrag.appendChild(p);
+      inlineRun = [];
+    };
+    [...body.childNodes].forEach((child) => {
+      if (child.nodeType === 3) { inlineRun.push(child); return; }
+      if (child.nodeType !== 1) return;
       const tag = child.tagName.toLowerCase();
+      if (INLINE_TAGS.includes(tag) && !child.querySelector(BLOCK_SEL)) { inlineRun.push(child); return; }
+      flushInline();
       if (child.matches(BLOCK_SEL)) {
         appendBlock(child);
       } else if (tag !== 'style' && tag !== 'script') {
@@ -150,6 +168,7 @@ export default function parse(element, { document }) {
         }
       }
     });
+    flushInline();
     // Fallback: some pages put the body as bare text / inline nodes directly in
     // .cmp-text (no block wrappers), so the walk above finds nothing for this
     // block. Wrap this .cmp-text's content in a paragraph so it survives.

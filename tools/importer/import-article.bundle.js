@@ -90,6 +90,7 @@ var CustomImportScript = (() => {
     }
     const bodyFrag = document.createElement("div");
     const BLOCK_SEL = "p, ul, ol, h2, h3, h4, h5, h6, table, img";
+    const INLINE_TAGS = ["a", "strong", "b", "em", "i", "u", "span", "sup", "sub", "br", "small", "code", "mark", "abbr", "font"];
     const appendBlock = (node) => {
       if (node.tagName && node.tagName.toLowerCase() === "img") {
         const p = document.createElement("p");
@@ -102,8 +103,25 @@ var CustomImportScript = (() => {
     const bodies = [...element.querySelectorAll(".cmp-text")];
     bodies.forEach((body) => {
       const before = bodyFrag.childNodes.length;
-      [...body.children].forEach((child) => {
+      let inlineRun = [];
+      const flushInline = () => {
+        const p = document.createElement("p");
+        inlineRun.forEach((n) => p.appendChild(n.cloneNode(true)));
+        if (p.textContent.trim()) bodyFrag.appendChild(p);
+        inlineRun = [];
+      };
+      [...body.childNodes].forEach((child) => {
+        if (child.nodeType === 3) {
+          inlineRun.push(child);
+          return;
+        }
+        if (child.nodeType !== 1) return;
         const tag = child.tagName.toLowerCase();
+        if (INLINE_TAGS.includes(tag) && !child.querySelector(BLOCK_SEL)) {
+          inlineRun.push(child);
+          return;
+        }
+        flushInline();
         if (child.matches(BLOCK_SEL)) {
           appendBlock(child);
         } else if (tag !== "style" && tag !== "script") {
@@ -117,6 +135,7 @@ var CustomImportScript = (() => {
           }
         }
       });
+      flushInline();
       if (bodyFrag.childNodes.length === before && body.textContent.trim()) {
         const p = document.createElement("p");
         p.innerHTML = body.innerHTML.trim();
