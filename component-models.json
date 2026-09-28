@@ -657,22 +657,63 @@
         "value": "",
         "label": "Text",
         "valueType": "string",
-        "description": "Content card: title and description. The eyebrow and the CTA button come from the Topic and Link fields below."
+        "description": "Content card: title and description. The eyebrow and the CTA button come from the fields below."
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_eyebrow",
+        "label": "Eyebrow",
+        "value": "eyebrow-dynamic",
+        "description": "Dynamic shows the name of the Link's parent page and links to it. Static uses the Eyebrow text and Eyebrow link below.",
+        "options": [
+          {
+            "name": "Dynamic (parent page of Link)",
+            "value": "eyebrow-dynamic"
+          },
+          {
+            "name": "Static (authored)",
+            "value": "eyebrow-static"
+          }
+        ]
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "topic",
-        "label": "Topic",
+        "label": "Eyebrow text",
         "value": "",
-        "description": "Eyebrow text. The eyebrow links to the parent page of Link. Leave blank to show that parent page's name."
+        "description": "Leave blank to show the name of the Eyebrow link page.",
+        "condition": {
+          "!==": [
+            {
+              "var": "classes_eyebrow"
+            },
+            "eyebrow-dynamic"
+          ]
+        }
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "topicLink",
+        "label": "Eyebrow link",
+        "description": "Page the eyebrow links to. Leave blank to use the parent page of Link.",
+        "condition": {
+          "!==": [
+            {
+              "var": "classes_eyebrow"
+            },
+            "eyebrow-dynamic"
+          ]
+        }
       },
       {
         "component": "aem-content",
         "valueType": "string",
         "name": "ctaLink",
         "label": "Link",
-        "description": "Page the CTA button links to. The eyebrow links to this page's parent."
+        "description": "Page the CTA button links to. With a Dynamic eyebrow, the eyebrow links to this page's parent."
       },
       {
         "component": "text",
@@ -687,7 +728,7 @@
         "name": "classes",
         "label": "Presentation",
         "value": "",
-        "description": "Optional modifiers. Full width removes the rounded container; alignment controls which side the content card sits on; Dynamic eyebrow ignores Topic and shows the name of the Link's parent page.",
+        "description": "Optional modifiers. Full width removes the rounded container; alignment controls which side the content card sits on.",
         "options": [
           {
             "name": "Full width",
@@ -700,10 +741,6 @@
           {
             "name": "Align card right",
             "value": "align-right"
-          },
-          {
-            "name": "Dynamic eyebrow",
-            "value": "eyebrow-dynamic"
           }
         ]
       }

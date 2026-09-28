@@ -20,13 +20,13 @@
     "imageCount": 1
   },
   "capabilities": {
-    "variants": ["full-width", "align-left", "align-right", "eyebrow-dynamic"],
+    "variants": ["full-width", "align-left", "align-right", "eyebrow-dynamic", "eyebrow-static"],
     "eyebrow": {
       "modes": ["static", "dynamic"],
-      "static": "eyebrow text authored in the Topic field; links to the parent page of the authored Link (legacy content with the eyebrow and CTA as the first/last links of the Text field is still supported)",
-      "dynamic": "eyebrow-dynamic variant class (dynamicTopic); Topic ignored, eyebrow shows the name of the Link's parent page. A blank Topic in static mode also uses that name"
+      "static": "Eyebrow set to Static (eyebrow-static): Eyebrow text and Eyebrow link authored (topic / topicLink); blank text shows the linked page name, blank link falls back to the parent page of Link. Content without a saved mode is static when topic/topicLink is present",
+      "dynamic": "Eyebrow set to Dynamic (eyebrow-dynamic, default): eyebrow shows the name of the Link's parent page and links to it; topic fields ignored"
     },
-    "notes": "content rows: image, text, topic, link (ctaLink + ctaLinkText, default text \"Read more\"); one Link drives both the CTA (the link) and the eyebrow (its parent page); the topic and link rows are merged into the card at render time. Presentation and eyebrow mode are variant classes, not content rows. Single-image cards view only; carousel/facts views are not supported"
+    "notes": "content rows: image, text, topic, topicLink, link (ctaLink + ctaLinkText, default text \"Read more\"); eyebrow mode is the classes_eyebrow block option; the field rows are merged into the card at render time. Presentation and eyebrow mode are variant classes, not content rows. Single-image cards view only; carousel/facts views are not supported"
   },
   "reuseGuidance": {
     "suitableFor": [

@@ -2,27 +2,28 @@
 // content card (eyebrow, title, description, CTA).
 //
 // Authoring model (see _hero-featured.json):
-//   Row 1: image  (imageAlt collapses into <img alt>)
-//   Row 2: text   (richtext card: title, description)
-//   Row 3: topic  (optional eyebrow text)
-//   Row 4: link   (ctaLink page picker; ctaLinkText collapses into the link text)
-// Presentation options are variant classes (never content rows):
-//   full-width / align-left / align-right  -> layout (see CSS)
-//   eyebrow-dynamic                        -> dynamicTopic
+//   Row 1: image      (imageAlt collapses into <img alt>)
+//   Row 2: text       (richtext card: title, description)
+//   Row 3: topic      (static eyebrow text)
+//   Row 4: topicLink  (static eyebrow link)
+//   Row 5: link       (ctaLink page picker; ctaLinkText collapses into the link text)
+// Block options (classes group, never content rows):
+//   classes          full-width / align-left / align-right  -> layout (see CSS)
+//   classes_eyebrow  eyebrow-dynamic / eyebrow-static        -> eyebrow mode
 //
-// One authored link drives both links in the card:
-//   - CTA: links to ctaLink; text is ctaLinkText, or "Read more" when blank.
-//   - Eyebrow: links to the parent page of ctaLink.
-//       dynamicTopic (eyebrow-dynamic class): topic is ignored and the parent
-//         page name becomes the eyebrow text.
-//       Not dynamic, topic populated: topic rendered as authored.
-//       Not dynamic, topic blank: the parent page name is used instead.
-// The topic and link rows are merged into the card so the block keeps its
-// image + card DOM.
+// CTA: links to ctaLink; text is ctaLinkText, or "Read more" when blank.
+// Eyebrow:
+//   - Dynamic (default): links to the parent page of ctaLink and shows that
+//     parent page's name. Topic fields are ignored.
+//   - Static: shows the authored topic and links to the authored topicLink.
+//     A blank topic shows the name of the linked page; a blank topicLink falls
+//     back to the parent page of ctaLink.
+//   Content without a saved mode (e.g. imported) is static when a topic or
+//   topicLink is present, otherwise dynamic.
+// The field rows are merged into the card so the block keeps its image + card DOM.
 //
-// Legacy content (no topic/link rows; eyebrow and CTA authored inline as the
-// first and last links of the text cell) keeps both inline links; the eyebrow
-// text follows the same topic rules using the page the inline eyebrow links to.
+// Legacy content (no field rows; eyebrow and CTA authored inline as the first
+// and last links of the text cell) renders as authored.
 
 const DEFAULT_CTA_TEXT = 'Read more';
 
@@ -97,15 +98,24 @@ function place(card, button, inline, where) {
   else card[where](button);
 }
 
+// Split the rows after text into topic / topicLink / link. They are positional
+// when all three are present; otherwise (older content, or empty fields left
+// out) they are matched by content: the text-only row is the topic and link rows
+// are topicLink then link, a lone link row being the CTA link.
+function splitFieldRows(rows) {
+  if (rows.length === 3) return rows;
+  const hasLink = (row) => !!row.querySelector('a[href]');
+  const linkRows = rows.filter(hasLink);
+  const topicRow = rows.find((row) => !hasLink(row) && row.textContent.trim());
+  const [topicLinkRow, linkRow] = linkRows.length > 1 ? linkRows : [undefined, linkRows[0]];
+  return [topicRow, topicLinkRow, linkRow];
+}
+
 export default async function decorate(block) {
-  // Rows after text are matched by content (the link row holds the link), so
-  // content authored before these fields existed, or with empty fields left
-  // out, still resolves correctly.
   const [, textRow, ...fieldRows] = block.children;
   const card = textRow?.querySelector(':scope > div') || textRow;
   if (!card) return;
-  const linkRow = fieldRows.find((row) => row.querySelector('a[href]'));
-  const topicRow = fieldRows.find((row) => row !== linkRow);
+  const [topicRow, topicLinkRow, linkRow] = splitFieldRows(fieldRows);
 
   // Legacy inline eyebrow / CTA: leading and trailing single-link paragraphs.
   const first = card.firstElementChild;
@@ -113,36 +123,48 @@ export default async function decorate(block) {
   const inlineEyebrow = isLinkParagraph(first) && first.nextElementSibling ? first : null;
   const inlineCta = isLinkParagraph(last) && last !== inlineEyebrow ? last : null;
 
-  // Topic and link fields are edited from the block's properties panel, so their
-  // rows carry nothing else the card needs.
+  // The fields are edited from the block's properties panel, so their rows carry
+  // nothing else the card needs.
   const topic = topicRow?.textContent.trim() || '';
+  const topicAnchor = topicLinkRow?.querySelector('a[href]');
   const ctaAnchor = linkRow?.querySelector('a[href]');
   fieldRows.forEach((row) => row.remove());
 
-  const dynamicTopic = block.classList.contains('eyebrow-dynamic');
+  const has = (cls) => block.classList.contains(cls);
 
-  if (!ctaAnchor) {
-    // Legacy: keep the inline links; the eyebrow text follows the topic rules.
+  if (!ctaAnchor && !topicAnchor && !topic) {
+    // Legacy: keep the inline links as authored.
     const link = inlineEyebrow?.querySelector('a');
-    if (link && (dynamicTopic || !authoredText(link))) {
+    if (link && (has('eyebrow-dynamic') || !authoredText(link))) {
       link.textContent = await resolvePageTitle(link.getAttribute('href'));
     }
     return;
   }
 
-  // Eyebrow: a copy of the authored link (keeping target/rel) pointed at its parent.
-  const parent = parentHref(ctaAnchor.getAttribute('href'));
-  const eyebrowAnchor = parent ? ctaAnchor.cloneNode(false) : null;
+  const parent = ctaAnchor ? parentHref(ctaAnchor.getAttribute('href')) : null;
+  const isStatic = has('eyebrow-static')
+    || (!has('eyebrow-dynamic') && !!(topic || topicAnchor));
+
+  // Eyebrow link: the authored topicLink (static), otherwise a copy of the CTA
+  // link (keeping target/rel) pointed at its parent page.
+  let eyebrowAnchor = isStatic ? topicAnchor : null;
+  if (!eyebrowAnchor && parent) {
+    eyebrowAnchor = ctaAnchor.cloneNode(false);
+    eyebrowAnchor.href = parent;
+  }
 
   // CTA: the authored link.
-  ctaAnchor.textContent = authoredText(ctaAnchor) || DEFAULT_CTA_TEXT;
-  place(card, toButton(ctaAnchor), inlineCta, 'append');
+  if (ctaAnchor) {
+    ctaAnchor.textContent = authoredText(ctaAnchor) || DEFAULT_CTA_TEXT;
+    place(card, toButton(ctaAnchor), inlineCta, 'append');
+  }
 
   if (!eyebrowAnchor) {
-    inlineEyebrow?.remove(); // link at the site root: no parent page to point to
+    inlineEyebrow?.remove(); // nothing to link the eyebrow to
     return;
   }
-  eyebrowAnchor.href = parent;
-  eyebrowAnchor.textContent = !dynamicTopic && topic ? topic : await resolvePageTitle(parent);
+  eyebrowAnchor.textContent = isStatic && topic
+    ? topic
+    : await resolvePageTitle(eyebrowAnchor.getAttribute('href'));
   place(card, toButton(eyebrowAnchor), inlineEyebrow, 'prepend');
 }

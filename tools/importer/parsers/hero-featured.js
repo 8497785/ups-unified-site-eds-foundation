@@ -16,9 +16,10 @@
  *   Row 2: background image (field: image; imageAlt collapses into <img alt>)
  *   Row 3: rich text (field: text) — heading, description
  *   Row 4: eyebrow text (field: topic)
- *   Row 5: CTA (field: ctaLink; ctaLinkText collapses into the link text)
- * The block links the eyebrow to the parent page of ctaLink, so the source
- * eyebrow's own href is not imported.
+ *   Row 5: eyebrow link (field: topicLink)
+ *   Row 6: CTA (field: ctaLink; ctaLinkText collapses into the link text)
+ * The eyebrow is imported as authored (static). No eyebrow mode is emitted: the
+ * block treats content with a topic/topicLink and no saved mode as static.
  * Dynamic eyebrow and layout (full-width / align-left / align-right) are variant
  * classes, not content rows — so they are never emitted here.
  *
@@ -30,12 +31,13 @@
  *   .upspr-heroimage_msg > p               -> description paragraph
  *   .upspr-read-the-story a.btn            -> CTA button link ("Read more")
  *
- * Target table (matches hero-featured block model — 4 content rows):
+ * Target table (matches hero-featured block model — 5 content rows):
  *   | hero-featured |
  *   |---|
  *   | <!-- field:image --> <picture> ... </picture> |
  *   | <!-- field:text --> <h4>heading</h4><p>desc</p> |
  *   | <!-- field:topic --> tag |
+ *   | <!-- field:topicLink --> <a href="topic page">topic page</a> |
  *   | <!-- field:ctaLink --> <a href="story page">Read more</a> |
  */
 export default function parse(element, { document }) {
@@ -57,6 +59,17 @@ export default function parse(element, { document }) {
     topicFrag.appendChild(document.createTextNode(eyebrowText.textContent.trim()));
   }
 
+  // --- Row 4: Eyebrow link (field: topicLink) ---
+  const topicLinkFrag = document.createDocumentFragment();
+  topicLinkFrag.appendChild(document.createComment(' field:topicLink '));
+  const eyebrowLink = element.querySelector('a.upspr-eyebrow-link');
+  if (eyebrowLink) {
+    const cleanLink = document.createElement('a');
+    cleanLink.href = eyebrowLink.href;
+    cleanLink.textContent = eyebrowLink.href;
+    topicLinkFrag.appendChild(cleanLink);
+  }
+
   // --- Row 2: Rich text content (field: text) ---
   const textFrag = document.createDocumentFragment();
 
@@ -76,7 +89,7 @@ export default function parse(element, { document }) {
     textFrag.appendChild(p);
   }
 
-  // --- Row 4: CTA button (field: ctaLink + ctaLinkText) ---
+  // --- Row 5: CTA button (field: ctaLink + ctaLinkText) ---
   const ctaFrag = document.createDocumentFragment();
   ctaFrag.appendChild(document.createComment(' field:ctaLink '));
   const ctaLink = element.querySelector('.upspr-read-the-story a.btn, .upspr-read-the-story a');
@@ -99,11 +112,12 @@ export default function parse(element, { document }) {
   textCell.appendChild(document.createComment(' field:text '));
   textCell.appendChild(textFrag);
 
-  // Build cells matching the block model: image, text, topic, CTA
+  // Build cells matching the block model: image, text, topic, topic link, CTA
   const cells = [];
   cells.push([imgFrag]);
   cells.push([textCell]);
   cells.push([topicFrag]);
+  cells.push([topicLinkFrag]);
   cells.push([ctaFrag]);
 
   const block = WebImporter.Blocks.createBlock(document, { name: 'hero-featured', cells });

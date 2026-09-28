@@ -49,17 +49,22 @@ var CustomImportScript = (() => {
     if (picture) {
       imgFrag.appendChild(picture);
     }
-    const textFrag = document.createDocumentFragment();
+    const topicFrag = document.createDocumentFragment();
+    topicFrag.appendChild(document.createComment(" field:topic "));
+    const eyebrowText = element.querySelector(".upspr-eyebrow-text") || element.querySelector("a.upspr-eyebrow-link");
+    if (eyebrowText && eyebrowText.textContent.trim()) {
+      topicFrag.appendChild(document.createTextNode(eyebrowText.textContent.trim()));
+    }
+    const topicLinkFrag = document.createDocumentFragment();
+    topicLinkFrag.appendChild(document.createComment(" field:topicLink "));
     const eyebrowLink = element.querySelector("a.upspr-eyebrow-link");
     if (eyebrowLink) {
       const cleanLink = document.createElement("a");
       cleanLink.href = eyebrowLink.href;
-      const eyebrowText = element.querySelector(".upspr-eyebrow-text");
-      cleanLink.textContent = eyebrowText ? eyebrowText.textContent.trim() : eyebrowLink.textContent.trim();
-      const p = document.createElement("p");
-      p.appendChild(cleanLink);
-      textFrag.appendChild(p);
+      cleanLink.textContent = eyebrowLink.href;
+      topicLinkFrag.appendChild(cleanLink);
     }
+    const textFrag = document.createDocumentFragment();
     const heading = element.querySelector("h4.upspr-heroimage_msg--title, h3.upspr-heroimage_msg--title, h2.upspr-heroimage_msg--title");
     if (heading) {
       const h = document.createElement(heading.tagName.toLowerCase());
@@ -72,6 +77,8 @@ var CustomImportScript = (() => {
       p.textContent = description.textContent.trim();
       textFrag.appendChild(p);
     }
+    const ctaFrag = document.createDocumentFragment();
+    ctaFrag.appendChild(document.createComment(" field:ctaLink "));
     const ctaLink = element.querySelector(".upspr-read-the-story a.btn, .upspr-read-the-story a");
     if (ctaLink) {
       const cleanCta = document.createElement("a");
@@ -83,9 +90,7 @@ var CustomImportScript = (() => {
         }
       });
       cleanCta.textContent = ctaText.trim() || ctaLink.textContent.trim();
-      const p = document.createElement("p");
-      p.appendChild(cleanCta);
-      textFrag.appendChild(p);
+      ctaFrag.appendChild(cleanCta);
     }
     const textCell = document.createDocumentFragment();
     textCell.appendChild(document.createComment(" field:text "));
@@ -93,6 +98,9 @@ var CustomImportScript = (() => {
     const cells = [];
     cells.push([imgFrag]);
     cells.push([textCell]);
+    cells.push([topicFrag]);
+    cells.push([topicLinkFrag]);
+    cells.push([ctaFrag]);
     const block = WebImporter.Blocks.createBlock(document, { name: "hero-featured", cells });
     element.replaceWith(block);
   }
@@ -291,6 +299,11 @@ var CustomImportScript = (() => {
       WebImporter.DOMUtils.remove(element, ["#uspsr-navContainer"]);
       WebImporter.DOMUtils.remove(element, ["noscript", "iframe", "link"]);
       WebImporter.DOMUtils.remove(element, ["script"]);
+      element.querySelectorAll('a[href*="web.archive.org/web/"]').forEach((a) => {
+        const href = a.getAttribute("href") || "";
+        const m = href.match(/web\.archive\.org\/web\/[^/]+\/(https?:\/\/.+)$/);
+        if (m && m[1]) a.setAttribute("href", m[1]);
+      });
       element.querySelectorAll("[data-link-name]").forEach((el) => {
         el.removeAttribute("data-link-name");
       });
