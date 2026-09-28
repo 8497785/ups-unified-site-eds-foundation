@@ -40,14 +40,14 @@
           "value": "",
           "label": "Text",
           "valueType": "string",
-          "description": "Content card: eyebrow (first link), title, description, and CTA. When 'Dynamic eyebrow' is selected under Presentation, the eyebrow is resolved from the page metadata instead of the first link here."
+          "description": "Content card: eyebrow (first link: its text is the topic, its URL the topic link), title, description, and CTA. If the topic text is left blank, or 'Dynamic eyebrow' is selected under Presentation, the parent page name is shown instead."
         },
         {
           "component": "multiselect",
           "name": "classes",
           "label": "Presentation",
           "value": "",
-          "description": "Optional modifiers. Full width removes the rounded container; alignment controls which side the content card sits on; Dynamic eyebrow resolves the topic from the page metadata.",
+          "description": "Optional modifiers. Full width removes the rounded container; alignment controls which side the content card sits on; Dynamic eyebrow ignores the topic and shows the parent page name.",
           "options": [
             { "name": "Full width", "value": "full-width" },
             { "name": "Align card left", "value": "align-left" },
