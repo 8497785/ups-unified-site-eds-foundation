@@ -370,6 +370,12 @@ main .section.highlight-brown a {
   color: #fff;
 }
 
+/* Links inside text component copy (default content) are underlined.
+   Button-styled links keep their own treatment. */
+main .default-content-wrapper a:any-link:not(.button) {
+  text-decoration: underline;
+}
+
 /* Spacing toggles (Styles tab) — default keeps both margins. Placed AFTER the
    highlight/light rules (which use padding for their spacing) and matching
    their specificity, so the toggles win regardless of other section styles and
