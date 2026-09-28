@@ -132,7 +132,9 @@ const olderLayout = pages.filter((p) => p.mig && /Older/.test(p.mig.layout)).len
   ['', ''],
   ['Pages with video', pages.filter((p) => p.orig && p.orig.video).length],
   ['Pages with tables', pages.filter((p) => p.orig && p.orig.tables).length],
-  ['Pages on the older migrated layout', `${olderLayout} of ${pages.length} — preview still serves the two-column layout, not the Sep 10 statements package (column sections). Content is intact; not scored.`],
+  ['Pages on the older migrated layout', olderLayout
+    ? `${olderLayout} of ${pages.length} — preview still serves the older two-column layout instead of the current column-section layout. Content is intact; not scored.`
+    : `0 of ${pages.length} — all pages use the current column-section layout.`],
   ['', ''],
   ['Critique type', 'Content & structure (styling not scored — the project has no design-token file for the styling comparison).'],
   ['What was compared', 'Original article area on about.ups.com vs the delivered migrated page: title/headings, body paragraphs, bullet lists, every sentence of body text, links, images, tables, video, breadcrumb, article header, social share, and the category link target.'],
