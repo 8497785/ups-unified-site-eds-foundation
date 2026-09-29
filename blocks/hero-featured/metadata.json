@@ -1,7 +1,7 @@
 {
   "variantName": "hero-featured",
   "baseBlock": "hero",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "created": "2026-05-16T16:18:00.000Z",
   "sourceContext": {
     "originUrl": "https://about.ups.com/us/en/home.html",
@@ -19,11 +19,23 @@
     "buttonCount": 1,
     "imageCount": 1
   },
+  "capabilities": {
+    "variants": ["rounded-corners", "align-left", "align-right", "eyebrow-dynamic", "eyebrow-static", "eyebrow-none"],
+    "eyebrow": {
+      "modes": ["static", "dynamic", "none"],
+      "static": "Eyebrow set to Static (eyebrow-static): Eyebrow text and Eyebrow link authored (topic / topicLink); blank text shows the linked page name, blank link falls back to the parent page of Link. Content without a saved mode is static when topic/topicLink is present",
+      "dynamic": "Eyebrow set to Dynamic (eyebrow-dynamic, default): eyebrow shows the name of the Link's parent page and links to it; topic fields ignored",
+      "none": "Eyebrow set to None (eyebrow-none): no eyebrow is rendered, including a legacy inline eyebrow in the Text field"
+    },
+    "notes": "content rows: image, text, topic, topicLink, link (ctaLink + ctaLinkText; CTA renders only when both are authored, no default text); eyebrow mode is the classes_eyebrow block option; the field rows are merged into the card at render time. Presentation and eyebrow mode are variant classes, not content rows. Single-image cards view only; carousel/facts views are not supported"
+  },
   "reuseGuidance": {
     "suitableFor": [
       "homepage featured story promotions",
       "article highlight sections with background image",
-      "promotional banners with overlay content card"
+      "promotional banners with overlay content card",
+      "featured banners with rounded corners (rounded-corners variant)",
+      "left- or right-aligned overlay content cards (align-left / align-right)"
     ],
     "notSuitableFor": [
       "hero sections without background images",
@@ -32,8 +44,8 @@
     ]
   },
   "usage": {
-    "pagesUsing": ["/us/en/home"],
-    "reuseCount": 1,
-    "lastUsed": "2026-05-16T16:18:00.000Z"
+    "pagesUsing": ["/us/en/home", "/us/en/newsroom/negotiations"],
+    "reuseCount": 2,
+    "lastUsed": "2026-09-16T00:00:00.000Z"
   }
 }

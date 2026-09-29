@@ -11,9 +11,17 @@
  * Extracts a full-width background image with overlaid content card
  * containing category tag link, heading, description, and CTA button.
  *
- * UE Model fields:
- *   - image (reference) — background image (imageAlt collapsed)
- *   - text (richtext) — category tag + heading + description + CTA
+ * Block table rows:
+ *   Row 1: block name (+ optional variants)
+ *   Row 2: background image (field: image; imageAlt collapses into <img alt>)
+ *   Row 3: rich text (field: text) — heading, description
+ *   Row 4: eyebrow text (field: topic)
+ *   Row 5: eyebrow link (field: topicLink)
+ *   Row 6: CTA (field: ctaLink; ctaLinkText collapses into the link text)
+ * The eyebrow is imported as authored (static). No eyebrow mode is emitted: the
+ * block treats content with a topic/topicLink and no saved mode as static.
+ * Dynamic eyebrow and layout (full-width / align-left / align-right) are variant
+ * classes, not content rows — so they are never emitted here.
  *
  * Validated selectors against source HTML:
  *   picture                                  -> <picture> with responsive sources and img
@@ -23,11 +31,14 @@
  *   .upspr-heroimage_msg > p               -> description paragraph
  *   .upspr-read-the-story a.btn            -> CTA button link ("Read more")
  *
- * Target table (from block library):
+ * Target table (matches hero-featured block model — 5 content rows):
  *   | hero-featured |
  *   |---|
  *   | <!-- field:image --> <picture> ... </picture> |
- *   | <!-- field:text --> <p><a>tag</a></p><h4>heading</h4><p>desc</p><p><a>CTA</a></p> |
+ *   | <!-- field:text --> <h4>heading</h4><p>desc</p> |
+ *   | <!-- field:topic --> tag |
+ *   | <!-- field:topicLink --> <a href="topic page">topic page</a> |
+ *   | <!-- field:ctaLink --> <a href="story page">CTA text</a> |
  */
 export default function parse(element, { document }) {
   // --- Row 1: Background image (field: image) ---
@@ -39,22 +50,28 @@ export default function parse(element, { document }) {
     imgFrag.appendChild(picture);
   }
 
-  // --- Row 2: Rich text content (field: text) ---
-  const textFrag = document.createDocumentFragment();
+  // --- Row 3: Category tag / eyebrow text (field: topic) ---
+  const topicFrag = document.createDocumentFragment();
+  topicFrag.appendChild(document.createComment(' field:topic '));
+  const eyebrowText = element.querySelector('.upspr-eyebrow-text')
+    || element.querySelector('a.upspr-eyebrow-link');
+  if (eyebrowText && eyebrowText.textContent.trim()) {
+    topicFrag.appendChild(document.createTextNode(eyebrowText.textContent.trim()));
+  }
 
-  // Category tag (eyebrow link)
+  // --- Row 4: Eyebrow link (field: topicLink) ---
+  const topicLinkFrag = document.createDocumentFragment();
+  topicLinkFrag.appendChild(document.createComment(' field:topicLink '));
   const eyebrowLink = element.querySelector('a.upspr-eyebrow-link');
   if (eyebrowLink) {
     const cleanLink = document.createElement('a');
     cleanLink.href = eyebrowLink.href;
-    const eyebrowText = element.querySelector('.upspr-eyebrow-text');
-    cleanLink.textContent = eyebrowText
-      ? eyebrowText.textContent.trim()
-      : eyebrowLink.textContent.trim();
-    const p = document.createElement('p');
-    p.appendChild(cleanLink);
-    textFrag.appendChild(p);
+    cleanLink.textContent = eyebrowLink.href;
+    topicLinkFrag.appendChild(cleanLink);
   }
+
+  // --- Row 2: Rich text content (field: text) ---
+  const textFrag = document.createDocumentFragment();
 
   // Heading
   const heading = element.querySelector('h4.upspr-heroimage_msg--title, h3.upspr-heroimage_msg--title, h2.upspr-heroimage_msg--title');
@@ -72,7 +89,9 @@ export default function parse(element, { document }) {
     textFrag.appendChild(p);
   }
 
-  // CTA button link
+  // --- Row 5: CTA button (field: ctaLink + ctaLinkText) ---
+  const ctaFrag = document.createDocumentFragment();
+  ctaFrag.appendChild(document.createComment(' field:ctaLink '));
   const ctaLink = element.querySelector('.upspr-read-the-story a.btn, .upspr-read-the-story a');
   if (ctaLink) {
     const cleanCta = document.createElement('a');
@@ -85,9 +104,7 @@ export default function parse(element, { document }) {
       }
     });
     cleanCta.textContent = ctaText.trim() || ctaLink.textContent.trim();
-    const p = document.createElement('p');
-    p.appendChild(cleanCta);
-    textFrag.appendChild(p);
+    ctaFrag.appendChild(cleanCta);
   }
 
   // Wrap text content with field hint
@@ -95,10 +112,13 @@ export default function parse(element, { document }) {
   textCell.appendChild(document.createComment(' field:text '));
   textCell.appendChild(textFrag);
 
-  // Build cells matching block library: Row 1 = image, Row 2 = text
+  // Build cells matching the block model: image, text, topic, topic link, CTA
   const cells = [];
   cells.push([imgFrag]);
   cells.push([textCell]);
+  cells.push([topicFrag]);
+  cells.push([topicLinkFrag]);
+  cells.push([ctaFrag]);
 
   const block = WebImporter.Blocks.createBlock(document, { name: 'hero-featured', cells });
   element.replaceWith(block);

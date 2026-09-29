@@ -1,9 +1,6 @@
 /* stylelint-disable no-descending-specificity */
-.hero-featured-container .hero-featured-wrapper {
-  max-width: unset;
-  padding: 0;
-}
 
+/* The hero sits in the normal section content width (main > .section > div). */
 .hero-featured-container {
   margin: 0;
 }
@@ -14,8 +11,6 @@
   display: flex;
   align-items: stretch;
   overflow: hidden;
-  border-radius: var(--border-radius-card);
-  margin: 0 var(--spacing-md);
 }
 
 .hero-featured > div:first-child {
@@ -49,9 +44,12 @@
   padding: var(--spacing-lg);
 }
 
+/* Card text always reads left; align-left/right only move the card (and must
+   not pick up the global .align-* text-align utilities). */
 .hero-featured > div:last-child > div {
   max-width: 420px;
   padding: var(--spacing-lg);
+  text-align: left;
   background-color: var(--background-color);
   border-radius: var(--border-radius-card);
 }
@@ -83,7 +81,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: var(--body-font-size-xs);
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -114,22 +112,39 @@
   color: var(--text-color);
 }
 
-/* CTA button */
+/* CTA button — source .btn.btn-primary: gold, dark text, no border */
 .hero-featured .button-container:last-child a.button {
-  background-color: var(--dark-color);
-  color: var(--background-color);
+  background-color: var(--ups-gold);
+  color: var(--btn-text-dark);
+  border: none;
   padding: 10px 24px;
   font-size: var(--body-font-size-s);
 }
 
-.hero-featured .button-container:last-child a.button:hover {
-  background-color: var(--text-color);
+.hero-featured .button-container:last-child a.button:hover,
+.hero-featured .button-container:last-child a.button:focus {
+  background-color: var(--ups-gold-hover);
+  color: var(--btn-text-dark);
+}
+
+/* Rounded-corners option — square corners by default */
+.hero-featured.rounded-corners {
+  border-radius: var(--border-radius-card);
+}
+
+/* Card alignment (maps alignCard). The card sits in a flex-column overlay;
+   align-items controls its horizontal side. Default (no modifier) = left. */
+.hero-featured.align-left > div:last-child {
+  align-items: flex-start;
+}
+
+.hero-featured.align-right > div:last-child {
+  align-items: flex-end;
 }
 
 @media (width >= 992px) {
   .hero-featured {
     min-height: 520px;
-    margin: 0 var(--spacing-lg);
   }
 
   .hero-featured > div:last-child {
