@@ -1,15 +1,16 @@
-import { moveInstrumentation } from '../../scripts/scripts.js';
 import { loadQueryIndex, normalizePath } from '../../scripts/query-index.js';
 
 // Navigation Tabs — a row of links for navigating between related pages.
 //
-// Authoring model (see _navigation-tabs.json):
-//   Block rows (one cell each):
-//     tabsSource      "static" (default) | "dynamic"
-//     navigationRoot  page picker (Dynamic only)
-//   Item rows (Navigation Tab, three cells): label | link | target (true/false)
+// Authoring model (see _navigation-tabs.json), one row per field:
+//   tabsSource      "static" (default) | "dynamic"
+//   navigationRoot  page picker (Dynamic only)
+//   navigationTab   composite multi-field (Static only), each entry:
+//                     label | link | target (true/false)
+//   The multi-field renders its entries in one cell, separated by <hr> (or as a
+//   <ul> of <li> when an entry is a single element).
 //
-// Static: one tab per Navigation Tab item.
+// Static: one tab per navigationTab entry that has both a label and a link.
 // Dynamic: one tab per direct child page of Navigation Root, read from the
 //   shared query index. Label = the page title (without a " | site name"
 //   suffix), else the page name; target = current window. The index is served
@@ -65,36 +66,60 @@ async function childPages(root) {
     }));
 }
 
-export default async function decorate(block) {
-  const rows = [...block.children];
-  const itemRows = rows.filter((row) => row.children.length > 1);
-  const configRows = rows.filter((row) => row.children.length <= 1);
+// Split a multi-field cell into entries: <hr>-separated groups of elements, or
+// the <li> items of a list.
+function multiFieldEntries(cell) {
+  if (!cell) return [];
+  const list = cell.querySelector(':scope > ul');
+  if (list && !cell.querySelector(':scope > hr')) {
+    return [...list.children].map((li) => [li]);
+  }
+  const entries = [[]];
+  [...cell.children].forEach((el) => {
+    if (el.tagName === 'HR') entries.push([]);
+    else entries[entries.length - 1].push(el);
+  });
+  return entries.filter((entry) => entry.length);
+}
 
-  const sourceRow = configRows.find((row) => /^(static|dynamic)$/i.test(row.textContent.trim()));
-  const rootRow = configRows.find((row) => row.querySelector('a[href]'));
+const isBoolean = (text) => /^(true|false)$/i.test(text);
+
+// One navigationTab entry -> { label, href, newWindow } (null when incomplete).
+function staticTab(elements) {
+  const link = elements
+    .map((el) => (el.matches('a[href]') ? el : el.querySelector('a[href]')))
+    .find(Boolean);
+  const texts = elements
+    .filter((el) => !el.matches('a') && !el.querySelector('a'))
+    .map((el) => el.textContent.trim())
+    .filter(Boolean);
+  const label = texts.find((text) => !isBoolean(text));
+  const href = link?.getAttribute('href');
+  if (!label || !href) return null; // both are required
+  return { label, href, newWindow: texts.some((text) => text.toLowerCase() === 'true') };
+}
+
+// Rows follow the model order (tabsSource, navigationRoot, navigationTab); fall
+// back to matching by content when empty fields are left out.
+function splitRows(rows) {
+  if (rows.length === 3) return rows;
+  const sourceRow = rows.find((row) => /^(static|dynamic)$/i.test(row.textContent.trim()));
+  const rest = rows.filter((row) => row !== sourceRow);
+  const tabsRow = rest.find((row) => row.querySelector('hr, ul'));
+  const rootRow = rest.find((row) => row !== tabsRow && row.querySelector('a[href]'));
+  return [sourceRow, rootRow, tabsRow];
+}
+
+export default async function decorate(block) {
+  const [sourceRow, rootRow, tabsRow] = splitRows([...block.children]);
   const dynamic = sourceRow?.textContent.trim().toLowerCase() === 'dynamic';
+
+  const tabs = dynamic
+    ? await childPages(rootRow?.querySelector('a[href]')?.getAttribute('href'))
+    : multiFieldEntries(tabsRow?.firstElementChild || tabsRow).map(staticTab).filter(Boolean);
 
   const ul = document.createElement('ul');
   ul.className = 'navigation-tabs-list';
-
-  if (dynamic) {
-    const tabs = await childPages(rootRow?.querySelector('a[href]').getAttribute('href'));
-    tabs.forEach((tab) => ul.append(buildTab(tab)));
-  } else {
-    itemRows.forEach((row) => {
-      const [labelCell, linkCell, targetCell] = row.children;
-      const label = labelCell?.textContent.trim();
-      const href = linkCell?.querySelector('a[href]')?.getAttribute('href');
-      if (!label || !href) return; // both are required
-      const li = buildTab({
-        label,
-        href,
-        newWindow: /^(true|yes|on)$/i.test(targetCell?.textContent.trim() || ''),
-      });
-      moveInstrumentation(row, li);
-      ul.append(li);
-    });
-  }
-
+  tabs.forEach((tab) => ul.append(buildTab(tab)));
   block.replaceChildren(ul);
 }
