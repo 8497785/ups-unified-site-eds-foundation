@@ -94,7 +94,8 @@
       "related-articles",
       "table",
       "video",
-      "three-column-teaser"
+      "three-column-teaser",
+      "navigation-tabs"
     ]
   },
   {
@@ -174,6 +175,12 @@
     "id": "leadership-list-cf",
     "components": [
       "leadership-list-item"
+    ]
+  },
+  {
+    "id": "navigation-tabs",
+    "components": [
+      "navigation-tab"
     ]
   },
   {

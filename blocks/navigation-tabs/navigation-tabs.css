@@ -1,0 +1,81 @@
+/* Navigation Tabs — source .upspr-navigation-tabs. Width and side padding come
+   from the section content wrapper (main > .section > div). */
+.navigation-tabs .navigation-tabs-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px 20px;
+  margin: 0;
+  padding: 0 0 53px;
+  list-style: none;
+}
+
+/* Up to three 360px tabs per row on desktop (source .link-wrapper) */
+.navigation-tabs .navigation-tabs-item {
+  flex: 1 1 360px;
+  max-width: 360px;
+  box-shadow: 0 4px 24px rgb(0 0 0 / 16%);
+}
+
+.navigation-tabs .navigation-tabs-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  min-height: 83px; /* source height: the icon's 43px line box + 40px padding */
+  box-sizing: border-box;
+  padding: 20px 40px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 4px 0 rgb(255 209 0);
+  font-family: var(--body-font-family);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: left;
+  color: #242424;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.navigation-tabs .navigation-tabs-link:hover,
+.navigation-tabs .navigation-tabs-link:focus-visible {
+  color: #242424;
+  text-decoration: none;
+}
+
+.navigation-tabs .navigation-tabs-link span {
+  display: block;
+}
+
+/* Circled arrow — two-tone UPS blue, slides right on hover */
+.navigation-tabs .upspr-icon-arrowright-circle {
+  flex-shrink: 0;
+  margin-left: auto;
+  font-size: 33px;
+  background: radial-gradient(#0662bb 50%, rgb(6 98 187 / 60%) 50%);
+  background-clip: text;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.5s;
+}
+
+.navigation-tabs .navigation-tabs-link:hover .upspr-icon-arrowright-circle,
+.navigation-tabs .navigation-tabs-link:focus-visible .upspr-icon-arrowright-circle {
+  transform: translateX(10px);
+}
+
+/* Tablet and mobile: tabs stack full width */
+@media (width < 992px) {
+  .navigation-tabs .navigation-tabs-item {
+    flex-basis: 100%;
+    max-width: none;
+  }
+}
+
+@media (width < 768px) {
+  .navigation-tabs .navigation-tabs-list {
+    padding-bottom: 33px;
+  }
+}
