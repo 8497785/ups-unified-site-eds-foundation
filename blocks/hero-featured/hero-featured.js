@@ -52,8 +52,14 @@ function nameFromPath(href) {
     .join(' ');
 }
 
-// Resolve a page's name (its title). Falls back to a name built from its path
-// when the page can't be fetched (missing, cross-origin, offline).
+// "Negotiations | About UPS" -> "Negotiations": drop a trailing " | site name".
+function stripSiteSuffix(title) {
+  return title.replace(/\s+\|\s+[^|]*$/, '').trim() || title.trim();
+}
+
+// Resolve a page's name (its title, without a site-name suffix). Falls back to a
+// name built from its path when the page can't be fetched (missing,
+// cross-origin, offline).
 async function resolvePageTitle(href) {
   try {
     const resp = await fetch(href);
@@ -61,7 +67,7 @@ async function resolvePageTitle(href) {
       const doc = new DOMParser().parseFromString(await resp.text(), 'text/html');
       const title = doc.querySelector('meta[property="og:title"]')?.content
         || doc.querySelector('title')?.textContent;
-      if (title?.trim()) return title.trim();
+      if (title?.trim()) return stripSiteSuffix(title);
     }
   } catch {
     // network/CORS error: use the fallback name
