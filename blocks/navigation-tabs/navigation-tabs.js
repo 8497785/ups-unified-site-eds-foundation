@@ -104,8 +104,12 @@ async function childPages(root) {
 
 export default async function decorate(block) {
   const rows = [...block.children];
-  const itemRows = rows.filter((row) => row.children.length > 1);
-  const configRows = rows.filter((row) => row.children.length <= 1);
+  // Navigation Tab items have three cells; in the Universal Editor they are also
+  // marked with their model, which catches a new item whose empty cells are
+  // left out.
+  const isItem = (row) => row.children.length > 1 || row.dataset.aueModel === 'navigation-tab';
+  const itemRows = rows.filter(isItem);
+  const configRows = rows.filter((row) => !isItem(row));
 
   const sourceRow = configRows.find((row) => /^(static|dynamic)$/i.test(row.textContent.trim()));
   const rootRow = configRows.find((row) => row.querySelector('a[href]'));
@@ -124,12 +128,17 @@ export default async function decorate(block) {
       const [labelCell, linkCell, targetCell] = row.children;
       const label = labelCell?.textContent.trim();
       const href = linkCell?.querySelector('a[href]')?.getAttribute('href');
-      if (!label || !href) return; // both are required
+      const complete = label && href;
+      // Both are required: incomplete tabs are skipped on the site, but shown as
+      // a placeholder in the Universal Editor (instrumented rows) so a tab just
+      // added with + is visible and selectable.
+      if (!complete && !row.hasAttribute('data-aue-resource')) return;
       const li = buildTab({
-        label,
-        href,
+        label: label || 'New tab: add a label and link',
+        href: href || '#',
         newWindow: /^(true|yes|on)$/i.test(targetCell?.textContent.trim() || ''),
       });
+      if (!complete) li.classList.add('navigation-tabs-item-incomplete');
       moveInstrumentation(row, li);
       ul.append(li);
     });

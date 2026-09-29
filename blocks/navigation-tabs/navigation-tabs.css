@@ -66,6 +66,14 @@
   transform: translateX(10px);
 }
 
+/* Universal Editor only: a tab missing its label or link (e.g. just added) */
+.navigation-tabs .navigation-tabs-item-incomplete .navigation-tabs-link {
+  outline: 2px dashed #6e6e6e;
+  outline-offset: -2px;
+  color: #6e6e6e;
+  font-style: italic;
+}
+
 /* Tablet and mobile: tabs stack full width */
 @media (width < 992px) {
   .navigation-tabs .navigation-tabs-item {
