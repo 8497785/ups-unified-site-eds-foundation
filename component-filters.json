@@ -178,6 +178,12 @@
     ]
   },
   {
+    "id": "navigation-tabs",
+    "components": [
+      "navigation-tab"
+    ]
+  },
+  {
     "id": "table",
     "components": [],
     "rte": {
