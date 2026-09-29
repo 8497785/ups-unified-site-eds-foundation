@@ -10,11 +10,15 @@ import { loadQueryIndex, normalizePath } from '../../scripts/query-index.js';
 //   Item rows (Navigation Tab, three cells): label | link | target (true/false)
 //
 // Static: one tab per Navigation Tab item.
-// Dynamic: one tab per direct child page of Navigation Root, read from the
-//   shared query index. Label = the page title (without a " | site name"
-//   suffix), else the page name; target = current window. The index is served
-//   on the delivery tier only, so Dynamic tabs are empty in the author
-//   environment.
+// Dynamic: one tab per direct child page of Navigation Root; target = current
+//   window.
+//   - AEM author / Universal Editor: listed from AEM (<root>.2.json), labelled
+//     pageTitle, else navTitle, else the page title, else the page name.
+//   - Delivery (*.aem.page / *.aem.live), or when AEM is not reachable: read
+//     from the shared query index, labelled with the page title (without a
+//     " | site name" suffix), else the page name. The index only holds
+//     published pages (paths.json: /us/en), so e.g. language-masters roots
+//     have no tabs there.
 //
 // Each tab renders as <a href target rel?><span>label</span><i icon></a>.
 
@@ -50,6 +54,39 @@ function buildTab({ label, href, newWindow }) {
   return li;
 }
 
+// The query index is only served on the EDS delivery tiers (same rule as
+// scripts/config.js); everywhere else (AEM author / Universal Editor) child pages
+// are listed straight from AEM.
+const isDeliveryTier = () => /\.aem\.(page|live)$/.test(window.location.hostname);
+
+// Direct child pages of a /content/... root from AEM author (<root>.2.json holds
+// each child page and its jcr:content). Label: pageTitle, else navTitle, else
+// the page title, else the page name. Keeps AEM's page order. Empty on any
+// failure, e.g. when AEM is not reachable from this origin.
+async function authorChildPages(root) {
+  const base = (root || '').trim().replace(/\.html$/, '').replace(/\/$/, '');
+  if (!base.startsWith('/content/')) return [];
+  try {
+    const resp = await fetch(`${base}.2.json`, { credentials: 'same-origin' });
+    if (!resp.ok) return [];
+    const json = await resp.json();
+    return Object.entries(json)
+      .filter(([, node]) => node && node['jcr:primaryType'] === 'cq:Page')
+      .map(([name, node]) => {
+        const content = node['jcr:content'] || {};
+        const title = [content.pageTitle, content.navTitle, content['jcr:title']]
+          .find((value) => typeof value === 'string' && value.trim());
+        return {
+          label: title ? title.trim() : nameFromPath(name),
+          href: `${base}/${name}.html`,
+          newWindow: false,
+        };
+      });
+  } catch {
+    return [];
+  }
+}
+
 // Direct child pages of root (a delivery or /content/... path) from the index.
 async function childPages(root) {
   const base = normalizePath(root);
@@ -78,7 +115,9 @@ export default async function decorate(block) {
   ul.className = 'navigation-tabs-list';
 
   if (dynamic) {
-    const tabs = await childPages(rootRow?.querySelector('a[href]').getAttribute('href'));
+    const root = rootRow?.querySelector('a[href]').getAttribute('href');
+    let tabs = isDeliveryTier() ? [] : await authorChildPages(root);
+    if (!tabs.length) tabs = await childPages(root);
     tabs.forEach((tab) => ul.append(buildTab(tab)));
   } else {
     itemRows.forEach((row) => {
