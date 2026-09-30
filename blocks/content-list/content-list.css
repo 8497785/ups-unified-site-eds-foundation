@@ -64,10 +64,10 @@
   transform: scale(1.03);
 }
 
-/* Details — source: .upspr-content-tile__details (padding 24px 24px 40px). */
+/* Details — source: .upspr-content-tile__details. */
 .content-list-card-body {
   margin: 0;
-  padding: 24px 24px 40px;
+  padding: 24px 40px 40px;
   background-color: #fff;
   text-align: left;
   color: #242424;
