@@ -18,7 +18,8 @@
         "list": ["bullet_list", "ordered_list"],
         "insert": ["link", "unlink", "image", "special_characters"],
         "sr_script": ["superscript", "subscript"],
-        "editor": ["removeformat", "clean_unsupported_tags", "paste_text", "fullscreen", "find_and_replace"]
+        "editor": ["removeformat", "clean_unsupported_tags", "paste_text", "fullscreen", "find_and_replace"],
+        "sections": ["blocks", "format", "alignment", "indentation", "direction", "sr_script", "list", "insert", "editor"]
       },
       "actions": {
         "image": {

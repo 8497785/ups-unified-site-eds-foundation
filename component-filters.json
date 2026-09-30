@@ -62,6 +62,17 @@
           "paste_text",
           "fullscreen",
           "find_and_replace"
+        ],
+        "sections": [
+          "blocks",
+          "format",
+          "alignment",
+          "indentation",
+          "direction",
+          "sr_script",
+          "list",
+          "insert",
+          "editor"
         ]
       },
       "actions": {
