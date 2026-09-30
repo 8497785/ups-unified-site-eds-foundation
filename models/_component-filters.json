@@ -10,7 +10,7 @@
     "id": "text",
     "rte": {
       "toolbar": {
-        "format": ["bold", "italic", "underline", "strike"],
+        "format": ["bold", "italic", "underline", "strike", "code_inline", "text_color"],
         "alignment": ["left", "center", "right", "justify"],
         "direction": ["rtl", "ltr"],
         "indentation": ["indent", "outdent"],
@@ -18,7 +18,7 @@
         "list": ["bullet_list", "ordered_list"],
         "insert": ["link", "unlink", "image", "special_characters"],
         "sr_script": ["superscript", "subscript"],
-        "editor": ["removeformat", "paste_text"]
+        "editor": ["removeformat", "clean_unsupported_tags", "paste_text", "fullscreen", "find_and_replace"]
       },
       "actions": {
         "image": {

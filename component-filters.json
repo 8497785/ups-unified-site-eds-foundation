@@ -14,7 +14,9 @@
           "bold",
           "italic",
           "underline",
-          "strike"
+          "strike",
+          "code_inline",
+          "text_color"
         ],
         "alignment": [
           "left",
@@ -56,7 +58,10 @@
         ],
         "editor": [
           "removeformat",
-          "paste_text"
+          "clean_unsupported_tags",
+          "paste_text",
+          "fullscreen",
+          "find_and_replace"
         ]
       },
       "actions": {
