@@ -63,6 +63,9 @@
           "fullscreen",
           "find_and_replace"
         ],
+        "advanced": [
+          "classes"
+        ],
         "sections": [
           "blocks",
           "format",
@@ -72,13 +75,27 @@
           "sr_script",
           "list",
           "insert",
-          "editor"
+          "editor",
+          "advanced"
         ]
       },
       "actions": {
         "image": {
           "wrapInPicture": false,
           "label": "Insert Image"
+        },
+        "classes": {
+          "label": "Add Custom Class",
+          "options": [
+            {
+              "value": "rte-indent",
+              "label": "Indent"
+            },
+            {
+              "value": "rte-outdent",
+              "label": "Outdent"
+            }
+          ]
         }
       }
     }
