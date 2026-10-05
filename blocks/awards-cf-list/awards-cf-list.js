@@ -4,15 +4,15 @@
  * persisted query `upsstories/award-list`, using the source site's markup
  * (.upspr-awards-recognition__list > .upspr-recognition-list > items).
  *
- * One optional field: the awards folder. A year folder lists that year; empty
- * lists every award under the awards root. The query filters `_path` with
- * STARTS_WITH, so the folder always gets a trailing slash (otherwise ".../2023"
- * would also match a sibling such as ".../2023-archive").
+ * One field: the awards folder, picked by the author (the picker is limited to
+ * the awards DAM folder). The awards folder lists every award; a year folder
+ * lists that year. The query filters `_path` with STARTS_WITH, so the folder
+ * always gets a trailing slash (otherwise ".../2023" would also match a
+ * sibling such as ".../2023-archive").
  */
 import { getAwardsGraphQLUrl } from '../../scripts/config.js';
 
 const QUERY = 'award-list';
-const AWARDS_ROOT = '/content/dam/upsstories/awards/';
 const SITE_ROOT = '/content/about-ups-eds';
 const SKELETON_COUNT = 3;
 
@@ -21,10 +21,10 @@ function isAuthorEnvironment() {
 }
 
 // Folder path for the query: drop the .html the picker appends, then end with
-// exactly one "/". Empty means the awards root (all years).
+// exactly one "/". Returns '' when no folder is selected.
 export function normalizeFolder(path) {
   const clean = (path || '').trim().replace(/\.html$/, '').replace(/\/+$/, '');
-  return clean ? `${clean}/` : AWARDS_ROOT;
+  return clean ? `${clean}/` : '';
 }
 
 // 2026-09-29 -> 09-29-2026. Split as text so time zones can't shift the day.
@@ -134,6 +134,16 @@ export default async function decorate(block) {
 
   const list = renderShell(block);
   renderSkeleton(list);
+
+  // No folder selected: authors see the skeleton with a prompt; nothing on delivery.
+  if (!folder) {
+    if (isAuthorEnvironment()) {
+      list.prepend(el('p', 'awards-cf-list-notice', 'Select an awards folder to see the list.'));
+    } else {
+      block.replaceChildren();
+    }
+    return;
+  }
 
   const awards = await fetchAwards(getAwardsGraphQLUrl(QUERY, { rootPath: folder }));
 
