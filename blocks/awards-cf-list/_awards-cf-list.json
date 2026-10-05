@@ -24,7 +24,7 @@
           "component": "aem-content",
           "name": "rootPath",
           "label": "Awards Folder",
-          "description": "Pick the awards folder to list all awards, or a year folder (e.g. 2026) to list only that year's awards.",
+          "description": "Pick a year folder (e.g. 2026) to list that year's awards.",
           "valueType": "string",
           "rootPath": "/content/dam/upsstories/awards",
           "filter": "folderOrFragment",
