@@ -229,6 +229,21 @@
     ]
   },
   {
+    "id": "awards-cf-list",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "rootPath",
+        "label": "Awards Folder",
+        "description": "Optional. Pick a year folder (e.g. 2026) to list only that year's awards. Leave empty to list all awards.",
+        "filter": "folderOrFragment",
+        "validation": {
+          "rootPath": "/content/dam/upsstories/awards"
+        }
+      }
+    ]
+  },
+  {
     "id": "breadcrumb",
     "fields": [
       {
