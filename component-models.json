@@ -502,6 +502,48 @@
     ]
   },
   {
+    "id": "contact-us",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "value": "",
+        "description": "Heading across the top of the card, e.g. \"Media Resources\"."
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "left",
+        "label": "Left card",
+        "value": "",
+        "description": "Left part of the card: a heading, text, and a list of contact links. List items linking to a phone number (tel:), an email (mailto:) or Twitter/X get their icon automatically."
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "right",
+        "label": "Right card",
+        "value": "",
+        "description": "Right part of the card, e.g. \"Additional information\" with links."
+      },
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Presentation",
+        "value": "",
+        "description": "Full width stretches the card across the whole content width (default: centred, 10 of 12 columns).",
+        "options": [
+          {
+            "name": "Full width",
+            "value": "full-width"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "content-list",
     "fields": [
       {

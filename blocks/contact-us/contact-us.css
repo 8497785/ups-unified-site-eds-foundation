@@ -1,0 +1,185 @@
+/* Contact Us — source .upspr-contactus .upspr-contact-media. Width and side
+   padding come from the section content wrapper (main > .section > div). */
+.contact-us .contact-us-card {
+  box-sizing: border-box;
+  padding: 24px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 4px 24px rgb(0 0 0 / 16%);
+  color: #242424;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.contact-us .contact-us-title {
+  margin: 0 0 40px;
+  font-family: var(--heading-font-family);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #242424;
+}
+
+.contact-us .contact-us-columns {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Part headings (source h4): small grey uppercase */
+.contact-us .contact-us-columns :is(h2, h3, h4, h5, h6) {
+  margin: 0 0 16px;
+  font-family: var(--body-font-family);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 2.08px;
+  text-transform: uppercase;
+  color: #767676;
+}
+
+.contact-us .contact-us-columns p {
+  margin: 0 0 32px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.contact-us .contact-us-columns a {
+  font-weight: 700;
+  color: #0662bb;
+  text-decoration: underline;
+}
+
+.contact-us .contact-us-columns ul {
+  margin: 0;
+  padding: 0;
+}
+
+.contact-us .contact-us-columns > :last-child > :last-child {
+  margin-bottom: 0;
+}
+
+/* Left part: contact list without bullets */
+.contact-us .contact-us-left ul li {
+  list-style: none;
+  padding-bottom: 8px;
+  font-weight: 700;
+}
+
+/* Right part (source .upspr-contact-customer): grey bullets, regular weight */
+.contact-us .contact-us-right p {
+  margin-bottom: 0;
+}
+
+.contact-us .contact-us-right ul {
+  padding: 16px 0 0 18px;
+}
+
+.contact-us .contact-us-right ul li {
+  position: relative;
+  list-style: none;
+  font-weight: 400;
+}
+
+.contact-us .contact-us-right ul li::before {
+  content: "•";
+  position: absolute;
+  top: 0;
+  width: 1em;
+  margin-left: -1em;
+  font-weight: 700;
+  color: #c6c6c6;
+}
+
+/* Contact items with an icon (phone / mail / Twitter), in either part */
+.contact-us .contact-us-columns li.contact-us-item-icon {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding-bottom: 8px;
+  font-weight: 700;
+}
+
+.contact-us .contact-us-columns li.contact-us-item-icon::before {
+  content: none;
+}
+
+.contact-us .contact-us-columns li.contact-us-item-icon i {
+  flex-shrink: 0;
+  margin-right: 16px;
+  font-size: 40px;
+  line-height: 54px; /* source: 40px icon in a 54px line -> 62px rows */
+  color: #0662bb;
+  background: radial-gradient(#0662bb 50%, rgb(6 98 187 / 60%) 50%);
+  background-clip: text;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* X (Twitter) logo: icons/x.svg as a mask over the same two-tone blue */
+.contact-us .contact-us-columns li.contact-us-item-icon i.contact-us-icon-x {
+  display: block;
+  width: 40px;
+  height: 54px;
+  background-clip: border-box; /* the font icons clip to text; this has none */
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: initial;
+  mask: url("../../icons/x.svg") center / 40px 40px no-repeat;
+}
+
+/* Mobile/tablet: parts stack, divider is a horizontal bar under the left part */
+.contact-us .contact-us-left:not(:only-child)::after {
+  content: "";
+  display: block;
+  height: 4px;
+  margin: 40px 0;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+@media (width >= 992px) {
+  /* Default: centred, 10 of 12 columns (source col-lg-10 offset-lg-1).
+     36px sides = the source's 48px padding minus its 12px grid gutters. */
+  .contact-us .contact-us-card {
+    width: calc(100% * 10 / 12);
+    margin: 0 auto;
+    padding: 48px 36px;
+  }
+
+  .contact-us.full-width .contact-us-card {
+    width: 100%;
+  }
+
+  .contact-us .contact-us-title {
+    margin-bottom: 48px;
+  }
+
+  /* Parts side by side, 7/12 + 5/12, vertical divider between them */
+  .contact-us .contact-us-columns {
+    flex-direction: row;
+  }
+
+  .contact-us .contact-us-left:not(:only-child) {
+    position: relative;
+    flex: 0 0 calc(100% * 7 / 12);
+    box-sizing: border-box;
+    padding-right: 30px;
+  }
+
+  .contact-us .contact-us-left:not(:only-child)::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    margin: 0;
+  }
+
+  .contact-us .contact-us-right:not(:only-child) {
+    flex: 1 1 0;
+    box-sizing: border-box;
+    padding-left: 48px;
+  }
+}
