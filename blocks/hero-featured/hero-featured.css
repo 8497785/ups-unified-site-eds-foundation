@@ -48,10 +48,14 @@
   padding: var(--spacing-lg);
 }
 
-/* Card text always reads left; align-left/right only move the card (and must
-   not pick up the global .align-* text-align utilities). */
+/* align-left/right only move the card:
+   - its text always reads left (no global .align-* text-align utilities);
+   - it is always as wide as the no-alignment (stretched) card, since those
+     options switch the overlay off stretch, which would shrink it to its text. */
 .hero-featured > div:last-child > div {
-  max-width: 420px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: calc(420px + 2 * var(--spacing-lg));
   padding: var(--spacing-lg);
   text-align: left;
   background-color: var(--background-color);
@@ -159,7 +163,7 @@
   }
 
   .hero-featured > div:last-child > div {
-    max-width: 440px;
+    max-width: calc(440px + 2 * var(--spacing-xl));
     padding: var(--spacing-xl);
   }
 }
