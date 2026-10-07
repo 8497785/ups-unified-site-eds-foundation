@@ -13,7 +13,9 @@
 import { getAwardsGraphQLUrl } from '../../scripts/config.js';
 
 const QUERY = 'award-list';
-const SITE_ROOT = '/content/about-ups-eds';
+// Site roots an eyebrow PageRef may point into: this site, or the upsstories
+// site that the award fragments were authored against.
+const SITE_ROOTS = /^\/content\/(about-ups-eds|upsstories)(?=\/)/;
 const SKELETON_COUNT = 3;
 
 function isAuthorEnvironment() {
@@ -41,7 +43,7 @@ export function eyebrowHref(pagePath) {
   if (isAuthorEnvironment()) return `${pagePath.replace(/\.html$/, '')}.html`;
   return pagePath
     .replace(/\.html$/, '')
-    .replace(new RegExp(`^${SITE_ROOT}`), '')
+    .replace(SITE_ROOTS, '')
     .replace(/^\/language-masters\/en\//, '/us/en/');
 }
 
