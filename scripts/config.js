@@ -45,6 +45,30 @@ export function getGraphQLUrl(queryName, params = {}) {
   return url;
 }
 
+// Awards content fragments live in the `upsstories` configuration, so their
+// persisted queries use a separate GraphQL project from the leadership ones.
+// Kept apart from getGraphQLUrl() (ups-global) so leadership calls are untouched.
+const AWARDS_GRAPHQL_PROJECT = 'upsstories';
+
+/**
+ * Build an AEM GraphQL persisted-query URL for the awards (upsstories) project.
+ * Same host resolution and RAW (unencoded) `;key=value` params as
+ * getGraphQLUrl(); empty/undefined values are skipped.
+ *
+ * @param {string} queryName persisted query name (e.g. 'award-list')
+ * @param {Object} [params] ordered semicolon params (e.g. { rootPath })
+ * @returns {string} the full persisted-query URL
+ */
+export function getAwardsGraphQLUrl(queryName, params = {}) {
+  let url = `${AEM_GRAPHQL_HOST}/graphql/execute.json/${AWARDS_GRAPHQL_PROJECT}/${queryName}`;
+  Object.entries(params).forEach(([key, value]) => {
+    if (value !== undefined && value !== null && value !== '') {
+      url += `;${key}=${value}`;
+    }
+  });
+  return url;
+}
+
 const DM_IMAGE_QUALITY = '85';
 
 /**
