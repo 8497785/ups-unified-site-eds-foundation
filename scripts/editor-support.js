@@ -9,7 +9,7 @@ import {
   loadSections,
 } from './aem.js';
 import { decorateRichtext } from './editor-support-rte.js';
-import { decorateMain } from './scripts.js';
+import { decorateMain, keepColumnTextLinks } from './scripts.js';
 
 let promiseChanges$ = Promise.resolve();
 
@@ -109,6 +109,7 @@ async function applyChanges(event) {
           decorateIcons(newSection);
           decorateRichtext(newSection);
           decorateSections(parentElement);
+          keepColumnTextLinks(newSection);
           decorateBlocks(parentElement);
           await loadSections(parentElement);
           element.remove();
@@ -116,6 +117,7 @@ async function applyChanges(event) {
         } else {
           element.replaceWith(...newElements);
           decorateButtons(parentElement);
+          keepColumnTextLinks(parentElement);
           decorateIcons(parentElement);
           decorateRichtext(parentElement);
         }

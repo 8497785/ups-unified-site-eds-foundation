@@ -130,7 +130,14 @@ const VIDEOS = await loadMap('videos.json');
 // en), used for the static related-articles paths and category. MSM rewrites
 // language-masters/en -> us/en on rollout.
 const CF_CATEGORY = `/content/${SITE}/language-masters/en/newsroom/press-releases/${CATEGORY}`;
-const relatedContentPath = (slug) => `${CF_CATEGORY}/${slug}`;
+// A related-stories entry is either a slug in the same press-release category,
+// or a full path for stories elsewhere on the site: "/content/..." is used
+// as is; any other "/..." path is relative to /content/<site>.
+const relatedContentPath = (entry) => {
+  if (entry.startsWith('/content/')) return entry;
+  if (entry.startsWith('/')) return `/content/${SITE}${entry}`;
+  return `${CF_CATEGORY}/${entry}`;
+};
 
 // Intermediate parent pages -> jcr:title. language-masters / en are structural.
 // NOTE: the press-releases listing page is intentionally EXCLUDED — it is
