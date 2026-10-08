@@ -3,3 +3,9 @@
    blocks/content-list/content-list.css, which related-articles.js loads at
    runtime (via loadCSS). No card CSS is duplicated here. Add related-articles-
    specific overrides below only if this block ever needs to diverge. */
+
+/* No articles to show: the JS marks a section that holds only this block and
+   a Title, so the heading isn't left on an empty band. */
+main .section.related-articles-empty {
+  display: none;
+}
