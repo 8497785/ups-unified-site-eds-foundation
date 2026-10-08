@@ -215,7 +215,9 @@
         "https://about.ups.com/us/en/newsroom/statements/ups-statement-on-new-people-investments.html",
         "https://about.ups.com/us/en/newsroom/statements/ups-statement-on-the-passing-of-first-lady-rosalynn-carter.html",
         "https://about.ups.com/us/en/newsroom/statements/ups-statement-on-u-s--driver-voluntary-program.html",
-        "https://about.ups.com/us/en/newsroom/statements/ups-statement-on-u-s--network-optimization.html"
+        "https://about.ups.com/us/en/newsroom/statements/ups-statement-on-u-s--network-optimization.html",
+        "https://about.ups.com/us/en/our-company/governance/carbon-neutral-credentials.html",
+        "https://about.ups.com/us/en/our-company/governance/transparency-rule.html"
       ],
       "description": "Press-release / article detail page: article-header, hero image, and a Column Control (8/4) with body rich text (width 8) and a social-share block (width 4). Output under /content/language-masters/en/.",
       "blocks": [
