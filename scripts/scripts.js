@@ -147,16 +147,36 @@ function decorateExternalLinks(main) {
 }
 
 /**
+ * Keep link-only paragraphs in article body text as plain links.
+ * decorateButtons() turns any paragraph holding just a link (optionally in
+ * <strong>/<em>) into a button. In column sections (the article body) those are
+ * inline links, e.g. "Learn more…" or a mailto, and CTAs there use the Button
+ * block. Only default content (Text) is touched, not blocks, and other sections
+ * keep their buttons (e.g. home page CTAs). Accepts main, a section, or a
+ * default-content wrapper, so the editor can re-run it after a partial update.
+ * MUST run after decorateSections(), which adds the `column` class.
+ * @param {Element} container The element to clean up
+ */
+export function keepColumnTextLinks(container) {
+  const scope = container.closest('.section.column') || container;
+  scope.querySelectorAll('.button-container').forEach((p) => {
+    if (!p.closest('.section.column') || !p.closest('.default-content-wrapper')) return;
+    p.classList.remove('button-container');
+    p.querySelectorAll('a.button').forEach((a) => a.classList.remove('button', 'primary', 'secondary'));
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
-// eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
   // hopefully forward compatible button decoration
   decorateButtons(main);
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  keepColumnTextLinks(main);
   decorateBlocks(main);
   // group consecutive column sections into a flex wrapper (matches PR #72 order)
   addColumnSectionsWrapper(main);
