@@ -1,27 +1,7 @@
-@font-face {
-  font-family: roboto;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/roboto-regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../fonts/roboto-medium.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: roboto;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/roboto-bold.woff2') format('woff2');
-}
-
+/* Roboto is served by Google Fonts (head.html) only. Declaring the same family
+   here too swapped in a second, slightly different copy once this file
+   loaded (after first paint on mobile), re-wrapping text and shifting the
+   page (mobile CLS 0.21 on article pages). Only the icon font lives here. */
 @font-face {
   font-family: upspricons;
   font-style: normal;
