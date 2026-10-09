@@ -229,6 +229,23 @@
     ]
   },
   {
+    "id": "award",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow",
+        "label": "Eyebrow Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title Text"
+      }
+    ]
+  },
+  {
     "id": "awards-cf-list",
     "fields": [
       {
