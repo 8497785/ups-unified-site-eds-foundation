@@ -896,7 +896,7 @@
     "id": "html-embed",
     "fields": [
       {
-        "component": "textarea",
+        "component": "richtext",
         "valueType": "string",
         "name": "snippet",
         "label": "HTML Snippet",
