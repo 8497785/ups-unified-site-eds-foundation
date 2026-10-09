@@ -130,7 +130,8 @@
       "awards-banner",
       "navigation-tabs",
       "contact-us",
-      "awards-cf-list"
+      "awards-cf-list",
+      "html-embed"
     ]
   },
   {
@@ -143,7 +144,8 @@
       "social-share",
       "fragment",
       "table",
-      "video"
+      "video",
+      "html-embed"
     ]
   },
   {

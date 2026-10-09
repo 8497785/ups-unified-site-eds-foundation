@@ -893,6 +893,18 @@
     ]
   },
   {
+    "id": "html-embed",
+    "fields": [
+      {
+        "component": "textarea",
+        "valueType": "string",
+        "name": "snippet",
+        "label": "HTML Snippet",
+        "description": "Paste HTML, with optional <style> and <script>. It renders in its own frame: its CSS only styles this embed, and the page's CSS doesn't change it. Scripts run inside the frame."
+      }
+    ]
+  },
+  {
     "id": "leadership-details",
     "fields": [
       {
