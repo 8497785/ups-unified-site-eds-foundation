@@ -25,9 +25,9 @@ function cell(text, { header = false, width } = {}) {
 }
 
 const recipes = [
-  ['Three teasers on a brown band', 'Add a section, Styles: Highlight (UPS Brown). Add Three Column Teaser, add 3 Teaser Columns, fill Eyebrow + Title.'],
-  ['Teaser with no eyebrow', 'Add a Teaser Column, leave Eyebrow Text blank, fill only Title Text.'],
-  ['More than three teasers', 'Keep clicking + ; extras wrap to a new row of three on desktop.'],
+  ['Three awards on a brown band', 'Add a section, Styles: Highlight (UPS Brown). Add Awards Banner, add 3 Awards, fill Eyebrow + Title.'],
+  ['Award with no eyebrow', 'Add an Award, leave Eyebrow Text blank, fill only Title Text.'],
+  ['More than three awards', 'Keep clicking + ; extras wrap to a new row of three on desktop.'],
 ];
 
 const table = new Table({
@@ -40,7 +40,7 @@ const table = new Table({
 
 const doc = new Document({
   creator: 'UPS EDS',
-  title: 'Three Column Teaser — Authoring Guide',
+  title: 'Awards Banner — Authoring Guide',
   styles: {
     default: {
       document: { run: { font: 'Calibri', size: 22 } },
@@ -53,26 +53,27 @@ const doc = new Document({
   },
   sections: [{
     children: [
-      h1('Three Column Teaser — Authoring Guide'),
-      p('The Three Column Teaser shows a row of short teasers — each an Eyebrow Text (small uppercase label with a gold accent line) above a Title Text. It is a repeatable block: add as many teaser columns as you need, and they lay out three across on desktop.'),
+      h1('Awards Banner — Authoring Guide'),
+      p([t('Renamed from '), t('Three Column Teaser', { bold: true }), t('. Blocks added before the rename keep working and show as "Awards Banner" in the editor; they do not need re-authoring.', { italics: true })]),
+      p('The Awards Banner shows a row of short award highlights — each an Eyebrow Text (small uppercase label with a gold accent line) above a Title Text. It is a repeatable block: add as many awards as you need, and they lay out three across on desktop.'),
 
       h2('Adding the block'),
       step('Open the page in the Universal Editor.'),
-      step([t('In the section where you want the teasers, click the '), t('+', { bold: true }), t(' (Insert) control and choose '), t('Three Column Teaser', { bold: true }), t('.')]),
-      step([t('Select the block, then click '), t('+', { bold: true }), t(' to add a '), t('Teaser Column', { bold: true }), t('.')]),
+      step([t('In the section where you want the awards, click the '), t('+', { bold: true }), t(' (Insert) control and choose '), t('Awards Banner', { bold: true }), t('.')]),
+      step([t('Select the block, then click '), t('+', { bold: true }), t(' to add an '), t('Award', { bold: true }), t('.')]),
 
-      h2('Fields (per Teaser Column)'),
-      p('Each Teaser Column is one group of two fields:'),
+      h2('Fields (per Award)'),
+      p('Each Award is one group of two fields:'),
       bullet([t('Eyebrow Text', { bold: true }), t(' — a short label shown in small uppercase with a gold accent line to its left (e.g. "SINCE 2022"). Optional — leave it blank and only the title shows.')]),
-      bullet([t('Title Text', { bold: true }), t(' — the teaser headline, shown as a larger heading below the eyebrow.')]),
+      bullet([t('Title Text', { bold: true }), t(' — the award headline, shown as a larger heading below the eyebrow.')]),
 
-      h2('Adding more columns'),
-      p('Click + on the Three Column Teaser block to add another Teaser Column, and fill its Eyebrow Text + Title Text. Repeat for each teaser. You can reorder or delete individual columns from the content tree.'),
+      h2('Adding more awards'),
+      p('Click + on the Awards Banner block to add another Award, and fill its Eyebrow Text + Title Text. Repeat for each award. You can reorder or delete individual awards from the content tree.'),
 
       h2('Layout'),
-      bullet([t('Desktop (>= 992px): ', { bold: true }), t('three teasers across in a row.')]),
-      bullet([t('Tablet and mobile (< 992px): ', { bold: true }), t('teasers stack to a single full-width column.')]),
-      bullet('Adding more than three columns wraps to additional rows of three on desktop.'),
+      bullet([t('Desktop (>= 992px): ', { bold: true }), t('three awards across in a row.')]),
+      bullet([t('Tablet and mobile (< 992px): ', { bold: true }), t('awards stack to a single full-width column.')]),
+      bullet('Adding more than three awards wraps to additional rows of three on desktop.'),
 
       h2('Using it on a UPS Brown section'),
       p([t('Place the block in a section and set '), t('Spacing & Style → Highlight (UPS Brown)', { bold: true }), t(' to get the dark brown band. On that background the eyebrow and title text render white for contrast, while the eyebrow accent line stays gold.')]),

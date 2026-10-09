@@ -87,6 +87,36 @@
           }
         },
         {
+          "title": "Awards Banner",
+          "id": "awards-banner",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Awards Banner",
+                  "filter": "awards-banner"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Award",
+          "id": "award",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Award",
+                  "model": "award"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Awards CF List",
           "id": "awards-cf-list",
           "plugins": {
@@ -514,7 +544,7 @@
           }
         },
         {
-          "title": "Three Column Teaser",
+          "title": "Awards Banner",
           "id": "three-column-teaser",
           "plugins": {
             "xwalk": {
@@ -529,7 +559,7 @@
           }
         },
         {
-          "title": "Teaser Column",
+          "title": "Award",
           "id": "teaser-column",
           "plugins": {
             "xwalk": {

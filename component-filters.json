@@ -127,7 +127,7 @@
       "related-articles",
       "table",
       "video",
-      "three-column-teaser",
+      "awards-banner",
       "navigation-tabs",
       "contact-us",
       "awards-cf-list"
@@ -144,6 +144,12 @@
       "fragment",
       "table",
       "video"
+    ]
+  },
+  {
+    "id": "awards-banner",
+    "components": [
+      "award"
     ]
   },
   {
