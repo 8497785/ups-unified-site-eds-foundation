@@ -18,35 +18,17 @@ function isAuthorEnvironment() {
   return window.location.hostname.endsWith('.adobeaemcloud.com');
 }
 
-// Code pasted as text into the editor arrives escaped (the cell's text holds
-// "<div>…" characters), split over paragraphs, line breaks or a code block.
-const TAG_AS_TEXT = /<\/?[a-z][\w-]*[\s\S]*?>|<!--/i;
-
-function textOf(cell) {
+// The snippet is a plain-text (textarea) field, so it's delivered as escaped
+// text, possibly split over several paragraphs / line breaks. Rebuild the
+// original text with its line breaks.
+export function readSnippet(block) {
+  const cell = block.querySelector(':scope > div > div') || block;
   const clone = cell.cloneNode(true);
   clone.querySelectorAll('br').forEach((br) => br.replaceWith('\n'));
   const parts = [...clone.children].length
     ? [...clone.children].map((el) => el.textContent)
     : [clone.textContent];
   return parts.join('\n').trim();
-}
-
-// Elements the editor itself wraps typed/pasted text in.
-const TEXT_WRAPPERS = new Set(['P', 'BR', 'PRE', 'CODE']);
-
-// The snippet field is rich text with `unsupportedHtml` on, so it can arrive
-// two ways:
-// - as real markup kept by the editor (any element besides the text
-//   wrappers above): use the cell's HTML as is;
-// - as code pasted as text (escaped "<div>…" characters inside paragraphs,
-//   line breaks or a code block): rebuild the text, keeping line breaks.
-export function readSnippet(block) {
-  const cell = block.querySelector(':scope > div > div') || block;
-  const markup = [...cell.querySelectorAll('*')].some((el) => !TEXT_WRAPPERS.has(el.tagName));
-  if (markup) return cell.innerHTML.trim();
-  const text = textOf(cell);
-  if (!text) return '';
-  return TAG_AS_TEXT.test(text) ? text : cell.innerHTML.trim();
 }
 
 const escapeAttr = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;');

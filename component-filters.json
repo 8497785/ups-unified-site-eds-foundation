@@ -215,28 +215,6 @@
     ]
   },
   {
-    "id": "html-embed",
-    "components": [],
-    "rte": {
-      "unsupportedHtml": true,
-      "toolbar": {
-        "blocks": [
-          "paragraph",
-          "code_block"
-        ],
-        "editor": [
-          "paste_text",
-          "fullscreen",
-          "find_and_replace"
-        ],
-        "sections": [
-          "blocks",
-          "editor"
-        ]
-      }
-    }
-  },
-  {
     "id": "leadership-list-cf",
     "components": [
       "leadership-list-item"
