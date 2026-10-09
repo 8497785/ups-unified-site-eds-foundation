@@ -32,11 +32,29 @@ function isAuthorEnvironment() {
 
 // Normalize a path for comparison/fetch: strip content-source prefix,
 // .html suffix, and trailing slash. Delivery paths are public (/us/en/...).
-function normalizePath(p) {
+// Language Masters paths map to their us/en copy: a picked page that didn't
+// exist in us/en at rollout keeps its language-masters reference, and must
+// still match the us/en index once that page is migrated.
+export function normalizePath(p) {
   return (p || '')
     .replace(/^\/content\/about-ups-eds/, '')
+    .replace(/^\/language-masters\/en\//, '/us/en/')
     .replace(/\.html$/, '')
     .replace(/\/$/, '');
+}
+
+// With no articles to show, hide the whole section when it holds only this
+// block and Title blocks, so a "Related Stories" heading isn't left on its own.
+// A class (not an inline style): the section loader clears inline display
+// after the blocks decorate.
+function hideEmptySection(block) {
+  const section = block.closest('.section');
+  const wrapper = block.parentElement;
+  if (!section || !wrapper) return;
+  const others = [...section.children].filter((child) => child !== wrapper);
+  if (others.every((child) => child.classList.contains('title-wrapper'))) {
+    section.classList.add('related-articles-empty');
+  }
 }
 
 // Read an authored aem-content cell: prefer the anchor href, else text.
@@ -216,6 +234,7 @@ export default async function decorate(block) {
 
   if (selected.length === 0) {
     block.replaceChildren();
+    hideEmptySection(block);
     return;
   }
 
