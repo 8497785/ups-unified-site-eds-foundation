@@ -3,7 +3,10 @@
     "delivery-p55671-e392471.adobeaemcloud.com",
     "author-p55671-e392471.adobeaemcloud.com"
   ],
-  "aemTierType": ["delivery", "author"],
+  "aemTierType": [
+    "delivery",
+    "author"
+  ],
   "expiryOptions": {
     "allowSelectionAndDrag": false
   },
@@ -11,7 +14,9 @@
     {
       "fields": [
         {
-          "defaultValue": ["video/*"],
+          "defaultValue": [
+            "video/*"
+          ],
           "element": "checkbox",
           "name": "type",
           "options": [

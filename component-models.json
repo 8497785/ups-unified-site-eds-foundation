@@ -701,7 +701,7 @@
         "name": "video",
         "label": "Video",
         "description": "Pick a video with the asset picker (Dynamic Media with OpenAPI). Only approved videos can be delivered.",
-        "configUrl": "https://raw.githubusercontent.com/8497785/ups-unified-site-eds-foundation/feat/dm-video/tools/assets-selector/video.config.json",
+        "configUrl": "https://feat-dm-video--ups-unified-site-eds-foundation--8497785.aem.page/tools/assets-selector/video.config.json",
         "valueType": "string"
       },
       {
