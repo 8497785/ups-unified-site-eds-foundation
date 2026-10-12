@@ -43,7 +43,7 @@ function cellValue(row) {
 
 function notice(block, text) {
   const p = document.createElement('p');
-  p.className = 'dm-video-notice';
+  p.className = 'dynamic-media-video-notice';
   p.textContent = text;
   block.replaceChildren(p);
 }
@@ -66,7 +66,7 @@ export default function decorate(block) {
   }
 
   const frame = document.createElement('div');
-  frame.className = 'dm-video-frame';
+  frame.className = 'dynamic-media-video-frame';
   const iframe = document.createElement('iframe');
   iframe.src = src;
   iframe.title = label || 'Video';

@@ -1,12 +1,12 @@
 /* Dynamic Media Video — responsive 16:9 player. */
-.dm-video .dm-video-frame {
+.dynamic-media-video .dynamic-media-video-frame {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   background: #000;
 }
 
-.dm-video .dm-video-frame iframe {
+.dynamic-media-video .dynamic-media-video-frame iframe {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -16,12 +16,12 @@
 
 /* In the Universal Editor, clicks select the block instead of going into the
    player. */
-.dm-video[data-aue-resource] .dm-video-frame iframe {
+.dynamic-media-video[data-aue-resource] .dynamic-media-video-frame iframe {
   pointer-events: none;
 }
 
 /* Author-only prompt when no video (or an unsupported value) is set. */
-.dm-video .dm-video-notice {
+.dynamic-media-video .dynamic-media-video-notice {
   margin: 0;
   padding: 24px;
   border: 1px dashed #c6c6c6;
