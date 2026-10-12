@@ -71,7 +71,14 @@ const DIR_OVERRIDE = (RAW_ARGS.find((a) => a.startsWith('--dir=')) || '').split(
 // `--name=<pkgname>` overrides the output package (zip + properties) name,
 // useful for a combined multi-folder build (e.g. --name=newsroom-statements).
 const NAME_OVERRIDE = (RAW_ARGS.find((a) => a.startsWith('--name=')) || '').split('=')[1] || '';
-const ARGS = RAW_ARGS.filter((a) => !a.startsWith('--category=') && !a.startsWith('--dir=') && !a.startsWith('--name='));
+// `--parent=<relpath>:<Title>` (repeatable) adds a titled parent page that
+// may not exist yet (e.g. --parent=language-masters/en/our-company/great-employer:Great Employer).
+// Its filter uses mode="merge", so it's only created when missing: an existing
+// page (and its content and children) is left untouched.
+const MERGE_PARENTS = RAW_ARGS.filter((a) => a.startsWith('--parent='))
+  .map((a) => a.slice('--parent='.length).split(':'))
+  .map(([rel, ...title]) => [rel.replace(/^\/|\/$/g, ''), title.join(':') || rel.split('/').pop()]);
+const ARGS = RAW_ARGS.filter((a) => !a.startsWith('--category=') && !a.startsWith('--dir=') && !a.startsWith('--name=') && !a.startsWith('--parent='));
 const REST_MODE = ARGS[0] === '--rest';
 const ALL_MODE = ARGS[0] === '--all'; // every page, leaves-only, no parents
 const ONLY_SLUGS = (REST_MODE || ALL_MODE) ? [] : ARGS;
@@ -432,6 +439,11 @@ async function main() {
       await writeFile(f, parentXml(ptitle), 'utf8');
     }));
   }
+  await Promise.all(MERGE_PARENTS.map(async ([rel, ptitle]) => {
+    const f = `${CONTENT_BASE}/${rel}/.content.xml`;
+    await mkdir(dirname(f), { recursive: true });
+    await writeFile(f, parentXml(ptitle), 'utf8');
+  }));
 
   // ---- META-INF: filter.xml + properties.xml -----------------------------
   // Parents: scope the filter to jcr:content so only the title updates and the
@@ -443,10 +455,17 @@ async function main() {
     <include pattern="${p}/jcr:content/.*"/>
   </filter>`;
   }).join('\n');
+  const mergeParentFilters = MERGE_PARENTS.map(([rel]) => {
+    const p = `${CONTENT_PATH}/${rel}`;
+    return `  <filter root="${p}" mode="merge">
+    <include pattern="${p}"/>
+    <include pattern="${p}/jcr:content(/.*)?"/>
+  </filter>`;
+  }).join('\n');
   const leafFilters = leaves.map((l) => `  <filter root="${l.leafRoot}"/>`).join('\n');
   const filterXml = `<?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-${[parentFilters, leafFilters].filter(Boolean).join('\n')}
+${[parentFilters, mergeParentFilters, leafFilters].filter(Boolean).join('\n')}
 </workspaceFilter>
 `;
   await mkdir(META_DIR, { recursive: true });
