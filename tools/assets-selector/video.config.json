@@ -1,0 +1,33 @@
+{
+  "repoNames": [
+    "delivery-p55671-e392471.adobeaemcloud.com",
+    "author-p55671-e392471.adobeaemcloud.com"
+  ],
+  "aemTierType": ["delivery", "author"],
+  "expiryOptions": {
+    "allowSelectionAndDrag": false
+  },
+  "filterSchema": [
+    {
+      "fields": [
+        {
+          "defaultValue": ["video/*"],
+          "element": "checkbox",
+          "name": "type",
+          "options": [
+            {
+              "label": "Video",
+              "readOnly": true,
+              "value": "video/*"
+            }
+          ]
+        }
+      ],
+      "groupKey": "FileTypeGroup",
+      "header": "File Type"
+    }
+  ],
+  "alwaysUseDMDelivery": true,
+  "vanityPath": "adobe",
+  "rootPath": "/content/dam/upsstories"
+}

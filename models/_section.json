@@ -200,6 +200,7 @@
         "related-articles",
         "table",
         "video",
+        "dm-video",
         "awards-banner",
         "navigation-tabs",
         "contact-us",
@@ -216,7 +217,8 @@
         "social-share",
         "fragment",
         "table",
-        "video"
+        "video",
+        "dm-video"
       ]
     }
   ]
