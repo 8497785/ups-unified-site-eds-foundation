@@ -1,5 +1,17 @@
 /* Contact Us — source .upspr-contactus .upspr-contact-media. Width and side
    padding come from the section content wrapper (main > .section > div). */
+
+/* Space below the card, as the source .upspr-contactus (110px below 1024px) */
+.contact-us {
+  margin-bottom: 139px;
+}
+
+@media (width < 1024px) {
+  .contact-us {
+    margin-bottom: 110px;
+  }
+}
+
 .contact-us .contact-us-card {
   box-sizing: border-box;
   padding: 24px;
