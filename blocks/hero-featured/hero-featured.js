@@ -1,16 +1,18 @@
 // Hero Featured — single-image "cards" view: a background image with an overlaid
 // content card (eyebrow, title, description, CTA).
 //
-// Authoring model (see _hero-featured.json):
+// Authoring model (see _hero-featured.json), rows in field order:
 //   Row 1: image      (imageAlt collapses into <img alt>)
-//   Row 2: text       (richtext card: title, description)
-//   Row 3: topic      (static eyebrow text)
-//   Row 4: topicLink  (static eyebrow link)
+//   Row 2: topic      (static eyebrow text)
+//   Row 3: topicLink  (static eyebrow link)
+//   Row 4: text       (richtext card: title, description)
 //   Row 5: link       (ctaLink page picker; ctaLinkText collapses into the link text)
-// Block options (classes group, never content rows):
-//   classes          rounded-corners / align-left / align-right -> layout (see CSS)
-//   classes_eyebrow  eyebrow-dynamic / eyebrow-static /      -> eyebrow mode
-//                    eyebrow-none
+// Older content may have text as row 2 (previous field order) — see splitRows().
+// Block options (classes group, never content rows), "Styles" tab:
+//   classes                  align-left / align-right -> card side (see CSS)
+//   classes_rounded-corners  boolean -> rounded-corners
+// and on the Content tab:
+//   classes_eyebrow          eyebrow-dynamic / eyebrow-static / eyebrow-none
 //
 // CTA: links to ctaLink with the text ctaLinkText. It renders only when both are
 // authored; there is no default text, so translated pages never show a
@@ -106,24 +108,53 @@ function place(card, button, inline, where) {
   else card[where](button);
 }
 
-// Split the rows after text into topic / topicLink / link. They are positional
-// when all three are present; otherwise (older content, or empty fields left
-// out) they are matched by content: the text-only row is the topic and link rows
-// are topicLink then link, a lone link row being the CTA link.
-function splitFieldRows(rows) {
-  if (rows.length === 3) return rows;
-  const hasLink = (row) => !!row.querySelector('a[href]');
-  const linkRows = rows.filter(hasLink);
-  const topicRow = rows.find((row) => !hasLink(row) && row.textContent.trim());
+// The richtext Text cell holds a heading, a list or several blocks; the
+// plain-text topic never does.
+const isRich = (row) => {
+  const cell = row?.firstElementChild || row;
+  return !!cell && (cell.children.length > 1 || !!cell.querySelector('h1, h2, h3, h4, h5, h6, ul, ol'));
+};
+const hasLink = (row) => !!row.querySelector('a[href]');
+
+// Split the rows after the image into text / topic / topicLink / link.
+//   [text]                              legacy (eyebrow and CTA inline in text)
+//   [topic, topicLink, text, link]      current model order
+//   [text, topic, topicLink, link]      previous model order (older content)
+// With fields left out, rows are matched by content instead: the rich row is
+// the text, a remaining text-only row the topic, and link rows are topicLink
+// then link (a lone link row being the CTA link).
+function splitRows(rows) {
+  if (rows.length <= 1) return { textRow: rows[0], fieldRows: [] };
+  if (rows.length === 4) {
+    const [a, b, c, d] = rows;
+    const previousOrder = isRich(a) && !isRich(c);
+    return previousOrder
+      ? {
+        textRow: a, topicRow: b, topicLinkRow: c, linkRow: d, fieldRows: [b, c, d],
+      }
+      : {
+        textRow: c, topicRow: a, topicLinkRow: b, linkRow: d, fieldRows: [a, b, d],
+      };
+  }
+  const textRow = rows.find(isRich)
+    || rows.filter((row) => !hasLink(row) && row.textContent.trim()).pop()
+    || rows[0];
+  const fieldRows = rows.filter((row) => row !== textRow);
+  const linkRows = fieldRows.filter(hasLink);
+  const topicRow = fieldRows.find((row) => !hasLink(row) && row.textContent.trim());
   const [topicLinkRow, linkRow] = linkRows.length > 1 ? linkRows : [undefined, linkRows[0]];
-  return [topicRow, topicLinkRow, linkRow];
+  return {
+    textRow, topicRow, topicLinkRow, linkRow, fieldRows,
+  };
 }
 
 export default async function decorate(block) {
-  const [, textRow, ...fieldRows] = block.children;
+  const [, ...rows] = block.children;
+  const {
+    textRow, topicRow, topicLinkRow, linkRow, fieldRows,
+  } = splitRows(rows);
   const card = textRow?.querySelector(':scope > div') || textRow;
   if (!card) return;
-  const [topicRow, topicLinkRow, linkRow] = splitFieldRows(fieldRows);
 
   // Legacy inline eyebrow / CTA: leading and trailing single-link paragraphs.
   const first = card.firstElementChild;
