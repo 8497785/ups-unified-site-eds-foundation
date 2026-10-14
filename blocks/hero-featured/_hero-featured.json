@@ -126,7 +126,6 @@
           "name": "classes",
           "label": "Alignment",
           "value": "align-left",
-          "description": "Which side of the banner the content card sits on. The card's text is always left-aligned.",
           "options": [
             { "name": "Left", "value": "align-left" },
             { "name": "Right", "value": "align-right" }
@@ -137,8 +136,7 @@
           "valueType": "boolean",
           "name": "classes_rounded-corners",
           "label": "Rounded corners",
-          "value": false,
-          "description": "Rounds the corners of the banner. Off: square corners."
+          "value": false
         }
       ]
     }
