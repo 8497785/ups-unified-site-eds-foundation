@@ -106,8 +106,7 @@
           "valueType": "string",
           "name": "ctaLinkText",
           "label": "CTA text",
-          "value": "",
-          "description": "CTA button text. The button is shown only when both CTA text and CTA Link are filled in."
+          "value": ""
         },
         {
           "component": "aem-content",
