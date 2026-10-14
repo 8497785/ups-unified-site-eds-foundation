@@ -14,14 +14,15 @@
  * Block table rows:
  *   Row 1: block name (+ optional variants)
  *   Row 2: background image (field: image; imageAlt collapses into <img alt>)
- *   Row 3: rich text (field: text) — heading, description
- *   Row 4: eyebrow text (field: topic)
- *   Row 5: eyebrow link (field: topicLink)
+ *   Row 3: eyebrow text (field: topic)
+ *   Row 4: eyebrow link (field: topicLink)
+ *   Row 5: rich text (field: text) — heading, description
  *   Row 6: CTA (field: ctaLink; ctaLinkText collapses into the link text)
+ * Rows follow the block model's field order (eyebrow fields above Text).
  * The eyebrow is imported as authored (static). No eyebrow mode is emitted: the
  * block treats content with a topic/topicLink and no saved mode as static.
- * Dynamic eyebrow and layout (full-width / align-left / align-right) are variant
- * classes, not content rows — so they are never emitted here.
+ * Eyebrow mode and the Styles tab options (alignment, rounded corners) are block
+ * options, not content rows — so they are never emitted here.
  *
  * Validated selectors against source HTML:
  *   picture                                  -> <picture> with responsive sources and img
@@ -35,9 +36,9 @@
  *   | hero-featured |
  *   |---|
  *   | <!-- field:image --> <picture> ... </picture> |
- *   | <!-- field:text --> <h4>heading</h4><p>desc</p> |
  *   | <!-- field:topic --> tag |
  *   | <!-- field:topicLink --> <a href="topic page">topic page</a> |
+ *   | <!-- field:text --> <h4>heading</h4><p>desc</p> |
  *   | <!-- field:ctaLink --> <a href="story page">CTA text</a> |
  */
 export default function parse(element, { document }) {
@@ -112,12 +113,12 @@ export default function parse(element, { document }) {
   textCell.appendChild(document.createComment(' field:text '));
   textCell.appendChild(textFrag);
 
-  // Build cells matching the block model: image, text, topic, topic link, CTA
+  // Build cells matching the block model's field order: image, topic, topic link, text, CTA
   const cells = [];
   cells.push([imgFrag]);
-  cells.push([textCell]);
   cells.push([topicFrag]);
   cells.push([topicLinkFrag]);
+  cells.push([textCell]);
   cells.push([ctaFrag]);
 
   const block = WebImporter.Blocks.createBlock(document, { name: 'hero-featured', cells });
