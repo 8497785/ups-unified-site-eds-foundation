@@ -223,13 +223,10 @@
       "unsupportedHtml": true,
       "toolbar": {
         "blocks": [
-          "paragraph",
           "code_block"
         ],
         "editor": [
-          "paste_text",
-          "fullscreen",
-          "find_and_replace"
+          "fullscreen"
         ],
         "sections": [
           "blocks",

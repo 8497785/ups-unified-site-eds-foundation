@@ -74,8 +74,8 @@
       "rte": {
         "unsupportedHtml": true,
         "toolbar": {
-          "blocks": ["paragraph", "code_block"],
-          "editor": ["paste_text", "fullscreen", "find_and_replace"],
+          "blocks": ["code_block"],
+          "editor": ["fullscreen"],
           "sections": ["blocks", "editor"]
         }
       }
