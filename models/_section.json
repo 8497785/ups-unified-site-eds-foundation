@@ -219,7 +219,8 @@
         "table",
         "video",
         "html-embed",
-        "columns"
+        "columns",
+        "column-control"
       ]
     }
   ]
