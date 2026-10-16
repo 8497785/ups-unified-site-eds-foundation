@@ -39,6 +39,11 @@
       "id": "column-control",
       "fields": [
         {
+          "component": "tab",
+          "name": "properties",
+          "label": "Properties"
+        },
+        {
           "component": "select",
           "valueType": "number",
           "name": "columns",
@@ -79,6 +84,23 @@
             { "name": "Four — 3 / 3 / 3 / 3", "value": "layout-3-3-3-3" },
             { "name": "Four — 2 / 4 / 4 / 2", "value": "layout-2-4-4-2" },
             { "name": "Four — 4 / 2 / 2 / 4", "value": "layout-4-2-2-4" }
+          ]
+        },
+        {
+          "component": "tab",
+          "name": "styles",
+          "label": "Styles"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes_style",
+          "label": "Style",
+          "value": "",
+          "description": "Optional visual style for this Column Control.",
+          "options": [
+            { "name": "None", "value": "" },
+            { "name": "Employee story", "value": "employee-story" }
           ]
         }
       ]

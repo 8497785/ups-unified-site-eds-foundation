@@ -60,3 +60,13 @@
   .column-control .grid-column.col-lg-11 { grid-column: span 11; }
   .column-control .grid-column.col-lg-12 { grid-column: span 12; }
 }
+
+/* Employee story style (Styles tab): rounded images and a larger first
+   paragraph (marked by column-control.js). */
+.column-control.employee-story img {
+  border-radius: 8px;
+}
+
+.column-control.employee-story .employee-story-lead {
+  font-size: 22px;
+}

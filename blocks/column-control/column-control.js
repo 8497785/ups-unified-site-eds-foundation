@@ -129,5 +129,17 @@ export default function decorate(block) {
     col.classList.add('grid-column', `col-lg-${widths[i]}`);
   });
 
+  // Employee story style: mark the block's first text paragraph (skipping
+  // image paragraphs and anything inside nested blocks) so CSS can enlarge it.
+  if (block.classList.contains('employee-story')) {
+    const lead = [...row.querySelectorAll('.grid-column p')].find((p) => (
+      p.closest('div[class]').classList.contains('grid-column')
+      && !p.closest('table')
+      && !p.querySelector('picture, img')
+      && p.textContent.trim()
+    ));
+    if (lead) lead.classList.add('employee-story-lead');
+  }
+
   loadNestedBlocks(columns);
 }
