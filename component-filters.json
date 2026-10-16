@@ -130,7 +130,8 @@
       "awards-banner",
       "navigation-tabs",
       "contact-us",
-      "awards-cf-list"
+      "awards-cf-list",
+      "html-embed"
     ]
   },
   {
@@ -143,7 +144,8 @@
       "social-share",
       "fragment",
       "table",
-      "video"
+      "video",
+      "html-embed"
     ]
   },
   {
@@ -211,6 +213,27 @@
     "components": [
       "download-item"
     ]
+  },
+  {
+    "id": "html-embed",
+    "components": [
+      "html-embed-image"
+    ],
+    "rte": {
+      "unsupportedHtml": true,
+      "toolbar": {
+        "blocks": [
+          "code_block"
+        ],
+        "editor": [
+          "fullscreen"
+        ],
+        "sections": [
+          "blocks",
+          "editor"
+        ]
+      }
+    }
   },
   {
     "id": "leadership-list-cf",
