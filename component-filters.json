@@ -145,7 +145,8 @@
       "fragment",
       "table",
       "video",
-      "html-embed"
+      "html-embed",
+      "columns"
     ]
   },
   {
