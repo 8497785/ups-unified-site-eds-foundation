@@ -75,6 +75,12 @@
   text-align: left;
 }
 
+/* Every heading in the card reads left too: the global .align-right utility
+   targets h1-h6 directly, which beats the card's inherited text-align. */
+.hero-featured > div:last-child > div :is(h1, h2, h3, h4, h5, h6) {
+  text-align: left;
+}
+
 .hero-featured > div:last-child p {
   font-size: var(--body-font-size-s);
   line-height: 1.5;
