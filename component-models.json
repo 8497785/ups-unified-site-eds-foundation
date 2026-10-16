@@ -893,6 +893,39 @@
     ]
   },
   {
+    "id": "html-embed",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "snippet",
+        "label": "HTML Snippet",
+        "description": "Choose Blocks → Code block, then paste the HTML (optional <style> and <script>) into it. Only a code block keeps the HTML intact through publishing. For each /content/dam image in the snippet, add a Snippet Image (+) in the same order, so it's served optimized."
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "renderInline",
+        "label": "Render inline (no frame)",
+        "value": false,
+        "description": "Off (default): the snippet renders in its own frame, so its CSS only styles the embed and the page's CSS doesn't change it. On: the snippet is added straight into the page, so its CSS can style the whole page and page CSS applies to it."
+      }
+    ]
+  },
+  {
+    "id": "html-embed-image",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false,
+        "description": "Pick the same DAM image the snippet uses. Snippet Images replace the snippet's /content/dam images in order: the 1st Snippet Image replaces the 1st image, and so on."
+      }
+    ]
+  },
+  {
     "id": "leadership-details",
     "fields": [
       {

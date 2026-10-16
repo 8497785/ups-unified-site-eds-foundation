@@ -24,6 +24,15 @@ function resolveGraphqlHost() {
 export const AEM_GRAPHQL_HOST = resolveGraphqlHost();
 
 /**
+ * Host for DAM files referenced by path (/content/dam/...) in author-pasted
+ * HTML (HTML Embed). Edge Delivery doesn't serve DAM paths, so on the delivery
+ * tiers they load from the same AEM publish host as GraphQL (which currently
+ * redirects DAM paths to about.ups.com). On author and other origins it's ''
+ * and /content/dam/... stays relative (the author host serves it).
+ */
+export const DAM_ASSET_HOST = AEM_GRAPHQL_HOST;
+
+/**
  * Build an AEM GraphQL persisted-query URL for the project.
  *
  * Params are appended as RAW (unencoded) `;key=value` segments — the persisted
