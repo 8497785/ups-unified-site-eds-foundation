@@ -126,6 +126,21 @@ const isPictureOnly = (el) => !!el && (el.tagName === 'PICTURE'
 //  - a bare picture directly followed by its link line.
 function restoreImageBlocks(columns) {
   columns.forEach((col) => {
+    // Block decoration (aem.js wrapTextNodes) wraps a column that starts with a
+    // <div>, or with a picture followed by more content, in one <p>. Undo that so
+    // the column's own children can be inspected; the editor instrumentation it
+    // moved onto the <p> goes back to the column.
+    const wrapper = col.firstElementChild;
+    if (col.children.length === 1 && wrapper.tagName === 'P'
+      && wrapper.querySelector(':scope > div, :scope > p')) {
+      [...wrapper.attributes]
+        .filter(({ name }) => name.startsWith('data-aue') || name.startsWith('data-richtext'))
+        .forEach(({ name, value }) => {
+          col.setAttribute(name, value);
+          wrapper.removeAttribute(name);
+        });
+      wrapper.replaceWith(...wrapper.childNodes);
+    }
     col.querySelectorAll(':scope > div:not([class])').forEach((div) => {
       const paras = [...div.querySelectorAll('p')];
       if (div.querySelectorAll('picture').length === 1
