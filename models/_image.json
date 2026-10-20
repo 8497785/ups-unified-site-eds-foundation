@@ -27,6 +27,12 @@
           "component": "text",
           "name": "imageAlt",
           "label": "Alt Text"
+        },
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link",
+          "description": "Optional. If set, the image is clickable and opens this page or URL."
         }
       ]
     }
