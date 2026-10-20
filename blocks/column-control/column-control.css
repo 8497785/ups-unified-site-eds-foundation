@@ -87,22 +87,38 @@
   }
 }
 
+/* Delivered pages put the paragraphs straight in the column; the Universal
+   Editor groups each text component's paragraphs in a
+   [data-aue-type="richtext"] wrapper, so both shapes are matched. */
 .column-control.employee-story .grid-column > p {
   margin: 0;
   font-size: 16px;
   line-height: 24px;
 }
 
-/* 14px between paragraphs, as in the snippet, net of the column's flex gap. */
+/* 14px between paragraphs, as in the snippet: net of the column's flex gap
+   when they're column children, plain 14px inside the editor wrapper. */
 .column-control.employee-story .grid-column > p + p {
   margin-top: calc(14px - var(--grid-gap));
 }
 
-.column-control.employee-story .grid-column > .employee-story-lead {
+.column-control.employee-story .grid-column > [data-aue-type="richtext"] > p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.column-control.employee-story .grid-column > [data-aue-type="richtext"] > p + p {
+  margin-top: 14px;
+}
+
+.column-control.employee-story .grid-column > .employee-story-lead,
+.column-control.employee-story .grid-column > [data-aue-type="richtext"] > .employee-story-lead {
   font-size: 22px;
 }
 
-.column-control.employee-story .grid-column > p a:any-link {
+.column-control.employee-story .grid-column > p a:any-link,
+.column-control.employee-story .grid-column > [data-aue-type="richtext"] > p a:any-link {
   color: #426da9;
   font-weight: 800;
   text-decoration: underline;
