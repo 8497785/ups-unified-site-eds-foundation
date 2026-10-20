@@ -60,3 +60,89 @@
   .column-control .grid-column.col-lg-11 { grid-column: span 11; }
   .column-control .grid-column.col-lg-12 { grid-column: span 12; }
 }
+
+/* Employee story style (Styles tab): rounded images and paragraphs matching the
+   great-employer story snippet (.story_title / .story_quote / .story_link).
+   Only the columns' own paragraphs, not those inside nested blocks. The first
+   text paragraph is marked .employee-story-lead by column-control.js. */
+.column-control.employee-story {
+  margin: 64px 0;
+}
+
+.column-control.employee-story img {
+  border-radius: 8px;
+}
+
+/* Mobile (stacked columns): tighter spacing and a centered 200px square image. */
+@media (width < 768px) {
+  .column-control.employee-story {
+    margin: 32px 0;
+  }
+
+  .column-control.employee-story img {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 0;
+  }
+}
+
+.column-control.employee-story .grid-column > p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* 14px between paragraphs, as in the snippet, net of the column's flex gap. */
+.column-control.employee-story .grid-column > p + p {
+  margin-top: calc(14px - var(--grid-gap));
+}
+
+.column-control.employee-story .grid-column > .employee-story-lead {
+  font-size: 22px;
+}
+
+.column-control.employee-story .grid-column > p a:any-link {
+  color: #426da9;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+/* Employee story keeps the authored layout (e.g. 4 / 8) from tablet up instead
+   of the generic two-per-row tablet rule; mobile still stacks. The extra
+   `.employee-story` class outranks that rule's specificity. */
+@media (width >= 768px) {
+  .column-control.employee-story .grid-column.col-lg-1 { grid-column: span 1; }
+  .column-control.employee-story .grid-column.col-lg-2 { grid-column: span 2; }
+  .column-control.employee-story .grid-column.col-lg-3 { grid-column: span 3; }
+  .column-control.employee-story .grid-column.col-lg-4 { grid-column: span 4; }
+  .column-control.employee-story .grid-column.col-lg-5 { grid-column: span 5; }
+  .column-control.employee-story .grid-column.col-lg-6 { grid-column: span 6; }
+  .column-control.employee-story .grid-column.col-lg-7 { grid-column: span 7; }
+  .column-control.employee-story .grid-column.col-lg-8 { grid-column: span 8; }
+  .column-control.employee-story .grid-column.col-lg-9 { grid-column: span 9; }
+  .column-control.employee-story .grid-column.col-lg-10 { grid-column: span 10; }
+  .column-control.employee-story .grid-column.col-lg-11 { grid-column: span 11; }
+  .column-control.employee-story .grid-column.col-lg-12 { grid-column: span 12; }
+
+  /* An image-only column (marked .employee-story-image by column-control.js) is
+     a fixed 200px with a 200 x 200 image; the other columns share the rest,
+     in place of the authored layout. */
+  .column-control.employee-story .row:has(> .employee-story-image) {
+    display: flex;
+  }
+
+  .column-control.employee-story .row:has(> .employee-story-image) > .grid-column {
+    flex: 1 1 0;
+  }
+
+  .column-control.employee-story .row > .grid-column.employee-story-image {
+    flex: 0 0 200px;
+  }
+
+  .column-control.employee-story .employee-story-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+}
