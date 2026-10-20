@@ -139,6 +139,10 @@ export default function decorate(block) {
       && p.textContent.trim()
     ));
     if (lead) lead.classList.add('employee-story-lead');
+    // Image-only columns get a fixed 200px width; the rest share the remainder.
+    columns
+      .filter((col) => col.querySelector('picture, img') && !col.textContent.trim())
+      .forEach((col) => col.classList.add('employee-story-image'));
   }
 
   loadNestedBlocks(columns);

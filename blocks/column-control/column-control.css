@@ -124,4 +124,25 @@
   .column-control.employee-story .grid-column.col-lg-10 { grid-column: span 10; }
   .column-control.employee-story .grid-column.col-lg-11 { grid-column: span 11; }
   .column-control.employee-story .grid-column.col-lg-12 { grid-column: span 12; }
+
+  /* An image-only column (marked .employee-story-image by column-control.js) is
+     a fixed 200px with a 200 x 200 image; the other columns share the rest,
+     in place of the authored layout. */
+  .column-control.employee-story .row:has(> .employee-story-image) {
+    display: flex;
+  }
+
+  .column-control.employee-story .row:has(> .employee-story-image) > .grid-column {
+    flex: 1 1 0;
+  }
+
+  .column-control.employee-story .row > .grid-column.employee-story-image {
+    flex: 0 0 200px;
+  }
+
+  .column-control.employee-story .employee-story-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
 }
