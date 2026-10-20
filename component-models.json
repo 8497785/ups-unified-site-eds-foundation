@@ -24,6 +24,22 @@
     ]
   },
   {
+    "id": "image",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text"
+      }
+    ]
+  },
+  {
     "id": "section",
     "fields": [
       {
@@ -948,24 +964,24 @@
     ]
   },
   {
-    "id": "image",
+    "id": "image-block",
     "fields": [
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
+        "name": "picture_image",
         "label": "Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
+        "name": "picture_imageAlt",
         "label": "Alt Text"
       },
       {
         "component": "aem-content",
-        "name": "link",
+        "name": "picture_link",
         "label": "Link",
         "description": "Optional. If set, the image is clickable and opens this page or URL."
       }
