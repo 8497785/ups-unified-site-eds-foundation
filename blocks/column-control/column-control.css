@@ -70,3 +70,21 @@
 .column-control.employee-story .employee-story-lead {
   font-size: 22px;
 }
+
+/* Employee story keeps the authored layout (e.g. 4 / 8) from tablet up instead
+   of the generic two-per-row tablet rule; mobile still stacks. The extra
+   `.employee-story` class outranks that rule's specificity. */
+@media (width >= 768px) {
+  .column-control.employee-story .grid-column.col-lg-1 { grid-column: span 1; }
+  .column-control.employee-story .grid-column.col-lg-2 { grid-column: span 2; }
+  .column-control.employee-story .grid-column.col-lg-3 { grid-column: span 3; }
+  .column-control.employee-story .grid-column.col-lg-4 { grid-column: span 4; }
+  .column-control.employee-story .grid-column.col-lg-5 { grid-column: span 5; }
+  .column-control.employee-story .grid-column.col-lg-6 { grid-column: span 6; }
+  .column-control.employee-story .grid-column.col-lg-7 { grid-column: span 7; }
+  .column-control.employee-story .grid-column.col-lg-8 { grid-column: span 8; }
+  .column-control.employee-story .grid-column.col-lg-9 { grid-column: span 9; }
+  .column-control.employee-story .grid-column.col-lg-10 { grid-column: span 10; }
+  .column-control.employee-story .grid-column.col-lg-11 { grid-column: span 11; }
+  .column-control.employee-story .grid-column.col-lg-12 { grid-column: span 12; }
+}
