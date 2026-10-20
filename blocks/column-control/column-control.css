@@ -66,7 +66,7 @@
    Only the columns' own paragraphs, not those inside nested blocks. The first
    text paragraph is marked .employee-story-lead by column-control.js. */
 .column-control.employee-story {
-  margin: 64px 0;
+  margin-bottom: 64px;
 }
 
 .column-control.employee-story img {
@@ -76,7 +76,7 @@
 /* Mobile (stacked columns): tighter spacing and a centered 200px square image. */
 @media (width < 768px) {
   .column-control.employee-story {
-    margin: 32px 0;
+    margin-bottom: 32px;
   }
 
   .column-control.employee-story img {
