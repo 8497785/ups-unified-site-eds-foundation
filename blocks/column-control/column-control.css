@@ -85,6 +85,12 @@
   border-radius: 8px;
 }
 
+/* An Image block delivers its picture inside a paragraph; drop that
+   paragraph's margins so the photo sits level with the story text. */
+.column-control.employee-story .image p {
+  margin: 0;
+}
+
 /* Mobile (stacked columns): tighter spacing and a centered 200px square image. */
 @media (width < 768px) {
   .column-control.employee-story {
