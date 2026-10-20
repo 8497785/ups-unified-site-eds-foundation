@@ -65,8 +65,26 @@
    great-employer story snippet (.story_title / .story_quote / .story_link).
    Only the columns' own paragraphs, not those inside nested blocks. The first
    text paragraph is marked .employee-story-lead by column-control.js. */
+.column-control.employee-story {
+  margin: 64px 0;
+}
+
 .column-control.employee-story img {
   border-radius: 8px;
+}
+
+/* Mobile (stacked columns): tighter spacing and a centered 200px square image. */
+@media (width < 768px) {
+  .column-control.employee-story {
+    margin: 32px 0;
+  }
+
+  .column-control.employee-story img {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 0;
+  }
 }
 
 .column-control.employee-story .grid-column > p {
