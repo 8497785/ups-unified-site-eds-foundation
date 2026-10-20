@@ -6,9 +6,6 @@
       "components": [
         {
           "...": "./_text.json#/definitions"
-        },
-        {
-          "...": "./_image.json#/definitions"
         }
       ]
     },

@@ -24,28 +24,6 @@
     ]
   },
   {
-    "id": "image",
-    "fields": [
-      {
-        "component": "reference",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "imageAlt",
-        "label": "Alt Text"
-      },
-      {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link",
-        "description": "Optional. If set, the image is clickable and opens this page or URL."
-      }
-    ]
-  },
-  {
     "id": "section",
     "fields": [
       {
@@ -966,6 +944,30 @@
         "label": "Image",
         "multi": false,
         "description": "Pick the same DAM image the snippet uses. Snippet Images replace the snippet's /content/dam images in order: the 1st Snippet Image replaces the 1st image, and so on."
+      }
+    ]
+  },
+  {
+    "id": "image",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link",
+        "description": "Optional. If set, the image is clickable and opens this page or URL."
       }
     ]
   },

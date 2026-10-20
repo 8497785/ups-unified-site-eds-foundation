@@ -108,6 +108,49 @@ async function loadNestedBlocks(columns) {
   }));
 }
 
+// An Image block's Link value is delivered as a paragraph holding just that
+// link, with the URL/path itself as the text.
+const LINK_VALUE = /^(\/|https?:\/\/|#)\S*$/;
+const isImageLinkLine = (el) => !!el && el.tagName === 'P' && el.children.length === 1
+  && el.firstElementChild.matches('a[href]')
+  && el.textContent.trim() === el.firstElementChild.textContent.trim()
+  && LINK_VALUE.test(el.textContent.trim());
+const isPictureOnly = (el) => !!el && (el.tagName === 'PICTURE'
+  || (el.tagName === 'P' && !!el.querySelector('picture') && !el.textContent.trim()));
+
+// Image blocks nested in a column lose their block class on .page (like any
+// nested block node, see tableToBlock), leaving the picture and its link line
+// in the column. Give them back the `image` class so loadNestedBlocks loads
+// them and the image becomes clickable:
+//  - a classless div holding one picture plus its link line(s), or
+//  - a bare picture directly followed by its link line.
+function restoreImageBlocks(columns) {
+  columns.forEach((col) => {
+    col.querySelectorAll(':scope > div:not([class])').forEach((div) => {
+      const paras = [...div.querySelectorAll('p')];
+      if (div.querySelectorAll('picture').length === 1
+        && paras.some(isImageLinkLine)
+        && paras.every((p) => isImageLinkLine(p) || isPictureOnly(p))) {
+        div.classList.add('image');
+      }
+    });
+    [...col.children].forEach((el) => {
+      const next = el.nextElementSibling;
+      if (!isPictureOnly(el) || !isImageLinkLine(next)) return;
+      const image = document.createElement('div');
+      image.className = 'image';
+      el.replaceWith(image);
+      [el, next].forEach((part) => {
+        const rowDiv = document.createElement('div');
+        const cellDiv = document.createElement('div');
+        cellDiv.append(part);
+        rowDiv.append(cellDiv);
+        image.append(rowDiv);
+      });
+    });
+  });
+}
+
 export default function decorate(block) {
   // A columns container delivers its cells inside a single intermediate row div.
   const rows = [...block.children];
@@ -129,6 +172,8 @@ export default function decorate(block) {
     col.classList.add('grid-column', `col-lg-${widths[i]}`);
   });
 
+  restoreImageBlocks(columns);
+
   // Employee story style: mark the block's first text paragraph (skipping
   // image paragraphs and anything inside nested blocks) so CSS can enlarge it.
   if (block.classList.contains('employee-story')) {
@@ -140,8 +185,14 @@ export default function decorate(block) {
     ));
     if (lead) lead.classList.add('employee-story-lead');
     // Image-only columns get a fixed 200px width; the rest share the remainder.
+    // An Image block's link text doesn't count as column text.
+    const textOutsideLinks = (col) => {
+      const clone = col.cloneNode(true);
+      clone.querySelectorAll('a').forEach((a) => a.remove());
+      return clone.textContent.trim();
+    };
     columns
-      .filter((col) => col.querySelector('picture, img') && !col.textContent.trim())
+      .filter((col) => col.querySelector('picture, img') && !textOutsideLinks(col))
       .forEach((col) => col.classList.add('employee-story-image'));
   }
 
