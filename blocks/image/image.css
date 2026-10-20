@@ -3,6 +3,12 @@
   display: block;
 }
 
+/* The picture is delivered inside a paragraph; drop its text margins so the
+   image sits flush with its container. */
+.image p {
+  margin: 0;
+}
+
 .image img {
   display: block;
   max-width: 100%;

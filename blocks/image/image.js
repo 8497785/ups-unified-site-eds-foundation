@@ -12,10 +12,11 @@ export default function decorate(block) {
   const href = link && link.getAttribute('href');
 
   if (picture && href) {
+    // The delivered link's title is the internal content path, so it isn't
+    // copied (the image's alt text names the link).
     const a = document.createElement('a');
     a.href = href;
     a.className = 'image-link';
-    if (link.title) a.title = link.title;
     picture.replaceWith(a);
     a.append(picture);
   }
