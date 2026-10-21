@@ -373,6 +373,27 @@ main .section.highlight-brown a {
   color: #fff;
 }
 
+/* Text component copy (default content) spacing: paragraphs get 24px above and
+   below, except no space above the first one; headings get 20px below. Only the
+   text's own paragraphs (also inside the Universal Editor's richtext wrapper),
+   not paragraphs inside list items. :where() keeps the specificity low so the
+   block and table paragraph rules further down still win. */
+main .default-content-wrapper > p,
+main .default-content-wrapper > :where([data-aue-type="richtext"]) > p {
+  margin: 24px 0;
+}
+
+main .default-content-wrapper > p:where(:first-child),
+main .default-content-wrapper > :where([data-aue-type="richtext"]:first-child) > p:where(:first-child) {
+  margin-top: 0;
+}
+
+main .default-content-wrapper h2,
+main .default-content-wrapper h3,
+main .default-content-wrapper h4 {
+  margin-bottom: 20px;
+}
+
 /* Links inside text component copy (default content) are underlined.
    Button-styled links keep their own treatment. */
 main .default-content-wrapper a:any-link:not(.button) {
