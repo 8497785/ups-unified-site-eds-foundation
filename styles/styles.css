@@ -400,6 +400,13 @@ main .default-content-wrapper h4 {
   margin-bottom: 20px;
 }
 
+/* Images inside text component paragraphs. The article hero (in the Article
+   Header section) is excluded; block images (e.g. Employee story Column
+   Controls) aren't in a default-content-wrapper, so they're unaffected. */
+main .section:not(.article-header-container) .default-content-wrapper p img {
+  margin: 20px 0;
+}
+
 /* Links inside text component copy (default content) are underlined.
    Button-styled links keep their own treatment. */
 main .default-content-wrapper a:any-link:not(.button) {
