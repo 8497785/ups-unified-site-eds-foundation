@@ -485,17 +485,11 @@
         "label": "Styles"
       },
       {
-        "component": "select",
-        "valueType": "string",
+        "component": "multiselect",
         "name": "classes_style",
         "label": "Style",
-        "value": "",
-        "description": "Optional visual style for this Column Control.",
+        "description": "Optional visual styles for this Column Control. Select any combination, or none.",
         "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
           {
             "name": "Employee story",
             "value": "employee-story"
@@ -962,6 +956,30 @@
         "label": "Image",
         "multi": false,
         "description": "Pick the same DAM image the snippet uses. Snippet Images replace the snippet's /content/dam images in order: the 1st Snippet Image replaces the 1st image, and so on."
+      }
+    ]
+  },
+  {
+    "id": "image-block",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "picture_image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "picture_imageAlt",
+        "label": "Alt Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "picture_link",
+        "label": "Link",
+        "description": "Optional. If set, the image is clickable and opens this page or URL."
       }
     ]
   },

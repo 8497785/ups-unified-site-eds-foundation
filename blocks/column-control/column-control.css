@@ -62,23 +62,24 @@
 }
 
 /* Employee story style (Styles tab): rounded images and paragraphs matching the
-   great-employer story snippet (.story_title / .story_quote / .story_link).
-   Only the columns' own paragraphs, not those inside nested blocks. The first
-   text paragraph is marked .employee-story-lead by column-control.js. */
+   great-employer story snippet (.story_quote / .story_link). Only the columns'
+   own paragraphs, not those inside nested blocks. */
 .column-control.employee-story {
-  margin-bottom: 64px;
+  margin-bottom: 20px;
 }
 
 .column-control.employee-story img {
   border-radius: 8px;
 }
 
-/* Mobile (stacked columns): tighter spacing and a centered 200px square image. */
-@media (width < 768px) {
-  .column-control.employee-story {
-    margin-bottom: 32px;
-  }
+/* An Image block delivers its picture inside a paragraph; drop that
+   paragraph's margins so the photo sits level with the story text. */
+.column-control.employee-story .image p {
+  margin: 0;
+}
 
+/* Mobile (stacked columns): a centered 200px square image. */
+@media (width < 768px) {
   .column-control.employee-story img {
     width: 200px;
     height: 200px;
@@ -110,11 +111,6 @@
 
 .column-control.employee-story .grid-column > [data-aue-type="richtext"] > p + p {
   margin-top: 14px;
-}
-
-.column-control.employee-story .grid-column > .employee-story-lead,
-.column-control.employee-story .grid-column > [data-aue-type="richtext"] > .employee-story-lead {
-  font-size: 22px;
 }
 
 .column-control.employee-story .grid-column > p a:any-link,

@@ -92,14 +92,11 @@
           "label": "Styles"
         },
         {
-          "component": "select",
-          "valueType": "string",
+          "component": "multiselect",
           "name": "classes_style",
           "label": "Style",
-          "value": "",
-          "description": "Optional visual style for this Column Control.",
+          "description": "Optional visual styles for this Column Control. Select any combination, or none.",
           "options": [
-            { "name": "None", "value": "" },
             { "name": "Employee story", "value": "employee-story" }
           ]
         }

@@ -177,7 +177,7 @@
       "id": "section",
       "components": [
         "text",
-        "image",
+        "image-block",
         "button",
         "title-block",
         "hero",
@@ -211,7 +211,7 @@
       "id": "column-section",
       "components": [
         "text",
-        "image",
+        "image-block",
         "button",
         "title-block",
         "social-share",
