@@ -400,9 +400,10 @@ main .default-content-wrapper h4 {
   margin-bottom: 20px;
 }
 
-/* Images inside text component paragraphs. Block images (e.g. Employee story
-   Column Controls) aren't in a default-content-wrapper, so they're unaffected. */
-.default-content-wrapper p img {
+/* Images inside text component paragraphs. The article hero (in the Article
+   Header section) is excluded; block images (e.g. Employee story Column
+   Controls) aren't in a default-content-wrapper, so they're unaffected. */
+main .section:not(.article-header-container) .default-content-wrapper p img {
   margin: 20px 0;
 }
 
