@@ -61,24 +61,11 @@
   .column-control .grid-column.col-lg-12 { grid-column: span 12; }
 }
 
-/* Top Space style (Styles tab): space above the block, 64px from tablet up and
-   32px on mobile. Combines with the other styles. */
-.column-control.top-space {
-  margin-top: 64px;
-}
-
-@media (width < 768px) {
-  .column-control.top-space {
-    margin-top: 32px;
-  }
-}
-
 /* Employee story style (Styles tab): rounded images and paragraphs matching the
-   great-employer story snippet (.story_title / .story_quote / .story_link).
-   Only the columns' own paragraphs, not those inside nested blocks. The first
-   text paragraph is marked .employee-story-lead by column-control.js. */
+   great-employer story snippet (.story_quote / .story_link). Only the columns'
+   own paragraphs, not those inside nested blocks. */
 .column-control.employee-story {
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .column-control.employee-story img {
@@ -124,11 +111,6 @@
 
 .column-control.employee-story .grid-column > [data-aue-type="richtext"] > p + p {
   margin-top: 14px;
-}
-
-.column-control.employee-story .grid-column > .employee-story-lead,
-.column-control.employee-story .grid-column > [data-aue-type="richtext"] > .employee-story-lead {
-  font-size: 22px;
 }
 
 .column-control.employee-story .grid-column > p a:any-link,

@@ -189,17 +189,9 @@ export default function decorate(block) {
 
   restoreImageBlocks(columns);
 
-  // Employee story style: mark the block's first text paragraph (skipping
-  // image paragraphs and anything inside nested blocks) so CSS can enlarge it.
   if (block.classList.contains('employee-story')) {
-    const lead = [...row.querySelectorAll('.grid-column p')].find((p) => (
-      p.closest('div[class]').classList.contains('grid-column')
-      && !p.closest('table')
-      && !p.querySelector('picture, img')
-      && p.textContent.trim()
-    ));
-    if (lead) lead.classList.add('employee-story-lead');
-    // Image-only columns get a fixed 200px width; the rest share the remainder.
+    // Employee story style: image-only columns get a fixed 200px width; the
+    // rest share the remainder.
     // An Image block's link text doesn't count as column text.
     const textOutsideLinks = (col) => {
       const clone = col.cloneNode(true);

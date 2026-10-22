@@ -97,8 +97,7 @@
           "label": "Style",
           "description": "Optional visual styles for this Column Control. Select any combination, or none.",
           "options": [
-            { "name": "Employee story", "value": "employee-story" },
-            { "name": "Top Space", "value": "top-space" }
+            { "name": "Employee story", "value": "employee-story" }
           ]
         }
       ]
