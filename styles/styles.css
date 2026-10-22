@@ -400,6 +400,12 @@ main .default-content-wrapper h4 {
   margin-bottom: 20px;
 }
 
+/* Images inside text component paragraphs. Block images (e.g. Employee story
+   Column Controls) aren't in a default-content-wrapper, so they're unaffected. */
+.default-content-wrapper p img {
+  margin: 20px 0;
+}
+
 /* Links inside text component copy (default content) are underlined.
    Button-styled links keep their own treatment. */
 main .default-content-wrapper a:any-link:not(.button) {
