@@ -73,6 +73,7 @@
   vertical-align: middle;
   white-space: normal;
   border: 0;
+  box-sizing: border-box;
   display: inline-flex;
   justify-content: center;
   align-items: center;
