@@ -41,9 +41,17 @@
   display: inline;
 }
 
-/* Trailing chevron icon. */
-.cmp-button .upspr-icon-chevronright {
+/* Trailing icon: chevron, or new-window for external links. */
+.cmp-button .upspr-icon-chevronright,
+.cmp-button .upspr-icon-newwindow {
   font-size: 12px;
+}
+
+/* A Button block in a column section next to text content gets 24px above and
+   below. */
+main .section.column:has(> .default-content-wrapper) > .button-wrapper {
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .cmp-button:focus {
