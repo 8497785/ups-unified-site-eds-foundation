@@ -15,9 +15,21 @@ const ALIGN_CLASS = {
   right: 'cmp-button--align-right',
 };
 
+// An absolute http(s) link to another host than the current page's.
+function isExternal(href) {
+  try {
+    const url = new URL(href, window.location.href);
+    return /^https?:$/.test(url.protocol) && url.hostname !== window.location.hostname;
+  } catch (e) {
+    return false;
+  }
+}
+
 // Build the CTA element (shared with other blocks, e.g. content-list Load More).
 // Returns an <a> when href is set, else a <button>. Applies the cmp-button
-// base class, the style variant, alignment, and any extra classes.
+// base class, the style variant, alignment, and any extra classes. External
+// links open in a new window and show the new-window icon instead of the
+// chevron.
 export function createButton({
   label, href, style, alignment, customClass, type = 'button',
 } = {}) {
@@ -29,8 +41,13 @@ export function createButton({
   if (align) el.classList.add(align);
   if (customClass) el.classList.add(...customClass.split(/\s+/).filter(Boolean));
 
+  const external = !!href && isExternal(href);
   if (href) {
     el.href = href;
+    if (external) {
+      el.target = '_blank';
+      el.rel = 'noopener noreferrer';
+    }
   } else {
     el.type = type;
   }
@@ -40,7 +57,7 @@ export function createButton({
   text.textContent = label || '';
 
   const icon = document.createElement('span');
-  icon.className = 'upspr upspr-icon-chevronright';
+  icon.className = external ? 'upspr upspr-icon-newwindow' : 'upspr upspr-icon-chevronright';
 
   el.append(text, icon);
   return el;
