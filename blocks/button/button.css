@@ -25,13 +25,8 @@
   --line-height-cta: 1.5;
   --button-font-weight: 500;
 
-  /* Primary action area geometry (source spec). */
-  --primary-button-radius: 32px;
-  --primary-button-min-width: 100px;
-
-  /* Elevations: level 4 (hover), level 2 (pressed). */
-  --elevation-4: 0 6px 10px 0 rgb(0 0 0 / 10%);
-  --elevation-2: 0 2px 6px 0 rgb(0 0 0 / 10%);
+  /* Primary geometry (source: .btn.btn-primary.upspr-latest-stories__btn). */
+  --primary-button-radius: 80px;
 }
 
 /* Base */
@@ -46,9 +41,17 @@
   display: inline;
 }
 
-/* Trailing chevron icon. */
-.cmp-button .upspr-icon-chevronright {
+/* Trailing icon: chevron, or new-window for external links. */
+.cmp-button .upspr-icon-chevronright,
+.cmp-button .upspr-icon-newwindow {
   font-size: 12px;
+}
+
+/* A Button block in a column section next to text content gets 24px above and
+   below. */
+main .section.column:has(> .default-content-wrapper) > .button-wrapper {
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .cmp-button:focus {
@@ -60,27 +63,36 @@
   outline-offset: 2px;
 }
 
-/* Primary — source spec: 44px action area, 10px/24px padding, 32px radius,
-   100px min-width, 8px label-to-chevron gap. */
+/* Primary — matches the source CTA (.btn.btn-primary.upspr-latest-stories__btn):
+   15px/32px/14px padding, 80px radius, Roboto 16px, normal line height, no
+   border, colour/background transition. No minimum height. Weight 500 (the
+   source uses 700). 8px label-to-chevron gap. */
 .cmp-button.cmp-button--primary {
-  min-height: 44px;
-  min-width: var(--primary-button-min-width);
-  padding: 10px 24px;
+  padding: 15px 32px 14px;
   gap: 8px;
   background-color: var(--primary-button-background);
   border-radius: var(--primary-button-radius);
   color: var(--primary-button-color);
+  font-family: var(--body-font-family);
   font-size: var(--font-size-cta);
-  line-height: var(--line-height-cta);
-  font-weight: var(--button-font-weight);
-  border: none;
+  line-height: normal;
+  font-weight: 500;
+  text-align: center;
+  vertical-align: middle;
+  white-space: normal;
+  border: 0;
+  box-sizing: border-box;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 
 @media (width >= 768px) {
@@ -89,14 +101,15 @@
   }
 }
 
-/* Hovered — gold hover fill + elevation level 4. Radius stays 32px. */
+/* Hovered — lighter gold fill, same label colour, no shadow (as the source). */
 .cmp-button.cmp-button--primary:hover {
   background-color: var(--primary-button-background-hover);
+  color: var(--primary-button-color);
   text-decoration: none;
-  box-shadow: var(--elevation-4);
+  box-shadow: none;
 }
 
-/* Focused — 1px outline, 4px offset, 32px radius. */
+/* Focused — 1px outline, 4px offset (keyboard focus only). */
 .cmp-button.cmp-button--primary:focus-visible {
   box-shadow: none;
   outline: 1px solid var(--ups-black);
@@ -104,10 +117,11 @@
   border-radius: var(--primary-button-radius);
 }
 
-/* Pressed — gold fill + elevation level 2. */
+/* Pressed — gold fill, no shadow (as the source). */
 .cmp-button.cmp-button--primary:active {
   background-color: var(--primary-button-background);
-  box-shadow: var(--elevation-2);
+  color: var(--primary-button-color);
+  box-shadow: none;
 }
 
 /* Disabled — UPS Gray 5 fill, UPS Gray 1 label. */
