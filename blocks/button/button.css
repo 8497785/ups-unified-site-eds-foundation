@@ -64,9 +64,9 @@ main .section.column:has(> .default-content-wrapper) > .button-wrapper {
 }
 
 /* Primary — matches the source CTA (.btn.btn-primary.upspr-latest-stories__btn):
-   15px/32px/14px padding, 80px radius, Roboto 16px bold, normal line height,
-   no border, colour/background transition. No minimum height. 8px
-   label-to-chevron gap. */
+   15px/32px/14px padding, 80px radius, Roboto 16px, normal line height, no
+   border, colour/background transition. No minimum height. Weight 500 (the
+   source uses 700). 8px label-to-chevron gap. */
 .cmp-button.cmp-button--primary {
   padding: 15px 32px 14px;
   gap: 8px;
@@ -76,7 +76,7 @@ main .section.column:has(> .default-content-wrapper) > .button-wrapper {
   font-family: var(--body-font-family);
   font-size: var(--font-size-cta);
   line-height: normal;
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
   vertical-align: middle;
   white-space: normal;
