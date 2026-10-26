@@ -147,6 +147,34 @@ function decorateExternalLinks(main) {
 }
 
 /**
+ * Remove the .html extension from internal page links on delivery. Edge
+ * Delivery serves /us/en/page (page.html 404s), while AEM author keeps .html,
+ * so nothing changes on the author host. Only links to this site (relative or
+ * same origin) are changed; external links, including the old about.ups.com
+ * site, keep their .html. /content/... paths (e.g. DAM assets) are left alone.
+ * @param {Element} container The element whose links to clean
+ */
+export function cleanInternalLinks(container) {
+  if (window.location.hostname.endsWith('.adobeaemcloud.com')) return;
+  container.querySelectorAll('a[href]').forEach((a) => {
+    const href = a.getAttribute('href') || '';
+    if (/^(#|mailto:|tel:|javascript:)/i.test(href)) return;
+    let url;
+    try {
+      url = new URL(href, window.location.href);
+    } catch (e) {
+      return;
+    }
+    if (url.origin !== window.location.origin) return;
+    if (!url.pathname.endsWith('.html') || url.pathname.startsWith('/content/')) return;
+    const path = url.pathname.replace(/\.html$/, '');
+    a.setAttribute('href', /^https?:/i.test(href)
+      ? `${url.origin}${path}${url.search}${url.hash}`
+      : `${path}${url.search}${url.hash}`);
+  });
+}
+
+/**
  * Keep link-only paragraphs in article body text as plain links.
  * decorateButtons() turns any paragraph holding just a link (optionally in
  * <strong>/<em>) into a button. In column sections (the article body) those are
@@ -182,6 +210,8 @@ export function decorateMain(main) {
   addColumnSectionsWrapper(main);
   // external links open in a new tab with safe rel
   decorateExternalLinks(main);
+  // internal page links without .html on delivery
+  cleanInternalLinks(main);
 }
 
 /**
