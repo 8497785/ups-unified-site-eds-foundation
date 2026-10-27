@@ -229,6 +229,33 @@
     ]
   },
   {
+    "id": "audio",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text",
+        "description": "Optional text shown above the player, e.g. a \"Listen to this article\" heading.",
+        "valueType": "string"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset",
+        "name": "audio",
+        "label": "Audio",
+        "description": "Pick an audio file with the asset picker. Only audio files are shown; the file must be approved for delivery.",
+        "configUrl": "https://feat-audio--ups-unified-site-eds-foundation--8497785.aem.page/tools/assets-selector/audio.config.json",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "audioLabel",
+        "label": "Accessible Name",
+        "description": "Optional short description of the audio for screen readers (the player's label). Defaults to the text above the player."
+      }
+    ]
+  },
+  {
     "id": "award",
     "fields": [
       {

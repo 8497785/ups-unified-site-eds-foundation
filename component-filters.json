@@ -127,6 +127,7 @@
       "related-articles",
       "table",
       "video",
+      "audio",
       "awards-banner",
       "navigation-tabs",
       "contact-us",
@@ -145,6 +146,7 @@
       "fragment",
       "table",
       "video",
+      "audio",
       "html-embed",
       "column-control"
     ]
