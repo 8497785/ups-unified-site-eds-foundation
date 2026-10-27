@@ -12,6 +12,13 @@
   margin-bottom: 0;
 }
 
+/* As the source: text above the player uses the browser's default sizes
+   (e.g. an h3 is ~18.7px bold), not the site heading scale. */
+.audio .audio-text :is(h1, h2, h3, h4, h5, h6, p, a, blockquote, pre) {
+  font-size: revert;
+  font-weight: revert;
+}
+
 .audio audio {
   display: block;
   width: 100%;

@@ -87,6 +87,10 @@ export default function decorate(block) {
     children.push(notice(value
       ? 'This audio can\'t be played: pick it again with the asset picker.'
       : 'Pick an audio file in the Audio field to show the player here.'));
+  } else {
+    // Nothing to play on a published page: render nothing (not just the text).
+    block.replaceChildren();
+    return;
   }
 
   block.replaceChildren(...children);
