@@ -1,0 +1,38 @@
+{
+  "repoNames": [
+    "delivery-p55671-e392471.adobeaemcloud.com",
+    "author-p55671-e392471.adobeaemcloud.com"
+  ],
+  "aemTierType": [
+    "delivery",
+    "author"
+  ],
+  "expiryOptions": {
+    "allowSelectionAndDrag": false
+  },
+  "filterSchema": [
+    {
+      "fields": [
+        {
+          "defaultValue": [
+            "audio/*"
+          ],
+          "element": "checkbox",
+          "name": "type",
+          "options": [
+            {
+              "label": "Audio",
+              "readOnly": true,
+              "value": "audio/*"
+            }
+          ]
+        }
+      ],
+      "groupKey": "FileTypeGroup",
+      "header": "File Type"
+    }
+  ],
+  "alwaysUseDMDelivery": true,
+  "vanityPath": "adobe",
+  "rootPath": "/content/dam/upsstories"
+}

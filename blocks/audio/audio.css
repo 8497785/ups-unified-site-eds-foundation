@@ -1,0 +1,32 @@
+/* Audio block — text above a full-width native player (as the source
+   .audio component: .audio-text then <audio>). */
+.audio .audio-text {
+  margin-bottom: 15px;
+}
+
+.audio .audio-text > :first-child {
+  margin-top: 0;
+}
+
+.audio .audio-text > :last-child {
+  margin-bottom: 0;
+}
+
+/* As the source: text above the player uses the browser's default sizes
+   (e.g. an h3 is ~18.7px bold), not the site heading scale. */
+.audio .audio-text :is(h1, h2, h3, h4, h5, h6, p, a, blockquote, pre) {
+  font-size: revert;
+  font-weight: revert;
+}
+
+.audio audio {
+  display: block;
+  width: 100%;
+}
+
+.audio .audio-notice {
+  margin: 0;
+  padding: 16px;
+  border: 1px dashed var(--ups-gray-3, #bfb8af);
+  color: var(--ups-gray-1, #5f5753);
+}
