@@ -1,5 +1,9 @@
 /* Audio block — text above a full-width native player (as the source
    .audio component: .audio-text then <audio>). */
+.audio:not(:empty) {
+  margin-bottom: 28px;
+}
+
 .audio .audio-text {
   margin-bottom: 15px;
 }
