@@ -47,7 +47,7 @@
     {
       "id": "column",
       "components": [
-        "text",
+        "column-text",
         "image-block",
         "button",
         "title-block",

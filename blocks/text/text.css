@@ -1,0 +1,60 @@
+/* Text — copy spacing as the built-in Text component (default content): 12px
+   between paragraphs, none above the first; headings 8px below (h4: 20px). */
+.text > div > div > p,
+.text > div > div > :where([data-aue-type="richtext"]) > p {
+  margin: 12px 0;
+}
+
+.text > div > div > p:where(:first-child),
+.text > div > div > :where([data-aue-type="richtext"]:first-child) > p:where(:first-child) {
+  margin-top: 0;
+}
+
+.text :is(h2, h3) {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.text h4 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.text p img {
+  margin: 20px 0;
+}
+
+.text a:any-link:not(.button) {
+  text-decoration: underline;
+}
+
+/* Style "Quote" — the source's author byline: small grey italic text, with an
+   image (headshot) floated left of the text. */
+.text.quote {
+  display: flow-root;
+  color: #808080;
+  font-size: 13.6px;
+  line-height: 20.4px;
+  font-style: italic;
+}
+
+.text.quote > div > div > p,
+.text.quote > div > div > :where([data-aue-type="richtext"]) > p {
+  margin: 0 0 32px;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* The headshot's own (image-only) paragraph takes no space: the image floats
+   beside the next paragraph's text, and its margin would otherwise show as
+   space above the byline. */
+.text.quote > div > div > p.text-image,
+.text.quote > div > div > :where([data-aue-type="richtext"]) > p.text-image {
+  margin: 0;
+}
+
+.text.quote p img {
+  float: left;
+  margin: 0;
+  padding: 3px 9px 3px 0;
+}

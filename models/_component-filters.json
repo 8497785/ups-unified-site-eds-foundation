@@ -7,7 +7,10 @@
     ]
   },
   {
-    "id": "text",
+    "...": "./_text.json#/filters"
+  },
+  {
+    "id": "column-text",
     "rte": {
       "toolbar": {
         "format": ["bold", "italic", "underline", "strike", "code_inline", "text_color"],
