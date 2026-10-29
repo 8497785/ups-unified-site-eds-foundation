@@ -177,6 +177,7 @@
       "id": "section",
       "components": [
         "text",
+        "rich-text",
         "image-block",
         "button",
         "title-block",
@@ -212,6 +213,7 @@
       "id": "column-section",
       "components": [
         "text",
+        "rich-text",
         "image-block",
         "button",
         "title-block",
