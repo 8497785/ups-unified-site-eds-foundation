@@ -413,30 +413,6 @@ main .default-content-wrapper a:any-link:not(.button) {
   text-decoration: underline;
 }
 
-/* Text component, "Quote" class (text editor > Add Custom Class): the source's
-   author byline — small grey italic text, with an image (headshot) floated
-   left of the text. Applied to a paragraph (or an element around paragraphs). */
-main .default-content-wrapper .quote {
-  display: flow-root;
-  color: #808080;
-  font-size: 13.6px;
-  line-height: 20.4px;
-  font-style: italic;
-}
-
-main .default-content-wrapper :where(.quote) p,
-main .default-content-wrapper p:where(.quote) {
-  margin: 0 0 32px;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-main .section:not(.article-header-container) .default-content-wrapper .quote img {
-  float: left;
-  margin: 0;
-  padding: 3px 9px 3px 0;
-}
-
 /* Sample classes offered by the text editor's class picker (Advanced). */
 main .rte-indent {
   margin-inline-start: 40px;
