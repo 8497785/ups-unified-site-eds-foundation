@@ -45,6 +45,14 @@
   line-height: inherit;
 }
 
+/* The headshot's own (image-only) paragraph takes no space: the image floats
+   beside the next paragraph's text, and its margin would otherwise show as
+   space above the byline. */
+.text.quote > div > div > p.text-image,
+.text.quote > div > div > :where([data-aue-type="richtext"]) > p.text-image {
+  margin: 0;
+}
+
 .text.quote p img {
   float: left;
   margin: 0;
