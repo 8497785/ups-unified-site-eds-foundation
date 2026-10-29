@@ -40,40 +40,6 @@
     ]
   },
   {
-    "id": "text",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      },
-      {
-        "component": "tab",
-        "name": "styles",
-        "label": "Styles"
-      },
-      {
-        "component": "select",
-        "name": "classes",
-        "label": "Style",
-        "description": "Quote: small grey italic text with an image floated to the left (e.g. an author byline).",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "Quote",
-            "value": "quote"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "section",
     "fields": [
       {

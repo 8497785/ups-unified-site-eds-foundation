@@ -31,7 +31,8 @@
           "label": "Add Custom Class",
           "options": [
             { "value": "rte-indent", "label": "Indent" },
-            { "value": "rte-outdent", "label": "Outdent" }
+            { "value": "rte-outdent", "label": "Outdent" },
+            { "value": "quote", "label": "Quote" }
           ]
         }
       }

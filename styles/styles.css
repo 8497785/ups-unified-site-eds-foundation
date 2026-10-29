@@ -413,9 +413,9 @@ main .default-content-wrapper a:any-link:not(.button) {
   text-decoration: underline;
 }
 
-/* Text component, Style "Quote" (Styles tab): the source's author byline —
-   small grey italic text, with an image (headshot) floated left of the text.
-   Matches the class on the text's container or on a paragraph. */
+/* Text component, "Quote" class (text editor > Add Custom Class): the source's
+   author byline — small grey italic text, with an image (headshot) floated
+   left of the text. Applied to a paragraph (or an element around paragraphs). */
 main .default-content-wrapper .quote {
   display: flow-root;
   color: #808080;

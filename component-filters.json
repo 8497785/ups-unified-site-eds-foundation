@@ -94,6 +94,10 @@
             {
               "value": "rte-outdent",
               "label": "Outdent"
+            },
+            {
+              "value": "quote",
+              "label": "Quote"
             }
           ]
         }
