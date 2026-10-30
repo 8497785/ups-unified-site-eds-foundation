@@ -14,7 +14,12 @@
   justify-content: center;
 }
 
+/* Native player (direct files, and DAM videos that aren't on Dynamic Media):
+   full width like the Dynamic Media viewer, and a block so no inline baseline
+   gap shows below it. */
 .video video {
+  display: block;
+  width: 100%;
   max-width: 100%;
 }
 
