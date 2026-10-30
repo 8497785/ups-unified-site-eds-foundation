@@ -5,7 +5,8 @@
    live here; brand colors reuse the globals in styles/styles.css where present. */
 
 .button,
-.content-list {
+.content-list,
+.related-articles {
   /* Button palette (source: cmp-button variables). */
   --ups-black: #121212;
   --ups-blue: #0662bb;
