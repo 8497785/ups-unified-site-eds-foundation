@@ -9,3 +9,34 @@
 main .section.related-articles-empty {
   display: none;
 }
+
+/* Below 1024px the cards sit in one horizontally scrolling row instead of
+   stacking — source: Related Stories .upspr-latest-stories-list_row (nowrap,
+   overflow-x auto, no snap). Phone cards are 90vw wide (max 450px) so the next
+   card peeks in; on tablet about two cards show. From 1024px the shared
+   content-list 3-column grid applies. The vertical padding leaves room for the
+   card shadow, which the scroll container would otherwise clip. */
+@media (width < 1024px) {
+  .related-articles .content-list-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 16px 6px;
+    margin: -16px -6px;
+  }
+
+  .related-articles .content-list-card {
+    flex: 0 0 min(90vw, 450px);
+  }
+}
+
+@media (768px <= width < 1024px) {
+  .related-articles .content-list-grid {
+    gap: 20px;
+  }
+
+  .related-articles .content-list-card {
+    flex-basis: 47%;
+  }
+}
