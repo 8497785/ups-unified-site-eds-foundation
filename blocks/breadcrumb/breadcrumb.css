@@ -50,3 +50,16 @@
 .section.highlight-brown .breadcrumb nav li:not(:first-child)::before {
   color: #fff;
 }
+
+/* Hidden below 1024px, as on the source site (max-width: 1023px). A section
+   that holds only the breadcrumb is hidden too, so its bottom margin doesn't
+   leave an empty gap above the page content. */
+@media (width < 1024px) {
+  main .breadcrumb-wrapper {
+    display: none;
+  }
+
+  main .section.breadcrumb-container:not(:has(> :not(.breadcrumb-wrapper))) {
+    display: none;
+  }
+}
