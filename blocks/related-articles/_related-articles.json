@@ -35,50 +35,55 @@
         {
           "component": "aem-content",
           "name": "category",
-          "label": "Category (Dynamic)",
+          "label": "Category",
           "rootPath": "/content/about-ups-eds",
           "validation": {
             "rootPath": "/content/about-ups-eds"
           },
-          "description": "Dynamic mode. Select the category to list articles from. Leave blank to use siblings under the current page's parent."
+          "description": "Select the category to list articles from. Leave blank to use siblings under the current page's parent.",
+          "condition": { "!==": [{ "var": "mode" }, "static"] }
         },
         {
           "component": "number",
           "valueType": "number",
           "name": "articleCount",
-          "label": "Number of Articles (Dynamic)",
-          "description": "Dynamic mode. How many articles to show, newest first, excluding the current page.",
-          "value": 3
+          "label": "Number of Articles",
+          "description": "How many articles to show, newest first, excluding the current page.",
+          "value": 3,
+          "condition": { "!==": [{ "var": "mode" }, "static"] }
         },
         {
           "component": "aem-content",
           "name": "path1",
-          "label": "Article 1 (Static)",
+          "label": "Article 1",
           "rootPath": "/content/about-ups-eds",
           "validation": {
             "rootPath": "/content/about-ups-eds"
           },
-          "description": "Static mode. Select the first article to feature."
+          "description": "Select the first article to feature.",
+          "condition": { "===": [{ "var": "mode" }, "static"] }
         },
         {
           "component": "aem-content",
           "name": "path2",
-          "label": "Article 2 (Static)",
+          "label": "Article 2",
           "rootPath": "/content/about-ups-eds",
           "validation": {
             "rootPath": "/content/about-ups-eds"
           },
-          "description": "Static mode. Optional second article."
+          "description": "Optional second article.",
+          "condition": { "===": [{ "var": "mode" }, "static"] }
         },
         {
           "component": "aem-content",
           "name": "path3",
-          "label": "Article 3 (Static)",
+          "label": "Article 3",
           "rootPath": "/content/about-ups-eds",
           "validation": {
             "rootPath": "/content/about-ups-eds"
           },
-          "description": "Static mode. Optional third article."
+          "description": "Optional third article.",
+          "condition": { "===": [{ "var": "mode" }, "static"] }
         },
         {
           "component": "boolean",
