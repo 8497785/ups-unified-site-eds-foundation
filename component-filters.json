@@ -346,6 +346,12 @@
     ]
   },
   {
+    "id": "related-articles",
+    "components": [
+      "related-news-item"
+    ]
+  },
+  {
     "id": "table",
     "components": [],
     "rte": {

@@ -42,6 +42,78 @@ main .section.related-articles-empty {
   }
 }
 
+/* In the News — source: three-column teaser "newsFeed" view. The cards wrap
+   (no scroll row): 1 per row on mobile, 2 on tablet (768–1023px), 3 from
+   1024px. Cards beyond the initial count are hidden until Load More. */
+.related-articles.related-articles-news .content-list-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  overflow: visible;
+  padding: 0;
+  margin: 0;
+}
+
+@media (width >= 768px) {
+  .related-articles.related-articles-news .content-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 1024px) {
+  .related-articles.related-articles-news .content-list-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+.related-articles .content-list-card[hidden],
+.related-articles .related-articles-more[hidden] {
+  display: none;
+}
+
+/* Load More — source: .btn.btn-secondary.upspr-load-more__btn (white, 2px UPS
+   blue border, pill, Roboto 700 16px, 56px tall, chevron), centred below the
+   cards: 20px above it below 1024px, 40px from 1024px. Builds on the shared
+   cmp-button--secondary styles. */
+.related-articles .related-articles-more.cmp-button {
+  display: flex;
+  gap: 6px;
+  width: fit-content;
+  margin: 20px auto 0;
+  padding: 15px 32px 14px;
+  border-radius: 80px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 23px;
+  background-color: #fff;
+}
+
+.related-articles .related-articles-more.cmp-button:hover {
+  background-color: var(--ups-light-blue);
+}
+
+.related-articles .related-articles-more .upspr-icon-chevronright {
+  font-size: 16px;
+}
+
+@media (width >= 1024px) {
+  .related-articles .related-articles-more.cmp-button {
+    margin-top: 40px;
+  }
+}
+
+/* Universal Editor: a News Story without a title or link yet. */
+.related-articles .related-articles-item-incomplete {
+  outline: 2px dashed #6e6e6e;
+  outline-offset: -2px;
+}
+
+.related-articles .related-articles-item-incomplete .content-list-card-title {
+  color: #6e6e6e;
+  font-style: italic;
+}
+
 /* Entrance animation, as on the source site — played once, when the block
    first scrolls into view (related-articles.js swaps -pending for -animate):
    card    fadeInUp      1s, 0.2s delay (rises its own height)

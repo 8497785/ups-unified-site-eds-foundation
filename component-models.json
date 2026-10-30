@@ -1255,7 +1255,7 @@
         "name": "mode",
         "label": "Mode",
         "value": "dynamic",
-        "description": "Dynamic lists articles automatically; Static shows the specific articles you choose.",
+        "description": "Dynamic lists articles automatically; Static shows the specific articles you choose; In the News shows the News Story items added to this block.",
         "options": [
           {
             "name": "Dynamic",
@@ -1264,6 +1264,10 @@
           {
             "name": "Static",
             "value": "static"
+          },
+          {
+            "name": "In the News",
+            "value": "news"
           }
         ]
       },
@@ -1277,12 +1281,17 @@
         },
         "description": "Select the category to list articles from. Leave blank to use siblings under the current page's parent.",
         "condition": {
-          "!==": [
-            {
-              "var": "mode"
-            },
-            "static"
-          ]
+          "!": {
+            "in": [
+              {
+                "var": "mode"
+              },
+              [
+                "static",
+                "news"
+              ]
+            ]
+          }
         }
       },
       {
@@ -1293,12 +1302,17 @@
         "description": "How many articles to show, newest first, excluding the current page.",
         "value": 3,
         "condition": {
-          "!==": [
-            {
-              "var": "mode"
-            },
-            "static"
-          ]
+          "!": {
+            "in": [
+              {
+                "var": "mode"
+              },
+              [
+                "static",
+                "news"
+              ]
+            ]
+          }
         }
       },
       {
@@ -1361,6 +1375,132 @@
         "name": "showDate",
         "label": "Show Date",
         "description": "Show the published date on each card. Off by default."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "loadMoreLabel",
+        "label": "Load More Button Label",
+        "description": "Text on the Load More button (maximum 30 characters). Leave blank for \"Load more\".",
+        "validation": {
+          "maxLength": 30,
+          "customErrorMsg": "Load More Button Label cannot exceed 30 characters"
+        },
+        "condition": {
+          "===": [
+            {
+              "var": "mode"
+            },
+            "news"
+          ]
+        }
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "desktopCount",
+        "label": "Desktop initial load view count",
+        "description": "News count to show in desktop view on page load (3 to 9). Also used on mobile.",
+        "value": 3,
+        "validation": {
+          "numberMin": 3,
+          "numberMax": 9
+        },
+        "condition": {
+          "===": [
+            {
+              "var": "mode"
+            },
+            "news"
+          ]
+        }
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "tabletCount",
+        "label": "Tablet initial load view count",
+        "description": "News count to show in tablet view on page load (2 to 8).",
+        "value": 2,
+        "validation": {
+          "numberMin": 2,
+          "numberMax": 8
+        },
+        "condition": {
+          "===": [
+            {
+              "var": "mode"
+            },
+            "news"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "related-news-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image alt text",
+        "description": "Leave blank to use the News title.",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "source",
+        "label": "External source name",
+        "description": "Shown above the title, e.g. \"Reuters\"."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "News title",
+        "required": true
+      },
+      {
+        "component": "date-time",
+        "valueType": "date",
+        "name": "date",
+        "label": "News Date",
+        "displayFormat": "YYYY-MM-DD",
+        "valueFormat": "YYYY-MM-DD",
+        "description": "Shown on the card when Show Date is on."
+      },
+      {
+        "component": "textarea",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link",
+        "label": "External source URL",
+        "required": true,
+        "description": "Page or external URL the card links to.",
+        "validation": {
+          "rootPath": "/content"
+        }
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "newTab",
+        "label": "Open in New Tab",
+        "value": false
       }
     ]
   },

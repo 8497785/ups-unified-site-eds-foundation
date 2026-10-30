@@ -23,8 +23,11 @@ module.exports = {
     // article-header has 6 (eyebrow, eyebrowLink, title, description,
     // articleDate, hideReadTime); content-list has 8 (category, pageSize,
     // loadMoreLabel, loadMoreStyle, loadMoreAlignment, showDate, sortBy,
-    // maxItems); related-articles has 7 (mode, category, articleCount, path1,
-    // path2, path3, showDate); video has 6 (videoSource, link, externalUrl,
+    // maxItems); related-articles has 10 (mode, category, articleCount, path1,
+    // path2, path3, showDate, loadMoreLabel, desktopCount, tabletCount — the
+    // dialog shows only the fields for the selected mode); its News Story item
+    // (related-news-item) has 7 (image + alt, source, title, date, description,
+    // link, newTab); video has 6 (videoSource, link, externalUrl,
     // enablePlaceholderImage, image, imageAlt); hero-featured has 6 (image,
     // text, topic, topicLink, ctaLink, classes — classes holds block options, so
     // 5 rows render).
@@ -32,7 +35,8 @@ module.exports = {
       button: 5,
       'article-header': 6,
       'content-list': 8,
-      'related-articles': 8,
+      'related-articles': 10,
+      'related-news-item': 7,
       video: 6,
       'hero-featured': 6,
     }],
