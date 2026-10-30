@@ -5,8 +5,11 @@
  * trimmed to the sources this project uses:
  *   - YouTube (youtube.com / youtu.be) -> embedded iframe
  *   - DAM video assets (/content/dam/... .mp4/...) that are published to
- *     Dynamic Media -> Scene7 HTML5 VideoViewer (mirrors the AEM HTL component)
- *   - Any other direct video file / URL -> native <video> element (fallback)
+ *     Dynamic Media -> Scene7 HTML5 VideoViewer (mirrors the AEM HTL component).
+ *     When the asset isn't on Scene7 (or the viewer can't load), the DAM file
+ *     plays in a native <video> instead, from the AEM publish host on Edge
+ *     Delivery (DAM_ASSET_HOST), as Edge Delivery doesn't serve DAM paths.
+ *   - Any other direct video file / URL -> native <video> element
  * Vimeo support has been removed.
  *
  * An optional placeholder image (a <picture> in the block) shows a play button;
@@ -14,7 +17,7 @@
  * autoplay is set. Honors prefers-reduced-motion for autoplay.
  */
 
-import { SCENE7, getScene7VideoConfig } from '../../scripts/config.js';
+import { SCENE7, getScene7VideoConfig, DAM_ASSET_HOST } from '../../scripts/config.js';
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -53,15 +56,48 @@ function getVideoTypeLabel(source) {
   return 'video';
 }
 
+// Whether the asset id exists on Scene7 (Image Serving `req=exists`, which
+// answers /*jsonp*/s7jsonResponse({"catalogRecord.exists":"1"},"")). A DAM
+// video that wasn't processed by Dynamic Media, or whose derived id doesn't
+// match, isn't there; the viewer would then init but show an empty player.
+// A failed check counts as missing, so the native player is used.
+async function scene7AssetExists(asset) {
+  try {
+    const res = await fetch(`${SCENE7.serverurl}${asset}?req=exists,json`);
+    if (!res.ok) return false;
+    const match = (await res.text()).match(/"catalogRecord\.exists"\s*:\s*"(\d+)"/);
+    return !!match && match[1] !== '0';
+  } catch (e) {
+    return false;
+  }
+}
+
+// The DAM file's URL for the native player: Edge Delivery doesn't serve
+// /content/dam paths, so on its hosts the file loads from the AEM publish host
+// (DAM_ASSET_HOST); on author (DAM_ASSET_HOST '') the path stays relative.
+function damVideoUrl(link) {
+  let url;
+  try {
+    url = new URL(link, window.location.href);
+  } catch (e) {
+    return link;
+  }
+  if (!url.pathname.startsWith('/content/dam/')) return link;
+  return `${DAM_ASSET_HOST}${url.pathname}${url.search}`;
+}
+
 // Render an Adobe Scene7 HTML5 VideoViewer for a DAM asset published to
 // Dynamic Media. Mirrors the AEM HTL component: derive the asset id from the
 // file name and init s7viewers.VideoViewer with the configured server URLs.
 // When `autoplay` is set (e.g. the author-facing placeholder play button was
 // clicked), start playback immediately so the viewer's own poster/play button
 // doesn't appear as a second click target.
+// Returns false (nothing added to the block) when the asset isn't on Scene7 or
+// the viewer can't load, so the caller can use the native player instead.
 async function embedDynamicMedia(block, link, autoplay) {
   const cfg = getScene7VideoConfig(link);
   if (!cfg) return false;
+  if (!(await scene7AssetExists(cfg.asset))) return false;
 
   s7ContainerSeq += 1;
   const containerId = `video-s7-${s7ContainerSeq}`;
@@ -72,7 +108,10 @@ async function embedDynamicMedia(block, link, autoplay) {
 
   try {
     const s7viewers = await loadScene7Viewer();
-    if (!s7viewers || !s7viewers.VideoViewer) return false;
+    if (!s7viewers || !s7viewers.VideoViewer) {
+      container.remove();
+      return false;
+    }
     const params = {
       asset: cfg.asset,
       serverurl: cfg.serverurl,
@@ -178,10 +217,10 @@ async function loadVideoEmbed(block, link, autoplay, background) {
       block.dataset.embedLoaded = true;
     });
   } else if (source === 'dm') {
-    // Dynamic Media: render the Scene7 viewer; fall back to native <video>
-    // (using the raw DAM path) if the viewer can't load/init.
+    // Dynamic Media: render the Scene7 viewer; when the asset isn't on Scene7
+    // or the viewer can't load/init, play the DAM file in a native <video>.
     const ok = await embedDynamicMedia(block, link, autoplay);
-    if (!ok) embedNativeVideo(block, link, autoplay, background);
+    if (!ok) embedNativeVideo(block, damVideoUrl(link), autoplay, background);
   } else {
     embedNativeVideo(block, link, autoplay, background);
   }
