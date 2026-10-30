@@ -15,13 +15,14 @@ main .section.related-articles-empty {
    overflow-x auto, no snap). Phone cards are 90vw wide (max 450px) so the next
    card peeks in; on tablet about two cards show. From 1024px the shared
    content-list 3-column grid applies. The vertical padding leaves room for the
-   card shadow, which the scroll container would otherwise clip. */
+   card shadow, which the scroll container would otherwise clip; overflow-y is
+   hidden so the entrance slide-up doesn't briefly add a vertical scrollbar. */
 @media (width < 1024px) {
   .related-articles .content-list-grid {
     display: flex;
     flex-wrap: nowrap;
     gap: 12px;
-    overflow-x: auto;
+    overflow: auto hidden;
     padding: 16px 6px;
     margin: -16px -6px;
   }
@@ -38,5 +39,81 @@ main .section.related-articles-empty {
 
   .related-articles .content-list-card {
     flex-basis: 47%;
+  }
+}
+
+/* Entrance animation, as on the source site — played once, when the block
+   first scrolls into view (related-articles.js swaps -pending for -animate):
+   card    fadeInUp      1s, 0.2s delay (rises its own height)
+   image   opacity       1s, 1s delay
+   body    fadeInUpText  1s, 2s delay (rises 40px)
+   tag     fadeInUp      1s, 2s delay
+   All cards animate together. */
+.related-articles.related-articles-pending .content-list-card {
+  opacity: 0;
+}
+
+.related-articles.related-articles-animate .content-list-card {
+  animation: related-articles-fade-in-up 1s 0.2s ease both;
+}
+
+.related-articles.related-articles-animate .content-list-card-image {
+  animation: related-articles-opacity 1s 1s ease both;
+}
+
+.related-articles.related-articles-animate .content-list-card-body {
+  animation: related-articles-fade-in-up-text 1s 2s ease both;
+}
+
+.related-articles.related-articles-animate .content-list-card-category {
+  animation: related-articles-fade-in-up 1s 2s ease both;
+}
+
+@keyframes related-articles-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes related-articles-fade-in-up-text {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes related-articles-opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Respect the reduced-motion preference: show the cards immediately (the JS
+   also skips the animation setup). */
+@media (prefers-reduced-motion: reduce) {
+  .related-articles.related-articles-pending .content-list-card {
+    opacity: 1;
+  }
+
+  .related-articles.related-articles-animate .content-list-card,
+  .related-articles.related-articles-animate .content-list-card-image,
+  .related-articles.related-articles-animate .content-list-card-body,
+  .related-articles.related-articles-animate .content-list-card-category {
+    animation: none;
   }
 }

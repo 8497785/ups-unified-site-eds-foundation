@@ -210,6 +210,23 @@ async function selectDynamic(category, articleCount) {
   });
 }
 
+// Entrance animation, as on the source site (.upspr-animation): the cards
+// animate once, the first time the block scrolls into view. Until then they
+// are held hidden (related-articles-pending), so they don't show and then jump
+// back to the animation's start. Without IntersectionObserver, or with reduced
+// motion requested, the cards simply show.
+function animateOnView(block) {
+  if (!('IntersectionObserver' in window)
+    || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  block.classList.add('related-articles-pending');
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    observer.disconnect();
+    block.classList.replace('related-articles-pending', 'related-articles-animate');
+  });
+  observer.observe(block);
+}
+
 // Static: resolve each authored path from the shared query index, preserving
 // author order. The index is the single source (title, image, category,
 // categoryUrl, published) — no per-page fetch. A picked path that isn't in the
@@ -243,4 +260,5 @@ export default async function decorate(block) {
   selected.forEach((entry) => ul.append(buildCard(entry, showDate)));
 
   block.replaceChildren(ul);
+  animateOnView(block);
 }
