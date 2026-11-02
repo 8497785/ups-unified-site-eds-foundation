@@ -151,7 +151,10 @@ function decorateExternalLinks(main) {
  * Delivery serves /us/en/page (page.html 404s), while AEM author keeps .html,
  * so nothing changes on the author host. Only links to this site (relative or
  * same origin) are changed; external links, including the old about.ups.com
- * site, keep their .html. /content/... paths (e.g. DAM assets) are left alone.
+ * site, keep their .html. Other /content/... paths are left alone.
+ * Links to DAM files (/content/dam/..., e.g. PDFs delivered via paths.json) are
+ * lowercased: Edge Delivery stores and serves them under a lowercase path
+ * (2023-gri.pdf), and its paths are case-sensitive, so 2023-GRI.pdf would 404.
  * @param {Element} container The element whose links to clean
  */
 export function cleanInternalLinks(container) {
@@ -166,6 +169,15 @@ export function cleanInternalLinks(container) {
       return;
     }
     if (url.origin !== window.location.origin) return;
+    if (url.pathname.startsWith('/content/dam/')) {
+      const path = url.pathname.toLowerCase();
+      if (path !== url.pathname) {
+        a.setAttribute('href', /^https?:/i.test(href)
+          ? `${url.origin}${path}${url.search}${url.hash}`
+          : `${path}${url.search}${url.hash}`);
+      }
+      return;
+    }
     if (!url.pathname.endsWith('.html') || url.pathname.startsWith('/content/')) return;
     const path = url.pathname.replace(/\.html$/, '');
     a.setAttribute('href', /^https?:/i.test(href)
