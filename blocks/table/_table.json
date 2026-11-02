@@ -22,11 +22,21 @@
       "id": "table",
       "fields": [
         {
+          "component": "tab",
+          "name": "properties",
+          "label": "Properties"
+        },
+        {
           "component": "richtext",
           "valueType": "string",
           "name": "table",
           "label": "Table",
           "description": "Use the Insert Table button in the toolbar to add a table, then add rows/columns and type in the cells."
+        },
+        {
+          "component": "tab",
+          "name": "spacing",
+          "label": "Spacing"
         },
         {
           "component": "multiselect",
@@ -37,6 +47,22 @@
           "options": [
             { "name": "Apply Margin top", "value": "margin-top" },
             { "name": "Apply margin bottom", "value": "margin-bottom" }
+          ]
+        },
+        {
+          "component": "tab",
+          "name": "styles",
+          "label": "Styles"
+        },
+        {
+          "component": "select",
+          "name": "classes_variation",
+          "label": "Variations",
+          "description": "Cells with White Space Normal: cell text wraps instead of staying on one line, and the first column is at most 200px wide.",
+          "value": "",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "Cells with White Space Normal", "value": "cells-white-space-normal" }
           ]
         }
       ]
