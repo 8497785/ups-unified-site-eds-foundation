@@ -57,12 +57,63 @@
         {
           "component": "select",
           "name": "classes_variation",
-          "label": "Variations",
-          "description": "Cells with White Space Normal: cell text wraps instead of staying on one line, and the first column is at most 200px wide.",
+          "label": "White Spaces",
+          "description": "Normal: cell text wraps instead of staying on one line, and the first column is at most 200px wide.",
           "value": "",
           "options": [
             { "name": "Default", "value": "" },
-            { "name": "Cells with White Space Normal", "value": "cells-white-space-normal" }
+            { "name": "Normal", "value": "cells-white-space-normal" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_headercol",
+          "label": "Table Header Column",
+          "description": "Colors the first row (the column headers) with a solid brand background and white text.",
+          "value": "",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "Brown Header Column", "value": "table-header-col-brown" },
+            { "name": "Gray Header Column", "value": "table-header-col-gray" },
+            { "name": "Blue Header Column", "value": "table-header-col-blue" },
+            { "name": "Teal Header Column", "value": "table-header-col-teal" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_headerrow",
+          "label": "Table Header Row",
+          "description": "Colors the first column (the row headers) with a solid light brand background.",
+          "value": "",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "Gray Header Row", "value": "table-header-row-gray" },
+            { "name": "Blue Header Row", "value": "table-header-row-blue" },
+            { "name": "Teal Header Row", "value": "table-header-row-teal" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_zebra",
+          "label": "Zebra Striping",
+          "description": "Alternating light gray shading for rows or for columns.",
+          "value": "",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "Alternating Rows", "value": "table-zebra-row" },
+            { "name": "Alternating Columns", "value": "table-zebra-columns" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_borders",
+          "label": "Table Borders",
+          "description": "All Borders: a 1px gray border on every cell edge. Bottom Border Only: a 1px gray line under each cell, no side or top borders.",
+          "value": "",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "All Borders", "value": "table-borders-all" },
+            { "name": "Bottom Border Only", "value": "table-borders-bottom" }
           ]
         }
       ]
