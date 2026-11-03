@@ -1,5 +1,8 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 import { loadQueryIndex, normalizePath } from '../../scripts/query-index.js';
+// The query index is only served by Edge Delivery (any delivery host, incl. the
+// staging domain); on AEM author / Universal Editor child pages come from AEM.
+import { isDeliveryTier } from '../../scripts/config.js';
 
 // Navigation Tabs — a row of links for navigating between related pages.
 //
@@ -14,7 +17,7 @@ import { loadQueryIndex, normalizePath } from '../../scripts/query-index.js';
 //   window.
 //   - AEM author / Universal Editor: listed from AEM (<root>.2.json), labelled
 //     pageTitle, else navTitle, else the page title, else the page name.
-//   - Delivery (*.aem.page / *.aem.live), or when AEM is not reachable: read
+//   - Delivery (*.aem.page / *.aem.live / CDN domains), or when AEM is not reachable: read
 //     from the shared query index, labelled with the page title (without a
 //     " | site name" suffix), else the page name. The index only holds
 //     published pages (paths.json: /us/en), so e.g. language-masters roots
@@ -53,11 +56,6 @@ function buildTab({ label, href, newWindow }) {
   li.append(a);
   return li;
 }
-
-// The query index is only served on the EDS delivery tiers (same rule as
-// scripts/config.js); everywhere else (AEM author / Universal Editor) child pages
-// are listed straight from AEM.
-const isDeliveryTier = () => /\.aem\.(page|live)$/.test(window.location.hostname);
 
 // Direct child pages of a /content/... root from AEM author (<root>.2.json holds
 // each child page and its jcr:content). Label: pageTitle, else navTitle, else

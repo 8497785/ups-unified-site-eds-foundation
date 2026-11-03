@@ -10,15 +10,25 @@ const PUBLISH_GRAPHQL_HOST = 'https://publish-p55671-e392471.adobeaemcloud.com';
 const GRAPHQL_PROJECT = 'ups-global';
 
 /**
- * Use the absolute publish host ONLY on the EDS delivery tiers
- * (*.aem.page / *.aem.live). On every other origin — the AEM author/UE
- * environment, localhost, custom domains — return '' so GraphQL calls stay
+ * Whether the page is served by Edge Delivery: *.aem.page / *.aem.live and any
+ * CDN domain in front of them (e.g. the staging domain eds-stage.about.ups.com,
+ * later the production domain). Only the AEM author / Universal Editor host
+ * (*.adobeaemcloud.com) and local development are not.
+ * @param {string} [hostname] Host to check (defaults to the current page's)
+ * @returns {boolean}
+ */
+export function isDeliveryTier(hostname = window.location.hostname) {
+  if (hostname.endsWith('.adobeaemcloud.com')) return false;
+  return !['localhost', '127.0.0.1'].includes(hostname);
+}
+
+/**
+ * Use the absolute publish host on Edge Delivery (see isDeliveryTier). On the
+ * AEM author/UE environment and localhost return '' so GraphQL calls stay
  * relative same-origin.
  */
 function resolveGraphqlHost() {
-  const { hostname } = window.location;
-  const isDeliveryTier = hostname.endsWith('.aem.page') || hostname.endsWith('.aem.live');
-  return isDeliveryTier ? PUBLISH_GRAPHQL_HOST.replace(/\/$/, '') : '';
+  return isDeliveryTier() ? PUBLISH_GRAPHQL_HOST.replace(/\/$/, '') : '';
 }
 
 export const AEM_GRAPHQL_HOST = resolveGraphqlHost();
