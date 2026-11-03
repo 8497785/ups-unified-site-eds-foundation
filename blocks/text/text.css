@@ -58,3 +58,8 @@
   margin: 0;
   padding: 3px 9px 3px 0;
 }
+
+/* Style "Add Indent" — indents the whole block; combines with any other style. */
+.text.indent {
+  margin-left: 40px;
+}
