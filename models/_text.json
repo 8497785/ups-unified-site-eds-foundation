@@ -46,19 +46,18 @@
           "label": "Styles"
         },
         {
-          "component": "select",
+          "component": "multiselect",
           "name": "classes",
           "label": "Style",
-          "description": "Quote: small grey italic text with an image floated to the left (e.g. an author byline).",
-          "value": "",
+          "description": "Optional styles; select any combination, or none for the default. Quote: small grey italic text with an image floated to the left (e.g. an author byline). Add Indent: indents the whole text block 40px from the left.",
           "options": [
-            {
-              "name": "Default",
-              "value": ""
-            },
             {
               "name": "Quote",
               "value": "quote"
+            },
+            {
+              "name": "Add Indent",
+              "value": "indent"
             }
           ]
         }
