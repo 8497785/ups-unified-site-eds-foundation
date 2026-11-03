@@ -1,10 +1,13 @@
+/* Social Share — matches about.ups.com (.upspr-social-share): 40px circle
+   icons (print 38px), 8px apart, filled with a radial UPS-blue gradient (solid
+   centre, 60% outer ring) that turns solid on hover. */
 .social-share .upspr-social-share {
   margin-bottom: 26px;
 }
 
 .social-share .upspr-social-share ul {
   display: flex;
-  margin: 0;
+  margin: 0 0 16px;
   padding: 0;
   list-style: none;
 }
@@ -14,27 +17,28 @@
 }
 
 .social-share .upspr-social-share a {
+  font-size: 40px;
   line-height: 0;
   text-decoration: none;
 }
 
 .social-share .upspr-social-share i {
-  font-size: 44px;
-  color: var(--link-color);
+  font-size: 40px;
+  color: #0662bb;
+  background: radial-gradient(#0662bb 40%, rgb(6 98 187 / 60%) 50%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.social-share .upspr-social-share svg {
-  width: 44px;
-  height: 44px;
-  color: var(--link-color);
-  display: block;
-}
-
-.social-share .upspr-social-share a:hover svg,
-.social-share .upspr-social-share a:hover i {
-  color: #044a8f;
+.social-share .upspr-social-share i:hover {
+  background: none;
+  -webkit-text-fill-color: initial;
 }
 
 .social-share .upspr-social-share i.upspr-icon-print {
   font-size: 38px;
+}
+
+.social-share .upspr-social-share i.upspr-icon-twitter-circle {
+  font-family: upspricons-x, sans-serif;
 }

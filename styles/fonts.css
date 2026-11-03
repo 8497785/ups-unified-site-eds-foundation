@@ -10,3 +10,13 @@
   src: url('../fonts/upspricons.woff') format('woff'),
     url('../fonts/upspricons.ttf') format('truetype');
 }
+
+/* about.ups.com's second icon font: one glyph, the circled X logo (\e900),
+   used by the Social Share X icon (upspr-icon-twitter-circle). */
+@font-face {
+  font-family: upspricons-x;
+  font-style: normal;
+  font-weight: normal;
+  font-display: block;
+  src: url('../fonts/upspricons-x.woff') format('woff');
+}
