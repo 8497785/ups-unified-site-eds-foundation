@@ -22,7 +22,11 @@
   text-decoration: none;
 }
 
+/* As on about.ups.com, the one-glyph X font comes first: its line metrics set
+   the icons' baseline (and the box the gradient fills), and every other glyph
+   falls back to the main upspricons font. */
 .social-share .upspr-social-share i {
+  font-family: upspricons-x, upspricons, sans-serif;
   font-size: 40px;
   color: #0662bb;
   background: radial-gradient(#0662bb 40%, rgb(6 98 187 / 60%) 50%);
@@ -37,8 +41,4 @@
 
 .social-share .upspr-social-share i.upspr-icon-print {
   font-size: 38px;
-}
-
-.social-share .upspr-social-share i.upspr-icon-twitter-circle {
-  font-family: upspricons-x, sans-serif;
 }
