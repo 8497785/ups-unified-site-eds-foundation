@@ -1,10 +1,13 @@
+/* Social Share — matches about.ups.com (.upspr-social-share): 40px circle
+   icons (print 38px), 8px apart, filled with a radial UPS-blue gradient (solid
+   centre, 60% outer ring) that turns solid on hover. */
 .social-share .upspr-social-share {
   margin-bottom: 26px;
 }
 
 .social-share .upspr-social-share ul {
   display: flex;
-  margin: 0;
+  margin: 0 0 16px;
   padding: 0;
   list-style: none;
 }
@@ -14,25 +17,30 @@
 }
 
 .social-share .upspr-social-share a {
+  font-size: 40px;
   line-height: 0;
   text-decoration: none;
 }
 
+/* As on about.ups.com, the one-glyph X font comes first: its line metrics set
+   the icons' baseline (and the box the gradient fills), and every other glyph
+   falls back to the main upspricons font. The glyph extends below the 40px
+   line, so the box is grown to 54px (as the source's icon box) with bottom
+   padding; the gradient is clipped to that box and now covers the whole glyph. */
 .social-share .upspr-social-share i {
-  font-size: 44px;
-  color: var(--link-color);
+  display: inline-block;
+  padding-bottom: 14px;
+  font-family: upspricons-x, upspricons, sans-serif;
+  font-size: 40px;
+  color: #0662bb;
+  background: radial-gradient(#0662bb 40%, rgb(6 98 187 / 60%) 50%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.social-share .upspr-social-share svg {
-  width: 44px;
-  height: 44px;
-  color: var(--link-color);
-  display: block;
-}
-
-.social-share .upspr-social-share a:hover svg,
-.social-share .upspr-social-share a:hover i {
-  color: #044a8f;
+.social-share .upspr-social-share i:hover {
+  background: none;
+  -webkit-text-fill-color: initial;
 }
 
 .social-share .upspr-social-share i.upspr-icon-print {
