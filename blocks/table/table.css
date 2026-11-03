@@ -48,7 +48,7 @@
   background-color: #f2f2f2;
 }
 
-/* Variation "Cells with White Space Normal" (Styles tab): cell text wraps
+/* White Spaces "Normal" (Styles tab): cell text wraps
    instead of staying on one line, and the first column is at most 200px wide.
    Default keeps the nowrap cells above. */
 .table.block.cells-white-space-normal tr td {

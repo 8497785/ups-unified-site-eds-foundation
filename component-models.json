@@ -1560,8 +1560,8 @@
       {
         "component": "select",
         "name": "classes_variation",
-        "label": "Variations",
-        "description": "Cells with White Space Normal: cell text wraps instead of staying on one line, and the first column is at most 200px wide.",
+        "label": "White Spaces",
+        "description": "Normal: cell text wraps instead of staying on one line, and the first column is at most 200px wide.",
         "value": "",
         "options": [
           {
@@ -1569,7 +1569,7 @@
             "value": ""
           },
           {
-            "name": "Cells with White Space Normal",
+            "name": "Normal",
             "value": "cells-white-space-normal"
           }
         ]
