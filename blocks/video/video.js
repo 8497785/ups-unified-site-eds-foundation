@@ -232,14 +232,30 @@ async function loadVideoEmbed(block, link, autoplay, background) {
 //   [2] image (Placeholder Image)— a <picture> when set
 //   [3] imageAlt                 — alt text
 //
+// The original DAM path of a video anchor, from its text. As paths.json
+// includes /content/dam/upsstories/, AEM delivers DAM links with the Edge
+// Delivery web path as the href (lowercased, spaces and underscores turned into
+// hyphens), which is neither the Scene7 asset id nor the DAM file name; the
+// link text keeps the original path. '' when the text isn't a DAM video path.
+function originalDamPath(anchor) {
+  const text = anchor.textContent.trim();
+  if (!text.startsWith('/content/dam/') || !VIDEO_EXT_RE.test(text)) return '';
+  try {
+    return decodeURI(text);
+  } catch (e) {
+    return text;
+  }
+}
+
 // Resolve the video link. A DAM asset is delivered as an anchor (<a href>);
-// a YouTube URL may arrive as an anchor or as plain text. Prefer the anchor,
-// then fall back to the first URL in the row's text.
+// a YouTube URL may arrive as an anchor or as plain text. Prefer the anchor
+// (its original DAM path for DAM videos), then fall back to the first URL in
+// the row's text.
 function resolveLink(rows) {
   const linkRow = rows[0];
   if (!linkRow) return '';
   const anchor = linkRow.querySelector('a[href]');
-  if (anchor && anchor.href) return anchor.href;
+  if (anchor && anchor.href) return originalDamPath(anchor) || anchor.href;
   const match = linkRow.textContent.match(/https?:\/\/\S+/);
   return match ? match[0] : '';
 }
