@@ -68,3 +68,86 @@
 .table.block td p:last-child {
   margin-bottom: 0;
 }
+
+/* Table styles (Styles tab: Table Header Column, Table Header Row, Zebra
+   Striping, Table Borders) — the about.ups.com table style system. Each
+   dropdown adds one class; they combine. With none selected the default table
+   above is unchanged.
+   Authored (RTE) tables are delivered as plain <td> cells, so the header
+   styles target the first row / first column whether the cells are <th> or
+   <td>. Rule order matters: zebra and border rules come first so a header
+   color wins where they meet. */
+.table.block {
+  --table-blue-deep: #064d93;
+  --table-blue-30: #b4d0eb;
+  --table-teal-deep: #075a5a;
+  --table-teal-30: #b6d9d9;
+  --table-brown: #351c15;
+  --table-gray-1: #5f5753;
+  --table-gray-2: #8c857e;
+  --table-gray-4: #dfdbd7;
+  --table-gray-5: #f2f1ef;
+}
+
+/* Shared hover polish for the styled tables. */
+.table.block:is(
+  .table-header-col-brown, .table-header-col-gray, .table-header-col-blue, .table-header-col-teal,
+  .table-header-row-gray, .table-header-row-blue, .table-header-row-teal,
+  .table-zebra-row, .table-zebra-columns, .table-borders-all, .table-borders-bottom
+) tbody tr:hover > td {
+  filter: brightness(0.98);
+}
+
+/* Zebra Striping: light gray on even rows, or on even columns. Replaces the
+   default row striping. */
+.table.block:is(.table-zebra-row, .table-zebra-columns) tbody tr:nth-child(even) {
+  background-color: transparent;
+}
+
+.table.block.table-zebra-row tbody > tr:nth-child(even) > * {
+  background-color: var(--table-gray-5);
+}
+
+.table.block.table-zebra-columns tbody > tr > :nth-child(even) {
+  background-color: var(--table-gray-5);
+}
+
+/* Table Borders: all edges, or the bottom edge only. */
+.table.block.table-borders-all tr > :is(th, td) {
+  border: 1px solid var(--table-gray-2);
+}
+
+.table.block.table-borders-bottom tr > :is(th, td) {
+  border: none;
+  border-bottom: 1px solid var(--table-gray-2);
+}
+
+/* Table Header Row: the first column (row headers), light brand color. */
+.table.block.table-header-row-gray { --table-header-row-bg: var(--table-gray-4); }
+.table.block.table-header-row-blue { --table-header-row-bg: var(--table-blue-30); }
+.table.block.table-header-row-teal { --table-header-row-bg: var(--table-teal-30); }
+
+.table.block:is(.table-header-row-gray, .table-header-row-blue, .table-header-row-teal)
+  tbody > tr > :first-child {
+  background-color: var(--table-header-row-bg);
+  color: #000;
+  font-weight: 600;
+  border-color: var(--table-gray-5);
+}
+
+/* Table Header Column: the first row (column headers), solid brand color.
+   A <thead> row when the table has one, else the first body row. Wins over
+   the header row color in the top-left cell (higher specificity). */
+.table.block.table-header-col-brown { --table-header-col-bg: var(--table-brown); }
+.table.block.table-header-col-gray { --table-header-col-bg: var(--table-gray-1); }
+.table.block.table-header-col-blue { --table-header-col-bg: var(--table-blue-deep); }
+.table.block.table-header-col-teal { --table-header-col-bg: var(--table-teal-deep); }
+
+.table.block:is(
+  .table-header-col-brown, .table-header-col-gray, .table-header-col-blue, .table-header-col-teal
+) :is(thead th, table:not(:has(thead)) > tbody > tr:first-child > *) {
+  background-color: var(--table-header-col-bg);
+  color: #fff;
+  font-weight: 500;
+  border-color: var(--table-gray-4);
+}
