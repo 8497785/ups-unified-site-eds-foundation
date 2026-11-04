@@ -242,7 +242,13 @@ header nav .nav-sections ul > li > ul > li a {
     display: block !important;
     visibility: visible !important;
     white-space: nowrap;
-    align-self: center !important;
+    align-self: stretch !important;
+  }
+
+  /* stretch top-level items to full nav height so hover carries into the dropdown */
+  header nav .nav-sections .default-content-wrapper,
+  header nav .nav-sections .default-content-wrapper > ul {
+    height: 100%;
   }
 
   header nav .nav-sections .nav-drop {
@@ -267,9 +273,15 @@ header nav .nav-sections ul > li > ul > li a {
     display: inline-block;
   }
 
+  header nav .nav-sections .default-content-wrapper > ul {
+    align-items: stretch;
+  }
+
   header nav .nav-sections .default-content-wrapper > ul > li {
     flex: 0 1 auto;
     position: static;
+    display: flex;
+    align-items: center;
   }
 
   /* active nav item gold underline (using border-bottom to avoid ::after conflict) */
