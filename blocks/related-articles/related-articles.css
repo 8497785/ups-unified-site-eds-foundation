@@ -78,8 +78,10 @@ main .section.related-articles-empty {
   content: none;
 }
 
+/* Hidden cards and, once every card shows, the Load More button. The button
+   selector carries .cmp-button so it outranks the display: flex rule below. */
 .related-articles .content-list-card[hidden],
-.related-articles .related-articles-more[hidden] {
+.related-articles .related-articles-more.cmp-button[hidden] {
   display: none;
 }
 
