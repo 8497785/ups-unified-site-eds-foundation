@@ -67,6 +67,17 @@ main .section.related-articles-empty {
   }
 }
 
+/* The source name has no gold dash in this view (source:
+   .upspr-eyebrow-head.newsFeed .upspr-eyebrow-text::before is display none,
+   no left padding), unlike the category tag of Dynamic / Static cards. */
+.related-articles.related-articles-news .content-list-card-category {
+  padding-left: 0;
+}
+
+.related-articles.related-articles-news .content-list-card-category::before {
+  content: none;
+}
+
 .related-articles .content-list-card[hidden],
 .related-articles .related-articles-more[hidden] {
   display: none;
