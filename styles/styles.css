@@ -21,6 +21,20 @@
   --ups-gold: #ffc400;
   --ups-gold-hover: #e6b000;
   --btn-text-dark: #121212;
+
+  /* Secondary button — source: .btn.btn-secondary (white, 2px UPS blue
+     border, pill, Roboto 700 16px, 56px tall; light-blue + shadow on hover) */
+  --secondary-button-background: #fff;
+  --secondary-button-color: var(--link-color);
+  --secondary-button-border: var(--link-color);
+  --secondary-button-hover-background: #e6eff8;
+  --secondary-button-hover-shadow:
+    0 2px 6px rgb(0 0 0 / 6%),
+    0 4px 12px -2px rgb(0 0 0 / 8%),
+    0 15px 32px -3px rgb(0 0 0 / 8%);
+  --secondary-button-focus-outline: #5f5753;
+  --secondary-button-padding: 15px 32px 14px;
+  --secondary-button-line-height: 23px;
   --footer-bg: #351c15;
   --footer-text: #bfb8af;
   --footer-heading: #fff;
@@ -271,17 +285,54 @@ button:disabled:hover {
 
 a.button.secondary,
 button.secondary {
-  background-color: transparent;
-  border: 2px solid var(--dark-color);
-  color: var(--dark-color);
+  padding: var(--secondary-button-padding);
+  border: 2px solid var(--secondary-button-border);
+  line-height: var(--secondary-button-line-height);
+  background-color: var(--secondary-button-background);
+  color: var(--secondary-button-color);
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 
 a.button.secondary:hover,
+button.secondary:hover {
+  background-color: var(--secondary-button-hover-background);
+  color: var(--secondary-button-color);
+  box-shadow: var(--secondary-button-hover-shadow);
+}
+
 a.button.secondary:focus,
-button.secondary:hover,
 button.secondary:focus {
-  background-color: var(--dark-color);
-  color: var(--background-color);
+  background-color: var(--secondary-button-background);
+  color: var(--secondary-button-color);
+}
+
+a.button.secondary:focus-visible,
+button.secondary:focus-visible {
+  outline: 1px solid var(--secondary-button-focus-outline);
+  outline-offset: 6px;
+}
+
+a.button.secondary:active,
+button.secondary:active {
+  background-color: var(--secondary-button-background);
+  box-shadow: none;
+}
+
+/* Secondary uses the source's upspricons chevron instead of the drawn arrow */
+a.button.secondary::after {
+  content: '\e60f';
+  width: auto;
+  height: auto;
+  border: 0;
+  transform: none;
+  font-family: upspricons, tahoma, helvetica, arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
 }
 
 /* button arrow indicator */
