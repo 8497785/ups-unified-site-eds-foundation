@@ -50,9 +50,15 @@ function focusNavSection() {
   document.activeElement.addEventListener('keydown', openOnKeydown);
 }
 
+function setNavSectionExpanded(section, expanded) {
+  section.setAttribute('aria-expanded', expanded);
+  const toggle = section.querySelector(':scope > .nav-drop-toggle');
+  if (toggle) toggle.setAttribute('aria-expanded', expanded);
+}
+
 function toggleAllNavSections(sections, expanded = false) {
   sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
-    section.setAttribute('aria-expanded', expanded);
+    setNavSectionExpanded(section, expanded);
   });
 }
 
@@ -61,7 +67,8 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   const button = nav.querySelector('.nav-hamburger button');
   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-  toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
+  // items start collapsed; on mobile their chevrons expand them one at a time
+  toggleAllNavSections(navSections, 'false');
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
   const navDrops = navSections.querySelectorAll('.nav-drop');
   if (isDesktop.matches) {
@@ -101,6 +108,82 @@ async function loadNavFragment(navMeta) {
     if (localized) return localized;
   }
   return loadFragment('/nav');
+}
+
+/**
+ * Builds the search panel revealed by the header search button.
+ * Opens over the nav sections and tools, dims the page, and closes via
+ * the close button, the Escape key, or a click on the dimmed page.
+ * @param {Element} nav The nav element
+ * @param {Element} toggle The search button in the nav tools
+ */
+function decorateSearch(nav, toggle) {
+  const panel = document.createElement('div');
+  panel.id = 'nav-search';
+  panel.className = 'nav-search';
+  panel.hidden = true;
+  panel.innerHTML = `<form class="nav-search-form" role="search" action="${getLocalePrefix()}/search" method="get">
+      <button type="submit" class="nav-search-submit" aria-label="Submit search">
+        <i class="upspr upspr-icon-global-search" aria-hidden="true"></i>
+      </button>
+      <input type="search" name="q" class="nav-search-input" placeholder="Search About UPS" aria-label="Search About UPS" autocomplete="off" required>
+      <button type="button" class="nav-search-clear" aria-label="Clear search" hidden>Clear</button>
+    </form>
+    <button type="button" class="nav-search-close" aria-label="Close search">
+      <i class="upspr upspr-icon-x-circle" aria-hidden="true"></i>
+    </button>`;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'nav-search-overlay';
+  overlay.hidden = true;
+
+  const input = panel.querySelector('input');
+
+  // "Clear" pill inside the field, shown only while there is text to clear
+  const clear = panel.querySelector('.nav-search-clear');
+  const syncClear = () => { clear.hidden = !input.value; };
+  input.addEventListener('input', syncClear);
+  clear.addEventListener('click', () => {
+    input.value = '';
+    syncClear();
+    input.focus();
+  });
+
+  const closeSearchOnEscape = (e) => {
+    if (e.code === 'Escape') {
+      e.stopImmediatePropagation();
+      // eslint-disable-next-line no-use-before-define
+      setOpen(false);
+    }
+  };
+
+  const setOpen = (open, { restoreFocus = true } = {}) => {
+    panel.hidden = !open;
+    overlay.hidden = !open;
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    nav.classList.toggle('search-open', open);
+    if (open) {
+      // capture phase so the nav's own Escape handling doesn't also run
+      window.addEventListener('keydown', closeSearchOnEscape, true);
+      syncClear();
+      input.focus();
+    } else {
+      window.removeEventListener('keydown', closeSearchOnEscape, true);
+      if (restoreFocus) toggle.focus();
+    }
+  };
+
+  toggle.addEventListener('click', () => setOpen(panel.hidden));
+  panel.querySelector('.nav-search-close').addEventListener('click', () => setOpen(false));
+  overlay.addEventListener('click', () => setOpen(false, { restoreFocus: false }));
+  // tabbing out of the panel closes it, leaving focus where the user moved it
+  panel.addEventListener('focusout', (e) => {
+    if (e.relatedTarget && !panel.contains(e.relatedTarget)) {
+      setOpen(false, { restoreFocus: false });
+    }
+  });
+
+  nav.append(panel, overlay);
 }
 
 export default async function decorate(block) {
@@ -153,7 +236,22 @@ export default async function decorate(block) {
       if (subMenu) {
         navSection.classList.add('nav-drop');
         const navLink = navSection.querySelector('a');
-        if (navLink) subMenu.setAttribute('data-title', navLink.textContent.trim());
+        const title = navLink ? navLink.textContent.trim() : '';
+        if (title) subMenu.setAttribute('data-title', title);
+
+        // mobile drawer: chevron button that shows or hides this item's links
+        const dropToggle = document.createElement('button');
+        dropToggle.type = 'button';
+        dropToggle.className = 'nav-drop-toggle';
+        dropToggle.setAttribute('aria-expanded', 'false');
+        dropToggle.setAttribute('aria-label', `${title} menu`);
+        dropToggle.innerHTML = '<i class="upspr upspr-icon-chevrondown" aria-hidden="true"></i>';
+        dropToggle.addEventListener('click', () => {
+          const expanded = navSection.getAttribute('aria-expanded') === 'true';
+          toggleAllNavSections(navSections);
+          setNavSectionExpanded(navSection, expanded ? 'false' : 'true');
+        });
+        subMenu.before(dropToggle);
       }
       navSection.addEventListener('click', () => {
         if (isDesktop.matches) {
@@ -174,13 +272,37 @@ export default async function decorate(block) {
       if (container) container.classList.remove('button-container');
     });
 
-    const searchBtn = document.createElement('div');
+    const searchBtn = document.createElement('button');
+    searchBtn.type = 'button';
     searchBtn.className = 'nav-tools-search';
-    searchBtn.setAttribute('role', 'button');
     searchBtn.setAttribute('aria-label', 'Search');
-    searchBtn.setAttribute('tabindex', '0');
+    searchBtn.setAttribute('aria-expanded', 'false');
+    searchBtn.setAttribute('aria-controls', 'nav-search');
     searchBtn.innerHTML = '<i class="upspr upspr-icon-global-search" aria-hidden="true"></i>';
     navTools.append(searchBtn);
+    decorateSearch(nav, searchBtn);
+  }
+
+  // mobile drawer: logo at the top, tool links at the bottom, dimmed page behind
+  if (navSections) {
+    const brandLink = navBrand && navBrand.querySelector('a');
+    if (brandLink) {
+      const drawerBrand = document.createElement('div');
+      drawerBrand.className = 'nav-drawer-brand';
+      drawerBrand.append(brandLink.cloneNode(true));
+      navSections.prepend(drawerBrand);
+    }
+    const toolLinks = navTools ? [...navTools.querySelectorAll('p a')] : [];
+    if (toolLinks.length) {
+      const drawerTools = document.createElement('div');
+      drawerTools.className = 'nav-drawer-tools';
+      drawerTools.append(...toolLinks.map((link) => link.cloneNode(true)));
+      navSections.append(drawerTools);
+    }
+    const drawerOverlay = document.createElement('div');
+    drawerOverlay.className = 'nav-drawer-overlay';
+    drawerOverlay.addEventListener('click', () => toggleMenu(nav, navSections, false));
+    nav.append(drawerOverlay);
   }
 
   const hamburger = document.createElement('div');

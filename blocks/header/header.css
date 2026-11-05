@@ -10,45 +10,21 @@ header .nav-wrapper {
 }
 
 header nav {
+  position: relative;
   box-sizing: border-box;
-  display: grid;
-  grid-template:
-    'hamburger brand tools' var(--nav-height)
-    'sections sections sections' 1fr / auto 1fr auto;
+  display: flex;
   align-items: center;
-  gap: 0 24px;
   margin: auto;
   max-width: var(--content-max-width);
   height: var(--nav-height);
-  padding: 0;
+  padding: 0 20px;
   font-family: var(--body-font-family);
-}
-
-header nav[aria-expanded='true'] {
-  grid-template:
-    'hamburger brand' var(--nav-height)
-    'sections sections' 1fr
-    'tools tools' var(--nav-height) / auto 1fr;
-  overflow-y: auto;
-  min-height: 100dvh;
 }
 
 @media (width >= 992px) {
   header nav {
-    display: flex;
-    align-items: center;
     justify-content: flex-start;
-    gap: 0;
-    max-width: var(--content-max-width);
     padding: 0;
-    height: var(--nav-height);
-    min-height: 0;
-    overflow: visible;
-  }
-
-  header nav[aria-expanded='true'] {
-    min-height: 0;
-    overflow: visible;
   }
 }
 
@@ -63,82 +39,68 @@ header nav a:any-link {
   font-weight: 700;
 }
 
-/* hamburger */
+/* hamburger — UPS menu icon, turns into a large X while the drawer is open */
 header nav .nav-hamburger {
-  grid-area: hamburger;
-  height: 22px;
+  order: 3;
+  position: relative;
+  z-index: 4;
   display: flex;
   align-items: center;
 }
 
-header nav .nav-hamburger button {
-  height: 22px;
-  margin: 0;
+header nav .nav-hamburger button,
+header nav .nav-hamburger button:hover,
+header nav .nav-hamburger button:focus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 42px;
+  margin: 0 -6px 0 0;
+  padding: 0;
   border: 0;
   border-radius: 0;
-  padding: 0;
-  background-color: var(--background-color);
-  color: inherit;
-  overflow: initial;
-  text-overflow: initial;
-  white-space: initial;
+  background: none;
+  color: var(--dark-color);
+  overflow: visible;
 }
 
-header nav .nav-hamburger-icon,
-header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after {
-  box-sizing: border-box;
-  display: block;
-  position: relative;
-  width: 20px;
+header nav .nav-hamburger-icon::before {
+  content: '\e615';
+  font-family: upspricons, tahoma, helvetica, arial, sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1;
 }
 
-header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after {
-  content: '';
-  position: absolute;
-  background: currentcolor;
+header nav[aria-expanded='true'] .nav-hamburger button {
+  transform: translateX(-10px);
 }
 
-header nav .nav-hamburger-icon,
-header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after,
-header nav[aria-expanded='false'] .nav-hamburger-icon,
-header nav[aria-expanded='false'] .nav-hamburger-icon::before,
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  height: 2px;
-  border-radius: 2px;
-  background: currentcolor;
-}
-
-header nav .nav-hamburger-icon::before,
-header nav[aria-expanded='false'] .nav-hamburger-icon::before {
-  top: -6px;
-}
-
-header nav .nav-hamburger-icon::after,
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  top: 6px;
-}
-
+/* close X: two rounded 40x4 bars crossing at their centres, lined up with the drawer logo */
 header nav[aria-expanded='true'] .nav-hamburger-icon {
-  height: 22px;
+  position: relative;
+  top: 6px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  opacity: 0.75;
 }
 
 header nav[aria-expanded='true'] .nav-hamburger-icon::before,
 header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: 3px;
-  left: 1px;
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: -4px;
+  width: 40px;
+  height: 4px;
+  border-radius: 9px;
+  background: currentcolor;
   transform: rotate(45deg);
-  transform-origin: 2px 1px;
-  width: 24px;
-  height: 2px;
-  border-radius: 2px;
 }
 
 header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: unset;
-  bottom: 3px;
   transform: rotate(-45deg);
 }
 
@@ -151,29 +113,41 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 
 /* brand */
 header .nav-brand {
-  grid-area: brand;
+  order: 1;
   flex-basis: auto;
   flex-shrink: 0;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
-  margin-right: 35px;
 }
 
-header nav .nav-brand img {
-  width: 56px;
-  height: 67px;
+header nav .nav-brand img,
+header nav .nav-drawer-brand img {
+  width: 50px;
+  height: 60px;
   display: block;
 }
 
-header nav .nav-brand a {
+header nav .nav-brand a,
+header nav .nav-drawer-brand a {
   display: block;
   line-height: 0;
 }
 
-/* sections — hidden by default (mobile collapsed state) */
+@media (width >= 992px) {
+  header .nav-brand {
+    margin-right: 35px;
+  }
+
+  header nav .nav-brand img {
+    width: 56px;
+    height: 67px;
+  }
+}
+
+/* sections — hidden until the mobile drawer opens; always shown on desktop */
 header nav .nav-sections {
-  grid-area: sections;
+  order: 1;
   flex: 1 1 auto;
   display: none;
   visibility: hidden;
@@ -201,13 +175,6 @@ header nav .nav-sections a.button:hover {
   color: var(--dark-color);
 }
 
-/* mobile expanded state */
-header nav[aria-expanded='true'] .nav-sections {
-  display: block;
-  visibility: visible;
-  align-self: start;
-}
-
 header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
@@ -223,17 +190,160 @@ header nav .nav-sections ul > li > ul {
   display: none;
 }
 
-/* mobile expanded: show sub-menus */
-header nav[aria-expanded='true'] .nav-sections ul > li > ul {
-  display: block;
+/* mobile drawer — slides in from the right over a dimmed page */
+header nav .nav-drawer-overlay,
+header nav .nav-drawer-brand,
+header nav .nav-drawer-tools,
+header nav .nav-drop-toggle {
+  display: none;
 }
 
-header nav .nav-sections ul > li > ul > li {
-  font-weight: 400;
-}
+@media (width < 992px) {
+  header nav[aria-expanded='true'] .nav-drawer-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    background-color: rgb(36 36 36 / 90%);
+  }
 
-header nav .nav-sections ul > li > ul > li a {
-  font-weight: 400;
+  header nav[aria-expanded='true'] .nav-sections {
+    display: block;
+    visibility: visible;
+    position: fixed;
+    inset: 0 0 0 39px;
+    z-index: 3;
+    box-sizing: border-box;
+    padding: 107px 0;
+    overflow-y: auto;
+    background-color: var(--background-color);
+  }
+
+  header nav .nav-drawer-brand {
+    display: block;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul {
+    margin: 0;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li {
+    position: relative;
+    border-bottom: 1px solid #f2f2f2;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li:first-child {
+    border-top: 1px solid #f2f2f2;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > p > a:any-link {
+    display: block;
+    padding: 24px 64px 24px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--dark-color);
+    text-align: left;
+    white-space: normal;
+  }
+
+  /* chevron that expands a top-level item's links */
+  header nav .nav-drop-toggle,
+  header nav .nav-drop-toggle:hover,
+  header nav .nav-drop-toggle:focus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 64px;
+    height: 72px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    overflow: visible;
+  }
+
+  header nav .nav-drop-toggle .upspr {
+    font-size: 16px;
+    color: var(--link-color);
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
+    display: block;
+    margin: 2px 0 0;
+    padding: 0 28px 8px 41px;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
+    position: relative;
+    margin-bottom: 16px;
+    padding-right: 20px;
+    line-height: 24px;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:any-link {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--dark-color);
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li a::after {
+    content: '\e60f';
+    position: absolute;
+    top: 8px;
+    right: 0;
+    font-family: upspricons, tahoma, helvetica, arial, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: var(--link-color);
+  }
+
+  /* ups.com / Support links at the bottom of the drawer */
+  header nav .nav-drawer-tools {
+    display: flex;
+    align-items: center;
+    padding: 21px 16px 0;
+  }
+
+  header nav .nav-drawer-tools a:any-link {
+    display: inline-flex;
+    align-items: center;
+    height: 36px;
+    padding: 0 6px;
+    border-right: 2px solid #e5e5e5;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: var(--dark-color);
+  }
+
+  header nav .nav-drawer-tools a:any-link:first-child {
+    padding-left: 0;
+  }
+
+  header nav .nav-drawer-tools a:any-link:last-child {
+    border-right: 0;
+  }
+
+  header nav .nav-drawer-tools a:any-link:first-child::after {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 6px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%230662bb' stroke-width='1.5'%3E%3Cpath d='M6 2H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3M10 2h4v4M7 9l7-7'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
 
 /* desktop — always show sections */
@@ -300,13 +410,24 @@ header nav .nav-sections ul > li > ul > li a {
   /* full-width mega-menu dropdown */
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul,
   header nav .nav-sections .default-content-wrapper > ul > li:hover > ul {
-    display: block;
+    display: grid;
+
+    /* up to 4 links per column, filling top-to-bottom;
+       columns are as wide as their longest link */
+    grid-template-rows: repeat(4, auto);
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    gap: 0 75px;
+    align-items: start;
+    justify-content: start;
     position: fixed;
     left: 0;
     right: 0;
     top: var(--nav-height);
     width: 100vw;
-    padding: 40px 130px 20px;
+
+    /* top padding leaves room for the title (40px + 15px line + 24px gap) */
+    padding: 79px 130px 68px;
     background-color: var(--background-color);
     border-top: 1px solid #f2f2f2;
     border-radius: 0 0 16px 16px;
@@ -319,39 +440,46 @@ header nav .nav-sections ul > li > ul > li a {
   /* menu title in dropdown — uses data-title attribute set by JS */
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
     content: attr(data-title);
-    display: block;
+    position: absolute;
+    top: 40px;
+    left: 130px;
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.6px;
+    line-height: 15px;
     color: #808080;
-    margin-bottom: 24px;
   }
 
-  /* sub-menu link items */
+  /* sub-menu link items — chevron sits at the column's right edge */
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 10px 0;
+    position: relative;
+    padding: 0 20px 0 0;
+    margin-bottom: 16px;
+    line-height: 24px;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li a {
     font-size: 16px;
     font-weight: 500;
+    line-height: 24px;
     color: var(--dark-color);
     text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    display: inline;
+    padding: 0;
   }
 
   /* chevron-right on sub-links */
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li a::after {
-    content: '';
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-right: 2px solid currentcolor;
-    border-top: 2px solid currentcolor;
-    transform: rotate(45deg);
+    content: '\e60f';
+    position: absolute;
+    top: 8px;
+    right: 0;
+    font-family: upspricons, tahoma, helvetica, arial, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: var(--link-color);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:hover {
@@ -361,11 +489,18 @@ header nav .nav-sections ul > li > ul > li a {
 
 /* tools */
 header nav .nav-tools {
-  grid-area: tools;
+  order: 2;
   display: flex;
   align-items: center;
   gap: 0;
   margin-left: auto;
+}
+
+/* on mobile the tool links live in the drawer; only search stays in the bar */
+@media (width < 992px) {
+  header nav .nav-tools p {
+    display: none;
+  }
 }
 
 @media (width >= 992px) {
@@ -381,10 +516,6 @@ header nav .nav-tools {
     padding: 4px 16px 0;
     border-right: 2px solid #e5e5e5;
     line-height: 1;
-  }
-
-  header nav .nav-tools a:any-link:last-child {
-    border-right: none;
   }
 
   header nav .nav-tools a:hover {
@@ -404,26 +535,227 @@ header nav .nav-tools {
     vertical-align: middle;
   }
 
-  /* search icon */
+  /* the last tool link's divider sits just before the search button */
   header nav .nav-tools .nav-tools-search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border: 2px solid var(--link-color);
+    margin-left: 8px;
+  }
+}
+
+/* search — reset global button styles on the header search controls */
+header nav .nav-tools-search,
+header nav .nav-search button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  overflow: visible;
+}
+
+header nav .nav-tools-search:hover,
+header nav .nav-tools-search:focus,
+header nav .nav-search button:hover,
+header nav .nav-search button:focus {
+  background: none;
+}
+
+/* search toggle — plain dark magnifier on mobile, round blue outline on desktop */
+header nav .nav-tools .nav-tools-search {
+  box-sizing: border-box;
+  width: 45px;
+  height: 45px;
+}
+
+header nav .nav-tools-search .upspr {
+  font-size: 24px;
+  line-height: 24px;
+  color: var(--dark-color);
+}
+
+@media (width >= 992px) {
+  header nav .nav-tools .nav-tools-search {
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--link-color);
     border-radius: 50%;
-    margin-left: 16px;
-    cursor: pointer;
-    transition: background-color 0.2s;
   }
 
-  header nav .nav-tools .nav-tools-search:hover {
-    background-color: rgb(6 98 187 / 8%);
-  }
-
-  header nav .nav-tools .nav-tools-search .upspr {
-    font-size: 18px;
+  header nav .nav-tools-search .upspr {
+    font-size: 16px;
+    line-height: 16px;
     color: var(--link-color);
+  }
+}
+
+/* search panel — covers the nav sections and tools while open */
+header nav .nav-search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-sizing: border-box;
+  height: var(--nav-height);
+  padding: 0 16px;
+  background-color: var(--background-color);
+}
+
+header nav .nav-search[hidden] {
+  display: none;
+}
+
+/* hide what the panel covers so it can't peek out or take keyboard focus */
+header nav.search-open .nav-sections,
+header nav.search-open .nav-tools {
+  visibility: hidden !important;
+}
+
+header nav .nav-search-form {
+  position: relative;
+  flex: 1 1 auto;
+  margin: 0;
+}
+
+header nav .nav-search-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 64px;
+  margin: 0;
+  padding: 18px 80px 18px 46px;
+  border: 2px solid var(--dark-color);
+  border-radius: 8px;
+  background-color: var(--background-color);
+  color: #000;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 24px;
+  appearance: none;
+}
+
+header nav .nav-search-input::placeholder {
+  color: #757575;
+}
+
+/* the field uses its own "Clear" pill instead of the browser's built-in X */
+header nav .nav-search-input::-webkit-search-cancel-button {
+  display: none;
+  appearance: none;
+}
+
+header nav .nav-search .nav-search-clear,
+header nav .nav-search .nav-search-clear:hover,
+header nav .nav-search .nav-search-clear:focus {
+  position: absolute;
+  top: 50%;
+  right: 23px;
+  display: block;
+  height: 21px;
+  padding: 5px 8px;
+  border-radius: 16px;
+  background-color: rgb(151 175 208 / 55%);
+  color: var(--link-color);
+  font-family: var(--body-font-family);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 11px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  transform: translateY(-50%);
+}
+
+header nav .nav-search .nav-search-clear[hidden] {
+  display: none;
+}
+
+header nav .nav-search-submit {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  width: 28px;
+  height: 26px;
+  transform: translateY(-50%);
+}
+
+header nav .nav-search-submit .upspr {
+  font-size: 16px;
+  color: var(--link-color);
+}
+
+header nav .nav-search-close {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 40px;
+  color: var(--dark-color);
+}
+
+header nav .nav-search-close .upspr {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+/* dims the page below the header while search is open */
+header nav .nav-search-overlay {
+  position: fixed;
+  inset: var(--nav-height) 0 0;
+  z-index: 1;
+  background-color: rgb(36 36 36 / 90%);
+}
+
+header nav .nav-search-overlay[hidden] {
+  display: none;
+}
+
+@media (width >= 992px) {
+  /* starts after the logo and runs to the edge of the tools */
+  header nav .nav-search {
+    left: 96px;
+    right: -15px;
+    gap: 27px;
+    padding: 0;
+  }
+}
+
+@media (width < 992px) {
+  /* mobile: field sits in a grey band below the header; the header keeps
+     the logo and swaps the search and menu icons for a plain X */
+  header nav .nav-search {
+    top: var(--nav-height);
+    display: block;
+    height: auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+
+  header nav.search-open .nav-hamburger {
+    visibility: hidden;
+  }
+
+  header nav .nav-search-close {
+    position: absolute;
+    top: calc(23px - var(--nav-height));
+    right: 35px;
+    width: 20px;
+    height: 30px;
+  }
+
+  header nav .nav-search-close .upspr {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  header nav .nav-search-close .upspr::before {
+    content: '\e618';
+  }
+
+  header nav .nav-search .nav-search-clear,
+  header nav .nav-search .nav-search-clear:hover,
+  header nav .nav-search .nav-search-clear:focus {
+    right: 19px;
   }
 }
