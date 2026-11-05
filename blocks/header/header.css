@@ -77,12 +77,12 @@ header nav[aria-expanded='true'] .nav-hamburger button {
   transform: translateX(-10px);
 }
 
-/* same geometry as the source close button: two rounded 40x4 bars pivoting on their left ends */
+/* close X: two rounded 40x4 bars crossing at their centres, lined up with the drawer logo */
 header nav[aria-expanded='true'] .nav-hamburger-icon {
   position: relative;
-  top: 11px;
+  top: 6px;
   display: block;
-  width: 40px;
+  width: 32px;
   height: 32px;
   opacity: 0.75;
 }
@@ -91,18 +91,16 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::before,
 header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   content: '';
   position: absolute;
-  top: -3px;
-  left: 3px;
+  top: 14px;
+  left: -4px;
   width: 40px;
   height: 4px;
   border-radius: 9px;
   background: currentcolor;
-  transform-origin: 0 2px;
   transform: rotate(45deg);
 }
 
 header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: 20px;
   transform: rotate(-45deg);
 }
 
