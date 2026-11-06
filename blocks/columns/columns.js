@@ -1,4 +1,22 @@
-import { decorateBlock, loadBlock, toClassName } from '../../scripts/aem.js';
+import {
+  decorateBlock, loadBlock, loadCSS, toClassName,
+} from '../../scripts/aem.js';
+
+// Columns Media is a core columns component in AEM, so its pages deliver it as
+// <div class="columns columns-media"> and it loads as the Columns block. Hand it
+// over to the columns-media block: its styles, its section/wrapper classes and
+// its decoration, without the generic columns styles.
+async function decorateAsColumnsMedia(block) {
+  block.classList.remove('columns');
+  block.parentElement?.classList.add('columns-media-wrapper');
+  block.closest('.section')?.classList.add('columns-media-container');
+  const base = window.hlx?.codeBasePath || '';
+  const [, { default: decorateColumnsMedia }] = await Promise.all([
+    loadCSS(`${base}/blocks/columns-media/columns-media.css`),
+    import('../columns-media/columns-media.js'),
+  ]);
+  decorateColumnsMedia(block);
+}
 
 // Parse a `layout-N-N...` class into an array of 12-grid widths, e.g.
 // `layout-3-3-6` -> [3, 3, 6]. Returns null when no layout class is present.
@@ -88,7 +106,12 @@ async function loadNestedBlocks(cols) {
   }));
 }
 
-export default function decorate(block) {
+export default async function decorate(block) {
+  if (block.classList.contains('columns-media')) {
+    await decorateAsColumnsMedia(block);
+    return;
+  }
+
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
 
