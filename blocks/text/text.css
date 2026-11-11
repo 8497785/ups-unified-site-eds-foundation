@@ -59,6 +59,85 @@
   padding: 3px 9px 3px 0;
 }
 
+/* Style "Blockquote" — the source's pull quote (about.ups.com <blockquote>):
+   grey text with 32px side padding; each quote paragraph is large italic text
+   with a 4px yellow bar on its left. An optional speaker line (a paragraph
+   with only <small> text) is small bold uppercase. Vertical margins and the
+   quote size follow the source breakpoints. Only the vertical margins are set,
+   so it combines with Add Indent. */
+.text.blockquote {
+  padding: 0 32px;
+  margin-block: 64px;
+  color: #767676;
+}
+
+.text.blockquote > div > div > p,
+.text.blockquote > div > div > :where([data-aue-type="richtext"]) > p {
+  position: relative;
+  margin: 0 0 16px;
+  font-size: 24px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.text.blockquote > div > div > p:last-child,
+.text.blockquote > div > div > :where([data-aue-type="richtext"]) > p:last-child {
+  margin-bottom: 0;
+}
+
+.text.blockquote > div > div > p::before,
+.text.blockquote > div > div > :where([data-aue-type="richtext"]) > p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -32px;
+  width: 4px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #ffd100;
+}
+
+.text.blockquote > div > div > p:has(> small:only-child),
+.text.blockquote > div > div > :where([data-aue-type="richtext"]) > p:has(> small:only-child) {
+  font-size: 16px;
+  font-style: normal;
+}
+
+.text.blockquote > div > div > p:has(> small:only-child)::before,
+.text.blockquote > div > div > :where([data-aue-type="richtext"]) > p:has(> small:only-child)::before {
+  content: none;
+}
+
+.text.blockquote small {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+@media (width >= 768px) {
+  .text.blockquote {
+    margin-block: 72px;
+  }
+}
+
+@media (width >= 992px) {
+  .text.blockquote {
+    margin-block: 60px;
+  }
+}
+
+@media (width >= 1024px) {
+  .text.blockquote {
+    margin-block: 80px;
+  }
+
+  .text.blockquote > div > div > p,
+  .text.blockquote > div > div > :where([data-aue-type="richtext"]) > p {
+    font-size: 32px;
+  }
+}
+
 /* Style "Add Indent" — indents the whole block; combines with any other style. */
 .text.indent {
   margin-left: 40px;
