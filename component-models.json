@@ -1254,8 +1254,12 @@
         "name": "mode",
         "label": "Mode",
         "value": "dynamic",
-        "description": "Dynamic lists articles automatically; Static shows the specific articles you choose; In the News shows the News Story items added to this block.",
+        "description": "Current Category lists the newest articles from this page's own category; Dynamic lists articles automatically from the category you select; Static shows the specific articles you choose; In the News shows the News Story items added to this block.",
         "options": [
+          {
+            "name": "Current Category",
+            "value": "current-category"
+          },
           {
             "name": "Dynamic",
             "value": "dynamic"
@@ -1287,7 +1291,8 @@
               },
               [
                 "static",
-                "news"
+                "news",
+                "current-category"
               ]
             ]
           }
