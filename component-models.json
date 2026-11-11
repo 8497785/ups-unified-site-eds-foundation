@@ -58,11 +58,15 @@
         "component": "multiselect",
         "name": "classes",
         "label": "Style",
-        "description": "Optional styles; select any combination, or none for the default. Quote: small grey italic text with an image floated to the left (e.g. an author byline). Add Indent: indents the whole text block 40px from the left.",
+        "description": "Optional styles; select any combination, or none for the default. Quote: small grey italic text with an image floated to the left (e.g. an author byline). Add Indent: indents the whole text block 40px from the left. Blockquote: a pull quote, large grey italic text with a yellow bar on the left (a paragraph with only small text becomes the speaker line).",
         "options": [
           {
             "name": "Quote",
             "value": "quote"
+          },
+          {
+            "name": "Blockquote",
+            "value": "blockquote"
           },
           {
             "name": "Add Indent",
