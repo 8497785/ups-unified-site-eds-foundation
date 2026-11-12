@@ -44,7 +44,7 @@
           "component": "text",
           "valueType": "string",
           "name": "caption",
-          "label": "Caption",
+          "label": "Eyebrow Text",
           "description": "Optional small uppercase label shown above the title, e.g. ABOUT US."
         },
         {
@@ -62,7 +62,7 @@
           "component": "boolean",
           "valueType": "boolean",
           "name": "showEyebrow",
-          "label": "Show Eyebrow Line",
+          "label": "Show Accent Line",
           "description": "Show a short gold accent line below the title."
         },
         {
