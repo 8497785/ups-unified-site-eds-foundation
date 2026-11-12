@@ -71,11 +71,64 @@ footer .footer a.button::after {
   transform: rotate(45deg);
 }
 
-/* ===== Section 1: Top CTA row (Newsroom / Careers) ===== */
+/* ===== Section 1: Top CTA row (Newsroom / Careers) =====
+   Source: .btn.btn-secondary_white pills, centred side by side (30px apart) on
+   desktop, stacked on the left (24px apart) on mobile, no divider below. The
+   links are authored together in one paragraph, so EDS doesn't make them
+   buttons; style them here. Chevron for site links, new-window icon for links
+   that open in a new tab. */
 footer .footer > div > .section:first-child {
   text-align: center;
   padding: 20px 0;
-  border-bottom: 1px solid rgb(255 255 255 / 15%);
+}
+
+footer .footer > div > .section:first-child .default-content-wrapper > p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px 30px;
+}
+
+footer .footer > div > .section:first-child .default-content-wrapper > p a:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 15px 32px 14px;
+  border: 2px solid #c6c6c6;
+  border-radius: 80px;
+  background: none;
+  color: #c6c6c6;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 1.6px;
+  white-space: nowrap;
+}
+
+footer .footer > div > .section:first-child .default-content-wrapper > p a:hover {
+  border-color: #fff;
+  color: #fff;
+  background: none;
+}
+
+footer .footer > div > .section:first-child .default-content-wrapper > p a::after {
+  content: '\e60f';
+  display: inline-block;
+  width: auto;
+  height: auto;
+  border: 0;
+  transform: none;
+  font-family: upspricons, tahoma, helvetica, arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+footer .footer > div > .section:first-child .default-content-wrapper > p a[target="_blank"]::after {
+  content: '\e617';
 }
 
 /* ===== Section 2: Middle columns ===== */
@@ -152,10 +205,11 @@ footer .footer > div > .section:last-child .default-content-wrapper > p {
 
 /* ===== Desktop 4-column grid for middle section ===== */
 @media (width >= 992px) {
+  /* Four equal columns, as the source's col-lg-3 grid */
   footer .footer > div > .section:nth-child(2) .default-content-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1.2fr;
-    gap: 0 40px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0 24px;
   }
 
   /* Column 1: This Site heading + list */
@@ -248,38 +302,40 @@ footer .footer > div > .section:last-child .default-content-wrapper > p {
   }
 }
 
-/* ===== Social icons styling ===== */
+/* ===== Social icons styling =====
+   When the column is too narrow for all five icons they wrap like the source:
+   the next row 14px below, packed at the top (not spread down the grid row). */
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  align-content: flex-start;
+  align-self: start;
+  gap: 14px 12px;
 }
 
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li {
   margin-bottom: 0;
 }
 
+/* The source glyphs are circled icons (40px), so no extra border ring. */
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li a {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
-  border: 2px solid var(--footer-text);
-  border-radius: 50%;
   color: var(--footer-text);
   font-size: 0;
 }
 
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li a:hover {
-  border-color: #fff;
   color: #fff;
 }
 
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li a::before {
   display: block;
   font-family: upspricons, tahoma, helvetica, arial, sans-serif;
-  font-size: 20px;
+  font-size: 40px;
   font-weight: normal;
   font-style: normal;
   line-height: 1;
@@ -291,8 +347,16 @@ footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-o
   content: "\e608";
 }
 
+/* Circled X logo as an SVG mask (the font glyph sits off the line and needs a
+   second font). Painted in currentcolor, so it follows the link colour/hover. */
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(2) a::before {
-  content: "\e900";
+  --x-logo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='none' stroke='%23000' stroke-width='1.6'/%3E%3Cpath transform='translate(11 11) scale(0.75)' d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'/%3E%3C/svg%3E");
+
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-color: currentcolor;
+  mask: var(--x-logo) center / contain no-repeat;
 }
 
 footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(3) li:nth-child(3) a::before {
@@ -318,4 +382,128 @@ footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-o
   font-style: normal;
   line-height: 1;
   vertical-align: middle;
+}
+
+/* ===== Mobile / tablet (below 992px) — matches the source footer at 390px ===== */
+@media (width < 992px) {
+  footer .footer > div {
+    padding: 0 20px;
+  }
+
+  /* Newsroom / Careers stacked on the left */
+  footer .footer > div > .section:first-child .default-content-wrapper > p {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  /* This Site and Other UPS Sites side by side; Connect and the newsletter
+     box span both columns below them. */
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 12px;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > * {
+    grid-column: 1 / -1;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > p:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > p:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 1;
+    margin-top: 0;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > p {
+    margin-bottom: 32px;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul li {
+    margin-bottom: 16px;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(2) li a[href^="https://"]::after {
+    margin-left: 5px;
+    font-size: 16px;
+  }
+
+  /* Newsletter box (when authored): full width, centred, as on the source */
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > p:nth-of-type(4) {
+    margin: 40px 0 0;
+    padding: 32px 20px 0;
+    border-radius: 8px 8px 0 0;
+    background: rgb(255 255 255 / 8%);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: normal;
+    text-align: center;
+    text-transform: none;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(4) {
+    padding: 24px 20px 32px;
+    border-radius: 0 0 8px 8px;
+    background: rgb(255 255 255 / 8%);
+    text-align: center;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(4) li {
+    margin-bottom: 0;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(4) li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 32px 14px;
+    border: 2px solid #c6c6c6;
+    border-radius: 80px;
+    color: #c6c6c6;
+    font-size: 16px;
+    letter-spacing: 1.6px;
+  }
+
+  footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul:nth-of-type(4) li a::after {
+    content: '\e60f';
+    font-family: upspricons, tahoma, helvetica, arial, sans-serif;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  /* Legal links and copyright centred */
+  footer .footer > div > .section:last-child .default-content-wrapper {
+    text-align: center;
+  }
+
+  footer .footer > div > .section:last-child .default-content-wrapper > ul {
+    justify-content: center;
+    row-gap: 4px;
+  }
+
+  footer .footer > div > .section:last-child .default-content-wrapper > ul li,
+  footer .footer > div > .section:last-child .default-content-wrapper > ul li:first-child {
+    padding: 0 6px;
+    line-height: 19.5px;
+  }
+
+  footer .footer > div > .section:last-child .default-content-wrapper > p {
+    line-height: 19.5px;
+  }
 }

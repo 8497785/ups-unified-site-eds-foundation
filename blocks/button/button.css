@@ -137,6 +137,7 @@ main .section.column:has(> .default-content-wrapper) > .button-wrapper {
    Colours and states come from the shared --secondary-button-* tokens in
    styles/styles.css, so default-content secondary buttons look the same. */
 .cmp-button.cmp-button--secondary {
+  box-sizing: border-box;
   padding: var(--secondary-button-padding);
   background-color: var(--secondary-button-background);
   border-radius: var(--primary-button-radius);
