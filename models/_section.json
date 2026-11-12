@@ -70,6 +70,10 @@
               "value": "arc-background"
             },
             {
+              "name": "Inverted Arc Background",
+              "value": "background-inverted-arc"
+            },
+            {
               "name": "No Top Spacing",
               "value": "no-top-spacing"
             },
