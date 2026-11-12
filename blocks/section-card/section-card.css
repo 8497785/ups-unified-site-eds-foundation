@@ -4,8 +4,6 @@
    covering its half's height; image-right swaps the sides. Measurements from
    about.ups.com (home page, last section). */
 
-/* The card floats on the page with a soft shadow (source: 0 4px 24px at 16%
-   black, 8px corners, at every size). */
 .section-card {
   display: flex;
   flex-direction: column;
