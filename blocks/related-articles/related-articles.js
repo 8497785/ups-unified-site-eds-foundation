@@ -1,5 +1,9 @@
-// Related Articles — three modes:
+// Related Articles — four modes:
 //
+// Current Category: list the newest articles from the current page's own
+//   category (the folder it sits in), excluding the page itself. No category
+//   to pick: the block follows the page wherever it is (and after MSM
+//   rollout). Limited by "Number of Articles".
 // Dynamic: list articles automatically. If a Category is selected, list
 //   articles under that category (newest first); otherwise fall back to
 //   siblings under the CURRENT page's parent. Limited by "Number of Articles".
@@ -101,12 +105,12 @@ function clampCount(value, min, max, fallback) {
 // the Mode cell onward: mode, category, articleCount, path1, path2, path3,
 // showDate, loadMoreLabel, desktopCount, tabletCount.
 //
-// The Mode cell is located by value (dynamic|static|news) rather than by a
+// The Mode cell is located by value (current-category|dynamic|static|news) rather than by a
 // fixed index, so pages authored before the Heading field was removed — which
 // still deliver a leading heading cell — keep working without re-authoring.
 function readConfig(rows) {
   const cell = (r) => (r?.textContent || '').trim();
-  const start = rows.findIndex((r) => /^(dynamic|static|news)$/i.test(cell(r)));
+  const start = rows.findIndex((r) => /^(current-category|dynamic|static|news)$/i.test(cell(r)));
   const base = start === -1 ? 0 : start;
   const at = (offset) => rows[base + offset];
 
@@ -388,9 +392,12 @@ export default async function decorate(block) {
     return;
   }
 
-  const selected = mode === 'static'
-    ? await selectStatic(paths)
-    : await selectDynamic(category, articleCount);
+  let selected;
+  if (mode === 'static') selected = await selectStatic(paths);
+  // Current Category ignores any Category value left over from Dynamic mode:
+  // an empty scope lists the current page's siblings.
+  else if (mode === 'current-category') selected = await selectDynamic('', articleCount);
+  else selected = await selectDynamic(category, articleCount);
 
   if (selected.length === 0) {
     block.replaceChildren();
