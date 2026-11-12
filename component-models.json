@@ -402,7 +402,7 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "animation",
+        "name": "classes",
         "label": "Animation",
         "value": "",
         "description": "Entrance animation, played once when the button scrolls into view. Off by default.",
@@ -413,41 +413,41 @@
           },
           {
             "name": "Fade in up",
-            "value": "fade-in-up"
+            "value": "animate-fade-in-up"
           }
         ]
       },
       {
         "component": "select",
         "valueType": "string",
-        "name": "animationDelay",
+        "name": "classes_animationdelay",
         "label": "Animation Delay",
-        "value": "1",
+        "value": "animation-delay-1",
         "description": "Wait before the animation starts once the button is in view.",
         "options": [
           {
             "name": "None",
-            "value": "0"
+            "value": "animation-delay-0"
           },
           {
             "name": "0.5 seconds",
-            "value": "0.5"
+            "value": "animation-delay-0-5"
           },
           {
             "name": "1 second",
-            "value": "1"
+            "value": "animation-delay-1"
           },
           {
             "name": "2 seconds",
-            "value": "2"
+            "value": "animation-delay-2"
           }
         ],
         "condition": {
           "===": [
             {
-              "var": "animation"
+              "var": "classes"
             },
-            "fade-in-up"
+            "animate-fade-in-up"
           ]
         }
       }

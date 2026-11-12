@@ -7,8 +7,9 @@
 // site's CTAs (.upspr-animation fadeInUp, 1s). Skipped for visitors who ask
 // for reduced motion.
 //
-// Authored cells, in model order: label, link, customClass, style, alignment,
-// animation, animationDelay.
+// Authored cells, in model order: label, link, customClass, style, alignment.
+// The animation options are block classes (the classes / classes_* fields), not
+// cells: animate-fade-in-up and animation-delay-0 | -0-5 | -1 | -2.
 
 const STYLE_CLASS = {
   primary: 'cmp-button--primary',
@@ -75,6 +76,15 @@ function cellText(row) {
 
 const ANIMATIONS = ['fade-in-up'];
 
+// Block classes -> animation settings. Delay classes encode seconds with "-"
+// for the decimal point (animation-delay-0-5 = 0.5s); default 1s.
+function readAnimation(block) {
+  const animation = ANIMATIONS.find((name) => block.classList.contains(`animate-${name}`)) || '';
+  const delayClass = [...block.classList].find((c) => /^animation-delay-\d+(-\d+)?$/.test(c));
+  const delay = delayClass ? delayClass.replace('animation-delay-', '').replace('-', '.') : '1';
+  return { animation, delay };
+}
+
 // Entrance animation: hold the button hidden (cmp-button--animate-pending)
 // until it scrolls into view, then run the animation once after the delay.
 // Without IntersectionObserver, or with reduced motion requested, the button
@@ -102,12 +112,11 @@ export default function decorate(block) {
   const customClass = cellText(rows[2]);
   const style = cellText(rows[3]) || 'primary';
   const alignment = cellText(rows[4]) || 'left';
-  const animation = cellText(rows[5]).toLowerCase();
-  const animationDelay = cellText(rows[6]) || '1';
+  const { animation, delay } = readAnimation(block);
 
   const el = createButton({
     label, href, style, alignment, customClass,
   });
   block.replaceChildren(el);
-  animateOnView(el, animation, animationDelay);
+  animateOnView(el, animation, delay);
 }
