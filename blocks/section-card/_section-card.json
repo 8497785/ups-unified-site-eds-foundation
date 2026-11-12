@@ -1,0 +1,114 @@
+{
+  "definitions": [
+    {
+      "title": "Section Card",
+      "id": "section-card",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Section Card",
+              "model": "section-card"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "section-card",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt Text",
+          "description": "Describe the image for screen readers."
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes",
+          "label": "Image Position",
+          "value": "",
+          "description": "Which side the image sits on at desktop sizes. On mobile the image is always on top.",
+          "options": [
+            { "name": "Left", "value": "" },
+            { "name": "Right", "value": "image-right" }
+          ]
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "eyebrow",
+          "label": "Eyebrow Link",
+          "description": "Page the eyebrow links to (e.g. Our Impact)."
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "eyebrowText",
+          "label": "Eyebrow Text",
+          "description": "Short label above the heading, e.g. OUR IMPACT."
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Heading"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "titleType",
+          "label": "Heading Level",
+          "value": "h2",
+          "options": [
+            { "name": "H2", "value": "h2" },
+            { "name": "H3", "value": "h3" }
+          ]
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "text",
+          "label": "Description"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "cta",
+          "label": "Button Link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "ctaText",
+          "label": "Button Label",
+          "description": "e.g. See Our Impact"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "ctaType",
+          "label": "Button Style",
+          "value": "secondary",
+          "options": [
+            { "name": "Secondary", "value": "secondary" },
+            { "name": "Primary", "value": "primary" }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

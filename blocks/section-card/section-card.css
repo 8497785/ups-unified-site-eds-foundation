@@ -1,0 +1,118 @@
+/* Section Card — the source site's "Section card" (.sectioncard /
+   .upspr-xd-card). Mobile/tablet (< 992px): the image on top at its natural
+   aspect, the content below. Desktop (>= 992px): two equal halves, the image
+   covering its half's height; image-right swaps the sides. Measurements from
+   about.ups.com (home page, last section). */
+
+.section-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.section-card .section-card-media picture,
+.section-card .section-card-media img {
+  display: block;
+  width: 100%;
+}
+
+.section-card .section-card-media img {
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.section-card .section-card-content {
+  padding: 32px 24px;
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Eyebrow link (source .upspr-eyebrow-link): plain 16px link, no underline. */
+.section-card .section-card-eyebrow-wrap {
+  margin: 0;
+}
+
+.section-card .section-card-eyebrow:any-link {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.section-card .section-card-eyebrow:any-link:hover {
+  text-decoration: underline;
+}
+
+.section-card .section-card-heading {
+  margin: 0 0 16px;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.section-card .section-card-text > * {
+  margin: 0;
+}
+
+.section-card .section-card-text {
+  margin-bottom: 32px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-color);
+}
+
+.section-card .section-card-cta .cmp-button {
+  margin: 0;
+}
+
+@media (width >= 992px) {
+  .section-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .section-card .section-card-media,
+  .section-card .section-card-content {
+    box-sizing: border-box;
+    flex: 0 0 50%;
+    min-width: 0;
+  }
+
+  /* The image fills its half's full height (the row is as tall as the
+     content), cropped to fit. */
+  .section-card .section-card-media picture {
+    height: 100%;
+  }
+
+  .section-card .section-card-media img {
+    height: 100%;
+    border-radius: 8px 0 0 8px;
+  }
+
+  .section-card .section-card-content {
+    padding: 72px 64px;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .section-card .section-card-heading {
+    margin-bottom: 24px;
+    font-size: 48px;
+    line-height: 57.6px;
+  }
+
+  /* Image Position: Right. */
+  .section-card.image-right {
+    flex-direction: row-reverse;
+  }
+
+  .section-card.image-right .section-card-media img {
+    border-radius: 0 8px 8px 0;
+  }
+
+  .section-card.image-right .section-card-content {
+    border-radius: 8px 0 0 8px;
+  }
+}
