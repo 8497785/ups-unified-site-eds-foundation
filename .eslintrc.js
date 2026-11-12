@@ -34,7 +34,9 @@ module.exports = {
     // text, topic, topicLink, ctaLink, classes — classes holds block options, so
     // 5 rows render); title-block has 5 (title, titleType, alignment,
     // showEyebrow, classes — classes / classes_animationdelay hold the
-    // animation options as block classes, so 4 rows render).
+    // animation options as block classes, so 4 rows render); section-card has
+    // 6 (image + alt, eyebrow + text, title + level, text, cta + label + style,
+    // classes — classes holds Image Position as a block class, so 5 rows render).
     'xwalk/max-cells': ['error', {
       button: 6,
       'article-header': 6,
@@ -44,6 +46,7 @@ module.exports = {
       video: 6,
       'hero-featured': 6,
       'title-block': 5,
+      'section-card': 6,
     }],
   },
 };
