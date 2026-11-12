@@ -6,7 +6,8 @@
 
 .button,
 .content-list,
-.related-articles {
+.related-articles,
+.section-card {
   /* Button palette (source: cmp-button variables). */
   --ups-black: #121212;
   --ups-blue: #0662bb;
