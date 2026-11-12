@@ -56,6 +56,22 @@
 .title .title-heading.align-center { text-align: center; }
 .title .title-heading.align-right { text-align: right; }
 
+/* Caption above the title (source .upspr-headline h4, e.g. ABOUT US): a
+   small bold uppercase grey label, 24px above the heading, at every size. */
+.title .title-caption {
+  margin: 0 0 24px;
+  font-size: 13px;
+  line-height: 15.6px;
+  font-weight: 700;
+  letter-spacing: 2.08px;
+  text-transform: uppercase;
+  color: #767676;
+}
+
+.title .title-caption.align-left { text-align: left; }
+.title .title-caption.align-center { text-align: center; }
+.title .title-caption.align-right { text-align: right; }
+
 /* When the eyebrow is shown, spacing below the heading is owned by the
    eyebrow's margin-top, so drop the heading's own bottom margin. */
 .title .title-heading:has(+ .title-eyebrow) {
@@ -114,11 +130,11 @@
   }
 }
 
-.title.animate-fade-in-up.title-animate-pending .title-heading {
+.title.animate-fade-in-up.title-animate-pending :is(.title-caption, .title-heading) {
   opacity: 0;
 }
 
-.title.animate-fade-in-up.title-animate-run .title-heading {
+.title.animate-fade-in-up.title-animate-run :is(.title-caption, .title-heading) {
   animation: title-fade-in-up 1s ease both;
   animation-delay: var(--title-animation-delay, 0s);
 }
@@ -132,11 +148,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .title.animate-fade-in-up.title-animate-pending .title-heading {
+  .title.animate-fade-in-up.title-animate-pending :is(.title-caption, .title-heading) {
     opacity: 1;
   }
 
-  .title.animate-fade-in-up.title-animate-run .title-heading {
+  .title.animate-fade-in-up.title-animate-run :is(.title-caption, .title-heading) {
     animation: none;
   }
 }
