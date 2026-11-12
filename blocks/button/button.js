@@ -2,7 +2,14 @@
 // it renders as an anchor; otherwise as a <button>. Style (primary / secondary)
 // and an optional custom class control appearance.
 //
-// Authored cells, in model order: label, link, customClass, style.
+// Optional entrance animation (off by default): "Fade in up" plays once when
+// the button scrolls into view, after the authored delay — as the source
+// site's CTAs (.upspr-animation fadeInUp, 1s). Skipped for visitors who ask
+// for reduced motion.
+//
+// Authored cells, in model order: label, link, customClass, style, alignment.
+// The animation options are block classes (the classes / classes_* fields), not
+// cells: animate-fade-in-up and animation-delay-0 | -0-5 | -1 | -2.
 
 const STYLE_CLASS = {
   primary: 'cmp-button--primary',
@@ -67,6 +74,36 @@ function cellText(row) {
   return row ? row.textContent.trim() : '';
 }
 
+const ANIMATIONS = ['fade-in-up'];
+
+// Block classes -> animation settings. Delay classes encode seconds with "-"
+// for the decimal point (animation-delay-0-5 = 0.5s); default 1s.
+function readAnimation(block) {
+  const animation = ANIMATIONS.find((name) => block.classList.contains(`animate-${name}`)) || '';
+  const delayClass = [...block.classList].find((c) => /^animation-delay-\d+(-\d+)?$/.test(c));
+  const delay = delayClass ? delayClass.replace('animation-delay-', '').replace('-', '.') : '1';
+  return { animation, delay };
+}
+
+// Entrance animation: hold the button hidden (cmp-button--animate-pending)
+// until it scrolls into view, then run the animation once after the delay.
+// Without IntersectionObserver, or with reduced motion requested, the button
+// simply shows.
+function animateOnView(el, animation, delay) {
+  if (!ANIMATIONS.includes(animation)) return;
+  if (!('IntersectionObserver' in window)
+    || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const seconds = Number.parseFloat(delay);
+  el.style.setProperty('--cmp-button-animation-delay', `${Number.isFinite(seconds) && seconds > 0 ? seconds : 0}s`);
+  el.classList.add(`cmp-button--animate-${animation}`, 'cmp-button--animate-pending');
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    observer.disconnect();
+    el.classList.replace('cmp-button--animate-pending', 'cmp-button--animate-run');
+  }, { threshold: 0.1 });
+  observer.observe(el);
+}
+
 export default function decorate(block) {
   const rows = [...block.children];
   const label = cellText(rows[0]);
@@ -75,9 +112,11 @@ export default function decorate(block) {
   const customClass = cellText(rows[2]);
   const style = cellText(rows[3]) || 'primary';
   const alignment = cellText(rows[4]) || 'left';
+  const { animation, delay } = readAnimation(block);
 
   const el = createButton({
     label, href, style, alignment, customClass,
   });
   block.replaceChildren(el);
+  animateOnView(el, animation, delay);
 }

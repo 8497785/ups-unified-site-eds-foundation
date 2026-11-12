@@ -210,3 +210,39 @@ main .section.column:has(> .default-content-wrapper) > .button-wrapper {
   width: fit-content;
   margin-left: auto;
 }
+
+/* Entrance animation (Animation: "Fade in up") — the source site's fadeInUp:
+   from transparent and one button-height lower to its place, over 1s, once,
+   after the authored delay. button.js holds the button hidden (pending) until
+   it scrolls into view, then switches to run. Not applied with reduced motion
+   (button.js skips it; this media query is a safety net). */
+@keyframes cmp-button-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.cmp-button.cmp-button--animate-fade-in-up.cmp-button--animate-pending {
+  opacity: 0;
+}
+
+.cmp-button.cmp-button--animate-fade-in-up.cmp-button--animate-run {
+  animation: cmp-button-fade-in-up 1s ease both;
+  animation-delay: var(--cmp-button-animation-delay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cmp-button.cmp-button--animate-fade-in-up.cmp-button--animate-pending {
+    opacity: 1;
+  }
+
+  .cmp-button.cmp-button--animate-fade-in-up.cmp-button--animate-run {
+    animation: none;
+  }
+}

@@ -398,6 +398,58 @@
             "value": "right"
           }
         ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Animation",
+        "value": "",
+        "description": "Entrance animation, played once when the button scrolls into view. Off by default.",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Fade in up",
+            "value": "animate-fade-in-up"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_animationdelay",
+        "label": "Animation Delay",
+        "value": "animation-delay-1",
+        "description": "Wait before the animation starts once the button is in view.",
+        "options": [
+          {
+            "name": "None",
+            "value": "animation-delay-0"
+          },
+          {
+            "name": "0.5 seconds",
+            "value": "animation-delay-0-5"
+          },
+          {
+            "name": "1 second",
+            "value": "animation-delay-1"
+          },
+          {
+            "name": "2 seconds",
+            "value": "animation-delay-2"
+          }
+        ],
+        "condition": {
+          "===": [
+            {
+              "var": "classes"
+            },
+            "animate-fade-in-up"
+          ]
+        }
       }
     ]
   },

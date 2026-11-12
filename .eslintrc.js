@@ -19,7 +19,9 @@ module.exports = {
     'linebreak-style': ['error', 'unix'], // enforce unix linebreaks
     'no-param-reassign': [2, { props: false }], // allow modifying properties of param
     // Raise the cell limit for blocks with more authorable fields than the
-    // default of 4. button has 5 (label, link, customClass, style, alignment);
+    // default of 4. button has 6 (label, link, customClass, style, alignment,
+    // classes — classes / classes_animationdelay hold the animation options as
+    // block classes, so 5 rows render);
     // article-header has 6 (eyebrow, eyebrowLink, title, description,
     // articleDate, hideReadTime); content-list has 8 (category, pageSize,
     // loadMoreLabel, loadMoreStyle, loadMoreAlignment, showDate, sortBy,
@@ -32,7 +34,7 @@ module.exports = {
     // text, topic, topicLink, ctaLink, classes — classes holds block options, so
     // 5 rows render).
     'xwalk/max-cells': ['error', {
-      button: 5,
+      button: 6,
       'article-header': 6,
       'content-list': 8,
       'related-articles': 10,
