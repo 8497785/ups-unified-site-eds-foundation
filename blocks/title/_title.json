@@ -41,6 +41,13 @@
           ]
         },
         {
+          "component": "text",
+          "valueType": "string",
+          "name": "caption",
+          "label": "Caption",
+          "description": "Optional small uppercase label shown above the title, e.g. ABOUT US."
+        },
+        {
           "component": "select",
           "name": "alignment",
           "value": "align-center",

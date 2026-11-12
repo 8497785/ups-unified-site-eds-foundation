@@ -38,7 +38,9 @@ function animateOnView(block) {
 // so there may be no separate "h3" text row. Detect what we can:
 //  - alignment row: the cell whose text is align-left/center/right
 //  - eyebrow row: the cell whose text is a boolean (showEyebrow)
-//  - title row: the remaining cell (its heading tag gives the level)
+//  - title row: the first remaining cell (its heading tag gives the level)
+//  - caption row: the next remaining cell (the Caption field follows the title
+//    in the model), shown as a small label above the title when not empty
 //  - a standalone type row (plain "h3") is also honored if present.
 export default function decorate(block) {
   const rows = [...block.children];
@@ -48,7 +50,8 @@ export default function decorate(block) {
     && BOOLEANS.includes(cellText(r).toLowerCase()));
   const typeRow = rows.find((r) => r !== alignRow && r !== eyebrowRow
     && HEADINGS.includes(cellText(r).toLowerCase()));
-  const titleRow = rows.find((r) => r !== alignRow && r !== eyebrowRow && r !== typeRow);
+  const [titleRow, captionRow] = rows.filter((r) => r !== alignRow
+    && r !== eyebrowRow && r !== typeRow);
 
   const authoredHeading = titleRow?.querySelector('h1, h2, h3, h4, h5, h6');
   const type = (typeRow && cellText(typeRow).toLowerCase())
@@ -64,6 +67,14 @@ export default function decorate(block) {
   if (titleRow) moveInstrumentation(titleRow, heading);
 
   const children = [heading];
+  const captionText = cellText(captionRow);
+  if (captionText) {
+    const caption = document.createElement('p');
+    caption.className = `title-caption ${alignment}`;
+    caption.textContent = captionText;
+    moveInstrumentation(captionRow, caption);
+    children.unshift(caption);
+  }
   if (showEyebrow) {
     const eyebrow = document.createElement('div');
     eyebrow.className = `title-eyebrow ${alignment}`;
