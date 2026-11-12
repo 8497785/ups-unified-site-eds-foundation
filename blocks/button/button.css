@@ -84,7 +84,10 @@ main .section.column:has(> .default-content-wrapper) > .button-wrapper {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+
+  /* Natural width at every screen size, as the source CTAs (no full-width
+     buttons on mobile). */
+  width: auto;
   cursor: pointer;
   text-decoration: none;
   transition:
@@ -92,12 +95,6 @@ main .section.column:has(> .default-content-wrapper) > .button-wrapper {
     background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
-}
-
-@media (width >= 768px) {
-  .cmp-button.cmp-button--primary {
-    width: auto;
-  }
 }
 
 /* Hovered — lighter gold fill, same label colour, no shadow (as the source). */
@@ -137,6 +134,7 @@ main .section.column:has(> .default-content-wrapper) > .button-wrapper {
    Colours and states come from the shared --secondary-button-* tokens in
    styles/styles.css, so default-content secondary buttons look the same. */
 .cmp-button.cmp-button--secondary {
+  box-sizing: border-box;
   padding: var(--secondary-button-padding);
   background-color: var(--secondary-button-background);
   border-radius: var(--primary-button-radius);
@@ -149,7 +147,9 @@ main .section.column:has(> .default-content-wrapper) > .button-wrapper {
   justify-content: center;
   align-items: center;
   gap: 4px;
-  width: 100%;
+
+  /* Natural width at every screen size, as the source CTAs. */
+  width: auto;
   cursor: pointer;
   text-decoration: none;
   transition:
@@ -162,12 +162,6 @@ main .section.column:has(> .default-content-wrapper) > .button-wrapper {
 /* Source chevron: upspricons 16px, a word-space after the label. */
 .cmp-button.cmp-button--secondary .upspr-icon-chevronright {
   font-size: 16px;
-}
-
-@media (width >= 768px) {
-  .cmp-button.cmp-button--secondary {
-    width: auto;
-  }
 }
 
 .cmp-button.cmp-button--secondary:hover {
@@ -194,27 +188,25 @@ main .section.column:has(> .default-content-wrapper) > .button-wrapper {
   color: var(--ups-gray-3);
 }
 
-/* Alignment — position the button within its container on desktop (where the
-   button is auto-width). Placed last so it wins the source-order tie against
-   the .cmp-button--primary/secondary width rules. On mobile the button spans
-   full width, so alignment is a no-op there. */
-@media (width >= 768px) {
-  .cmp-button.cmp-button--align-left {
-    display: flex;
-    width: fit-content;
-    margin-right: auto;
-  }
+/* Alignment — position the button within its container at every screen size
+   (the button is always natural width, as on the source, where a centered CTA
+   stays centered on mobile). Placed last so it wins the source-order tie
+   against the .cmp-button--primary/secondary width rules. */
+.cmp-button.cmp-button--align-left {
+  display: flex;
+  width: fit-content;
+  margin-right: auto;
+}
 
-  .cmp-button.cmp-button--align-center {
-    display: flex;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.cmp-button.cmp-button--align-center {
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .cmp-button.cmp-button--align-right {
-    display: flex;
-    width: fit-content;
-    margin-left: auto;
-  }
+.cmp-button.cmp-button--align-right {
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
 }
