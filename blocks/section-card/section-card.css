@@ -30,21 +30,22 @@
   border-radius: 0 0 8px 8px;
 }
 
-/* Eyebrow link (source .upspr-eyebrow-link): plain 16px link, no underline. */
+/* Eyebrow (source .upspr-xd-card_eyebrow): small bold uppercase label in the
+   text color, 24px above the heading. */
 .section-card .section-card-eyebrow-wrap {
   margin: 0;
+  padding-bottom: 24px;
 }
 
 .section-card .section-card-eyebrow:any-link {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-  color: #0d6efd;
+  display: block;
+  font-size: 13px;
+  line-height: 19.5px;
+  font-weight: 700;
+  letter-spacing: 1.06px;
+  text-transform: uppercase;
+  color: #242424;
   text-decoration: none;
-}
-
-.section-card .section-card-eyebrow:any-link:hover {
-  text-decoration: underline;
 }
 
 .section-card .section-card-heading {
@@ -116,5 +117,11 @@
 
   .section-card.image-right .section-card-content {
     border-radius: 8px 0 0 8px;
+  }
+}
+
+@media (width >= 1200px) {
+  .section-card .section-card-eyebrow:any-link {
+    letter-spacing: 2.08px;
   }
 }
