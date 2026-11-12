@@ -32,7 +32,9 @@ module.exports = {
     // link, newTab); video has 6 (videoSource, link, externalUrl,
     // enablePlaceholderImage, image, imageAlt); hero-featured has 6 (image,
     // text, topic, topicLink, ctaLink, classes — classes holds block options, so
-    // 5 rows render).
+    // 5 rows render); title-block has 5 (title, titleType, alignment,
+    // showEyebrow, classes — classes / classes_animationdelay hold the
+    // animation options as block classes, so 4 rows render).
     'xwalk/max-cells': ['error', {
       button: 6,
       'article-header': 6,
@@ -41,6 +43,7 @@ module.exports = {
       'related-news-item': 7,
       video: 6,
       'hero-featured': 6,
+      'title-block': 5,
     }],
   },
 };
