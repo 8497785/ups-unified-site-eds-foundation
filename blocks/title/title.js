@@ -9,30 +9,6 @@ function cellText(row) {
   return (row?.textContent || '').trim();
 }
 
-// Optional entrance animation (off by default), from the block classes set by
-// the Animation fields: animate-fade-in-up plus animation-delay-0 | -0-5 | -1
-// | -2 (seconds, "-" for the decimal point; default none, as the source
-// headlines). The title is held hidden (title-animate-pending) until it scrolls
-// into view, then runs once (title-animate-run) — the source .upspr-headline
-// fadeInUp. The eyebrow line waits with it. Skipped for reduced motion or
-// without IntersectionObserver.
-function animateOnView(block) {
-  if (!block.classList.contains('animate-fade-in-up')) return;
-  if (!('IntersectionObserver' in window)
-    || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const delayClass = [...block.classList].find((c) => /^animation-delay-\d+(-\d+)?$/.test(c));
-  const seconds = delayClass
-    ? Number.parseFloat(delayClass.replace('animation-delay-', '').replace('-', '.')) : 0;
-  block.style.setProperty('--title-animation-delay', `${Number.isFinite(seconds) ? seconds : 0}s`);
-  block.classList.add('title-animate-pending');
-  const observer = new IntersectionObserver((entries) => {
-    if (!entries.some((entry) => entry.isIntersecting)) return;
-    observer.disconnect();
-    block.classList.replace('title-animate-pending', 'title-animate-run');
-  }, { threshold: 0.1 });
-  observer.observe(block);
-}
-
 // The block delivers one row per model field. In delivered markup the titleType
 // select collapses into the heading tag of the title cell (e.g. <h3>Text</h3>),
 // so there may be no separate "h3" text row. Detect what we can:
@@ -82,5 +58,4 @@ export default function decorate(block) {
   }
 
   block.replaceChildren(...children);
-  animateOnView(block);
 }
