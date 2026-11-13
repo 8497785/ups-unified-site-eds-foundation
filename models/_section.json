@@ -74,6 +74,14 @@
               "value": "background-inverted-arc"
             },
             {
+              "name": "Float Images Left (text wraps)",
+              "value": "image-wrap-left"
+            },
+            {
+              "name": "Float Images Right (text wraps)",
+              "value": "image-wrap-right"
+            },
+            {
               "name": "No Top Spacing",
               "value": "no-top-spacing"
             },
@@ -163,6 +171,27 @@
             {
               "name": "Dark",
               "value": "background-dark"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "style_imagewrap",
+          "label": "Image Text Wrap",
+          "description": "Images that sit on their own line in this column's text float to one side and the text wraps around them (15px gap). On small screens an image keeps its width up to the column width.",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Float images left",
+              "value": "image-wrap-left"
+            },
+            {
+              "name": "Float images right",
+              "value": "image-wrap-right"
             }
           ]
         },
