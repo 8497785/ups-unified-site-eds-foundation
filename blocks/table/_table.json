@@ -96,24 +96,37 @@
           "component": "select",
           "name": "classes_zebra",
           "label": "Zebra Striping",
-          "description": "Alternating light gray shading for rows or for columns.",
+          "description": "Alternating light gray shading for rows or for columns. No Striping: no shading at all.",
           "value": "",
           "options": [
             { "name": "Default", "value": "" },
             { "name": "Alternating Rows", "value": "table-zebra-row" },
-            { "name": "Alternating Columns", "value": "table-zebra-columns" }
+            { "name": "Alternating Columns", "value": "table-zebra-columns" },
+            { "name": "No Striping", "value": "table-zebra-none" }
           ]
         },
         {
           "component": "select",
           "name": "classes_borders",
           "label": "Table Borders",
-          "description": "All Borders: a 1px gray border on every cell edge. Bottom Border Only: a 1px gray line under each cell, no side or top borders.",
+          "description": "All Borders: a 1px gray border on every cell edge. Bottom Border Only: a 1px gray line under each cell, no side or top borders. No Borders: no lines, and no padding on the left of each cell (as the source's plain tables).",
           "value": "",
           "options": [
             { "name": "Default", "value": "" },
             { "name": "All Borders", "value": "table-borders-all" },
-            { "name": "Bottom Border Only", "value": "table-borders-bottom" }
+            { "name": "Bottom Border Only", "value": "table-borders-bottom" },
+            { "name": "No Borders", "value": "table-borders-none" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_valign",
+          "label": "Cell Alignment",
+          "description": "Vertical alignment of cell content. Middle centres text next to an icon or image in the same row.",
+          "value": "",
+          "options": [
+            { "name": "Top (Default)", "value": "" },
+            { "name": "Middle", "value": "table-cells-middle" }
           ]
         }
       ]
