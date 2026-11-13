@@ -1,8 +1,8 @@
-/* stylelint-disable no-descending-specificity */
-.hero-stats-container .hero-stats-wrapper {
-  max-width: unset;
-  padding: 0;
-}
+/* Hero Stats — the source's fact hero (.upspr-heroimage.vertical-hero): a
+   background image in the content column with a white stats card on top.
+   The card is centred below 1200px and sits 110px from the right edge above.
+   The block is as tall as the card plus 30px above and below; below 992px
+   it is 750px tall and the card stretches to fill it. */
 
 .hero-stats-container {
   margin: 0;
@@ -10,105 +10,125 @@
 
 .hero-stats {
   position: relative;
-  min-height: 400px;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   overflow: hidden;
-  border-radius: var(--border-radius-card);
-  margin: 0 var(--spacing-md);
-  padding: var(--spacing-lg) var(--spacing-md);
+  margin-bottom: 64px;
+  padding: 30px 0;
 }
 
-.hero-stats > div:first-child {
+.hero-stats .hero-stats-media {
   position: absolute;
-  z-index: 0;
   inset: 0;
 }
 
-.hero-stats > div:first-child > div {
-  height: 100%;
-}
-
-.hero-stats > div:first-child picture {
+.hero-stats .hero-stats-media > div,
+.hero-stats .hero-stats-media picture {
   display: block;
   height: 100%;
 }
 
-.hero-stats > div:first-child img {
-  object-fit: cover;
+.hero-stats .hero-stats-media img {
+  display: block;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
-.hero-stats > div:last-child {
+.hero-stats .hero-stats-content {
   position: relative;
   z-index: 1;
-  width: 100%;
-  max-width: 320px;
-}
-
-.hero-stats > div:last-child > div {
-  background-color: var(--background-color);
-  border-radius: var(--border-radius-card);
-  padding: var(--spacing-lg);
-}
-
-.hero-stats h4 {
-  font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-xl);
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--text-color);
-  text-align: center;
-  margin: 0;
-}
-
-.hero-stats > div:last-child > div h4:not(:first-child) {
-  padding-top: var(--spacing-md);
-  border-top: 1px solid var(--light-color);
-}
-
-.hero-stats > div:last-child > div > p {
-  font-size: var(--body-font-size-xs);
-  color: var(--text-color);
-  line-height: 1.5;
-  text-align: center;
-  margin: 4px 0 var(--spacing-md);
-  font-weight: 400;
-}
-
-/* CTA button */
-.hero-stats .button-container:last-child {
-  text-align: center;
-  margin: 0;
-}
-
-.hero-stats .button-container:last-child a.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 12px 24px;
-  background-color: var(--ups-gold);
-  color: var(--btn-text-dark);
-  font-weight: 700;
-  font-size: var(--body-font-size-s);
+  display: flex;
   box-sizing: border-box;
+  width: 280px;
+  padding: 0 20px;
 }
 
-.hero-stats .button-container:last-child a.button:hover {
-  background-color: var(--ups-gold-hover);
+.hero-stats .hero-stats-card {
+  flex: 1;
+  padding: 24px;
+  background-color: var(--background-color);
+  border-radius: 8px;
 }
 
-@media (width >= 992px) {
+.hero-stats .hero-stats-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.hero-stats .hero-stats-item {
+  padding: 24px 0;
+  border-bottom: 4px solid #f2f2f2;
+}
+
+.hero-stats .hero-stats-item:first-child {
+  padding-top: 0;
+}
+
+.hero-stats .hero-stats-item:last-child {
+  border-bottom: 0;
+}
+
+.hero-stats .hero-stats-value {
+  margin: 0 0 8px;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.hero-stats .hero-stats-label {
+  margin: 0;
+  font-size: 13px;
+  line-height: 19.5px;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.hero-stats .hero-stats-cta {
+  padding-top: 24px;
+  border-top: 4px solid #f2f2f2;
+}
+
+.hero-stats .hero-stats-cta .cmp-button {
+  width: 100%;
+  margin: 0;
+  gap: 0;
+  font-weight: 700;
+}
+
+.hero-stats .hero-stats-cta .cmp-button .upspr {
+  padding-left: 4px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@media (width < 992px) {
   .hero-stats {
-    min-height: 500px;
-    margin: 0 var(--spacing-lg);
-    padding: var(--spacing-xl);
+    box-sizing: border-box;
+    min-height: 750px;
+  }
+}
+
+@media (width >= 768px) {
+  .hero-stats .hero-stats-content {
+    width: 320px;
+  }
+}
+
+@media (width >= 1200px) {
+  .hero-stats {
+    justify-content: flex-end;
+    border-radius: 8px;
   }
 
-  .hero-stats > div:last-child {
-    max-width: 340px;
+  .hero-stats .hero-stats-content {
+    width: 280px;
+    margin-right: 110px;
+    padding: 0;
   }
 }
