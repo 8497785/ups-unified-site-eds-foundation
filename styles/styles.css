@@ -749,3 +749,26 @@ main table.table-no-border th p,
 main table.table-no-border td p {
   margin-bottom: 18px;
 }
+
+/* Image Text Wrap (section style image-wrap-left / -right): an image on its
+   own line in the text floats to one side and the following text wraps
+   around it — the source's inline float: left; margin: 0 15px 10px 0. The
+   text wrapper contains the floats. */
+main .section:is(.image-wrap-left, .image-wrap-right) .default-content-wrapper {
+  display: flow-root;
+}
+
+main .section.image-wrap-left .default-content-wrapper > p:has(> picture:only-child) {
+  float: left;
+  margin: 0 15px 10px 0;
+}
+
+main .section.image-wrap-right .default-content-wrapper > p:has(> picture:only-child) {
+  float: right;
+  margin: 0 0 10px 15px;
+}
+
+main .section:is(.image-wrap-left, .image-wrap-right) .default-content-wrapper > p:has(> picture:only-child) img {
+  display: block;
+  margin: 0;
+}
