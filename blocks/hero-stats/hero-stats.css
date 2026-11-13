@@ -90,13 +90,21 @@
 }
 
 .hero-stats .hero-stats-cta {
-  padding-top: 27px;
+  padding-top: 24px;
+  border-top: 4px solid #f2f2f2;
 }
 
 .hero-stats .hero-stats-cta .cmp-button {
   width: 100%;
   margin: 0;
+  gap: 0;
   font-weight: 700;
+}
+
+.hero-stats .hero-stats-cta .cmp-button .upspr {
+  padding-left: 4px;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 @media (width < 992px) {
