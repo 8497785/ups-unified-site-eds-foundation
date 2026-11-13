@@ -44,6 +44,12 @@
   font-weight: 700;
 }
 
+/* Images in cells (e.g. icons) keep their authored size. The global
+   max-width: 100% would let an auto-sized column shrink them to nothing. */
+.table.block :is(th, td) img {
+  max-width: none;
+}
+
 .table.block tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
@@ -112,6 +118,11 @@
   background-color: var(--table-gray-5);
 }
 
+/* Zebra Striping "No Striping": no shading on any row. */
+.table.block.table-zebra-none tbody tr:nth-child(even) {
+  background-color: transparent;
+}
+
 /* Table Borders: all edges, or the bottom edge only. */
 .table.block.table-borders-all tr > :is(th, td) {
   border: 1px solid var(--table-gray-2);
@@ -120,6 +131,23 @@
 .table.block.table-borders-bottom tr > :is(th, td) {
   border: none;
   border-bottom: 1px solid var(--table-gray-2);
+}
+
+/* No Borders: no lines, and the source's plain-table cell padding (none on
+   the left, so the first column lines up with the text above). */
+.table.block.table-borders-none tr > :is(th, td) {
+  border: none;
+  padding: 8px 16px 8px 0;
+}
+
+.table.block.table-borders-none :is(th, td) p,
+.table.block.table-borders-none :is(th, td) p:last-child {
+  margin: 0 0 18px;
+}
+
+/* Cell Alignment "Middle". */
+.table.block.table-cells-middle tr > :is(th, td) {
+  vertical-align: middle;
 }
 
 /* Table Header Row: the first column (row headers), light brand color. */

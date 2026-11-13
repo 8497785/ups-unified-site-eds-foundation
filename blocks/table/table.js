@@ -39,6 +39,14 @@ export default function decorate(block) {
   if (!table) table = buildFromGrid(block);
   if (!table) return;
 
+  // Cell images (e.g. icons) show at their authored width. The global
+  // img { width: auto } overrides the width attribute, so an SVG would fall
+  // back to its intrinsic size; set it explicitly instead.
+  table.querySelectorAll('img[width]').forEach((img) => {
+    const width = Number.parseInt(img.getAttribute('width'), 10);
+    if (width > 0) img.style.width = `${width}px`;
+  });
+
   const wrapper = document.createElement('div');
   wrapper.className = 'table-wrapper';
   wrapper.append(table);
