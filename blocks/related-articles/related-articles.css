@@ -200,3 +200,18 @@ main .section.related-articles-empty {
     animation: none;
   }
 }
+
+/* A Button authored right after Related Articles in the same section (the
+   home page's "View All Stories"): space it from the cards and below, as the
+   source latest stories (44px / 108px; 36px / 118px from 992px). */
+main .section .related-articles-wrapper + .button-wrapper {
+  margin-top: 44px;
+  margin-bottom: 68px;
+}
+
+@media (width >= 992px) {
+  main .section .related-articles-wrapper + .button-wrapper {
+    margin-top: 36px;
+    margin-bottom: 78px;
+  }
+}
