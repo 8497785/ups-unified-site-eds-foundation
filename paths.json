@@ -1,20 +1,10 @@
 {
   "mappings": [
     "/content/about-ups-eds/us/en/:/us/en/",
-    "/content/about-ups-eds/redirects:/redirects",
-    "/content/dam/upsstories/:/content/dam/upsstories/"
+    "/content/about-ups-eds/redirects:/redirects"
   ],
   "includes": [
     "/content/about-ups-eds/us/en/",
-    "/content/about-ups-eds/redirects",
-    "/content/dam/upsstories/"
-  ],
-  "excludes": [
-    "/**/*.mp4",
-    "/**/*.mp3",
-    "/**/*.mov",
-    "/**/*.avi",
-    "/**/*.webm",
-    "/**/*.mkv"
+    "/content/about-ups-eds/redirects"
   ]
 }
