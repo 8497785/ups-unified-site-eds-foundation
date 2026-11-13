@@ -401,8 +401,12 @@ header nav .nav-drop-toggle {
     padding-bottom: 5px;
   }
 
-  /* sub-menus hidden by default on desktop */
+  /* sub-menus hidden by default on desktop. --nav-dropdown-inset: distance
+     from the viewport edge to the centred content column (a % of the
+     viewport, so it works for the fixed dropdown and its title). */
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
+    --nav-dropdown-inset: max(20px, calc((100% - var(--content-max-width)) / 2));
+
     display: none;
     position: absolute;
   }
@@ -426,8 +430,10 @@ header nav .nav-drop-toggle {
     top: var(--nav-height);
     width: 100vw;
 
-    /* top padding leaves room for the title (40px + 15px line + 24px gap) */
-    padding: 79px 130px 68px;
+    /* top padding leaves room for the title (40px + 15px line + 24px gap).
+       Side padding lines the links up with the logo and page content at every
+       width (the content column is centred), as the source megamenu. */
+    padding: 79px var(--nav-dropdown-inset) 68px;
     background-color: var(--background-color);
     border-top: 1px solid #f2f2f2;
     border-radius: 0 0 16px 16px;
@@ -442,7 +448,7 @@ header nav .nav-drop-toggle {
     content: attr(data-title);
     position: absolute;
     top: 40px;
-    left: 130px;
+    left: var(--nav-dropdown-inset);
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
